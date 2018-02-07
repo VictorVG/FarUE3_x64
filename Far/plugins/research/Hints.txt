@@ -1,0 +1,41 @@
+Some non-obvious aspects of RESearch usage are explained here.
+
+- Literals like '\n' DO NOT work in plain text search! Either use regexp, or enter needed
+  symbol directly using Ctrl-Q.
+
+- '\n' and others do work in replace string even with plain-text search, UNLESS
+  "[x] Use escapes in plain-text replace" is turned off.
+
+- Single-line search in both editor and panels, both regexp and plaintext, is done
+  by extracting lines from text sequentially, WITHOUT newline symbols - therefore to search for
+  the word 'end' at the end of string, use regexp 'end$', not 'end\n'!
+
+- Several-line search in editor is done by internally concatenating lines with a single '\n',
+  so it is to be used instead of '\r\n' always, UNLESS you turn on "[X] Use real end-of-line sequences".
+
+- Several-line search from panels is done in the same way - use a single '\n'.
+
+- Multi-line search/replace from panels feeds the whole file to RegExp engine, therefore
+  actual newline symbols are to be used. '\r?\n' is good for most cases.
+
+- Or, you can use '\R' and don't bother about newline sequences at all.
+
+- Multi-line replace from panels has some file size limits: 256Mb for x86 and 1Tb for x64
+  If file exceeds it, several-line replace is used. Also, if file is below the limit but buffer
+  for the original and decoded file cannot be allocated, file is processed in chunks without
+  overlap
+
+- If '[ ] Dot matches newline also' is not set, you can use '\C' as 'Absolutely any symbol,
+  including newline'
+
+- If zero-width string is found, characters surrounding it are highlighted.
+
+- If UTF-16LE/BE or UTF-8 byte-order mark (BOM) is found while working from Panels,
+  no other encodings are tried!
+
+- Without '[ ] Use all character tables', panel operations use the following:
+  1. If BOM is found, that encoding is used
+  2. In Far 1.x (ANSI) version, OEM codepage is used
+  3. In Far 2/3 (Unicode) version, codepage selected as default is used (OEM or ANSI)
+
+- In Replace from panels, only default codepage is used.

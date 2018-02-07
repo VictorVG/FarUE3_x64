@@ -1,0 +1,882 @@
+.Language=English,English
+.PluginContents=Regular Expression Search
+
+@Contents
+$ #Regular Expression Search and Replace, version 8.67#
+    This plugin allows you to:
+
+    - Perform text search and replace in editor
+    - Perform text search in viewer
+    - Perform file search
+    - Perform text replacing in multiple files
+    - Rename files
+    - (Un)Select files
+
+    Its difference from standard Far tools, it allows using ~Regular Expressions~@RegularExpressions@
+in file masks, searched text, and using various macros in replacement text.
+    Due to this, you can perform complicated searches and context-dependent replacing.
+    Furthermore, it supports ~scripting replacement~@RegularReplaceScripting@.
+
+    This plugin uses ~PCRE~@PCRE@ regular expression library.
+
+   ~Regular Expression Basics~@RegularExpressions@
+   ~Replacement Text~@RegularReplace@
+
+   Most often-used editor commands:
+   ~Regular Expression Search~@SearchDlg@
+   ~Regular Expression Replace~@ReplaceDlg@
+   ~Regular Expression Filter~@FilterDlg@
+
+   Most often-used panels commands:
+   ~Regular Expression File Search~@FileSearchDlg@
+   ~Regular Expression File Replace~@FileReplaceDlg@
+   ~Regular Expression Grep~@FileGrepDlg@
+   ~Regular Expression File Rename~@FileRenameDlg@
+
+   ~Advanced File Search options~@AdvancedFileSearchDlg@
+
+   ~Search/replace/rename from command line~@CmdLine@
+   ~RESearch configuration~@Config@
+
+  #Contacting me:#
+  #Pavel Kostromitinov#
+  #2:5030/661.14@@Fidonet#
+  #~pavel@@kostrom.spb.ru~@mailto:pavel@@kostrom.spb.ru@#
+
+  Updates are available from ~my homepage~@http://www.kostrom.spb.ru/programs/far.en.html@.
+  ~Vote~@http://plugring.farmanager.com/cgi-bin/voter.cgi?ID=246@ for this plugin on PlugRinG.
+  See ~all my plugins~@http://plugring.farmanager.com/cgi-bin/downld.cgi?Draw=List&Select=Author&SelectAuthor=63@.
+@PCRE
+$ #PCRE Library#
+    Regular expression support is provided by the PCRE library package,
+which is open source software, written by ~Philip Hazel~@mailto:ph10@@cam.ac.uk@,
+and copyright by the University of Cambridge, England.
+
+    Library sources can be found at:
+    ~http://www.pcre.org/~@http://www.pcre.org/@
+@RegularExpressions
+$ #Regular Expression Basics#
+    Regular expression is a specially formatted string, designed to match not one
+string, but a set of them. For full information, see included pcrepattern.html file or
+~PCRE library~@PCRE@ documentation.
+    Most commonly used patterns are:
+
+    #.# (dot) matches any single character, possibly #except# newline (can be ~configured~@CommonConfig@)
+    #^#       matches zero characters at the beginning of line
+    #$#       matches zero characters at the end of line
+    #[abi-l]# matches either 'a' or 'b' or any letter from 'i' to 'l'
+    #one|another# matches either 'one' or 'another'
+
+    #\d#      matches any digit
+    #\w#      matches any word character (letter or digit or underscore)
+    #\W#      matches any non-word character
+    #\s#      matches any whitespace (space, tab, CR, LF, FF)
+    #\S#      matches any non-whitespace
+    #\b#      matches word boundary
+    #\B#      matches not word boundary
+    #\C#      matches any single character, #including# newline
+    #\R#      matches any newline sequence - \r, \n, or \r\n
+    Also standard C metacharacters work (with '\n' matching only newline character).
+
+    #?#     after a pattern matches it zero or one time
+    #*#     after a pattern matches it zero or more times
+    #+#     after a pattern matches it one or more times
+    #{3}#   after a pattern matches it three times
+    #{1,3}# after a pattern matches it one to three times
+    #{3,}#  after a pattern matches it at least three times
+    NOTE: these modifiers can be followed by '?', changing priority from matching
+as much as possible to as few as possible.
+    NOTE: {,3} does #not# match from 0 to 3. It matches exact string '{,3}'
+(since Perl documentation says so).
+
+    #()#        groups patterns into one and makes matched part referrable as #\nn# from the
+following part of pattern and as #$nn# from replacing string. #nn# is simply the number
+of opening bracket in pattern, counted from 1.
+    NOTE: to separate match number #nn# from subsequent digits #mm#, you can use form
+#${nn}mm# in replacement. In pattern, you can group it: #(\nn)mm#
+
+   #(?<name> )# same as above, but with the possibility to reference by name, via #${name}# in replace or:
+   #\k<name># or #\g{name}# in search.
+
+   #${name}#    (nonstandard!) reference named parameter from previous search.
+Can use all ~Predefined named parameters~@PredefinedNamedParam@ here too.
+
+    To make any special character match itself, precede it with '\'.
+
+    Patterns can be recursed to any depth. For example, pattern
+
+         ((0x[0-9a-fA-F]|[-+]?\d+|0[0-7]+)\s+)+
+
+    matches any sequence of decimal, hexadecimal or octal numbers in C notation
+separated with one or more whitespace characters, with '+' or '-' optionally
+preceding decimal number.
+
+   (?=#pattern#)  Zero-width positive lookahead assertion. Matches if the text after this point matches #pattern#.
+   (?!#pattern#)  Zero-width negative lookahead assertion. Matches if the text after this point does not match #pattern#.
+   (?<=#pattern#) Zero-width positive lookbehind assertion. Matches if the text before this point matches #pattern#.
+   (?<!#pattern#) Zero-width negative lookbehind assertion. Matches if the text before this point does not match #pattern#.
+@RegularReplace
+$ #Replacement text#
+    Certain special symbols and constructions can be used in replacement text:
+
+    The following macros are accepted in replace text:
+    \l      - lowercase next character.
+    \u      - uppercase next character.
+    \L      - lowercase all charachers until \E.
+    \U      - uppercase all charachers until \E.
+    \E      - end case modification.
+    \xnn    - symbol with hexadecimal code nn (can be 1 or 2 characters).
+    \nnn    - symbol with octal code nnn (can be 1 to 3 characters).
+
+    #NOTE#: Single-char and multiple-char case modification can be combined, i.e. '\u\L$0\E'
+(or '\L\u$0\E') will be replaced with whole matched string capitalized.
+
+    For RegExp search only:
+    $nn     - captured subpattern number nn. $0 is a whole matched portion.
+    ${name} - captured named subpattern. See also: ~Predefined named parameters~@PredefinedNamedParam@
+
+    When replacing in editor:
+    $L      - current line number
+    $N      - current line number, counted from start of replacing
+    $S      - current find number
+    $R      - current replacement number
+
+    When repeating text in editor:
+    $N      - current item number
+    
+    When replacing in or renaming files:
+    $N      - current matching file number
+    $F      - current file number with at least one match 
+    $S      - current find number in this file
+    $R      - current replacement number in this file
+
+	#NOTE#: All numbers are from 0. You can use form ${N+1} to count from 1.
+
+    #NOTE#: Parameter references (subpatterns or special variables) can be extended by
+using the following forms:
+    ${X+/-nnn} - add nn to the value of parameter (if it is numeric) and align it with zeros
+up to the length of nnn (so you can do ${X+0000} if you need).
+    ${X</>nnn} - align parameter with spaces to the left or right up to nnn characters.
+
+    Also standard C-like metacharacters: \a, \b, \e, \f, \n, \r, \t, \v are recognized.
+
+@PredefinedNamedParam
+$ #Predefined named parameters#
+    You can reference some predefined named parameters in ~editor replace~@ReplaceDlg@ or
+~file replace~@FileReplaceDlg@/~rename~@FileRenameDlg@.
+
+    ${_fullname} - full name of current file
+    ${_path}     - path to current file, not including trailing '\'
+    ${_fpath}    - path to current file, including trailing '\'
+    ${_filename} - current file name and extension
+    ${_name}     - current file name (before #last# '.')
+    ${_ext}      - current file extension (after last '.')
+    ${_sname}    - current file name (before #first# '.')
+    ${_fext}     - current file extension (after first '.')
+
+@RegularReplaceScripting
+$ #Using scripting#
+    To allow a user to achieve a much greater level of flexibility in replacing text, RESearch
+allows evaluating a line of script code as replacement text, using any installed script engine
+(VBScript and JScript come pre-installed with all modern versions of Windows, Perl/Python/Ruby
+and many others are also available)
+    The following functions are available for the script:
+
+    #match(n)#      Returns the same as $n in ~usual replace~@RegularReplace@
+    #named(nm)#     Returns named parameter 'nm'
+    #get_l/n/s/f/r()#     Returns the same as $L/$N/$S/$F/$R in usual replace
+    #eol()#         Returns a suitable end-of-line sequence
+    #result(str)#   Has to be called to return a resulting value back to RESearch
+    #store(n, v)#   Store value 'v' in named parameter 'n'
+    #init(n, v)#    Same as store(), except that it works only once after 'Replace' is invoked.
+    #skip()#        Forces RESearch to skip current replace
+    #final()#       Evaluates to true on final replace step
+    #msgbox(t, c)#  Show a message box with text and optional caption
+
+@CommonConfig
+$ #Common settings#
+  #'Several' lines means#             When searching using Several Line RegExp,
+                                    this number of lines (or bytes) will be
+                                    matched simultaneously.
+
+  #Dot matches newline also#          If checked, dot (#.#) will match newline in
+                                    several-line searches, so #a.*b# can match 
+                                    several-line fragment.
+
+  #Use separate thread#               In the case of very large source strings,
+  #for regexp match#                  regexp engine can run out of stack space,
+                                    resulting in a crash. Enable this option to resolve
+                                    such situation.
+
+  #Show warnings on common mistakes#  Such as using '\n' in plain-text search
+
+  #Use escapes in plain-text replace# If checked, even in plain-text mode some special
+                                    symbols (such as \n or $L) are recognized.
+
+  #Ignore identical replaces#         If checked, you won't be prompted to replace
+                                    some found text with the very same text again.
+
+  #Preprocess text pasted from clipboard#
+                                    If checked, text pasted from clipboard to any RESearch
+                                    dialog will have end-of-line marks replaced with '\n'.
+                                    NOTE, that it really changes text in clipboard, and may
+                                    conflict with any "clipboard enhancers"
+
+@FileConfig
+$ #Panel search settings#
+  #Mask matching by default#      Specifies how file mask matching will be done by default
+    #Case-sensitive#
+    #Case-insensitive#
+    #Depends on volume#           Use case-sensitive masks on case-sensitive volumes (e.g. UNIX mounted drives)
+
+  #Replace in readonly files#     Whether to process read-only files while replacing
+    #Never#                         Do not even try searching them
+    #Ask#                           Search them, and ask user to perform replace if needed
+    #Always#                        Replace without additional questions
+
+  #Skip preconfigured system folders# Folders matching given masks will be always skipped
+  #Search for CR-only EOL#            Should search from panels recognize single \r as end-of-line sequence
+  #Read buffer size#
+  #Default codepage#                  Codepage assumed when working with files without BOM
+  #'All codepages' include#           Which codepages to use when '[X] Use all codepages' is selected
+
+@GrepConfig
+$ #Grep settings#
+
+  #Prepend to file name:#         Text to add immediately before file name in output
+  #Append to file name:#          Text to add immediately after file name in output.
+Note that when it is non-empty, newline isn't added automatically.
+
+@RenumberConfig
+$ #Renumbering settings#
+
+Setting options for ~Renumber files~@Renumber@ command.
+
+    #RegExp to strip from beginning#   Any string matching this regexp will be stripped from
+beginning of a filename
+    #Strip common part from beginning# If set, strip part of the name which all files have
+identical (both before and after regexp)
+    #Prefix to number#                 String to add before number in a filename
+    #Postfix after number#             String to add after number in a filename
+    #Start number from#                Self-explanatory
+    #Digits in number#               N  umber is left-padded with zeroes to at least this width
+@EditorConfig
+$ #Editor settings#
+  #Found text horizontal offset:# Where does line with text found in editor appears.
+Specifies offset from given position (for Top and Center - down, for Bottom - up).
+Can be both positive and negative.
+  #Keep current line if possible#
+
+  #Right side offset:#            How much space is left between right end of text found
+and right side of the screen
+
+  #Margins: horizontal#
+           #vertical#
+
+  #Pick up text at cursor#        Specifies whether text under cursor should appear
+as default "search for" text
+    #None#                        Do not pick up any text
+    #Words only#                  Pick up words (alphanumeric characters)
+    #Any text#                    Pick up any text
+  #Pick up selection#             Whether to pick up selection text
+  #Turn 'In selection' on automatically#
+
+  #Use real end-of-line sequences#
+
+  #Position cursor at#
+    #Beginning of found fragment#
+    #Depends on direction#
+    #End of found fragment#
+    #At named subpattern#         Override cursor by inserting a named supbattern
+@Config
+$ #RESearch configuration#
+  ~Common settings~@CommonConfig@          General options
+  ~Panel search settings~@FileConfig@    Options applying only to search/replace from panels
+  ~Editor settings~@EditorConfig@          Options applying only to search/replace in editor
+@CmdLine
+$ #Search/replace/rename from command line#
+    There are several forms which can be used, all more or less derived from Perl
+expressions. As in Perl, you can use any character you like instead of '#/#', and you
+must use a character, not found in search text or anything.
+    Also note that uppercasing option charatcer, you inverse its meaning (except for
+cases when there is no opposite meaning, such as Search As)
+    Far prior to 1.70 users: you can use only first three forms. Which action is really
+taking place is decided from number of #/# (or whatever) characters found: replace if
+there's 4 of them or more.
+
+    #ff: SearchText#
+    Search for text in files using current options. Note space after #ff:#!
+
+    #ff:/FileMask/SearchText[/options]#
+    ~Search for text in files~@FileSearchDlg@. Options are:
+    #c# - Case-sensitive
+    #i# - Inverse search
+    #p# - Plain-text
+    #r# - ~Regular expression~@RegularExpressions@
+    #s# - Several-line regular expression
+    #m# - Multi-line regular expression
+    #a# - Multiple plain text
+    #l# - Multiple regular expressions
+
+    #0..5# - "Search in" as in dialog
+    #d# - View search dialog
+
+    #fr:/FileMask/SearchText/ReplaceText[/options]#
+    ~Replace text in files~@FileReplaceDlg@. Options are:
+    #c# - Case-sensitive
+    #p# - Plain-text
+    #r# - Regular expression
+    #s# - Several-line regular expression
+
+    #v# - View modified files
+    #f# - Confirm each file
+    #l# - Confirm each replacement
+    #o# - Save original file
+    #b# - Overwrite previous backup
+
+    #0..5# - "Search in" as in dialog
+    #d# - View replace dialog
+
+    #rn:/FileMask/SearchText/ReplaceText[/options]#
+    ~Rename files~@FileRenameDlg@. Options are:
+    #c# - Case-sensitive
+    #r# - Regular expression
+    #p# - Repeating replace
+
+    #f# - Confirm each file
+    #l# - Confirm each replacement
+    #0..5# - "Search in" as in dialog
+    #d# - View rename dialog
+
+    #qr:/SearchText/ReplaceText[/options]#
+    ~Quick rename (selected) files~@SelectedFileRenameDlg@. Options are:
+    #c# - Case-sensitive
+    #r# - Regular expression
+    #p# - Repeating replace
+
+    #f# - Confirm each file
+    #l# - Confirm each replacement
+    #d# - View rename dialog
+@EditorMenu
+$ #RESearch menu in editor#
+  ~#Search#~@SearchDlg@               - Search for text or regular expression
+  ~#Replace#~@ReplaceDlg@              - Replace text or regular expression
+  ~#Filter text#~@FilterDlg@          - Filter text by deleting (or leaving) lines
+matching a specified pattern.
+  ~#Repeat text#~@RepeatDlg@          - Repeat text several times
+  ~#Transliterate#~@TransliterateDlg@        - Transliterate whole text in editor
+
+  #Search/Replace again# - Repeat last search/replace operation
+  #Show last results#    - Results of last "Show All" for current file. Could be incorrect
+if file has been modified
+@SearchDlg
+$ #Regular Expression Search#
+  This command allows you to search for text or regular expression in editor.
+If text is found, it will be highlighted.
+
+  #Search for#         Specifies text or regular expression to search for.
+  #[ \ ]#              This button will quote all special symbols in search string,
+if regular expression search is selected.
+
+  #Regular expression# When checked, ~regular expression~@RegularExpressions@ search is performed.
+
+  #Several lines#      Search for several-lined expression.
+
+  #Case sensitive#     If unchecked, text or regular expression is matched without
+regard to symbol case. ANSI and OEM codepages are supported.
+
+  #Reverse search#     If checked, text is searched UP from current cursor position.
+
+  #In selection only#  If checked, only selected text is searched.
+
+  #Incremental search# If checked, text matching search parameters is immediately shown.
+Pressing #Alt-Left/Right# selects previous/next instance
+
+  #[ Show all ]#       Shows all occurrences of given string in a file.
+@ReplaceDlg
+$ #Regular Expression Replace#
+    This command allows you to replace text in editor.
+
+  #Search for#         Specifies text or ~regular expression~@RegularExpressions@ to search for.
+  #[ \ ]#              This button will quote all special symbols in search string,
+if regular expression search is selected.
+
+  #Replace with#       Specifies ~text to replace found with~@RegularReplace@.
+  #[ / ]#              This button will quote special symbols '\' and '$' in replace string.
+
+  #Remove emptied lines#     If, after replacing, line becomes empty, delete it.
+  #Remove not matched lines# If there were no matches within line, delete it.
+
+  #Evaluate as script# Forces evaluating of a replace string as script in a specified language.
+For more information, see ~Replace Scripting~@RegularReplaceScripting@.
+
+  #RE Builder#         See ~RegExp Builder~@REBuilder@.
+
+ For other options, see ~Regular Expression Search~@SearchDlg@.
+
+@FilterDlg
+$ #Regular Expression Filter#
+  This command allows you to filter text in editor, by deleting (or leaving instead)
+lines in which a specified txt is found, or pattern matches.
+
+  #Search for#           Specifies text or ~regular expression~@RegularExpressions@ to search for.
+  #[ \ ]#                This button will quote all special symbols in search string,
+if regular expression search is selected.
+
+  #Regular expression#   When checked, ~regular expression~@RegularExpressions@ search is performed.
+
+  #Case sensitive#       If unchecked, text or regular expression is matched without
+regard to symbol case. ANSI and OEM codepages are supported.
+
+  #Reverse search#       If checked, text is searched UP from current cursor position.
+
+  #Leave matches lines#  This option makes the command to filter out unmatched lines
+  #Remove matches lines# This option makes the command to filter only matching lines.
+
+@RepeatDlg
+$ #Repeat text#
+  This command allows you to repeat some text several times.
+You can use $N (and its derivatives) to count items.
+
+  #Repeat text#        Specifies ~text to repeat~@RegularReplace@.
+  #[ / ]#              This button will quote special symbols '\' and '$' in replace string.
+
+  #Evaluate as script# Forces evaluating of a replace string as script in a specified language.
+For more information, see ~Replace Scripting~@RegularReplaceScripting@.
+
+  #Repeat NNN times#   Number of times to repeat.
+
+@TransliterateDlg
+$ #Transliterate#
+
+Transliterates _all_ text in editor, replacing each letter found in 'Source characters' to
+letter at the same position in 'Target characters' (or the last one if latter string is too short).
+
+@ListAll
+$ #All occurrences#
+
+You can select a line to jump to. #CtrlEnter# jumps to selected line, but doesn't close menu.
+
+@ERAskReplace
+$ #Replace confirmation#
+  #Replace# Replace this occurence
+  #All#     Replace this and all following
+  #Skip#    Skip this occurence
+  #Cancel#  Cancel replace process 
+@NoFilesFound
+$ #No Files Found#
+  No files matching given restrictions were found.
+@REInvalidNumber
+$ #Number is invalid or out of range#
+  The number entered is not valid.
+
+  Possible range for SeveralLines parameter is 1..255.
+  ReadAtOnceLimit parameter must be greater than or equal to 0.
+@RegExpError
+$ #Error in regular expression#
+    The entered regular expression is not valid. The faulty symbol is indicated.
+@ECannotFind
+$ #Cannot find text#
+    No more occurences of given text are found.
+@FileMenu
+$ #RESearch menu in panels#
+  ~#Search#~@FileSearchDlg@                 - Search for text or regexp in files
+  ~#Replace#~@FileReplaceDlg@                - Replace text or regexp in files
+  ~#Grep#~@FileGrepDlg@                   - Grep for text or regexp in files
+
+  ~#Select files#~@FileSelectDlg@           - Select files using mask or regexp
+  #Unselect files#         - Unselect files using mask or regexp
+  #Flip selection#         - Flip selection of files using mask or regexp
+
+  ~#Rename files#~@FileRenameDlg@           - Find and rename files
+  ~#Rename selected files#~@SelectedFileRenameDlg@  - Rename selected files
+  ~#Renumber files#~@Renumber@         - Renumber selected files
+  #Undo last rename files# - Undo last rename/renumber
+
+  #Show last results#      - Show results of last search/replace/etc
+  #Clean up named variables#
+
+  #Batches#
+
+@FileSearchDlg
+$ #Regular Expression File Search#
+    Using this command, you can search for files containing given text or regular expression.
+
+  #File mask(s)#             Specifies what files are to be searched. File mask delimiter
+can be set in ~configuration dialog~@RECfg@.
+  #As regular expression# If this option is set, mask will be treated as regular expression,
+not as usual DOS mask.
+
+  #Containing text#          This text is searched for.
+  #[ \ ]#                    This button will quote all special symbols in search string,
+if regular expression search is selected.
+
+  #Case sensitive#           If unchecked, text or regular expression is matched without regard
+to symbol case. ANSI and OEM codepages are supported.
+
+  #Plain text#               When this option is selected, a simple text search (same as default
+Far 'Find File' command) is performed.
+
+  #Regular expression#       Each single line of the input file is matched with given
+~regular expression~@RegularExpressions@.
+
+  #Several-line regexp#      Each block of ~SeveralLines~@RECfg@ lines is matched
+with given regular expression. Also additional matching done at the end of file,
+i.e. if SeveralLines is 5 and file contains 7 lines, the following line blocks
+are matched:
+    1-5; 2-6; 3-7; 4-7; 5-7; 6-7; 7
+
+  #Multi-line regexp#        The whole file at once is matched. THis can be VERY slow
+for large files.
+
+  #Multiple plain text#      The text given is treated like web search query:
+words preceded with '+' MUST be present on file, words preceded with '-' MUST NOT
+be present, and at least one of other words (if any) MUST be present.
+  To use words with spaces, enclose it in quotes (WITH preceding '+' or '-' sign).
+  NOTE: These 'words' should not match EXACTLY words, but the same combination of
+symbols anywhere in the text. E.g, 'ress' will match the text containing 'expression'.
+
+  #Multiple regular expressions# Same as 'Multiple plain text', but each word
+is treated as regular expression.
+
+  #Inverse search#           Only files that do NOT match search criteria will be shown.
+
+  #Use all character tables# All character tables installed will be used
+    From version 8.22, this also enables searching in Unicode and UTF-8 files. If you plan
+    to use it often, make sure your files have Unicode signature - this speeds up search a lot.
+
+  #[ Advanced ]#             Turn on to use ~Advanced File Search options~@AdvancedFileSearchDlg@,
+press button to configure them. Note, that pressing "OK" in the Advanced dialog automatically
+selects the switch here.
+ 
+  #NOTE:# "\n" in regular expression-based searches matches only newline symbol,
+not carriage-return. To match usual DOS end-of-line, use ".\n", to match both DOS- and
+UNIX-like, use ".?\n".
+@FileReplaceDlg
+$ #Regular Expression File Replace#
+    Using this command, you can replace given text or regular expression to the other
+text in any number of files.
+
+  #Search for#               Specifies text or ~regular expression~@RegularExpressions@ to search for.
+  #[ \ ]#                    This button will quote all special symbols in search string,
+if regular expression search is selected.
+
+  #Replace with#             Specifies ~text to replace found with~@RegularReplace@.
+  #[ / ]#                    This button will quote special symbols '\' and '$' in replace string.
+
+  #View modified files#      If checked, temporary panel with modified files will be shown.
+
+  #Confirm each file#        Before replacing, once for a file you will be prompted
+to confirm replacing in this file.
+
+  #Confirm each replacement# Before replacing, you will be prompted to confirm replacing
+this very string.
+
+  #Save original file#       If file is modified, it will be saved under the same name,
+but added '.bak' extension, i.e. 'This.txt' will become 'This.txt.bak'.
+
+  #Overwrite prev version#   If '.bak' already existed, it will be overwritten. If option is not
+set, backups will be named ".01.bak", etc.
+
+ For other options, see ~Regular Expression File Search~@FileSearchDlg@.
+@AdvancedFileSearchDlg
+$ #Advanced File Search options#
+ Here you can enable various advanced serach options.
+
+  #Full file name matches:# Select to force full file name match given regular expression.
+    #Case sensitive#          If set, case sensitive mask matching will be used.
+    #Inverse#                 If set, only files not matching will be processed.
+
+  #Recurse if full directory matches# Select to allow recursion only into directories,
+whose full path matches given regular expression.
+    #Case sensitive#          If set, case sensitive mask matching will be used.
+    #Inverse#                 If set, only directories not matching will be processed.
+  #Recursion level#         Directories will be recursed only up to this depth (relative
+to start). Set to zero to allow infinite recursion.
+
+  #Date is before:#       Search only files with date/time before given.
+Date should be in #dd.mm.yyyy hh:mm:ss.ms# format; time can be partially or fully omitted.
+  #Date is after:#        Search only files with date/time after given.
+  #[ Current ]#           Set corresponding field to current date/time.
+  #Creation date#         Use file creation date/time
+  #Modification date#     Use file modification date/time
+
+  #Size is greater than:# Search only files with size strictly greater than given.
+'Kb', 'Mb' modificatiors allowed
+  #Size is less than:#    Search only files with size strictly less than given
+'Kb', 'Mb' modificatiors allowed
+
+  #Search only in first#  Search only in the beginning of a file.
+'Kb', 'Mb' modificatiors allowed
+
+  #File attributes match# Select any of the following to match given attribute:
+    #Directory#
+    #Read only#
+    #Archive#               #[x]# Atrribute must be set
+    #Hidden#                #[ ]# Atrribute must not be set
+    #System#                #[?]# Atrribute is not important
+    #Compressed#
+    #Encrypted#
+@FileGrepDlg
+$ #File Grep#
+ This command mostly imitates behavior of unix grep(2) command.
+
+  #File mask(s)#             Specifies what files are to be searched. File mask delimiter
+can be set in ~configuration dialog~@RECfg@.
+  #As regular expression# If this option is set, mask will be treated as regular expression,
+not as usual DOS mask.
+
+  #Containing text#          This text is searched for.
+  #[ \ ]#                    This button will quote all special symbols in search string,
+if regular expression search is selected.
+
+  #Regular expression#       Each single line of the input file is matched with given
+~regular expression~@RegularExpressions@.
+
+  #Case sensitive#           If unchecked, text or regular expression is matched without regard
+to symbol case. ANSI and OEM codepages are supported.
+
+  #Inverse search#           Only non-matching lines are written.
+
+  #Use all character tables#
+
+  #Output file names#
+    #and line count#                    Appended to file anme in form of ":1"
+    #and match count#                   Appended to file anme in form of ";1"
+  #Output matched lines#
+    #and line numbers#                  Prepended in form of "1:"
+    #and NNNNN context lines around matches#
+    #only matched line fragments#       When using regular expressions, each matching part of line is written.
+
+  #Output to:#                          Output to specified file. If unchecked, temporary file is created.
+  #Open output in editor#
+
+@SearchResults
+$ #Search Results panel#
+    This panel is much the same as standard temporary panel, except for that
+it does not support manual adding files to it.
+    Use F7 to delete files from here, and Ctrl+PgUp to go directly to highlighted file.
+@FSOpenError
+$ #Cannot open file#
+    Error occured trying to open specified file for reading. The file will be skipped.
+@FRCreateError
+$ #Cannot create file#
+    Error occured trying to create specified file. The file will be skipped.
+@FRBackupError
+$ #Cannot backup file#
+    Error occured trying to create a backup copy for specified file. The file will be skipped.
+@FRReadError
+$ #Read error in file#
+    A file read error occured while reading from given file. The file
+will remain unchanged.
+@FRWriteError
+$ #Write error in file#
+    A file write error occured while writing to given file. THe file contents are
+possibly destroyed, but if you chose 'Save original file' or file was too big,
+backup copy will remain.
+@FRConfirmFile
+$ #Modify file confirmation#
+    You are asked whether you want text in this file to be replaced.
+
+  #OK#        Replace text in this file
+  #All#       Replace text in this and all following files
+  #Skip#      Skip this file
+  #Cancel#    Cancel replacing process
+@FRAskReplace
+$ #Replace text in file#
+    You are asked whether you want to replace certain text in a specific file.
+
+  #OK#        Replace this text
+  #All#       Replace all text in this file
+  #All Files# Replace all text in this and all following files
+  #Skip#      Skip this occurence
+  #Skip File# Skip this file, reverting it
+  #Cancel#    Cancel replacing process, current file is reverted
+@FRConfirmReplace
+$ #Replace text in readonly file#
+    You are asked whether you want to replace text in a specific readonly file.
+
+  #OK#        Replace text in this file
+  #All#       Replace text in all readonly files
+  #Skip#      Skip this file
+  #Cancel#    Cancel replacing process
+@REInvalidCmdLine
+$ #Invalid command line#
+    Command line after '#ff:#' prefix was invalid. See
+~Search/replace from command line~@CmdLine@ for correct syntax.
+@FileSelectDlg
+$ #Selecting files#
+Here you can select/unselect/flip selection of given file group.
+
+  #File mask(s)#          Specifies for what files selection is to be changed.
+File mask delimiter can be set in ~configuration dialog~@RECfg@.
+  #As regular expression# If this option is set, mask will be treated as regular expression,
+not as usual DOS mask.
+@FileRenameDlg
+$ #File Rename Dialog#
+With this dialog you can rename files.
+
+  #File mask(s)#             Specifies which files are to be renamed.
+File mask delimiter can be set in ~configuration dialog~@RECfg@.
+  #As regular expression#    If this option is set, mask will be treated as regular expression,
+not as usual DOS mask.
+
+  #Containing text#          Specifies text to be found in file name.
+  #Regular expression#       If this option is set, above text will be treated as regular expression.
+  #Replace with#             Specifies text to replace one matched with above option.
+  #Repeating replace#        If this option is set, rename will not stop after first file rename
+attempt, but try to apply pattern to rest of the name again.
+  #List modified files#      A temporary panel with all renamed files will be shown.
+  #Confirm each file#        Plugin will confirm each file to be renamed.
+  #Confirm each replacement# Plugin will confirm each pattern match for each file.
+  #Preview rename results#   Allows ~previewing~@RenamePreview@ rename results before actual rename.
+@SelectedFileRenameDlg
+$ #Selected File Rename Dialog#
+With this dialog you can rename selected files.
+
+  #Containing text#          Specifies text to be found in file name.
+  #Regular expression#       If this option is set, above text will be treated as regular expression.
+  #Replace with#             Specifies text to replace one matched with above option.
+  #Repeating replace#        If this option is set, rename will not stop after first file rename
+attempt, but try to apply pattern to new name again.
+  #Confirm each replacement# Plugin will confirm each pattern match for each file.
+  #Preserve selection#       File selection will be restored after the operation.
+  #Preview rename results#   Allows ~previewing~@RenamePreview@ rename results before actual rename.
+@RenamePreview
+$ #Rename results preview#
+Here you can preview results of the rename operation.
+
+  #F10#      Perform renaming.
+  #Esc#      Cancel renaming.
+  #F2#       Switch name shortening in menu
+  #F3#       Show all name pairs in separate Viewer
+  #Insert# or #Enter#  Immediately rename selected file pair.
+  #Delete#   Remove selected file pair from rename.
+@Renumber
+$ #Renumber files#
+Most useful for renaming audio tracks in their order. You can use it in two ways: either
+move files up/down to achieve proper sequence, or select them one by on ein order they
+should be (previously selected files will be moved to a separate area)
+
+  #F2#            Switch between original and renumbered filenames
+  #Enter/Click#   Select next available number for a file
+  #F7#            Reset next available numbers
+  #F8#            Turn on/off stripping common part at the beginning of filenames
+  #Ctrl-Up/Down#  Move file up/down
+  #Gray +/-#      Change initial number up/down by 1
+  #Ctrl- Gray+/-#  Change initial number up/down by 10
+  #Shift- Gray+/-# Change initial number up/down by 100
+  #Alt- Gray+/-#   Change initial number up/down by 1000
+  #F4#            Call options dialog
+  #F10#           Perform rename
+  #Esc#           Cancel
+@FRenameError
+$ #Error renaming file#
+The file could not be renamed. Probably, you have no access rights to that file.
+@FRenameOverwrite
+$ #Overwrite prompt#
+Destination file already exists. You can choose to overwrite it or skip source file.
+@FRAskRename
+$ #Renaming file#
+You should confirm whether to rename file or to skip it.
+@Presets
+$ #Presets menu#
+ In this menu you can see current presets for the given search/replace/rename operation. Press:
+
+  #Enter#      to use highlighted preset
+  #Ins#        to insert a new preset (based on what was in the dialog you called menu from)
+  #Gray +#     to add a new preset at the end
+  #F4#         to edit highlighted preset
+  #F5#         to copy highlighted preset
+  #Ctrl-Enter# to run highlighted preset
+  #Del#        to delete highlighted preset
+@ESPresetDlg
+$ #Editor Search Preset#
+Here you can edit a preset for ~Editor Search~@SearchDlg@ operation.
+
+  #Preset name#        Name under which preset will be seen in ~preset menu~@Presets@
+
+Other options match ones in main dialog.
+@ERPresetDlg
+$ #Editor Replace Preset#
+Here you can edit a preset for ~Editor Replace~@ReplaceDlg@ operation.
+
+  #Preset name#        Name under which preset will be seen in ~preset menu~@Presets@
+
+Other options match ones in main dialog.
+@EFPresetDlg
+$ #Editor Filter Preset#
+Here you can edit a preset for ~Editor Filter~@FilterDlg@ operation.
+
+  #Preset name#        Name under which preset will be seen in ~preset menu~@Presets@
+
+Other options match ones in main dialog.
+@FSPresetDlg
+$ #File Search Preset#
+Here you can edit a preset for ~File Search~@FileSearchDlg@ operation.
+
+  #Preset name#        Name under which preset will be seen in ~preset menu~@Presets@
+
+Other options match ones in main dialog.
+@FRPresetDlg
+$ #File Replace Preset#
+Here you can edit a preset for ~File Replace~@FileReplaceDlg@ operation.
+
+  #Preset name#        Name under which preset will be seen in ~preset menu~@Presets@
+
+Other options match ones in main dialog.
+@RPresetDlg
+$ #File Rename Preset#
+Here you can edit a preset for ~File Rename~@FileRenameDlg@ operation.
+
+  #Preset name#        Name under which preset will be seen in ~preset menu~@Presets@
+
+Other options match ones in main dialog.
+@QRPresetDlg
+$ #Selected File Rename Preset#
+Here you can edit a preset for ~Selected File Rename~@SelectedFileRenameDlg@ operation.
+
+  #Preset name#        Name under which preset will be seen in ~preset menu~@Presets@
+
+Other options match ones in main dialog.
+@DeletePreset
+$ #Delete preset#
+  You are prompted to confirm deleting a preset.
+@Batches
+$ #Batches menu#
+ In this menu you can see current batch sequences for the given replace/rename operation.
+
+ Commands:
+  #Enter#      Run highlighted batch
+  #Ins#        Insert a new batch
+  #Gray +#     Add a new batch
+  #F4#         Edit highlighted batch
+  #F6#         Rename current batch, or change other options
+  #Del#        Delete highlighted batch
+@Batch
+$ #Batch menu#
+ Here you can see a sequence of presets to be run when the batch is selected.
+
+ Commands:
+  #Ins#            Insert a new preset to a batch
+  #Gray +#         Add a new preset to a batch
+  #Del#            Remove preset from a batch
+  #Ctrl-#        Move preset up/down in a batch
+  #F4#             Edit selected preset
+  #Ctrl-Enter#     Run selected preset
+  #Ctrl-Alt-Enter# Run all presets up to selected one
+@DeleteBatch
+$ #Delete batch#
+  You are prompted to confirm deleting a batch sequence.
+@REBuilder
+$ #RegExp Builder#
+  RegExp Builder allows you to make a regexp by marking up certain parts of a source
+text to be replaced with appropriate wildcard.
+
+  You can select appropriate part in #Source text# line, and see the resulting regexp
+in the next one.
+  Pressing #Enter# in the source line rememebers one part and allows marking another one.
+Pressing #Esc# clears all remembered parts. Note, that parts cannot overlap.
+
+  Also, you can type some #Replace with# text and see what results in replacing
+a source line with it.

@@ -1,0 +1,58 @@
+<Esc-Settings>
+  <Types>
+
+    <!-- For use with SSA Editor plugin -->
+    <type name="SSA subtitles" mask="*.ssa" inherit="Texts">
+      <tab tabsize="4"/>
+      <margin autowrap="off" wrap="500" justify="off"/>
+      <eol value="&#x0d;&#x0a;"/>
+
+      <usermacro value="on">
+
+        <!-- Styling -->
+        <macro key="AltZ" sequence="F11 s y 1"/>
+        <macro key="AltX" sequence="F11 s y 2"/>
+        <macro key="AltC" sequence="F11 s y 3"/>
+        <macro key="AltA" sequence="F11 s y 4"/>
+        <macro key="AltS" sequence="F11 s y 5"/>
+        <macro key="AltD" sequence="F11 s y 6"/>
+        <macro key="AltQ" sequence="F11 s y 7"/>
+        <macro key="AltW" sequence="F11 s y 8"/>
+        <macro key="AltE" sequence="F11 s y 9"/>
+
+        <!-- Timing -->
+        <!-- Set start of phrase       --> <macro key="Alt-" sequence="F11 s t s"/>
+        <!-- Set end of phrase         --> <macro key="Alt=" sequence="F11 s t e"/>
+        <!-- Set end and start of next --> <macro key="Alt\" sequence="F11 s t e Down F11 s t s"/>
+
+        <!-- Media Control -->
+        <!-- Pause                --> <macro key="Alt~" sequence="F11 s p"/>
+        <!-- Seek Start of phrase --> <macro key="Alt[" sequence="F11 s s s"/>
+        <!-- Seek End of phrase   --> <macro key="Alt]" sequence="F11 s s e"/>
+        <!-- Seek Previous frame  --> <macro key="AltO" sequence="F11 s s p"/>
+        <!-- Seek Next frame      --> <macro key="AltP" sequence="F11 s s n"/>
+        <!-- Seek Custom          --> <macro key="AltG" sequence="F11 s s c"/>
+        <!-- Save and reload      --> <macro key="F2"   sequence="F2 F11 s r"/>
+
+        <!-- Shifting -->
+        <!-- Shift Remainder -0.1s  --> <macro key="AltK" sequence="F11 s t h r - 0 0 0 0 0 1 0 Enter"/>
+        <!-- Shift Remainder +0.1s  --> <macro key="AltL" sequence="F11 s t h r Space 0 0 0 0 0 1 0 Enter"/>
+        <!-- Shrink and Shift -0.1s --> <macro key="Alt:" sequence="CtrlShift0 F11 s t d - 0 0 0 0 0 1 0 Enter Down F11 s t h r - 0 0 0 0 0 1 0 Enter Ctrl0"/>
+        <!-- Expand and Shift +0.1s --> <macro key="Alt&quot;" sequence="CtrlShift0 F11 s t d Space 0 0 0 0 0 1 0 Enter Down F11 s t h r Space 0 0 0 0 0 1 0 Enter Ctrl0"/>
+        <!-- Shift Phrase -0.1s     --> <macro key="Alt," sequence="F11 s t h p - 0 0 0 0 0 1 0 Enter"/>
+        <!-- Shift Phrase +0.1s     --> <macro key="Alt." sequence="F11 s t h p Space 0 0 0 0 0 1 0 Enter"/>
+        <!-- Shift Selection        --> <macro key="F4"   sequence="F11 s t h s"/>
+
+        <!-- Editing -->
+        <!-- Visual Edit        --> <macro key="AltM"        sequence="F11 s h e"/>
+        <!-- Split sequential   --> <macro key="Alt/"        sequence="F11 s h s"/>
+        <!-- Split simultaneous --> <macro key="AltN"        sequence="F11 s h l"/>
+        <!-- Splice phrases     --> <macro key="AltJ"        sequence="F11 s h p"/>
+        <!-- Fix overlay        --> <macro key="AltF"        sequence="F11 s h o"/>
+        <!-- Move phrase up     --> <macro key="CtrlAltUp"   sequence="F11 s h u"/>
+        <!-- Move phrase down   --> <macro key="CtrlAltDown" sequence="F11 s h d"/>
+      </usermacro>
+    </type>
+
+  </Types>
+</Esc-Settings>

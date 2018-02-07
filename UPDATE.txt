@@ -1,0 +1,3 @@
+Please, for first run after update use runfar.cmd for update complite!
+
+Пожалуйста, в первый раз после обновления запуститесь через runfar.cmd!

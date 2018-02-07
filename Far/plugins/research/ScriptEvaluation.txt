@@ -1,0 +1,34 @@
+Notes on "Evaluate as script" functionality
+
+All registered ActiveScripting engines will be present in the list, both built-in in Windows
+(JScript and VBScript) and any 3rd party you could have installed, like PerlScript or bundled LuaScript
+
+If a full file name is given as script, it will be read as ANSI script file
+
+Functions available in scripts:
+- match(n) returns n-th subpattern, like $n
+- named(n) returns named subpattern, like ${n}
+- eol() returns end-of-line sequence to be used
+- get_l(), get_n(), get_f(), get_s() and get_r() - same as corresponding $L etc sequences
+- skip() forces RESearch to skip this replacement
+- msgbox(title, [caption]) shows a message box
+
+Scripts can create persistent named variables. Their values can be retrieved via named() and will persist between script calls
+- store(n, v) - set named variable n to value v.
+- init(n, v)  - initialize named variable n with value v. If it already exists, nothing is done
+
+To return value from script, use function result()
+
+If the engine does not support importing function in to root namespace (e.g. LuaScript), you should prefix
+each function with object name "research", e.g research:result() in LuaScript.
+
+In Far3, there are additional engines called FarLUA and FarMoonScript, representing Far built-in script engines.
+Their usage is similar except that you should use "return" instead of result() to return values.
+Multiple returned values are merged together.
+
+Also, scripts can append additional information to the end of file after performing File / Editor Replace.
+In order to do that, script can check value of final() function and return data when final()) is true.
+If script didn't call final(), no data is appended.
+Sample JScript:
+Search for: \d+
+Replace with: init('sum', 0); if (final()) msgbox(named('sum')); else store('sum', Number(named('sum'))+Number(match(0)));

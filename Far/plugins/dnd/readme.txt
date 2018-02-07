@@ -1,0 +1,1 @@
+This plugin enables drag'n'drop operations between Far and other apps.

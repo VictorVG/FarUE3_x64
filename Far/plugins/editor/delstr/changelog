@@ -1,0 +1,33 @@
+12 February 2013
+   released version 1.3.5 of delstr
+
+     Change log:
+        -Added: Поддержка FAR3lua
+
+06 January 2012
+   released version 1.2.4 of delstr
+
+     Change log:
+        -Added: Поддержка FAR3
+        -Fixed: Смещение курсора после операции
+        -Fixed: Порча строки текста
+
+11 April 2011
+   released version 1.1.3 of delstr
+
+     Change log: datamanRB
+        -Added: добавлена история ввода
+        -Added: добавлен режим удаления строк, не содержащих заданный текст
+        -Added: текст может сравниваться по маске
+
+18 January 2011
+   released version 1.0.2 of delstr
+
+     Change log:
+        -Fixed: Поправил диалог, размеры элементов
+
+15 January 2011
+   released version 1.0.1 of delstr
+
+     Change log:
+        -New: Первая версия

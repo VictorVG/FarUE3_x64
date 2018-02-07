@@ -1,0 +1,27 @@
+﻿.Language=English,English
+
+"Sort strings"
+"Sort strings"
+"Sort strings"
+
+"&o ok"
+"&c cancel"
+
+"&i Invert sort"
+"&h Whitespaces:"
+"&s Vertical selection only"
+"&e Selection beyond eol as empty string"
+
+"&p Operation:"
+"&0 Sort"
+"&1 Remove duplicates"
+"&2 Thin out duplicates"
+"&3 Remove all nonunique"
+"&4 Thin out all nonunique"
+"&5 Shuffle"
+"&m Comparation:"
+"&0 Case insensitive"
+"&1 Case sensitive"
+"&2 Character code"
+"&3 Numeric sort"
+"&4 Length"

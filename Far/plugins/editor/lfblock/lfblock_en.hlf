@@ -1,0 +1,71 @@
+.Language=English,English
+.Options CtrlColorChar=\
+.Options CtrlStartPosChar=^<wrap>
+.PluginContents=LUA Format Block
+
+@Contents
+$^#LUA Format Block#
+$^#(@@)Ladserg (~ladserg@@mail.ru~@mailto:ladserg@@mail.ru@)#.
+
+    This plugin converts selected text block into paragraph by applying
+proper formatting according to settings chosen.
+
+    The line is treated as belonging to paragraph if any part of it is
+selected. If there is no selection at all, appropriate formatting is
+applied to the line under cursor.
+ # #
+
+#Links#
+
+    ~Plugin duscussion~@http://forum.farmanager.com/viewtopic.php?f=5&t=8912@
+    ~Get last version from PlugRing~@http://plugring.farmanager.com/plugin.php?pid=945&l=ru@
+ # #
+
+#Dialog#
+
+    #Left Margin#     ^<wrap>Defines left margin of the text. No lines, except the first one, will start to the left
+from this column.
+
+    #Paragraph#       ^<wrap>Defines left margin of the paragraph first line. By setting it above or below the value
+of #"Left Margin"#, the effect of Red or Hanging line can be achieved.
+                   
+    #Right Margin#    ^<wrap>Defines right margin of the text. No lines will end to the right from this column.
+
+    ~Alignment~@Alignment@       Sets paragraph alignment mode.
+
+    ~Paragraph Detection~@Paragraph Detection@  Sets paragraph detection mode.
+
+    #Empty line after^<wrap> paragraph#  When this option is enabled, an empty line is added after each newly formatted paragraph.
+This option is most useful in conjunction with #"Each line to paragraph"#.
+
+@Alignment
+$ #Alignment#
+    #Left#           ^<wrap>Text is gathered at the left edge of paragraph. First line starts exactly at the
+column defined by #"Paragraph"# field; the rest begin at the column set by #"Left Margin"#.
+No lines end beyond the #"Right Margin"#.
+  
+    #Right#          ^<wrap>Text is gathered at the right edge of the paragraph. All lines end at the column defined
+by #"Right Margin"# field. The leftmost position of the paragraph first string can't be less
+than value set by #"Paragraph"# field, while none of the remaining lines start to the left from
+the column defined in "#Left Margin#" field.
+
+    #Center#         ^<wrap>Text is centered between its "#Left Margin#" and "#Right Margin#". The value of "#Paragraph#"
+field is ignored.
+
+    #Full Justify#   ^<wrap>Text is stretched out between its "#Left Margin#" and "#Right Margin#", so all paragraph lines
+start and end at the said columns. The only exceptions are paragraph first line that starts
+at the column defined by "#Paragraph#" field, and the very last line which is aligned to the "#Left"#.
+
+    #Force Justify#  ^<wrap>Text is formatted as if in "#Full Justify#" mode, but the last string of the paragraph is also justified.
+
+@Paragraph Detection
+$ #Paragraph Detection
+    #Off#             ^<wrap>Paragraph detection is disabled. Selected block of text is formatted into a single paragraph.
+  
+    #By end of line#  ^<wrap>Each line of the selected block is formatted into an independent paragraph. This mode is useful for documents exported from MS Word as #"MS-DOS Text"#.
+
+    #By blank line#   ^<wrap>New paragraph is started every time a blank line is encountered.
+
+    #By left margin#  ^<wrap>New paragraph is started whenever a source line starts with a whitespace.
+
+    #Margin and line# ^<wrap>New paragraph is started whenever a source line starts with a whitespace or a blank line is encountered.

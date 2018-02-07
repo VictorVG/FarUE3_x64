@@ -1,0 +1,166 @@
+﻿.Language=English,English
+.PluginContents=Environment variables manager
+.Options CtrlStartPosChar=|
+
+@main
+$^Main window
+^#Description#
+
+  This window allows to view environment variables list and to manipulate it.
+Variables from white-list are listed on top of list, delimited by line and sorted manually.
+Variables from main list are sorted by alphabet.
+For each variable value in memory, value in user registry and value in system registry are showed, if present.
+Variables from blacklist are bot showed.
+Environment variable can be temporary switched off. It will be deleted from system and saved in Far DB, but still showed in list.
+If switched off variable was changed, it is switched on.
+
+^#Hotkeys#
+  #F1#       - |This help.
+  #Esc#      - |Exit.
+  #Enter#,#F4# - |~Edit environment variable~@edit@. Variables, that are switched off, do not reagent on #Enter#.
+  #AltF4#    - |Edit environment variable in Far editor.
+  #F5#       - |~Copy environment variable~@edit@.
+  #F6#       - |~Rename environment variable~@edit@.
+  #Ins#      - |~New environment variable~@edit@.
+  #Del#      - |Delete environment variable.
+  #AltW#     - |Move environment variable to/from white-list.
+  #AltUp#    - |Move up environment variable in white-list to one position.
+  #AltDown#  - |Move down environment variable in white-list to one position.
+  #AltB#     - |Add environment variable to blacklist.
+  #CtrlB#    - |Remove environment variable from blacklist.
+  #F2#       - |~Save environment variables into file~@save@.
+  #F3#       - |~Load environment variables from file~@load@.
+  #CtrlD#    - |Switch environment variable on/off.
+
+@=
+
+ ~Contents~@contents@
+
+@edit
+$^Edit/copy/create new variable in dialog mode
+^#Description#
+ In this window can create new variable, edit it, rename or copy it to another place.
+Dialog elements are showed and described lower.
+
+  #Name#   - |Name of variable. May be edited only while creating, renaming or copying.
+  #Type#   - |Show, where this variable is stored, and presents short help.
+  #Value#  - |Value of  variable. May be edited only while creating and editing.
+  #OK#     - |Save changes.
+  #Cancel# - |Discard changes.
+
+^#Hotkeys#
+  #F4#,#AltF4# - |Edit variable in Far editor. Composite variables are splited on lines by parts.
+
+@=
+
+ ~Contents~@contents@
+
+@save
+$^Save variables into file
+^#Description#
+  This dialog allows to save selected variables into file.
+  File format:
+  Sequence of line pairs of type:
+  #@@REM (Mem||HKLM|HKCU)#
+  #@@SET <Name>=<Value>#
+  First string denotes variable source: memory, system registry or user registry.
+Second string contains name and value of variable.
+Because file format conforms to Windows command file format, that it can be not only ~imported~@load@ with EnvManager,
+but also execute from command line.
+
+^#Hotkeys#
+  #F1#        - |This help.
+  #Enter#     - |Save selected variables.
+  #Esc#       - |Exit.
+  #Num+#      - |Select all variables.
+  #Num-#      - |Unselect all variables.
+  #Num*#      - |Switch selection of all variables.
+  #ShiftNum+# - |Select all memory variables.
+  #ShiftNum-# - |Unselect all memory variables.
+  #ShiftNum*# - |Switch selection of all memory variables.
+  #CtrlNum+#  - |Select all user variables.
+  #CtrlNum-#  - |Unselect all user variables.
+  #CtrlNum*#  - |Switch selection of all user variables.
+  #AltNum+#   - |Select all system variables.
+  #AltNum-#   - |Unselect all system variables.
+  #AltNum*#   - |Switch selection of all system variables.
+  #Ins#,#space# - |Switch current menu item.
+
+@=
+
+ ~Contents~@contents@
+
+@load
+$^Load variables from file
+^#Description#
+  This dialog allows to load environment variables from file.
+Any variable can be viewed in separate window. Selected variables will be loaded after confirming.
+
+  File format:
+  Sequence of line pairs of type:
+  #@@REM (Mem||HKLM|HKCU)#
+  #@@SET <Name>=<Value>#
+  First string denotes variable source: memory, system registry or user registry.
+Second string contains name and value of variable. Any data can be contained between line pairs.
+
+^#Hotkeys#
+  #F1#        - |This help.
+  #F3#        - |Show environment variable.
+  #Enter#     - |Load selected variables.
+  #Esc#       - |Exit.
+  #Num+#      - |Select all variables.
+  #Num-#      - |Unselect all variables.
+  #Num*#      - |Switch selection of all variables.
+  #ShiftNum+# - |Select all memory variables.
+  #ShiftNum-# - |Unselect all memory variables.
+  #ShiftNum*# - |Switch selection of all memory variables.
+  #CtrlNum+#  - |Select all user variables.
+  #CtrlNum-#  - |Unselect all user variables.
+  #CtrlNum*#  - |Switch selection of all user variables.
+  #AltNum+#   - |Select all system variables.
+  #AltNum-#   - |Unselect all system variables.
+  #AltNum*#   - |Switch selection of all system variables.
+  #Ins#,#space# - |Switch current menu item.
+
+@=
+
+ ~Contents~@contents@
+
+@prefix
+$^Command line
+
+  #EMLoad:[file]# - |Import variables from file specified. If file name is omitted, input dialog is started.
+If file is found and successfully read, variables selection for loading is produced ~in dialog~@load@.
+
+@=
+
+ ~Contents~@contents@
+
+@about
+$^About
+
+ Author:       #IgorZ#
+
+ Version:      #1.4.0#
+
+ Net address: ~http://forum.farmanager.com/viewtopic.php?t=9975~@http://forum.farmanager.com/viewtopic.php?t=9975@
+@=‗
+
+  Environment variables manager allows to see variables, change it, add new, remove existing,
+export into file and import from early exported file.
+Script may be used ad ~macro~@main@, or ~from command line~@prefix@. Script adds self into plugin menu.
+
+@=
+
+ ~Contents~@contents@
+
+@contents
+$^Contents
+
+  ~Main window~@main@
+  ~Edit/copy/move/create new variable in dialog mode~@edit@
+  ~Save variables into file~@save@
+  ~Load variables from file~@load@
+  ~Command line~@prefix@
+
+  ~About~@about@

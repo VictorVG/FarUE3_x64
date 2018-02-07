@@ -1,0 +1,57 @@
+.Language=English,English
+// Main menu
+"SSA Editor"
+"&Attach           "
+"&Pause"
+"&Seek             "
+"&Reload in player"
+"P&hrase           "
+"St&yle            "
+"&Timing           "
+// Attach menu
+"Attach"
+"Detach"
+// Seek menu
+"Seek"
+"&Start of phrase"
+"&End of phrase"
+"&Previous frame"
+"&Next frame"
+"&Custom..."
+// Seek dialog
+"Seek"
+"Seek to"
+// Phrase menu
+"Phrase"
+"&Edit..."
+"&Split sequential"
+"Sp&lit simultaneous"
+"S&plice"
+"Fix &overlay"
+"Move &up"
+"Move &down"
+// Style menu
+"Style"
+"Style definitions not found"
+// Timing menu
+"Timing"
+"Set phrase &start"
+"Set phrase &end"
+"S&hift            "
+"&Duration..."
+// Timing|Shift
+"Shift"
+"Current &phrase..."
+"&Selection..."
+"&Remainder..."
+"&Whole script..."
+// Shift/Duration dialog
+"Shift"
+"Duration"
+"Shift &by"
+"Change &by"
+"&Start time"
+"&End time"
+"&Duration"
+"&Original"
+"&Current"

@@ -1,0 +1,30 @@
+V2.3.1
+----
+* Far 3.0 build 4353 and [ESC] 2.9 support.
+* Compiled using TDM-GCC-64 v4.9.2
+- Fix VERSION_INFO
+
+V2.3
+----
+- Far 3.0 build 2873 and [ESC] 2.9 support.
+
+V2.2
+----
+- Far 3.0 build 2572 support.
+
+v2.1
+----
+- Far 3.0 and ESC 2.7
+
+v2.0
+----
+- Far 2.0 build 953 and ESC 2.5
+- Undo in single step
+
+v1.2
+----
+
+- fixed bug: quote
+  > xxx
+  >  xxx
+  was treated as a two different quotes.

@@ -1,0 +1,76 @@
+﻿.Language=English,English
+
+"Batch rename"
+
+"Rename in progress..."
+"Do you want to abort the operation?"
+"Yes"
+"Yes and rollback"
+"No"
+
+"&Insert"
+"&Load"
+"&Save as..."
+"&Rename"
+"F4: To &editor"
+"Retry"
+"Ignore"
+"Rollback"
+"OK"
+"Cancel"
+
+"No files selected for renaming"
+
+"Name editor (%i)"
+"Rename template:"
+"Insert item:"
+" Saved templates "
+" Preview "
+"Source name:"
+"New name:"
+
+"Rename template selection"
+"Save template"
+"Template name:"
+"Delete template"
+"Do you want to delete template?"
+
+"File name"
+"File extension"
+"Parent folder name"
+"File sequence number (decimal)"
+"File sequence number (hexadecimal)"
+"File size"
+"File datetime"
+
+"Case:"
+"Do &not change"
+"&lower"
+"&UPPER"
+"&First capital"
+"&Title Case"
+
+"Start value:"
+"Minimum length:"
+"Symbol-filler:"
+
+"Last write time"
+"Creation time"
+"Last access time"
+
+"Stream kind:"
+"Stream number:"
+"Parameter name:"
+
+"EXIF tag name:"
+
+"Photo: add date of snapshot"
+"Music: Performer - Title"
+"Change case (all to lower)"
+"Change case (all to UPPER)"
+
+"Template name contains errors"
+"Error expression:"
+"The number of names is not the same (edited: %i, read: %i)"
+"Failed to rename"
+"to"

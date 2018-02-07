@@ -1,0 +1,98 @@
+------------------------------------------------------------------
+  Legend:   [+] added;   [-] deleted;   [*] changed;   [!] fixed;
+------------------------------------------------------------------
+
+2018-01-23, v3.9.1
+  [+] Ctrl-F8 deletes non-existent items in View/Edit and Folders menus.
+
+2018-01-01, v3.9.0
+  [*] History items are now kept in the local database file (was: roaming database file).
+
+2017-10-31, v3.8.3
+  [+] Ctrl-V and Shift-Ins set current filter to value from the clipboard.
+
+2017-09-23, v3.8.2
+  [!] Locate file: was error on Ctrl-I press.
+  [*] Refactoring (mainly in custommenu module).
+
+2017-08-07, v3.8.1
+  [*] Commands history dialog made available from Editor and Viewer (an attempt
+      to execute a command would close the dialog and the command wouldn't execute).
+  [*] Macros: a minor change.
+
+2017-08-06, v3.8.0
+  [+] Switching between histories (commands/view and edit/folders) directly from the dialog.
+  [+] View and Edit history: Ctrl-PgDn: go to the file in active panel and open the file.
+  [+] All histories: Ctrl-I: inverse sort order.
+
+2017-07-26, v3.7.2
+  [+] Two colors made configurable: "Highlighted text" and "Selected highlighted text".
+
+2017-07-24, v3.7.1
+  [!] Support of NetBox folders: fixes.
+
+2017-07-20, v3.7.0
+  [+] Folders history: initial experimental support of NetBox folders.
+
+2016-03-13, v3.6.5
+  [!] An ugly workaround that disables processing of DN_RESIZECONSOLE event in plugin's windows
+      during plugin's calls of ACTL_REDRAWALL (when the console is not resized in fact).
+      For the record: DN_RESIZECONSOLE during ACTL_REDRAWALL started to come from Far 3.0.4545.
+
+2016-02-13, v3.6.4
+  [+] History windows can be scrolled with the mouse wheel.
+
+2015-12-19, v3.6.3
+  [+] Folders history: when the folder is not found prompt user to jump to the nearest existing one.
+  [!] Little fixes.
+
+2015-04-01, v3.6.2
+  [!] Bug fixes.
+
+2015-03-22, v3.6.1
+  [!] Bug fixes.
+
+2015-03-21, v3.6.0
+  [+] F9: "Set filter to the last used value".
+  [+] "Locate file" menu.
+
+2015-03-04, v3.5.1
+  [*] Adaptation to changed FCTL_SETPANELDIRECTORY behavior.
+
+2014-11-13, v3.5.0
+  [+] All histories: new "xlat-filter" mode; controlled by F8.
+
+2014-11-12, v3.4.2
+  [*] All histories: Ctrl-Alt-X switches keyboard layout, in addition to XLat-conversion.
+
+2014-11-11, v3.4.1
+  [+] View/Edit history: Alt-F3, Alt-F4: view/edit modally, return to the menu.
+  [*] View/Edit history: Ctrl-PgUp instead of Ctrl-Shift-Enter.
+
+2014-09-11, v3.4.0
+  [*] New syntax for Plugin.Call.
+
+2014-02-12, v3.3.2
+  [*] Plugin does not rely on LuaFAR anymore to include its path in package.path.
+
+2014-01-27, v3.3.1
+  [!] Faster opening of history windows.
+
+2013-10-07, v3.3.0
+  [*] Syntax of macro calls has changed again (run lfh: to see the syntax).
+
+2013-07-26, v3.2.0
+  [*] Syntax of macro calls has changed:
+      -- The 1-st argument must be string: one of the registered commands.
+      -- There can be arbitrary number of additional arguments.
+      -- There can be arbitrary number of returns.
+
+2013-05-04, v3.1.1 (same version)
+  [*] Rebuild of DLLs, to indicate their actual version.
+
+2013-04-30, v3.1.1
+  [+] Help files extended.
+  [+] Macrofile added.
+
+2013-04-28, v3.1.0
+  [+] First public release.

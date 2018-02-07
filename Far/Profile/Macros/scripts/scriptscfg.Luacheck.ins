@@ -1,0 +1,36 @@
+--------------------------------------------
+-- samples to insert in scriptscfg
+--------------------------------------------
+
+Config { --Luacheck FAR scripts
+  id="73924F99-3AE6-4B3E-9981-ABC0ECB199EC";
+  --disabled=true;
+  options={
+    --cfgpath=win.GetEnv"LOCALAPPDATA".."\\Luacheck\\",
+    --cfgname=".luacheckrc",
+
+    --macrokey  = "CtrlShiftF7",
+    --filemask  = "*.lua;*.moon",
+    --menuitem  = "Luacheck",
+    --configitem= "Luacheck: edit config",
+
+    --AutoPos   = true,
+    --MaxHeight = 10,
+    --InitPos   = "Bottom", --Top,Bottom,Center
+    --CycleMode = "ping-pong",
+
+    --debug = true,
+  };
+}
+
+Config { --luacheck commandline
+  id="08AE8FB9-940C-4679-9EC7-0D3C8BA25E59";
+  --disabled=true;
+  options={
+    --lua     = "luajit.exe",
+    --luapath = assert(os.getenv"FARHOME",Made4FAR)
+
+    --cfgpath = os.getenv"LOCALAPPDATA".."\\Luacheck\\",
+    --cfgname = ".luacheckrc",
+  };
+}

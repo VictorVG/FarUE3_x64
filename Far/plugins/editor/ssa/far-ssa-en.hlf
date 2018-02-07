@@ -1,0 +1,774 @@
+.Language=English,English
+.PluginContents=SSA Editor
+.Options CtrlColorChar=\
+.Options CtrlStartPosChar=&
+
+@Contents
+$ #SSA Editor#
+    ~Motivation~@Motivation@, or Why at all
+
+    ~System requirements~@SystemRequirements@, or What do we need
+
+    ~Features~@Features@, or How do I...
+
+    ~Reference~@Reference@, or What's This?
+
+    ~Default key bindings~@KeyBindings@
+
+    ~Revision history~@History@
+
+    ~License~@License@
+
+    ~Links && Contact~@Links@
+@Motivation
+$ #Motivation, or Why at all#
+    When watching video made in a foreign country, you have two options. You
+can find a version dubbed into your native language, or you can enjoy original
+actors' voices. In the former case, subtitles are not for you, and neither is
+this plugin. On the other hand, in the latter case, depending on your
+knowledge of the language, you may need subtitles to help you understand the
+plot.
+
+    Subtitles are typically text files containing phrases marked with start
+and end time stamps. Time is relative to the start of the video file. More
+advanced subtitle formats support text styling with color, font sizes and
+effects such as bold and italic. This plugin works with subtitles in SSA
+format, introduced by the Substation Alpha tool.
+
+    Subtitles are not always made by professionals. Many originate from fans
+who do translations on their free time. As a consequence, subtitles vary in
+quality. There may be spelling and grammar errors, and there may be
+synchronization problems. Thus, editors are needed.
+
+    Unfortunately, I could not find a subtitle editor that would satisfy me
+completely. I wanted at least this:
+
+   &#Live preview.# Ideally, I would be watching the video, and when I
+spotted a problem, I would press a key, upon which the editor would present me
+with the currently displayed phrase, which I would fix and go on. Some of the
+more trivial problems would be fixable without ever stopping the player.
+
+   &#All-keyboard solution.# Anything that requires a mouse, cannot be
+"live" in the sense described above. So, all the functions must be available
+from the keyboard.
+
+   &#Instant shifting.# Most editors require you to select a range of
+phrases and enter a shift value, in seconds and milliseconds. Or, they have a
+pair of hotkeys that shift the current phrase. The former way is too slow for
+real-time correction. The latter assumes that the timing of the whole script
+is more or less correct and just the current phrase needs adjustment. On the
+contrary, my experience tells me that if one phrase goes too early, too
+late, too short or too long, the subsequent phrases will also be too early or
+too late by the same amount. Thus, I want four keys that fix these four
+frequent problems.
+
+   &#Instant styling.# When I work on subtitles, I use three major styles
+(one for speech, another one for thoughts and overvoice, and a third one for
+captions), and several others. I want to apply them without stopping the
+player.
+
+   &#Full SSA support.# Very few players support SSA styles, colors and font
+variations. Players embedded in subtitle editors generally render them with
+one font face, fixed size, single color.
+
+   &#Comfortable player.# Support for multiple sound tracks, as in not
+playing them all simultaneously but allowing to choose one. Free scaling and
+positioning of the player window.
+
+   &#Customizable editor.# I am used to the internal editor of FAR Manager,
+and would prefer using it for subtitles.
+
+    As a result, I took my time and learned how to create FAR editor plugins,
+and how to control Media Player Classic, my player of choice.
+@SystemRequirements
+$ #System requirements, or What do we need#
+    This plugin was developed and minimally tested in the following
+environment:
+
+   &Windows XP SP2, Windows Server 2003. For Windows Vista, ~additional shaman
+dances~@WindowsVistaCompatibility@ are required.
+
+   &FAR Manager 1.70 build 2087.
+
+   &~Media Player Classic~@MediaPlayerClassic@ version 6.4.9.0, Unicode
+build.
+
+    It may work in other configurations, but I can promise nothing.
+Especially, since Media Player Classic is an actively developed open source
+project, other versions may or may not work. In fact, I know for sure that the
+plugin will not work with the non-Unicode build, and with versions earlier
+than 6.4.8.8.
+
+    Also recommended:
+
+   &~Editor Settings Changer~@ESCPlugin@ plugin + settings for SSA files.
+
+   &~Colorer~@ColorerPlugin@ plugin + .hrc for SSA files + additional SSA
+region definitions.
+@WindowsVistaCompatibility
+$ #Windows Vista compatibility#
+    #Short story#: On #Windows Vista#, you need to perform a few additional
+jumps to use the plugin.
+
+   &Unzip the #addons/vista/dshow_marshal.zip# somewhere #outside# the FAR
+plugins directory.
+
+   Open up an #elevated# command prompt or FAR.
+
+   Navigate to the directory where #dshow_marshal.dll# is located.
+
+   Cast the following spell:
+
+    #regsvr32 dshow_marshal.dll#
+
+    For a long story, see the #readme_vista.txt# in #dshow_marshal.zip#.
+@MediaPlayerClassic
+$ #Media Player Classic#
+    #Media Player Classic# is an open source DirectShow-based media player. It
+packs many convenient features in the classic Windows Media Player 6.4
+interface. No irregular window shapes, no weird colors, no skinning.
+Supports all major subtitle formats, including SSA with full formatting.
+
+    Media Player Classic is being developed by Gabest, the author of many
+DirectShow filters such as Matroska Splitter and VobSub. The project homepage
+is at ~http://sourceforge.net/projects/guliverkli/~@http://sourceforge.net/projects/guliverkli/@.
+@Features
+$ #Features, or How Do I...#
+    How do I...
+
+   &...control my media player?
+    ~Attach~@Attach@, ~Pause~@Pause@, ~Seek~@Seek@
+
+   &...adjust line breaking?
+    ~Edit phrase~@EditPhrase@
+
+   &...split and splice phrases?
+    ~Split sequential~@SplitSequential@, ~Splice~@Splice@
+
+   &...deal with overlapping subtitles?
+    ~Split simultaneous~@SplitSimultaneous@, ~Fix overlap~@FixOverlap@
+
+   &...reorder lines?
+    ~Move up, Move down~@Reorder@
+
+   &...apply styles?
+    ~Style~@Style@
+
+   &...adjust timing?
+    ~Set start time~@SetStart@, ~Set end time~@SetEnd@, ~Shift~@Shift@,
+~Duration~@Duration@
+
+   &...synchronize editor position with the player?
+    ~Seek to start of phrase~@SeekStart@, ~Seek to end of phrase~@SeekEnd@,
+~Tracking mode~@TrackingMode@
+
+   &...make media player pick up my subtitle changes?
+    ~Save~@Save@
+
+   &...define keyboard shortcuts?
+    ~Macros~@Macros@
+@Reference
+$ #Reference, or What's This?#
+    #F11# | #SSA Editor#
+
+    ÉÍÍÍÍ SSA Editor ÍÍÍÍÍ»
+    º~  Attach             ~@Attach@º
+    ÇÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¶
+    º~  Pause              ~@Pause@º (#Alt-~~#)
+    º~  Seek              ~@Seek@º
+    º~  Reload in player   ~@Reload@º
+    ÇÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¶
+    º~  Phrase            ~@Phrase@º
+    º~  Style             ~@Style@º
+    º~  Timing            ~@Timing@º
+    ÈÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ¼
+
+    #See also:# ~Contents~@Contents@
+@Attach
+$ #Attaching to a player#
+    #F11# | ~SSA Editor~@Reference@ | #Attach#
+
+    This command displays a list of running instances of Media Player Classic.
+Select one of the instances to attach to it. Attaching to a player allows to
+~pause and resume~@Pause@ playback, ~seek~@Seek@ through the video,
+~track~@TrackingMode@ subtitles, and to use the current position in the media
+file when ~splitting~@Split@ and ~timing~@Timing@ subtitles.
+@Pause
+$ #Pausing and resuming#
+    #F11# | ~SSA Editor~@Reference@ | #Pause#
+
+    Pauses or resumes the currently ~attached~@Attach@ player.
+
+    This command is unavailable if no player is attached.
+
+    ~Default key binding~@KeyBindings@: #Alt-~~#
+@Seek
+$ #Seeking through video#
+    #F11# | ~SSA Editor~@Reference@ | #Seek#
+
+    ÉÍÍÍÍÍÍ Seek ÍÍÍÍÍÍ»
+    º~  Start of phrase ~@SeekStart@º (#Alt-[#)
+    º~  End of phrase   ~@SeekEnd@º (#Alt-]#)
+    ÇÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¶
+    º~  Previous frame  ~@SeekPreviousFrame@º (#Alt-O#)
+    º~  Next frame      ~@SeekNextFrame@º (#Alt-P#)
+    ÇÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¶
+    º~  Custom...       ~@SeekCustom@º (#Alt-G#)
+    ÈÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ¼
+@SeekStart
+$ #Seek to start of phrase#
+    #F11# | ~SSA Editor~@Reference@ | ~Seek~@Seek@ | #Start of phrase#
+
+    Positions the currently ~attached~@Attach@ player to the start time of the
+phrase under cursor.
+
+    This command is unavailable if no player is attached.
+
+    #Tip:# &To check that phrase start is timed correctly, use this command.
+If the phrase sounds clipped, ~shift~@Shift@ it so that it starts later. If
+there is a noticeable delay before the sound starts, shift it earlier.
+
+    ~Default key binding~@KeyBindings@: #Alt-[# (mnemonic: when the phrase #opens#)
+@SeekEnd
+$ #Seek to end of phrase#
+    #F11# | ~SSA Editor~@Reference@ | ~Seek~@Seek@ | #End of phrase#
+
+    Positions the currently ~attached~@Attach@ player to the end time of the
+phrase under cursor.
+
+    This command is unavailable if no player is attached.
+
+    #Tip:# &To check that phrase end is timed correctly, use this command. If
+you hear the end of the phrase, increase the subtitle ~duration~@Duration@.
+
+    ~Default key binding~@KeyBindings@: #Alt-]# (mnemonic: when the phrase #closes#)
+@SeekPreviousFrame
+$ #Seek to previous frame#
+
+    #F11# | ~SSA Editor~@Reference@ | ~Seek~@Seek@ | #Previous frame#
+
+    Displays the previous frame in the ~attached~@Attach@ player.
+
+    This command is unavailable if no player is attached.
+
+    #Tip:# &This command is useful for timing caption translations. Seek
+through frames until a caption appears, then ~set start time~@SetStart@ of the
+translation. Then seek until it disappears and ~set end time~@SetEnd@.
+
+    ~Default key binding~@KeyBindings@: #Alt-O# (mnemonic: #O# and #P# keys as Left and
+Right)
+@SeekNextFrame
+$ #Seek to next frame#
+    #F11# | ~SSA Editor~@Reference@ | ~Seek~@Seek@ | #Next frame#
+
+    Displays the next frame in the ~attached~@Attach@ player.
+
+    This command is unavailable if no player is attached.
+
+    #Tip:# &This command is useful for timing caption translations. Seek
+through frames until a caption appears, then ~set start time~@SetStart@ of the
+translation. Then seek until it disappears and ~set end time~@SetEnd@.
+
+    ~Default key binding~@KeyBindings@: #Alt-P# (mnemonic: #O# and #P# keys as Left and
+Right)
+@SeekCustom
+$ #Seek to arbitrary position#
+    #F11# | ~SSA Editor~@Reference@ | ~Seek~@Seek@ | #Custom...#
+
+    Prompts for a time stamp, then seeks the ~attached~@Attach@ player to that
+position.
+
+    This command is unavailable if no player is attached.
+
+    ~Default key binding~@KeyBindings@: #Alt-G# (mnemonic: #G#o to)
+@Reload
+$ #Reload subtitles in player#
+    #F11# | ~SSA Editor~@Reference@ | #Reload in player#
+
+    Media Player Classic has two ways to display SSA subtitles with full
+formatting. One is the DirectVobSub filter, which automatically detects
+that a subtitle file was changed and reloads it. The other is the
+player's native subtitle renderer, which generally producer
+nicer-looking subtitles, but lacks that convenient auto-reload
+capability.
+
+    This command sends the attached Media Player Classic a message equivalent
+to its #Play# | #Subtitles# | #Reload# command. It then reloads the file.
+
+    If no player is attached, this command does nothing but is intentionally
+not disabled so that it might be used in a global macro.
+
+    ~Default key binding~@KeyBindings@: #F2# (saves the file and then invokes
+this command)
+@Phrase
+$ #Phrase editing#
+    #F11# | ~SSA Editor~@Reference@ | #Phrase#
+
+    ÉÍÍÍÍÍÍ Phrase ÍÍÍÍÍÍÍ»
+    º~  Edit...            ~@EditPhrase@º (#Alt-M#)
+    º~  Split sequential   ~@SplitSequential@º (#Alt-/#)
+    º~  Split simultaneous ~@SplitSimultaneous@º (#Alt-N#)
+    º~  Splice             ~@Splice@º (#Alt-J#)
+    º~  Fix overlay        ~@FixOverlay@º (#Alt-F#)
+    º~  Move up            ~@Reorder@º (#Ctrl-Alt-Up#)
+    º~  Move down          ~@Reorder@º (#Ctrl-Alt-Down#)
+    ÈÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ¼
+@EditPhrase
+$ #Visual phrase editor#
+    #F11# | ~SSA Editor~@Reference@ | ~Phrase~@Phrase@ | #Edit...#
+
+    Displays a multiline editor with the current phrase. Change the text as
+needed, then press #Ctrl-Enter# to apply changes, or #Esc# to cancel.
+
+    #Note:# &The dialog has no borders and no OK/Cancel buttons because you
+want to dedicate as much screen estate as possible to the media player. The
+editor has to stay functional with as little as five screen lines, plus one
+for the status line.
+
+    #Note:# &The editor is 40 characters wide and (normally) 3 lines high. This
+is the recommended maximum for subtitles. If a phrase will not fit into three
+lines, consider ~splitting~@SplitSequential@ it.
+
+    #Tip:#  &When breaking lines, first consider logical pauses. If there is
+a comma in the middle of the sentence, it is a good candidate for a line
+break. Second, if space is tight, prefer lines of roughly same length.
+
+    ~Default key binding~@KeyBindings@: #Alt-M# (mnemonic: #M#odify)
+@SplitSequential
+$ #Splitting a phrase#
+    #F11# | ~SSA Editor~@Reference@ | ~Phrase~@Phrase@ | #Split sequential#
+
+    Splits the current phrase into two. The text up to (but not including) the
+cursor position stays on the current line, the remainder is moved onto a new
+line. The end time of the first part and the start time of the second part are
+set to the current media time.
+
+    #Before:#
+    ÚÄAaaaa bbb.ÄÄÄÄ¿
+    #After:#
+    ÚÄAaaaaÄ¿ÚÄbbb.Ä¿
+
+    #Note:# &If there is no player attached, or if it is positioned outside the
+time range of the phrase, it is split at the middle of the range.
+
+    #Tip:#  &When splitting a sentence, try to find the longest pause.
+
+    ~Default key binding~@KeyBindings@: #Alt-/# (mnemonic: #divide#)
+@SplitSimultaneous
+$ #Separating logically unrelated lines#
+    #F11# | ~SSA Editor~@Reference@ | ~Phrase~@Phrase@ | #Split simultaneous#
+
+    In subtitles converted from formats that do not allow overlapping phrases,
+such as SRT, several phrases may appear in one line. Often, one will be a
+spoken phrase, and the other will be a caption. In this case, they need to be
+separated so that different styles may be applied to them.
+
+    This command moves the text from the cursor position up to the end of line
+onto a new line. The start and end times for both parts are set to those of
+the original phrase.
+
+    #Before:#
+    ÚÄAaaaa bbb.ÄÄÄÄ¿
+    #After:#
+    ÚÄAaaaaÄÄÄÄÄÄÄÄÄ¿
+    ÚÄbbb.ÄÄÄÄÄÄÄÄÄÄ¿
+
+    ~Default key binding~@KeyBindings@: #Alt-N# (mnemonic: #N#ew line)
+@Splice
+$ #Splicing two phrases#
+    #F11# | ~SSA Editor~@Reference@ | ~Phrase~@Phrase@ | #Splice#
+
+    Joins the phrase on the current line with the following line. The start
+and end time of the whole is set to the start time of the first part and the
+end time of the second part, respectively.
+
+    #Tip:# &Splice short phrases that do not have an audible pause in between.
+
+    ~Default key binding~@KeyBindings@: #Alt+J# (mnemonis: #J#oin)
+@FixOverlay
+$ Fixing overlaid phrases#
+    #F11# | ~SSA Editor~@Reference@ | ~Phrase~@Phrase@ | #Fix overlay#
+
+    Sometimes, one character starts speaking and is interrupted by another
+actor. In SSA, the correct way to represent this is by two overlapping
+phrases:
+
+    ÚÄGood morning!ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+                     ÚÄHello!ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+
+    However, many other formats do not allow overlapping phrases. Instead,
+such situations are represented as three or more sequential subtitles:
+
+                       Hello!           Hello!
+    ÚÄGood morning!Ä¿ÚÄGood morning!Ä¿ÚÄ      Ä¿
+
+    This command finds the longest common part of the current and following
+lines, and moves it onto a new line. The start and end times are adjusted as
+necessary.
+
+    #Before:#
+                       Hello!           Hello!
+    ÚÄGood morning!Ä¿ÚÄGood morning!Ä¿ÚÄ      Ä¿
+    #After invoking on first line:#
+                     ÚÄHello!ÄÄÄÄÄÄÄÄ¿  Hello!
+    ÚÄGood morning!ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ÚÄ      Ä¿
+    #After invoking again on the second line:#
+                     ÚÄHello!ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+    ÚÄGood morning!ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+
+    #Note:# &This command checks that the next phrase starts at the same time
+as the current one ends. If it doesn't, both phrases are left as is.
+
+    ~Default key binding~@KeyBindings@: #Alt+F# (mnemonic: #F#ix)
+@Reorder
+$ #Reordering phrases#
+    #F11# | ~SSA Editor~@Reference@ | ~Phrase~@Phrase@ | #Move up#,
+#Move down#
+
+    Sometimes, you want to change the order in which phrases are stored in the
+file. Maybe you have an episode title that you want to move out of a song
+block. For this purpose, you have these two commands. For SSA format, the
+order of lines is insignificant.
+
+    #Note:# &This could be done with macros alone, but I'm not sure if they
+would preserve clipboard contents.
+
+    ~Default key bindings~@KeyBindings@: #Ctrl-Alt-Up# and #Ctrl-Alt-Down#
+@Style
+$ #Styling#
+    #F11# | ~SSA Editor~@Reference@ | #Style#
+
+    Displays a list of styles defined in the current file. Selecting a style
+will change the current phrase to this style.
+
+    #Tip:# &Styles are listed in their order in the file, and keyboard
+shortcuts are assigned respectively. To change this order, ~reorder~@Reorder@
+style definition lines.
+
+    ~Default key bindings~@KeyBindings@:
+    #Alt-Q#   #Alt-W#   #Alt-E#
+    Style7  Style8  Style9
+        #Alt-A#   #Alt-S#   #Alt-D#
+        Style4  Style5  Style6
+            #Alt-Z#   #Alt-X#   #Alt-C#
+            Style1  Style2  Style3
+@Timing
+$ #Timing#
+    #F11# | ~SSA Editor~@Reference@ | #Timing#
+
+    ÉÍÍÍÍÍÍ Timing ÍÍÍÍÍÍÍ»
+    º~  Set phrase start   ~@SetStart@º (#Alt--#)
+    º~  Set phrase end     ~@SetEnd@º (#Alt-=#)
+    ÇÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¶
+    º~  Shift             ~@Shift@º
+    º~  Duration...        ~@Duration@º (#Alt-;#, #Alt-'#)
+    ÈÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ¼
+@SetStart
+$ #Setting start time#
+    #F11# | ~SSA Editor~@Reference@ | ~Timing~@Timing@ | #Set start time#
+
+    Sets the start time of the current phrase to the media time in the
+~attached~@Attach@ player.
+
+    This command is unavailable if no player is attached.
+
+    ~Default key binding~@KeyBindings@: #Alt--# (mnemonic: #-# and #=# just
+above #[# and #]#)
+@SetEnd
+$ #Setting end time#
+    #F11# | ~SSA Editor~@Reference@ | ~Timing~@Timing@ | #Set end time#
+
+    Sets the end time of the current phrase to the media time in the
+~attached~@Attach@ player.
+
+    This command is unavailable if no player is attached.
+
+    ~Default key bindings~@KeyBindings@:
+
+    #Alt-=# (mnemonic: #-# and #=# just above #[# and #]#)
+
+    #Alt-\# sets end time of the current phrase, moves to the next phrase and
+sets its start time.
+
+    #Tip:# &this shortcut is useful for rough initial timing. Press it once at
+start of each phrase, then make a second pass, adjusting start and end times
+as needed.
+@Shift
+$ #Shifting#
+    #F11# | ~SSA Editor~@Reference@ | ~Timing~@Timing@ | #Shift#
+
+    ÉÍÍÍÍÍÍ Shift ÍÍÍÍÍÍÍ»
+    º  Current phrase... º (#Alt-,#, #Alt-.#)
+    º  Selection...      º (#F4#)
+    º  Remainder...      º (#Alt-K#, #Alt-L#, #Alt-;#, #Alt-'#)
+    º  Whole script...   º
+    ÈÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ¼
+
+    Select the scope for shifting.
+
+    #Current phrase:# &Shifts only the line under cursor.
+
+    #Selection:#      &Shifts the lines in the marked block.
+
+    #Remainder:#      &Shifts the current line and all following lines until
+the end of file.
+
+    #Whole script:#   &Shifts all the lines in the file.
+
+    After selecting the scope, a dialog appears:
+
+    \70                                           \-
+    \70   Shift \7Eb\70y    \30 0:00:00.00\70   [ \7EO\70riginal ]  \-
+    \70   \7ES\70tart time   \300:06:02.62\70   [ \7EC\70urrent  ]  \-
+    \70   \7EE\70nd time     \300:06:05.70\70                 \-
+    \70                                           \-
+
+    #Shift by:#   &Enter the time difference to shift by. A minus sign in the
+leftmost position will make subtitles appear earlier.
+
+    #Start time:# &Enter the time at which the first phrase of the scope
+should start.
+
+    #End time:#   &Enter the time at which the first phrase of the scope
+should end.
+
+    All these three fields are updated synchronously.
+
+    #Original:#   &Resets all fields to their original state.
+
+    #Current:#    &Sets the start time to current media time, and other fields
+accordingly.
+
+    To close the dialog and apply the shift, press #Enter# in any of the edit
+fields, or #Ctrl-Enter# anywhere in the dialog. To cancel, press #Esc#.
+
+    ~Default key bindings~@KeyBindings@:
+
+    #Alt-,# and #Alt-.#  &Shift current phrase -0.1s and +0.1s respectively.
+
+    #Alt-K# and #Alt-L#  &Shift remainder -0.1s and +0.1s respectively.
+
+    #Alt-;# and #Alt-'#  &Change ~duration~@Duration@ of current phrase and
+shift all subsequent phrases -0.1s and +0.1s respectively.
+
+    #F4#               &Open the Shift dialog for selected lines.
+@Duration
+$ #Changing subtitle duration#
+    #F11# | ~SSA Editor~@Reference@ | ~Timing~@Timing@ | #Duration#
+
+    Makes the current subtitle shorter or longer by changing the end time.
+Start time remains unchanged.
+
+    \70                                           \-
+    \70   Change \7Eb\70y   \30 0:00:00.00\70   [ \7EO\70riginal ]  \-
+    \70   \7EE\70nd time     \300:06:10.91\70   [ \7EC\70urrent  ]  \-
+    \70   \7ED\70uration     \300:00:02.12\70                 \-
+    \70                                           \-
+
+    #Change by:#  &Enter the time difference to increase or decrease the
+duration by.
+
+    #End time:#   &Enter the desired end time.
+
+    #Duration:#   &Enter the time during which the subtitle should be
+displayed.
+
+    All these three fields are updated synchronously.
+
+    #Original:#   &Resets all fields to their original state.
+
+    #Current:#    &Sets the end time to current media time, and other fields
+accordingly.
+
+    To close the dialog and apply the shift, press #Enter# in any of the edit
+fields, or #Ctrl-Enter# anywhere in the dialog. To cancel, press #Esc#.
+
+    ~Default key bindings~@KeyBindings@:
+
+    #Alt-;# and #Alt-'#  &Change duration of current phrase and ~shift~@Shift@
+all subsequent phrases -0.1s and +0.1s, respectively.
+@TrackingMode
+$ #Tracking mode#
+    #Scroll Lock#
+
+    In tracking mode, the plugin periodically retrieves the media time from
+the ~attached~@Attach@ player and positions the cursor to the phrase that is
+being displayed or is about to be displayed. This way, the current phrase in
+the player is always under cursor in the editor.
+
+    Tracking mode works under the following conditions:
+
+   &a player is attached;
+
+   &#Scroll Lock# is on;
+
+   &no keys are held down.
+
+    #Tip:# &if you need to temporarily disable tracking, you can either switch
+off #Scroll Lock#, or hold down some unimportant key such as #Shift#, #Ctrl#
+or #Alt#.
+@Macros
+$ #Keyboard shortcuts#
+    If you do not use #Alt# combinations for FAR macros, you can record global
+macros that call SSA Editor functions. A sample #macros.reg# file is enclosed.
+
+    To change key assignments, rename subkeys of
+#HKEY_CURRENT_USER\\Software\\Far\\KeyMacros\\Editor# as needed. Afterwards,
+enter #macro:load# at the FAR command line.
+
+    If you would like to use #Alt# combinations differently depending on file
+type, get the ~Editor Settings Changer~@ESCPlugin@ plugin and add macros
+specifically for #*.ssa# files. A sample #esc_ssa.xml# file is provided.
+Install it by copying to the #ESC\\Cfg# directory and including the following
+line in your #esc_user.xml# or #esc.xml#:
+
+    #<type include="Cfg\\esc_ssa.xml"/>#
+
+    To change key assignments when using [ESC], edit the #esc_ssa.xml# file.
+Changes are applied immediately after saving (you may need to call the [ESC]
+menu and re-select the file type).
+
+@ESCPlugin
+$ #Editor Settings Changer plugin#
+    #Editor Settings Changer#, or #[ESC]#, is a FAR editor plugin by Ivan
+Sintyurin. It allows to set editor options individually for different file
+types. Also, it allows to define keyboard macros that only execute for
+particular file types.
+
+    The [ESC] plugin home page is
+~http://www.moris.ru/~~spinoza/~@http://www.moris.ru/~~spinoza/@ (in Russian),
+or you can get it from ~FAR PlugRinG~@http://plugring.farmanager.com/@.
+
+    SSA Editor includes an [ESC] configuration file to add keyboard shortcuts
+when editing #.ssa# files. To install it, copy #esc_ssa.xml# to #ESC\\Cfg#
+directory, and include the following line into your #esc_user.xml# or
+#esc.xml#:
+
+    #<type include="Cfg\\esc_ssa.xml"/>#
+@KeyBindings
+$ #Default key bindings#
+    #Left hand#
+
+    ÚÄÄÄÄÄ¿     ÚÄÄÄÄÄÂÄÄÄÄÄÂÄÄÄÄÄÂÄÄÄÄÄ¿   ÚÄÄÄÄÄ
+    ³Esc  ³     ³F1   ³F2   ³F3   ³F4   ³   ³F5
+    ³     ³     ³     ³~ Save~@Reload@³     ³~Shift~@Shift@³   ³
+    ÀÄÄÄÄÄÙ     ÀÄÄÄÄÄÁÄÄÄÄÄÁÄÄÄÄÄÁÄÄÄÄÄÙ   ÀÄÄÄÄÄ
+
+    ÉÍÍÍÍÍ»ÄÄÄÄÄÂÄÄÄÄÄÂÄÄÄÄÄÂÄÄÄÄÄÂÄÄÄÄÄÂÄÄÄÄÄÂÄÄÄ
+    º`    º1    ³2    ³3    ³4    ³5    ³6    ³7
+    º~Pause~@Pause@º     ³     ³     ³     ³     ³     ³
+    ÈÍÍÍÍÍ¼ÄÄÉÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ»ÄÄÁÄÄÂÄÄÁÄÄÂÄÄÁÄÄÂ
+    ³Tab     ºQ    ³W    ³E    ºR    ³T    ³Y    ³
+    ³        º~Sty 7~@Style@³~Sty 8~@Style@³~Sty 9~@Style@º     ³     ³     ³
+    ÃÄÄÄÄÄÄÄÄÈÍÍ»ÄÄÁÄÄÂÄÄÁÄÄÂÄÄÈÍÍËÍÍÍÍÍËÍÍÍÍÍ»ÄÄÁ
+    ³Caps       ºA    ³S    ³D    ºF    ºG    ºH
+    ³           º~Sty 4~@Style@³~Sty 5~@Style@³~Sty 6~@Style@º~Overl~@FixOverlay@º~ Seek~@SeekCustom@º
+    ÃÄÄÄÄÄÄÄÄÄÄÄÈÍÍ»ÄÄÁÄÄÂÄÄÁÄÄÂÄÄÈÍÍËÍÍÊÍÍÍÍÍ¼ÄÄÂ
+    ³Shift         ºZ    ³X    ³C    ºV    ³B    ³
+    ³              º~Sty 1~@Style@³~Sty 2~@Style@³~Sty 3~@Style@º     ³     ³
+    ÃÄÄÄÄÄÄÄÄÂÄÄÄÄÄÈÍÍËÍÍÍÍÍÍËÍÍÍÍÍÍÍ¼ÄÄÄÄÄÁÄÄÄÄÄÁ
+    ³Ctrl    ³Win     ºAlt   ºSpace
+    ³        ³        º      º
+    ÀÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÈÍÍÍÍÍÍ¼ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+    #Right hand#
+
+    ÂÄÄÄÄÄÂÄÄÄÄÄÂÄÄÄÄÄÂÄÄÄÄÄÉÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ»ÄÄÄÄÄ¿
+    ³7    ³8    ³9    ³0    º- #Set#³=    ³\    ºBacks³
+    ³     ³     ³     ³     º~Start~@SetStart@³~  End~@SetEnd@³~ Step~@SetEnd@ºUndo ³
+    ÁÄÄÂÄÄÁÄÄÂÄÄÁÄÄÉÍÍÏÍÍÍÍÍÊÍÍËÍÍÍÍÍÍÍÍÍÍÍËÍÍ¼ÄÄÄÄÄ´
+       ³U    ³I    ºO    ³P    º[#Seek#³]    º        ³
+       ³Unind³Indntº~PrevF~@SeekPreviousFrame@³~NextF~@SeekNextFrame@º~Start~@SeekStart@³~  End~@SeekEnd@º        ³
+    ÂÄÄÁÄÄÉÍÍÏÍÍËÍÍÊÍÍÍÍÍÍÍÍÍÍÍÊÍÍÍÍÍÍÍÍËÍÍ¼  Enter ³
+    ³H    ºJ    ºK #Rem#³L    ³; #Dur#³'    ºFullScreen ³
+    ³     º~Splic~@Splice@º~  <<R~@Shift@³~  >>R~@Shift@³~  |<<~@Shift@³~  |>>~@Shift@º           ³
+    ÁÄÄÉÍÍÊÍÍËÍÍÊÍÍ»ÄÄÁÄÄÂÄÄÁÄÄÉÍÍÍÍÍËÍÍ¼ÄÄÄÄÄÄÄÄÄÄÄ´
+       ºN    ºM    º, #Cur#³.    º/    ºShift         ³
+       º~Separ~@SplitSimultaneous@º~ Edit~@EditPhrase@º~  <<C~@Shift@³~  >>C~@Shift@º~Split~@SplitSequential@º              ³
+    ÄÄÄÈÍÍÍÍÍÊÍÍÍÍÍÊÍÍÍÍÍÍÍÍÍÍÍÊÍÍÍÍÍ¼ÄÄÄÄÄÂÄÄÄÄÄÄÄÄ´
+                     ³AltGr ³Win     ³Apps ³Ctrl    ³
+                 Menu³      ³        ³     ³        ³
+    ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÁÄÄÄÄÄÁÄÄÄÄÄÄÄÄÙ
+
+    #See also:# ~Changing key bindings~@Macros@
+
+@ColorerPlugin
+$ #Colorer plugin#
+    #Colorer# is an open source plugin by Igor Ruskih. It provides syntax
+coloring in the internal FAR editor.
+
+    The plugin home page is ~http://colorer.sourceforge.net/~@http://colorer.sourceforge.net/@.
+
+    SSA Editor includes a Colorer-take5 scheme for .ssa files. To install it,
+copy the #ssa.hrc# file to your #colorer\\hrc# directory and add the contents
+of #ssa.proto# into #proto.hrc#. Also, you will need to add #ssa.regions# to
+your color scheme (#.hrd#) file. This will color phrases of several predefined
+styles with different colors. For example, I use this coloring:
+
+    \07 *Default       \-
+    \08 Overvoice      \-
+    \03 Caption        \-
+    \0F Title          \-
+    \0D SongTranslated \-
+    \0B SongOriginal   \-
+
+    To customize colors, edit the added section in the .hrd file. To add more
+styles, add new region definitions and regular expressions to #ssa.hrc#, and
+assign colors in the #.hrd# file.
+
+@History
+$ #Revision History#
+    #1.0 (2006-01-08)#
+
+    Was implemented as a modal editor plugin and thus did not allow use of
+macros and other plugins during operation. Had obscure and non-configurable
+key bindings. Supported one instance of Media Player Classic, and if more were
+running, selected one at random.
+
+    #2.0 (2006-05-20)#
+
+    [!] &Rewritten from scratch as a non-modal plugin.
+    [+] &Added player instance selection menu.
+    [+] &Added seeking to arbitrary media time.
+    [+] &Added multiline phrase editor.
+    [+] &Added phrase splitting and splicing.
+    [+] &Added overlay fixer.
+    [+] &Added phrase moving up/down.
+    [+] &Added shifting selected block and whole script.
+    [*] &Moved all key bindings out of the plugin into macros.
+    [*] &First public release.
+
+    #2.1 (2006-09-16)#
+
+    [-] &Phrase reordering corrupted text in encodings other than OEM.
+(Reported by Px)
+    [+] &Added a version info resource.
+
+    #2.2 (2007-01-14)#
+
+    [-] &Attaching to player ~did not work on Windows
+Vista~@WindowsVistaCompatibility@. (Reported by 4ekucT)
+    [-] &On localized Windows builds, error messages were reported in the
+wrong encoding. (Reported by Lan)
+    [*] &Moved the last key binding, #F2#, into macros.
+    [*] &If a player is closed while the plugin is attached to it, will detach
+automatically. (Suggested by Lan)
+
+    #2.3 (2007-03-28)#
+
+    [*] &Plugin no longer dies on startup if COM is already initialized in
+multithread apartment mode. (Suggested by 4ekucT)
+@License
+$ #License#
+    This is free software, distributed under the GNU Public License. See
+details in the enclosed #license.txt# file.
+
+@Links
+$ #Links && Contacts#
+    The latest version of SSA Editor can be found at
+~http://far-ssa.gorodok.net/~@http://far-ssa.gorodok.net/@.
+
+    Bug reports, feature requests, suggestions, ideas, patches can be sent by
+e-mail to far-ssa at gorodok dot net. Also, there is a discussion
+~thread~@http://forum.farmanager.com/viewtopic.php?t=1468@ at
+the ~FAR Manager forum~@http://forum.farmanager.com/index.php@.

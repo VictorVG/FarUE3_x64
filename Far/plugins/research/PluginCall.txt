@@ -1,0 +1,60 @@
+Plugin exposed API reference
+
+NOTE: currently Far3 does not allow opening Panel from Plugin call, so you should not really
+use these for File Search for example.
+
+Numeric:
+
+	Plugin.Call("F250C12A-78E2-4ABC-A784-3FDD3156E415", [TTT, ]NNN)
+		TTT is 0 for Panels, 1 for Editor, 2 for Viewer, or can be omitted for auto-detect
+		NNN is a menu item number
+
+String:
+
+	Plugin.Call("F250C12A-78E2-4ABC-A784-3FDD3156E415", "<command>")
+
+	Commands available from panels:
+		Search, Replace, Grep, Select, Unselect, FlipSelection, Rename, RenameSelected,
+		Renumber, UndoRename, ShowLastResults, ClearVariables
+
+	Commands available from editor:
+		Search, Replace, Repeat, Filter, Transliterate, SRAgain, SRAgainRev, ShowLastResults, ClearVariables
+
+	Commands available from viewer:
+		Search, SRAgain, ClearVariables
+
+Complete operations:
+	Plugin.Call("F250C12A-78E2-4ABC-A784-3FDD3156E415", "<command>", "<param1>", "<value1>"[, "param2", "value2"...])
+
+	This executes the same way as Preset with these parameters would have executed.
+	Semicolon in parameter list separates strings from integers/booleans
+
+	Commands and parameters available from panels:
+		Search			Mask, Text; MaskAsRegExp, CaseSensitive, SearchAs, IsInverse, SearchIn, AdvancedID
+		Replace			Mask, Text, Replace, Script; MaskAsRegExp, CaseSensitive, AllCharTables, SearchAs, AsScript, SearchIn, AdvancedID
+		Grep			Mask, Text, OutputFile; MaskAsRegExp, CaseSensitive, SearchAs, IsInverse, OutputNames, AddLineCount, AddMatchCound,
+						OutputLines, AddLineNumbers, AddContext, ContextLines, MatchingLinePart, OutputToFile, OpenInEditor, OpenPanel, SearchIn, AdvancedID
+		Rename			Mask, Text, Replace, Script; MaskAsRegExp, TextAsRegExp, CaseSensitive, Repeating, SearchIn, AdvancedID
+		RenameSelected	Text, Replace;TextAsRegExp, CaseSensitive, Repeating
+
+	Commands and parameters available from editor:
+		Search			Text; InSelection, IsRegExp, CaseSensitive, SeveralLine, Reverse, FromCurrent, ListAll, CountAll
+		Replace			Text, Replace, Script; InSelection, IsRegExp, CaseSensitive, SeveralLine, Reverse, FromCurrent, RemoveEmpty, RemoveNoMatch, AsScript
+		Repeat			Replace, Script; RepeatCount, AsScript
+		Filter			Text; LeaveFilter, IsRegExp, CaseSensitive, Reverse, FromCurrent
+		Transliterate	Text, Replace; 
+
+	Commands and parameters available from viewer:
+		Search			Text; IsRegExp, CaseSensitive, SeveralLine
+
+	One can also reference presets by using Preset as parameter name and preset name as value, for example:
+		Plugin.Call("F250C12A-78E2-4ABC-A784-3FDD3156E415", "Search", "Preset", "MyPreset1", "AsRegExp", 0)
+		This will run a preset, with [ ] As regular expression parameter overridden
+
+Menus:
+	Plugin.Call("F250C12A-78E2-4ABC-A784-3FDD3156E415", "Menu")		Shows RESearch menu
+	Plugin.Call("F250C12A-78E2-4ABC-A784-3FDD3156E415", "Batch")	Shows Batches  menu
+
+Batches and presets:
+	Plugin.Call("F250C12A-78E2-4ABC-A784-3FDD3156E415", "Batch", "<BatchName>")
+	Plugin.Call("F250C12A-78E2-4ABC-A784-3FDD3156E415", "Preset", "<PresetName>")

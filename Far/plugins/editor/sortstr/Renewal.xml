@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<renewal>
+	<plugin guid="{5FE4D394-2FE5-453F-8DB9-D63C32E01D13}">
+		<home arch="any">http://code.google.com/p/andrew-grechkin/</home>
+		<changelog arch="any">https://code.google.com/p/andrew-grechkin/source/browse/trunk/far-sortstr/changelog</changelog>
+		<url arch="any">http://code.google.com/p/andrew-grechkin/downloads/list?q=sortstr-FAR3lua</url>
+		<regex arch="any">//andrew-grechkin.googlecode.com/files/sortstr-v(\d+)\.(\d+)\.(\d+)\.7z</regex>
+		<srcpath arch="any">sortstr</srcpath>
+		<postinstall arch="x86">del /F /Q *x64*</postinstall>
+		<postinstall arch="x64">del /F /Q *x32*</postinstall>
+	</plugin>
+</renewal>

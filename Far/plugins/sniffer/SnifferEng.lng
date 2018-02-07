@@ -1,0 +1,45 @@
+﻿.Language=English,English
+
+"Sniffer"
+
+"Save"
+"Cancel"
+
+"Source"
+"Destination"
+"Protocol"
+"Size"
+"Time"
+
+"Operation not supported"
+"Error in external sniffer module"
+"Another instance of Far sniffer already started"
+"Invalid address or mask of the subnet"
+
+"Format packets in &viewer"
+"Add rule to the Windows &firewall"
+"Add to the panels &plugin menu"
+"Add to the &disk menu"
+"Prefi&x:"
+
+"&Binding address:"
+"&Subnet filter:"
+"Monitor traffic:"
+"B&roadcast (255.255.255.255)"
+"&Multicast (x.x.x.255)"
+"&Linklocal (224.0.0/24)"
+"A&dminlocal (239.255/16)"
+"Protocols:"
+"&Any"
+"I&CMP"
+"I&GMP"
+"&TCP by ports:"
+"&UDP by ports:"
+"&Other:"
+"Start"
+
+"Waiting for external module..."
+
+"Copy IP packets dumps to:"
+"Save as &raw data"
+"Copy"

@@ -1,0 +1,34 @@
+﻿.Language=English,English
+
+"SQLite database editor"
+"SQLite"
+"SQLite DDL: "
+"SQLite PRAGMA statements"
+
+"Add to the panel plugin menu"
+"Prefix:"
+
+"Name"
+"Type"
+"Count"
+
+"Reading database..."
+"Executing SQL query..."
+
+"Insert row"
+"Edit row"
+"Drop selected items?"
+"SQLite: Data export"
+"Export %s to:"
+"File format:"
+"Text"
+"Export"
+
+"Unable to open database"
+"Error reading database"
+"Error executing SQL query"
+"Error reading file"
+"Error writing file"
+
+"Save"
+"Cancel"

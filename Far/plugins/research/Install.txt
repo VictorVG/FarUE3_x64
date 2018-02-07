@@ -1,0 +1,21 @@
+You need only ONE version of RESearch.dll for installation.
+
+RESearch.dll       - for Far 1.75 x86
+RESearch x64.dll   - for Far 1.75 x64
+RESearchU.dll      - for Far 2.0  x86
+RESearchU x64.dll  - for Far 2.0  x64
+RESearchU3.dll     - for Far 3.0  x86
+RESearchU3 x64.dll - for Far 3.0  x64
+
+
+Macros:
+
+To create macros in Far 1.75, you can use registry file Add-ons\EditFind.reg etc.
+In Far 2.0, use separate ones named like Add-ons\EditFind.far2.reg
+
+Both of the above require 's' hotkey set to RESearch - use appropriate PluginHotkeys*.reg
+or do it manually.
+
+In Far 3.0, you should copy RESearch.lua from Add-ons\Macros\scripts to
+%APPDATA%\Far Manager\Profile\macros\scripts folder.
+APPDATA is something like C:\Users\YOURNAME\AppData\Roaming in Windows 7.

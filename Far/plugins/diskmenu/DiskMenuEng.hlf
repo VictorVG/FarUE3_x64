@@ -1,0 +1,50 @@
+.Language=English,English
+.PluginContents=Disk Menu Editor
+.Options CtrlColorChar=|
+
+@Contents
+  This plugin allows you to edit the disk selection menu.
+
+  Supported elements:
+
+  #1. Link to resource#
+     Link to the local folder or network resource.
+     For example:
+       Local folder:     |37C:\SomeFolder\Sub Folder|-
+       Network resource: |37\\some_server\share\my_folder|-
+     You can use environment variables as link.
+     For example:        |37%FARHOME%\Plugins|-
+
+  #2. Special link#
+     Link to the control element (Setup, separator) or
+     special folder (Desktop, My Documents etc).
+
+  #3. External plugin call#
+     Link to external Far plugin throught prefix.
+     For example:
+       Call FTP plugin: |37ftp://ftp.domain.local|-
+
+  #4. Path from registry#
+     Link will be read from registry key
+     For example:
+       You have a registry record |37HKCU\Software\Far2\Layout\PassiveFolder|-
+       with value |37D:\My folder|-
+       In this case if you specify:
+           Registry root: |37HKEY_CURRENT_USER|-
+           Registry key:  |37Software\Far2\Layout\PassiveFolder|-
+       you will be redirected to the |37D:\My folder|- folder.
+
+  #5. Sub menu#
+     Link to the sub menu.
+
+  #Edit#
+  Create new link:   |3BInsert|-
+  Edit link:         |3BF4|-
+  Delete link:       |3BDelete|-
+
+
+^* * *
+
+^Source code and updates you can get at project page:
+
+^~http://code.google.com/p/farplugs~@http://code.google.com/p/farplugs@

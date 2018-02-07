@@ -1,0 +1,571 @@
+﻿.Language=English,English
+.PluginContents=Lua manager
+.Options CtrlStartPosChar=|
+
+@main
+$^Main window
+^#Description#
+  This window contain list of all user scripts, grouped by types. List of groups:
+    1. |Macros. Their info printed in three columns:
+        - |list of macro areas in short form:
+           S - |Shell;
+           I - |Info;
+           Q - |QView;
+           T - |Tree;
+           s - |Search;
+           F - |FindFolder;
+           V - |Viewer;
+           E - |Editor;
+           D - |Dialog;
+           m - |Menu;
+           M - |MainMenu;
+           U - |UserMenu;
+           d - |Disks;
+           A - |ShellAutoCompletion;
+           a - |DialogAutoCompletion;
+           H - |Help;
+           G - |Grabber;
+           e - |Desktop;
+           O - |Other;
+           C - |Common.
+        - |designated keys. If keys absent, "none" printed.
+        - |description.
+    2. |Keyboard macros. Their info fully matches to regular macros.
+    3. |Event handlers. Their info may be printed in two or three columns.
+        - |event group.
+        - |file mask, for which event handler assigned. This column is absent, if outed event handlers do not contain file mask.
+        - |description.
+    4. |Modules. Their info printed in two columns:
+        - |module name;
+        - |search mask, for which he was found.
+    5. |Plugin menu items. Their info printed in three columns:
+        - |list of plugin menu items areas in short form. Identically for macros.
+        - |Menus, contain this menu item:
+           P - |Plugins;
+           D - |Disks;
+           C - |Config.
+        - |description.
+    6. |Command line prefixes. Their info printed in two columns:
+        - |prefix.
+        - |description.
+
+  In title of main window filtered groups marked by #*#.
+Detail info about filters applied showed for macros, keyboard macros and event handlers in their headers.
+
+  Depending from configuration script info may be outed in one or more lines.
+
+^#Main functions#
+  #Esc#        - |Exit.
+  #Enter#      - |Execute script action. If this is unavailable, menu item is grayed.
+  #F1#         - |This help.
+
+  #F3#         - |~Info about script.~@show@
+  #AltF3#      - |Call ~LuaExplorer~@foreign@ (if found) for script.
+
+  #F4#         - |~Edit script in dialog.~@edit@
+  #AltF4#      - |Edit script in modal Far editor.
+  #CtrlF4#     - |Edit script in non-modal Far editor.
+
+  #CtrlR#      - |Rebind keys for macro (if module ~'rebind'~@foreign@ is installed).
+  #CtrlD#      - |Switch off/on module or macro (for macros module ~'rebind'~@foreign@ must be installed).
+
+  #Ins#        - |Add new script.
+  #Del#        - |Delete script.
+  #CtrlPgDn#   - |Go to the file with script on panel.
+
+^#Config#
+  #ShiftM#     - |~Set macros sorting.~@sort@
+  #ShiftE#     - |~Set events sorting.~@sort@
+  #ShiftO#     - |~Set modules sorting.~@sort@
+  #ShiftI#     - |~Set plugin menu items sorting.~@sort@
+  #ShiftP#     - |~Set command line prefixes sorting.~@sort@
+
+  #CtrlK#      - |Set filter on macro keys.
+  #CtrlShiftK# - |Set unrestricted macro keys filter.
+  #CtrlAltK#   - |Reset filter on macro keys.
+  #CtrlM#      - |~Set filter on macros areas.~@filter@
+  #CtrlAltM#   - |Reset filter on macros areas.
+  #CtrlE#      - |~Set filter on events groups.~@filter@
+  #CtrlAltE#   - |Reset filter on events groups.
+  #CtrlO#      - |~Set filter on modules paths.~@filter@
+  #CtrlAltO#   - |Reset filter on modules paths.
+  #CtrlF#      - |Set file filter to file with script under cursor.
+  #CtrlShiftF# - |Set unrestricted file filter; environment variables allowed;
+if mask does not contain path and does not start from "*", then added "*\" to the start.
+  #CtrlS#      - |Set file filter to all files in current script package (if module ~'regscript'~@foreign@ is installed).
+  #CtrlAltF#   - |Reset filter on files. Also reset script package filter.
+  #AltL#       - |Load filters, active in LuaManager on last exit.
+
+  #AltM#       - |Hide/show regular macros.
+  #AltK#       - |Hide/show keyboard macros.
+  #CtrlH#      - |Hide/show macros for other areas.
+  #AltE#       - |Hide/show events.
+  #AltO#       - |Hide/show modules.
+  #AltI#       - |Hide/show plugin menu items.
+  #AltP#       - |Hide/show command line prefixes.
+
+  #CtrlA#      - |Show all
+
+  #AltF#       - |Hide/show file names without path. On show mode names printed in one line.
+
+  These keys changes modes unless exit from script. For permanent mode changing save it in config window (#F9#)
+
+  #F9#         - |~Script config.~@config@
+  #CtrlL#      - |Reset config to saved values.
+
+@show
+$^Show script info
+^#Description#
+  In this window fully info about script is showed and offers a set of manipulations with it.
+
+^#Hotkeys#
+  #Esc,Enter#   - |Exit.
+  #F1#          - |This help.
+
+  #F3#          - |Call ~LuaExplorer~@foreign@ for item under cursor (if found).
+  #AltF3#       - |Call ~LuaExplorer~@foreign@ for viewed script (if found).
+
+  #F4#          - |~Edit script in dialog.~@edit@
+  #AltF4#       - |Edit script in modal Far editor.
+  #CtrlF4#      - |Edit script in non-modal Far editor.
+  #ShiftF4#     - |Edit function under cursor (if found) in modal Far editor.
+  #CtrlShiftF4# - |Edit function under cursor (if found) non-modal editor.
+
+  #CtrlR#       - |Rebind keys for macro (if module ~'rebind'~@foreign@ is installed).
+  #CtrlD#       - |Switch off/on module or macro (for macros module ~'rebind'~@foreign@ must be installed).
+
+  #CtrlS#       - |Set file filter to all files in current script package (if module ~'regscript'~@foreign@ is installed)
+and return to ~main menu~@main@.
+
+  #Del#         - |Delete this viewed object.
+  #CtrlPgDn#    - |Go to the file, contained this object, in panel.
+  #CtrlL#       - |Load module.
+
+@=
+
+ ~Contents~@contents@
+
+@edit
+$^Edit script in dialog
+^#Description#
+  In this window all script fields may be edited. Below listed and described all dialog elements in out order without differentiation by script types.
+Details about fields values read in appropriate documentation, placed by default in #%FARHOME%\Encyclopedia#.
+  Note: the unsaved keyboard scripts are edited by calling standard Far macro editing dialog.
+
+  #1. Uid#
+  #1. id#
+  #1. GUID#                       - |Uid/id of regular macro or event handler, plugin menu item guid.
+For macros and event handlers actually only if ~'rebind'~@foreign@ module is set.
+  #Generate#                      - |Generate new random id/uid or guid.
+
+  #2. Description#                - |Script description.
+
+  #3. Area(s)#                    - |Macros and plugin menu items work areas. For keyboard macros read only.
+  #Select#                        - |~Select areas from list.~@filter@
+
+  #3. Event group#                - |Select event group for event handler from drop-down list.
+
+  #3. Prefix(es)#                 - |Prefixes list delimited by colon.
+
+  #4. Key(s)#                     - |Macro call keys. For keyboard macros read only.
+  #Add#                           - |Add one more call key with pressing key combination on keyboard.
+
+  #4. Menu#                       - |Select menus in which this item will be added.
+
+  #5. Priority#                   - |Macros and event handlers execution priority.
+
+  #6. Sorting#                    - |Macros sorting priority.
+
+  #7. Mask#                       - |File mask, for which macro or event handler are applicable.
+
+  #Flags#                         - |Macro execution parameters.
+
+  #8. Condition#                  - |Function - start macro or event handler condition.
+F4 or double click open condition in Far editor. Condition may be any expression with value of function type, including variable name.
+  #Condition function body#       - |If condition specified as function name, this button allows to edit function body in Far editor.
+
+  #8. Plugin menu item text#      - |Menu item text or function, which returns it.
+F4 or double click open menu item text in Far editor. Menu item text may be any expression with value of function type, including variable name.
+  #Plugin menu item body#         - |If menu item text specified as function name, this button allows to edit function body in Far editor.
+
+  #9. Macro body#
+  #9. Event body#
+  #9. Plugin menu item body#
+  #9. Prefix body#                - |Executable function for regular macros, event handlers, plugin menu items and command line prefixes.
+Actions sequencing for keyboard macros.
+F4 or double click open action in Far editor. Action may be any expression with value of function type, including variable name.
+  #Action function body#          - |If action specified as function name, this button allows to edit function body in Far editor.
+
+  #OK#                            - |Write changed script and close dialog.
+  #Cancel#                        - |Close dialog without saving of changes.
+  #In old format#                 - |Write keyboard macro in format for Far version less as 4202.
+
+@=
+
+ ~Contents~@contents@
+
+@config
+$^LuaManager configuration
+^#Description#
+  In this window LuaManager configuration in showed and may be changed. Configuration changes a stored in base permanently or applied temporarily,
+until exit from LuaManager or configuration reset to saved parameters. Dialog consist of six areas.
+
+^#Hotkeys#
+  #CtrlL#      - |Load configuration from base.
+  #Esc#        - |Discard changes and close dialog.
+  #Enter#      - |Save configuration into base and exit.
+  #ShiftEnter# - |Temporary apply configuration and exit.
+  #F1#         - |This help.
+
+  #ShiftM#     - |~Set macros sorting.~@sort@
+  #ShiftE#     - |~Set events sorting.~@sort@
+  #ShiftO#     - |~Set modules sorting.~@sort@
+  #ShiftI#     - |~Set plugin menu items sorting.~@sort@
+  #ShiftP#     - |~Set command line prefixes sorting.~@sort@
+
+  #CtrlK#      - |Set filter on macro keys.
+  #CtrlAltK#   - |Reset filter on macro keys.
+  #CtrlM#      - |~Set filter on macros areas.~@filter@
+  #CtrlE#      - |~Set filter on events groups.~@filter@
+  #CtrlO#      - |~Set filter on modules paths.~@filter@
+
+  #AltM#       - |Hide/show regular macros.
+  #AltK#       - |Hide/show keyboard macros.
+  #CtrlH#      - |Hide/show macros for other areas.
+  #AltE#       - |Hide/show events.
+  #AltO#       - |Hide/show modules.
+  #AltI#       - |Hide/show plugin menu items.
+  #AltP#       - |Hide/show command line prefixes.
+
+^#Configuration options#
+
+^#1.# Common options
+
+  Key field width. Possible values:
+    #>0#  - |Key field width in chars. If key is longer than value of denoted field width, remain transferred to next lines.
+    #=0#  - |Field width is equal to size of longest key combination.
+    #<0#  - |Key field width in chars. If key is longer than absolute value of denoted field width, remain is truncated.
+
+  File name field width (printed without path). Possible values:
+    #>0#  - |File name field width in chars. If key is longer than value of denoted field width, remain transferred to next lines.
+    #=0#  - |File name is not showed.
+    #<0#  - |File name field width in chars. If key is longer than absolute value of denoted field width, remain is truncated.
+
+  Description field width. Possible values:
+    #>0#  - |Description field width in chars. If line is longer than value of denoted field width, remain transferred to next lines.
+Multiline descriptions printed by line.
+     #0#  - |Field width is equal to size of longest description.
+Multiline descriptions printed by line.
+    #-1#  - |Field width is equal to size of longest description.
+In multiline descriptions only first line is printed.
+    #<0#  - |Description field width in chars. If line is longer than absolute value of denoted field width, remain is truncated.
+Multiline descriptions printed by line.
+
+^#2.# Show. Hide/show different script groups
+
+  #Regular#              - |Show regular macros.
+  #Keyboard#             - |Show keyboard macros.
+  #For all areas#        - |Show all macros, not just those, who work in area, from where "LuaManager" script was started.
+  #Events#               - |Show event handlers.
+  #Modules#              - |Show modules.
+  #MenuItems#            - |Show modules.
+  #CommandLines#         - |Show modules.
+
+^#3.# Sorting order. Script sorting by different parameters
+
+  #Macros#               - |Start ~macro sort order configuration dialog.~@sort@
+  #Events#               - |Start ~event handlers sort order configuration dialog.~@sort@
+  #Modules#              - |Start ~modules sort order configuration dialog.~@sort@
+  #MenuItems#            - |Start ~plugin menu items sort order configuration dialog.~@sort@
+  #CommandLines#         - |Start ~command line prefixes sort order configuration dialog.~@sort@
+
+^#4.# Filter. Script filtering by different parameters
+
+  #Filter for keys#      - |Setting macro start keys filter. Regular expression are allowed.
+  #Change#               - |Set macro start key filter from keyboard.
+  #Filter for areas#     - |Start ~macro area filter configuration menu.~@filter@
+  #Filter for groups#    - |Start ~event handlers group filter configuration menu.~@filter@
+  #Filter for paths#     - |Start ~modules search path filter configuration menu.~@filter@
+
+^#5.# Macros start keys. Customization of "LuaManager" script macros start keys
+
+  #'Lua manager'#        - |Set macro Lua manager start key manually.
+  #Change#               - |Set macro Lua manager start key from keyboard.
+  #'Insert script'#      - |Set macro Insert script start key manually.
+  #Change#               - |Set macro Insert script start key from keyboard.
+  #'Insert Macro'#       - |Set macro Insert macro start key manually.
+  #Change#               - |Set macro Insert macro start key from keyboard.
+  #'Insert Event'#       - |Set macro Insert event start key manually.
+  #Change#               - |Set macro Insert event start key from keyboard.
+  #'Insert MenuItem'#    - |Set macro Insert plugin menu item start key manually.
+  #Change#               - |Set macro Insert plugin menu item start key from keyboard.
+  #'Insert CommandLine'# - |Set macro Insert command line prefix start key manually.
+  #Change#               - |Set macro Insert command line prefix start key from keyboard.
+  #'Edit script'#        - |Set macro Edit script start key manually.
+  #Change#               - |Set macro Edit script start key from keyboard.
+  #'Insert guid'#        - |Set macro Insert guid start key manually.
+  #Change#               - |Set macro Insert guid start key from keyboard.
+  #'Reload scripts'#     - |Reload all scripts.
+  #Change#               - |Set macro Insert event start key from keyboard.
+
+^#6.# Exiting from configuration dialog
+
+  #Save#                 - |Save changes in DB and close dialog.
+  #Apply until exit#     - |Apply changes and close dialog without configuration storing in DB.
+  #Cancel#               - |Discard changes and close dialog.
+
+@=
+
+ ~Contents~@contents@
+
+@filter
+$^Area/group/path filter
+^#Description#
+  In this window script filter may be configured. Marked items matches to printed list items.
+
+^#Hotkeys#
+  #Enter#      - |Save changes and exit.
+  #Esc#        - |Discard changes and exit.
+  #F1#         - |This help.
+
+  #Ins, Space# - |Switch current menu item.
+  #hotkey#     - |Switch specified menu item.
+  #Num+#       - |Switch on all menu items.
+  #Num-#       - |Switch off all menu items.
+  #Num*#       - |Switch all menu items.
+
+@=
+
+ ~Contents~@contents@
+
+@sort
+$^Scripts sorting by types
+^#Description#
+  In this window script sort order may be configured. All possible sorting criteria are placed in list.
+In top of the list printed used criteria in the order of the use, then not used. Used criteria marked by symbol, not used criteria are grayed.
+ Criterion markers:
+    "#↑#" - |sorting by this criterion performed by ascending.
+    "#↓#" - |sorting by this criterion performed by descending.
+    "# #" - |sorting by this criterion do not performed, criterion is grayed.
+
+^#Hotkeys#
+  #Enter#    - |Save changes and exit.
+  #Esc#      - |Discard changes and exit.
+  #F1#       - |This help.
+  #Space#    - |Switch in cycle criterion sorting way: by ascending/by descending/do not use.
+  #Num+#     - |Set sorting of this criterion by ascending.
+  #Num-#     - |Set sorting of this criterion by descending.
+  #Num*#     - |Reset this criterion sorting.
+  #CtrlUp#   - |Move up used sorting criterion by one position.
+  #CtrlDown# - |Move down used sorting criterion by one position.
+
+@=
+
+ ~Contents~@contents@
+
+@list
+$^Script macros list
+  #Default key#   |  #Script#
+
+  #AltShiftF11# - |~Lua manager~@main@.
+  #LCtrlF11#    - |Insert Lua/Moon script into .Lua/Moon file edited.
+  #RCtrlF11#    - |Insert Lua/Moon macro into .Lua/Moon file edited.
+  #RCtrlF11#    - |Insert Lua/Moon event into .Lua/Moon file edited.
+  #RCtrlF11#    - |Insert Lua/Moon plugin menu item into .Lua/Moon file edited.
+  #RCtrlF11#    - |Insert Lua/Moon command line prefix into .Lua/Moon file edited.
+  #CtrlF12#     - |Edit Lua/Moon script under cursor.
+  #RCtrlU#      - |Insert guid into .Lua/Moon file edited.
+  #CtrlF9#      - |Reboot all scripts.
+
+@=
+
+ ~Contents~@contents@
+
+@module
+$^Use script as module
+
+  Script automatically adds self into modules list.
+
+^#Possible call variants#
+
+   1. #require"LuaManager"([<parameters table>])# or #require"LuaManager".Main([<parameters table>])#.
+      |In the table are listed configuration parameters, which may be set into values, different from saved.
+Values of skipped fields are taken from script configuration.
+
+^Fields
+
+      #Sorting#. Each parameter is letters string. Uppercase means sort by ascending, lowercase - by descending.
+        #MaSort#     - |Macros sorting parameters.
+                     #A# - |Areas.
+                     #C# - |Current area.
+                     #O# - |COMMON area.
+                     #D# - |description.
+                     #F# - |File mask.
+                     #K# - |Keys.
+        #EvSort#     - |Event handlers sorting parameters.
+                     #G# - |Event group.
+                     #F# - |File mask.
+                     #D# - |Description.
+        #MoSort#     - |Modules sorting parameters.
+                     #N# - |Module name.
+                     #M# - |Search path and mask.
+                     #T# - |Language.
+        #MISort#     - |Plugin menu items sorting parameters.
+                     #M# - |Including menus.
+                     #A# - |Areas.
+                     #C# - |Current area.
+                     #O# - |COMMON area.
+                     #D# - |Description.
+        #PrSort#     - |Command line prefixes sorting parameters.
+                     #P# - |Prefix.
+                     #D# - |Description.
+
+      #Filtering#. Each parameter is a string.
+        #AFilter#    - |Areas filter for macros. String is a list of areas, divided by spaces.
+        #KFilter#    - |Keys filter for macros. String defined similarly keys in macro definition. Regular expression allowed.
+        #GFilter#    - |Event groups filter for event handlers.String is a list of groups, divided by spaces.
+        #PFilter#    - |Search paths filter for modules. String is a list of paths in #"#, divided by spaces.
+        #FFilter#    - |Files with scripts filter. String is Far file mask.
+        #SFilter#    - |Files, including in this script package. String is the package name from #nfo.name#.
+This parameter overwrites #FFilter#, if both present.
+
+      #Show scrips by types#. Each parameter is a #true#/#false#.
+        #MaShow#     - |Show regular macros.
+        #KMShow#     - |Show keyboard macros.
+        #EvShow#     - |Show event handlers.
+        #MoShow#     - |Show modules.
+        #MIShow#     - |Show plugin menu items.
+        #PrShow#     - |Show command line prefixes.
+        #AMShow#     - |Show macros from non-active areas.
+
+      #ResetFilters# - |Reset all filters to default values, show all scripts. Show and filtering parameters, stored in configuration, are ignored.
+
+   2. #require"LuaManager".Config()#.
+      |LuaManager confiuration in dialog.
+
+   3. #require"LuaManager".InsertScript([<script type>])#.
+      |Insert script into current opened for editing file. Script type:
+        #1#     - Macro.
+        #2#     - Event handler.
+        #3#     - Plugin menu item.
+        #4#     - Command line prefix.
+        #other# - Asked.
+
+   4. #require"LuaManager".EditScript([<line>])#.
+      |Edit script from current opened from editing file. If line is set, script processed,
+in which that line included, else script select menu is outed.
+
+   5. #require"LuaManager".InsUid()#.
+      |Insert generated on the fly uid into cursor position.
+
+   6. #require"LuaManager".Reload(<OnNotSaved>)#.
+      |Reload all scripts. If current area is editor with file changed, then #OnNotSaved# defines action:
+        #"save"#   - |Save file and reload scripts.
+        #"ignore"# - |Reload scripts without file save.
+        #"cancel"# - |Do nothing.
+        #other#    - |Ask.
+
+^#Sample#
+
+ local LM = require"LuaManager"
+ Macro{
+   area="Common"; key="F12"; description="LuaManager: macros"; sortpriority=10; condition=function() return LM end;
+   action=function() LM({MaShow=true,KMShow=true,EvShow=false,MoShow=false,MIShow=false,PrShow=false,AMShow=true,KFilter=""}) end;
+ }
+ Macro{
+   area="Common"; key="F12"; description="LuaManager: events"; sortpriority=9; condition=function() return LM end;
+   action=function() LM({MaShow=false,KMShow=false,EvShow=true,MoShow=false,MIShow=false,PrShow=false}) end;
+ }
+ Macro{
+   area="Common"; key="F12"; description="LuaManager: comand line prefixes"; sortpriority=8; condition=function() return LM end;
+   action=function() LM({MaShow=false,KMShow=false,EvShow=false,MoShow=false,MIShow=false,PrShow=true}) end;
+ }
+ Macro{
+   area="Common"; key="F12"; description="LuaManager: plugin menu items"; sortpriority=7; condition=function() return LM end;
+   action=function() LM({MaShow=false,KMShow=false,EvShow=false,MoShow=false,MIShow=true,PrShow=false}) end;
+ }
+ Macro{
+   area="Common"; key="F12"; description="LuaManager: modules"; sortpriority=6; condition=function() return LM end;
+   action=function() LM({MaShow=false,KMShow=false,EvShow=false,MoShow=true,MIShow=false,PrShow=false}) end;
+ }
+ Macro{
+   area="Shell"; key="F12"; description="LuaManager: all in current file"; flags="NoPluginPanels"; sortpriority=5; condition=function() return LM end;
+   action=function() LM({MaShow=true,KMShow=true,EvShow=true,MoShow=true,MIShow=true,PrShow=true,AMShow=true,FFilter=APanel.Path.."\\".. APanel.Current}) end;
+ }
+ Macro{
+   area="Editor"; key="F12"; description="LuaManager: all in current file"; sortpriority=5; condition=function() return LM end;
+   action=function() LM({MaShow=true,KMShow=true,EvShow=true,MoShow=true,MIShow=true,PrShow=true,AMShow=true,FFilter=Editor.FileName}) end;
+ }
+ Macro{
+   area="Viewer"; key="F12"; description="LuaManager: all in current file"; sortpriority=5; condition=function() return LM end;
+   action=function() LM({MaShow=true,KMShow=true,EvShow=true,MoShow=true,MIShow=true,PrShow=true,AMShow=true,FFilter=Viewer.FileName}) end;
+ }
+
+@=
+
+ ~Contents~@contents@
+
+@foreign
+$^Used foreign modules
+
+  - |~LuaExplorer~@http://forum.farmanager.com/viewtopic.php?t=7988@ by #John Doe#
+    |Let to view value of practically any type variables, including functions and tables.
+Used for viewing of script and it`s components internal data.
+
+  - |~rebind~@http://forum.farmanager.com/viewtopic.php?t=10376@ by #John Doe#
+    |Let to switch off and on any macro or reassign it`s key combination
+without need of file, containing macro, editing.
+All settings (on/off state and rebinded keys) are stored int Far databaseand loaded on Faar start.
+For correct work of module rebind it must be plugged in #_macroinit.lua#.
+
+  - |~regscript~@http://forum.farmanager.com/viewtopic.php?t=10418@ by #John Doe#
+    |Defines a new  substance - script (script package) description, stored in script file, having a standard structure
+and allowing to describe file group, representing logically one package, as single substance.
+For correct work of module regscript it must be plugged in #_macroinit.lua#.
+
+ P. S. That`s not a reclaim post, paid by #John Doe#.
+Simply he is really almost be only, who writes utilities to work with other utilities.
+
+@=
+
+ ~Содержание~@contents@
+
+@about
+$^About
+
+ Author:       #IgorZ#
+
+ Version:      #4.0.4#
+
+ Net address: ~http://forum.farmanager.com/viewtopic.php?t=7936~@http://forum.farmanager.com/viewtopic.php?t=7936@
+@=‗
+
+ This script id designed for manipulation of .Lua/.Moon scripts. May be used as ~macro~@list@ or ~module~@module@.
+
+On script creation was used:
+  - macro showed list of all Far scripts (с) Shmuel
+    ~http://forum.farmanager.com/viewtopic.php?t=7863~@http://forum.farmanager.com/viewtopic.php?t=7863@
+  - macro InsertMacro from SimSU package "Набор макросов" (с) SimSU
+    ~http://forum.farmanager.com/viewtopic.php?t=7075~@http://forum.farmanager.com/viewtopic.php?t=7075@
+  - Far documentation:
+    %FARHOME%\Encyclopedia;
+    ~http://forum.farmanager.com/viewtopic.php?t=7693~@http://forum.farmanager.com/viewtopic.php?t=7693@
+
+@=
+
+ ~Contents~@contents@
+
+@contents
+$^Contents
+
+  ~Main window~@main@
+  ~Show script info~@show@
+  ~Edit script in dialog~@edit@
+  ~LuaManager configuration~@config@
+  ~Area/group/module path filter~@filter@
+  ~Scripts sorting by types~@sort@
+  ~Use script as module~@module@
+  ~Used foreign modules~@foreign@
+  ~Script macros list~@list@
+
+  ~About~@about@

@@ -1,0 +1,45 @@
+﻿.Language=English,English
+
+"LUA File List"
+
+"Error"
+
+"Cannot create or open file for writing"
+
+//Dialog data - row #3
+"Cancel"
+"Create"
+"File list create"
+"File name:"
+"Format string:"
+"First string:"
+"Last string:"
+"Process subfolders"
+"Deselect selected files"
+"Results to file"
+"Append to file"
+"Character set:"
+"Results to Clipboard"
+"Counter"
+"Width:"
+"Begin:"
+"Step:"
+// row #20
+"Dont include non empty folders"
+"Dont include empty folders"
+
+// row #22
+"Scanning of catalogs. Please wait."
+// row #23
+"Sort:"
+"Name(asc)" 
+"Name(desc)"
+"Size(asc)" 
+"Size(desc)"
+"Create Date(asc)"
+"Create Date(desc)"
+"Mod. Date(asc)"
+"Mod. Date(desc)"
+
+"Dont include files"
+"Dont include intermediate directories"

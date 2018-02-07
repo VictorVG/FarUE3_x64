@@ -1,0 +1,17 @@
+Regular Expression Search and Replace, version 8.67
+by Kostromitinov Pavel, pavel@kostrom.spb.ru
+
+- Search and Replace using plain-text and regular expressions in files.
+
+- Search and Replace in editor using plain-text and regular expressions
+
+- Perform script evaluation as part of replace process
+
+- Grep, Filter operations and much more
+
+- Renaming and selecting files using regular expressions
+
+- All non-editor operations accessible from command line
+
+Announcements: http://forum.farmanager.com/viewtopic.php?f=11&t=931
+Discussion:    http://forum.farmanager.com/viewtopic.php?f=5&t=307

@@ -1,0 +1,48 @@
+History:
+--------
+
+v1.5.1 (26/04/15)
+---------------
+ + Far 3.0 build 4353 and [ESC] 2.9 support.
+ * Compiled using TDM-GCC-64 v4.9.2
+ - Fix VERSION_INFO
+
+v1.5 (07/10/12)
+---------------
+
+ + Far 3.0 build 2873 and [ESC] 2.9 support.
+
+v1.4 (05/05/12)
+---------------
+
+ + Far 3.0 build 2572 support.
+
+v1.3 (24/12/11)
+---------------
+ + Far 3.0 and [ESC] 2.7 support.
+
+v1.2 (21/12/08)
+---------------
+ + Far 2.0 build 677 and [ESC] 2.5 support.
+ * Changes in build system.
+ * GCC 4.3.2.
+ * Now plugin works only in FAR version greater than 1.70 build 2087.
+
+v1.1.1 (13/12/04)
+-----------------
+ * Rearranged folder structure.
+ * Updated documentation.
+ * Some code beautification.
+ * Compiled using MingW with GCC 3.4.2.
+ + Now the plugin is released under the GNU GPL license.
+
+v1.1 (18/05/02)
+---------------
+ ! Fixed an issue with edit controls  not  getting  unchanged  state  after  an
+   action was executed.
+ * Now plugin works only in FAR version greater than 1.70 beta 4 build 1282.
+ * My info (email, site) updated.
+
+v1.0 (18/11/01)
+---------------
+ + First release.

@@ -1,0 +1,117 @@
+18 October 2013
+   released version 1.1.21 of filever
+
+     Change log:
+        -Fixed: Не работал на Win XP
+
+15 October 2013
+   released version 1.1.20 of filever
+
+     Change log:
+        -Fixed: Если архитектура определена, то показывается диалог, даже с пустой версией
+
+19 May 2013
+   released version 1.1.19 of filever
+
+     Change log:
+        -Fixed: Проблемы запуска из комстроки содержащей пробелы и кавычки
+
+05 May 2013
+   released version 1.1.18 of filever
+
+     Change log:
+        -Fixed: В FAR сообщался старый номер версии плагина
+
+03 May 2013
+   released version 1.1.17 of filever
+
+     Change log:
+        -Fixed: Падение 32-битной версии
+
+03 May 2013
+   released version 1.1.16 of filever
+
+     Change log:
+        -Fixed: Запуск из комстроки теперь понимает относительные пути и
+                переменные среды
+        -Added: Запуск из просмотрщика
+
+26 March 2013
+   released version 1.0.15 of filever
+
+     Change log:
+        -Fixed: не работал запуск из комстроки
+
+06 January 2013
+   released version 1.0.14 of filever
+
+     Change log:
+        -Updated: минимальная версии ФАР 3.0.3000
+
+19 October 2012
+   released version 1.0.13 of filever
+
+     Change log:
+        -Updated: Поддержка FAR3lua
+
+07 September 2012
+   released version 1.0.12 of filever
+
+     Change log:
+        -Fixed: Плагин не запускался из макроса
+        -Added: Добавлена xml для Renewal
+
+10 July 2012
+   released version 1.0.11 of filever
+
+     Change log:
+        -Fixed: Вроде починил падения из-за неверного обращения к памяти
+
+10 April 2012
+   released version 1.0.10 of filever
+
+     Change log:
+        -Fixed: Собрал и проверил на FAR 2593
+
+30 March 2012
+   released version 1.0.9 of filever
+
+     Change log:
+        -Fixed: Поддержка FAR API версии 2573
+
+09 February 2012
+   released version 1.0.8 of filever
+
+     Change log:
+        -Fixed: Ошибка с получением текущей директории
+
+09 January 2012
+   released version 1.0.7 of filever
+
+     Change log:
+        -Added: Поддержка FAR3
+
+13 April 2010
+   released version 1.0.6 of filever
+
+     Change log:
+        -Fixed: Плагин падал при работе с временной панелью
+
+15 March 2010
+   released version 1.0.5 of filever
+
+     Change log:
+        -Fixed: Ошибка при работе с ресурсами с неправильным Codepage
+
+13 March 2010
+   released version 1.0.4 of filever
+
+     Change log:
+        -Fixed: Исправил падение при открытии файла по сети
+
+09 March 2010
+   released version 1.0.3 of filever
+
+     Change log:
+        -Fixed: Исправлена пара незначительных ошибок
+        -Added: Добавлен файл русского интерфейса спасибо VictorVG @ VikSoft.Ru
