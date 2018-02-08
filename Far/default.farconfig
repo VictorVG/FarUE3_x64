@@ -488,7 +488,7 @@
 		<filetype mask="*.moon" description="Moonscrip">
 			<command type="0" enabled="1" command="moon:@&quot;!=\!.!&quot;"/>
 		</filetype>
-		<filetype mask="Readme.[t,w]xt,Descript.ion,File_Id.diz,[r]notes.[t,w]xt,readme.md" description="Readme and descriptions">
+		<filetype mask="Readme.[tw]xt,Descript.ion,File_Id.diz,[r]notes.[tw]xt,readme.md" description="Readme and descriptions">
 			<command type="0" enabled="1" command="view:&quot;!=\!+!&quot;"/>
 			<command type="2" enabled="1" command="View:&quot;!=\!+!&quot;"/>
 			<command type="3" enabled="1" command="&quot;!=\!+!&quot;"/>
