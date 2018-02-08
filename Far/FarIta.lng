@@ -1,6 +1,6 @@
 ﻿.Language=Italian,Italian (Italiano)
 
-//Version: 3.0 build 5139
+//Version: 3.0 build 5140
 
 //[MYes]
 "&Si"
@@ -1108,8 +1108,10 @@
 //[MDefaultCP]
 "Default"
 
-//[MEditGoToLine]
-"Vai Alla Linea"
+//[MGoTo]
+"Vai A "
+//[MGoToHex]
+"&Esadecimale"
 
 //[MFolderShortcutsTitle]
 "Collegamento Cartelle"
@@ -3883,15 +3885,6 @@
 
 //[MRightCtrl]
 "CtrlDestra"
-
-//[MViewerGoTo]
-"Vai A "
-//[MGoToPercent]
-"&Percentuale"
-//[MGoToHex]
-"Posizione &Esadecimale"
-//[MGoToDecimal]
-"Posizione &Decimale"
 //[MExcTrappedException]
 "Eccezione Interna"
 //[MExcException]

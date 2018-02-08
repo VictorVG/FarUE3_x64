@@ -1,6 +1,6 @@
 ﻿.Language=Slovak,Slovak (Slovenčina)
 
-//Version: 3.0 build 5139
+//Version: 3.0 build 5140
 
 //[MYes]
 "Áno"
@@ -1118,8 +1118,11 @@
 //[MDefaultCP]
 "Východiskové"
 
-//[MEditGoToLine]
-"Ísť na pozíciu"
+//[MGoTo]
+"Ísť na"
+// need translation:
+//[MGoToHex]
+"&Hex offset"
 
 //[MFolderShortcutsTitle]
 "Skratky priečinkov"
@@ -3910,15 +3913,6 @@
 
 //[MRightCtrl]
 "PravýCtrl"
-
-//[MViewerGoTo]
-"Ísť na"
-//[MGoToPercent]
-"&Percent"
-//[MGoToHex]
-"&Hex offset"
-//[MGoToDecimal]
-"&Desiatkový offset"
 //[MExcTrappedException]
 "Vyskytla sa výnimka"
 //[MExcException]

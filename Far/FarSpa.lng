@@ -1,6 +1,6 @@
 ﻿.Language=Spanish,Spanish (Español)
 
-//Version: 3.0 build 5139
+//Version: 3.0 build 5140
 
 //[MYes]
 "Si"
@@ -1099,8 +1099,10 @@
 //[MDefaultCP]
 "Por defecto"
 
-//[MEditGoToLine]
-"Ir a posición"
+//[MGoTo]
+"Ir a"
+//[MGoToHex]
+"&Hexa"
 
 //[MFolderShortcutsTitle]
 "Atajos a directorios"
@@ -3869,15 +3871,6 @@
 
 //[MRightCtrl]
 "CtrlDrcho"
-
-//[MViewerGoTo]
-"Ir a:"
-//[MGoToPercent]
-"&Porcentaje"
-//[MGoToHex]
-"Dirección &hexa"
-//[MGoToDecimal]
-"Dirección &decimal"
 //[MExcTrappedException]
 "Error de excepción"
 //[MExcException]

@@ -1,6 +1,6 @@
 ﻿.Language=English,English
 
-//Version: 3.0 build 5139
+//Version: 3.0 build 5140
 
 //[MYes]
 "Yes"
@@ -1099,8 +1099,10 @@
 //[MDefaultCP]
 "Default"
 
-//[MEditGoToLine]
-"Go to position"
+//[MGoTo]
+"Go to"
+//[MGoToHex]
+"&Hex value"
 
 //[MFolderShortcutsTitle]
 "Folder shortcuts"
@@ -3866,15 +3868,6 @@
 
 //[MRightCtrl]
 "RightCtrl"
-
-//[MViewerGoTo]
-"Go to"
-//[MGoToPercent]
-"&Percent"
-//[MGoToHex]
-"&Hex offset"
-//[MGoToDecimal]
-"&Decimal offset"
 //[MExcTrappedException]
 "Exception occurred"
 //[MExcException]

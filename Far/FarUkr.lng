@@ -1,6 +1,6 @@
 ﻿.Language=Ukrainian,Ukrainian (Українська)
 
-//Version: 3.0 build 5139
+//Version: 3.0 build 5140
 
 //[MYes]
 "Так"
@@ -1099,8 +1099,10 @@
 //[MDefaultCP]
 "За замовчуванням"
 
-//[MEditGoToLine]
+//[MGoTo]
 "Перейти"
+//[MGoToHex]
+"16-ове &значення"
 
 //[MFolderShortcutsTitle]
 "Посилання на папки"
@@ -3866,15 +3868,6 @@
 
 //[MRightCtrl]
 "ПравийCtrl"
-
-//[MViewerGoTo]
-"Перейти"
-//[MGoToPercent]
-"&Відсоток"
-//[MGoToHex]
-"16-ове &зміщення"
-//[MGoToDecimal]
-"10-ове з&міщення"
 //[MExcTrappedException]
 "Виняткова ситуація"
 //[MExcException]

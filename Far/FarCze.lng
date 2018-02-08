@@ -1,6 +1,6 @@
 ﻿.Language=Czech,Czech (Čeština)
 
-//Version: 3.0 build 5139
+//Version: 3.0 build 5140
 
 //[MYes]
 "Ano"
@@ -1144,8 +1144,11 @@
 //[MDefaultCP]
 "Výchozí"
 
-//[MEditGoToLine]
-"Jít na pozici"
+//[MGoTo]
+"Jdi na"
+// need translation:
+//[MGoToHex]
+"&Hex value"
 
 //[MFolderShortcutsTitle]
 "Adresářové zkratky"
@@ -3938,15 +3941,6 @@
 
 //[MRightCtrl]
 "PravýCtrl"
-
-//[MViewerGoTo]
-"Jdi na"
-//[MGoToPercent]
-"&Procent"
-//[MGoToHex]
-"&Hex offset"
-//[MGoToDecimal]
-"&Desítkový offset"
 //[MExcTrappedException]
 "Vyskytla se výjimka"
 //[MExcException]

@@ -1,6 +1,6 @@
 ﻿.Language=Hungarian,Hungarian (Magyar)
 
-//Version: 3.0 build 5139
+//Version: 3.0 build 5140
 
 //[MYes]
 "Igen"
@@ -1210,8 +1210,10 @@
 //[MDefaultCP]
 "Default"
 
-//[MEditGoToLine]
-"Sorra ugrás"
+//[MGoTo]
+"Ugrás"
+//[MGoToHex]
+"&Hexában"
 
 //[MFolderShortcutsTitle]
 "Mappa gyorsbillentyűk"
@@ -4132,15 +4134,6 @@
 
 //[MRightCtrl]
 "JobbCtrl"
-
-//[MViewerGoTo]
-"Ugrás"
-//[MGoToPercent]
-"&Százalékban"
-//[MGoToHex]
-"&Hexában"
-//[MGoToDecimal]
-"&Decimálisan"
 //[MExcTrappedException]
 "Kivétel történt"
 // need translation:

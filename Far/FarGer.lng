@@ -1,6 +1,6 @@
 ﻿.Language=German,German (Deutsch)
 
-//Version: 3.0 build 5139
+//Version: 3.0 build 5140
 
 //[MYes]
 "Ja"
@@ -1117,8 +1117,11 @@
 //[MDefaultCP]
 "Standardmäßig voreingestellt"
 
-//[MEditGoToLine]
-"Gehe zu Zeile"
+//[MGoTo]
+"Gehe zu"
+// need translation:
+//[MGoToHex]
+"&Hex value"
 
 //[MFolderShortcutsTitle]
 "Ordnerschnellzugriff"
@@ -3937,15 +3940,6 @@
 
 //[MRightCtrl]
 "StrgRechts"
-
-//[MViewerGoTo]
-"Gehe zu"
-//[MGoToPercent]
-"&Prozent"
-//[MGoToHex]
-"Position (&Hex)"
-//[MGoToDecimal]
-"Position (&dezimal)"
 //[MExcTrappedException]
 "Ausnahmefehler aufgetreten"
 //[MExcException]

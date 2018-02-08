@@ -1,6 +1,6 @@
 ﻿.Language=Polish,Polish (Polski)
 
-//Version: 3.0 build 5139
+//Version: 3.0 build 5140
 
 //[MYes]
 "Tak"
@@ -1216,8 +1216,10 @@
 //[MDefaultCP]
 "Default"
 
-//[MEditGoToLine]
-"Idź do linii"
+//[MGoTo]
+"Idź do"
+//[MGoToHex]
+"&Szesnastkowo"
 
 //[MFolderShortcutsTitle]
 "Skróty katalogów"
@@ -4161,15 +4163,6 @@
 
 //[MRightCtrl]
 "PrawyCtrl"
-
-//[MViewerGoTo]
-"Idź do"
-//[MGoToPercent]
-"&Procent"
-//[MGoToHex]
-"Pozycja (&szesnastkowo)"
-//[MGoToDecimal]
-"Pozycja (&dziesiętnie)"
 //[MExcTrappedException]
 "Wystąpił wyjątek"
 // need translation:

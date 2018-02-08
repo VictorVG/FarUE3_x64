@@ -1,6 +1,6 @@
 ﻿.Language=Russian,Russian (Русский)
 
-//Version: 3.0 build 5139
+//Version: 3.0 build 5140
 
 //[MYes]
 "Да"
@@ -1099,8 +1099,10 @@
 //[MDefaultCP]
 "По умолчанию"
 
-//[MEditGoToLine]
+//[MGoTo]
 "Перейти"
+//[MGoToHex]
+"16-ричное &значение"
 
 //[MFolderShortcutsTitle]
 "Ссылки на папки"
@@ -3866,15 +3868,6 @@
 
 //[MRightCtrl]
 "ПравыйCtrl"
-
-//[MViewerGoTo]
-"Перейти"
-//[MGoToPercent]
-"&Процент"
-//[MGoToHex]
-"16-ричное &смещение"
-//[MGoToDecimal]
-"10-ичное с&мещение"
 //[MExcTrappedException]
 "Исключительная ситуация"
 //[MExcException]
