@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<farconfig version="3.0.5107">
+<farconfig version="3.0.5141">
 	<generalconfig>
 		<setting key="Cmdline" name="AutoComplete" type="qword" value="0000000000000001"/>
 		<setting key="Cmdline" name="DelRemovesBlocks" type="qword" value="0000000000000001"/>
@@ -477,6 +477,11 @@
 		<object name="WarnDialog.Text.Highlight" background="FF000004" foreground="FF00000E" flags="fg4bit bg4bit"/>
 	</colors>
 	<associations>
+		<filetype mask="*.pdf" description="Adobe PDF">
+			<command type="0" enabled="1" command="&quot;!=\!.!&quot;"/>
+			<command type="1" enabled="1" command="observe:&quot;!=\!.!&quot;"/>
+			<command type="2" enabled="1" command="view:&quot;!=\!.!&quot;"/>
+		</filetype>
 		<filetype mask="*.hlf" description="Far Help">
 			<command type="0" enabled="1" command="hlf:&quot;!=\!+!&quot; !?Go to topic ((Contents if empty)):?!"/>
 			<command type="3" enabled="1" command="hlf:&quot;!=\!+!&quot;"/>
@@ -488,7 +493,7 @@
 		<filetype mask="*.moon" description="Moonscrip">
 			<command type="0" enabled="1" command="moon:@&quot;!=\!.!&quot;"/>
 		</filetype>
-		<filetype mask="Readme.[tw]xt,Descript.ion,File_Id.diz,[r]notes.[tw]xt,readme.md" description="Readme and descriptions">
+		<filetype mask="Readme.[t,w]xt,Descript.ion,File_Id.diz,[r]notes.[t,w]xt,readme.md" description="Readme and descriptions">
 			<command type="0" enabled="1" command="view:&quot;!=\!+!&quot;"/>
 			<command type="2" enabled="1" command="View:&quot;!=\!+!&quot;"/>
 			<command type="3" enabled="1" command="&quot;!=\!+!&quot;"/>
