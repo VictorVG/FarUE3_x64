@@ -1,8 +1,8 @@
-﻿local Info = Info or package.loaded.regscript or function(...) return ... end --luacheck: ignore 113/Info
+local Info = Info or package.loaded.regscript or function(...) return ... end --luacheck: ignore 113/Info
 local nfo = Info {_filename or ...,
   name          = "CtrlAltMenuDisk";
   description   = "Переключение дисков по Ctrl/Alt/Shift+<-/->";
-  version       = "4.0.1"; --http://semver.org/lang/ru/
+  version       = "4.1.0"; --http://semver.org/lang/ru/
   author        = "IgorZ";
   url           = "http://forum.farmanager.com/viewtopic.php?t=7471";
   id            = "097450AF-B186-425A-961A-4A884FC2B732";
@@ -57,6 +57,7 @@ history         = [[
 2017/12/18 v3.3.2 - Можно указывать несколько строк вывода, панель будет выводиться в каждой.
 2017/12/21 v4.0.0 - Панели переключения могут быть постоянными и всплывающими при наведении мыши. Рефакторинг.
 2018/01/05 v4.0.1 - Укрощение курсора в поле "Диски, исключаемые из списка" диалога настроек.
+2018/02/09 v4.1.0 - Горизонтальная позиция мини-панели настраивается. Скрипт добавляется в меню дисков. Подсказки. Рефакторинг.
 ]];
 }
 if not nfo then return end
@@ -73,136 +74,117 @@ local Guids = {
   PlugMenu = "A4A5A5A7-AD64-4DD1-8C61-28CB90358817",
   ConfDialog = win.Uuid("D86EB908-8F29-4D8B-99D7-13DEB1FCA322"),
 }
+local PathName = (...):match("(.*)%.lua") -- путь и общая часть имени
 -- +
 --[[настройки]]
 -- -
-local DefaultProfile,UsedProfile = F.PSL_ROAMING -- место хранения настроек по умолчанию: глобальные
-local DefUseHidden,UseHidden = 1 -- отрабатывать для скрытой панели
-local DefSetPanelsOn,SetPanelsOn = 0 -- 0/1/2 - при выключенной панели оставлять выключенной/включать изменяемую/включать обе
-local DefKP,KP = {L="Ctrl RAlt",R="Alt RCtrl",A="Shift",P="",Left="Left",Right="Right"} -- что чем переключать
-local DefExcludeDrives,ExcludeDrives = "" -- диски, исключаемые из списка перехода (в верхнем регистре!)
-local DefOutStr,OutStr = "0" -- строка вывода мини-панели
-local DefSpDelim,SpDelim = 0 -- разделять символы пробелами
-local DefLowerCurDrive,LowerCurDrive = 1 -- выводить букву текущего тиска в нижнем регистре
-local DefPermPanel,PermPanel = 0 -- использовать постоянные панели
-local DefFixedPerm,FixedPerm = 0 -- показывать постоянные панели всегда
-local DefPlugins,Plugins,PlugStr = { -- плагины, добавляемые к списку дисков, их порядок
-  ["5"]=win.Uuid("65642111-AA69-4B84-B4B8-9249579EC4FA"), -- ArcLite
-  ["2"]=win.Uuid("42E4AEB1-A230-44F4-B33C-F195BB654931"), -- NetBox, bug
-  ["3"]=win.Uuid("773B5051-7C5F-4920-A201-68051C4176A4"), -- network
-  ["0"]=win.Uuid("1E26A927-5135-48C6-88B2-845FB8945484"), -- Proclist
-  ["="]=win.Uuid("06771932-E01F-4259-A7A5-A899DEC06FC7"), -- SameFolder
-  ["1"]=win.Uuid("B77C964B-E31E-4D4C-8FE5-D6B0C6853E7C"), -- TmpPanel
---["4"]=win.Uuid("148FE5E0-7129-4269-B30F-A1A866DD009A"), -- TrueBranch
-}
--- Языковые настройки
-local PathName,FarLang,L = (...):match("(.*)%.lua")
+local Def = { -- умолчания
+  Profile = F.PSL_ROAMING, -- место хранения настроек по умолчанию: глобальные
+  UseHidden = 1, -- отрабатывать для скрытой панели
+  SwitchPanelsOn = 0, -- 0/1/2 - при выключенной панели оставлять выключенной/включать изменяемую/включать обе
+  SpDelim = 0, -- разделять символы пробелами
+  LowerCurDrive = 1, -- выводить букву текущего диска в нижнем регистре
+  OutStr = "0", -- строка/и вывода мини-панели
+  OutCol = 1, -- столбец вывода мини-панели
+  ExcludeDrives = "", -- диски, исключаемые из списка перехода (в верхнем регистре!)
+  PermPanel = 0, -- использовать постоянные панели
+  FixedPerm = 0, -- показывать постоянные панели всегда
+  KP = {L="Ctrl RAlt",R="Alt RCtrl",A="Shift",P="",Left="Left",Right="Right"}, -- что чем переключать
+  Plugins = { -- плагины, добавляемые к списку дисков, их порядок
+    ["5"]=win.Uuid("65642111-AA69-4B84-B4B8-9249579EC4FA"), -- ArcLite
+    ["2"]=win.Uuid("42E4AEB1-A230-44F4-B33C-F195BB654931"), -- NetBox, bug
+    ["3"]=win.Uuid("773B5051-7C5F-4920-A201-68051C4176A4"), -- network
+    ["0"]=win.Uuid("1E26A927-5135-48C6-88B2-845FB8945484"), -- Proclist
+    ["="]=win.Uuid("06771932-E01F-4259-A7A5-A899DEC06FC7"), -- SameFolder
+    ["1"]=win.Uuid("B77C964B-E31E-4D4C-8FE5-D6B0C6853E7C"), -- TmpPanel
+--  ["4"]=win.Uuid("148FE5E0-7129-4269-B30F-A1A866DD009A"), -- TrueBranch
+} }
 -- +
---[[общие переменные]]
+--[[переменные]]
 -- -
-local Key,KeyMod,WPanel,timer
--- Признак выключения, признак "в работе"
-local stop_timer,in_process = false,false
+-- Признак выключения, признак "в работе", настройки, локализация, нажатые клавиша и модификатор, рабочая панель, таймер для постоянной мини-панели
+local stop_timer,in_process,S,L,Key,KeyMod,WPanel,timer = false,false
 -- +
 --[[вспомогательные функции]]
 -- -
-local LoadSettings,SaveSettings,MakePanel,MakeOutPanel,GetDrive,CD,ShowHelp
+local LoadSettings,SaveSettings,MakePanel,MakeOutPanel,GetDrive,CD,GetHints,ShowHelp
 -- +
 --[==[Основные функции]==]
 -- -
 local Config,TestCond,ChangeDrive,OnTimer
 --
-function LoadSettings(defaults) --[[загрузить настройки из БД]]
+function LoadSettings(Df,ForceDef) --[[загрузить настройки из БД]]
+local Cfg,obj,key,L1
+function L1(n) return not ForceDef and obj:Get(key or -1,n,({string=F.FST_STRING,number=F.FST_QWORD})[type(Df[n])]) or Df[n] end
 --
-local obj,key
-local function Load1(n,d) return not defaults and obj:Get(key or -1,n,({string=F.FST_STRING,number=F.FST_QWORD})[type(d)]) or d end
---
-obj = far.CreateSettings(nil,DefaultProfile) -- откроем предпочтительные настройки
+obj = far.CreateSettings(nil,Def.Profile) -- откроем предпочтительные настройки
 key = obj:OpenSubkey(obj:OpenSubkey(0,Author) or 0,ConfPart) -- есть раздел?
-UsedProfile = DefaultProfile -- запомним профиль
 if not key then -- настроек нет?
-  obj:Free() obj = far.CreateSettings(nil,DefaultProfile==F.PSL_LOCAL and F.PSL_ROAMING or F.PSL_LOCAL) -- откроем другие настройки
-  key = obj:OpenSubkey(obj:OpenSubkey(0,Author) or 0,ConfPart) -- есть раздел?
-  if key then -- из другого профиля открылись?
-    UsedProfile = DefaultProfile==F.PSL_LOCAL and F.PSL_ROAMING or F.PSL_LOCAL -- запомним профиль
+  obj:Free() obj = far.CreateSettings(nil,Def.Profile==F.PSL_LOCAL and F.PSL_ROAMING or F.PSL_LOCAL) -- откроем другие настройки
+  key = obj:OpenSubkey(obj:OpenSubkey(0,Author) or 0,ConfPart) -- есть раздел? если нет, неважно, какой открыт, всё равно брать умолчания
+  Cfg = key and (Def.Profile==F.PSL_LOCAL and F.PSL_ROAMING or F.PSL_LOCAL) -- временно запомним профиль, если открылся альтернативный
+end
+Cfg = { Profile = Cfg or Def.Profile, -- запомним профиль -- считаем настройки
+  UseHidden = L1("UseHidden")~=0,SwitchPanelsOn = L1("SwitchPanelsOn"),SpDelim = L1("SpDelim")~=0,LowerCurDrive = L1("LowerCurDrive")~=0,
+  OutStr = L1("OutStr"),OutCol = L1("OutCol"),ExcludeDrives = L1("ExcludeDrives"),PermPanel = L1("PermPanel")~=0,FixedPerm = L1("FixedPerm")~=0,
+  KP = {},Plugins = {},PDescr = {} }
+key = obj:OpenSubkey(key or -1,KeyPart) -- подраздел со списком клавиш
+for n,v in pairs(Def.KP) do Cfg.KP[n] = not ForceDef and obj:Get(key or -1,n,F.FST_STRING) or v end -- загрузим значения из БД или умолчания
+key = obj:OpenSubkey(obj:OpenSubkey(obj:OpenSubkey(0,Author) or 0,ConfPart) or -1,KeyPart) -- подраздел со списком плагинов
+Cfg.PlugStr = L1("PlugStr") -- список плагинов
+if Cfg.PlugStr then -- прочитан?
+  for c in Cfg.PlugStr:gmatch(".") do --для каждого обозначения плагина
+    local u = L1(c) -- достанем GUID
+    if u then Cfg.Plugins[c] = win.Uuid(u) else Cfg.PlugStr = Cfg.PlugStr:gsub(c,"?") end -- достался - запомним, иначе заменим символ плагина на "?"
   end
+  Cfg.PlugStr = Cfg.PlugStr:gsub("%?","") -- выкинем "?", для которых нет guidов плагинов в БД
+else -- список не прочитан, берём умолчания
+  Cfg.PlugStr = "" -- инициализируем
+  for n,v in pairs(Def.Plugins) do Cfg.Plugins[n],Cfg.PlugStr = v,Cfg.PlugStr..n end -- возьмём значения по умолчанию
 end
-UseHidden,FixedPerm = Load1("UseHidden",DefUseHidden)~=0,Load1("FixedPerm",DefFixedPerm)~=0 -- считаем настройки
-PermPanel = Load1("PermPanel",DefPermPanel)~=0 -- считаем настройки
-SetPanelsOn,ExcludeDrives,OutStr = Load1("SwitchPanelsOn",DefSetPanelsOn),Load1("ExcludeDrives",DefExcludeDrives),Load1("OutStr",DefOutStr)
-SpDelim,LowerCurDrive = Load1("SpDelim",DefSpDelim)~=0,Load1("LowerCurDrive",DefLowerCurDrive)~=0 -- считаем настройки
-key = obj:OpenSubkey(key or -1,PlugPart) -- подраздел со списком плагинов
-PlugStr = Load1("PlugStr","") -- список плагинов
-Plugins = {} -- инициализируем
-if PlugStr~="" then -- таблица прочитана?
-  for c in PlugStr:gmatch(".") do
-    local u = Load1(c,"")
-    if u~="" then
-      Plugins[c] = win.Uuid(u)
-    else
-      PlugStr = PlugStr:gsub(c,"?")
-    end
-  end -- выдернем guidы плагинов
-  PlugStr = PlugStr:gsub("?","") -- выкинем буквы, для которых нет guidов плагинов в БД
-else -- таблица не прочитана, берём умолчания
-  PlugStr = "" -- инициализируем
-  for n,v in pairs(DefPlugins) do Plugins[n],PlugStr = v,PlugStr..n end -- возьмём значения по умолчанию
-end
-KP = {} -- инициализируем таблицу
-key = obj:OpenSubkey(obj:OpenSubkey(obj:OpenSubkey(0,Author) or 0,ConfPart) or -1,KeyPart) -- подраздел со списком клавиш
-for n,v in pairs(DefKP) do KP[n] = Load1(n,v) end -- загрузим значения из БД или умолчания
 far.FreeSettings() -- приберёмся
-KP.Left1,KP.Right1 = KP.Left:gsub("\\[dDpP]",""),KP.Right:gsub("\\[dDpP]","") -- копии без признаков "только диски/плагины" для скорости и удобства
-local FL,dummy = win.GetEnv("FARLANG"),function() far.Message("Cannot find languages files",nfo.name,";Ok","w") return {} end -- язык, пустая функция
-if FarLang~=FL then FarLang,L = FL,(loadfile(PathName..FL:sub(1,3)..".lng") or loadfile(PathName.."Eng.lng") or dummy)() end -- обновим изменившийся
+Cfg.KP.Left1,Cfg.KP.Right1 = Cfg.KP.Left:gsub("\\[dDpP]",""),Cfg.KP.Right:gsub("\\[dDpP]","") -- копии без признаков "только диски/плагины"
+GetHints(Cfg)
+local FL,dummy = Far.GetConfig("Language.Main"),function() return {"Cannot find languages files"} end -- язык, пустая функция
+if not L or L.Lang~=FL then L = (loadfile(PathName..FL:sub(1,3)..".lng") or loadfile(PathName.."Eng.lng") or dummy)() end -- обновим изменившийся
+return Cfg
 end --LoadSettings
 --
-function SaveSettings() --[[сохранить настройки в БД]]
-local obj,key
-local function Save1(n,v) -- сохранить одну настройку
-if type(v)=="boolean" then v = v and 1 or 0 end -- заменим true/false на 1/0
-local t = ({string=F.FST_STRING,number=F.FST_QWORD})[type(v)] -- тип параметра в БД
-if obj:Get(key,n,t)~=v then obj:Set(key,n,t,v) end -- изменился (или не было)? запишем
-end
+function SaveSettings(Cfg) --[[сохранить настройки в БД]]
+local obj,key,S1
+function S1(n,v) v = v==true and 1 or v==false and 0 or v local t = type(v)=="string" and F.FST_STRING or F.FST_QWORD
+                 if obj:Get(key,n,t)~=v then obj:Set(key,n,t,v) end end
 --
-if UsedProfile==F.PSL_LOCAL then win.CreateDir(win.GetEnv("FARLOCALPROFILE").."\\PluginsData") end -- создать папку для локальных настроек (если надо)
-obj = far.CreateSettings(nil,UsedProfile) -- откроем ранее прочитанные или предпочтительные настройки
+if Cfg.Profile==F.PSL_LOCAL then win.CreateDir(win.GetEnv("FARLOCALPROFILE").."\\PluginsData") end -- создать папку для локальных настроек (если надо)
+obj = far.CreateSettings(nil,Cfg.Profile) -- откроем ранее прочитанные или предпочтительные настройки
 key = obj:CreateSubkey(obj:CreateSubkey(0,Author),ConfPart) -- откроем/создадим раздел
-Save1("UseHidden",UseHidden) Save1("FixedPerm",FixedPerm) Save1("PermPanel",PermPanel) -- сохраним настройки
-Save1("SwitchPanelsOn",SetPanelsOn) Save1("ExcludeDrives",ExcludeDrives) Save1("OutStr",OutStr)
-Save1("SpDelim",SpDelim) Save1("LowerCurDrive",LowerCurDrive) -- сохраним настройки
-key = obj:CreateSubkey(key,PlugPart) -- подраздел со списком плагинов
-Save1("PlugStr",PlugStr)
-for n,v in pairs(Plugins) do Save1(n,win.Uuid(v)) end -- сохраним его
-key = obj:CreateSubkey(obj:OpenSubkey(obj:OpenSubkey(0,Author) or 0,ConfPart) or -1,KeyPart) -- подраздел со списком клавиш
-for n,v in pairs(KP) do Save1(n,v) end -- сохраним значения
+S1("UseHidden",Cfg.UseHidden) S1("SwitchPanelsOn",Cfg.SwitchPanelsOn) S1("SpDelim",Cfg.SpDelim) -- сохраним настройки
+S1("LowerCurDrive",Cfg.LowerCurDrive) S1("OutStr",Cfg.OutStr) S1("OutCol",Cfg.OutCol) S1("ExcludeDrives",Cfg.ExcludeDrives)
+S1("PermPanel",Cfg.PermPanel) S1("FixedPerm",Cfg.FixedPerm)
+key = obj:CreateSubkey(key,KeyPart) -- подраздел со списком клавиш
+for n,v in pairs(Cfg.KP) do S1(n,v) end -- сохраним значения
+key = obj:CreateSubkey(obj:OpenSubkey(obj:OpenSubkey(0,Author) or 0,ConfPart) or -1,PlugPart) -- подраздел со списком плагинов
+S1("PlugStr",Cfg.PlugStr)
+for n,v in pairs(Cfg.Plugins) do S1(n,win.Uuid(v)) end -- сохраним его
 far.FreeSettings() -- приберёмся
 end --SaveSettings
 --
 function MakePanel(full) --[[собрать панельку]]
-local DP,p = full and "" or ((KP.Left.." "..KP.Right):match("\\([dDpP])"..Key)or ""):upper(),"" -- признак только дисков/плагинов, список дисков
+local DP,p = full and "" or ((S.KP.Left.." "..S.KP.Right):match("\\([dDpP])"..Key)or ""):upper(),"" -- признак только дисков/плагинов, панель
 for d in (DP~="P" and A_Z or ""):gmatch(".") do -- если диски выводить, заполним ими список
-  if win.GetDriveType(d..":\\")~="no root directory" and not ExcludeDrives:cfind(d,1,true) then -- если не отсутствует и не исключён
-    p = p..d -- добавим
-  end
+  if win.GetDriveType(d..":\\")~="no root directory" and not S.ExcludeDrives:cfind(d,1,true) then p = p..d end -- не отсутствует/исключён - добавим
 end
-return p..(DP~="D" and PlugStr or "").."?" -- полный список
+return p..(DP~="D" and S.PlugStr or "").."?" -- полный список
 end --MakePanel
 --
-function MakeOutPanel(p) --[[собрать панельку для экрана]]
-local p2 = ""
-for c in p:gmatch(".") do p2 = p2..c..(SpDelim and " " or "") end -- полный экранный список
-return p2:gsub(" $","") -- уберём конечный пробел, если есть, и вернём
-end --MakeOutPanel
+function MakeOutPanel(p) return (p:gsub(".","%1"..(S.SpDelim and " " or "")):gsub(" $","")) end --[[собрать панельку для экрана]]
 --
 function GetDrive(P,DP) --[[определить букву диска на панели]]
 if P.Path:sub(2,2)==":" and DP~="P" then -- на левой панели локальный диск? Выводим не только плагины?
   return P.Path:sub(1,1) -- его буква
 elseif DP~="D" then -- не диск и выводим не только диски?
   local id = panel.GetPanelDirectory(nil,P==APanel and 1 or 0).PluginId -- guid плагина панели, если плагины выводятся
-  for c,p in pairs(Plugins) do -- переберём все обрабатываемые плагины
-    if p==id then return c end -- нашли? Вернём
-  end
+  for c,p in pairs(S.Plugins) do if p==id then return c end end -- переберём все обрабатываемые плагины. Нашли? Вернём
 end
 return " " -- неизвестно что, вернём пробел (запрещённый символ)
 end --GetDrive
@@ -210,13 +192,23 @@ end --GetDrive
 function CD(P,Drv) --[[установить новый диск/плагин]]
 if Drv=="?" then Config() -- настройка? Вызовем
 else -- для остальных
-  panel.SetPanelDirectory(nil,P==APanel and 1 or 0,Plugins[Drv] and {PluginId=Plugins[Drv]} or Drv..":") -- установим панель плагина/диск
+  panel.SetPanelDirectory(nil,P==APanel and 1 or 0,S.Plugins[Drv] and {PluginId=S.Plugins[Drv]} or Drv..":") -- установим панель плагина/диск
   if not P.Visible then -- панель скрыта?
-    if SetPanelsOn==2 and APanel.Visible==PPanel.Visible then Keys("CtrlO") -- обе погашены и обе включить? Включим
-    elseif SetPanelsOn~=0 then Keys("CtrlF"..(P.Left and 1 or 2)) end --включить одну? Включим изменяемую панель
+    if S.SwitchPanelsOn==2 and APanel.Visible==PPanel.Visible then Keys("CtrlO") -- обе погашены и обе включить? Включим
+    elseif S.SwitchPanelsOn~=0 then Keys("CtrlF"..(P.Left and 1 or 2)) end --включить одну? Включим изменяемую панель
   end
 end
 end --CD
+--
+function GetHints(Conf) --[[сформировать подсказки к плагинам]]
+for n,v in pairs(Conf.Plugins) do -- для всех используемых плагинов
+  local handle = far.FindPlugin(F.PFM_GUID,v) -- найдём
+  if handle then -- есть?
+    local PInfo = far.GetPluginInformation(handle) -- достанем информацию
+    Conf.PDescr[n] = PInfo.GInfo.Title..", "..PInfo.GInfo.Description -- запомним подсказку
+  end
+end
+end
 --
 function ShowHelp(text) --[[Вывести справку]]
 local HL = Far.GetConfig("Language.Help"):sub(1,3) -- язык (первые 3 буквы)
@@ -232,32 +224,40 @@ if stop_timer then -- всё?
   tmr:Close() -- выключаемся
 elseif not in_process and Area.Current and ("Shell Info QView Tree Search"):find(Area.Current) then -- свободны и в панели?
   in_process = true -- сообщим, что начали работу
-  LoadSettings() -- загрузим настройки
+  S = LoadSettings(Def) -- загрузим настройки
   local StdColor = far.AdvControl(F.ACTL_GETCOLOR,C.COL_PANELTEXT) -- цвет стандартной надписи
+  local SelColor = far.AdvControl(F.ACTL_GETCOLOR,C.COL_PANELCURSOR) -- цвет текущей позиции
   local StartColor = far.AdvControl(F.ACTL_GETCOLOR,C.COL_PANELSELECTEDTITLE) -- цвет начального диска
   local LPanel,RPanel = APanel.Left and APanel or PPanel,APanel.Left and PPanel or APanel -- левая и правая панели
   local OutList = MakeOutPanel(MakePanel(true)) -- выводимый на экран список
   local DrvL,DrvR = (OutList:cfind(GetDrive(LPanel),1,true)),(OutList:cfind(GetDrive(RPanel),1,true)) -- диски/плагины по умолчанию слева и справа
-  local x,y,l,lw,redraw = Mouse.X,Mouse.Y,OutList:len(),LPanel.Width,true -- координаты курсора мыши, длина панели, ширина левой панели
-  for nstr in (OutStr..";"):gmatch("(%-?%d+)[;,]") do nstr = tonumber(nstr) -- переберём все номера строк
-    if LPanel.Visible or FixedPerm then -- левая панель не скрыта или панели постоянные?
+  local x,y,l,lw,yOK = Mouse.X,Mouse.Y,OutList:len(),LPanel.Width -- координаты курсора мыши, длина панели, ширина левой панели
+  panel.RedrawPanel(nil,0) panel.RedrawPanel(nil,1)
+  for nstr in (S.OutStr..";"):gmatch("(%-?%d+)[;,]") do nstr = tonumber(nstr) -- переберём все номера строк
+    if LPanel.Visible or S.FixedPerm then -- левая панель не скрыта или панели постоянные?
       local nstr1 = nstr<0 and LPanel.Height+nstr or nstr -- Если № строки для вывода<0, то отсчитывать от нижней строки вверх
-      if FixedPerm or (y==nstr1 and x>1 and x<l+2) then -- если выводить всегда, или курсор мыши в соответствующих координатах
-        far.Text(1,nstr1,StdColor,"["..OutList.."]") -- отрисуем список дисков
-        if DrvL then far.Text(1+DrvL,nstr1,StartColor,OutList:sub(DrvL,DrvL)) end -- и стартовый диск
-        redraw = false if not FixedPerm then break end -- восстанавливать не надо; если панели не фиксированные, то всё, других не будет
+      if S.FixedPerm or (y==nstr1 and x>S.OutCol and x<=l+S.OutCol) then -- если выводить всегда, или курсор мыши в соответствующих координатах
+        far.Text(S.OutCol,nstr1,StdColor,"["..OutList.."]") -- отрисуем список дисков
+        if DrvL then far.Text(S.OutCol+DrvL,nstr1,StartColor,OutList:sub(DrvL,DrvL)) end -- и стартовый диск
+        yOK = yOK or nstr1==y if not S.FixedPerm then break end -- запомним, если мышь в мини-панели; если панели не фиксированные, то других не будет
       end
     end
-    if RPanel.Visible or FixedPerm then -- левая панель не скрыта или панели постоянные?
+    if RPanel.Visible or S.FixedPerm then -- левая панель не скрыта или панели постоянные?
       local nstr1 = nstr<0 and RPanel.Height+nstr or nstr -- Если № строки для вывода<0, то отсчитывать от нижней строки вверх
-      if FixedPerm or (y==nstr1 and x>lw+1 and x<lw+l+2) then -- если выводить всегда, или курсор мыши в соответствующих координатах
-        far.Text(lw+1,nstr1,StdColor,"["..OutList.."]") -- отрисуем список дисков
-        if DrvR then far.Text(lw+1+DrvR,nstr1,StartColor,OutList:sub(DrvR,DrvR)) end -- и стартовый диск
-        redraw = false if not FixedPerm then break end -- восстанавливать не надо; если панели не фиксированные, то всё, других не будет
+      if S.FixedPerm or (y==nstr1 and x>lw+S.OutCol and x<=lw+l+S.OutCol) then -- если выводить всегда, или курсор мыши в соответствующих координатах
+        far.Text(lw+S.OutCol,nstr1,StdColor,"["..OutList.."]") -- отрисуем список дисков
+        if DrvR then far.Text(lw+S.OutCol+DrvR,nstr1,StartColor,OutList:sub(DrvR,DrvR)) end -- и стартовый диск
+        yOK = yOK or nstr1==y if not S.FixedPerm then break end -- запомним, если мышь в мини-панели; если панели не фиксированные, то других не будет
       end
     end
   end
-  if redraw then panel.RedrawPanel(nil,0) panel.RedrawPanel(nil,1) else far.Text() end -- восстановим стандартный вид панели или отрисуем выведенное
+  local offset = (x>lw and x-lw or x)-S.OutCol -- смещение курсора мыши в мини-панели
+  local char = OutList:sub(offset,offset) -- символ под мышью
+  if offset>0 and offset<=l and yOK and char~=" " then -- если строка и столбец совпадают, и под курсором не промежуток между символами
+    local WP = (x>lw) and RPanel or LPanel -- панель под мышью
+    far.Text(x,y+1,SelColor,char=="?" and L.Help or char..":"==WP.Path:sub(1,2) and WP.Path or far.LIsAlpha(char) and far.ConvertPath(char..":")
+                               or S.PDescr[char] or "") -- выведем подсказку
+  end
   in_process = false -- сообщим, что закончили работу
 end
 end
@@ -265,6 +265,9 @@ end
 --[[настройка]]
 -- -
 function Config()
+--
+if not L.Lang then return far.Message(L[1],nfo.name,";Ok","w") end -- нет языковой информации - скажем и выйдем
+--
 local AllPlugs,TmpPlugins,TmpStr,ShowHidden,ov = {},{} -- инициализируем
 --
 local function PluginList() -- выбор плагинов для обработки
@@ -286,17 +289,15 @@ else -- выключен - включим
   far.RestoreScreen(h)
   item.checked = VK:upper()
 end
-end
+end --SwitchChar
 -- начало PluginList
 if #AllPlugs==0 then -- Заполним таблицу всех плагинов
   local ffi = require"ffi"
   ffi.cdef[[
-//https://msdn.microsoft.com/library/ms683152
-BOOL FreeLibrary(HMODULE hModule);
-//https://msdn.microsoft.com/library/ms684179
-HMODULE LoadLibraryExW(LPCTSTR lpFileName,HANDLE hFile,DWORD dwFlags);
-//https://msdn.microsoft.com/library/ms683212
-int GetProcAddress(HMODULE hModule,LPCSTR lpProcName);]]
+BOOL FreeLibrary(HMODULE hModule); //https://msdn.microsoft.com/library/ms683152
+HMODULE LoadLibraryExW(LPCTSTR lpFileName,HANDLE hFile,DWORD dwFlags); //https://msdn.microsoft.com/library/ms684179
+int GetProcAddress(HMODULE hModule,LPCSTR lpProcName); //https://msdn.microsoft.com/library/ms683212
+]]
   local fC,DONT_RESOLVE_DLL_REFERENCES = ffi.C,0x00000001
   for _,p in ipairs(far.GetPlugins()) do -- переберём все плагины
     local pinfo = far.GetPluginInformation(p) -- информация о плагине
@@ -365,13 +366,13 @@ until false
 end
 --
 local function DlgProc(hDlg,Msg,Param1,Param2) -- обработка событий диалога
-if (Msg==F.DN_CONTROLINPUT and (Param2.VirtualKeyCode==0x70 and band(Param2.ControlKeyState,0x1f)==0))or(Msg==F.DN_BTNCLICK and Param1==28) then -- F1
+if (Msg==F.DN_CONTROLINPUT and (Param2.VirtualKeyCode==0x70 and band(Param2.ControlKeyState,0x1f)==0))or(Msg==F.DN_BTNCLICK and Param1==30) then -- F1
   ShowHelp("Config")
 elseif Msg==F.DN_BTNCLICK and Param1==2 then -- переключение работы со скрытыми панелями?
   hDlg:send(F.DM_SHOWITEM,3,Param2) -- установим видимость зависимого чекбокса
-elseif Msg==F.DN_BTNCLICK and Param1==23 then -- переключение работы с постоянными панелями?
-  hDlg:send(F.DM_SHOWITEM,24,Param2) -- установим видимость зависимого чекбокса
-elseif Msg==F.DN_EDITCHANGE and Param1==21 then -- сменилось значение поля ввода "исключаемые диски"?
+elseif Msg==F.DN_BTNCLICK and Param1==25 then -- переключение работы с постоянными панелями?
+  hDlg:send(F.DM_SHOWITEM,26,Param2) -- установим видимость зависимого чекбокса
+elseif Msg==F.DN_EDITCHANGE and Param1==23 then -- сменилось значение поля ввода "исключаемые диски"?
   local CP = hDlg:send(F.DM_GETCURSORPOS,Param1) -- запомним координаты курсора
   hDlg:send(F.DM_SETTEXT,Param1,A_Z:gsub("[^"..hDlg:send(F.DM_GETTEXT,Param1):upper():gsub("[^"..A_Z.."]","").."]","")) -- поправим и запишем
   hDlg:send(F.DM_SETCURSORPOS,Param1,CP) -- восстановим позицию курсора
@@ -393,7 +394,7 @@ elseif Msg==F.DN_KILLFOCUS and (Param1==13 or Param1==15) then -- стрелка
     if (" "..hDlg:send(F.DM_GETTEXT,13+15-Param1).." "):cfind(" "..ss.." ",1,true) then hDlg:send(F.DM_SETTEXT,Param1,ov) return end -- есть? откатим
   end
   hDlg:send(F.DM_SETTEXT,Param1,nv:gsub("%s%s+"," "):gsub("^%s+",""):gsub("%s+$","")) -- почистим пробелы
-elseif Msg==F.DN_BTNCLICK and Param1==22 then -- выбор плагинов
+elseif Msg==F.DN_BTNCLICK and Param1==24 then -- выбор плагинов
   PluginList()
 elseif Msg==F.DN_CLOSE then
   hDlg:send(F.DM_SETFOCUS,2) -- переключимся на чекбокс
@@ -402,45 +403,48 @@ end
 --
 local form = { -- диалог настройки конфигурации
 --[[01]] {F.DI_DOUBLEBOX, 3, 1,62,14,0,0,0,0,L.diConf.Hdr},
---[[02]] {F.DI_CHECKBOX,  5, 2, 0, 2,UseHidden and 1 or 0,0,0,0,L.diConf.UseHidden},
---[[03]] {F.DI_CHECKBOX, 37, 2, 0, 2,SetPanelsOn==0 and 0 or 3-SetPanelsOn,0,0,F.DIF_3STATE+(UseHidden and 0 or F.DIF_HIDDEN),L.diConf.SetPanelsOn},
+--[[02]] {F.DI_CHECKBOX,  5, 2, 0, 2,S.UseHidden and 1 or 0,0,0,0,L.diConf.UseHidden},
+--[[03]] {F.DI_CHECKBOX, 37, 2, 0, 2,({[0]=0,2,1})[S.SwitchPanelsOn],0,0,F.DIF_3STATE+(S.UseHidden and 0 or F.DIF_HIDDEN),L.diConf.SwitchPanelsOn},
 --[[04]] {F.DI_TEXT,      5, 3, 0, 3,0,0,0,0,L.diConf.L},
---[[05]] {F.DI_EDIT,     13, 3,30, 3,0,0,0,0,KP.L},
+--[[05]] {F.DI_EDIT,     13, 3,30, 3,0,0,0,0,S.KP.L},
 --[[06]] {F.DI_TEXT,      5, 4, 0, 4,0,0,0,0,L.diConf.R},
---[[07]] {F.DI_EDIT,     13, 4,30, 4,0,0,0,0,KP.R},
+--[[07]] {F.DI_EDIT,     13, 4,30, 4,0,0,0,0,S.KP.R},
 --[[08]] {F.DI_TEXT,     32, 3, 0, 3,0,0,0,0,L.diConf.A},
---[[09]] {F.DI_EDIT,     43, 3,60, 3,0,0,0,0,KP.A},
+--[[09]] {F.DI_EDIT,     43, 3,60, 3,0,0,0,0,S.KP.A},
 --[[10]] {F.DI_TEXT,     32, 4, 0, 4,0,0,0,0,L.diConf.P},
---[[11]] {F.DI_EDIT,     43, 4,60, 4,0,0,0,0,KP.P},
+--[[11]] {F.DI_EDIT,     43, 4,60, 4,0,0,0,0,S.KP.P},
 --[[12]] {F.DI_TEXT,      5, 5, 0, 5,0,0,0,0,L.diConf.Left},
---[[13]] {F.DI_EDIT,     13, 5,30, 5,0,0,0,0,KP.Left},
+--[[13]] {F.DI_EDIT,     13, 5,30, 5,0,0,0,0,S.KP.Left},
 --[[14]] {F.DI_TEXT,     32, 5, 0, 5,0,0,0,0,L.diConf.Right},
---[[15]] {F.DI_EDIT,     43, 5,60, 5,0,0,0,0,KP.Right},
---[[16]] {F.DI_CHECKBOX,  5, 6, 0, 6,SpDelim and 1 or 0,0,0,0,L.diConf.SpDelim},
---[[17]] {F.DI_CHECKBOX,  5, 7, 0, 7,LowerCurDrive and 1 or 0,0,0,0,L.diConf.LowerCurDrive},
+--[[15]] {F.DI_EDIT,     43, 5,60, 5,0,0,0,0,S.KP.Right},
+--[[16]] {F.DI_CHECKBOX,  5, 6, 0, 6,S.SpDelim and 1 or 0,0,0,0,L.diConf.SpDelim},
+--[[17]] {F.DI_CHECKBOX,  5, 7, 0, 7,S.LowerCurDrive and 1 or 0,0,0,0,L.diConf.LowerCurDrive},
 --[[18]] {F.DI_TEXT,      5, 8, 0, 8,0,0,0,0,L.diConf.OutStr},
---[[19]] {F.DI_EDIT,     34, 8,59, 8,0,0,0,0,OutStr},
---[[20]] {F.DI_TEXT,      5, 9, 0, 9,0,0,0,0,L.diConf.ExcludeDrives},
---[[21]] {F.DI_EDIT,  34, 9,59, 9,0,0,0,0,ExcludeDrives},
---[[22]] {F.DI_BUTTON,    0,10, 0,10,0,0,0,F.DIF_CENTERGROUP+F.DIF_BTNNOCLOSE,L.diConf.Plugins},
---[[23]] {F.DI_CHECKBOX,  5,11, 0,11,PermPanel and 1 or 0,0,0,0,L.diConf.PermPanel},
---[[24]] {F.DI_CHECKBOX, 37,11, 0,11,FixedPerm and 1 or 0,0,0,PermPanel and 0 or F.DIF_HIDDEN,L.diConf.FixedPerm},
---[[25]] {F.DI_TEXT,     -1,12, 0,12,0,0,0,F.DIF_SEPARATOR,""},
---[[26]] {F.DI_BUTTON,    0,13, 0,13,0,0,0,F.DIF_DEFAULTBUTTON+F.DIF_CENTERGROUP,L.OK},
---[[27]] {F.DI_BUTTON,    0,13, 0,13,0,0,0,F.DIF_CENTERGROUP,L.Cancel},
---[[28]] {F.DI_BUTTON,    0,13, 0,13,0,0,0,F.DIF_CENTERGROUP+F.DIF_BTNNOCLOSE,L.Help},
+--[[19]] {F.DI_EDIT,     32, 8,50, 8,0,0,0,0,S.OutStr},
+--[[20]] {F.DI_TEXT,     51, 8, 0, 8,0,0,0,0,L.diConf.OutCol},
+--[[21]] {F.DI_EDIT,     56, 8,59, 8,0,0,0,0,S.OutCol},
+--[[22]] {F.DI_TEXT,      5, 9, 0, 9,0,0,0,0,L.diConf.ExcludeDrives},
+--[[23]] {F.DI_EDIT,  34, 9,59, 9,0,0,0,0,S.ExcludeDrives},
+--[[24]] {F.DI_BUTTON,    0,10, 0,10,0,0,0,F.DIF_CENTERGROUP+F.DIF_BTNNOCLOSE,L.diConf.Plugins},
+--[[25]] {F.DI_CHECKBOX,  5,11, 0,11,S.PermPanel and 1 or 0,0,0,0,L.diConf.PermPanel},
+--[[26]] {F.DI_CHECKBOX, 37,11, 0,11,S.FixedPerm and 1 or 0,0,0,S.PermPanel and 0 or F.DIF_HIDDEN,L.diConf.FixedPerm},
+--[[27]] {F.DI_TEXT,     -1,12, 0,12,0,0,0,F.DIF_SEPARATOR,""},
+--[[28]] {F.DI_BUTTON,    0,13, 0,13,0,0,0,F.DIF_DEFAULTBUTTON+F.DIF_CENTERGROUP,L.OK},
+--[[29]] {F.DI_BUTTON,    0,13, 0,13,0,0,0,F.DIF_CENTERGROUP,L.Cancel},
+--[[30]] {F.DI_BUTTON,    0,13, 0,13,0,0,0,F.DIF_CENTERGROUP+F.DIF_BTNNOCLOSE,L.Help},
 }
 -- начало кода функции
-TmpStr = PlugStr -- скопируем строку отмеченных плагинов
-for n,v in pairs(Plugins) do TmpPlugins[n] = v end -- скопируем список отмеченных плагинов для работы
-if far.Dialog(Guids.ConfDialog,-1,-1,66,15,nil,form,nil,DlgProc)~=26 then return false,L.er.Cancel end -- вызовем диалог, не "ОК" - уйдём
-UseHidden,SetPanelsOn = form[2][6]==1,form[3][6]==0 and 0 or 3-form[3][6] -- новые значения
-local NeedReload = tostring(PermPanel)..KP.L..KP.R..KP.A..KP.P..KP.Left..KP.Right~=
-                   tostring(form[23][6]==1)..form[5][10]..form[7][10]..form[9][10]..form[11][10]..form[13][10]..form[15][10]
-KP.L,KP.R,KP.A,KP.P,KP.Left,KP.Right = form[5][10],form[7][10],form[9][10],form[11][10],form[13][10],form[15][10]
-PermPanel,FixedPerm = form[23][6]==1,form[24][6]==1 -- новые значения
-SpDelim,LowerCurDrive,ExcludeDrives,OutStr,Plugins,PlugStr = form[16][6]==1,form[17][6]==1,form[21][10],form[19][10],TmpPlugins,TmpStr
-SaveSettings() if NeedReload then far.MacroLoadAll() end -- если клавиши или необходимость в постоянных панелях изменились, надо перезагрузить макросы
+TmpStr = S.PlugStr -- скопируем строку отмеченных плагинов
+for n,v in pairs(S.Plugins) do TmpPlugins[n] = v end -- скопируем список отмеченных плагинов для работы
+if far.Dialog(Guids.ConfDialog,-1,-1,66,15,nil,form,nil,DlgProc)~=28 then return false,L.er.Cancel end -- вызовем диалог, не "ОК" - уйдём
+local NeedReload = tostring(S.PermPanel)..S.KP.L..S.KP.R..S.KP.A..S.KP.P..S.KP.Left..S.KP.Right~=
+                   tostring(form[25][6]==1)..form[5][10]..form[7][10]..form[9][10]..form[11][10]..form[13][10]..form[15][10]
+S = { UseHidden = form[2][6]==1,SwitchPanelsOn = ({[0]=0,2,1})[form[3][6]==0],SpDelim = form[16][6]==1,LowerCurDrive = form[17][6]==1,
+      OutStr = form[19][10],OutCol = form[21][10],ExcludeDrives = form[23][10],PermPanel = form[25][6]==1,FixedPerm = form[26][6]==1,
+      PlugStr = TmpStr,Plugins = TmpPlugins,KP = {L=form[5][10],R=form[7][10],A=form[9][10],P=form[11][10],Left=form[13][10],Right=form[15][10],
+                                                  Left1=form[13][10]:gsub("\\[dDpP]",""),Right1=form[15][10]:gsub("\\[dDpP]","")},PDescr = {} }
+GetHints(S)
+SaveSettings(S) if NeedReload then far.MacroLoadAll() end -- если клавиши/необходимость в постоянных панелях изменились, надо перезагрузить макросы
 end
 --
 if type(nfo)=="table" then nfo.config = Config end
@@ -448,12 +452,12 @@ if type(nfo)=="table" then nfo.config = Config end
 --[[condition - инициализация переменных и проверка условий]]
 -- -
 function TestCond(key)
-LoadSettings() -- загрузка настроек
+S = LoadSettings(Def) -- загрузка настроек
 WPanel,KeyMod,Key = nil,regex.match(key,"^((?:.?Ctrl)?(?:.?Alt)?(?:Shift)?(?<=.))(.*)$") -- обнулим рабочую панель, запомним клавишу и модификатор
 local LRAP = {L=APanel.Left and APanel or PPanel,R=APanel.Left and PPanel or APanel,A=APanel,P=PPanel} -- возможные значения рабочей панели
-for p,k in pairs(KP) do if (" "..k.." "):cfind(" "..KeyMod.." ",1,true) then WPanel = LRAP[p] end end -- найдём рабочую панель
+for p,k in pairs(S.KP) do if (" "..k.." "):cfind(" "..KeyMod.." ",1,true) then WPanel = LRAP[p] end end -- найдём рабочую панель
 if WPanel and WPanel.Type~=0 then WPanel = WPanel==APanel and PPanel or APanel end-- если рабочая панель не файловая, переключаем на другой
-return WPanel and WPanel.Type==0 and (WPanel.Visible or UseHidden) and (CmdLine.Empty or not KeyMod:cfind("Ctrl"))
+return WPanel and WPanel.Type==0 and (WPanel.Visible or S.UseHidden) and (CmdLine.Empty or not KeyMod:cfind("Ctrl"))
 end;
 -- +
 --[[action]]
@@ -464,31 +468,33 @@ local StdColor = far.AdvControl(F.ACTL_GETCOLOR,C.COL_PANELTEXT) -- цвет с�
 local SelColor = far.AdvControl(F.ACTL_GETCOLOR,C.COL_PANELCURSOR) -- цвет текущей позиции
 local StartColor = far.AdvControl(F.ACTL_GETCOLOR,C.COL_PANELSELECTEDTITLE) -- цвет начального диска
 --
-local PanelPos = WPanel.Left and 1 or 1+(APanel.Left and APanel.Width or PPanel.Width) -- позиция начала панели дисков
---local DP = ((KP.Left.." "..KP.Right):match("\\([dDpP])"..Key)or ""):upper() -- признак только дисков или только плагинов
-local DrvList,OutList,DrvNum = (MakePanel()) -- список дисков в системе, выводимый на экран список, номер текущего диска в списке
-DrvNum = DrvList:cfind(GetDrive(WPanel,((KP.Left.." "..KP.Right):match("\\([dDpP])"..Key)or ""):upper()),1,true)
+local PanelPos = WPanel.Left and S.OutCol or S.OutCol+(APanel.Left and APanel.Width or PPanel.Width) -- позиция начала панели дисков
+local DrvList,DrvNum = (MakePanel()) -- список дисков в системе, номер текущего диска в списке
+DrvNum = DrvList:cfind(GetDrive(WPanel,((S.KP.Left.." "..S.KP.Right):match("\\([dDpP])"..Key)or ""):upper()),1,true)
 if not DrvNum then DrvNum,DrvList = 1,"."..DrvList end -- не нашли? Добавим в первую позицию условное текущее содержимое панели
-local StartDrv,StartOut = DrvNum,PanelPos+DrvNum+(SpDelim and DrvNum-1 or 0) -- начальные диск, позиция
-if LowerCurDrive then DrvList = DrvList:sub(1,DrvNum-1)..DrvList:sub(DrvNum,DrvNum):lower()..DrvList:sub(DrvNum+1) end -- выделим его в панели
-OutList = MakeOutPanel(DrvList)
+local StartDrv,StartOut = DrvNum,PanelPos+DrvNum+(S.SpDelim and DrvNum-1 or 0) -- начальные диск, позиция
+if S.LowerCurDrive then DrvList = DrvList:sub(1,DrvNum-1)..DrvList:sub(DrvNum,DrvNum):lower()..DrvList:sub(DrvNum+1) end -- выделим его в панели
+local OutList,h,s1 = MakeOutPanel(DrvList),far.SaveScreen() -- выводимый на экран список; сохраним весь экран, кто его (юзера) знает...
 in_process = true
-local h = far.SaveScreen() -- сохраним весь экран, кто его (юзера) знает...
 repeat -- Обработаем очередное нажатие стрелки
   if Key~="" then
     if Key=="Home" then DrvNum = StartDrv
     elseif Key=="End" then DrvNum = DrvList:len()
     elseif Key=="F1" then DrvNum = StartDrv ShowHelp("Main")
     elseif DrvList:cfind(Key:upper(),1,true) then DrvNum = DrvList:cfind(Key:upper(),1,true)
-    elseif (" "..KP.Left1.." "):cfind(" "..Key.." ",1,true) then DrvNum = DrvNum-1
-    elseif (" "..KP.Right1.." "):cfind(" "..Key.." ",1,true) then DrvNum = DrvNum+1 end
+    elseif (" "..S.KP.Left1.." "):cfind(" "..Key.." ",1,true) then DrvNum = DrvNum-1
+    elseif (" "..S.KP.Right1.." "):cfind(" "..Key.." ",1,true) then DrvNum = DrvNum+1 end
     DrvNum = ((DrvNum-1+DrvList:len())%DrvList:len())+1 -- корректировка выхода за начало/конец
-    for nstr in (OutStr..";"):gmatch("(%-?%d+)[;,]") do -- переберём все номера строк
+    for nstr in (S.OutStr..";"):gmatch("(%-?%d+)[;,]") do -- переберём все номера строк
       nstr = tonumber(nstr) nstr = nstr<0 and WPanel.Height+nstr or nstr -- Если № строки для вывода<0, то отсчитывать от нижней строки вверх
       far.Text(PanelPos,nstr,StdColor,"["..OutList.."]") -- отрисуем список дисков
       far.Text(StartOut,nstr,StartColor,DrvList:sub(StartDrv,StartDrv)) -- и стартовый диск
-      far.Text(PanelPos+DrvNum+(SpDelim and DrvNum-1 or 0),nstr,SelColor,DrvList:sub(DrvNum,DrvNum)) -- и курсор
+      far.Text(PanelPos+DrvNum+(S.SpDelim and DrvNum-1 or 0),nstr,SelColor,DrvList:sub(DrvNum,DrvNum)) -- и курсор
     end
+    local nstr,char = tonumber(S.OutStr:match("^%d+")),DrvList:sub(DrvNum,DrvNum) -- строка мини-панели для подсказки, символ для подсказки
+    if s1 then far.RestoreScreen(s1) end s1 = far.SaveScreen(1,nstr+1,Far.Width,nstr+1) -- восстановим строку для подсказки и снова запомним
+    far.Text(PanelPos+DrvNum+(S.SpDelim and DrvNum-1 or 0),nstr<0 and WPanel.Height+nstr+1 or nstr+1,SelColor,char=="?" and L.Help or -- подсказка
+      char==DrvList:sub(StartDrv,StartDrv) and WPanel.Path or far.LIsAlpha(char) and far.ConvertPath(char..":") or S.PDescr[char] or "")
     far.Text()
   end
   Key = mf.waitkey(100):gsub(KeyMod,"") -- очередное нажатие (или пустая строка)
@@ -501,70 +507,61 @@ end;
 --
 if type(nfo)=="table" then nfo.execute = function() Key = "Home" KeyMod = "" WPanel = APanel ChangeDrive() end end
 --
-LoadSettings() --[[первичная загрузка настроек]]
+S = LoadSettings(Def) --[[первичная загрузка настроек]]
 -- +
 --[[Запуск таймера отрисовки панелей]]
 -- -
-if PermPanel then timer = far.Timer(Period,OnTimer) end
+if S.PermPanel then timer = far.Timer(Period,OnTimer) end
 -- +
 --[[Макрос вызова]]
 -- -
 Macro{
-area = "Shell Info QView Tree Search"; key="/(.Ctrl)?(.Alt)?(Shift)?(?<=.)("..(KP.Left1.." "..KP.Right1):gsub(" ","|")..")/";
+area = "Shell Info QView Tree Search"; key="/(.Ctrl)?(.Alt)?(Shift)?(?<=.)("..(S.KP.Left1.." "..S.KP.Right1):gsub(" ","|")..")/";
   uid = Guids.Macro; description = L.Desc; condition = TestCond; action = ChangeDrive;
 }
 -- +
 --[[Обработка нажатия мыши на панели]]
 -- -
-if PermPanel then Event{
-  id=Guids.MouseEvent;
-  group="ConsoleInput";
-  description=nfo.name..L.MouseDesc;
+if S.PermPanel then Event{
+  id=Guids.MouseEvent; group="ConsoleInput"; description=nfo.name..(L.MouseDesc or "");
   condition=function(tInputRecord)
-return tInputRecord.EventType==F.MOUSE_EVENT
-   and tInputRecord.ButtonState==F.FROM_LEFT_1ST_BUTTON_PRESSED
-   and band(tInputRecord.ControlKeyState,0x1f)==0
-   and tInputRecord.EventFlags==0
+return tInputRecord.EventType==F.MOUSE_EVENT and tInputRecord.ButtonState==F.FROM_LEFT_1ST_BUTTON_PRESSED
+   and band(tInputRecord.ControlKeyState,0x1f)==0 and tInputRecord.EventFlags==0
 end;
   action=function(tInputRecord)
-LoadSettings() -- загрузим настройки
+S = LoadSettings(Def) -- загрузим настройки
 local y,x = tInputRecord.MousePositionY,tInputRecord.MousePositionX -- координаты курсора мыши
 local LWidth,OutList = APanel.Left and APanel.Width or PPanel.Width,MakeOutPanel(MakePanel(true)) -- ширина левой панели, выводимый на экран список
 local WP = ((x<LWidth)==APanel.Left) and APanel or PPanel -- рабочая панель Far
-local x1,l = (x<LWidth and x or x-LWidth)-1,OutList:len() -- позиция в панели, длина панели
-if x1<1 or x1>l or not (WP.Visible or FixedPerm) then return 0 end -- если позиция не в панели или скрытая панель, и скрытые игнорируем, не работаем
+local x1,l = (x<LWidth and x or x-LWidth)-S.OutCol,OutList:len() -- позиция в панели, длина панели
+if x1<1 or x1>l or not (WP.Visible or S.FixedPerm) then return 0 end -- если позиция не в панели или скрытая панель, и скрытые игнорируем, не работаем
 local NewDrive = OutList:sub(x1,x1) -- новый диск/плагин
-for nstr in (OutStr..";"):gmatch("(%-?%d+)[;,]") do -- переберём все номера строк
+for nstr in (S.OutStr..";"):gmatch("(%-?%d+)[;,]") do -- переберём все номера строк
   nstr = tonumber(nstr) nstr = nstr<0 and WP.Height+nstr or nstr -- Если № строки для вывода<0, то отсчитывать от нижней строки вверх
   if y==nstr and NewDrive~=" " then -- строка с панелью, попали в диск, а не между?
     if NewDrive~=GetDrive(WP) then CD(WP,NewDrive) end -- выбрали другой диск? Сменим
     return 1 -- Far ничего уже не делает
   end
 end
-return 0 -- сами так ничего не сделали, пусть Far поработает
+return 0 -- сами так ничего и не сделали, пусть Far поработает
 end;
 } end
 -- +
 --[[Перед выходом выключим таймер]]
 -- -
-if PermPanel then Event{
-  id=Guids.ExitEvent; group="ExitFAR"; description=nfo.name..L.ExitDesc;
-  condition=function() return timer end; action=function() stop_timer = true end;
+if S.PermPanel then Event{
+  id=Guids.ExitEvent; group="ExitFAR"; description=nfo.name..(L.ExitDesc or ""); action=function() stop_timer = true end;
 } end
 -- +
 --[[Пункт меню]]
 -- -
 MenuItem {
-  description = L.Desc;
-  menu = "Plugins Config";
-  area = "Shell";
-  guid = Guids.PlugMenu;
-  text = function() return L.Desc end;
+  description = L.Desc; menu = "Plugins Config"; area = "Shell"; guid = Guids.PlugMenu; text = function() return L.Desc end;
   action = function(OpenFrom)
-if not OpenFrom then -- меню конфигурации?
-  Config() -- настроим
-elseif OpenFrom==F.OPEN_PLUGINSMENU then -- меню плагинов?
-  Key = "Home" KeyMod = "" WPanel = APanel ChangeDrive() -- подготовим параметры и вызовем для активной панели
-end
+if not OpenFrom then Config() return -- меню конфигурации?
+elseif OpenFrom==F.OPEN_LEFTDISKMENU then WPanel = APanel.Left and APanel or PPanel -- левое меню дисков?
+elseif OpenFrom==F.OPEN_RIGHTDISKMENU then WPanel = APanel.Left and PPanel or APanel -- правое меню дисков?
+elseif OpenFrom==F.OPEN_PLUGINSMENU then WPanel = APanel end -- меню плагинов?
+Key = "Home" KeyMod = "" ChangeDrive()
   end;
 }

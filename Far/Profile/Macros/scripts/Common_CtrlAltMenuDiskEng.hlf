@@ -8,7 +8,7 @@ $^Work panel
 
    Mini-bar with a list of drives and plugins used for changing of current drive or plugin on Far panel.
 It can work in four modes: called at press one of key combination (controlled from keyboard),
-called from plugin menu (controlled from keyboard), showed on mouse move over mini-bar area (controlled by mouse),
+called from plugin or drives menu (controlled from keyboard), showed on mouse move over mini-bar area (controlled by mouse),
 always showed (controlled by mouse). Mini-bars may be more as one, all works synchronically for each Far panel,
 mini-panel output lines ~are configurable~@config@, output start columns are fixed.
 Drives in mini-bar designated with acorresponding letters, plugins designated with symbols, ~appointed by user~@plugins@.
@@ -17,7 +17,7 @@ In addition in the first position a #.# char may be referred to the current path
 Start position (of current drive) is marked.
 When using the keyboard, while modifier key is pressed, the listed below keys moves cursor around the mini-bar.
 After release the modifier key drive or plugin under the cursor is set on the work panel or called the ~Settings window~@config@, if selected #?#.
-If script called from plugin menu, press Enter to confirm selection.
+If script called from plugin or drives menu, press Enter to confirm selection.
 
 ^#Keys#
 
@@ -113,7 +113,7 @@ $^About
 
  Author:        #IgorZ#
 
- Version:       #v4.0.1#
+ Version:       #v4.1.0#
 
  Net address: ~http://forum.farmanager.com/viewtopic.php?t=7471~@http://forum.farmanager.com/viewtopic.php?t=7471@
 @=‗
