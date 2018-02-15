@@ -4,4 +4,4 @@ x64 edition based on latest Far3 x64, portable, w/o installer.
 
 **Notes:**
 
-_Just unpack archive and run runfar.cmd. See readme.txt for more deails_
+_Just unpack archive and run runfar.cmd. See readme.txt for more details_
