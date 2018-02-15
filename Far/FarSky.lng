@@ -398,7 +398,8 @@
 "Zobrazovať \"..\" v koreňových priečinkoch"
 //[MConfigHighlightColumnSeparator]
 "Zvýrazňovať oddeľovače stĺpcov"
-//[MConfigDoubleGlobalColumnSeparator]
+// need translation:
+//[MConfigDoubleStripeSeparator]
 "Dvojité oddeľovače hlavných stĺpcov"
 
 //[MConfigInterfaceTitle]

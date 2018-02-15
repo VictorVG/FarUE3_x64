@@ -388,8 +388,8 @@
 "Показывать \"..\" в корневых каталогах"
 //[MConfigHighlightColumnSeparator]
 "Подсвечивать разделители колонок"
-//[MConfigDoubleGlobalColumnSeparator]
-"Удваивать глобальные разделители колонок"
+//[MConfigDoubleStripeSeparator]
+"Удваивать разделители полос"
 
 //[MConfigInterfaceTitle]
 "Настройки интерфейса"

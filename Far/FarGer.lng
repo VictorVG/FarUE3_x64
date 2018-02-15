@@ -388,7 +388,8 @@
 "In Wurzelverzeichnis \"..\" zeigen"
 //[MConfigHighlightColumnSeparator]
 "Spaltentrennzeichen hinterlegen"
-//[MConfigDoubleGlobalColumnSeparator]
+// need translation:
+//[MConfigDoubleStripeSeparator]
 "Globale Spaltentrennzeichen verdoppeln"
 
 //[MConfigInterfaceTitle]

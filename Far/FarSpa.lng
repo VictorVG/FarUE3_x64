@@ -388,7 +388,8 @@
 "Mostrar \"
 //[MConfigHighlightColumnSeparator]
 "Resaltar separador de columnas"
-//[MConfigDoubleGlobalColumnSeparator]
+// need translation:
+//[MConfigDoubleStripeSeparator]
 "Separador de columna doble"
 
 //[MConfigInterfaceTitle]

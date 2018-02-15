@@ -388,8 +388,8 @@
 "Show \"..\" in root folders"
 //[MConfigHighlightColumnSeparator]
 "Highlight column separators"
-//[MConfigDoubleGlobalColumnSeparator]
-"Double global column separators"
+//[MConfigDoubleStripeSeparator]
+"Double stripe separators"
 
 //[MConfigInterfaceTitle]
 "Interface settings"

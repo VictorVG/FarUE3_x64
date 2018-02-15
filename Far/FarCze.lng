@@ -400,7 +400,8 @@
 "Zobrazovat \"..\" v kořenových adresářích"
 //[MConfigHighlightColumnSeparator]
 "Zvýrazňovat oddělovače sloupců"
-//[MConfigDoubleGlobalColumnSeparator]
+// need translation:
+//[MConfigDoubleStripeSeparator]
 "Dvojité oddělovače hlavních sloupců"
 
 //[MConfigInterfaceTitle]

@@ -390,8 +390,9 @@
 "Mostra \"..\" Nella Cartella Principale"
 //[MConfigHighlightColumnSeparator]
 "Evidenzia Separatori Di Colonna"
-//[MConfigDoubleGlobalColumnSeparator]
-"Raddoppia Globalmente Il Separatore Colonna"
+// need translation:
+//[MConfigDoubleStripeSeparator]
+"Raddoppia Il Separatore di Banda"
 
 //[MConfigInterfaceTitle]
 "Impostazioni  Interfaccia"
