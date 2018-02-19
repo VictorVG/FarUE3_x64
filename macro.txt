@@ -99,6 +99,7 @@
   ║  S··················· │ CtrlAltF12                                    │ Plugin_LF_History.lua                      │ LuaFAR History: folders                                        ║
   ║  S··················· │ CtrlAltF7                                     │ Shell_CtrlAltF7.lua                        │ find files from file-list @W17                                 ║
   ║  S··················· │ CtrlAltF9                                     │ Plugin_ConsoleControl-Macros.lua           │ Console Control: Maximize/Restore console buffer               ║
+  ║  S··················· │ CtrlAltG                                      │ Plugin_GitShell.lua                        │ GitShell                                                       ║
   ║  S··················· │ CtrlAltPgUp                                   │ Plugin_ConsoleControl-Macros.lua           │ Console Control: Topmost On/Off                                ║
   ║  S··················· │ CtrlBackSlash                                 │ Shell_RememberSelected.lua                 │ Сменить папку на корневую c сохранением выделения файлов.      ║
   ║                       │                                               │                                            │ SimSU                                                          ║
@@ -387,4 +388,4 @@
   ║                                                                                                                                                                                     ║
   ╚═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
 
-  22.11.2017 19:25:11 +0300
+  19.02.2018 11:20:57 +0300
