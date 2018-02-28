@@ -1,6 +1,6 @@
 ﻿.Language=Italian,Italian (Italiano)
 
-//Version: 3.0 build 5149
+//Version: 3.0 build 5152
 
 //[MYes]
 "&Si"
@@ -320,6 +320,23 @@
 "Per La Lettura"
 //[MConfigElevationUsePrivileges]
 "Usa Permessi Aggiuntivi"
+// need translation:
+//[MConfigSortingCollation]
+"Sorting collation:"
+// need translation:
+//[MConfigSortingOrdinal]
+"ordinal"
+// need translation:
+//[MConfigSortingInvariant]
+"invariant"
+// need translation:
+//[MConfigSortingLinguistic]
+"linguistic"
+// need translation:
+//[MConfigSortingDigitsAsNumbers]
+"Treat digits as numbers"
+//[MConfigSortingCase]
+"&Minuscole/MAIUSCOLE"
 //[MConfigAutoSave]
 "Salvataggio A&utomatico Impostazioni"
 
@@ -2768,10 +2785,6 @@
 "Prima I Selezionati [Shift-F1&2]"
 //[MMenuSortDirectoriesFirst]
 "&Mostra Le Cartelle Per Prime"
-//[MMenuSortUseNumeric]
-"&Usa Ordinamento Numerico"
-//[MMenuSortUseCaseSensitive]
-"Usa Ordinamento MAIUSC/minuscole"
 //[MMaskGroupBottom]
 "Edita: [INS] [DEL] [F4] [F7] [Ctrl-R]"
 //[MMaskGroupName]

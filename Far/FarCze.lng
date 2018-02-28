@@ -1,6 +1,6 @@
 ﻿.Language=Czech,Czech (Čeština)
 
-//Version: 3.0 build 5149
+//Version: 3.0 build 5152
 
 //[MYes]
 "Ano"
@@ -321,6 +321,23 @@
 "na čtení"
 //[MConfigElevationUsePrivileges]
 "použít další privilegia"
+// need translation:
+//[MConfigSortingCollation]
+"Sorting collation:"
+// need translation:
+//[MConfigSortingOrdinal]
+"ordinal"
+// need translation:
+//[MConfigSortingInvariant]
+"invariant"
+// need translation:
+//[MConfigSortingLinguistic]
+"linguistic"
+// need translation:
+//[MConfigSortingDigitsAsNumbers]
+"Treat digits as numbers"
+//[MConfigSortingCase]
+"&Rozlišovat velikost písmen"
 //[MConfigAutoSave]
 "Automaticky ukládat &nastavení"
 
@@ -2812,10 +2829,6 @@
 "Nejdřív zobrazit vy&brané"
 //[MMenuSortDirectoriesFirst]
 "Nejdří&ve zobrazit adresáře"
-//[MMenuSortUseNumeric]
-"Použít čí&selné řazení"
-//[MMenuSortUseCaseSensitive]
-"Nejdříve velká a pak malá písmena"
 //[MMaskGroupBottom]
 "Změnit: Ins, Del, F4, F7, Ctrl+R"
 //[MMaskGroupName]

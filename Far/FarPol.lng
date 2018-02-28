@@ -1,6 +1,6 @@
 ﻿.Language=Polish,Polish (Polski)
 
-//Version: 3.0 build 5149
+//Version: 3.0 build 5152
 
 //[MYes]
 "Tak"
@@ -329,6 +329,23 @@
 // need translation:
 //[MConfigElevationUsePrivileges]
 "use additional privileges"
+// need translation:
+//[MConfigSortingCollation]
+"Sorting collation:"
+// need translation:
+//[MConfigSortingOrdinal]
+"ordinal"
+// need translation:
+//[MConfigSortingInvariant]
+"invariant"
+// need translation:
+//[MConfigSortingLinguistic]
+"linguistic"
+// need translation:
+//[MConfigSortingDigitsAsNumbers]
+"Treat digits as numbers"
+//[MConfigSortingCase]
+"&Uwzględnij wielkość liter"
 //[MConfigAutoSave]
 "Automatycznie &zapisuj ustawienia"
 
@@ -2967,11 +2984,6 @@
 // need translation:
 //[MMenuSortDirectoriesFirst]
 "Sho&w directories first"
-//[MMenuSortUseNumeric]
-"Sortuj num&erycznie"
-// need translation:
-//[MMenuSortUseCaseSensitive]
-"Sortuj uwzględniając wielkość liter"
 //[MMaskGroupBottom]
 "Edycja: Ins, Del, F4, F7, Ctrl+R"
 //[MMaskGroupName]

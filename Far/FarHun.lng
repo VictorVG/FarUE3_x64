@@ -1,6 +1,6 @@
 ﻿.Language=Hungarian,Hungarian (Magyar)
 
-//Version: 3.0 build 5149
+//Version: 3.0 build 5152
 
 //[MYes]
 "Igen"
@@ -329,6 +329,23 @@
 // need translation:
 //[MConfigElevationUsePrivileges]
 "use additional privileges"
+// need translation:
+//[MConfigSortingCollation]
+"Sorting collation:"
+// need translation:
+//[MConfigSortingOrdinal]
+"ordinal"
+// need translation:
+//[MConfigSortingInvariant]
+"invariant"
+// need translation:
+//[MConfigSortingLinguistic]
+"linguistic"
+// need translation:
+//[MConfigSortingDigitsAsNumbers]
+"Treat digits as numbers"
+//[MConfigSortingCase]
+"&Nagy/kisbetű érz."
 //[MConfigAutoSave]
 "B&eállítások automatikus mentése"
 
@@ -2953,11 +2970,6 @@
 // need translation:
 //[MMenuSortDirectoriesFirst]
 "Sho&w directories first"
-//[MMenuSortUseNumeric]
-"N&umerikus rendezés"
-// need translation:
-//[MMenuSortUseCaseSensitive]
-"Nagy/kisbetű érzékeny rendezés"
 //[MMaskGroupBottom]
 "Szerk.: Ins, Del, F4, F7, Ctrl+R"
 //[MMaskGroupName]

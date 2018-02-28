@@ -1,6 +1,6 @@
 ﻿.Language=Spanish,Spanish (Español)
 
-//Version: 3.0 build 5149
+//Version: 3.0 build 5152
 
 //[MYes]
 "Si"
@@ -320,6 +320,23 @@
 "para lectura"
 //[MConfigElevationUsePrivileges]
 "usar privilegios adicionales"
+// need translation:
+//[MConfigSortingCollation]
+"Sorting collation:"
+// need translation:
+//[MConfigSortingOrdinal]
+"ordinal"
+// need translation:
+//[MConfigSortingInvariant]
+"invariant"
+// need translation:
+//[MConfigSortingLinguistic]
+"linguistic"
+// need translation:
+//[MConfigSortingDigitsAsNumbers]
+"Treat digits as numbers"
+//[MConfigSortingCase]
+"Sensible min./ma&y."
 //[MConfigAutoSave]
 "Auto&guardar configuración"
 
@@ -2757,10 +2774,6 @@
 "Mostrar seleccionados primero"
 //[MMenuSortDirectoriesFirst]
 "Mostrar directorios primero"
-//[MMenuSortUseNumeric]
-"Usar orden num&érico"
-//[MMenuSortUseCaseSensitive]
-"Usar orden sensible min./may."
 //[MMaskGroupBottom]
 "Editar: Ins, Del, F4, F7, Ctrl+R"
 //[MMaskGroupName]

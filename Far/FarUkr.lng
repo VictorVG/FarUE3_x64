@@ -1,6 +1,6 @@
 ﻿.Language=Ukrainian,Ukrainian (Українська)
 
-//Version: 3.0 build 5149
+//Version: 3.0 build 5152
 
 //[MYes]
 "Так"
@@ -320,6 +320,18 @@
 "для &читання"
 //[MConfigElevationUsePrivileges]
 "Вик&ористовувати додаткові привілеї"
+//[MConfigSortingCollation]
+"Сортувальне порівняння:"
+//[MConfigSortingOrdinal]
+"порядкове"
+//[MConfigSortingInvariant]
+"інваріантне"
+//[MConfigSortingLinguistic]
+"лінгвістичне"
+//[MConfigSortingDigitsAsNumbers]
+"Трактувати цифри як числа"
+//[MConfigSortingCase]
+"&Враховувати регістр"
 //[MConfigAutoSave]
 "Автозапис кон&фігурації"
 
@@ -2756,10 +2768,6 @@
 "Позначені &файли вперед"
 //[MMenuSortDirectoriesFirst]
 "&Каталоги вперед"
-//[MMenuSortUseNumeric]
-"&Числове сортування"
-//[MMenuSortUseCaseSensitive]
-"Великі букви перед малими"
 //[MMaskGroupBottom]
 "Редагування: Ins, Del, F4, F7, Ctrl+R"
 //[MMaskGroupName]

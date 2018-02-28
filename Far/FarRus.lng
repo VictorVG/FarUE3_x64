@@ -1,6 +1,6 @@
 ﻿.Language=Russian,Russian (Русский)
 
-//Version: 3.0 build 5149
+//Version: 3.0 build 5152
 
 //[MYes]
 "Да"
@@ -320,6 +320,18 @@
 "для &чтения"
 //[MConfigElevationUsePrivileges]
 "исп&ользовать дополнительные привилегии"
+//[MConfigSortingCollation]
+"Сортировочное сравнение:"
+//[MConfigSortingOrdinal]
+"порядковое"
+//[MConfigSortingInvariant]
+"инвариантное"
+//[MConfigSortingLinguistic]
+"лингвистическое"
+//[MConfigSortingDigitsAsNumbers]
+"Трактовать цифры как числа"
+//[MConfigSortingCase]
+"&Учитывать регистр"
 //[MConfigAutoSave]
 "Автозапись кон&фигурации"
 
@@ -2756,10 +2768,6 @@
 "Помеченные &файлы вперёд"
 //[MMenuSortDirectoriesFirst]
 "&Каталоги вперёд"
-//[MMenuSortUseNumeric]
-"&Числовая сортировка"
-//[MMenuSortUseCaseSensitive]
-"Прописные буквы раньше строчных"
 //[MMaskGroupBottom]
 "Редактирование: Ins, Del, F4, F7, Ctrl+R"
 //[MMaskGroupName]

@@ -1,6 +1,6 @@
 ﻿.Language=English,English
 
-//Version: 3.0 build 5149
+//Version: 3.0 build 5152
 
 //[MYes]
 "Yes"
@@ -320,6 +320,18 @@
 "for read"
 //[MConfigElevationUsePrivileges]
 "use additional privileges"
+//[MConfigSortingCollation]
+"Sorting collation:"
+//[MConfigSortingOrdinal]
+"ordinal"
+//[MConfigSortingInvariant]
+"invariant"
+//[MConfigSortingLinguistic]
+"linguistic"
+//[MConfigSortingDigitsAsNumbers]
+"Treat digits as numbers"
+//[MConfigSortingCase]
+"&Case sensitive"
 //[MConfigAutoSave]
 "Auto &save setup"
 
@@ -2756,10 +2768,6 @@
 "Show selected f&irst"
 //[MMenuSortDirectoriesFirst]
 "Sho&w directories first"
-//[MMenuSortUseNumeric]
-"Num&eric sort"
-//[MMenuSortUseCaseSensitive]
-"Uppercase before lowercase"
 //[MMaskGroupBottom]
 "Edit: Ins, Del, F4, F7, Ctrl+R"
 //[MMaskGroupName]

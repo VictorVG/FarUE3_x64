@@ -1,6 +1,6 @@
 ﻿.Language=German,German (Deutsch)
 
-//Version: 3.0 build 5149
+//Version: 3.0 build 5152
 
 //[MYes]
 "Ja"
@@ -320,6 +320,23 @@
 "für Lesen"
 //[MConfigElevationUsePrivileges]
 "für Nutzung zusätzlicher Vorrechten"
+// need translation:
+//[MConfigSortingCollation]
+"Sorting collation:"
+// need translation:
+//[MConfigSortingOrdinal]
+"ordinal"
+// need translation:
+//[MConfigSortingInvariant]
+"invariant"
+// need translation:
+//[MConfigSortingLinguistic]
+"linguistic"
+// need translation:
+//[MConfigSortingDigitsAsNumbers]
+"Treat digits as numbers"
+//[MConfigSortingCase]
+"G&roß-/Kleinschrb."
 //[MConfigAutoSave]
 "Setup automatisch &"speichern"
 
@@ -2799,11 +2816,6 @@
 "&Ausgewählte zuerst"
 //[MMenuSortDirectoriesFirst]
 "Verzeichnisse zuerst anzeigen"
-//[MMenuSortUseNumeric]
-"Nu&merische Sortierung"
-// need translation:
-//[MMenuSortUseCaseSensitive]
-"Sortierung abhängig von Groß-/Kleinschreibung"
 //[MMaskGroupBottom]
 "Tasten: Einf, Entf, F4, F7, Strg+R"
 //[MMaskGroupName]

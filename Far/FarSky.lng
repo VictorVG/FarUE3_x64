@@ -1,6 +1,6 @@
 ﻿.Language=Slovak,Slovak (Slovenčina)
 
-//Version: 3.0 build 5149
+//Version: 3.0 build 5152
 
 //[MYes]
 "Áno"
@@ -320,6 +320,23 @@
 "na čítanie"
 //[MConfigElevationUsePrivileges]
 "použiť ďalšie privilégiá"
+// need translation:
+//[MConfigSortingCollation]
+"Sorting collation:"
+// need translation:
+//[MConfigSortingOrdinal]
+"ordinal"
+// need translation:
+//[MConfigSortingInvariant]
+"invariant"
+// need translation:
+//[MConfigSortingLinguistic]
+"linguistic"
+// need translation:
+//[MConfigSortingDigitsAsNumbers]
+"Treat digits as numbers"
+//[MConfigSortingCase]
+"&malé a VEĽKÉ"
 //[MConfigAutoSave]
 "Automaticky ukladať &nastavenia"
 
@@ -2786,11 +2803,6 @@
 "Najprv zobraziť vy&brané"
 //[MMenuSortDirectoriesFirst]
 "Najpr&v zobraziť priečinky"
-//[MMenuSortUseNumeric]
-"Použiť čí&selné triedenie"
-// need translation:
-//[MMenuSortUseCaseSensitive]
-"Triediť podľa malých a VEĽKÝCH písmen"
 //[MMaskGroupBottom]
 "Upraviť: Ins, Del, F4, F7, Ctrl+R"
 //[MMaskGroupName]
