@@ -1,7 +1,0 @@
-﻿<?xml version="1.0" encoding="UTF-8" ?>
-<farconfig version="3.0.4214">
-    <generalconfig>
-        <setting key="KeyBarLabels.English.Editor" name="ShiftF5" type="text" value="VWWrap" />
-        <setting key="KeyBarLabels.Russian.Editor" name="ShiftF5" type="text" value="VWWrap" />
-    </generalconfig>
-</farconfig>

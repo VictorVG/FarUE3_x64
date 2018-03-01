@@ -1,6 +1,0 @@
-﻿.Language=English,English (English)
-.PluginContents=Batch rename files
-
-@Contents
-$ #Batch rename files#
-  This plugin for FAR Manager is intended for files renaming in editor.
