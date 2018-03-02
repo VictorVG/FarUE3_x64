@@ -90,6 +90,7 @@
   ║  S··················· │ AltS                                          │ Shell_SelectingEx.lua                      │ Расширенная работа с выделением файлов. © SimSU                ║
   ║  S··················· │ AltShiftB                                     │ Shell_Branch.lua                           │ DirTree branch                                                 ║
   ║  S··················· │ AltShiftF6                                    │ Shell_Symlink.lua                          │ Make symlink                                                   ║
+  ║  S··················· │ AltShiftG                                     │ Shell_GitGC.lua                            │ Cleanup unnecessary files and optimize the local repository    ║
   ║  S··················· │ AltShiftV                                     │ Plugin_VisRen.lua                          │ Visual Rename                                                  ║
   ║  S··················· │ AltT                                          │ Shell_DelTmp.lua                           │ Удаление временных файлов.                                     ║
   ║  S··················· │ AltUp                                         │ Shell_SelectingEx.lua                      │ Переход на предыдущий выделенный файл. © SimSU                 ║
@@ -285,6 +286,7 @@
   ║  ········D··········· │ CtrlZ AltBS                                   │ Dialog_DialogTools.lua                     │ DialogTools: Undo                                              ║
   ║  ········D··········· │ Ctrl[                                         │ Plugin_Review.lua                          │ Review: Swap vert                                              ║
   ║  ········D··········· │ Ctrl]                                         │ Plugin_Review.lua                          │ Review: Swap horz                                              ║
+  ║  ········D··········· │ Del                                           │ Plugin_GitShell.lua                        │ Delete branch                                                  ║
   ║  ········D··········· │ Down                                          │ Plugin_MeediaInfo.lua                      │ Navigation Down                                                ║
   ║  ········D··········· │ End                                           │ Plugin_Review.lua                          │ Review: Goto Last Image                                        ║
   ║  ········D··········· │ Enter Home End Up Down PgUp PgDn Left Right   │ Plugin_SizeManager.lua                     │ Size Manager: panel navigation                                 ║
@@ -388,4 +390,4 @@
   ║                                                                                                                                                                                     ║
   ╚═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
 
-  19.02.2018 11:20:57 +0300
+  02.03.2018 22:49:31 +0300
