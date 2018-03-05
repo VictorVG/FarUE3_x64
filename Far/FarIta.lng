@@ -1,6 +1,6 @@
 ﻿.Language=Italian,Italian (Italiano)
 
-//Version: 3.0 build 5160
+//Version: 3.0 build 5162
 
 //[MYes]
 "&Si"
@@ -4809,9 +4809,9 @@
 
 //[MKeyESCWasPressed]
 "Operazione Interrotta"
-//[MDoYouWantToStopWork]
+//[MDoYouWantToCancel]
 "Vuoi Veramente Interrottmperla?"
-//[MDoYouWantToStopWork2]
+//[MDoYouWantToContinue]
 "Continua Il Lavoro?"
 
 //[MCheckingFileInPlugin]

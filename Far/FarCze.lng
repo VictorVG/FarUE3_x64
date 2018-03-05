@@ -1,6 +1,6 @@
 ﻿.Language=Czech,Czech (Čeština)
 
-//Version: 3.0 build 5160
+//Version: 3.0 build 5162
 
 //[MYes]
 "Ano"
@@ -4865,9 +4865,9 @@
 
 //[MKeyESCWasPressed]
 "Operace byla přerušena"
-//[MDoYouWantToStopWork]
+//[MDoYouWantToCancel]
 "Opravdu chcete operaci stornovat?"
-//[MDoYouWantToStopWork2]
+//[MDoYouWantToContinue]
 "Pokračovat v práci?"
 
 //[MCheckingFileInPlugin]

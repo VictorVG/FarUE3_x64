@@ -1,6 +1,6 @@
 ﻿.Language=Polish,Polish (Polski)
 
-//Version: 3.0 build 5160
+//Version: 3.0 build 5162
 
 //[MYes]
 "Tak"
@@ -5092,9 +5092,9 @@
 
 //[MKeyESCWasPressed]
 "Operacja została przerwana"
-//[MDoYouWantToStopWork]
+//[MDoYouWantToCancel]
 "Czy naprawdę chcesz ją anulować?"
-//[MDoYouWantToStopWork2]
+//[MDoYouWantToContinue]
 "Kontynuować? "
 
 //[MCheckingFileInPlugin]

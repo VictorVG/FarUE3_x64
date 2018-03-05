@@ -1,6 +1,6 @@
 ﻿.Language=Russian,Russian (Русский)
 
-//Version: 3.0 build 5160
+//Version: 3.0 build 5162
 
 //[MYes]
 "Да"
@@ -4781,9 +4781,9 @@
 
 //[MKeyESCWasPressed]
 "Действие было прервано"
-//[MDoYouWantToStopWork]
+//[MDoYouWantToCancel]
 "Вы действительно хотите отменить действие?"
-//[MDoYouWantToStopWork2]
+//[MDoYouWantToContinue]
 "Продолжить выполнение?"
 
 //[MCheckingFileInPlugin]

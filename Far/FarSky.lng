@@ -1,6 +1,6 @@
 ﻿.Language=Slovak,Slovak (Slovenčina)
 
-//Version: 3.0 build 5160
+//Version: 3.0 build 5162
 
 //[MYes]
 "Áno"
@@ -4836,9 +4836,9 @@
 
 //[MKeyESCWasPressed]
 "Operácia bola prerušená"
-//[MDoYouWantToStopWork]
+//[MDoYouWantToCancel]
 "Chcete operáciu zrušiť?"
-//[MDoYouWantToStopWork2]
+//[MDoYouWantToContinue]
 "Pokračovať v práci?"
 
 //[MCheckingFileInPlugin]

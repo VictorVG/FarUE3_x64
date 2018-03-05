@@ -1,6 +1,6 @@
 ﻿.Language=Hungarian,Hungarian (Magyar)
 
-//Version: 3.0 build 5160
+//Version: 3.0 build 5162
 
 //[MYes]
 "Igen"
@@ -5063,9 +5063,9 @@
 
 //[MKeyESCWasPressed]
 "A műveletet megszakította"
-//[MDoYouWantToStopWork]
+//[MDoYouWantToCancel]
 "Valóban le akarja állítani?"
-//[MDoYouWantToStopWork2]
+//[MDoYouWantToContinue]
 "Folytatja?"
 
 //[MCheckingFileInPlugin]

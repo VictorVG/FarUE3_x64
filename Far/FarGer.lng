@@ -1,6 +1,6 @@
 ﻿.Language=German,German (Deutsch)
 
-//Version: 3.0 build 5160
+//Version: 3.0 build 5162
 
 //[MYes]
 "Ja"
@@ -4868,9 +4868,9 @@
 
 //[MKeyESCWasPressed]
 "Vorgang wurde unterbrochen"
-//[MDoYouWantToStopWork]
+//[MDoYouWantToCancel]
 "Wollen Sie den Vorgang wirklich abbrechen?"
-//[MDoYouWantToStopWork2]
+//[MDoYouWantToContinue]
 "Vorgang fortsetzen? "
 
 //[MCheckingFileInPlugin]

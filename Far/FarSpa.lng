@@ -1,6 +1,6 @@
 ﻿.Language=Spanish,Spanish (Español)
 
-//Version: 3.0 build 5160
+//Version: 3.0 build 5162
 
 //[MYes]
 "Si"
@@ -4792,9 +4792,9 @@
 
 //[MKeyESCWasPressed]
 "Operación ha sido interrumpida"
-//[MDoYouWantToStopWork]
+//[MDoYouWantToCancel]
 "Desea realmente cancelar la operación?"
-//[MDoYouWantToStopWork2]
+//[MDoYouWantToContinue]
 "Continuar trabajo? "
 
 //[MCheckingFileInPlugin]
