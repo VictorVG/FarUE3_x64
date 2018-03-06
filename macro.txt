@@ -91,6 +91,9 @@
   ║  S··················· │ AltShiftB                                     │ Shell_Branch.lua                           │ DirTree branch                                                 ║
   ║  S··················· │ AltShiftF6                                    │ Shell_Symlink.lua                          │ Make symlink                                                   ║
   ║  S··················· │ AltShiftG                                     │ Shell_GitGC.lua                            │ Cleanup unnecessary files and optimize the local repository    ║
+  ║  S··················· │ AltShiftH                                     │ Plugin_GitShell.lua                        │ GitShell view history                                          ║
+  ║  S··················· │ AltShiftL                                     │ Plugin_GitShell.lua                        │ GitShell current file history                                  ║
+  ║  S··················· │ AltShiftN                                     │ Plugin_GitShell.lua                        │ GiShell branch tools                                           ║
   ║  S··················· │ AltShiftV                                     │ Plugin_VisRen.lua                          │ Visual Rename                                                  ║
   ║  S··················· │ AltT                                          │ Shell_DelTmp.lua                           │ Удаление временных файлов.                                     ║
   ║  S··················· │ AltUp                                         │ Shell_SelectingEx.lua                      │ Переход на предыдущий выделенный файл. © SimSU                 ║
@@ -106,13 +109,14 @@
   ║                       │                                               │                                            │ SimSU                                                          ║
   ║  S··················· │ CtrlMsLClick                                  │ Shell_SelectMouseExplorer.lua              │ Добавить/Убрать из выделенных файлов, аля Explorer. © SimSU    ║
   ║  S··················· │ CtrlO CtrlU CtrlF1 CtrlF2 Esc CtrlUp CtrlDown │ Plugin_Review.lua                          │ Review: QuickView Helper                                       ║
-  ║                       │  CtrlLeft CtrlRight                           │                                            │                                                                ║
+  ║                       │ CtrlLeft CtrlRight                            │                                            │                                                                ║
   ║  S··················· │ CtrlPgDn                                      │ Shell_RememberSelected.lua                 │ Смена папки, вход в архив c сохранением выделения файлов.      ║
   ║                       │                                               │                                            │ © SimSU                                                        ║
   ║  S··················· │ CtrlPgUp                                      │ Shell_RememberSelected.lua                 │ Перейти в папку уровнем выше c сохранением выделения файлов.   ║
   ║                       │                                               │                                            │ © SimSU                                                        ║
   ║  S··················· │ CtrlS                                         │ Shell_CtrlS.lua                            │ Use Ctrl-S for quick search like mc.                           ║
   ║  S··················· │ CtrlShiftA                                    │ Shell_CDup.lua                             │ Menu with list of parent directories (CD up)                   ║
+  ║  S··················· │ CtrlShiftC                                    │ Plugin_GitShell.lua                        │ GitShell commit tools                                          ║
   ║  S··················· │ CtrlShiftE                                    │ Shell_SelectingEx.lua                      │ Копирование имён помеченных файлов в редактор. © SimSU         ║
   ║  S··················· │ CtrlShiftF12                                  │ Shell_SortDir.lua                          │ Sort files with StrCmpLogicalW                                 ║
   ║  S··················· │ CtrlShiftF8                                   │ Shell_CmdsFromCurDir.lua                   │ Display commands that have been launched from the current      ║
@@ -390,4 +394,4 @@
   ║                                                                                                                                                                                     ║
   ╚═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
 
-  02.03.2018 22:49:31 +0300
+  06.03.2018 07:39:06 +0300
