@@ -220,6 +220,7 @@
   ║  ·······E············ │ CtrlF9                                        │ Common_LMMacros.lua                        │ Перезагрузить все скрипты                                      ║
   ║  ·······E············ │ CtrlH                                         │ Plugin_hunspell.lua                        │ Hunspell spell checker                                         ║
   ║  ·······E············ │ CtrlMsLClick                                  │ Editor_MouseSelect.lua                     │ Выделение с копированием. © SimSU                              ║
+  ║  ·······E············ │ CtrlP                                         │ Plugin_UCharMap.lua                        │ Unicode Charmap: show char on cursor                           ║
   ║  ·······E············ │ CtrlR                                         │ Editor_Remarks.lua                         │ Разкомментирование помеченного блока. © SimSU                  ║
   ║  ·······E············ │ CtrlS                                         │ Editor_SaveFile.lua                        │ Editor: Save File                                              ║
   ║  ·······E············ │ CtrlShiftBS                                   │ Editor_BlockIndent.lua                     │ Indent left by space                                           ║
@@ -394,4 +395,4 @@
   ║                                                                                                                                                                                     ║
   ╚═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
 
-  06.03.2018 07:39:06 +0300
+  15.03.2018 11:42:13 +0300

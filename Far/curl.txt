@@ -57,6 +57,7 @@ Usage: curl [options...] <url>
      --ftp-ssl-control Require SSL/TLS for FTP login, clear for transfer
  -G, --get           Put the post data in the URL and use GET
  -g, --globoff       Disable URL sequences and ranges using {} and []
+     --happy-eyeballs-timeout-ms How long to wait in milliseconds for IPv6 before trying IPv4
  -I, --head          Show document info only
  -H, --header <header/@file> Pass custom header(s) to server
  -h, --help          This help text
@@ -134,6 +135,7 @@ Usage: curl [options...] <url>
      --proxy-negotiate Use HTTP Negotiate (SPNEGO) authentication on the proxy
      --proxy-ntlm    Use NTLM authentication on the proxy
      --proxy-pass <phrase> Pass phrase for the private key for HTTPS proxy
+     --proxy-pinnedpubkey <hashes> FILE/HASHES public key to verify proxy with
      --proxy-service-name <name> SPNEGO proxy service name
      --proxy-ssl-allow-beast Allow security flaw for interop for HTTPS proxy
      --proxy-tlsauthtype <type> TLS authentication type for HTTPS proxy
