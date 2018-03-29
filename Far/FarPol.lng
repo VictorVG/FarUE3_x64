@@ -1,6 +1,6 @@
 ﻿.Language=Polish,Polish (Polski)
 
-//Version: 3.0 build 5172
+//Version: 3.0 build 5174
 
 //[MYes]
 "Tak"
@@ -785,8 +785,6 @@
 "Create &link"
 //[MCopyDlgTotal]
 "Razem"
-//[MCopyScanning]
-"Przeszukuję katalogi..."
 //[MCopyPrepareSecury]
 "Ustawianie praw dostępu..."
 //[MCopyUseFilter]

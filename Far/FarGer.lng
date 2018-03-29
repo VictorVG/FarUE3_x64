@@ -1,6 +1,6 @@
 ﻿.Language=German,German (Deutsch)
 
-//Version: 3.0 build 5172
+//Version: 3.0 build 5174
 
 //[MYes]
 "Ja"
@@ -705,8 +705,6 @@
 "&Link einstellen"
 //[MCopyDlgTotal]
 "Gesamt"
-//[MCopyScanning]
-"Scanne Ordner..."
 //[MCopyPrepareSecury]
 "Anwenden der Zugriffsrechte..."
 //[MCopyUseFilter]

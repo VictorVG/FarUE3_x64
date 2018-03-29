@@ -1,6 +1,6 @@
 ﻿.Language=Slovak,Slovak (Slovenčina)
 
-//Version: 3.0 build 5172
+//Version: 3.0 build 5174
 
 //[MYes]
 "Áno"
@@ -710,8 +710,6 @@
 "Vytvor prepo&jenie"
 //[MCopyDlgTotal]
 "Spolu"
-//[MCopyScanning]
-"Načítavam priečinky..."
 //[MCopyPrepareSecury]
 "Aplikujem prístupové práva..."
 //[MCopyUseFilter]

@@ -1,6 +1,6 @@
 ﻿.Language=Czech,Czech (Čeština)
 
-//Version: 3.0 build 5172
+//Version: 3.0 build 5174
 
 //[MYes]
 "Ano"
@@ -734,8 +734,6 @@
 "Vytvořit &link"
 //[MCopyDlgTotal]
 "Celkem"
-//[MCopyScanning]
-"Načítání adresářů..."
 //[MCopyPrepareSecury]
 "Nastavuji přístupová práva..."
 //[MCopyUseFilter]

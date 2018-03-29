@@ -1,6 +1,6 @@
 ﻿.Language=Hungarian,Hungarian (Magyar)
 
-//Version: 3.0 build 5172
+//Version: 3.0 build 5174
 
 //[MYes]
 "Igen"
@@ -782,8 +782,6 @@
 "Create &link"
 //[MCopyDlgTotal]
 "Összesen"
-//[MCopyScanning]
-"Mappák olvasása..."
 //[MCopyPrepareSecury]
 "Hozzáférési jogok alkalmazása..."
 //[MCopyUseFilter]

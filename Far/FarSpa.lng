@@ -1,6 +1,6 @@
 ﻿.Language=Spanish,Spanish (Español)
 
-//Version: 3.0 build 5172
+//Version: 3.0 build 5174
 
 //[MYes]
 "Si"
@@ -700,8 +700,6 @@
 "Crear en&lace"
 //[MCopyDlgTotal]
 "Total"
-//[MCopyScanning]
-"Explorando directorios..."
 //[MCopyPrepareSecury]
 "Aplicando derechos de acceso..."
 //[MCopyUseFilter]

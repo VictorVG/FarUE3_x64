@@ -1,6 +1,6 @@
 ﻿.Language=Italian,Italian (Italiano)
 
-//Version: 3.0 build 5172
+//Version: 3.0 build 5174
 
 //[MYes]
 "&Si"
@@ -702,8 +702,6 @@
 "Crea &Link"
 //[MCopyDlgTotal]
 "Totale"
-//[MCopyScanning]
-"Scansione Direcories..."
 //[MCopyPrepareSecury]
 "Impostazione Permessi..."
 //[MCopyUseFilter]

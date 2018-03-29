@@ -1,6 +1,6 @@
 ﻿.Language=Russian,Russian (Русский)
 
-//Version: 3.0 build 5172
+//Version: 3.0 build 5174
 
 //[MYes]
 "Да"
@@ -694,8 +694,6 @@
 "&Создать ссылку"
 //[MCopyDlgTotal]
 "Всего"
-//[MCopyScanning]
-"Сканирование папок..."
 //[MCopyPrepareSecury]
 "Применение прав доступа..."
 //[MCopyUseFilter]

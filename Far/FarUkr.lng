@@ -1,6 +1,6 @@
 ﻿.Language=Ukrainian,Ukrainian (Українська)
 
-//Version: 3.0 build 5172
+//Version: 3.0 build 5174
 
 //[MYes]
 "Так"
@@ -694,8 +694,6 @@
 "&Створити посилання"
 //[MCopyDlgTotal]
 "Усього"
-//[MCopyScanning]
-"Сканування папок..."
 //[MCopyPrepareSecury]
 "Застосування прав доступу..."
 //[MCopyUseFilter]
