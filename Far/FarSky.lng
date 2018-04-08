@@ -1,6 +1,6 @@
 ﻿.Language=Slovak,Slovak (Slovenčina)
 
-//Version: 3.0 build 5185
+//Version: 3.0 build 5186
 
 //[MYes]
 "Áno"
@@ -308,8 +308,6 @@
 "Ukladať históriu &zobrazení a úprav"
 //[MConfigRegisteredTypes]
 "Použiť typy súborov regi&strované vo Windows"
-//[MConfigCloseCDGate]
-"Automaticky pr&ipojiť jednotku CD"
 //[MConfigUpdateEnvironment]
 "Automaticky aktualizovať premenné prostredia"
 //[MConfigElevation]

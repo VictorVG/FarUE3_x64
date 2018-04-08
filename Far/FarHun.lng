@@ -1,6 +1,6 @@
 ﻿.Language=Hungarian,Hungarian (Magyar)
 
-//Version: 3.0 build 5185
+//Version: 3.0 build 5186
 
 //[MYes]
 "Igen"
@@ -312,8 +312,6 @@
 "Nézőke és &szerkesztő előzmények mentése"
 //[MConfigRegisteredTypes]
 "&Windows reg. fájltípusok használata"
-//[MConfigCloseCDGate]
-"CD tálca a&utomatikus behúzása"
 // need translation:
 //[MConfigUpdateEnvironment]
 "Automatic update of environment variables"

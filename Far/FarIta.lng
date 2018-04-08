@@ -1,6 +1,6 @@
 ﻿.Language=Italian,Italian (Italiano)
 
-//Version: 3.0 build 5185
+//Version: 3.0 build 5186
 
 //[MYes]
 "&Si"
@@ -308,8 +308,6 @@
 "Salva Elenco Files Già &Visti/Editati"
 //[MConfigRegisteredTypes]
 "Usa &Associazioni Di Sistema Per I Files"
-//[MConfigCloseCDGate]
-"Carica Automaticamente &CD/DVD"
 //[MConfigUpdateEnvironment]
 "Aggiorna Varia&bili Ambiente Automaticamente"
 //[MConfigElevation]

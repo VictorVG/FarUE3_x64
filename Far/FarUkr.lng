@@ -1,6 +1,6 @@
 ﻿.Language=Ukrainian,Ukrainian (Українська)
 
-//Version: 3.0 build 5185
+//Version: 3.0 build 5186
 
 //[MYes]
 "Так"
@@ -308,8 +308,6 @@
 "Зберігати історію пе&регляду і редагування"
 //[MConfigRegisteredTypes]
 "Використовувати стандартні &типи файлів"
-//[MConfigCloseCDGate]
-"Автоматично монтуват&и CD/DVD"
 //[MConfigUpdateEnvironment]
 "Автооновл&ення змінних оточення"
 //[MConfigElevation]

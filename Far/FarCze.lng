@@ -1,6 +1,6 @@
 ﻿.Language=Czech,Czech (Čeština)
 
-//Version: 3.0 build 5185
+//Version: 3.0 build 5186
 
 //[MYes]
 "Ano"
@@ -309,8 +309,6 @@
 "Ukládat historii &zobrazení a úprav"
 //[MConfigRegisteredTypes]
 "Používat typy souborů regi&strované ve Windows"
-//[MConfigCloseCDGate]
-"Automatické př&ipojení CD jednotek"
 //[MConfigUpdateEnvironment]
 "Automaticky aktualizovat proměnné prostředí"
 //[MConfigElevation]

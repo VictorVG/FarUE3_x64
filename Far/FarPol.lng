@@ -1,6 +1,6 @@
 ﻿.Language=Polish,Polish (Polski)
 
-//Version: 3.0 build 5185
+//Version: 3.0 build 5186
 
 //[MYes]
 "Tak"
@@ -312,8 +312,6 @@
 "Zapisz historię podglądu i &edycji"
 //[MConfigRegisteredTypes]
 "Użyj zare&jestrowanych typów Windows"
-//[MConfigCloseCDGate]
-"&Montuj CD automatycznie"
 // need translation:
 //[MConfigUpdateEnvironment]
 "Automatic update of environment variables"

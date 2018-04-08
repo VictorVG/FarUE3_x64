@@ -1,6 +1,6 @@
 ﻿.Language=German,German (Deutsch)
 
-//Version: 3.0 build 5185
+//Version: 3.0 build 5186
 
 //[MYes]
 "Ja"
@@ -308,8 +308,6 @@
 "Betrachter/&Editor-Historie speichern"
 //[MConfigRegisteredTypes]
 "&Registrierte Windows-Dateitypen verwenden"
-//[MConfigCloseCDGate]
-"CD-Laufwerk auto&matisch schließen"
 //[MConfigUpdateEnvironment]
 "Automatische Updates für Umgebungsvariablen"
 //[MConfigElevation]

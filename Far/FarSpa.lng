@@ -1,6 +1,6 @@
 ﻿.Language=Spanish,Spanish (Español)
 
-//Version: 3.0 build 5185
+//Version: 3.0 build 5186
 
 //[MYes]
 "Si"
@@ -308,8 +308,6 @@
 "Guardar historial de &visor y editor"
 //[MConfigRegisteredTypes]
 "Usar extensiones &registradas de Windows"
-//[MConfigCloseCDGate]
-"CD\DVD\BD-ROM: automontar unidad"
 //[MConfigUpdateEnvironment]
 "Actualización automática de variables de entorno"
 //[MConfigElevation]

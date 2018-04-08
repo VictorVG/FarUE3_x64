@@ -1,6 +1,6 @@
 ﻿.Language=English,English
 
-//Version: 3.0 build 5185
+//Version: 3.0 build 5186
 
 //[MYes]
 "Yes"
@@ -308,8 +308,6 @@
 "Save &view and edit history"
 //[MConfigRegisteredTypes]
 "Use Windows &registered types"
-//[MConfigCloseCDGate]
-"CD drive auto &mount"
 //[MConfigUpdateEnvironment]
 "Automatic update of environment variables"
 //[MConfigElevation]

@@ -1,6 +1,6 @@
 ﻿.Language=Russian,Russian (Русский)
 
-//Version: 3.0 build 5185
+//Version: 3.0 build 5186
 
 //[MYes]
 "Да"
@@ -308,8 +308,6 @@
 "Сохранять историю п&росмотра и редактора"
 //[MConfigRegisteredTypes]
 "Использовать стандартные &типы файлов"
-//[MConfigCloseCDGate]
-"Автоматически монтироват&ь CDROM"
 //[MConfigUpdateEnvironment]
 "Автообновл&ение переменных окружения"
 //[MConfigElevation]
