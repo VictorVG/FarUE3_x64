@@ -1,6 +1,6 @@
 ﻿.Language=Hungarian,Hungarian (Magyar)
 
-//Version: 3.0 build 5189
+//Version: 3.0 build 5192
 
 //[MYes]
 "Igen"
@@ -4199,7 +4199,7 @@
 //[MHelpTitle]
 "Súgó"
 //[MHelpActivatorURL]
-"A hivatkozás által indított program:"
+"A hivatkozás által indított program"
 //[MHelpActivatorFormat]
 "Paraméterei:"
 //[MHelpActivatorQ]

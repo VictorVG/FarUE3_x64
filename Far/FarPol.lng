@@ -1,6 +1,6 @@
 ﻿.Language=Polish,Polish (Polski)
 
-//Version: 3.0 build 5189
+//Version: 3.0 build 5192
 
 //[MYes]
 "Tak"
@@ -4228,7 +4228,7 @@
 //[MHelpTitle]
 "Pomoc"
 //[MHelpActivatorURL]
-"To wywołanie uruchomi aplikację zewnętrzną:"
+"To wywołanie uruchomi aplikację zewnętrzną"
 //[MHelpActivatorFormat]
 "z parametrem:"
 //[MHelpActivatorQ]

@@ -1,6 +1,6 @@
 ﻿.Language=Ukrainian,Ukrainian (Українська)
 
-//Version: 3.0 build 5189
+//Version: 3.0 build 5192
 
 //[MYes]
 "Так"
@@ -3918,7 +3918,7 @@
 //[MHelpTitle]
 "Допомога"
 //[MHelpActivatorURL]
-"Це посилання запускає зовнішній додаток:"
+"Це посилання запускає зовнішній додаток"
 //[MHelpActivatorFormat]
 "з параметром:"
 //[MHelpActivatorQ]

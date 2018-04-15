@@ -1,6 +1,6 @@
 ﻿.Language=German,German (Deutsch)
 
-//Version: 3.0 build 5189
+//Version: 3.0 build 5192
 
 //[MYes]
 "Ja"
@@ -4002,7 +4002,7 @@
 //[MHelpTitle]
 "Hilfe"
 //[MHelpActivatorURL]
-"Diese Referenz startet folgendes externes Programm:"
+"Diese Referenz startet folgendes externes Programm"
 //[MHelpActivatorFormat]
 "mit Parameter:"
 //[MHelpActivatorQ]

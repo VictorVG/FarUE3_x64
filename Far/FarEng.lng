@@ -1,6 +1,6 @@
 ﻿.Language=English,English
 
-//Version: 3.0 build 5189
+//Version: 3.0 build 5192
 
 //[MYes]
 "Yes"
@@ -3918,7 +3918,7 @@
 //[MHelpTitle]
 "Help"
 //[MHelpActivatorURL]
-"This reference starts the external application:"
+"This reference starts an external application"
 //[MHelpActivatorFormat]
 "with parameter:"
 //[MHelpActivatorQ]

@@ -1,6 +1,6 @@
 ﻿.Language=Czech,Czech (Čeština)
 
-//Version: 3.0 build 5189
+//Version: 3.0 build 5192
 
 //[MYes]
 "Ano"
@@ -4001,7 +4001,7 @@
 //[MHelpTitle]
 "Nápověda"
 //[MHelpActivatorURL]
-"Tento odkaz spouští externí aplikaci:"
+"Tento odkaz spouští externí aplikaci"
 //[MHelpActivatorFormat]
 "s parametrem:"
 //[MHelpActivatorQ]

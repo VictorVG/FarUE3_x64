@@ -1,6 +1,6 @@
 ﻿.Language=Italian,Italian (Italiano)
 
-//Version: 3.0 build 5189
+//Version: 3.0 build 5192
 
 //[MYes]
 "&Si"
@@ -3945,7 +3945,7 @@
 //[MHelpTitle]
 "Aiuto"
 //[MHelpActivatorURL]
-"Questa Voce Avvia Una Applicazione Esterna:"
+"Questa Voce Avvia Una Applicazione Esterna"
 //[MHelpActivatorFormat]
 "Con Il Parametro:"
 //[MHelpActivatorQ]

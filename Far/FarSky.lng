@@ -1,6 +1,6 @@
 ﻿.Language=Slovak,Slovak (Slovenčina)
 
-//Version: 3.0 build 5189
+//Version: 3.0 build 5192
 
 //[MYes]
 "Áno"
@@ -3972,7 +3972,7 @@
 //[MHelpTitle]
 "Pomocník"
 //[MHelpActivatorURL]
-"Tento odkaz spúšťa externú aplikáciu:"
+"Tento odkaz spúšťa externú aplikáciu"
 //[MHelpActivatorFormat]
 "s parametrom:"
 //[MHelpActivatorQ]

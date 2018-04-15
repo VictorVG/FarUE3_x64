@@ -1,6 +1,6 @@
 ﻿.Language=Russian,Russian (Русский)
 
-//Version: 3.0 build 5189
+//Version: 3.0 build 5192
 
 //[MYes]
 "Да"
@@ -3918,7 +3918,7 @@
 //[MHelpTitle]
 "Помощь"
 //[MHelpActivatorURL]
-"Эта ссылка запускает внешнее приложение:"
+"Эта ссылка запускает внешнее приложение"
 //[MHelpActivatorFormat]
 "с параметром:"
 //[MHelpActivatorQ]
