@@ -2354,6 +2354,7 @@
 "Ctrl+H, Del, Ins, F4"
 //[MGetCodePageBottomShortTitle]
 "Ctrl+H, Del, F4"
+// need translation:
 //[MGetCodePageEditCodePageName]
 "Editar nombre de página de códigos"
 //[MGetCodePageResetCodePageName]

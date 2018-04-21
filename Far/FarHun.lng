@@ -2501,7 +2501,7 @@
 "Ctrl+H, Del, F4"
 // need translation:
 //[MGetCodePageEditCodePageName]
-"Edit code page name"
+"Rename the code page"
 // need translation:
 //[MGetCodePageResetCodePageName]
 "&Reset"

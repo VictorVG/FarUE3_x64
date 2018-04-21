@@ -2391,6 +2391,7 @@
 "Strg+H, Entf, Einf, F4"
 //[MGetCodePageBottomShortTitle]
 "Strg+H, Entf, F4"
+// need translation:
 //[MGetCodePageEditCodePageName]
 "Codepagename bearbeiten"
 //[MGetCodePageResetCodePageName]

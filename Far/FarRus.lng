@@ -2349,7 +2349,7 @@
 //[MGetCodePageBottomShortTitle]
 "Ctrl+H, Del, F4"
 //[MGetCodePageEditCodePageName]
-"Изменить имя кодовой страницы"
+"Переименование кодовой страницы"
 //[MGetCodePageResetCodePageName]
 "&Сбросить"
 

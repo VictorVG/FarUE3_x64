@@ -2365,6 +2365,7 @@
 "[Ctrl-H] [Canc] [Ins] [F4]"
 //[MGetCodePageBottomShortTitle]
 "[Ctrl-H] [Canc] [F4]"
+// need translation:
 //[MGetCodePageEditCodePageName]
 "Modifica Nome Codepage"
 //[MGetCodePageResetCodePageName]
