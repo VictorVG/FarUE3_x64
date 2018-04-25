@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<farconfig version="3.0.5186">
+<farconfig version="3.0.5196">
 	<generalconfig>
 		<setting key="Cmdline" name="AutoComplete" type="qword" value="0000000000000001"/>
 		<setting key="Cmdline" name="DelRemovesBlocks" type="qword" value="0000000000000001"/>
@@ -484,6 +484,9 @@
 			<command type="0" enabled="1" command="&quot;!=\!.!&quot;"/>
 			<command type="1" enabled="1" command="observe:&quot;!=\!.!&quot;"/>
 			<command type="2" enabled="1" command="view:&quot;!=\!.!&quot;"/>
+			<command type="3" enabled="0" command=""/>
+			<command type="4" enabled="0" command=""/>
+			<command type="5" enabled="0" command=""/>
 		</filetype>
 		<filetype mask="*.hlf" description="Far Help">
 			<command type="0" enabled="1" command="hlf:&quot;!=\!+!&quot; !?Go to topic ((Contents if empty)):?!"/>
@@ -512,6 +515,9 @@
 			<command type="0" enabled="1" command="lua:Keys(&quot;ShiftEnter&quot;)"/>
 			<command type="1" enabled="1" command="@pic:!=\!.!"/>
 			<command type="2" enabled="1" command="@pic:!=\!.!"/>
+			<command type="3" enabled="0" command=""/>
+			<command type="4" enabled="0" command=""/>
+			<command type="5" enabled="0" command=""/>
 		</filetype>
 		<filetype mask="*.exe,*.?ll,*.ocx,*.bin,*.sys,*.prg,*.ax" description="Windows executable">
 			<command type="3" enabled="1" command="peanalyzer:&quot;!=\!+!&quot;"/>
@@ -522,7 +528,8 @@
 			<command type="4" enabled="1" command="edit:&quot;!=\!+!&quot;"/>
 			<command type="5" enabled="1" command="reg2:&quot;!=\!+!&quot;"/>
 		</filetype>
-	</associations><pluginhotkeys>
+	</associations>
+	<pluginhotkeys>
 		<plugin key="04D07C91-6FFE-481C-9E02-A070D3380883">
 			<hotkey menu="plugins" guid="0730559C-99FA-4748-86D4-012B71E72173" hotkey="b"/>
 		</plugin>
@@ -1206,7 +1213,7 @@
 					<value name="FilesMask" type="text" value="*.*"/>
 					<value name="FullPath" type="qword" value="0000000000000002"/>
 					<value name="ScanFolders" type="qword" value="0000000000000000"/>
-					<value name="ScanMode" type="qword" value="0000000000000000"/>
+					<value name="ScanMode" type="qword" value="0000000000000001"/>
 					<value name="ScanSymlink" type="qword" value="0000000000000001"/>
 					<value name="WarnGetInfo" type="qword" value="0000000000000001"/>
 				</key>
@@ -1389,84 +1396,6 @@
 				<key name="3A2AF458-43E2-4715-AFEA-93D33D56C0C2" description="FARCmds"/>
 			</hierarchicalconfig>
 		</plugin>
-		<plugin guid="4EBBEFC8-2084-4B7F-94C0-692CE136894D">
-			<hierarchicalconfig>
-				<key name="4EBBEFC8-2084-4B7F-94C0-692CE136894D" description="LuaMacro">
-					<key name="IgorZ">
-						<key name="BookmarkManagerConfig">
-							<value name="GoToMessDelay" type="qword" value="FFFFFFFFFFFFFFFF"/>
-							<value name="MessDelay" type="qword" value="FFFFFFFFFFFFFFFF"/>
-							<value name="SaveMessDelay" type="qword" value="0000000000000320"/>
-							<value name="UseEnv" type="qword" value="0000000000000001"/>
-							<value name="UseGlobal" type="qword" value="0000000000000001"/>
-							<value name="UseLocal" type="qword" value="0000000000000000"/>
-						</key>
-						<key name="CASArrowsDiskSwitch">
-							<value name="ExcludeDrives" type="text" value=""/>
-							<value name="LowerCurDrive" type="qword" value="0000000000000001"/>
-							<value name="OutStr" type="qword" value="0000000000000000"/>
-							<value name="SpDelim" type="qword" value="0000000000000000"/>
-							<value name="SwitchPanelsOn" type="qword" value="0000000000000000"/>
-							<value name="UseHidden" type="qword" value="0000000000000001"/>
-							<key name="Keys">
-								<value name="A" type="text" value="Shift"/>
-								<value name="Alt" type="text" value="R"/>
-								<value name="Ctrl" type="text" value=""/>
-								<value name="L" type="text" value="RAlt"/>
-								<value name="Left" type="text" value="Left"/>
-								<value name="P" type="text" value=""/>
-								<value name="R" type="text" value="Alt"/>
-								<value name="RAlt" type="text" value="L"/>
-								<value name="RCtrl" type="text" value=""/>
-								<value name="Right" type="text" value="Right"/>
-								<value name="Shift" type="text" value="A"/>
-							</key>
-							<key name="Plugins">
-								<value name="0" type="text" value="1e26a927-5135-48c6-88b2-845fb8945484"/>
-								<value name="1" type="text" value="b77c964b-e31e-4d4c-8fe5-d6b0c6853e7c"/>
-								<value name="2" type="text" value="42e4aeb1-a230-44f4-b33c-f195bb654931"/>
-								<value name="3" type="text" value="773b5051-7c5f-4920-a201-68051c4176a4"/>
-								<value name="5" type="text" value="65642111-aa69-4b84-b4b8-9249579ec4fa"/>
-								<value name="6" type="text" value="148fe5e0-7129-4269-b30f-a1a866dd009a"/>
-								<value name="=" type="text" value="06771932-e01f-4259-a7a5-a899dec06fc7"/>
-								<value name="PlugStr" type="text" value="352=106"/>
-							</key>
-						</key>
-						<key name="LuaManager">
-							<value name="AreaFilter" type="text" value="Shell Info QView Tree Search FindFolder Viewer Editor Dialog Menu MainMenu UserMenu Disks ShellAutoCompletion DialogAutoCompletion Help Grabber Desktop Other Common"/>
-							<value name="EditScriptKey" type="text" value="CtrlF12"/>
-							<value name="EventSortingOrder" type="text" value="GD"/>
-							<value name="GroupFilter" type="text" value="DialogEvent ViewerEvent EditorEvent EditorInput ConsoleInput ExitFAR"/>
-							<value name="InsertEventKey" type="text" value="RCtrlF11"/>
-							<value name="InsertMIKey" type="text" value="RCtrlF11"/>
-							<value name="InsertMacroKey" type="text" value="RCtrlF11"/>
-							<value name="InsertPrefixKey" type="text" value="RCtrlF11"/>
-							<value name="InsertScriptKey" type="text" value="LCtrlF11"/>
-							<value name="InsertUidKey" type="text" value="RCtrlU"/>
-							<value name="KeyFilter" type="text" value=""/>
-							<value name="MISortingOrder" type="text" value="A"/>
-							<value name="MacroMaxDescWidth" type="qword" value="00000000000003E8"/>
-							<value name="MacroSortingOrder" type="text" value="OCAKD"/>
-							<value name="ManagerKey" type="text" value="AltShiftF11"/>
-							<value name="MaxKeyWidth" type="qword" value="00000000000003E8"/>
-							<value name="ModuleSortingOrder" type="text" value="TMN"/>
-							<value name="PrefixSortingOrder" type="text" value="P"/>
-							<value name="ReloadKey" type="text" value="CtrlF9"/>
-							<value name="ShowEvents" type="qword" value="0000000000000001"/>
-							<value name="ShowKeyMacros" type="qword" value="0000000000000001"/>
-							<value name="ShowMacros" type="qword" value="0000000000000001"/>
-							<value name="ShowMenuItems" type="qword" value="0000000000000001"/>
-							<value name="ShowModules" type="qword" value="0000000000000001"/>
-							<value name="ShowNonActiveMacros" type="qword" value="0000000000000001"/>
-							<value name="ShowPrefixes" type="qword" value="0000000000000001"/>
-						</key>
-					</key>
-					<key name="LuaMacro">
-						<value name="MacroBrowser" type="hex" value="6C,6F,63,61,6C,20,69,64,78,3D,7B,7D,3B,20,66,6F,72,20,69,3D,31,2C,31,20,64,6F,20,69,64,78,5B,69,5D,3D,7B,7D,20,65,6E,64,0A,64,6F,20,6C,6F,63,61,6C,20,74,3D,69,64,78,5B,31,5D,0A,20,20,74,5B,22,49,6E,76,53,6F,72,74,22,5D,20,3D,20,31,0A,20,20,74,5B,22,53,6F,72,74,4B,65,79,22,5D,20,3D,20,22,43,2B,46,31,22,0A,65,6E,64,0A,72,65,74,75,72,6E,20,69,64,78,5B,31,5D,0A"/>
-					</key>
-				</key>
-			</hierarchicalconfig>
-		</plugin>
 		<plugin guid="59223378-9DCD-45FC-97C9-AD0251A3C53F">
 			<hierarchicalconfig>
 				<key name="59223378-9DCD-45FC-97C9-AD0251A3C53F" description="UCharMap">
@@ -1532,6 +1461,12 @@
 							<value name="level" type="qword" value="0000000000000007"/>
 						</key>
 					</key>
+				</key>
+			</hierarchicalconfig>
+		</plugin>
+		<plugin guid="6F332978-08B8-4919-847A-EFBB6154C99A">
+			<hierarchicalconfig>
+				<key name="6F332978-08B8-4919-847A-EFBB6154C99A" description="LuaFAR for Editor">
 				</key>
 			</hierarchicalconfig>
 		</plugin>
@@ -1606,6 +1541,12 @@
 		<plugin guid="7E509EC9-41A3-44A3-B228-D6C94BE46AEE">
 			<hierarchicalconfig>
 				<key name="7E509EC9-41A3-44A3-B228-D6C94BE46AEE" description="Mine Sweeper"/>
+			</hierarchicalconfig>
+		</plugin>
+		<plugin guid="8E11EA75-0303-4374-AC60-D1E38F865449">
+			<hierarchicalconfig>
+				<key name="8E11EA75-0303-4374-AC60-D1E38F865449" description="LuaFAR Search">
+				</key>
 			</hierarchicalconfig>
 		</plugin>
 		<plugin guid="919C1FC6-A571-4642-99DF-BDACE840ED18">
@@ -1702,6 +1643,7 @@
 				<key name="9C3A61FC-F349-48E8-9B78-DAEBD821694B" description="Audio player">
 					<value name="add_to_panel_menu" type="qword" value="0000000000000001"/>
 					<value name="cmd_prefix" type="text" value="AudioPlayer"/>
+					<value name="out_device" type="qword" value="0000000000000003"/>
 					<value name="use_analyze" type="qword" value="0000000000000001"/>
 					<value name="volume" type="qword" value="00000000000003E8"/>
 				</key>
@@ -1763,6 +1705,11 @@
 						<value name="WorkInsideWord" type="qword" value="0000000000000000"/>
 					</key>
 				</key>
+			</hierarchicalconfig>
+		</plugin>
+		<plugin guid="A745761D-42B5-4E67-83DA-F07AF367AE86">
+			<hierarchicalconfig>
+				<key name="A745761D-42B5-4E67-83DA-F07AF367AE86" description="LuaFAR History"/>
 			</hierarchicalconfig>
 		</plugin>
 		<plugin guid="A74EC909-41F1-409B-9C4C-CA389BB93F45">
@@ -2185,7 +2132,7 @@
 						<key name="{AE501DD6-AD57-4A26-A5DF-39ACC3A9DB99}">
 							<value name="Hidden" type="qword" value="0000000000000000"/>
 							<value name="Hotkey" type="text" value="/"/>
-							<value name="LastAccess" type="qword" value="000000004A2AAEBC"/>
+							<value name="LastAccess" type="qword" value="000000004C8E83CE"/>
 							<value name="NewName" type="text" value=""/>
 						</key>
 						<key name="{AF4DAB38-C00A-4653-900E-7A8230308010}">
@@ -2244,6 +2191,12 @@
 							<value name="Hidden" type="qword" value="0000000000000000"/>
 							<value name="Hotkey" type="text" value="c"/>
 							<value name="LastAccess" type="qword" value="0000000048C513D8"/>
+							<value name="NewName" type="text" value=""/>
+						</key>
+						<key name="{D4BC5EA7-8229-4FFE-AAC1-5A4F51A0986A}">
+							<value name="Hidden" type="qword" value="0000000000000000"/>
+							<value name="Hotkey" type="text" value=""/>
+							<value name="LastAccess" type="qword" value="000000004C995BC3"/>
 							<value name="NewName" type="text" value=""/>
 						</key>
 						<key name="{D7302F8C-C73D-4143-9B39-B439CF2E7ACC}">
@@ -2350,7 +2303,7 @@
 						<key name="{F39EFDBF-A2E3-44F5-B4DF-519548A62BF9}">
 							<value name="Hidden" type="qword" value="0000000000000000"/>
 							<value name="Hotkey" type="text" value="u"/>
-							<value name="LastAccess" type="qword" value="000000004C887C10"/>
+							<value name="LastAccess" type="qword" value="000000004C995C3C"/>
 							<value name="NewName" type="text" value=""/>
 						</key>
 						<key name="{F39EFDBF-A2E3-44F5-B4DF-519548A62BFA}">
@@ -2362,7 +2315,7 @@
 						<key name="{F6E77027-05BA-4ECF-A8D3-7D57B2D80C53}">
 							<value name="Hidden" type="qword" value="0000000000000000"/>
 							<value name="Hotkey" type="text" value="2"/>
-							<value name="LastAccess" type="qword" value="000000004C837DCC"/>
+							<value name="LastAccess" type="qword" value="000000004C8E83CB"/>
 							<value name="NewName" type="text" value=""/>
 						</key>
 						<key name="{F9AF80C3-54AC-4924-B607-FE05A3866A88}">
@@ -2518,6 +2471,11 @@
 					<value name="MaxThumbnailSize" type="qword" value="0000000000000080"/>
 					<value name="ShowIcon" type="qword" value="0000000000000001"/>
 					<value name="UseThumbnail" type="qword" value="0000000000000000"/>
+					<key name="Plugins">
+						<key name="Image">
+							<value name="MaxSize" type="qword" value="0000000000000030"/>
+						</key>
+					</key>
 				</key>
 			</hierarchicalconfig>
 		</plugin>
@@ -2552,6 +2510,13 @@
 					<value name="UserHrcPath" type="text" value=""/>
 					<value name="UserHrdPath" type="text" value=""/>
 					<key name="HrcSettings"/>
+				</key>
+			</hierarchicalconfig>
+		</plugin>
+		<plugin guid="D4BC5EA7-8229-4FFE-AAC1-5A4F51A0986A">
+			<hierarchicalconfig>
+				<key name="D4BC5EA7-8229-4FFE-AAC1-5A4F51A0986A" description="Polygon">
+					<key name="files"/>
 				</key>
 			</hierarchicalconfig>
 		</plugin>
@@ -2840,14 +2805,6 @@
 				<key name="F39EFDBF-A2E3-44F5-B4DF-519548A62BF9" description="File unlock">
 					<value name="add_to_panel_menu" type="qword" value="0000000000000001"/>
 					<value name="cmd_prefix" type="text" value="FileUnlock"/>
-				</key>
-			</hierarchicalconfig>
-		</plugin>
-		<plugin guid="FC97A376-00D9-4DE4-B2E1-BFDC3A8D8B0B">
-			<hierarchicalconfig>
-				<key name="FC97A376-00D9-4DE4-B2E1-BFDC3A8D8B0B" description="SQLite database editor">
-					<value name="add_pm" type="qword" value="0000000000000001"/>
-					<value name="prefix" type="text" value="SQLiteDB"/>
 				</key>
 			</hierarchicalconfig>
 		</plugin>
