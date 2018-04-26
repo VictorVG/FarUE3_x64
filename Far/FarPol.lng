@@ -1,6 +1,6 @@
 ﻿.Language=Polish,Polish (Polski)
 
-//Version: 3.0 build 5196
+//Version: 3.0 build 5197
 
 //[MYes]
 "Tak"
@@ -5282,11 +5282,26 @@
 //[MObjectLockedReasonOpened]
 "opened"
 // need translation:
+//[MObjectLockedAndMore]
+"and {0} more processes."
+// need translation:
 //[MObjectLockedSwitchTo]
 "Switch to"
 // need translation:
 //[MObjectLockedClose]
 "Close file"
+// need translation:
+//[MObjectLockedReasonSessionMismatch]
+"One or more processes are running in another Terminal Services session."
+// need translation:
+//[MObjectLockedReasonCriticalProcess]
+"One or more processes are critical processes."
+// need translation:
+//[MObjectLockedReasonCriticalService]
+"One or more services are critical services."
+// need translation:
+//[MObjectLockedReasonDetectedSelf]
+"The file is opened by the current process."
 // need translation:
 //[MProblemDb]
 "Problem configuration DB"

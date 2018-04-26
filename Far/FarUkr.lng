@@ -1,6 +1,6 @@
 ﻿.Language=Ukrainian,Ukrainian (Українська)
 
-//Version: 3.0 build 5196
+//Version: 3.0 build 5197
 
 //[MYes]
 "Так"
@@ -2348,9 +2348,8 @@
 "Ctrl+H, Del, Ins, F4"
 //[MGetCodePageBottomShortTitle]
 "Ctrl+H, Del, F4"
-// need translation:
 //[MGetCodePageEditCodePageName]
-"Змінити ім'я кодової сторінки"
+"Перейменування кодової сторінки"
 //[MGetCodePageResetCodePageName]
 "&Скинути"
 
@@ -4938,10 +4937,20 @@
 "редагується"
 //[MObjectLockedReasonOpened]
 "відкритий"
+//[MObjectLockedAndMore]
+"i ще {0} процесах"
 //[MObjectLockedSwitchTo]
 "Перемкнутися"
 //[MObjectLockedClose]
 "Закрити файл"
+//[MObjectLockedReasonSessionMismatch]
+"Один або кілька процесів виконуються у іншому сеансі служб терміналів"
+//[MObjectLockedReasonCriticalProcess]
+"Один або кілька процесів є критичними процесами."
+//[MObjectLockedReasonCriticalService]
+"Одна або кілька служб є критичними службами."
+//[MObjectLockedReasonDetectedSelf]
+"Файл відкрито поточним процесом."
 //[MProblemDb]
 "Проблеми з БД налаштувань"
 //[MShowConfigFolders]

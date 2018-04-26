@@ -1,6 +1,6 @@
 ﻿.Language=Slovak,Slovak (Slovenčina)
 
-//Version: 3.0 build 5196
+//Version: 3.0 build 5197
 
 //[MYes]
 "Áno"
@@ -4996,10 +4996,25 @@
 "sa upravuje"
 //[MObjectLockedReasonOpened]
 "je otvorený"
+// need translation:
+//[MObjectLockedAndMore]
+"and {0} more processes."
 //[MObjectLockedSwitchTo]
 "Prepnúť na"
 //[MObjectLockedClose]
 "Zatvoriť súbor"
+// need translation:
+//[MObjectLockedReasonSessionMismatch]
+"One or more processes are running in another Terminal Services session."
+// need translation:
+//[MObjectLockedReasonCriticalProcess]
+"One or more processes are critical processes."
+// need translation:
+//[MObjectLockedReasonCriticalService]
+"One or more services are critical services."
+// need translation:
+//[MObjectLockedReasonDetectedSelf]
+"The file is opened by the current process."
 //[MProblemDb]
 "Problém s konfiguráciou DB"
 //[MShowConfigFolders]

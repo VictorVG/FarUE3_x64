@@ -1,6 +1,6 @@
 ﻿.Language=Russian,Russian (Русский)
 
-//Version: 3.0 build 5196
+//Version: 3.0 build 5197
 
 //[MYes]
 "Да"
@@ -4937,10 +4937,20 @@
 "редактируется"
 //[MObjectLockedReasonOpened]
 "открыт"
+//[MObjectLockedAndMore]
+"и ещё {0} процессах"
 //[MObjectLockedSwitchTo]
 "Переключиться"
 //[MObjectLockedClose]
 "Закрыть файл"
+//[MObjectLockedReasonSessionMismatch]
+"Один или несколько процессов выполняются в другом сеансе служб терминалов."
+//[MObjectLockedReasonCriticalProcess]
+"Один или несколько процессов являются критическими процессами."
+//[MObjectLockedReasonCriticalService]
+"Одна или несколько служб являются критическими службами."
+//[MObjectLockedReasonDetectedSelf]
+"Файл открыт текущим процессом."
 //[MProblemDb]
 "Проблемы с БД настроек"
 //[MShowConfigFolders]

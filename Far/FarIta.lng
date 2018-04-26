@@ -1,6 +1,6 @@
 ﻿.Language=Italian,Italian (Italiano)
 
-//Version: 3.0 build 5196
+//Version: 3.0 build 5197
 
 //[MYes]
 "&Si"
@@ -4969,10 +4969,25 @@
 "modifi"
 //[MObjectLockedReasonOpened]
 "aperto"
+// need translation:
+//[MObjectLockedAndMore]
+"and {0} more processes."
 //[MObjectLockedSwitchTo]
 "Vai A"
 //[MObjectLockedClose]
 "Chiudi File"
+// need translation:
+//[MObjectLockedReasonSessionMismatch]
+"One or more processes are running in another Terminal Services session."
+// need translation:
+//[MObjectLockedReasonCriticalProcess]
+"One or more processes are critical processes."
+// need translation:
+//[MObjectLockedReasonCriticalService]
+"One or more services are critical services."
+// need translation:
+//[MObjectLockedReasonDetectedSelf]
+"The file is opened by the current process."
 //[MProblemDb]
 "Problema Al dBase Di Configurazione"
 //[MShowConfigFolders]

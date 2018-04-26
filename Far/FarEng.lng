@@ -1,6 +1,6 @@
 ﻿.Language=English,English
 
-//Version: 3.0 build 5196
+//Version: 3.0 build 5197
 
 //[MYes]
 "Yes"
@@ -4937,10 +4937,20 @@
 "edited"
 //[MObjectLockedReasonOpened]
 "opened"
+//[MObjectLockedAndMore]
+"and {0} more processes."
 //[MObjectLockedSwitchTo]
 "Switch to"
 //[MObjectLockedClose]
 "Close file"
+//[MObjectLockedReasonSessionMismatch]
+"One or more processes are running in another Terminal Services session."
+//[MObjectLockedReasonCriticalProcess]
+"One or more processes are critical processes."
+//[MObjectLockedReasonCriticalService]
+"One or more services are critical services."
+//[MObjectLockedReasonDetectedSelf]
+"The file is opened by the current process."
 //[MProblemDb]
 "Problem configuration DB"
 //[MShowConfigFolders]
