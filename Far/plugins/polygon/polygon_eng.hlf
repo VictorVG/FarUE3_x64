@@ -1,0 +1,245 @@
+﻿.Language=English,English
+.PluginContents=Polygon
+.Options CtrlColorChar=\
+
+@Contents
+$^ #Polygon - Help Contents#
+ #Polygon# - a Far Manager plugin for viewing and editing SQLite database files.
+
+ The plugin is based on SQLiteDB plugin by Artem Senichev.
+
+ ~Reference of keyboard actions when the plugin's panel is active~@Keyboard@
+ ~Custom Panel View Dialog~@PanelView@
+ ~Panel Filter~@PanelFilter@
+ ~Invoking the plugin~@Invoke@
+ ~Configuration Dialog~@ConfigDialog@
+ ~User modules~@UserModules@
+
+@Invoke
+$^ #Invoking the plugin#
+ The plugin can be invoked in the following ways:
+
+   1. From the plugins menu. The plugin opens the file under cursor.
+
+   2. Pressing Enter on the file in panels.
+
+   3. From the command line: #polygon: <filename>#.
+      - If the file <filename> does not exist it will be created.
+      - If no file name is specified then an in-memory database will be opened.
+
+   4. From ~Folder shortcuts~@:FolderShortcuts@.
+
+   5. From a macro: #Plugin.Call(<guid>, "open", <filename> [,<flags>])#
+      Opens SQLite3 file <filename> in a panel.
+        flags:  string, a combination of zero or more options:
+                  #"u"# - load user modules
+                  #"e"# - enable extensions
+                  #"f"# - honor foreign keys
+                If <flags> is not a string (or omitted) then
+                the plugin's configuration settings are used.
+
+
+ ~Contents~@Contents@
+
+@Keyboard
+$^ #Reference of keyboard actions when the plugin's panel is active#
+   View mode     │ Key         │ Action
+   ──────────────┼─────────────┼───────────────────────────────────────────────────
+   Any           │ F6          │ Open Editor for editing an "SQLite query"
+                 │ LCtrl-1     │ Two-panel view mode
+                 │ LCtrl-2     │ One-panel view mode
+                 │             │
+   Database      │ F3          │ Show contents of table under cursor
+                 │ F4          │ Show create statement of table under cursor
+                 │ Shift-F4    │ Show pragma statements
+                 │ F5          │ Dialog: export data
+                 │ F8          │ Dialog: delete selected database elements
+                 │             │
+   Table         │ F4, Enter   │ Dialog: edit row
+                 │ Shift-F4    │ Dialog: insert row
+                 │ F8          │ Dialog: delete selected records
+                 │             │
+   Table or View │ Shift-F3    │ Dialog: custom panel view mode
+                 │ Shift-F5    │ Toggle panel view mode: full/custom
+                 │ Ctrl-F      │ Dialog: panel filter
+                 │ Ctrl-G      │ Toggle panel filter: on/off
+   ──────────────┴─────────────┴───────────────────────────────────────────────────
+
+   If command line is not empty then Enter will execute an "SQLite query"
+   from the command line.
+
+ ~Contents~@Contents@
+
+@PanelView
+$^ #Custom panel view dialog#
+   This dialog allows to choose what columns to display and set their widths.
+Column widths are specified with the same syntax as in panel view dialog of
+~Far Manager~@:PanelViewModes@.
+
+   If the dialog was closed with OK button then the panel will be rearranged
+according to the dialog settings. These settings will also be stored permanently
+in the plugin's local database.
+
+   Pressing Shift-F5 in the plugin panel will toggle between full and custom views.
+
+ ~Contents~@Contents@
+
+@PanelFilter
+$^ #Panel Filter
+ Panel filter allows to display only records that match the given SQL query.
+
+ #Example:#
+
+   ╔══════════════════ Panel Filter ════════════════════╗
+   ║ SELECT * FROM "Personnel" WHERE                    ║
+   ║ salary between 2000 and 3000                      ↓║
+   ╟────────────────────────────────────────────────────╢
+   ║                 { OK } [ Cancel ]                  ║
+   ╚════════════════════════════════════════════════════╝
+
+
+ ~Contents~@Contents@
+
+@ConfigDialog
+$^ #Configuration Dialog
+ The following settings belong to common plugin configuration.
+ 
+ #[ ] Add to plugins menu#     The plugin will appear in Plugins Menu
+ #Prefix:#                     Command line prefix of the plugin
+
+ The following settings are applied when a new database connection is created.
+Changing these settings does not affect the already opened panels. 
+
+ #[ ] Load user modules#       User modules will be loaded
+ #[ ] Enable extensions#       Execute #sqlite3_enable_load_extension(db,1)#
+ #[ ] Honor foreign keys#      Execute #PRAGMA foreign_keys = ON#
+
+ ~Contents~@Contents@
+
+@UserModules
+$^ #User Modules
+ User module is a script in Lua programming language contained in a Lua
+table and matching the following requirements:
+
+ 1. Modules are loaded from #*.lua# files that reside in
+#%FARPROFILE%\PluginsData\Polygon# directory or its subdirectories.
+
+ 2. Modules are loaded immediately after a successful connection of the plugin
+to a data base is established.
+
+ 3. A module may contain all or some of the following fields referring to
+functions called by the plugin in various situations:
+~OnOpenConnection~@OnOpenConnection@, ~ProcessPanelEvent~@ProcessPanelEvent@,
+~ProcessPanelInput~@ProcessPanelInput@ and ~ClosePanel~@ClosePanel@.
+
+ 4. A module may contain the #Priority# field (a number between 0 and 100).
+If the field is not specified then it defaults to 50.
+Functions of a module with higher priority are called earlier.
+
+ 5. For loading modules the #UserModule# function should be used.
+
+
+ As an example the user module code looks like that:
+
+   #local mod = { Priority=60 }#
+   #mod.OnOpenConnection  = function() ... end#
+   #mod.ProcessPanelEvent = function() ... end#
+   #mod.ProcessPanelInput = function() ... end#
+   #mod.ClosePanel        = function() ... end#
+   #UserModule(mod)#
+
+
+ ~Contents~@Contents@
+
+@OnOpenConnection
+$^ #OnOpenConnection
+ #OnOpenConnection(info)#
+
+ #Parameters:#
+   info:   table ~tInfo~@tInfo@
+
+ #Returns:#
+   nothing
+
+ #Description:#
+   This function is called right after a connection with data base is established.
+
+
+ ~User Modules~@UserModules@
+ ~Contents~@Contents@
+
+@ProcessPanelEvent
+$^ #ProcessPanelEvent
+ #result = ProcessPanelEvent(info, handle, event, param)#
+
+ #Parameters:#
+   info   :  table ~tInfo~@tInfo@
+   handle :  panel handle
+   event  :  integer
+   param  :  string (for FE_CHANGEVIEWMODE and FE_COMMAND), or nil
+
+ #Returns:#
+   result :  boolean
+
+ #Description:#
+   Except for its 1-st parameter, this function is identical to export.ProcessPanelEvent function
+(see LuaFAR manual).
+
+
+ ~User Modules~@UserModules@
+ ~Contents~@Contents@
+
+@ProcessPanelInput
+$^ #ProcessPanelInput
+ #result = ProcessPanelInput (info, handle, rec)#
+
+ #Parameters:#
+   info   : table ~tInfo~@tInfo@
+   handle : panel handle
+   rec    : table tInputRecord
+
+ #Returns:#
+   result :  boolean
+
+ #Description:#
+   Except for its 1-st parameter, this function is identical to export.ProcessPanelInput function
+(see LuaFAR manual).
+
+
+ ~User Modules~@UserModules@
+ ~Contents~@Contents@
+
+@ClosePanel
+$^ #ClosePanel
+ #ClosePanel(info, handle)#
+
+ #Parameters:#
+   info:   table ~tInfo~@tInfo@
+
+ #Returns:#
+   nothing
+
+ #Description:#
+   Except for its 1-st parameter, this function is identical to export.ClosePanel function
+(see LuaFAR manual).
+   This function must not close the database connection as the plugin does that.
+
+
+ ~User Modules~@UserModules@
+ ~Contents~@Contents@
+
+@tInfo
+$^ #Table tInfo#
+ This table has the following fields:
+
+    #db         # : userdata : database connection (see ~LuaSQLite3~@http://lua.sqlite.org/index.cgi/doc/tip/doc/lsqlite3.wiki@ manual)
+    #file_name  # : string   : name of database file
+    #panel_mode # : string   : "db", "table", "view", "query"
+    #curr_object# : string   : name of the current displayed object (parent directory)
+    #rowid_name # : string   : name that can be used in SQL-queries as ROWID
+    #get_rowid  # : function : called with 1 parameter of #tPanelItem# type
+                             (see LuaFAR manual); returns an integer
+
+
+ ~User Modules~@UserModules@
+ ~Contents~@Contents@

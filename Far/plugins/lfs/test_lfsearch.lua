@@ -1,5 +1,6 @@
 -- coding: utf-8
 -- started: 2009-12-04 by Shmuel Zeigerman
+-- luacheck: globals _Plugin lfsearch
 
 local selftest = {} -- this module
 
@@ -1152,7 +1153,7 @@ end
 --//////////////////////////////////////////////////////////////////////////////////////////////////
 
 function selftest.test_all()
-  local lib_list = {"far","oniguruma","pcre"}
+  local lib_list = {"far","oniguruma","pcre","pcre2"}
   for _,lib in ipairs(lib_list) do
     selftest.test_editor_search_replace(lib)
     selftest.test_editor_multiline_replace(lib)

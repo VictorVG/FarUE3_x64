@@ -3,7 +3,7 @@
 .Options CtrlStartPosChar=¦
 
 @Contents
-$ #LuaFAR Search (version 3.39.5)#
+$ #LuaFAR Search (version 3.40.0)#
 ^#FEATURES#
  * Search and replace in the editor.
  * Search and replace from the panels.

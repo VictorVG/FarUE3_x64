@@ -1,0 +1,104 @@
+2018-04-24, v.0.5.3
+    1. Add help on "panel filter".
+    2. Show characters with hex codes 01 - 1F in panel columns and "edit row" dialog
+       (was: those characters were replaced with a space).
+
+2018-04-13, v.0.5.2
+    1. Fix: incorrect sorting after change in sort mode.
+    2. Fix: incorrect sorting after change in custom panel view.
+
+2018-04-13, v.0.5.1
+    1. Fix: options worked correctly only in case "far.ReloadDefaultScript = true".
+    2. Fix: error on enter in SQLite "view" object (regression bug from v0.4.1).
+    3. Add: panel filter.
+
+2018-04-11, v.0.5.0
+    1. Add: support for Plugin.Call() from macros.
+    2. Add: a help topic for User Modules (finished).
+
+2018-04-10, v.0.4.5
+    1. Add: further developing of "user modules" support.
+    2. Add: a help topic for User Modules (to be extended).
+    3. Add: a new configuration setting "Enable extensions".
+
+2018-04-09, v.0.4.4
+    1. Add: further developing of "user modules" support (to be documented later).
+    2. Add: a new configuration setting "Load user modules".
+    3. Add: a help topic for the configuration dialog.
+
+2018-04-08, v.0.4.3
+    1. Fix: function open_query() could put the program into inconsistent state.
+    2. Fix: error in export.Compare() when changing the panel object to display.
+
+2018-04-08, v.0.4.2
+    1. Add: further developing of "user modules" support (to be documented later).
+    2. Add: sqlite3.dll can be placed into either of the following locations:
+            (1) plugin's directory - added in this version;
+            (2) Far's directory; (3) any directory on PATH.
+
+2018-04-07, v.0.4.1
+    1. Fix: incorrect selection after selected items were deleted (regression bug from v0.2.0).
+    2. Fix: export.SetDirectory() did not work with OPM_SILENT.
+    3. Add: GUID for "Drop selected items?" confirmation dialog.
+
+2018-04-06, v.0.4.0
+    1. Fix: correct work with tables and columns whose names contain any allowed characters:
+            spaces, brackets, single and double quotes, etc.
+    2. Add: (experimental) plugin's functionality can be extended by "user modules" written in Lua,
+            that are loaded from %FARPROFILE%\PluginsData\Polygon\*.lua.
+            Currently it is in the very beginning stage and will be documented later.
+
+2018-04-03, v.0.3.0
+    1. Fix:    operations on tables containing spaces in their names.
+    2. Fix:    function open_query() for empty data sets.
+    3. Change: Shift-F5 toggles between full view and custom view (was: Ctrl-F3).
+    4. Add:    full-screen view (LCtrl-2).
+    5. Add:    "custom panel view" feature for View mode (was: only for Table mode).
+    6. Add:    command line with no filename specified opens in-memory data base.
+    7. Add:    support for Folder Shortcuts.
+    8. Add:    (experimental) sort items by Ctrl-F3 ... Ctrl-F11.
+
+2018-03-30, v.0.2.2
+    1. Add directory attribute to ".." panel items to make happy Far 3.0.5176.
+
+2018-03-29, v.0.2.1
+    1. Rename the dialog: "Select columns to display" -> "Custom panel view".
+    2. Add settings of column widths to this dialog.
+    3. Ctrl-F3 in the panels toggles between full view and custom view.
+    4. Settings of custom panel view are stored permanently in the plugin's local database.
+
+2018-03-27, v.0.2.0
+    1. Fix function prepare_panel_info().
+    2. Add a new dialog: "Select columns to display".
+       - the dialog is invoked by pressing Shift-F3 in table view;
+       - the settings are stored individually per DB table;
+       - the settings persist during a plugin session (i.e. until the panel is closed);
+
+2018-03-24, v.0.1.4
+    1. Force passive panel redraw after data export.
+    2. Fix function read_column_description().
+    3. Text-format export: compress multiple consecutive spaces to one space.
+
+2018-03-22, v.0.1.3
+    1. Refactoring.
+    2. Two fixes in text-format export.
+
+2018-03-11, v.0.1.2
+    1. When invoked from Plugins Menu, the plugin checks if the current panel item is a real file.
+    2. Fix calculation of column widths for BLOB fields in text-format export.
+
+2018-03-09, v.0.1.1
+    1. Fixed conversion from numbers to text.
+    2. Added help files and changelog.
+
+2018-03-08, v.0.1
+    1. [change ] SQLite library is not embedded into plugin: external sqlite3.dll is required.
+    2. [change ] Plugin exports files in UTF-8 encoding rather than UTF-16.
+    3. [fix    ] DB file is not left locked by the plugin if another plugin is selected to open this DB.
+    4. [fix    ] Normal work with selection when the panel displays a table contents.
+    5. [add    ] Option "Honor foreign keys" (Settings dialog).
+    6. [add    ] Option "Preserve line feeds" (Data Export dialog). This option preserves new lines in CSV-export.
+    7. [add    ] Plugin can enter into "WITHOUT ROWID" tables (insert is supported; edit and delete are not).
+    8. [add    ] Plugin can enter into and modify tables that have a "rowid"-named column that is not INTEGER PRIMARY KEY.
+    9. [improve] Data Export dialog: change extension in the file name field when CSV/Text selection changes.
+   10. [improve] Eliminate flickering with the progress window.
