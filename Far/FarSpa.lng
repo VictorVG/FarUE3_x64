@@ -1,6 +1,6 @@
 ﻿.Language=Spanish,Spanish (Español)
 
-//Version: 3.0 build 5198
+//Version: 3.0 build 5199
 
 //[MYes]
 "Si"
@@ -264,9 +264,9 @@
 ""
 //[MCtrlAltShiftF11]
 ""
+//End of functional keys
 //[MCtrlAltShiftF12]
 ""
-//End of functional keys
 
 //[MHistoryTitle]
 "Historial"
@@ -400,7 +400,7 @@
 //[MConfigShowSortMode]
 "Mostrar letra para &modo de orden"
 //[MConfigShowDotsInRoot]
-"Mostrar \"
+"Mostrar \"..\" en directorio raíz"
 //[MConfigHighlightColumnSeparator]
 "Resaltar separador de columnas"
 // need translation:
@@ -560,7 +560,7 @@
 //[MViewConfigExternalCommand]
 "Comando &visor:"
 //[MViewConfigInternal]
-" Visor interno "
+"Visor interno"
 //[MViewConfigSavePos]
 "&Guardar posición de archivo"
 //[MViewConfigSaveShortPos]
@@ -595,7 +595,7 @@
 //[MEditConfigEditorCommand]
 "Comando &editor:"
 //[MEditConfigInternal]
-" Editor interno "
+"Editor interno"
 //[MEditConfigExpandTabsTitle]
 "E&xpandir tabulación a espacios"
 
@@ -706,21 +706,21 @@
 "Fi&ltro"
 
 //[MCopyFile]
-"Copiar"
+"Copiar {0} {1}:"
 //[MMoveFile]
-"Renombrar o mover"
+"Renombrar o mover {0} {1}:"
 //[MLinkFile]
-"Crear enlace a"
+"Crear enlace a {0} {1}:"
 //[MCopyFiles]
-"Copiar {0} ítem{1}"
+"Copiar {0} ítem{1} {2}:"
 //[MMoveFiles]
-"Renombrar o mover {0} ítem{1}"
+"Renombrar o mover {0} ítem{1} {2}:"
 //[MLinkFiles]
-"Crear enlaces a {0} ítem{1}"
+"Crear enlaces a {0} ítem{1} {2}:"
 //[MCMLTargetTO]
-" &a:"
+"&a"
 //[MCMLTargetIN]
-" en:"
+"en"
 //[MCMLItems0]
 ""
 //[MCMLItemsA]
@@ -1348,10 +1348,10 @@
 ""
 //[MEditCtrlAltShiftF12]
 ""
-//[MEditF8DOS]
-"OEM"
 // End of functional keys (Editor)
 // it's a F8 another text
+//[MEditF8DOS]
+"OEM"
 
 //Single Editor: functional keys - 6 characters max, 12 keys, "OEM" is F8 dupe!
 //[MSingleEditF1]
@@ -1560,10 +1560,10 @@
 ""
 //[MSingleEditCtrlAltShiftF12]
 ""
-//[MSingleEditF8DOS]
-"OEM"
 // End of functional keys (Single Editor)
 // it's a F8 another text
+//[MSingleEditF8DOS]
+"OEM"
 
 //[MEditSaveAs]
 "Guardar archivo &como"
@@ -1718,11 +1718,11 @@
 //[MListEb]
 "E"
 //[MListFileSize]
-" Bytes: {0}, archivos: {1}, carpetas: {2} "
+"Bytes: {0}, archivos: {1}, carpetas: {2}"
 //[MListFileSizeStatus]
-" {0} ({1}/{2}) {3} {4} "
+"{0} ({1}/{2}) {3} {4}"
 //[MListFreeSize]
-" {0} bytes libres "
+"{0} bytes libres"
 
 //[MDirInfoViewTitle]
 "Ver"
@@ -1779,9 +1779,9 @@
 //Viewer: functional keys, 12 keys, except F2 - 2 keys, and F8 - 2 keys
 //[MViewF1]
 "Ayuda"
+// this is another text for F2
 //[MViewF2]
 "Divide"
-// this is another text for F2
 //[MViewF3]
 "Salir"
 //[MViewF4]
@@ -1993,9 +1993,9 @@
 //[MViewF4Dump]
 "Volcar"
 // this is another text for F8
+// end of functional keys (Viewer)
 //[MViewF8DOS]
 "OEM"
-// end of functional keys (Viewer)
 
 //Single Viewer: functional keys, 12 keys, except F2 - 2 keys, and F8 - 2 keys
 //[MSingleViewF1]
@@ -2211,9 +2211,9 @@
 //[MSingleViewF4Text]
 "Texto"
 // this is another text for F4
+// end of functional keys (Single Viewer)
 //[MSingleViewF8DOS]
 "OEM"
-// end of functional keys (Single Viewer)
 //[MViewMode]
 "Modo de visualización"
 //[MInViewer]
@@ -2317,14 +2317,7 @@
 "&Cancelar"
 
 //[MFindFound]
-" Archivos: {0}, directorios: {1} "
-
-//[MFindFileFolder]
-" DIR  "
-//[MFindFileSymLink]
-"EnlSimb"
-//[MFindFileJunction]
-"Empalme"
+"Archivos: {0}, directorios: {1}"
 
 //[MFindFileAdvancedTitle]
 "Opciones avanzada de búsqueda de archivo"
@@ -2384,13 +2377,13 @@
 //[MHighlightTransparentMarkChar]
 "tra&nsparente"
 //[MHighlightColors]
-" Colores de archivos (\"
+"Colores de archivos (\"negro en negro\" - color por defecto)"
 //[MHighlightFileName1]
-"&1. Normal                  "
+"&1. Normal"
 //[MHighlightFileName2]
-"&3. Seleccionado            "
+"&3. Seleccionado"
 //[MHighlightFileName3]
-"&5. Bajo cursor             "
+"&5. Bajo cursor"
 //[MHighlightFileName4]
 "&7. Seleccionado bajo cursor"
 //[MHighlightMarking1]
@@ -2429,7 +2422,7 @@
 //[MInfoUserAccessLevelUnknown]
 "Desconocido"
 //[MInfoDiskTitle]
-" Disco "
+"Disco"
 //[MInfoRemovable]
 "Removible"
 //[MInfoFixed]
@@ -2467,7 +2460,7 @@
 //[MInfoDiskNumber]
 "Número de serie"
 //[MInfoMemory]
-" Memoria "
+"Memoria"
 //[MInfoMemoryLoad]
 "Carga en memoria"
 //[MInfoMemoryInstalled]
@@ -2485,13 +2478,13 @@
 //[MInfoPageFileFree]
 "Archivo de paginación libre"
 //[MInfoDescription]
-" Descripción "
+"Descripción"
 //[MInfoDizAbsent]
 "Archivo descripción del directorio está ausente"
 //[MInfoPlugin]
-" Complemento "
+"Complemento"
 //[MInfoPowerStatus]
-" Estado de encendido"
+"Estado de encendido"
 //[MInfoPowerStatusAC]
 "Estado encendido AC"
 //[MInfoPowerStatusACOffline]
@@ -2908,7 +2901,7 @@
 "Del,Shift+Del,F3,F4,F9"
 
 //[MSearchFileTitle]
-" Buscar "
+"Buscar"
 //[MCannotCreateListFile]
 "No se puede crear archivo de lista"
 //[MCannotCreateListTemp]
@@ -2972,22 +2965,20 @@
 "Punto de análisis desconocido"
 //[MQuickViewNoData]
 "(dato no disponible)"
-//[MQuickViewContains]
-"Contiene:"
 //[MQuickViewFolders]
-"Directorios      "
+"Directorios:"
 //[MQuickViewFiles]
-"Archivos         "
+"Archivos:"
 //[MQuickViewBytes]
-"Tamaño archivos  "
+"Tamaño archivos:"
 //[MQuickViewAllocated]
-"Tamaño alojado   "
+"Tamaño alojado:"
 //[MQuickViewCluster]
-"Tamaño cluster   "
+"Tamaño cluster:"
 //[MQuickViewSlack]
-"Desperdiciado    "
+"Desperdiciado:"
 //[MQuickViewMFTOverhead]
-"Gasto adicional MFT "
+"Gasto adicional MFT:"
 
 //[MSetAttrTitle]
 "Atributos"
@@ -3375,7 +3366,7 @@
 //[MPluginsManagerPF]
 "Procesado de &prefijo"
 //[MPluginConfirmationTitle]
-" Selección de complemento "
+"Selección de complemento"
 //[MMenuPluginStdAssociation]
 "Asociación normal"
 
@@ -3719,7 +3710,7 @@
 //[MCfgDizListNames]
 "Nombres de &listas de descripción delimitado con comas:"
 //[MCfgDizSetHidden]
-"Poner atributo "
+"Poner atributo"
 //[MCfgDizROUpdate]
 "&Actualizar archivo descripción de sólo lectura"
 //[MCfgDizStartPos]
@@ -4590,7 +4581,7 @@
 //[MKBTreeF6]
 "RenMov"
 //[MKBTreeF7]
-"CrDIR "
+"CrDIR"
 //[MKBTreeF8]
 "Borrar"
 //[MKBTreeF9]
@@ -4792,7 +4783,7 @@
 //[MDoYouWantToCancel]
 "Desea realmente cancelar la operación?"
 //[MDoYouWantToContinue]
-"Continuar trabajo? "
+"Continuar trabajo?"
 
 //[MCheckingFileInPlugin]
 "El archivo está siendo chequeado por el complemento"
@@ -5191,9 +5182,9 @@
 ""
 //[MKeyRAlt]
 ""
+// keys end
 //[MKeyAlt]
 ""
-// keys end
 
 //[MNewFileName]
 "?Nuevo Archivo?"

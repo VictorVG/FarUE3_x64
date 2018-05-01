@@ -1,6 +1,6 @@
 ﻿.Language=Polish,Polish (Polski)
 
-//Version: 3.0 build 5198
+//Version: 3.0 build 5199
 
 //[MYes]
 "Tak"
@@ -266,9 +266,9 @@
 ""
 //[MCtrlAltShiftF11]
 ""
+//End of functional keys
 //[MCtrlAltShiftF12]
 ""
-//End of functional keys
 
 //[MHistoryTitle]
 "Historia"
@@ -633,7 +633,7 @@
 //[MViewConfigExternalCommand]
 "&Polecenie:"
 //[MViewConfigInternal]
-" Podgląd wbudowany "
+"Podgląd wbudowany"
 //[MViewConfigSavePos]
 "&Zapamiętaj pozycję w pliku"
 //[MViewConfigSaveShortPos]
@@ -675,7 +675,7 @@
 //[MEditConfigEditorCommand]
 "&Polecenie:"
 //[MEditConfigInternal]
-" Edytor wbudowany "
+"Edytor wbudowany"
 //[MEditConfigExpandTabsTitle]
 "Zamiana znaków &tabulacji:"
 
@@ -791,24 +791,24 @@
 "Filt&r"
 
 //[MCopyFile]
-"Skopiuj"
+"Skopiuj {0} {1}:"
 //[MMoveFile]
-"Zmień nazwę lub przenieś"
+"Zmień nazwę lub przenieś {0} {1}:"
 // need translation:
 //[MLinkFile]
-"Create link to"
+"Create link to {0} {1}:"
 //[MCopyFiles]
-"Skopiuj {0} plików{1}"
+"Skopiuj {0} plików{1} {2}:"
 //[MMoveFiles]
-"Zmień nazwę lub przenieś {0} plików{1}"
+"Zmień nazwę lub przenieś {0} plików{1} {2}:"
 // need translation:
 //[MLinkFiles]
-"Create links to {0} item{1}"
+"Create links to {0} item{1} {2}:"
 //[MCMLTargetTO]
-" d&o:"
+"d&o"
 // need translation:
 //[MCMLTargetIN]
-" &in:"
+" &in"
 //[MCMLItems0]
 ""
 //[MCMLItemsA]
@@ -1467,10 +1467,10 @@
 ""
 //[MEditCtrlAltShiftF12]
 ""
-//[MEditF8DOS]
-"CP-1250"
 // End of functional keys (Editor)
 // it's a F8 another text
+//[MEditF8DOS]
+"CP-1250"
 
 //Single Editor: functional keys - 6 characters max, 12 keys, "OEM" is F8 dupe!
 //[MSingleEditF1]
@@ -1679,10 +1679,10 @@
 ""
 //[MSingleEditCtrlAltShiftF12]
 ""
-//[MSingleEditF8DOS]
-"CP 1250"
 // End of functional keys (Single Editor)
 // it's a F8 another text
+//[MSingleEditF8DOS]
+"CP 1250"
 
 //[MEditSaveAs]
 "Zapisz plik &jako"
@@ -1863,11 +1863,11 @@
 "E"
 // need translation:
 //[MListFileSize]
-" Bytes: {0}, files: {1}, folders: {2} "
+"Bytes: {0}, files: {1}, folders: {2}"
 //[MListFileSizeStatus]
-" {0} ({1}/{2}) {3} {4} "
+"{0} ({1}/{2}) {3} {4}"
 //[MListFreeSize]
-" {0} wolnych bajtów "
+"{0} wolnych bajtów"
 
 //[MDirInfoViewTitle]
 "Podgląd"
@@ -1924,9 +1924,9 @@
 //Viewer: functional keys, 12 keys, except F2 - 2 keys, and F8 - 2 keys
 //[MViewF1]
 "Pomoc"
+// this is another text for F2
 //[MViewF2]
 "Zawiń"
-// this is another text for F2
 //[MViewF3]
 "Koniec"
 //[MViewF4]
@@ -2140,9 +2140,9 @@
 //[MViewF4Dump]
 "Dump"
 // this is another text for F8
+// end of functional keys (Viewer)
 //[MViewF8DOS]
 "CP 1250"
-// end of functional keys (Viewer)
 
 //Single Viewer: functional keys, 12 keys, except F2 - 2 keys, and F8 - 2 keys
 //[MSingleViewF1]
@@ -2358,9 +2358,9 @@
 //[MSingleViewF4Text]
 "Tekst"
 // this is another text for F4
+// end of functional keys (Single Viewer)
 //[MSingleViewF8DOS]
 "CP 1250"
-// end of functional keys (Single Viewer)
 // need translation:
 //[MViewMode]
 "View mode"
@@ -2469,14 +2469,7 @@
 "&Anuluj"
 
 //[MFindFound]
-" Plików: {0}, folderów: {1} "
-
-//[MFindFileFolder]
-"Katalog"
-//[MFindFileSymLink]
-"LinkSym"
-//[MFindFileJunction]
-"Dowiązania"
+"Plików: {0}, folderów: {1}"
 
 //[MFindFileAdvancedTitle]
 "Zaawansowane opcje wyszukiwania"
@@ -2542,15 +2535,15 @@
 //[MHighlightTransparentMarkChar]
 "prze&zroczyste"
 //[MHighlightColors]
-" Kolory nazw plików (domyślny - \"czarny na czarnym\") "
+"Kolory nazw plików (domyślny - \"czarny na czarnym\")"
 //[MHighlightFileName1]
-"&1. Nazwa pliku bez zaznaczenia    "
+"&1. Nazwa pliku bez zaznaczenia"
 //[MHighlightFileName2]
-"&3. Zaznaczenie                    "
+"&3. Zaznaczenie"
 //[MHighlightFileName3]
-"&5. Nazwa pliku pod kursorem       "
+"&5. Nazwa pliku pod kursorem"
 //[MHighlightFileName4]
-"&7. Zaznaczony plik pod kursorem   "
+"&7. Zaznaczony plik pod kursorem"
 //[MHighlightMarking1]
 "&2. Zaznaczenie"
 //[MHighlightMarking2]
@@ -2594,7 +2587,7 @@
 //[MInfoUserAccessLevelUnknown]
 "Unknown"
 //[MInfoDiskTitle]
-" Dysk "
+"Dysk"
 //[MInfoRemovable]
 "Wyjmowalny"
 //[MInfoFixed]
@@ -2634,7 +2627,7 @@
 //[MInfoDiskNumber]
 "Numer seryjny"
 //[MInfoMemory]
-" Pamięć "
+"Pamięć"
 //[MInfoMemoryLoad]
 "Użycie pamięci"
 // need translation:
@@ -2655,14 +2648,14 @@
 //[MInfoPageFileFree]
 "Free paging file"
 //[MInfoDescription]
-" Opis "
+"Opis"
 //[MInfoDizAbsent]
 "Plik opisu katalogu nie istnieje"
 //[MInfoPlugin]
-" Plugin "
+"Plugin"
 // need translation:
 //[MInfoPowerStatus]
-" Power Status"
+"Power Status"
 // need translation:
 //[MInfoPowerStatusAC]
 "AC power status"
@@ -3135,7 +3128,7 @@
 "Del,Shift+Del,F3,F4,F9"
 
 //[MSearchFileTitle]
-" Szukaj "
+"Szukaj"
 //[MCannotCreateListFile]
 "Nie mogę utworzyć listy plików"
 //[MCannotCreateListTemp]
@@ -3201,24 +3194,22 @@
 "Unknown reparse point"
 //[MQuickViewNoData]
 "(dane niedostępne)"
-//[MQuickViewContains]
-"Zawiera:"
 //[MQuickViewFolders]
-"Katalogi            "
+"Katalogi:"
 //[MQuickViewFiles]
-"Pliki               "
+"Pliki:"
 //[MQuickViewBytes]
-"Rozmiar plików      "
+"Rozmiar plików:"
 // need translation:
 //[MQuickViewAllocated]
-"Allocated size   "
+"Allocated size:"
 //[MQuickViewCluster]
-"Rozmiar klastra     "
+"Rozmiar klastra:"
 //[MQuickViewSlack]
-"Przestrzeń stracona "
+"Przestrzeń stracona:"
 // need translation:
 //[MQuickViewMFTOverhead]
-"MFT overhead        "
+"MFT overhead:"
 
 //[MSetAttrTitle]
 "Atrybuty"
@@ -3386,7 +3377,7 @@
 //[MSetColorPanelScrollbar]
 "Suwak"
 //[MSetColorPanelScreensNumber]
-"Ilość ekranów w tle "
+"Ilość ekranów w tle"
 
 //[MSetColorDialogNormal]
 "Tekst zwykły"
@@ -3403,7 +3394,7 @@
 //[MSetColorDialogTextInput]
 "Wpisywany tekst"
 //[MSetColorDialogUnchangedTextInput]
-"Niezmieniony wpisywany tekst "
+"Niezmieniony wpisywany tekst"
 //[MSetColorDialogSelectedTextInput]
 "Zaznaczony wpisywany tekst"
 //[MSetColorDialogEditDisabled]
@@ -3415,7 +3406,7 @@
 //[MSetColorDialogHighlightedButtons]
 "Podświetlone przyciski"
 //[MSetColorDialogSelectedHighlightedButtons]
-"Wybrane podświetlone przyciski "
+"Wybrane podświetlone przyciski"
 // need translation:
 //[MSetColorDialogDefaultButton]
 "Default button"
@@ -3469,7 +3460,7 @@
 //[MSetColorMenuHighlighted]
 "Podświetlony tekst"
 //[MSetColorMenuSelectedHighlighted]
-"Wybrany podświetlony tekst "
+"Wybrany podświetlony tekst"
 //[MSetColorMenuDisabled]
 "Tekst nieaktywny"
 // need translation:
@@ -3498,7 +3489,7 @@
 //[MSetColorHMenuHighlighted]
 "Podświetlony tekst"
 //[MSetColorHMenuSelectedHighlighted]
-"Wybrany podświetlony tekst "
+"Wybrany podświetlony tekst"
 
 //[MSetColorKeyBarNumbers]
 "Numery klawiszy"
@@ -3550,7 +3541,7 @@
 //[MSetColorHelpReference]
 "Odniesienie"
 //[MSetColorHelpSelectedReference]
-"Wybrane odniesienie "
+"Wybrane odniesienie"
 //[MSetColorHelpBox]
 "Ramka"
 //[MSetColorHelpBoxTitle]
@@ -5091,7 +5082,7 @@
 //[MDoYouWantToCancel]
 "Czy naprawdę chcesz ją anulować?"
 //[MDoYouWantToContinue]
-"Kontynuować? "
+"Kontynuować?"
 
 //[MCheckingFileInPlugin]
 "Plugin sprawdza plik"
@@ -5529,9 +5520,9 @@
 ""
 //[MKeyRAlt]
 ""
+// keys end
 //[MKeyAlt]
 ""
-// keys end
 
 //[MNewFileName]
 "?Nowy plik?"

@@ -1,6 +1,6 @@
 ﻿.Language=Czech,Czech (Čeština)
 
-//Version: 3.0 build 5198
+//Version: 3.0 build 5199
 
 //[MYes]
 "Ano"
@@ -264,9 +264,9 @@
 ""
 //[MCtrlAltShiftF11]
 ""
+//End of functional keys
 //[MCtrlAltShiftF12]
 ""
-//End of functional keys
 
 //[MHistoryTitle]
 "Historie"
@@ -591,7 +591,7 @@
 //[MViewConfigExternalCommand]
 "&Příkaz prohlížeče:"
 //[MViewConfigInternal]
-" Interní prohlížeč "
+"Interní prohlížeč"
 //[MViewConfigSavePos]
 "&Ukládat pozici v souboru"
 //[MViewConfigSaveShortPos]
@@ -627,7 +627,7 @@
 //[MEditConfigEditorCommand]
 "&Příkaz editoru:"
 //[MEditConfigInternal]
-" Interní editor "
+"Interní editor"
 //[MEditConfigExpandTabsTitle]
 "Rozšířit ta&bulátory mezerami"
 
@@ -740,21 +740,21 @@
 "Filt&r"
 
 //[MCopyFile]
-"Kopírovat"
+"Kopírovat {0} {1}:"
 //[MMoveFile]
-"Přejmenovat nebo přesunout"
+"Přejmenovat nebo přesunout {0} {1}:"
 //[MLinkFile]
-"Vytvořit link na"
+"Vytvořit link na {0} {1}:"
 //[MCopyFiles]
-"Kopírovat {0} polož{1}"
+"Kopírovat {0} polož{1} {2}:"
 //[MMoveFiles]
-"Přejmenovat nebo přesunout {0} polož{1}"
+"Přejmenovat nebo přesunout {0} polož{1} {2}:"
 //[MLinkFiles]
-"Vytvořit link na {0} polož{1}"
+"Vytvořit link na {0} polož{1} {2}:"
 //[MCMLTargetTO]
-" d&o:"
+"d&o"
 //[MCMLTargetIN]
-" &v:"
+"&v"
 //[MCMLItems0]
 "u"
 //[MCMLItemsA]
@@ -1395,10 +1395,10 @@
 ""
 //[MEditCtrlAltShiftF12]
 ""
-//[MEditF8DOS]
-"OEM"
 // End of functional keys (Editor)
 // it's a F8 another text
+//[MEditF8DOS]
+"OEM"
 
 //Single Editor: functional keys - 6 characters max, 12 keys, "OEM" is F8 dupe!
 //[MSingleEditF1]
@@ -1607,10 +1607,10 @@
 ""
 //[MSingleEditCtrlAltShiftF12]
 ""
-//[MSingleEditF8DOS]
-"OEM"
 // End of functional keys (Single Editor)
 // it's a F8 another text
+//[MSingleEditF8DOS]
+"OEM"
 
 //[MEditSaveAs]
 "Uložit soubor &jako"
@@ -1769,11 +1769,11 @@
 "E"
 // need translation:
 //[MListFileSize]
-" Bytes: {0}, files: {1}, folders: {2} "
+"Bytes: {0}, files: {1}, folders: {2}"
 //[MListFileSizeStatus]
-" {0} ({1}/{2}) {3} {4} "
+"{0} ({1}/{2}) {3} {4}"
 //[MListFreeSize]
-" {0} volných bytů "
+"{0} volných bytů"
 
 //[MDirInfoViewTitle]
 "Zobrazit"
@@ -1830,9 +1830,9 @@
 //Viewer: functional keys, 12 keys, except F2 - 2 keys, and F8 - 2 keys
 //[MViewF1]
 "Nápověda"
+// this is another text for F2
 //[MViewF2]
 "Zalomit"
-// this is another text for F2
 //[MViewF3]
 "Konec"
 //[MViewF4]
@@ -2044,9 +2044,9 @@
 //[MViewF4Dump]
 "Výpis"
 // this is another text for F8
+// end of functional keys (Viewer)
 //[MViewF8DOS]
 "OEM"
-// end of functional keys (Viewer)
 
 //Single Viewer: functional keys, 12 keys, except F2 - 2 keys, and F8 - 2 keys
 //[MSingleViewF1]
@@ -2262,9 +2262,9 @@
 //[MSingleViewF4Text]
 "Text"
 // this is another text for F4
+// end of functional keys (Single Viewer)
 //[MSingleViewF8DOS]
 "OEM"
-// end of functional keys (Single Viewer)
 //[MViewMode]
 "Režim zobrazení"
 //[MInViewer]
@@ -2372,14 +2372,7 @@
 "&Storno"
 
 //[MFindFound]
-" Souborů: {0}, adresářů: {1} "
-
-//[MFindFileFolder]
-"Adresář"
-//[MFindFileSymLink]
-"Link"
-//[MFindFileJunction]
-"Křížení"
+"Souborů: {0}, adresářů: {1}"
 
 //[MFindFileAdvancedTitle]
 "Pokročilé nastavení vyhledávání souborů"
@@ -2439,13 +2432,13 @@
 //[MHighlightTransparentMarkChar]
 "průh&ledný"
 //[MHighlightColors]
-" Barva názvů souborů (\"černá na černé\" - výchozí barva) "
+"Barva názvů souborů (\"černá na černé\" - výchozí barva)"
 //[MHighlightFileName1]
-"&1. Normální soubor            "
+"&1. Normální soubor"
 //[MHighlightFileName2]
-"&3. Vybraný soubor             "
+"&3. Vybraný soubor"
 //[MHighlightFileName3]
-"&5. Soubor pod kurzorem        "
+"&5. Soubor pod kurzorem"
 //[MHighlightFileName4]
 "&7. Vybraný soubor pod kurzorem"
 //[MHighlightMarking1]
@@ -2484,7 +2477,7 @@
 //[MInfoUserAccessLevelUnknown]
 "Neznámý"
 //[MInfoDiskTitle]
-" Disk "
+"Disk"
 //[MInfoRemovable]
 "Vyměnitelný"
 //[MInfoFixed]
@@ -2522,7 +2515,7 @@
 //[MInfoDiskNumber]
 "Sériové číslo"
 //[MInfoMemory]
-" Paměť "
+"Paměť"
 //[MInfoMemoryLoad]
 "Obsazení paměti"
 //[MInfoMemoryInstalled]
@@ -2540,13 +2533,13 @@
 //[MInfoPageFileFree]
 "Stránkovací soubor volný"
 //[MInfoDescription]
-" Popis "
+"Popis"
 //[MInfoDizAbsent]
 "Soubor s popisem adresáře chybí"
 //[MInfoPlugin]
-" Modul "
+"Modul"
 //[MInfoPowerStatus]
-" Stav napájení"
+"Stav napájení"
 //[MInfoPowerStatusAC]
 "Stav síťového napájení"
 //[MInfoPowerStatusACOffline]
@@ -2965,7 +2958,7 @@
 "Del,Shift+Del,F3,F4,F9"
 
 //[MSearchFileTitle]
-" Hledat "
+"Hledat"
 //[MCannotCreateListFile]
 "Nelze vytvořit soubor se seznamem"
 //[MCannotCreateListTemp]
@@ -3031,22 +3024,21 @@
 "Unknown reparse point"
 //[MQuickViewNoData]
 "(data nejsou k dispozici)"
-//[MQuickViewContains]
-"Obsah:"
 //[MQuickViewFolders]
-"Adresáře           "
+"Adresáře:"
 //[MQuickViewFiles]
-"Soubory            "
+"Soubory:"
 //[MQuickViewBytes]
-"Velikost souborů   "
+"Velikost souborů:"
 //[MQuickViewAllocated]
-"Alokovaná velikost "
+"Alokovaná velikost:"
 //[MQuickViewCluster]
-"Velikost svazku    "
+"Velikost svazku:"
 //[MQuickViewSlack]
-"Mrtvé místo        "
+"Mrtvé místo:"
+// need translation:
 //[MQuickViewMFTOverhead]
-"MFT overhead       "
+"MFT overhead:"
 
 //[MSetAttrTitle]
 "Atributy"
@@ -5269,9 +5261,9 @@
 ""
 //[MKeyRAlt]
 ""
+// keys end
 //[MKeyAlt]
 ""
-// keys end
 
 //[MNewFileName]
 "?Nový soubor?"

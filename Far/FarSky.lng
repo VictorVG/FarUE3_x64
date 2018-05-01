@@ -1,6 +1,6 @@
 ﻿.Language=Slovak,Slovak (Slovenčina)
 
-//Version: 3.0 build 5198
+//Version: 3.0 build 5199
 
 //[MYes]
 "Áno"
@@ -264,9 +264,9 @@
 ""
 //[MCtrlAltShiftF11]
 ""
+//End of functional keys
 //[MCtrlAltShiftF12]
 ""
-//End of functional keys
 
 //[MHistoryTitle]
 "História"
@@ -570,7 +570,7 @@
 //[MViewConfigExternalCommand]
 "&Príkaz zobrazovača:"
 //[MViewConfigInternal]
-" Interný zobrazovač "
+"Interný zobrazovač"
 //[MViewConfigSavePos]
 "Pamä&tať si pozíciu v súbore"
 //[MViewConfigSaveShortPos]
@@ -605,7 +605,7 @@
 //[MEditConfigEditorCommand]
 "&Príkaz editora:"
 //[MEditConfigInternal]
-" Interný editor "
+"Interný editor"
 //[MEditConfigExpandTabsTitle]
 "Rozšíriť ta&bulátory medzerami"
 
@@ -716,21 +716,21 @@
 "Filte&r"
 
 //[MCopyFile]
-"Kopírovať"
+"Kopírovať {0} {1}:"
 //[MMoveFile]
-"Premenovať alebo presunúť"
+"Premenovať alebo presunúť {0} {1}:"
 //[MLinkFile]
-"Vytvoriť prepojenie na"
+"Vytvoriť prepojenie na {0} {1}:"
 //[MCopyFiles]
-"Kopírovať {0} polož{1}"
+"Kopírovať {0} polož{1} {2}:"
 //[MMoveFiles]
-"Premenovať alebo presunúť {0} polož{1}"
+"Premenovať alebo presunúť {0} polož{1} {2}:"
 //[MLinkFiles]
-"Vytvoriť prepojenia na {0} polož{1}"
+"Vytvoriť prepojenia na {0} polož{1} {2}:"
 //[MCMLTargetTO]
-" d&o:"
+"d&o"
 //[MCMLTargetIN]
-" &v:"
+"&v"
 //[MCMLItems0]
 "ku"
 //[MCMLItemsA]
@@ -772,10 +772,12 @@
 "Pr&eskočiť všetko"
 //[MCopyCancel]
 "&Zrušiť"
+// need translation:
 //[MCopyDecrypt]
-"upd:Decrypt"
+"Decrypt"
+// need translation:
 //[MCopyDecryptAll]
-"upd:Decrypt all"
+"Decrypt all"
 
 //[MCopyCannotCreateLink]
 "Nemôžem vytvoriť symbolické prepojenie"
@@ -1368,10 +1370,10 @@
 ""
 //[MEditCtrlAltShiftF12]
 ""
-//[MEditF8DOS]
-"OEM"
 // End of functional keys (Editor)
 // it's a F8 another text
+//[MEditF8DOS]
+"OEM"
 
 //Single Editor: functional keys - 6 characters max, 12 keys, "OEM" is F8 dupe!
 //[MSingleEditF1]
@@ -1580,10 +1582,10 @@
 ""
 //[MSingleEditCtrlAltShiftF12]
 ""
-//[MSingleEditF8DOS]
-"OEM"
 // End of functional keys (Single Editor)
 // it's a F8 another text
+//[MSingleEditF8DOS]
+"OEM"
 
 //[MEditSaveAs]
 "Uložiť súbor ako"
@@ -1742,11 +1744,11 @@
 "E"
 // need translation:
 //[MListFileSize]
-" Bytes: {0}, files: {1}, folders: {2} "
+"Bytes: {0}, files: {1}, folders: {2}"
 //[MListFileSizeStatus]
-" {0} ({1}/{2}) {3} {4} "
+"{0} ({1}/{2}) {3} {4}"
 //[MListFreeSize]
-" {0} voľných bajtov "
+"{0} voľných bajtov"
 
 //[MDirInfoViewTitle]
 "Zobraziť"
@@ -1803,9 +1805,9 @@
 //Viewer: functional keys, 12 keys, except F2 - 2 keys, and F8 - 2 keys
 //[MViewF1]
 "Pomocník"
+// this is another text for F2
 //[MViewF2]
 "Zalomiť"
-// this is another text for F2
 //[MViewF3]
 "Koniec"
 //[MViewF4]
@@ -2017,9 +2019,9 @@
 //[MViewF4Dump]
 "Dump"
 // this is another text for F8
+// end of functional keys (Viewer)
 //[MViewF8DOS]
 "OEM"
-// end of functional keys (Viewer)
 
 //Single Viewer: functional keys, 12 keys, except F2 - 2 keys, and F8 - 2 keys
 //[MSingleViewF1]
@@ -2235,9 +2237,9 @@
 //[MSingleViewF4Text]
 "Text"
 // this is another text for F4
+// end of functional keys (Single Viewer)
 //[MSingleViewF8DOS]
 "OEM"
-// end of functional keys (Single Viewer)
 //[MViewMode]
 "View mode"
 //[MInViewer]
@@ -2345,14 +2347,7 @@
 "&Storno"
 
 //[MFindFound]
-" Súborov: {0}, priečinkov: {1} "
-
-//[MFindFileFolder]
-"Priečinok"
-//[MFindFileSymLink]
-"Prepojenie"
-//[MFindFileJunction]
-"Kríženie"
+"Súborov: {0}, priečinkov: {1}"
 
 //[MFindFileAdvancedTitle]
 "Pokročilé nastavenie vyhľadávania súborov"
@@ -2412,13 +2407,13 @@
 //[MHighlightTransparentMarkChar]
 "prieh&ľadný"
 //[MHighlightColors]
-" Farba názvov súborov (\"čierna na čiernej\" - východisková) "
+"Farba názvov súborov (\"čierna na čiernej\" - východisková)"
 //[MHighlightFileName1]
-"&1. Normálny súbor            "
+"&1. Normálny súbor"
 //[MHighlightFileName2]
-"&3. Vybraný súbor             "
+"&3. Vybraný súbor"
 //[MHighlightFileName3]
-"&5. Súbor pod kurzorom        "
+"&5. Súbor pod kurzorom"
 //[MHighlightFileName4]
 "&7. Vybraný súbor pod kurzorom"
 //[MHighlightMarking1]
@@ -2457,7 +2452,7 @@
 //[MInfoUserAccessLevelUnknown]
 "Neznámy"
 //[MInfoDiskTitle]
-" Disk "
+"Disk"
 //[MInfoRemovable]
 "Vymeniteľný"
 //[MInfoFixed]
@@ -2495,7 +2490,7 @@
 //[MInfoDiskNumber]
 "Sériové číslo"
 //[MInfoMemory]
-" Pamäť "
+"Pamäť"
 //[MInfoMemoryLoad]
 "Obsadenie pamäte"
 //[MInfoMemoryInstalled]
@@ -2513,13 +2508,13 @@
 //[MInfoPageFileFree]
 "Stránkovací súbor voľný"
 //[MInfoDescription]
-" Popis "
+"Popis"
 //[MInfoDizAbsent]
 "Chýba popisný súbor priečinka"
 //[MInfoPlugin]
-" Modul "
+"Modul"
 //[MInfoPowerStatus]
-" Stav napájania"
+"Stav napájania"
 //[MInfoPowerStatusAC]
 "Stav sieťového napájania"
 //[MInfoPowerStatusACOffline]
@@ -2939,7 +2934,7 @@
 "Del,Shift+Del,F3,F4,F9"
 
 //[MSearchFileTitle]
-" Hľadať "
+"Hľadať"
 //[MCannotCreateListFile]
 "Nemôžem vytvoriť súbor so zoznamom"
 //[MCannotCreateListTemp]
@@ -3005,22 +3000,21 @@
 "Unknown reparse point"
 //[MQuickViewNoData]
 "(dáta nie sú k dispozícii)"
-//[MQuickViewContains]
-"Obsahuje:"
 //[MQuickViewFolders]
-"Priečinky         "
+"Priečinky:"
 //[MQuickViewFiles]
-"Súbory            "
+"Súbory:"
 //[MQuickViewBytes]
-"Veľkosť súborov   "
+"Veľkosť súborov:"
 //[MQuickViewAllocated]
-"Alokovaná veľkosť "
+"Alokovaná veľkosť:"
 //[MQuickViewCluster]
-"Veľkosť klastra   "
+"Veľkosť klastra:"
 //[MQuickViewSlack]
-"Mŕtve miesto      "
+"Mŕtve miesto:"
+// need translation:
 //[MQuickViewMFTOverhead]
-"MFT overhead      "
+"MFT overhead:"
 
 //[MSetAttrTitle]
 "Atribúty"
@@ -5240,9 +5234,9 @@
 ""
 //[MKeyRAlt]
 ""
+// keys end
 //[MKeyAlt]
 ""
-// keys end
 
 //[MNewFileName]
 "?Nový súbor?"

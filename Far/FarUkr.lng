@@ -1,6 +1,6 @@
 ﻿.Language=Ukrainian,Ukrainian (Українська)
 
-//Version: 3.0 build 5198
+//Version: 3.0 build 5199
 
 //[MYes]
 "Так"
@@ -109,7 +109,7 @@
 //[MShiftF10]
 "Остан."
 //[MShiftF11]
-"Групи "
+"Групи"
 //[MShiftF12]
 "Вибран"
 
@@ -264,9 +264,9 @@
 ""
 //[MCtrlAltShiftF11]
 ""
+//End of functional keys
 //[MCtrlAltShiftF12]
 ""
-//End of functional keys
 
 //[MHistoryTitle]
 "Історія команд"
@@ -589,7 +589,7 @@
 //[MEditConfigEditorCommand]
 "&Команда редагування:"
 //[MEditConfigInternal]
-" Вбудований редактор "
+"Вбудований редактор"
 //[MEditConfigExpandTabsTitle]
 "Перетворення &табуляції:"
 
@@ -621,7 +621,7 @@
 //[MEditWarningBeforeOpenROFile]
 "Поперед&жати при відкритті файлів з атрибутом R/O"
 //[MEditConfigTabSize]
-"Роз&мір табуляції "
+"Роз&мір табуляції"
 //[MEditConfigScrollbar]
 "Показ&увати смужку прокручування"
 //[MEditShowWhiteSpace]
@@ -700,21 +700,21 @@
 "&Фільтр"
 
 //[MCopyFile]
-"Копіювати"
+"Копіювати {0} {1}:"
 //[MMoveFile]
-"Перейменувати або перемістити"
+"Перейменувати або перемістити {0} {1}:"
 //[MLinkFile]
-"Створити посилання на"
+"Створити посилання на {0} {1}:"
 //[MCopyFiles]
-"Копіювати {0} елемент{1}"
+"Копіювати {0} елемент{1} {2}:"
 //[MMoveFiles]
-"Перейменувати або перемістити {0} елемент{1}"
+"Перейменувати або перемістити {0} елемент{1} {2}:"
 //[MLinkFiles]
-"Створити посилання на {0} елемент{1}"
+"Створити посилання на {0} елемент{1} {2}:"
 //[MCMLTargetTO]
-" &в:"
+"&в"
 //[MCMLTargetIN]
-" &в:"
+"&в"
 //[MCMLItems0]
 ""
 //[MCMLItemsA]
@@ -912,9 +912,9 @@
 "ів"
 
 //[MDeleteFolderTitle]
-"Видалення папки "
+"Видалення папки"
 //[MWipeFolderTitle]
-"Знищення папки "
+"Знищення папки"
 //[MDeleteFilesTitle]
 "Видалення файлів"
 //[MWipeFilesTitle]
@@ -1342,10 +1342,10 @@
 ""
 //[MEditCtrlAltShiftF12]
 ""
-//[MEditF8DOS]
-"OEM"
 // End of functional keys (Editor)
 // it's a F8 another text
+//[MEditF8DOS]
+"OEM"
 
 //Single Editor: functional keys - 6 characters max, 12 keys, "OEM" is F8 dupe!
 //[MSingleEditF1]
@@ -1554,10 +1554,10 @@
 ""
 //[MSingleEditCtrlAltShiftF12]
 ""
-//[MSingleEditF8DOS]
-"OEM"
 // End of functional keys (Single Editor)
 // it's a F8 another text
+//[MSingleEditF8DOS]
+"OEM"
 
 //[MEditSaveAs]
 "Зберегти &файл як"
@@ -1712,11 +1712,11 @@
 //[MListEb]
 "Е"
 //[MListFileSize]
-" Байт: {0}, файлів: {1}, папок: {2} "
+"Байт: {0}, файлів: {1}, папок: {2}"
 //[MListFileSizeStatus]
-" {0} ({1}/{2}) {3} {4} "
+"{0} ({1}/{2}) {3} {4}"
 //[MListFreeSize]
-" {0} байт вільно "
+"{0} байт вільно"
 
 //[MDirInfoViewTitle]
 "Перегляд"
@@ -1773,9 +1773,9 @@
 //Viewer: functional keys, 12 keys, except F2 - 2 keys, and F8 - 2 keys
 //[MViewF1]
 "Допом."
+// this is another text for F2
 //[MViewF2]
 "Згорн"
-// this is another text for F2
 //[MViewF3]
 "Вихід"
 //[MViewF4]
@@ -1987,9 +1987,9 @@
 //[MViewF4Dump]
 "Дамп"
 // this is another text for F8
+// end of functional keys (Viewer)
 //[MViewF8DOS]
 "OEM"
-// end of functional keys (Viewer)
 
 //Single Viewer: functional keys, 12 keys, except F2 - 2 keys, and F8 - 2 keys
 //[MSingleViewF1]
@@ -2205,9 +2205,9 @@
 //[MSingleViewF4Text]
 "Текст"
 // this is another text for F4
+// end of functional keys (Single Viewer)
 //[MSingleViewF8DOS]
 "OEM"
-// end of functional keys (Single Viewer)
 //[MViewMode]
 "Режим перегляду"
 //[MInViewer]
@@ -2311,14 +2311,7 @@
 "Скасувати"
 
 //[MFindFound]
-" Файлів: {0}, папок: {1} "
-
-//[MFindFileFolder]
-"Папка"
-//[MFindFileSymLink]
-"Посил."
-//[MFindFileJunction]
-"Зв'язок"
+"Файлів: {0}, папок: {1}"
 
 //[MFindFileAdvancedTitle]
 "Додаткові параметри пошуку"
@@ -2377,15 +2370,15 @@
 //[MHighlightTransparentMarkChar]
 "прозор&ий"
 //[MHighlightColors]
-" Кольори файлів (\"чорний на чорному\" - колір за замовчуванням) "
+"Кольори файлів (\"чорний на чорному\" - колір за замовчуванням)"
 //[MHighlightFileName1]
-"&1. Звичайне ім'я файлу              "
+"&1. Звичайне ім'я файлу"
 //[MHighlightFileName2]
-"&3. Помічене ім'я файлу              "
+"&3. Помічене ім'я файлу"
 //[MHighlightFileName3]
-"&5. Ім'я файлу під курсором          "
+"&5. Ім'я файлу під курсором"
 //[MHighlightFileName4]
-"&7. Помічене під курсором ім'я файлу "
+"&7. Помічене під курсором ім'я файлу"
 //[MHighlightMarking1]
 "&2. Помітка"
 //[MHighlightMarking2]
@@ -2422,7 +2415,7 @@
 //[MInfoUserAccessLevelUnknown]
 "Невідомо"
 //[MInfoDiskTitle]
-" Диск "
+"Диск"
 //[MInfoRemovable]
 "Змінний"
 //[MInfoFixed]
@@ -2460,7 +2453,7 @@
 //[MInfoDiskNumber]
 "Серійний номер"
 //[MInfoMemory]
-" Пам'ять "
+"Пам'ять"
 //[MInfoMemoryLoad]
 "Завантаж. пам'яті"
 //[MInfoMemoryInstalled]
@@ -2478,13 +2471,13 @@
 //[MInfoPageFileFree]
 "Вільно файлу довантаження"
 //[MInfoDescription]
-" Опис "
+"Опис"
 //[MInfoDizAbsent]
 "Файл опису папки відсутній"
 //[MInfoPlugin]
-" Плагін "
+"Плагін"
 //[MInfoPowerStatus]
-" Живлення "
+"Живлення"
 //[MInfoPowerStatusAC]
 "Підключення до мережі"
 //[MInfoPowerStatusACOffline]
@@ -2899,7 +2892,7 @@
 "Del,Shift+Del,F3,F4,F9"
 
 //[MSearchFileTitle]
-" Пошук "
+"Пошук"
 //[MCannotCreateListFile]
 "Помилка створення списку файлів"
 //[MCannotCreateListTemp]
@@ -2963,22 +2956,20 @@
 "Невідома точка повторного аналізу"
 //[MQuickViewNoData]
 "(нема даних)"
-//[MQuickViewContains]
-"містить:"
 //[MQuickViewFolders]
-"Папок               "
+"Папок:"
 //[MQuickViewFiles]
-"Файлів              "
+"Файлів:"
 //[MQuickViewBytes]
-"Розмір файлів       "
+"Розмір файлів:"
 //[MQuickViewAllocated]
-"Виділений розмір    "
+"Виділений розмір:"
 //[MQuickViewCluster]
-"Розмір кластера     "
+"Розмір кластера:"
 //[MQuickViewSlack]
-"Залишки кластерів   "
+"Залишки кластерів:"
 //[MQuickViewMFTOverhead]
-"Зайнято MFT         "
+"Зайнято MFT:"
 
 //[MSetAttrTitle]
 "Атрибути"
@@ -5174,9 +5165,9 @@
 ""
 //[MKeyRAlt]
 ""
+// keys end
 //[MKeyAlt]
 ""
-// keys end
 
 //[MNewFileName]
 "?Новий файл?"

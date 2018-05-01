@@ -1,6 +1,6 @@
 ﻿.Language=Russian,Russian (Русский)
 
-//Version: 3.0 build 5198
+//Version: 3.0 build 5199
 
 //[MYes]
 "Да"
@@ -264,9 +264,9 @@
 ""
 //[MCtrlAltShiftF11]
 ""
+//End of functional keys
 //[MCtrlAltShiftF12]
 ""
-//End of functional keys
 
 //[MHistoryTitle]
 "История команд"
@@ -554,7 +554,7 @@
 //[MViewConfigExternalCommand]
 "&Команда просмотра:"
 //[MViewConfigInternal]
-" Встроенная программа просмотра "
+"Встроенная программа просмотра"
 //[MViewConfigSavePos]
 "&Сохранять позицию файла"
 //[MViewConfigSaveShortPos]
@@ -589,7 +589,7 @@
 //[MEditConfigEditorCommand]
 "&Команда редактирования:"
 //[MEditConfigInternal]
-" Встроенный редактор "
+"Встроенный редактор"
 //[MEditConfigExpandTabsTitle]
 "Преобразовывать &табуляцию:"
 
@@ -700,21 +700,21 @@
 "&Фильтр"
 
 //[MCopyFile]
-"Копировать"
+"Копировать {0} {1}:"
 //[MMoveFile]
-"Переименовать или перенести"
+"Переименовать или перенести {0} {1}:"
 //[MLinkFile]
-"Создать ссылку на"
+"Создать ссылку на {0} {1}:"
 //[MCopyFiles]
-"Копировать {0} элемент{1}"
+"Копировать {0} элемент{1} {2}:"
 //[MMoveFiles]
-"Переименовать или перенести {0} элемент{1}"
+"Переименовать или перенести {0} элемент{1} {2}:"
 //[MLinkFiles]
-"Создать ссылки на {0} элемент{1}"
+"Создать ссылки на {0} элемент{1} {2}:"
 //[MCMLTargetTO]
-" &в:"
+"&в"
 //[MCMLTargetIN]
-" &в:"
+"&в"
 //[MCMLItems0]
 ""
 //[MCMLItemsA]
@@ -912,9 +912,9 @@
 "ов"
 
 //[MDeleteFolderTitle]
-"Удаление папки "
+"Удаление папки"
 //[MWipeFolderTitle]
-"Уничтожение папки "
+"Уничтожение папки"
 //[MDeleteFilesTitle]
 "Удаление файлов"
 //[MWipeFilesTitle]
@@ -1342,10 +1342,10 @@
 ""
 //[MEditCtrlAltShiftF12]
 ""
-//[MEditF8DOS]
-"OEM"
 // End of functional keys (Editor)
 // it's a F8 another text
+//[MEditF8DOS]
+"OEM"
 
 //Single Editor: functional keys - 6 characters max, 12 keys, "OEM" is F8 dupe!
 //[MSingleEditF1]
@@ -1554,10 +1554,10 @@
 ""
 //[MSingleEditCtrlAltShiftF12]
 ""
-//[MSingleEditF8DOS]
-"OEM"
 // End of functional keys (Single Editor)
 // it's a F8 another text
+//[MSingleEditF8DOS]
+"OEM"
 
 //[MEditSaveAs]
 "Сохранить &файл как"
@@ -1712,11 +1712,11 @@
 //[MListEb]
 "Э"
 //[MListFileSize]
-" Байт: {0}, файлов: {1}, папок: {2} "
+"Байт: {0}, файлов: {1}, папок: {2}"
 //[MListFileSizeStatus]
-" {0} ({1}/{2}) {3} {4} "
+"{0} ({1}/{2}) {3} {4}"
 //[MListFreeSize]
-" {0} байт свободно "
+"{0} байт свободно"
 
 //[MDirInfoViewTitle]
 "Просмотр"
@@ -1773,9 +1773,9 @@
 //Viewer: functional keys, 12 keys, except F2 - 2 keys, and F8 - 2 keys
 //[MViewF1]
 "Помощь"
+// this is another text for F2
 //[MViewF2]
 "Сверн"
-// this is another text for F2
 //[MViewF3]
 "Выход"
 //[MViewF4]
@@ -1987,9 +1987,9 @@
 //[MViewF4Dump]
 "Дамп"
 // this is another text for F8
+// end of functional keys (Viewer)
 //[MViewF8DOS]
 "OEM"
-// end of functional keys (Viewer)
 
 //Single Viewer: functional keys, 12 keys, except F2 - 2 keys, and F8 - 2 keys
 //[MSingleViewF1]
@@ -2205,9 +2205,9 @@
 //[MSingleViewF4Text]
 "Текст"
 // this is another text for F4
+// end of functional keys (Single Viewer)
 //[MSingleViewF8DOS]
 "OEM"
-// end of functional keys (Single Viewer)
 //[MViewMode]
 "Режим просмотра"
 //[MInViewer]
@@ -2311,14 +2311,7 @@
 "Отм&ена"
 
 //[MFindFound]
-" Файлов: {0}, папок: {1} "
-
-//[MFindFileFolder]
-"Папка"
-//[MFindFileSymLink]
-"Ссылка"
-//[MFindFileJunction]
-"Связь"
+"Файлов: {0}, папок: {1}"
 
 //[MFindFileAdvancedTitle]
 "Дополнительные параметры поиска"
@@ -2377,13 +2370,13 @@
 //[MHighlightTransparentMarkChar]
 "прозра&чный"
 //[MHighlightColors]
-" Цвета файлов (\"чёрный на чёрном\" - цвет по умолчанию) "
+"Цвета файлов (\"чёрный на чёрном\" - цвет по умолчанию)"
 //[MHighlightFileName1]
-"&1. Обычное имя файла                "
+"&1. Обычное имя файла"
 //[MHighlightFileName2]
-"&3. Помеченное имя файла             "
+"&3. Помеченное имя файла"
 //[MHighlightFileName3]
-"&5. Имя файла под курсором           "
+"&5. Имя файла под курсором"
 //[MHighlightFileName4]
 "&7. Помеченное под курсором имя файла"
 //[MHighlightMarking1]
@@ -2422,7 +2415,7 @@
 //[MInfoUserAccessLevelUnknown]
 "Неизвестно"
 //[MInfoDiskTitle]
-" Диск "
+"Диск"
 //[MInfoRemovable]
 "Сменный"
 //[MInfoFixed]
@@ -2460,7 +2453,7 @@
 //[MInfoDiskNumber]
 "Серийный номер"
 //[MInfoMemory]
-" Память "
+"Память"
 //[MInfoMemoryLoad]
 "Используется"
 //[MInfoMemoryInstalled]
@@ -2478,13 +2471,13 @@
 //[MInfoPageFileFree]
 "Файл подкачки (свободно)"
 //[MInfoDescription]
-" Описание "
+"Описание"
 //[MInfoDizAbsent]
 "Файл описания папки отсутствует"
 //[MInfoPlugin]
-" Плагин "
+"Плагин"
 //[MInfoPowerStatus]
-" Питание "
+"Питание"
 //[MInfoPowerStatusAC]
 "Подключения к сети"
 //[MInfoPowerStatusACOffline]
@@ -2899,7 +2892,7 @@
 "Del,Shift+Del,F3,F4,F9"
 
 //[MSearchFileTitle]
-" Поиск "
+"Поиск"
 //[MCannotCreateListFile]
 "Ошибка создания списка файлов"
 //[MCannotCreateListTemp]
@@ -2963,22 +2956,20 @@
 "Неизвестная точка повторного анализа"
 //[MQuickViewNoData]
 "(нет данных)"
-//[MQuickViewContains]
-"Содержит:"
 //[MQuickViewFolders]
-"Папок               "
+"Папок:"
 //[MQuickViewFiles]
-"Файлов              "
+"Файлов:"
 //[MQuickViewBytes]
-"Размер файлов       "
+"Размер файлов:"
 //[MQuickViewAllocated]
-"Выделенный размер   "
+"Выделенный размер:"
 //[MQuickViewCluster]
-"Размер кластера     "
+"Размер кластера:"
 //[MQuickViewSlack]
-"Остатки кластеров   "
+"Остатки кластеров:"
 //[MQuickViewMFTOverhead]
-"Занято MFT          "
+"Занято MFT:"
 
 //[MSetAttrTitle]
 "Атрибуты"
@@ -5174,9 +5165,9 @@
 ""
 //[MKeyRAlt]
 ""
+// keys end
 //[MKeyAlt]
 ""
-// keys end
 
 //[MNewFileName]
 "?Новый файл?"

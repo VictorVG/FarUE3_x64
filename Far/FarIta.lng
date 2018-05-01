@@ -1,6 +1,6 @@
 ﻿.Language=Italian,Italian (Italiano)
 
-//Version: 3.0 build 5198
+//Version: 3.0 build 5199
 
 //[MYes]
 "&Si"
@@ -64,15 +64,15 @@
 
 //functional keys - 6 characters max
 //[MF1]
-"Aiuto "
+"Aiuto"
 //[MF2]
 "MenuUt"
 //[MF3]
-"Vista "
+"Vista"
 //[MF4]
-"Edita "
+"Edita"
 //[MF5]
-"Copia "
+"Copia"
 //[MF6]
 "RinSpo"
 //[MF7]
@@ -86,7 +86,7 @@
 //[MF11]
 "PlugIN"
 //[MF12]
-"Video "
+"Video"
 
 //[MShiftF1]
 "Compri"
@@ -95,9 +95,9 @@
 //[MShiftF3]
 "ArcCmd"
 //[MShiftF4]
-"Edita "
+"Edita"
 //[MShiftF5]
-"Copia "
+"Copia"
 //[MShiftF6]
 "Rinomi"
 //[MShiftF7]
@@ -105,7 +105,7 @@
 //[MShiftF8]
 "Elimin"
 //[MShiftF9]
-"Salva "
+"Salva"
 //[MShiftF10]
 "Ultimo"
 //[MShiftF11]
@@ -118,19 +118,19 @@
 //[MAltF2]
 "Destra"
 //[MAltF3]
-"Vista "
+"Vista"
 //[MAltF4]
-"Edita "
+"Edita"
 //[MAltF5]
 "Stampa"
 //[MAltF6]
-"Linka "
+"Linka"
 //[MAltF7]
-"Cerca "
+"Cerca"
 //[MAltF8]
 "Storia"
 //[MAltF9]
-"Video "
+"Video"
 //[MAltF10]
 "Albero"
 //[MAltF11]
@@ -195,9 +195,9 @@
 //[MCtrlShiftF2]
 ""
 //[MCtrlShiftF3]
-"Vista "
+"Vista"
 //[MCtrlShiftF4]
-"Edita "
+"Edita"
 //[MCtrlShiftF5]
 ""
 //[MCtrlShiftF6]
@@ -264,9 +264,9 @@
 ""
 //[MCtrlAltShiftF11]
 ""
+//End of functional keys
 //[MCtrlAltShiftF12]
 ""
-//End of functional keys
 
 //[MHistoryTitle]
 "Cronologia"
@@ -708,21 +708,21 @@
 "&Filtro"
 
 //[MCopyFile]
-"Copia"
+"Copia {0} {1}:"
 //[MMoveFile]
-"Rinomina O Muovi"
+"Rinomina O Muovi {0} {1}:"
 //[MLinkFile]
-"Crea Link"
+"Crea Link {0} {1}:"
 //[MCopyFiles]
-"Copia {0} Oggett{1}"
+"Copia {0} Oggett{1} {2}:"
 //[MMoveFiles]
-"Rinomina O Muovi {0} Oggett{1}"
+"Rinomina O Muovi {0} Oggett{1} {2}:"
 //[MLinkFiles]
-"Creazione Link {0} Oggett{1}"
+"Creazione Link {0} Oggett{1} {2}:"
 //[MCMLTargetTO]
-" &In:"
+"&In"
 //[MCMLTargetIN]
-" &In:"
+"&In"
 //[MCMLItems0]
 ""
 //[MCMLItemsA]
@@ -764,10 +764,12 @@
 "Salta &Tutti"
 //[MCopyCancel]
 "&Annulla"
+// need translation:
 //[MCopyDecrypt]
-"upd:Decrypt"
+"Decrypt"
+// need translation:
 //[MCopyDecryptAll]
-"upd:Decrypt all"
+"Decrypt all"
 
 //[MCopyCannotCreateLink]
 "Non Posso Creare Il Collegamento"
@@ -1123,7 +1125,7 @@
 "Default"
 
 //[MGoTo]
-"Vai A "
+"Vai A"
 //[MGoToHex]
 "&Esadecimale"
 
@@ -1152,19 +1154,19 @@
 
 //functional keys - 6 characters max, 12 keys, "OEM" is F8 dupe!
 //[MEditF1]
-"Aiuto "
+"Aiuto"
 //[MEditF2]
-"Salva "
+"Salva"
 //[MEditF3]
 ""
 //[MEditF4]
-" Esci "
+"Esci"
 //[MEditF5]
 ""
 //[MEditF6]
-"Vista "
+"Vista"
 //[MEditF7]
-"Cerca "
+"Cerca"
 //[MEditF8]
 "ANSI"
 //[MEditF9]
@@ -1174,7 +1176,7 @@
 //[MEditF11]
 "Plugin"
 //[MEditF12]
-"Video "
+"Video"
 
 //Editor: Shift
 //[MEditShiftF1]
@@ -1184,7 +1186,7 @@
 //[MEditShiftF3]
 ""
 //[MEditShiftF4]
-"Edita "
+"Edita"
 //[MEditShiftF5]
 ""
 //[MEditShiftF6]
@@ -1218,9 +1220,9 @@
 //[MEditAltF7]
 "Preced"
 //[MEditAltF8]
-"Vai A "
+"Vai A"
 //[MEditAltF9]
-"Video "
+"Video"
 //[MEditAltF10]
 ""
 //[MEditAltF11]
@@ -1357,10 +1359,10 @@
 ""
 //[MEditCtrlAltShiftF12]
 ""
-//[MEditF8DOS]
-"OEM"
 // End of functional keys (Editor)
 // it's a F8 another text
+//[MEditF8DOS]
+"OEM"
 
 //Single Editor: functional keys - 6 characters max, 12 keys, "OEM" is F8 dupe!
 //[MSingleEditF1]
@@ -1569,10 +1571,10 @@
 ""
 //[MSingleEditCtrlAltShiftF12]
 ""
-//[MSingleEditF8DOS]
-"OEM"
 // End of functional keys (Single Editor)
 // it's a F8 another text
+//[MSingleEditF8DOS]
+"OEM"
 
 //[MEditSaveAs]
 "Sal&va Il File Come"
@@ -1679,7 +1681,7 @@
 "???"
 
 //[MListUp]
-" Su "
+"Su"
 //[MListFolder]
 "Cartel"
 //[MListSymlink]
@@ -1729,11 +1731,11 @@
 "E"
 // need translation:
 //[MListFileSize]
-" Bytes: {0}, files: {1}, folders: {2} "
+"Bytes: {0}, files: {1}, folders: {2}"
 //[MListFileSizeStatus]
-" {0} ({1}/{2}) {3} {4} "
+"{0} ({1}/{2}) {3} {4}"
 //[MListFreeSize]
-" {0} Bytes Liberi "
+"{0} Bytes Liberi"
 
 //[MDirInfoViewTitle]
 "Vista"
@@ -1790,9 +1792,9 @@
 //Viewer: functional keys, 12 keys, except F2 - 2 keys, and F8 - 2 keys
 //[MViewF1]
 "Aiuto!"
+// this is another text for F2
 //[MViewF2]
 "DeBord"
-// this is another text for F2
 //[MViewF3]
 "Esci"
 //[MViewF4]
@@ -1822,7 +1824,7 @@
 //[MViewShiftF3]
 ""
 //[MViewShiftF4]
-" Modo "
+"Modo"
 //[MViewShiftF5]
 ""
 //[MViewShiftF6]
@@ -1856,9 +1858,9 @@
 //[MViewAltF7]
 "Preced"
 //[MViewAltF8]
-"Vai A "
+"Vai A"
 //[MViewAltF9]
-"Video "
+"Video"
 //[MViewAltF10]
 ""
 //[MViewAltF11]
@@ -2004,9 +2006,9 @@
 //[MViewF4Dump]
 "Dump"
 // this is another text for F8
+// end of functional keys (Viewer)
 //[MViewF8DOS]
 "OEM"
-// end of functional keys (Viewer)
 
 //Single Viewer: functional keys, 12 keys, except F2 - 2 keys, and F8 - 2 keys
 //[MSingleViewF1]
@@ -2222,9 +2224,9 @@
 //[MSingleViewF4Text]
 "Testo"
 // this is another text for F4
+// end of functional keys (Single Viewer)
 //[MSingleViewF8DOS]
 "OEM"
-// end of functional keys (Single Viewer)
 //[MViewMode]
 "Visualizza"
 //[MInViewer]
@@ -2328,14 +2330,7 @@
 "&Annulla"
 
 //[MFindFound]
-" Files: {0}, Cartelle: {1} "
-
-//[MFindFileFolder]
-"Cartella"
-//[MFindFileSymLink]
-"Link-Simb"
-//[MFindFileJunction]
-"Giunzione"
+"Files: {0}, Cartelle: {1}"
 
 //[MFindFileAdvancedTitle]
 "Opzioni Avanzate Ricerca File"
@@ -2395,13 +2390,13 @@
 //[MHighlightTransparentMarkChar]
 "Traspare&nte"
 //[MHighlightColors]
-" Colore File (\"nero su nero\" - colore base) "
+"Colore File (\"nero su nero\" - colore base)"
 //[MHighlightFileName1]
-"&1. Nome File Normale                "
+"&1. Nome File Normale"
 //[MHighlightFileName2]
-"&3. Nome File Selezionato            "
+"&3. Nome File Selezionato"
 //[MHighlightFileName3]
-"&5. Nome File File Sotto Il Cursore  "
+"&5. Nome File File Sotto Il Cursore"
 //[MHighlightFileName4]
 "&7. File Evidenziato Sotto Il Cursore"
 //[MHighlightMarking1]
@@ -2478,7 +2473,7 @@
 //[MInfoDiskNumber]
 "Numero Seriale"
 //[MInfoMemory]
-"[ Memoria ]"
+"Memoria"
 //[MInfoMemoryLoad]
 "Memoria Occupata"
 //[MInfoMemoryInstalled]
@@ -2496,13 +2491,13 @@
 //[MInfoPageFileFree]
 "File Swap Libero"
 //[MInfoDescription]
-"[ Descrizione ]"
+"Descrizione"
 //[MInfoDizAbsent]
 "Descrizione Cartelle Assente!"
 //[MInfoPlugin]
-" Plugin "
+"Plugin"
 //[MInfoPowerStatus]
-"[ Stato Energetico ]"
+"Stato Energetico ]"
 //[MInfoPowerStatusAC]
 "Stato Alimentazione"
 //[MInfoPowerStatusACOffline]
@@ -2800,11 +2795,11 @@
 //[MChangeDriveTitle]
 " Unità"
 //[MChangeDriveRemovable]
-"Removibile "
+"Removibile"
 //[MChangeDriveFixed]
 "Disco Fisso"
 //[MChangeDriveNetwork]
-"Coll. Rete "
+"Coll. Rete"
 //[MChangeDriveDisconnectedNetwork]
 "Disconnesso"
 //[MChangeDriveCDROM]
@@ -2919,7 +2914,7 @@
 "[Canc] [Shift-Canc] [F3] [F4] [F9]"
 
 //[MSearchFileTitle]
-" Ricerca "
+"Ricerca"
 //[MCannotCreateListFile]
 "Non Posso Creare La Lista Dei Files"
 //[MCannotCreateListTemp]
@@ -2983,23 +2978,21 @@
 //[MQuickViewUnknownReparsePoint]
 "Punto Reparse Ignoto"
 //[MQuickViewNoData]
-"(dati sconosciuti) "
-//[MQuickViewContains]
-"Contenente:"
+"(dati sconosciuti)"
 //[MQuickViewFolders]
-"Cartelle           "
+"Cartelle:"
 //[MQuickViewFiles]
-"Files              "
+"Files:"
 //[MQuickViewBytes]
-"Dimensione Files   "
+"Dimensione Files:"
 //[MQuickViewAllocated]
-"Dim. Allocata      "
+"Dim. Allocata:"
 //[MQuickViewCluster]
-"Dimensione Culster "
+"Dimensione Culster:"
 //[MQuickViewSlack]
-"Dimensione Reale   "
+"Dimensione Reale:"
 //[MQuickViewMFTOverhead]
-"Perdita Spazio MFT "
+"Perdita Spazio MFT:"
 
 //[MSetAttrTitle]
 "Attributi"
@@ -3018,7 +3011,7 @@
 //[MSetAttrDfsTargets]
 "Destinazioni DFS"
 //[MSetAttrUnknownJunction]
-"(dati sconosciuti) "
+"(dati sconosciuti)"
 //[MSetAttrRO]
 "&Sola-Lettura"
 //[MSetAttrArchive]
@@ -5213,9 +5206,9 @@
 ""
 //[MKeyRAlt]
 ""
+// keys end
 //[MKeyAlt]
 ""
-// keys end
 
 //[MNewFileName]
 "* Nuovo File *"

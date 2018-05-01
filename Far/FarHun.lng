@@ -1,6 +1,6 @@
 ﻿.Language=Hungarian,Hungarian (Magyar)
 
-//Version: 3.0 build 5198
+//Version: 3.0 build 5199
 
 //[MYes]
 "Igen"
@@ -266,9 +266,9 @@
 ""
 //[MCtrlAltShiftF11]
 ""
+//End of functional keys
 //[MCtrlAltShiftF12]
 ""
-//End of functional keys
 
 //[MHistoryTitle]
 "Parancs előzmények"
@@ -632,7 +632,7 @@
 //[MViewConfigExternalCommand]
 "Nézőke &parancs:"
 //[MViewConfigInternal]
-" Belső nézőke "
+"Belső nézőke"
 //[MViewConfigSavePos]
 "&Fájlpozíció mentése"
 //[MViewConfigSaveShortPos]
@@ -673,7 +673,7 @@
 //[MEditConfigEditorCommand]
 "&Szerkesztő parancs:"
 //[MEditConfigInternal]
-" Belső szerkesztő "
+"Belső szerkesztő"
 //[MEditConfigExpandTabsTitle]
 "&Tabulátorból szóközök:"
 
@@ -788,25 +788,25 @@
 "S&zűrő"
 
 //[MCopyFile]
-"Másolása"
+"Másolása {0} {1}:"
 // need translation:
 //[MMoveFile]
-"átnevezése-mozgatása"
+"átnevezése-mozgatása {0} {1}:"
 // need translation:
 //[MLinkFile]
-"Create link to"
+"Create link to {0} {1}:"
 //[MCopyFiles]
-" {0} elem másolása{1}"
+"{0} elem másolása{1} {2}:"
 //[MMoveFiles]
-" {0} elem átnevezése-mozgatása{1}"
+"{0} elem átnevezése-mozgatása{1} {2}:"
 // need translation:
 //[MLinkFiles]
-"Create links to {0} item{1}"
+"Create links to {0} item{1} {2}:"
 //[MCMLTargetTO]
-" ide:"
+"ide"
 // need translation:
 //[MCMLTargetIN]
-" &in:"
+" &in"
 //[MCMLItems0]
 ""
 //[MCMLItemsA]
@@ -1461,10 +1461,10 @@
 ""
 //[MEditCtrlAltShiftF12]
 ""
-//[MEditF8DOS]
-"OEM"
 // End of functional keys (Editor)
 // it's a F8 another text
+//[MEditF8DOS]
+"OEM"
 
 //Single Editor: functional keys - 6 characters max, 12 keys, "OEM" is F8 dupe!
 //[MSingleEditF1]
@@ -1673,10 +1673,10 @@
 ""
 //[MSingleEditCtrlAltShiftF12]
 ""
-//[MSingleEditF8DOS]
-"OEM"
 // End of functional keys (Single Editor)
 // it's a F8 another text
+//[MSingleEditF8DOS]
+"OEM"
 
 //[MEditSaveAs]
 "Fá&jl mentése, mint:"
@@ -1804,9 +1804,9 @@
 "???"
 
 //[MListUp]
-"  Fel  "
+"Fel"
 //[MListFolder]
-" Mappa "
+"Mappa"
 //[MListSymlink]
 "SzimLnk"
 //[MListJunction]
@@ -1855,11 +1855,11 @@
 "E"
 // need translation:
 //[MListFileSize]
-" Bytes: {0}, files: {1}, folders: {2} "
+"Bytes: {0}, files: {1}, folders: {2}"
 //[MListFileSizeStatus]
-" {0} ({1}/{2}) {3} {4} "
+"{0} ({1}/{2}) {3} {4}"
 //[MListFreeSize]
-" {0} szabad bájt "
+"{0} szabad bájt"
 
 //[MDirInfoViewTitle]
 "Vizsgálat"
@@ -1916,9 +1916,9 @@
 //Viewer: functional keys, 12 keys, except F2 - 2 keys, and F8 - 2 keys
 //[MViewF1]
 "Súgó"
+// this is another text for F2
 //[MViewF2]
 "SorTör"
-// this is another text for F2
 //[MViewF3]
 "Kilép"
 //[MViewF4]
@@ -2132,9 +2132,9 @@
 //[MViewF4Dump]
 "Dump"
 // this is another text for F8
+// end of functional keys (Viewer)
 //[MViewF8DOS]
 "OEM"
-// end of functional keys (Viewer)
 
 //Single Viewer: functional keys, 12 keys, except F2 - 2 keys, and F8 - 2 keys
 //[MSingleViewF1]
@@ -2350,9 +2350,9 @@
 //[MSingleViewF4Text]
 "Szöveg"
 // this is another text for F4
+// end of functional keys (Single Viewer)
 //[MSingleViewF8DOS]
 "OEM"
-// end of functional keys (Single Viewer)
 // need translation:
 //[MViewMode]
 "View mode"
@@ -2461,14 +2461,7 @@
 "&Mégsem"
 
 //[MFindFound]
-" Fájlt: {0}, mappát: {1} "
-
-//[MFindFileFolder]
-"Mappa"
-//[MFindFileSymLink]
-"SzimLnk"
-//[MFindFileJunction]
-"Csomópt"
+"Fájlt: {0}, mappát: {1}"
 
 //[MFindFileAdvancedTitle]
 "Fájlkeresés haladó beállításai"
@@ -2530,15 +2523,15 @@
 //[MHighlightTransparentMarkChar]
 "át&látszó"
 //[MHighlightColors]
-" Fájlnév színek (feketén fekete = alapértelmezett szín) "
+"Fájlnév színek (feketén fekete = alapértelmezett szín)"
 //[MHighlightFileName1]
-"&1. Normál fájlnév                  "
+"&1. Normál fájlnév"
 //[MHighlightFileName2]
-"&3. Kijelölt fájlnév                "
+"&3. Kijelölt fájlnév"
 //[MHighlightFileName3]
-"&5. Kurzor alatti fájlnév           "
+"&5. Kurzor alatti fájlnév"
 //[MHighlightFileName4]
-"&7. Kurzor alatti kijelölt fájlnév  "
+"&7. Kurzor alatti kijelölt fájlnév"
 //[MHighlightMarking1]
 "&2. Jelölő kar.:"
 //[MHighlightMarking2]
@@ -2582,7 +2575,7 @@
 //[MInfoUserAccessLevelUnknown]
 "Unknown"
 //[MInfoDiskTitle]
-" Lemez "
+"Lemez"
 //[MInfoRemovable]
 "Kivehető"
 //[MInfoFixed]
@@ -2622,7 +2615,7 @@
 //[MInfoDiskNumber]
 "Sorozatszám"
 //[MInfoMemory]
-" Memória "
+"Memória"
 //[MInfoMemoryLoad]
 "Használt memória"
 // need translation:
@@ -2643,14 +2636,14 @@
 //[MInfoPageFileFree]
 "Free paging file"
 //[MInfoDescription]
-" Megjegyzés "
+"Megjegyzés"
 //[MInfoDizAbsent]
 "Mappa megjegyzésfájl nincs"
 //[MInfoPlugin]
-" Plugin "
+"Plugin"
 // need translation:
 //[MInfoPowerStatus]
-" Power Status"
+"Power Status"
 // need translation:
 //[MInfoPowerStatusAC]
 "AC power status"
@@ -3120,7 +3113,7 @@
 "Del,Shift+Del,F3,F4,F9"
 
 //[MSearchFileTitle]
-" Keresés "
+"Keresés"
 //[MCannotCreateListFile]
 "A listafájl nem hozható létre"
 //[MCannotCreateListTemp]
@@ -3186,24 +3179,22 @@
 "Unknown reparse point"
 //[MQuickViewNoData]
 "(adat nem elérhető)"
-//[MQuickViewContains]
-"Tartalma:"
 //[MQuickViewFolders]
-"Mappák száma     "
+"Mappák száma:"
 //[MQuickViewFiles]
-"Fájlok száma     "
+"Fájlok száma:"
 //[MQuickViewBytes]
-"Fájlok mérete    "
+"Fájlok mérete:"
 // need translation:
 //[MQuickViewAllocated]
-"Allocated size   "
+"Allocated size:"
 //[MQuickViewCluster]
-"Klaszterméret    "
+"Klaszterméret:"
 //[MQuickViewSlack]
-"Meddő terület    "
+"Meddő terület:"
 // need translation:
 //[MQuickViewMFTOverhead]
-"MFT overhead        "
+"MFT overhead:"
 
 //[MSetAttrTitle]
 "Attribútumok"
@@ -3985,7 +3976,7 @@
 //[MReadingTitleFiles]
 "Panelek frissítése"
 //[MReadingFiles]
-" {0} fájl olvasása"
+"{0} fájl olvasása"
 //[MOperationNotCompleted]
 "A művelet félbeszakadt"
 
@@ -4167,7 +4158,7 @@
 "Terminate Far"
 // need translation:
 //[MExcUnload]
-"Unload plugin "
+"Unload plugin"
 // need translation:
 //[MExcStack]
 "Stack"
@@ -5500,9 +5491,9 @@
 ""
 //[MKeyRAlt]
 ""
+// keys end
 //[MKeyAlt]
 ""
-// keys end
 
 //[MNewFileName]
 "?Új fájl?"
