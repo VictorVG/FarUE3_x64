@@ -2,7 +2,7 @@
 local nfo = Info {... or _filename,
   name          = "LuaManager macros";
   description   = "Набор макросов и пункт меню плагинов для LuaManager";
-  version       = "4.0.4"; --в формате semver: http://semver.org/lang/ru/
+  version       = "1.0.2"; --в формате semver: http://semver.org/lang/ru/
   author        = "IgorZ";
   url           = "http://forum.farmanager.com/viewtopic.php?t=7936";
   id            = "2062CE37-181E-4721-95A4-ED1019E61586";

@@ -1,6 +1,6 @@
 ﻿.Language=Spanish,Spanish (Español)
 
-//Version: 3.0 build 5199
+//Version: 3.0 build 5202
 
 //[MYes]
 "Si"
@@ -318,21 +318,16 @@
 "para lectura"
 //[MConfigElevationUsePrivileges]
 "usar privilegios adicionales"
-// need translation:
 //[MConfigSortingCollation]
-"Sorting collation:"
-// need translation:
+"Ordenamiento de colación:"
 //[MConfigSortingOrdinal]
 "ordinal"
-// need translation:
 //[MConfigSortingInvariant]
-"invariant"
-// need translation:
+"invariante"
 //[MConfigSortingLinguistic]
-"linguistic"
-// need translation:
+"lingüístico"
 //[MConfigSortingDigitsAsNumbers]
-"Treat digits as numbers"
+"Tratar dígitos como números"
 //[MConfigSortingCase]
 "Sensible min./ma&y."
 //[MConfigAutoSave]
@@ -4940,25 +4935,20 @@
 "editado"
 //[MObjectLockedReasonOpened]
 "abierto"
-// need translation:
 //[MObjectLockedAndMore]
-"and {0} more processes."
+"y {0} procesos mas."
 //[MObjectLockedSwitchTo]
 "Cambiar a"
 //[MObjectLockedClose]
 "Cerrar archivo"
-// need translation:
 //[MObjectLockedReasonSessionMismatch]
-"One or more processes are running in another Terminal Services session."
-// need translation:
+"Uno o más procesos están corriendo en otra sesión de Servicios de Terminal."
 //[MObjectLockedReasonCriticalProcess]
-"One or more processes are critical processes."
-// need translation:
+"Uno o más procesos son procesos críticos."
 //[MObjectLockedReasonCriticalService]
-"One or more services are critical services."
-// need translation:
+"Uno o más servicios son servicios críticos."
 //[MObjectLockedReasonDetectedSelf]
-"The file is opened by the current process."
+"El archivo está abierto por el proceso actual."
 //[MProblemDb]
 "Problema de configuración DB"
 //[MShowConfigFolders]

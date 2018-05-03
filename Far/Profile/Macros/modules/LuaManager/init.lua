@@ -2,48 +2,21 @@
 local nfo = Info {
   name          = "LuaManager";
   description   = "Менеджер Lua/Moon-скриптов для Fara";
-  version       = "4.0.4"; --в формате semver: http://semver.org/lang/ru/
+  version       = "4.0.5"; --в формате semver: http://semver.org/lang/ru/
   author        = "IgorZ";
   url           = "http://forum.farmanager.com/viewtopic.php?t=7936";
   id            = "180EE412-CBDE-40C7-9AE6-37FC64673CBD";
   minfarversion = {3,0,0,4000,0}; --при несоответствии скрипт завершится
-  files         = [[.\English.hlf;.\Russian.hlf;.\English.lng;.\Russian.lng]]; --вспомогательные файлы скрипта
+  files         = [[.\English.hlf;.\Russian.hlf;.\English.lng;.\Russian.lng;.\templates]]; --вспомогательные файлы скрипта
   helptxt       = [[
-Управление:
-  Esc                       - Выход
-  Enter                     - Выполнить макрос, действующий в области, из которой запущен LuaManager
-  F1                        - Показать справку
-  F3                        - Показать информацию о макросе/обработчике событий/модуле
-  AltF3                     - Вызов LuaExplorer (если есть) для скрипта
-  F4/AltF4CtrlF4            - Редактировать скрипт под курсором в диалоге/в модальном редакторе Farа/в немодальном редакторе Farа
-  Ins                       - Создать новый новый скрипт
-  Del                       - Удалить скрипт под курсором
-  CtrlPgDn                  - Перейти в панели на файл, содержащий скрипт под курсором
-  CtrlR                     - Переназначить клавиши для макроса (если есть модуль rebind)
-  CtrlD                     - Отключить/включить макрос (если есть модуль rebind)
-  F9                        - Настройка параметров данного скрипта
-               Смена режимов до закрытия скрипта:
-  ShiftM/E/O/I/P            - Настроить сортировку макросов/обработчиков событий/модулей/пунктов меню плагинов/префиксов командной строки
-  CtrlK/CtrlShiftK/CtrlAltK - Установить фильтр/произвольный фильтр/снять фильтр для клавиш макросов
-  CtrlM/CtrlAltM            - Установить/сбросить фильтр для областей макросов
-  CtrlE/CtrlAltE            - Установить/сбросить фильтр для групп обработчиков событий
-  CtrlO/CtrlAltO            - Установить/сбросить фильтр для путей поиска модулей
-  CtrlF/CtrlShiftF/CtrlAltF - Установить фильтр для файлов в файл скрипта под курсором/произвольный фильтр/снять фильтр
-  CtrlS                     - Установить фильтр на все файлы, входящие в тот же пакет скриптов
-  AltM/K/E/O/I/P/H          - Скрывать/показывать стационарные макросы/клавиатурные макросы/обработчики событий/модули/
-                              пункты меню плагинов/префиксы командной строки/макросы для других областей
-  AltF                      - скрыть/показать имя файла без пути
-  CtrlL                     - Сбросить все настройки на сохранённые
-  CtrlA                     - Показать всё
-  AltL                      - загрузить комбинацию фильтров, активных на момент закрытия LuaManager в прошлый раз
-
 Вызов:
   - require"LuaManager"([<таблица параметров>]) или require"LuaManager".Main([<таблица параметров>]). Главное меню. Поля таблицы:
-    - MaSort,EvSort,MoSort,MISort,PrSort - сортировка макросов, обработчиков событий, модулей, пунктов меню плагинов и префиксов командной строки;
+    - MaSort,EvSort,MoSort,MISort,PrSort,PMSort - сортировка макросов, обработчиков событий, модулей, пунктов меню плагинов,
+        префиксов командной строки и панельных модулей;
         значение - строка букв, можно посмотреть в языковых файлах в cbXXXSortVariants; заглавная/строчная буква - сортировка по возрастанию/убыванию.
     - AFilter,KFilter,GFilter,PFilter,FFilter,SFilter - фильтр областей, клавиш, групп, путей поиска модулей, файлов со скриптами, пакетов скриптов.
-    - MaShow,KMShow,EvShow,MoShow,MIShow,PrShow,AMShow - показывать стационарные/клавиатурные макросы/обработчики событий/модули/
-        пункты меню плагинов/префиксы командной строки/макросы из неактивных областей.
+    - MaShow,KMShow,EvShow,MoShow,MIShow,PrShow,PMShow,AMShow - показывать стационарные/клавиатурные макросы/обработчики событий/модули/
+        пункты меню плагинов/префиксы командной строки/панельные модули/макросы из неактивных областей.
     - ResetFilters -- если истина, то перед применением параметров включить показ всего и сбросить все фильтры.
     Значения пропущенных полей берутся из конфигурации скрипта.
   - require"LuaManager".Config(). Настройка параметров.
@@ -164,6 +137,11 @@ history         = [[
 2017/11/07 v4.0.3 - При вызове модуля можно указывать поле 'SFilter="<Имя скрипта>"' для фильтрации по всем файлам, входящим в этот пакет скриптов.
                     При просмотре макроса многострочные описания выводятся в несколько строк. Изменения и дополнения в справке. Разные правки.
 2017/11/21 v4.0.4 - Опциональное поле имени файла без пути. Доработано сохранение позиции в главном меню.
+2018/05/02 v5.0.0 - Добавлена поддержка PanelModule. Шаблоны для диалогов редактирования вынесены в отдельный файл "templates".
+                    При чтении параметра из БД и записи в БД производится автозамена переменных окружения FARPROFILE, FARLOCALPROFILE и FARHOME.
+                    Более корректное определение номеров строк в .moon файлах. Доработана индикация фильтрации в главном меню.
+                    Пункты меню плагинов фильтруются по областям аналогично макросам. В целях единообразия показ/скрытие макросов
+                    и пунктов меню плагинов не из текущей области перенесён с CtrlH на AltH. Тотальный рефакторинг.
 ]];
 }
 if not nfo then return nfo end
@@ -172,12 +150,13 @@ if not nfo then return nfo end
 -- -
 local F,Author,ConfPart = far.Flags,"IgorZ","LuaManager"
 local Guids = {
-  LuaMacro = win.Uuid("4EBBEFC8-2084-4B7F-94C0-692CE136894D"); -- guid LuaMacro
+  LuaMacro = win.Uuid("4EBBEFC8-2084-4B7F-94C0-692CE136894D"), -- guid LuaMacro
   Sort = win.Uuid("2F4306C4-E0FA-487C-BB81-19D579CDF757"), -- уникальный guid диалога сортировки
   MacroEdit = win.Uuid("9BED5980-6563-4DDA-B5CA-314F93E4EB1B"), -- уникальный guid диалога редактирования макроса
   KeyMacroEdit = win.Uuid("E575E6A9-89DA-4540-B929-223AF97732BD"), -- уникальный guid диалога редактирования клавиатурного макроса
   EventEdit = win.Uuid("56510B51-CE7C-4BE9-A4C8-5D905931D099"), -- уникальный guid для диалога редактирования обработчика событий
   PrefixEdit = win.Uuid("E857EB9E-6B95-4998-A933-519C1843A540"), -- уникальный guid диалога редактирования префикса командной строки
+  PanelEdit = win.Uuid("0D6A7B6C-0C3C-42A0-8EED-F189CE12BAB4"), -- уникальный guid диалога редактирования панельного модуля
   Config = win.Uuid("6C72E763-62EF-47C9-A37A-94CEC63853AE"), -- уникальный guid диалога конфигурации
   Rebind = win.Uuid("FA0EA667-6C9E-4F41-92E9-E55C96B03E16"), -- уникальный guid диалога переназначения клавиш
   CreateNew = win.Uuid("8ADA595D-A1CB-497B-B40E-BD0CB5EB956B"), -- уникальный guid диалога вставки нового скрипта
@@ -193,42 +172,41 @@ local Guids = {
   ReloadMacro = "AF149264-4BED-492C-8093-473796CAC60C", -- уникальный guid макроса перезагрузки скриптов
   PlugMenu = "151E6FE6-DDB2-4CBD-B2C2-21A8D0E135BD", -- уникальный guid меню плагинов
 }
-local LMBuild = far.GetPluginInformation(far.FindPlugin(F.PFM_GUID,Guids.LuaMacro)).GInfo.Version[4] -- запомним версию LuaMacro
-local Areas = LMBuild>=626 and {[0]="Other","Shell","Viewer","Editor","Dialog","Search","Disks","MainMenu","Menu","Help",
-  "Info","QView","Tree","FindFolder","UserMenu","ShellAutoCompletion","DialogAutoCompletion","Grabber","Desktop"--[[,"HMenu"--]],common="Common"}
-                            or {[0]="Other","Shell","Viewer","Editor","Dialog","Search","Disks","MainMenu","Menu","Help",
-  "Info","QView","Tree","FindFolder","UserMenu","ShellAutoCompletion","DialogAutoCompletion",common="Common"}
+local LMBuild = far.GetPluginInformation(far.FindPlugin(F.PFM_GUID,Guids.LuaMacro)).GInfo.Version[4] -- версия LuaMacro
+local Path = debug.getinfo(function()end).source:match("^@?([^@].*\\)[^\\]*$") -- путь к модулю
+local Areas = {[0]="Other","Shell","Viewer","Editor","Dialog","Search","Disks","MainMenu","Menu","Help","Info","QView","Tree","FindFolder","UserMenu",
+        "ShellAutoCompletion","DialogAutoCompletion",LMBuild>=626 and"Grabber"or nil,LMBuild>=626 and"Desktop"or nil--[[,"HMenu"--]],common="Common"}
 local AreasCount = #Areas+2 -- Areas[0] и Areas.common не считает
-local GP,LP = win.GetEnv("FARPROFILE"),win.GetEnv("FARLOCALPROFILE") -- профиля
+local FH,GP,LP,MM = win.GetEnv("FARHOME"),win.GetEnv("FARPROFILE"),win.GetEnv("FARLOCALPROFILE"),[[\Macros\modules\]] -- профиля, путь к модулям
 local OffExt,DSB,NoKey,Noid,RBN,CNT,UP,LO = ".Switched_off","×","Ø","<no id>","≈","»","↑","↓" -- расширение отключения, разные признаки
 local Id = LMBuild>=579 and "index" or "id" -- в этой версии id переименован в index и добавлен id как uid
+local FuncNames = {"Analyse","ClosePanel","Compare","DeleteFiles","GetFiles","GetFindData","GetOpenPanelInfo","MakeDirectory","Open",
+                   "ProcessHostFile","ProcessPanelEvent","ProcessPanelInput","PutFiles","SetDirectory","SetFindList"}
+-- Шаблоны для диалогов редактирования
+local Templates = (loadfile(Path.."templates") or function() return setmetatable({},
+  {__index=function(t,i) for _,fn in ipairs(FuncNames) do if i==fn then i = "!" break end end return i:len()==1 and "" or t end}) end)()
 -- Настройки по умолчанию
-local TableRecursion = true -- при просмотре переменных разворачивать таблицы
---local DefaultProfile,UsedProfile = F.PSL_LOCAL -- место хранения настроек: локальные
-local DefaultProfile,UsedProfile = F.PSL_ROAMING -- место хранения настроек по умолчанию: глобальные
---
-local DefMaxKeyWidth,MaxKeyWidth = 0 -- <0 - клавиши выводятся полностью, иначе обрезаются до указанной ширины
-local DefMaxFileWidth,MaxFileWidth = 0 -- ~=0 - имена файлов выводятся, иначе нет
-local DefMacroMaxDescWidth,MacroMaxDescWidth = 0 -- <0 - описания выводятся полностью, иначе обрезаются до указанной ширины
--- описания обработчиков событий корректируются автоматически
-local DefSO,SO = {M="OCAKD",E="GD",O="TMN",I="A",P="P"} -- параметры сортировки
-local DefFilter,Filter,SavedFilter,LastFilter = {K="",G="DialogEvent ViewerEvent EditorEvent EditorInput ConsoleInput ExitFAR",A="",P='"' -- фильтры
-  ..GP..[[\Macros\modules\?.lua" "]]..GP..[[\Macros\modules\?\init.lua" "]]..GP..[[\Macros\modules\?.moon" "]]..GP..[[\Macros\modules\?\init.moon"]]}
-for _,a in pairs(Areas) do DefFilter.A = (DefFilter.A.." "..a):gsub("^ ","") end
-local DefShow,Show = {M=1,K=1,E=1,O=1,I=1,P=1,N=1} -- параметры показа
-local DefKey,Key = {Manager="AltShiftF11",InsScript="LCtrlF11",InsMacro="RCtrlF11",InsEvent="RCtrlF11", -- Настройки клавиш
-  InsMI="RCtrlF11",InsPrefix="RCtrlF11",EditScript="CtrlF12",InsUid="RCtrlU",Reload="CtrlF9"}
--- Языковые настройки
-local Path,FarLang,L = debug.getinfo(function()end).source:match("^@?([^@].*\\)[^\\]*$") -- путь к модулю, текущий язык, языковые данные
+local Def = {
+  TableRecursion = true, -- при просмотре переменных разворачивать таблицы
+  Profile = F.PSL_ROAMING--[[F.PSL_LOCAL--]], -- место хранения настроек по умолчанию: глобальные/локальные
+  MaxKeyWidth=0,MaxFileWidth=0,MacroMaxDescWidth=0, -- клавиши выводятся полностью; имена файлов не выводятся; описания выводятся полностью
+  MacroSortingOrder="OCAKD",EventSortingOrder="GD",ModuleSortingOrder="TMN",MISortingOrder="A",PrefixSortingOrder="P",PanelSortingOrder="AT",
+  AreaFilter="",KeyFilter="",GroupFilter="DialogEvent ViewerEvent EditorEvent EditorInput ConsoleInput ExitFAR", -- фильтры
+  PathFilter='"'..GP..MM..'?.lua" "'..GP..MM..'?\\init.lua" "'..GP..MM..'?.moon" "'..GP..MM..'?\\init.moon"',
+  ShowMacros=1,ShowKeyMacros=1,ShowEvents=1,ShowModules=1,ShowMenuItems=1,ShowPrefixes=1,ShowPanels=1,ShowNonActiveMacros=1, -- что показывать
+  ManagerKey="AltShiftF11",ReloadKey="CtrlF9",InsertUidKey="RCtrlU",InsertScriptKey="LCtrlF11",EditScriptKey="CtrlF12", -- клавиши вызова макросов
+  InsertMacroKey="RCtrlF11",InsertEventKey="RCtrlF11",InsertMIKey="RCtrlF11",InsertPrefixKey="RCtrlF11",InsertPanelKey="RCtrlF11",
+}
+for _,a in pairs(Areas) do Def.AreaFilter = (Def.AreaFilter.." "..a):gsub("^ ","") end
+-- Настройки
+local S,L,LastFilter = {},{} -- конфигурация, языковые данные, последний применённый фильтр
 -- доставалка префиксов, пунктов меню плагинов и редактора несохранённых клавиатурок
-local GetMenuItems,GetPrefixes,EditUnsavedMacro do
+local GetMenuItems,GetPrefixes,GetPanelModules,EditUnsavedMacro do
   local utils
-  for i=1,debug.getinfo(eval).nups do
-    local k,v = debug.getupvalue(eval,i)
-    if k=="utils" then utils = v break end
-  end
+  for i=1,debug.getinfo(eval).nups do local k,v = debug.getupvalue(eval,i) if k=="utils" then utils = v break end end
   GetMenuItems,GetPrefixes = assert(utils.GetMenuItems),assert(utils.GetPrefixes)
   if LMBuild>=590 then EditUnsavedMacro = assert(utils.EditUnsavedMacro) end
+  if LMBuild>=647--[[638--]] then GetPanelModules = assert(utils.GetPanelModules) end
 end
 -- +
 --[==[Подключаемые модули]==]
@@ -236,126 +214,122 @@ end
 local ok_le,le = pcall(require,"le") le = ok_le and le -- LuaExplorer
 local rb = package.loaded.rebind -- Rebind, только если загружен из _macroinit.lua
 local rs = package.loaded.regscript -- Regscript, только если загружен из _macroinit.lua
-
 -- +
 --[==[Вспомогательные функции]==]
 -- -
-local LoadLang,LoadSettings,SaveSettings,GenUid,MacroKey,MoonLine,PrepareFiles,SetFilter,SortingOrder,FillUserControl,DoIt,GetType,ShowHelp,
-      Read,Write,Replace
---
-function LoadLang() --[[загрузить настройки языка]]
-local FL,dummy = win.GetEnv("FARLANG"),function() far.Message("Cannot find languages files",nfo.name,";Ok","w") return {} end -- язык, пустая функция
-if FarLang~=FL then FarLang,L = FL,(loadfile(Path..FL..".lng") or loadfile(Path.."English.lng") or dummy)(LMBuild) end -- текущий другой - обновим
-return L
+local LoadLang,LoadSettings,SaveSettings,GenUid,MacroKey,MoonLine,PrepareFiles,SetFilter,SortingOrder,FillUserControl,EditFun,CreateAsText,DoIt,
+      GetType,Uid,ShowHelp,Read,Write,Replace,ErrMess,FMatch
+-- +
+--[==[Основные функции]==]
+-- -
+local ShowInfo,OpenMacroInDialog,OpenInternalMacroInDialog,OpenEventInDialog,OpenMenuItemInDialog,OpenPrefixInDialog,OpenPanelModuleInDialog,
+  OpenInEditor,CreateNew,DeleteCurrent,Rebind,Disable,Config
+-- +
+--[==[Главные функции]==]
+-- -
+local InsertScriptIntoEditor,EditScriptUnderCursor,Reload,ManageMacrosEvents
+--------------------------------------------------------------------------------
+function LoadLang(Lng--[[,Path,LMBuild--]]) --[[загрузить настройки языка]]
+local FL,dummy = Far.GetConfig("Language.Main"),function() return {"Cannot find languages files"} end -- язык, пустая функция
+return Lng.Lang==FL and Lng or (loadfile(Path..FL..".lng") or loadfile(Path.."English.lng") or dummy)(LMBuild) -- обновим, если язык другой
 end
 --
-function LoadSettings(defaults) --[[загрузить настройки из БД]]
-local obj,key
-local function L1(n,d) return not defaults and obj:Get(key or -1,n,({string=F.FST_STRING,number=F.FST_QWORD})[type(d)]) or d end
+function LoadSettings(Df,ForceDef) --[[загрузить настройки из БД]]
+local Cfg,obj,key,L1
+function L1(n) return not ForceDef and obj:Get(key or -1,n,({string=F.FST_STRING,number=F.FST_QWORD})[type(Df[n])]) or Df[n] end
 --
-if LoadLang() then -- загрузим язык
-  L.PathItems = {type = "Module"} -- запишем куда надо все пути поиска модулей
-  for v in (package.path..";"..package.moonpath..";"..package.cpath..";"):gmatch("(.-);") do -- переберём все возможные места расположения
-    L.PathItems[#L.PathItems+1] = {text = v} -- допишем очередное
-  end
+L = LoadLang(L) -- загрузим язык
+L.PathItems = {type = "Module"} -- запишем куда надо все пути поиска модулей
+for v in (package.path..";"..package.moonpath..";"..package.cpath..";"):gmatch("(.-);") do -- переберём все возможные места расположения
+  L.PathItems[#L.PathItems+1] = {text = v} -- допишем очередное
 end
-obj = far.CreateSettings(nil,DefaultProfile) -- откроем предпочтительные настройки
+obj = far.CreateSettings(nil,Def.Profile) -- откроем предпочтительные настройки
 key = obj:OpenSubkey(obj:OpenSubkey(0,Author) or 0,ConfPart) -- есть раздел?
-UsedProfile = DefaultProfile -- запомним профиль
 if not key then -- настроек нет?
-  obj:Free() obj = far.CreateSettings(nil,DefaultProfile==F.PSL_LOCAL and F.PSL_ROAMING or F.PSL_LOCAL) -- откроем другие настройки
-  key = obj:OpenSubkey(obj:OpenSubkey(0,Author) or 0,ConfPart) -- есть раздел?
-  if key then -- из другого профиля открылись?
-    UsedProfile = DefaultProfile==F.PSL_LOCAL and F.PSL_ROAMING or F.PSL_LOCAL -- запомним профиль
-  end
+  obj:Free() obj = far.CreateSettings(nil,Def.Profile==F.PSL_LOCAL and F.PSL_ROAMING or F.PSL_LOCAL) -- откроем другие настройки
+  key = obj:OpenSubkey(obj:OpenSubkey(0,Author) or 0,ConfPart) -- есть раздел? если нет, неважно, какой открыт, всё равно брать умолчания
+  Cfg = key and (Def.Profile==F.PSL_LOCAL and F.PSL_ROAMING or F.PSL_LOCAL) -- временно запомним профиль, если открылся альтернативный
 end
-MaxKeyWidth,MaxFileWidth,MacroMaxDescWidth =
-  L1("MaxKeyWidth",DefMaxKeyWidth),L1("MaxFileWidth",DefMaxFileWidth),L1("MacroMaxDescWidth",DefMacroMaxDescWidth) -- считаем настройки
-SO = {M=L1("MacroSortingOrder",DefSO.M),E=L1("EventSortingOrder",DefSO.E),
-  O=L1("ModuleSortingOrder",DefSO.O),I=L1("MISortingOrder",DefSO.I),P=L1("PrefixSortingOrder",DefSO.P)}
-Filter = {K=L1("KeyFilter",DefFilter.K),A=L1("AreaFilter",DefFilter.A),G=L1("GroupFilter",DefFilter.G),P=L1("PathFilter",DefFilter.P),F="*"}
-Show = {M=L1("ShowMacros",DefShow.M)~=0,K=L1("ShowKeyMacros",DefShow.K)~=0,E=L1("ShowEvents",DefShow.E)~=0,O=L1("ShowModules",DefShow.O)~=0,
-  I=L1("ShowMenuItems",DefShow.I)~=0,P=L1("ShowPrefixes",DefShow.P)~=0,N=L1("ShowNonActiveMacros",DefShow.N)~=0}
-Key = {Manager=L1("ManagerKey",DefKey.Manager),Reload=L1("ReloadKey",DefKey.Reload),InsUid=L1("InsertUidKey",DefKey.InsUid),
-  InsScript=L1("InsertScriptKey",DefKey.InsScript),InsMacro=L1("InsertMacroKey",DefKey.InsMacro),
-  InsEvent=L1("InsertEventKey",DefKey.InsEvent),InsMI=L1("InsertMIKey",DefKey.InsMI),
-  InsPrefix=L1("InsertPrefixKey",DefKey.InsPrefix),EditScript=L1("EditScriptKey",DefKey.EditScript)}
+Cfg = { Profile = Cfg or Def.Profile, -- запомним профиль
+  MaxKeyWidth = L1("MaxKeyWidth"),MaxFileWidth = L1("MaxFileWidth"),MaxDescWidth = L1("MacroMaxDescWidth"), -- считаем настройки
+  SO = {M=L1("MacroSortingOrder"),E=L1("EventSortingOrder"),O=L1("ModuleSortingOrder"),I=L1("MISortingOrder"),P=L1("PrefixSortingOrder"),
+        N=L1("PanelSortingOrder")},
+  Filter = {K=L1("KeyFilter"),A=L1("AreaFilter"),G=L1("GroupFilter"),P=L1("PathFilter"):gsub("%%(.-)%%",win.GetEnv),F="*"},
+  Show = {M=L1("ShowMacros")~=0,K=L1("ShowKeyMacros")~=0,E=L1("ShowEvents")~=0,O=L1("ShowModules")~=0,I=L1("ShowMenuItems")~=0,
+          P=L1("ShowPrefixes")~=0,N=L1("ShowPanels")~=0,H=L1("ShowNonActiveMacros")~=0},
+  Key = {Manager=L1("ManagerKey"),Reload=L1("ReloadKey"),InsUid=L1("InsertUidKey"),InsScript=L1("InsertScriptKey"),EditScript=L1("EditScriptKey"),
+  InsMacro=L1("InsertMacroKey"),InsEvent=L1("InsertEventKey"),InsMI=L1("InsertMIKey"),InsPrefix=L1("InsertPrefixKey"),InsPanel=L1("InsertPanelKey")}}
 far.FreeSettings() -- приберёмся
-SavedFilter = {A=Filter.A,K=Filter.K,G=Filter.G,P=Filter.P} -- запомним для сбрасывания к ним
+Cfg.SavedFilter = {A=Cfg.Filter.A,K=Cfg.Filter.K,G=Cfg.Filter.G,P=Cfg.Filter.P}
+return Cfg
 end
 --
-function SaveSettings() --[[сохранить настройки в БД]]
-local obj,key
-local function S1(n,v) -- сохранить одну настройку
-if type(v)=="boolean" then v = v and 1 or 0 end -- заменим true/false на 1/0
-local t = ({string=F.FST_STRING,number=F.FST_QWORD})[type(v)] -- тип параметра в БД
-if obj:Get(key,n,t)~=v then obj:Set(key,n,t,v) end -- изменился (или не было)? запишем
-end
+function SaveSettings(Cfg) --[[сохранить настройки в БД]]
+local obj,key,S1
+function S1(n,v) v = v==true and 1 or v==false and 0 or v local t = type(v)=="string" and F.FST_STRING or F.FST_QWORD
+                 if obj:Get(key,n,t)~=v then obj:Set(key,n,t,v) end end
 --
-if UsedProfile==F.PSL_LOCAL then win.CreateDir(LP.."\\PluginsData") end -- создадим папку для локальных настроек (если надо)
-obj = far.CreateSettings(nil,UsedProfile) -- откроем ранее прочитанные или предпочтительные настройки
+if Cfg.Profile==F.PSL_LOCAL then win.CreateDir(LP.."\\PluginsData") end -- создадим папку для локальных настроек (если надо)
+obj = far.CreateSettings(nil,Cfg.Profile) -- откроем ранее прочитанные или предпочтительные настройки
 key = obj:CreateSubkey(obj:CreateSubkey(0,Author),ConfPart) -- откроем/создадим раздел
-S1("MaxKeyWidth",MaxKeyWidth) S1("MaxFileWidth",MaxFileWidth) S1("MacroMaxDescWidth",MacroMaxDescWidth)
-S1("MacroSortingOrder",SO.M) S1("EventSortingOrder",SO.E) S1("ModuleSortingOrder",SO.O) S1("MISortingOrder",SO.I) S1("PrefixSortingOrder",SO.P)
-S1("KeyFilter",Filter.K) S1("AreaFilter",Filter.A) S1("GroupFilter",Filter.G) S1("PathFilter",Filter.P)
-S1("ShowMacros",Show.M) S1("ShowKeyMacros",Show.K) S1("ShowEvents",Show.E) S1("ShowModules",Show.O)
-S1("ShowMenuItems",Show.I) S1("ShowPrefixes",Show.P) S1("ShowNonActiveMacros",Show.N)
-S1("ManagerKey",Key.Manager) S1("InsertScriptKey",Key.InsScript) S1("InsertMacroKey",Key.InsMacro)
-S1("InsertEventKey",Key.InsEvent) S1("InsertMIKey",Key.InsMI) S1("InsertPrefixKey",Key.InsPrefix)
-S1("EditScriptKey",Key.EditScript) S1("InsertUidKey",Key.InsUid) S1("ReloadKey",Key.Reload)
+S1("MaxKeyWidth",Cfg.MaxKeyWidth) S1("MaxFileWidth",Cfg.MaxFileWidth) S1("MacroMaxDescWidth",Cfg.MaxDescWidth) S1("MacroSortingOrder",Cfg.SO.M)
+S1("EventSortingOrder",Cfg.SO.E) S1("ModuleSortingOrder",Cfg.SO.O) S1("MISortingOrder",Cfg.SO.I) S1("PrefixSortingOrder",Cfg.SO.P)
+S1("PanelSortingOrder",Cfg.SO.N) S1("KeyFilter",Cfg.Filter.K) S1("AreaFilter",Cfg.Filter.A) S1("GroupFilter",Cfg.Filter.G)
+S1("PathFilter",Cfg.Filter.P:gsub(GP,"%%FarProfile%%"):gsub(LP,"%%FarLocalProfile%%"):gsub(FH,"%%FarHome%%"))
+S1("ShowMacros",Cfg.Show.M) S1("ShowKeyMacros",Cfg.Show.K) S1("ShowEvents",Cfg.Show.E) S1("ShowModules",Cfg.Show.O)
+S1("ShowMenuItems",Cfg.Show.I) S1("ShowPrefixes",Cfg.Show.P) S1("ShowPanels",Cfg.Show.N) S1("ShowNonActiveMacros",Cfg.Show.H)
+S1("ManagerKey",Cfg.Key.Manager) S1("InsertScriptKey",Cfg.Key.InsScript) S1("InsertMacroKey",Cfg.Key.InsMacro)
+S1("InsertEventKey",Cfg.Key.InsEvent) S1("InsertMIKey",Cfg.Key.InsMI) S1("InsertPrefixKey",Cfg.Key.InsPrefix) S1("InsertPanelKey",Cfg.Key.InsPanel)
+S1("EditScriptKey",Cfg.Key.EditScript) S1("InsertUidKey",Cfg.Key.InsUid) S1("ReloadKey",Cfg.Key.Reload)
 far.FreeSettings() -- приберёмся
-SavedFilter = {A=Filter.A,K=Filter.K,G=Filter.G,P=Filter.P} -- запомним для сбрасывания к ним
+Cfg.SavedFilter = {A=Cfg.Filter.A,K=Cfg.Filter.K,G=Cfg.Filter.G,P=Cfg.Filter.P} -- запомним для сбрасывания к ним
 end
 --
 function GenUid() return win.Uuid(win.Uuid()):upper() end --[[генерировать новый uid]]
 --
 function MacroKey(hDlg) --[[ввод клавиши в диалоге]]
-far.Message(L.PressKey,"","") far.Text() local VK=mf.waitkey()
-if hDlg then hDlg:send(F.DM_REDRAW) end
-return VK
+far.Message(L.PressKey,"","") far.Text() local VK=mf.waitkey() if hDlg then hDlg:send(F.DM_REDRAW) end return VK
 end
 --
 local errors,tables,cache
-function MoonLine(file,line) --[[получим номер строки в исходном .moon файле!!!работает плохо!!!]]
+function MoonLine(file,line) --[[получим номер строки в исходном .moon файле!!!работает плохо (нужна поправка на строки-комментарии)!!!]]
 if not errors then errors = require"moonscript.errors" end
 if not tables then tables = require"moonscript.line_tables" end
 if not cache then cache = {} end
 return errors.reverse_line_number(file,tables["@"..file],line,cache)
 end
 --
-function PrepareFiles(item) --[[извлечь condition, action, Macro/Event body;]]
+function PrepareFiles(item) --[[извлечь condition/text, action, тело скрипта]]
 -- на выходе таблица
--- tname,tbody,tfile - имя и тело функции text, файл, её содержащий
--- cname,cbody,cfile - имя и тело функции condition, файл, её содержащий
--- aname,abody,afile - имя и тело функции action, файл, её содержащий
+-- t.name,t.body,t.file - имя и тело функции text, файл, её содержащий
+-- c.name,c.body,c.file - имя и тело функции condition, файл, её содержащий
+-- a.name,a.body,a.file - имя и тело функции action, файл, её содержащий
+-- X.name,X.body,X.file - имя и тело функции, файл, её содержащий; имена функций - все по списку
 -- stype,smoon,spfx,sbody,sstartx,sstarty - вид скрипта, язык-moon?, отступ от левого края, тело самого скрипта, координаты его начала в файле
 --
-local res,text,prefix = {}
+local function Prepare1(param) -- обработать одну функцию; на выходе имя функции, её тело, имя файла
 --
-local function Prepare1(fun,ftype) -- обработать одну функцию; на выходе имя функции, её тело, имя файла
---
-local d,l1,l2,file,fname,fname2,fbody,fmoon
+local d,l1,l2,file,fname,fname2,fbody,fmoon,text,prefix
 --
 local function SearchRename(fnname) -- поищем переприсвоение имени функции
 local name = text:match("[^%a_%.]([%a_%.][%w_%.]*)%s*=%s*"..fnname.."[^%w_%.]") -- ищем конструкцию 'что-то=fnname'
-if name then return SearchRename(name) end -- нашли - поищем новую
-return fname -- ура, нашли
+return name and SearchRename(name) or fname -- ура, нашли
 end
 --
-if not fun then return "" end -- нет такой функции - вернём пустую строку в качестве её тела
-d = debug.getinfo(fun) l1,l2,file = d.linedefined,d.lastlinedefined,d.source -- начало, конец, содержащий файл
-if file:sub(1,1)~="@" then return file else file = file:sub(2) end -- если это не файл, вернём, что сможем, иначе уберём ведущий "@" у имени файла
-if not win.GetFileAttr(file) then return nil end -- файла нет? Вернём ничего
+if not item[param] then return {body=""} end -- нет такой функции - вернём пустую строку в качестве её тела
+d = debug.getinfo(item[param]) l1,l2,file = d.linedefined,d.lastlinedefined,d.source -- начало, конец, содержащий файл
+if file:sub(1,1)~="@" then return {body=file} else file = file:sub(2) end -- если это не файл, вернём, что есть, иначе уберём "@" перед именем файла
+if not win.GetFileAttr(file) then return {} end -- файла нет? Вернём ничего
 fmoon = file:lower():match("%.moon$") -- признак языка файла функции
 if fmoon then l1 = MoonLine(file,l1)+1 end --!!!плохо определяется строка!!!
 repeat -- если Macro/Event и { на разных строках, то выходит ошибка, поэтому покрутим
-  text = Read(file):gsub(".-[\r\n]","",l1-1).."\n"-- достанем текст функции с остатком файла
-  if text=="\n" then return nil end -- не смогли - уйдём, как будто и нет
+  text = regex.gsub("--\n"..Read(file).."\n",fmoon and "/(.*?^(?!--).*?\n)/sm" or ".*?\n","",l1) -- достанем текст функции с остатком файла
+  if text=="\n" then return {} end -- не смогли - уйдём, как будто и нет
   if not fmoon then text = text:match((".-[\r\n]"):rep(l2-l1+1)) or "" end -- для lua достанем строки с текстом функции
   fname = text:match(fmoon and "^[ \t]*([%a_%.][%w_%.]*)%s*=[^\r\n]*%->" or "function%s*([%a_%.][%w_%.]*)%s*%b()") -- выдернем имя функции
   if fmoon then -- .moon?
-    prefix,fbody,text = text:match("^(%s*)"..(fname and "("..fname.."%s*=" or ftype.."%s*:%s*(").."[^\n]*%->[^\n]*\n)(.*)") -- отступ, начало, остаток
-    if fbody then for s in text:gmatch(".-\n") do s = s:match(prefix.."%s+.-\n") if s then fbody = fbody..s else break end end end -- остаток функции
+    prefix,fbody,text = text:match("^(%s*)"..(fname and "("..fname.."%s*=" or param.."%s*:%s*(").."[^\n]*%->[^\n]*\n)(.*)") -- отступ, начало, остаток
+    if fbody then fbody = fbody..regex.match(text,"/(.*?)^(?!"..prefix.."\\s)\\s*(?!--)/sm") end -- остаток функции
   else -- .lua
     fbody = text:match(fname and ".-(function.-"..fname.."%s*%b().*end).-" or ".-(function%s*%b().*end).-") -- получим тело функции
   end
@@ -366,30 +340,34 @@ if fname then -- функция определена внутри макроса
   fname2 = SearchRename(fname) -- прокрутим имя функции на переприсвоение
   if item.FileName then
     text,fmoon = Read(item.FileName),item.FileName:lower():match("%.moon$") -- получим всё содержимое файла со скриптом, тип скрипта
-    if text:find(ftype..(fmoon and "%s*:%s*" or "%s*=%s*")..fname2) then fname = fname2 end -- вызывается под вторым именем? Ладно.
+    if text:find(param..(fmoon and "%s*:%s*" or "%s*=%s*")..fname2) then fname = fname2 end -- вызывается под вторым именем? Ладно.
   end
 end
-return fbody,fname,file -- нашли вызов данной функции в Macro/Event? Вернём
+return {body=fbody,name=fname,file=file} -- нашли вызов данной функции в Macro/Event? Вернём
 end
 -- начало кода PrepareFiles
-res.stype = GetType(item) -- запомним тип скрипта
-res.smoon = (item.FileName or ""):lower():match("%.moon$") -- признак языка файла функции
-res.cbody,res.cname,res.cfile = Prepare1(item.condition,"condition") -- достаём condition, если есть
-res.abody,res.aname,res.afile = Prepare1(item.action,"action") -- достаём action, если есть
-if type(item.text)=="function" then res.tbody,res.tname,res.tfile = Prepare1(item.text,"text") end -- достаём text, если есть
-if item.FileName and win.GetFileAttr(item.FileName) then -- есть, откуда вытянуть Macro/Event?
+if item.code then return{stype=GetType(item),sbody=item.FileName and Read(item.FileName),o={body=item.code}} end -- клавиатурный макрос - всё просто
+local res,text,prefix = {stype=GetType(item),smoon=(item.FileName or ""):lower():match("%.moon$")} -- тип скрипта, признак языка файла функции
+if item.name then res.sbody = Read(item.realname) return res end -- для модуля всё ещё проще
+if type(item.text)=="function" then res.t = Prepare1("text") end -- достаём text, если есть
+if not item.Info then res.c,res.a = Prepare1("condition"),Prepare1("action") -- не панельный модуль - достаём condition, action, если есть
+else for _,f in ipairs(FuncNames) do res[f] = Prepare1(f) end end -- достаём функции, если есть
+if item.FileName and win.GetFileAttr(item.FileName) then -- есть, откуда вытянуть тело?
   local tbl = {} -- таблица для скриптов-кандидатов
   local _0,Proc = function() return end,function (arg) tbl[#tbl+1] = {t=arg,l=debug.getinfo(2,"l").currentline} end -- функции для доставания
   local lf = res.smoon and require"moonscript".loadfile(item.FileName) or loadfile(item.FileName) -- загрузим файл с исходным текстом
   if not lf then return res end -- не загрузился? уйдём с тем, что есть
-  local e = {Macro=_0,Event=_0,NoMacro=_0,NoEvent=_0,MenuItem=_0,NoMenuItem=_0,CommandLine=_0,NoCommandLine=_0,[res.stype]=Proc} -- псевдоокружение
+  local e = {Macro=_0,Event=_0,NoMacro=_0,NoEvent=_0,MenuItem=_0,NoMenuItem=_0,CommandLine=_0,NoCommandLine=_0,PanelModule=_0,NoPanelModule=_0,
+             [res.stype]=Proc} -- псевдоокружение
   setfenv(lf,setmetatable(e,{__index=_G}))(item.FileName) -- выполним и вытащим кандидатов на искомый скрипт
-  local ID = LMBuild>=579 and item.id~=Noid and item.id or item.uid
-  if ID then
+  if item[Uid(item)] then
     for _, v in ipairs(tbl) do -- переберём всех кандидатов
-      local id = (LMBuild>=579 and v.t.id or v.t.uid) or (res.smoon and ("≈=[C]: %s"):format(v.t.description or 'nil') or
-        ("≈%s: %s"):format(item.FileName:match"[^\\]+$",v.t.description or 'nil')) -- !!!костыль, лучше бы опубликовать ф-ю в модуле!!!
-      if ID:upper()==id:upper() then res.sstarty = v.l res.src = v.t break end -- нашли? запомним номер первой строки - и всё
+      local id = v.t[Uid(item)] or v.t.uid or ("≈%s: %s"):format(item.FileName:match"[^\\]+$",v.t.description or 'nil') -- !!!функция-костыль!!!
+      if item[Uid(item)]:upper()==id:upper() then res.sstarty = v.l res.src = v.t break end -- нашли? запомним номер первой строки - и всё
+    end
+  elseif item.Info then -- PanelModule всегда имеет Info.Guid
+    for _, v in ipairs(tbl) do -- переберём всех кандидатов
+      if item.Info.Guid==v.t.Info.Guid then res.sstarty = v.l res.src = v.t break end -- нашли? запомним номер первой строки
     end
   elseif item.guid then -- MenuItem всегда имеет guid
     for _, v in ipairs(tbl) do -- переберём всех кандидатов
@@ -417,13 +395,11 @@ if item.FileName and win.GetFileAttr(item.FileName) then -- есть, откуд
   repeat -- если Macro/Event и { на разных строках, то выходит ошибка, поэтому покрутим
     text = "\n"..Read(item.FileName):gsub(".-[\r\n]","",res.sstarty-1).."\n" -- получим весь файл, начиная с нужной строки
     if res.smoon then -- .moon?
-      prefix,res.sbody,text = text:match("[\r\n]*([ \t]*)("..res.stype..".-[\r\n])(.*)") -- вычленим отступ, первую строку тела функции, остаток
-      if res.sbody then
-        for s in (text.."\n"):gmatch(".-[\n]") do s = s:match(prefix.."%s+.-[\n]") if s then res.sbody = res.sbody..s else break end end -- остаток
-        res.sbody = res.sbody:gsub("%s*$","") -- обрежем конечные пробелы и переводы строк
-      end
+      prefix,res.sbody,text = text:match("[\r\n]*([ \t]*)("..res.stype..".-[\r\n])(.*)") -- вычленим отступ, первую строку скрипта, остаток
+      if res.sbody then res.sbody = res.sbody..regex.match(text,"/(.*?)^(?!"..prefix.."\\s)\\s*(?!--)(?!\n)/sm"):gsub("%s*$","") end -- весь скрипт
     else -- .lua
-      res.sbody = text:match(".-%b{}"):match(res.stype.."%s*%b{}") -- запомним тело скрипта (предварительно обрезав остаток)
+      local t = text:match(".-%b{}") or text:match(".-%b()") -- обрежем остаток для исключения ненужных совпадений
+      res.sbody = t:match(res.stype.."%s*%b{}") or t:match(res.stype.."%s*%b()") -- запомним тело скрипта
     end
     if res.sbody then break end -- нашли? Всё, идём дальше
     res.sstarty = res.sstarty-1 -- повторим всё заново, но на одну строку ближе к началу
@@ -516,38 +492,88 @@ for i = 1,Height do -- выведем, что влезет, дополнив п�
 end
 end
 --
-function DoIt(fun,ErTitle,...) --[[обработка действия и вывод ошибки]]
-local ok,errmess = fun(...) -- сделаем
-if not ok and errmess then far.Message(errmess,ErTitle,";Ok","w") end -- если ошибка...
-return ok,errmess
+function EditFun(src,what,def,dlg,item,w2) --[[редактирование condition/action/etc]]
+local tfn,dr = far.MkTemp()..item.FileName:lower():match("%..-$"),dlg:send(F.DM_GETDLGRECT,0) -- временный файл, окно диалога
+Write(tfn,src=="" and def or src) -- заполним файл
+editor.Editor(tfn,(item.descr or item.description)..". "..L.diEdit[what]:gsub("&",""):gsub("^. ","")..(w2 or ""), -- отредактируем через дырочку
+  dr.Left+4,dr.Top+2,dr.Right-4,dr.Bottom-2,F.EF_DISABLEHISTORY+F.EF_DISABLESAVEPOS)
+local text = Read(tfn) -- новое значение
+win.DeleteFile(tfn) -- больше не нужен
+return (src=="" and text==def) and "" or text -- вернём пустой текст, если было пусто
 end
 --
-function GetType(item) --[[получить тип элемента]]
-return ((item.prefix or item.prefixes) and "CommandLine") or (item.guid and "MenuItem") or (item.name and "Module") or (item.group and "Event") or
-  (item.code and "KeyMacro") or (item.area and "Macro")
+function CreateAsText(lm,dfn,dft) --[[Создание нового элемента]]
+--
+local function DlgProc(hDlg,Msg,Param1) -- обработка событий диалога
+if Msg == F.DN_EDITCHANGE then -- изменение поля имени файла?
+  hDlg:send(F.DM_SETTEXT,1,L.diCreate.Hdr..(win.GetFileAttr(hDlg:send(F.DM_GETTEXT,Param1)) and L.diCreate.ExistingFile or L.diCreate.NewFile))
+elseif Msg==F.DN_KILLFOCUS and Param1==2 then -- уход с имени файла?
+  local nv = hDlg:send(F.DM_GETTEXT,Param1) -- новое значение
+  if not regex.match(nv,"\\.(lua|moon)$",1,"i") and nv~="" then hDlg:send(F.DM_SETTEXT,Param1,nv..".lua") end -- имя без расширения - добавим ".lua"
+elseif Msg==F.DN_CLOSE then -- закрываем диалог?
+  hDlg:send(F.DM_SETFOCUS,Param1)
+  if dfn and not hDlg:send(F.DM_GETTEXT,2):match("%S") then hDlg:send(F.DM_SETFOCUS,2) return ((Param1>3)and(Param1<9)) and 0 or 1 end
 end
+end
+--
+local y,tfn,idx = dfn and 4 or 2,far.MkTemp()..(lm or".lua"),(dfn and(win.GetFileAttr(dfn)and"ExistingFile"or"NewFile")or"EditedFile")
+local Form = {-- диалог выбора типа скрипта
+--[[01]] {F.DI_DOUBLEBOX,   3, 1,96, y+1,0,0,0,0,L.diCreate.Hdr..L.diCreate[idx]},
+--[[02]] dfn
+     and {F.DI_EDIT,        5, 2,94, 2,0,"LMFileName",0,F.DIF_HISTORY,dfn}
+      or {F.DI_TEXT,        1, 1, 1, 1,0,0,0,0,""},
+--[[03]] {F.DI_TEXT,       -1, 3, 0, 3,0,0,0,dfn and F.DIF_SEPARATOR or 0,""},
+--[[04]] {F.DI_BUTTON,      0, y, 0, y,0,0,0,F.DIF_DEFAULTBUTTON+F.DIF_CENTERGROUP,"&1 Macro"},
+--[[05]] {F.DI_BUTTON,      0, y, 0, y,0,0,0,F.DIF_CENTERGROUP,"&2 Event"},
+--[[06]] {F.DI_BUTTON,      0, y, 0, y,0,0,0,F.DIF_CENTERGROUP,"&3 MenuItem"},
+--[[07]] {F.DI_BUTTON,      0, y, 0, y,0,0,0,F.DIF_CENTERGROUP,"&4 CommandLine"},
+--[[08]] {F.DI_BUTTON,      0, y, 0, y,0,0,0,F.DIF_CENTERGROUP,"&5 PanelModule"},
+--[[09]] {F.DI_BUTTON,      0, y, 0, y,0,0,0,F.DIF_CENTERGROUP,L.Cancel},
+}
+local newitem,fun,ans = {{FileName=tfn,area="Common",key="",flags=0,descr="NewMacro"},
+                         {FileName=tfn,group="ExitFAR",descr="NewEvent"},
+                         {FileName=tfn,guid=win.Uuid(),description="",descr="NewMenuItem",text=function() end,flags={}},
+                         {FileName=tfn,prefix="",description=""},
+                         {FileName=tfn,Info={Guid=win.Uuid()}}},
+                        {OpenMacroInDialog,OpenEventInDialog,OpenMenuItemInDialog,OpenPrefixInDialog,OpenPanelModuleInDialog},
+                        dft or far.Dialog(Guids.CreateNew,-1,-1,100,y+3,nil,Form,nil,DlgProc)-3
+if ans==1 or ans == 2 or ans==3 or ans == 4 or ans == 5 then -- Macro/Event/MenuItem/CommandLine/PanelModule
+  Write(tfn,"") -- создадим временный файл
+  local ok,errmess = fun[ans](newitem[ans],true) -- отредактируем рыбу
+  local text = Read(tfn) -- получим всё содержимое временного файла
+  win.DeleteFile(tfn) -- больше не нужен
+  return ok and text,errmess,Form[2][10]
+end
+return ""
+end
+--
+function DoIt(fun,ETtl,...) local ok,er = fun(...) if not ok and er then ErrMess(er,ETtl) end return ok,er end --[[обработка действия и вывод ошибки]]
+--
+function GetType(item) --[[получить тип элемента]]
+return (item.Info and "PanelModule") or ((item.prefix or item.prefixes) and "CommandLine") or (item.guid and "MenuItem") or
+  (item.name and "Module") or (item.group and "Event") or (item.code and "KeyMacro") or (item.area and "Macro")
+end
+--
+function Uid(item) return LMBuild>=579 and (not item or item.id~=Noid) and "id" or "uid" end --[[получить имя поля с uid]]
 --
 function ShowHelp(text) far.ShowHelp(Path,text,F.FHELP_CUSTOMPATH) end --[[вывести справку]]
 --
 if type(nfo)=="table" then nfo.help = function() ShowHelp() end end
 --
-function Read(file) --[[прочитать весь файл]]
-local h,err = DoIt(io.open,"",file,"r") if h then local text = h:read("*a") h:close() return text else return "",err end
-end
+function Read(f) local h,e = DoIt(io.open,"",f,"r") if e then return "",e end local t = h:read("*a") h:close() return t end --[[прочитать весь файл]]
 --
 function Write(file,text,append) --[[записать текст в файл]]
-local h,err = DoIt(io.open,"",file,append and "a" or "w") if h then h:write(text) h:close() return true else return h,err end
+local h,err = DoIt(io.open,"",file,append and "a" or "w") if err then return h,err else h:write(text) h:close() return true end
 end
 --
 function Replace(file,old,new) --[[заменить текст в файле]]
-local text,err = Read(file) if err then return nil,err else return Write(file,mf.replace(text,old,new)) end
+local text,err = Read(file) if err then return nil,err else return Write(file,(text:gsub(old:gsub("[%^%$%(%)%%%.%[%]%*%+%-%?]","%%%0"),new))) end
 end
--- +
---[==[Основные функции]==]
--- -
-local ShowInfo,OpenMacroInDialog,OpenInternalMacroInDialog,OpenEventInDialog,OpenMenuItemInDialog,OpenPrefixInDialog,OpenInEditor,
-  CreateNew,DeleteCurrent,Rebind,Disable,Config
 --
+function ErrMess(msg,ttl) far.Message(msg,ttl or nfo.name,";Ok","w") end --[[вывести сообщение об ошибке]]
+--
+function FMatch(f,m) return mf.fmatch(m:find("\\") and f or f:match("[^\\]*$"),m) end --[[сравнить по файловой маске]]
+--------------------------------------------------------------------------------
 -- +
 --[==[Показать информацию]==]
 -- -
@@ -591,7 +617,7 @@ for a,s in pairs(links) do if val==a then array[#array+1] = {text=s0.."-> "..s,i
 if links then
   local q = type(val)=="string" and '"' or ''
   array[#array+1] = {text=s0..q..tostring(val)..q,item=val} -- добавим строку
-  if type(val)=="table" and TableRecursion then -- таблица?
+  if type(val)=="table" and Def.TableRecursion then -- таблица?
     local tname -- имя таблицы-предка
     for a,n in pairs(slist) do if val==a then tname = n break end end -- если таблица ссылается на одну из уже развёрнутых, запомним
     if tname then -- такая таблица уже есть в списке?
@@ -606,9 +632,9 @@ if links then
 end
 end
 --
-local function ProcessFunction(fun,subtitle,D,array) -- добавим action/condition
+local function ProcessFunction(fun,subtitle,body,array) -- добавим action/condition/etc
 --
-local body,l1,env = ((fun==item.action and D.abody)or(fun==item.text and D.tbody)or(fun==item.condition and D.cbody)),#array,getfenv(fun)
+local l1,env = #array,getfenv(fun)
 if body then -- текст функции есть?
   for s in body:gmatch("([^\r\n]+)") do array[#array+1] = {text=(#array==l1 and subtitle or L.diShow.Space)..s,item=fun} end -- добавим строки
 else -- нет
@@ -627,16 +653,58 @@ for _,t in ipairs(SortedTable(upv)) do AddParam(array,t.v,t.n,0,conf,{}) conf.pr
 end
 -- начало кода
 repeat
-  local strings,sf,D = {},"" -- список вывода, флаги как строка
-  if item.disabled then strings[#strings+1] = {text=L.diShow.Space..L.diShow.Disabled,item=item.disabled}
+  local strings,sf,D = {},"",PrepareFiles(item) -- список вывода, флаги как строка, разобранный скрипт
+  if item.disabled then strings[#strings+1] = {text=L.diShow.Space..L.diShow.Disabled,item=item.disabled} -- заполним данными
                         strings[#strings+1] = {text=L.diShow.Space} end
-  if item.area or item.group then -- Macro/Event?
-    if item.flags then -- переведём флаги в строку
-      for i, v in pairs(MacroFlagsByInt) do
-        if band(i,item.flags)~=0 then sf = sf..v.." " end
-      end
+  strings[#strings+1] = {text=L.diShow[item.FileName:sub(-1)=="\\" and "Dir" or "File"]..(item.FileName or L.Absent),item=item.FileName}
+  if item.Info then -- PanelModule?
+    strings[#strings+1] = {text=L.diShow.guid..win.Uuid(item.Info.Guid),item=win.Uuid(item.Info.Guid)}
+    strings[#strings+1] = {text=L.diShow.Name..(item.Info.Title and item.Info.Title or L.Absent),item=item.Info.Title}
+    strings[#strings+1] = {text=L.diShow.Desc..(item.Info.description~="" and item.Info.description or L.Absent),item=item.Info.description}
+    strings[#strings+1] = {text=L.diShow.Author..(item.Info.Author and item.Info.Author or L.Absent),item=item.Info.Author}
+    strings[#strings+1] = {text=L.diShow.Version..(item.Info.Version and item.Info.Version or L.Absent),item=item.Info.Version}
+    for _,f in ipairs(FuncNames) do if item[f] then ProcessFunction(item[f],f..":"..L.diShow.Space:sub(f:len()+2),D[f].body,strings) end end
+  elseif item.prefix then -- CommandLine?
+    item.prefixes = nil -- уберём лишнее
+    strings[#strings+1] = {text=L.diShow.Desc..(item.description~="" and item.description or L.Absent),item=item.description}
+    strings[#strings+1] = {text=L.diShow.Prefix..item.prefix,item=item.prefix}
+    if item.action then
+      ProcessFunction(item.action,L.diShow.Code,D.a.body,strings)
+    else
+      strings[#strings+1] = {text=L.diShow.Code..L.Absent}
     end
-    strings[#strings+1] = {text=L.diShow.File..(item.FileName or L.Absent),item=item.FileName} -- заполним данными
+  elseif item.guid then -- MenuItem?
+    strings[#strings+1] = {text=L.diShow.guid..win.Uuid(item.guid),item=win.Uuid(item.guid)}
+    strings[#strings+1] = {text=L.diShow[Id]..item[Id],item=item[Id]}
+    strings[#strings+1] = {text=L.diShow.Desc..(item.description~="" and item.description or L.Absent),item=item.description}
+    local tmenu,sarea,smenu = {plugins="Plugins",config="Config",disks="Disks"},"",""
+    for i,v in pairs(tmenu) do if item.flags[i] then smenu = smenu..v.." " end end
+    for i,v in pairs(Areas) do if item.flags[i] then sarea = sarea..v.." " end end
+    strings[#strings+1] = {text=L.diShow.FarMenu..smenu,item=smenu}
+    strings[#strings+1] = {text=L.diShow.Area..sarea,item=sarea}
+    if type(item.text)=="function" then
+      ProcessFunction(item.text,L.diShow.MenuItem,D.t.body,strings)
+    else
+      strings[#strings+1] = {text=L.diShow.MenuItem..item.text,item=item.text}
+    end
+    if item.action then
+      ProcessFunction(item.action,L.diShow.Code,D.a.body,strings)
+    else
+      strings[#strings+1] = {text=L.diShow.Code..L.Absent}
+    end
+  elseif item.name then -- модуль
+    strings[#strings+1] = {text=L.diShow.Name..item.name,item=item.name} -- заполним данными
+    strings[#strings+1] = {text=L.diShow.Src..item.type,item=item.type}
+    strings[#strings+1] = {text=L.diShow.Base..item.mask,item=item.mask}
+    strings[#strings+1] = {text=L.diShow.RBase..item.realbase,item=item.realbase}
+    if package.loaded[item.name] then -- если модуль загружен
+      conf.pref1 = L.diShow.Res
+      AddParam(strings,item.res,L.diShow.Res:match("(.*):"),0,conf,{}) -- возвращаемое значение с раскруткой таблиц
+    else -- если не загружен, так и скажем
+      strings[#strings+1] = {text=L.diShow.Res..L.diShow.NotLoaded,item=L.diShow.NotLoaded}
+    end
+  elseif item.area or item.group then -- Macro/Event?
+    if item.flags then for i,v in pairs(MacroFlagsByInt) do if band(i,item.flags)~=0 then sf = sf..v.." " end end end -- переведём флаги в строку
     if item.uid then strings[#strings+1] = {text=L.diShow.Uid..item.uid,item=item.uid} end
     if item.id and LMBuild>=579 then strings[#strings+1] = {text=L.diShow.id..item.id,item=item.id} end
     strings[#strings+1] = {text=L.diShow[Id]..item[Id],item=item[Id]}
@@ -652,66 +720,22 @@ repeat
     if item.code then
       strings[#strings+1] = {text=L.diShow.Code..item.code,item=item.code}
     else
-      D = PrepareFiles(item) -- разобранный скрипт
       strings[#strings+1] = {text=L.diShow.Prio..(item.priority or L.diShow.Default),item=item.priority}
-      if item.area then strings[#strings+1] = {text=L.diShow.SortPrio..(item.sortpriority or L.diShow.Default),item=item.sortpriority} end
+      if item.area and LMBuild>=561 then strings[#strings+1] =
+                                           {text=L.diShow.SortPrio..(item.sortpriority or L.diShow.Default),item=item.sortpriority} end
       if item.condition then -- условие есть?
-        ProcessFunction(item.condition,L.diShow.Cond,D,strings)
+        ProcessFunction(item.condition,L.diShow.Cond,D.c.body,strings)
       else
         strings[#strings+1] = {text=L.diShow.Cond..L.Absent}
       end
       if item.action then
-        ProcessFunction(item.action,L.diShow.Code,D,strings)
+        ProcessFunction(item.action,L.diShow.Code,D.a.body,strings)
       else
         strings[#strings+1] = {text=L.diShow.Code..L.Absent}
       end
     end
-  elseif item.guid then -- MenuItem?
-    D = PrepareFiles(item) -- разобранный скрипт
-    strings[#strings+1] = {text=L.diShow.File..(item.FileName or L.Absent),item=item.FileName} -- заполним данными
-    strings[#strings+1] = {text=L.diShow.Uid..win.Uuid(item.guid),item=win.Uuid(item.guid)}
-    strings[#strings+1] = {text=L.diShow[Id]..item[Id],item=item[Id]}
-    strings[#strings+1] = {text=L.diShow.Desc..(item.description~="" and item.description or L.Absent),item=item.description}
-    local tmenu,sarea,smenu = {plugins="Plugins",config="Config",disks="Disks"},"",""
-    for i,v in pairs(tmenu) do if item.flags[i] then smenu = smenu..v.." " end end
-    for i,v in pairs(Areas) do if item.flags[i] then sarea = sarea..v.." " end end
-    strings[#strings+1] = {text=L.diShow.FarMenu..smenu,item=smenu}
-    strings[#strings+1] = {text=L.diShow.Area..sarea,item=sarea}
-    if type(item.text)=="function" then
-      ProcessFunction(item.text,L.diShow.MenuItem,D,strings)
-    else
-      strings[#strings+1] = {text=L.diShow.MenuItem..item.text,item=item.text}
-    end
-    if item.action then
-      ProcessFunction(item.action,L.diShow.Code,D,strings)
-    else
-      strings[#strings+1] = {text=L.diShow.Code..L.Absent}
-    end
-  elseif item.prefix then -- CommandLine?
-    D = PrepareFiles(item) -- разобранный скрипт
-    item.prefixes = nil -- уберём лишнее
-    strings[#strings+1] = {text=L.diShow.File..(item.FileName or L.Absent),item=item.FileName} -- заполним данными
-    strings[#strings+1] = {text=L.diShow.Desc..(item.description~="" and item.description or L.Absent),item=item.description}
-    strings[#strings+1] = {text=L.diShow.Prefix..item.prefix,item=item.prefix}
-    if item.action then
-      ProcessFunction(item.action,L.diShow.Code,D,strings)
-    else
-      strings[#strings+1] = {text=L.diShow.Code..L.Absent}
-    end
-  else -- модуль
-    strings[#strings+1] = {text=L.diShow.Name..item.name,item=item.name} -- заполним данными
-    strings[#strings+1] = {text=L.diShow.Src..item.type,item=item.type}
-    strings[#strings+1] = {text=L.diShow.Base..item.mask,item=item.mask}
-    strings[#strings+1] = {text=L.diShow.RBase..item.realbase,item=item.realbase}
-    strings[#strings+1] = {text=L.diShow[item.FileName:sub(-1)=="\\" and "Dir" or "File"]..item.FileName,item=item.FileName}
-    if package.loaded[item.name] then -- если модуль загружен
-      conf.pref1 = L.diShow.Res
-      AddParam(strings,item.res,L.diShow.Res:match("(.*):"),0,conf,{}) -- возвращаемое значение с раскруткой таблиц
-    else -- если не загружен, так и скажем
-      strings[#strings+1] = {text=L.diShow.Res..L.diShow.NotLoaded,item=L.diShow.NotLoaded}
-    end
   end
-  local isrb = rb and (LMBuild>=579 and item.id~=Noid or item.uid)
+  local isrb = rb and item[Uid(item)]
   local res,pos = far.Menu({Flags=F.FMENU_WRAPMODE+F.FMENU_SHOWAMPERSAND,Title=L[GetType(item)], -- выведем на экран
     Bottom="F1,"..(le and "F3,AltF3," or "")..(item.name and "" or "F4,").."Alt/Ctrl/Shift/CtrlShiftF4,Del,CtrlPgDn"..(isrb and ",CtrlR/D" or "")..
     (rs and ",CtrlS" or "")..(item.name and ",CtrlL" or "")},strings,{{BreakKey="F1"},le and {BreakKey="F3"},le and {BreakKey="A+F3"},
@@ -726,16 +750,20 @@ repeat
   elseif res.BreakKey=="A+F3" then -- открыть в LuaExplorer скрипт?
     local descr = item.descr item.descr = nil le(item) item.descr = descr -- сделаем
   elseif res.BreakKey=="F4" then -- редактировать в диалоге?
-    if item.guid then -- пункт меню плагинов?
-      DoIt(OpenMenuItemInDialog,L.diEditMenuItem,item) -- сделаем
+    if item.Info then -- панельный модуль?
+      DoIt(OpenPanelModuleInDialog,L.diEditPanelModule,item) -- сделаем
     elseif item.prefix then -- префикс?
       DoIt(OpenPrefixInDialog,L.diEditCommandLine,item) -- сделаем
+    elseif item.guid then -- пункт меню плагинов?
+      DoIt(OpenMenuItemInDialog,L.diEditMenuItem,item) -- сделаем
+    elseif item.name then -- модуль?
+      DoIt(OpenInEditor,L.edEditModule,item,false) -- сделаем
+    elseif item.group then -- обработчик событий
+      DoIt(OpenEventInDialog,L.diEditEvent,item) -- сделаем
     elseif item.code then -- клавиатурный огрызок?
       DoIt(OpenInternalMacroInDialog,L.diEditKeyMacro,item) -- сделаем
     elseif item.area then -- макрос?
       DoIt(OpenMacroInDialog,L.diEditMacro,item) -- сделаем
-    elseif item.group then -- обработчик событий
-      DoIt(OpenEventInDialog,L.diEditEvent,item) -- сделаем
     end
     break
   elseif regex.match(res.BreakKey,"^(A|C)+F4$") then -- редактировать во встроенном редакторе?
@@ -758,10 +786,10 @@ repeat
       if item.FileName then
         Panel.SetPath(0,item.FileName:match("(.*)\\([^\\]*)")) return "exit" -- перешли, всё
       else
-        far.Message(L.er.NoFile,L.goFile,";Ok","w")
+        ErrMess(L.er.NoFile,L.goFile)
       end
     else
-      far.Message(L.er.NotFilePanel,L.goFile,";Ok","w")
+      ErrMess(L.er.NotFilePanel,L.goFile)
     end
   elseif res.BreakKey=="C+R" then -- переназначить клавишу с помощью Rebind?
     DoIt(Rebind,L.Rebind,item) break -- переназначим
@@ -774,10 +802,10 @@ repeat
       while info.parent_id do info = rs.getscript(info.parent_id) end -- найдём родителя
       local files = {info.FileName} -- список файлов, входящих в пакет
       for _,i in ipairs(rs.scripts) do if i.parent_id==info.id then files[#files+1] = i.FileName end end -- заполним список
-    Filter.F = table.concat(files,",")..L.PkgFilter..info.description -- изменим маску файла
+    S.Filter.F = table.concat(files,",")..L.PkgFilter..info.description -- изменим маску файла
     break
     else -- не нашли
-      far.Message(L.er.NoNFO,item.descr,";Ok","w") -- так и скажем
+      ErrMess(L.er.NoNFO,item.descr) -- так и скажем
     end
   elseif res.BreakKey=="C+L" then -- подгрузить модуль?
     local _,ret = pcall(require,item.name) -- загрузим модуль и запомним, что он возвращает
@@ -790,37 +818,11 @@ end
 -- -
 function OpenMacroInDialog(item,new,noreload)
 --
-local D,text,ov,cond,act,cbody,abody,m,CurrElem,defca,WasRAlt
+local D,ov,cond,act,cbody,abody,CurrElem,defca,WasRAlt
 --
-local function DlgProc (hDlg,Msg,Param1,Param2) -- обработка событий диалога
---
-local function EditCondAct(src,what,def) -- редактирование condition/action
-local tmpname = far.MkTemp()..item.FileName:lower():match("%..-$") -- временный файл
-Write(tmpname,src=="" and def or src) -- заполним файл
-local dr = hDlg:send(F.DM_GETDLGRECT,0) -- окно диалога
-editor.Editor(tmpname,item.descr..". "..L.diEdit[what]:sub(4), -- отредактируем через дырочку
-  dr.Left+4,dr.Top+2,dr.Right-4,dr.Bottom-2,F.EF_DISABLEHISTORY+F.EF_DISABLESAVEPOS)
-text = Read(tmpname) -- новое значение
-win.DeleteFile(tmpname) -- больше не нужен
-if src=="" and text==def then text = "" end -- вернём пустой текст, если было пусто
-end
---
-if Msg==F.DN_DRAWDLGITEM and(Param1==36 or Param1==40) then -- рисуем вручную condition или action?
-  FillUserControl(hDlg,Param2,Param1==36 and cond or act,CurrElem==Param1) -- нарисуем
-elseif Msg==F.DN_BTNCLICK and Param1==4 then -- нажата кнопка генерация uid?
+local function DlgProc(hDlg,Msg,Param1,Param2) -- обработка событий диалога
+if Msg==F.DN_BTNCLICK and Param1==4 then -- нажата кнопка генерация uid?
   hDlg:send(F.DM_SETTEXT,Param1-1,GenUid()) -- сгенерируем и запишем
-elseif Msg==F.DN_BTNCLICK and Param1==9 then -- нажата кнопка выбор области из списка?
-  local areas,ok = SetFilter(hDlg:send(F.DM_GETTEXT,Param1-1),L.AreaItems) -- выберем
-  if ok then hDlg:send(F.DM_SETTEXT,Param1-1,areas) end -- запишем
-elseif Msg==F.DN_BTNCLICK and Param1==12 then -- нажата кнопка ввод клавиши?
-  local key=MacroKey(hDlg) -- введём
-  local keys=hDlg:send(F.DM_GETTEXT,Param1-1) -- старое значение
-  keys = keys=="" and key or keys.." "..key -- допишем новое к старому
-  hDlg:send(F.DM_SETTEXT,Param1-1,keys) -- запишем в поле
-elseif Msg==F.DN_BTNCLICK and(Param1==37 or Param1==41) then -- нажата кнопка редактировать функцию?
-  if Param1==37 then EditCondAct(cbody or cond,"Cond",defca.c) if cbody then cbody = text else cond = text end
-  else EditCondAct(abody or act,"MCode",defca.a) if abody then abody = text else act = text end end -- поредактируем и запишем, куда надо
-  hDlg:send(F.DM_REDRAW) -- обновим диалог
 elseif Msg==F.DN_EDITCHANGE and Param1==6 then -- изменилось содержимое поля ввода description?
   local s = hDlg:send(F.DM_GETTEXT,Param1)
   item.descr = (s~="") and "'"..s.."'" or item[Id] and Id.."="..item[Id] or "NewMacro"
@@ -828,9 +830,11 @@ elseif Msg==F.DN_EDITCHANGE and Param1==8 then -- изменилось соде�
   local EV = regex.find(Param2[10],"(Editor|Viewer)",1,"i") -- область - редактора или просмотрщика?
   hDlg:send(F.DM_ENABLE,18,EV) -- для редактора и просмотрщика разрешим ввод маски файла
   if not EV then hDlg:send(F.DM_SETTEXT,18,"") end -- для остальных очистим маску файла
-elseif Msg==F.DN_GOTFOCUS then -- переход на элемент?
-  CurrElem = Param1 -- запомним текущий элемент
-  if Param1==14 or Param1==16 then ov = hDlg:send(F.DM_GETTEXT,Param1) end -- изменение приоритета? запомним старое значение
+elseif Msg==F.DN_BTNCLICK and Param1==9 then -- нажата кнопка выбор области из списка?
+  local areas,ok = SetFilter(hDlg:send(F.DM_GETTEXT,Param1-1),L.AreaItems) -- выберем
+  if ok then hDlg:send(F.DM_SETTEXT,Param1-1,areas) end -- запишем
+elseif Msg==F.DN_BTNCLICK and Param1==12 then -- нажата кнопка ввод клавиши?
+  hDlg:send(F.DM_SETTEXT,Param1-1,(hDlg:send(F.DM_GETTEXT,Param1-1).." "..MacroKey(hDlg)):match("^%s*(.-)%s*$")) -- запишем в поле
 elseif Msg==F.DN_KILLFOCUS and (Param1==14 or Param1==16) then -- уход с элемента изменение приоритета исполнения или сортировки?
   local nv = tonumber(hDlg:send(F.DM_GETTEXT,Param1)) -- новое значение
   if not nv or nv>100 or nv<0 then -- плохое?
@@ -843,15 +847,24 @@ elseif Msg==F.DN_HOTKEY and (Param1==27 or Param1==28 or Param1==29) then -- н�
     hDlg:send(F.DM_REDRAW) -- перерисуем
     return false -- скажем системе ничего не делать
   end
-elseif Msg==F.DN_CONTROLINPUT and Param2.VirtualKeyCode==0x70 and band(Param2.ControlKeyState,0x1f)==0 then -- нажатие F1
-  ShowHelp("edit")
+elseif Msg==F.DN_DRAWDLGITEM and(Param1==36 or Param1==40) then -- рисуем вручную condition или action?
+  FillUserControl(hDlg,Param2,Param1==36 and cond or act,CurrElem==Param1) -- нарисуем
 elseif Msg==F.DN_CONTROLINPUT and (Param1==36 or Param1==40) then -- что-то нажали в поле текста функции?
   if ((Param2.VirtualKeyCode==0x73 and band(Param2.ControlKeyState,0x1f)==0)or(Param2.EventFlags==F.DOUBLE_CLICK)) then -- F4/DblClick
-    EditCondAct(Param1==36 and cond or act,Param1==36 and "Cond" or "MCode",Param1==36 and defca.c or defca.a) -- ОК
-    if Param1==36 then cond = text else act = text end -- запишем, куда надо
+    local t = EditFun(Param1==36 and cond or act,Param1==36 and "Cond" or "MCode",Param1==36 and defca.c or defca.a,hDlg,item) -- ОК
+    if Param1==36 then cond = t else act = t end -- запишем, куда надо
     hDlg:send(F.DM_REDRAW) -- обновим экран
   end
   WasRAlt = band(Param2.ControlKeyState,0x01)~=0 -- запомним состояние RAlt
+elseif Msg==F.DN_BTNCLICK and(Param1==37 or Param1==41) then -- нажата кнопка редактировать функцию?
+  if Param1==37 then local t = EditFun(cbody or cond,"CondBody",defca.c,hDlg,item) if cbody then cbody = t else cond = t end
+  else local t = EditFun(abody or act,"CodeBody",defca.a,hDlg,item) if abody then abody = t else act = t end end -- поредактируем и запишем, куда надо
+  hDlg:send(F.DM_REDRAW) -- обновим диалог
+elseif Msg==F.DN_CONTROLINPUT and Param2.VirtualKeyCode==0x70 and band(Param2.ControlKeyState,0x1f)==0 then -- нажатие F1
+  ShowHelp("edit")
+elseif Msg==F.DN_GOTFOCUS then -- переход на элемент?
+  CurrElem = Param1 -- запомним текущий элемент
+  if Param1==14 or Param1==16 then ov = hDlg:send(F.DM_GETTEXT,Param1) end -- изменение приоритета? запомним старое значение
 elseif Msg==F.DN_CLOSE then -- закрываем диалог?
   hDlg:send(F.DM_SETFOCUS,6) -- переключимся на description
 end
@@ -866,20 +879,19 @@ end
 if new then cond,act,D = "","",{smoon=item.FileName:lower():match("%.moon$"),spfx="",src={}} -- новый макрос - сделаем заглушки
 else
   D = PrepareFiles(item) -- достанем всё
-  if D.cname then cond,cbody = D.cname,D.cbody else cond = D.cbody end
-  if D.aname then act,abody = D.aname,D.abody else act = D.abody end
   if not D.sbody then -- скрипт не найден?
     if far.Message(L.Macro.." "..item.descr..L.er.NotFound..".\n"..L.edEditMacro.."?",nfo.name,";OkCancel")==1 then
       return OpenInEditor(item) else return false,L.Macro.." "..item.descr..L.er.NotFound end
   end
+  if D.c.name then cond,cbody = D.c.name,D.c.body else cond = D.c.body end
+  if D.a.name then act,abody = D.a.name,D.a.body else act = D.a.body end
 end
 --
-local ID,IDFrom = LMBuild>=579 and item.id~=Noid and item.id or item.uid or D.src.uid,LMBuild>=579 and item.id~=Noid and "id" or "Uid"
 local Y = cond and math.floor((Far.Height+11)/2) or 18 -- начало action
 local Form = {-- диалог редактирования макроса
 --[[01]] {F.DI_DOUBLEBOX,   3, 1,76,Far.Height-2,0,0,0,0,L.diEdit.MacroHdr},
---[[02]] {F.DI_TEXT,        5, 2, 0, 2,0,0,0,0,L.diEdit[IDFrom]},
---[[03]] {F.DI_EDIT,       19, 2,58, 2,0,"",0,0,ID or GenUid()},
+--[[02]] {F.DI_TEXT,        5, 2, 0, 2,0,0,0,0,L.diEdit[Uid(item)]},
+--[[03]] {F.DI_EDIT,       19, 2,58, 2,0,"",0,0,item[Uid(item)] or D.src.uid or GenUid()},
 --[[04]] {F.DI_BUTTON,     60, 2, 0, 2,0,0,0,F.DIF_BTNNOCLOSE,L.diEdit.GenUid},
 --[[05]] {F.DI_TEXT,        5, 3, 0, 3,0,0,0,0,L.diEdit.Desc},
 --[[06]] {F.DI_EDIT,       19, 3,74, 3,0,"MacroDescription",0,F.DIF_HISTORY,item.description or ""},
@@ -935,10 +947,10 @@ local Form = {-- диалог редактирования макроса
 --[[43]] {F.DI_BUTTON,      0,Far.Height-3, 0,Far.Height-3,0,0,0,F.DIF_DEFAULTBUTTON+F.DIF_CENTERGROUP,L.OK},
 --[[44]] {F.DI_BUTTON,      0,Far.Height-3, 0,Far.Height-3,0,0,0,F.DIF_CENTERGROUP,L.Cancel},
 }
-defca = D.smoon and {c="(key) -> true", a="->"} or {c="function(key) return true end", a="function() end"} -- пустые condition и action
+defca = Templates.Macro[D.smoon and "moon" or "lua"] -- пустые condition и action
 repeat
 local errs = ""
-  if far.Dialog(Guids.MacroEdit,-1,-1,80,Far.Height,nil,Form,nil,DlgProc)~=43 then return end -- не "ОК" - уйдём
+  if far.Dialog(Guids.MacroEdit,-1,-1,80,Far.Height,nil,Form,nil,DlgProc)~=43 then return true end -- не "ОК" - уйдём
   if Form[8][10]=="" then errs = errs..L.er.NoArea end -- нет области? Ошибка
   if act=="" then errs = errs..L.er.NoCode end -- нет обработчика? Ошибка
 until errs=="" or far.Message(L.Macro..L.er.NoPart..errs,L.diEdit.MacroHdr,L.er.NoPartKeys)==1 -- повторяем, если не устраивает
@@ -955,25 +967,25 @@ local flags = ((Form[21][6]==1 and " EnableOutput" or "").. -- сформиру�
   (Form[32][6]==0 and " NoPFolders" or "")..(Form[32][6]==1 and " NoPFiles" or "")..
   (Form[33][6]==0 and " NoPSelection" or "")..(Form[33][6]==1 and " PSelection" or "")):sub(2)
 local IsDefPrio = Form[14][10]==((LMBuild>=537) and "50" or (Form[8][10]:upper()=="COMMON" and "40" or "50"))
-m = D.smoon and ([[
+local m = D.smoon and ((new and "\n" or "")..[[
 %sMacro
-%s  ]]..(LMBuild<579 and "u" or "")..[[id:%q
+%s  ]]..Uid()..[[:%q
 %s  area:%q
-%s  %skey:%q
-%s  %sdescription:%q
-%s  %sfilemask:%q
-%s  %sflags:%q
-%s  %spriority:%s
-%s  %ssortpriority:%s
-%s  %scondition:%s
-%s  %saction:%s
-]]):format(D.spfx,D.spfx,Form[3][10],D.spfx,Form[8][10],D.spfx,Form[11][10]=="" and "--" or "",Form[11][10],
-    D.spfx,Form[6][10]=="" and "--" or "",Form[6][10],D.spfx,Form[18][10]=="" and "--" or "",Form[18][10],
-    D.spfx,flags=="" and "--" or "",flags,D.spfx,IsDefPrio and "--" or "",Form[14][10],D.spfx,Form[16][10]=="50" and "--" or "",Form[16][10],
-    D.spfx,cond=="" and "--" or "",cond=="" and defca.c or cond,D.spfx,act=="" and "--" or "",act=="" and defca.a or act)
-                or ([[
+%s%s  key:%q
+%s%s  description:%q
+%s%s  filemask:%q
+%s%s  flags:%q
+%s%s  priority:%s
+%s%s  sortpriority:%s
+%s%s  condition:%s
+%s%s  action:%s
+]]):format(D.spfx,D.spfx,Form[3][10],D.spfx,Form[8][10],Form[11][10]=="" and "--" or "",D.spfx,Form[11][10],
+    Form[6][10]=="" and "--" or "",D.spfx,Form[6][10],Form[18][10]=="" and "--" or "",D.spfx,Form[18][10],
+    flags=="" and "--" or "",D.spfx,flags,IsDefPrio and "--" or "",D.spfx,Form[14][10],Form[16][10]=="50" and "--" or "",D.spfx,Form[16][10],
+    cond=="" and "--" or "",D.spfx,cond=="" and defca.c or cond,act=="" and "--" or "",D.spfx,act=="" and defca.a or act)
+                   or ((new and "\n" or "")..[[
 Macro{
-  ]]..(LMBuild<579 and "u" or "")..[[id=%q;
+  ]]..Uid()..[[=%q;
   area=%q;
 %s  key=%q;
 %s  description=%q;
@@ -989,8 +1001,8 @@ Macro{
     flags=="" and "--" or "",flags,IsDefPrio and "--" or "",Form[14][10],Form[16][10]=="50" and "--" or "",Form[16][10],
     cond=="" and "--" or "",cond=="" and defca.c or cond,act=="" and "--" or "",act=="" and defca.a or act)
 if new then Write(item.FileName,m) else Replace(item.FileName,D.sbody,m) end -- запишем новый вариант в файл
-if cbody and D.cfile then Replace(D.cfile,D.cbody,cbody) end -- запишем новый текст функции condition в файл
-if abody and D.afile then Replace(D.afile,D.abody,abody) end -- запишем новый текст функции action в файл
+if cbody and D.c.file then Replace(D.c.file,D.c.body,cbody) end -- запишем новый текст функции condition в файл
+if abody and D.a.file then Replace(D.a.file,D.a.body,abody) end -- запишем новый текст функции action в файл
 return new or noreload or far.MacroLoadAll(),L.er.EMacro -- обновим макросы в Farе
 end
 -- +
@@ -1004,7 +1016,7 @@ end
 --
 local WasRAlt
 --
-local function DlgProc (hDlg,Msg,Param1,Param2) -- обработка событий диалога
+local function DlgProc(hDlg,Msg,Param1,Param2) -- обработка событий диалога
 if Msg==F.DN_HOTKEY and (Param1==16 or Param1==17 or Param1==18) then -- нажата клавиша для перехода на флаг для активной/пассивной панели
   if WasRAlt then -- горячую клавишу вызвали с правым альтом?
     hDlg:send(F.DM_SETCHECK,Param1+4,F.BSTATE_TOGGLE) -- симулируем нажатие
@@ -1051,17 +1063,16 @@ local Form = {-- диалог редактирования макроса
 --[[26]] {F.DI_TEXT,       -1,15, 0,15,0,0,0,F.DIF_SEPARATOR,""},
 --[[27]] {F.DI_BUTTON,      0,16, 0,16,0,0,0,F.DIF_DEFAULTBUTTON+F.DIF_CENTERGROUP,L.OK},
 --[[28]] {F.DI_BUTTON,      0,16, 0,16,0,0,0,F.DIF_CENTERGROUP,L.Cancel},
---[[29]] LMBuild>=595 and
-         {F.DI_TEXT,       -1,-1,-1,-1,0,0,0,0,""}
-                      or
-         {F.DI_BUTTON,      0,16, 0,16,0,0,0,F.DIF_CENTERGROUP,L.diEdit.OldFormat},
+--[[29]] (LMBuild>=452 and LMBuild<595)
+     and {F.DI_BUTTON,      0,16, 0,16,0,0,0,F.DIF_CENTERGROUP,L.diEdit.OldFormat}
+      or {F.DI_TEXT,       -1,-1,-1,-1,0,0,0,0,""}
 }
 -- начало кода функции
 if not item.needsave and not (item.FileName and win.GetFileAttr(item.FileName)) then
   return false,L.KeyMacro.." "..item.descr..". "..L.er.NoFile
 end
 local res = far.Dialog(Guids.KeyMacroEdit,-1,-1,80,19,nil,Form,nil,DlgProc) -- выполним диалог
-if res~=27 and res~=29 then return end -- не "ОК" - уйдём
+if res~=27 and res~=29 then return true end -- не "ОК" - уйдём
 local flags = (Form[10][6]==1 and " EnableOutput" or "").. -- сформируем новые флаги
   (Form[11][6]==1 and " RunAfterFARStart" or "")..
   (Form[12][6]==0 and " NotEmptyCommandLine" or "")..(Form[12][6]==1 and " EmptyCommandLine" or "")..
@@ -1073,34 +1084,21 @@ local flags = (Form[10][6]==1 and " EnableOutput" or "").. -- сформируе
   (Form[20][6]==0 and " NoPluginPPanels" or "")..(Form[20][6]==1 and " NoFilePPanels" or "")..
   (Form[21][6]==0 and " NoPFolders" or "")..(Form[21][6]==1 and " NoPFiles" or "")..
   (Form[22][6]==0 and " NoPSelection" or "")..(Form[22][6]==1 and " PSelection" or "")
-local text = (res==27 and LMBuild>=452)
-  and ('Macro {\narea=%q;\nkey=%q;\nflags=%q;\ndescription=%q;\ncode=%q;\n}\n'):format(item.area,item.key,flags:sub(2),Form[7][10],Form[25][10])
-   or ('area=%q\nkey=%q\nflags=%q\ndescription=%q\ncode=%q\n'):format(item.area,item.key,flags:sub(2),Form[7][10],Form[25][10])
+local text = (res==27 and LMBuild>=452 and 'Macro{\narea=%q;\nkey=%q;\nflags=%q;\ndescription=%q;\ncode=%q;\n}\n'
+                or 'area=%q\nkey=%q\nflags=%q\ndescription=%q\ncode=%q\n'):format(item.area,item.key,flags:sub(2),Form[7][10],Form[25][10])
 Write(item.FileName,text) -- запишем новый вариант в файл
-return far.MacroLoadAll(),L.er.EMacro -- обновим макросы в Farе
+return far.MacroLoadAll(),L.er.EKeyMacro -- обновим макросы в Farе
 end
 -- +
 --[==[Редактирование обработчика событий в диалоге]==]
 -- -
 function OpenEventInDialog(item,new,noreload)
 --
-local text,ov,cond,act,cbody,abody,e,CurrElem,defca,D
+local ov,cond,act,cbody,abody,CurrElem,defca,D
 --
-local function DlgProc (hDlg,Msg,Param1,Param2) -- обработка событий диалога
---
-local function EditCondAct(src,what,def) -- редактирование condition/action
-local tmpname = far.MkTemp()..item.FileName:lower():match("%..-$") -- временный файл
-Write(tmpname,src=="" and def or src) -- заполним файл
-local dr = hDlg:send(F.DM_GETDLGRECT,0) -- окно диалога
-editor.Editor(tmpname,item.descr..". "..L.diEdit[what]:sub(4), -- отредактируем через дырочку
-  dr.Left+4,dr.Top+2,dr.Right-4,dr.Bottom-2,F.EF_DISABLEHISTORY+F.EF_DISABLESAVEPOS)
-text = Read(tmpname) -- новое значение
-win.DeleteFile(tmpname) -- больше не нужен
-if src=="" and text==def then text = "" end -- вернём пустой текст, если было пусто
-end
---
-if Msg==F.DN_DRAWDLGITEM and(Param1==15 or Param1==19) then -- рисуем вручную condition или action
-  FillUserControl(hDlg,Param2,Param1==15 and cond or act,CurrElem==Param1) -- заполним
+local function DlgProc(hDlg,Msg,Param1,Param2) -- обработка событий диалога
+if Msg==F.DN_BTNCLICK and Param1==4 then -- нажали кнопку генерация uid?
+  hDlg:send(F.DM_SETTEXT,Param1-1,GenUid()) -- сгенерируем и запишем
 elseif Msg == F.DN_EDITCHANGE and Param1==6 then -- изменение поля description?
   local s = hDlg:send(F.DM_GETTEXT,Param1)
   item.descr = (s~="") and "'"..s.."'" or item[Id] and Id.."="..item[Id] or "NewEvent"
@@ -1110,29 +1108,29 @@ elseif Msg == F.DN_EDITCHANGE and Param1==8 then -- изменение поля 
   local EV = regex.find(Param2[10],"(Editor|Viewer)",1,"i") -- группа - редактора или просмотрщика?
   hDlg:send(F.DM_ENABLE,12,EV) -- для редактора и просмотрщика разрешим ввод маски файла
   if not EV then hDlg:send(F.DM_SETTEXT,12,"") end -- для остальных очистим маску файла
-elseif Msg==F.DN_BTNCLICK and Param1==4 then -- нажали кнопку генерация uid?
-  hDlg:send(F.DM_SETTEXT,Param1-1,GenUid()) -- сгенерируем и запишем
+elseif Msg==F.DN_KILLFOCUS and Param1==10 then -- уход с элемента изменение приоритета?
+  local nv = tonumber(hDlg:send(F.DM_GETTEXT,Param1)) -- новое значение
+  if not nv or nv>100 or nv<0 then hDlg:send(F.DM_SETTEXT,Param1,ov) end -- плохое - откатим
+elseif Msg==F.DN_DRAWDLGITEM and(Param1==15 or Param1==19) then -- рисуем вручную condition или action
+  FillUserControl(hDlg,Param2,Param1==15 and cond or act,CurrElem==Param1) -- заполним
+elseif Msg==F.DN_CONTROLINPUT and (Param1==15 or Param1==19) then -- ввод в condition или action?
+  if (Param2.VirtualKeyCode==0x73 and band(Param2.ControlKeyState,0x1f)==0)or(Param2.EventFlags==F.DOUBLE_CLICK) then -- F4/DblClick
+    local grp,t = (hDlg:send(F.DM_GETTEXT,8)) -- получим текущее значение группы событий
+    t = EditFun(Param1==15 and cond or act,Param1==15 and "Cond" or "ECode",Param1==15 and defca[grp].c or defca[grp].a,hDlg,item) -- поредактируем
+    if Param1==15 then cond = t else act = t end -- запишем результат куда надо
+    hDlg:send(F.DM_REDRAW) -- обновим диалог
+  end
 elseif Msg==F.DN_BTNCLICK and(Param1==16 or Param1==20) then -- нажали кнопку редактировать функцию?
   local grp = hDlg:send(F.DM_GETTEXT,8) -- получим текущее значение группы событий
-  if Param1==16 then EditCondAct(cbody or cond,"Cond",defca[grp].c) if cbody then cbody = text else cond = text end
-  else EditCondAct(abody or act,"ECode",defca[grp].a) if abody then abody = text else act = text end end -- поредактируем и запишем, куда надо
+  if Param1==16 then local t = EditFun(cbody or cond,"CondBody",defca[grp].c,hDlg,item) if cbody then cbody = t else cond = t end
+  else local t = EditFun(abody or act,"CodeBody",defca[grp].a,hDlg,item) if abody then abody = t else act = t end end -- поредактируем и запишем
   hDlg:send(F.DM_REDRAW) -- обновим изображение
+elseif Msg==F.DN_CONTROLINPUT and Param2.VirtualKeyCode==0x70 and band(Param2.ControlKeyState,0x1f)==0 then -- нажатие F1
+  ShowHelp("edit")
 elseif Msg==F.DN_GOTFOCUS then -- переход на элемент
   CurrElem = Param1 -- запомним текущий элемент
   if Param1==10 then -- изменение приоритета?
     ov = hDlg:send(F.DM_GETTEXT,Param1) -- запомним старое значение
-  end
-elseif Msg==F.DN_KILLFOCUS and Param1==10 then -- уход с элемента изменение приоритета?
-  local nv = tonumber(hDlg:send(F.DM_GETTEXT,Param1)) -- новое значение
-  if not nv or nv>100 or nv<0 then hDlg:send(F.DM_SETTEXT,Param1,ov) end -- плохое - откатим
-elseif Msg==F.DN_CONTROLINPUT and Param2.VirtualKeyCode==0x70 and band(Param2.ControlKeyState,0x1f)==0 then -- нажатие F1
-  ShowHelp("edit")
-elseif Msg==F.DN_CONTROLINPUT and (Param1==15 or Param1==19) then -- ввод в condition или action?
-  if (Param2.VirtualKeyCode==0x73 and band(Param2.ControlKeyState,0x1f)==0)or(Param2.EventFlags==F.DOUBLE_CLICK) then -- F4/DblClick
-    local grp = hDlg:send(F.DM_GETTEXT,8) -- получим текущее значение группы событий
-    EditCondAct(Param1==15 and cond or act,Param1==15 and "Cond" or "ECode",Param1==15 and defca[grp].c or defca[grp].a) -- поредактируем
-    if Param1==15 then cond = text else act = text end -- запишем результат куда надо
-    hDlg:send(F.DM_REDRAW) -- обновим диалог
   end
 elseif Msg==F.DN_CLOSE then -- закрытие диалога?
   hDlg:send(F.DM_SETFOCUS,6) -- переключимся на description
@@ -1145,20 +1143,19 @@ end
 if new then cond,act,D = "","",{smoon=item.FileName:lower():match("%.moon$"),spfx="",src={}} -- новый обработчик событий - сделаем заглушки
 else
   D = PrepareFiles(item) -- достанем всё
-  if D.cname then cond,cbody = D.cname,D.cbody else cond = D.cbody end
-  if D.aname then act,abody = D.aname,D.abody else act = D.abody end
   if not D.sbody then -- скрипт не найден?
     if far.Message(L.Event.." "..item.descr..L.er.NotFound..".\n"..L.edEditEvent.."?",nfo.name,";OkCancel")==1 then
       return OpenInEditor(item) else return false,L.Event.." "..item.descr..L.er.NotFound end
   end
+  if D.c.name then cond,cbody = D.c.name,D.c.body else cond = D.c.body end
+  if D.a.name then act,abody = D.a.name,D.a.body else act = D.a.body end
 end
 --
-local ID,IDFrom = LMBuild>=579 and item.id~=Noid and item.id or item.uid or D.src.uid,LMBuild>=579 and item.id~=Noid and "id" or "Uid"
 local Y = cond and math.floor((Far.Height+2)/2) or 18 -- начало action
 local Form = { -- диалог редактирования обработчика событий
 --[[01]] {F.DI_DOUBLEBOX,   3, 1,76,Far.Height-2,0,0,0,0,L.diEdit.EventHdr},
---[[02]] {F.DI_TEXT,        5, 2, 0, 2,0,0,0,0,L.diEdit[IDFrom]},
---[[03]] {F.DI_EDIT,       19, 2,58, 2,0,"",0,0,ID or GenUid()},
+--[[02]] {F.DI_TEXT,        5, 2, 0, 2,0,0,0,0,L.diEdit[Uid(item)]},
+--[[03]] {F.DI_EDIT,       22, 2,58, 2,0,"",0,0,item[Uid(item)] or D.src.uid or GenUid()},
 --[[04]] {F.DI_BUTTON,     60, 2, 0, 2,0,0,0,F.DIF_BTNNOCLOSE,L.diEdit.GenUid},
 --[[05]] {F.DI_TEXT,        5, 3, 0, 3,0,0,0,0,L.diEdit.Desc},
 --[[06]] {F.DI_EDIT,       22, 3,74, 3,0,"EventDescription",0,F.DIF_HISTORY,item.description or ""},
@@ -1193,209 +1190,29 @@ local Form = { -- диалог редактирования обработчик
 --[[22]] {F.DI_BUTTON,      0,Far.Height-3, 0,Far.Height-3,0,0,0,F.DIF_DEFAULTBUTTON+F.DIF_CENTERGROUP,L.OK},
 --[[23]] {F.DI_BUTTON,      0,Far.Height-3, 0,Far.Height-3,0,0,0,F.DIF_CENTERGROUP,L.Cancel},
 }
-if D.smoon then -- заготовки condition/action для разных групп событий
-  defca = {
-  ExitFAR = {c="-> true",a="->"},
-  DialogEvent = {c=[[(Event,tFarDialogEvent) -> true
--- tFarDialogEvent:{hDlg,Msg,Param1,Param2}]],
-                 a=[[(Event,tFarDialogEvent) -> --integer
--- tFarDialogEvent:{hDlg,Msg,Param1,Param2}]]},
-  EditorEvent = {c=[[(EditorID,Event,Param) -> true
---Event:integer=(EE_CHANGE|EE_GOTFOCUS|EE_KILLFOCUS|EE_READ|EE_REDRAW|EE_SAVE|EE_CLOSE)
---Param:
---Event==EE_CHANGE:{iType,iStringNumber};
---Event==EE_SAVE  :{sFileName,sFileEOL,iCodePage};
---other           :integer]],
-                a=[[(EditorID,Event,Param)-> --integer
---Event:integer=(EE_CHANGE|EE_GOTFOCUS|EE_KILLFOCUS|EE_READ|EE_REDRAW|EE_SAVE|EE_CLOSE)
---Param:
---Event==EE_CHANGE:{iType,iStringNumber};
---Event==EE_SAVE  :{sFileName,sFileEOL,iCodePage};
---other           :integer]]},
-  EditorInput = {c=[[(tInputRecord) -> true
---tInputRecord = {
---  EventType:integer,
---  if EventType is KEY_EVENT or FARMACRO_KEY_EVENT:
---    bKeyDown,iRepeatCount,iVirtualKeyCode,
---    iVirtualScanCode,sUnicodeChar,iControlKeyState
---  if EventType is MOUSE_EVENT:
---    iMousePositionX,iMousePositionY,iButtonState,
---    iControlKeyState,iEventFlags
---  if EventType is WINDOW_BUFFER_SIZE_EVENT:
---    iSizeX,iSizeY
---  if EventType is MENU_EVENT:
---    iCommandId
---  if EventType is FOCUS_EVENT:
---    bSetFocus}]],
-                a=[[(tInputRecord) -> true
---tInputRecord = {
---  EventType:integer,
---  if EventType is KEY_EVENT or FARMACRO_KEY_EVENT:
---    bKeyDown,iRepeatCount,iVirtualKeyCode,
---    iVirtualScanCode,sUnicodeChar,iControlKeyState
---  if EventType is MOUSE_EVENT:
---    iMousePositionX,iMousePositionY,iButtonState,
---    iControlKeyState,iEventFlags
---  if EventType is WINDOW_BUFFER_SIZE_EVENT:
---    iSizeX,iSizeY
---  if EventType is MENU_EVENT:
---    iCommandId
---  if EventType is FOCUS_EVENT:
---    bSetFocus}]],},
-  ConsoleInput = {c=[[(tInputRecord,Flags) -> true
---tInputRecord = {
---  EventType:integer,
---  if EventType is KEY_EVENT or FARMACRO_KEY_EVENT:
---    bKeyDown,iRepeatCount,iVirtualKeyCode,
---    iVirtualScanCode,sUnicodeChar,iControlKeyState
---  if EventType is MOUSE_EVENT:
---    iMousePositionX,iMousePositionY,iButtonState,
---    iControlKeyState,iEventFlags
---  if EventType is WINDOW_BUFFER_SIZE_EVENT:
---    iSizeX,iSizeY
---  if EventType is MENU_EVENT:
---    iCommandId
---  if EventType is FOCUS_EVENT:
---    bSetFocus},
---Flags = PCIF_FROMMAIN/PCIF_NONE]],
-                a=[[(tInputRecord,Flags) -> 0--/1/tInputRecord
---tInputRecord = {
---  EventType:integer,
---  if EventType is KEY_EVENT or FARMACRO_KEY_EVENT:
---    bKeyDown,iRepeatCount,iVirtualKeyCode,
---    iVirtualScanCode,sUnicodeChar,iControlKeyState
---  if EventType is MOUSE_EVENT:
---    iMousePositionX,iMousePositionY,iButtonState,
---    iControlKeyState,iEventFlags
---  if EventType is WINDOW_BUFFER_SIZE_EVENT:
---    iSizeX,iSizeY
---  if EventType is MENU_EVENT:
---    iCommandId
---  if EventType is FOCUS_EVENT:
---    bSetFocus},
---Flags = PCIF_FROMMAIN/PCIF_NONE]],},
-  ViewerEvent = {c=[[(ViewerID,Event,Param) -> true
---ViewerID:integer
---Event   :integer=(VE_READ|VE_GOTFOCUS|VE_KILLFOCUS|VE_CLOSE)
---Param   :nil]],
-                a=[[(ViewerID,Event,Param) -> --integer
---ViewerID:integer
---Event   :integer=(VE_READ|VE_GOTFOCUS|VE_KILLFOCUS|VE_CLOSE)
---Param   :nil]]},
-  }
-else
-  defca = {
-  ExitFAR = {c="function() return true end",a="function() end"},
-  DialogEvent = {c=[=[function(Event,tFarDialogEvent) return true end
--- tFarDialogEvent:{hDlg,Msg,Param1,Param2}]=],
-                 a=[=[function(Event,tFarDialogEvent) return --[[integer--]] end
--- tFarDialogEvent:{hDlg,Msg,Param1,Param2}]=]},
-  EditorEvent = {c=[=[function(EditorID,Event,Param) return true end
---Event:integer=(EE_CHANGE|EE_GOTFOCUS|EE_KILLFOCUS|EE_READ|EE_REDRAW|EE_SAVE|EE_CLOSE)
---Param:
---Event==EE_CHANGE:{iType,iStringNumber};
---Event==EE_SAVE  :{sFileName,sFileEOL,iCodePage};
---other           :integer]=],
-               a=[=[function(EditorID,Event,Param) return --[[integer--]] end
---Event:integer=(EE_CHANGE|EE_GOTFOCUS|EE_KILLFOCUS|EE_READ|EE_REDRAW|EE_SAVE|EE_CLOSE)
---Param:
---Event==EE_CHANGE:{iType,iStringNumber};
---Event==EE_SAVE  :{sFileName,sFileEOL,iCodePage};
---other           :integer]=]},
-  EditorInput = {c=[=[function(tInputRecord) return true end
---tInputRecord = {
---  EventType:integer,
---  if EventType is KEY_EVENT or FARMACRO_KEY_EVENT:
---    bKeyDown,iRepeatCount,iVirtualKeyCode,
---    iVirtualScanCode,sUnicodeChar,iControlKeyState
---  if EventType is MOUSE_EVENT:
---    iMousePositionX,iMousePositionY,iButtonState,
---    iControlKeyState,iEventFlags
---  if EventType is WINDOW_BUFFER_SIZE_EVENT:
---    iSizeX,iSizeY
---  if EventType is MENU_EVENT:
---    iCommandId
---  if EventType is FOCUS_EVENT:
---    bSetFocus}]=],
-                a=[=[function(tInputRecord) return true end
---tInputRecord = {
---  EventType:integer,
---  if EventType is KEY_EVENT or FARMACRO_KEY_EVENT:
---    bKeyDown,iRepeatCount,iVirtualKeyCode,
---    iVirtualScanCode,sUnicodeChar,iControlKeyState
---  if EventType is MOUSE_EVENT:
---    iMousePositionX,iMousePositionY,iButtonState,
---    iControlKeyState,iEventFlags
---  if EventType is WINDOW_BUFFER_SIZE_EVENT:
---    iSizeX,iSizeY
---  if EventType is MENU_EVENT:
---    iCommandId
---  if EventType is FOCUS_EVENT:
---    bSetFocus}]=]},
-  ConsoleInput = {c=[=[function(tInputRecord,Flags) return true end
---tInputRecord = {
---  EventType:integer,
---  if EventType is KEY_EVENT or FARMACRO_KEY_EVENT:
---    bKeyDown,iRepeatCount,iVirtualKeyCode,
---    iVirtualScanCode,sUnicodeChar,iControlKeyState
---  if EventType is MOUSE_EVENT:
---    iMousePositionX,iMousePositionY,iButtonState,
---    iControlKeyState,iEventFlags
---  if EventType is WINDOW_BUFFER_SIZE_EVENT:
---    iSizeX,iSizeY
---  if EventType is MENU_EVENT:
---    iCommandId
---  if EventType is FOCUS_EVENT:
---    bSetFocus},
---Flags = PCIF_FROMMAIN/PCIF_NONE]=],
-                a=[=[function(tInputRecord,Flags) return 0--[[/1/tInputRecord]] end
---tInputRecord = {
---  EventType:integer,
---  if EventType is KEY_EVENT or FARMACRO_KEY_EVENT:
---    bKeyDown,iRepeatCount,iVirtualKeyCode,
---    iVirtualScanCode,sUnicodeChar,iControlKeyState
---  if EventType is MOUSE_EVENT:
---    iMousePositionX,iMousePositionY,iButtonState,
---    iControlKeyState,iEventFlags
---  if EventType is WINDOW_BUFFER_SIZE_EVENT:
---    iSizeX,iSizeY
---  if EventType is MENU_EVENT:
---    iCommandId
---  if EventType is FOCUS_EVENT:
---    bSetFocus},
---Flags = PCIF_FROMMAIN/PCIF_NONE]=]},
-  ViewerEvent = {c=[=[function(ViewerID,Event,Param) return true end
---ViewerID:integer
---Event   :integer=(VE_READ|VE_GOTFOCUS|VE_KILLFOCUS|VE_CLOSE)
---Param   :nil]=],
-                a=[=[function(ViewerID,Event,Param) return --[[integer--]] end
---ViewerID:integer
---Event   :integer=(VE_READ|VE_GOTFOCUS|VE_KILLFOCUS|VE_CLOSE)
---Param   :nil]=]},
-  }
-end
+defca = Templates.Event[D.smoon and "moon" or "lua"] -- пустые condition и action
 repeat
 local errs = ""
-  if far.Dialog(Guids.EventEdit,-1,-1,80,Far.Height,nil,Form,nil,DlgProc)~=22 then return end -- не "ок" - уйдём
+  if far.Dialog(Guids.EventEdit,-1,-1,80,Far.Height,nil,Form,nil,DlgProc)~=22 then return true end -- не "ок" - уйдём
   if Form[8][10]=="" then errs = errs..L.er.NoGroup end -- нет группы? Ошибка
   if act=="" then errs = errs..L.er.NoCode end -- нет обработчика? Ошибка
 until errs=="" or far.Message(L.Event..L.er.NoPart..errs,L.diEdit.EventHdr,L.er.NoPartKeys)==1 -- повторяем, если не устраивает
 if Form[3][10]=="" then Form[3][10] = GenUid() end -- нет id/uid? тут мы можем поправить автоматом
-e = D.smoon and ([[
+local e = D.smoon and ((new and "\n" or "")..[[
 %sEvent
-%s  ]]..(LMBuild<579 and "u" or "")..[[id:%q
+%s  ]]..Uid()..[[:%q
 %s  group:%q
-%s  %sdescription:%q
-%s  %sfilemask:%q
-%s  %spriority:%s
-%s  %scondition:%s
-%s  %saction:%s
-]]):format(D.spfx,D.spfx,Form[3][10],D.spfx,Form[8][10],D.spfx,Form[6][10]=="" and "--" or "",Form[6][10],D.spfx,
-    Form[12][10]=="" and "--" or "",Form[12][10],D.spfx,Form[10][10]=="50" and "--" or "",Form[10][10],D.spfx,
-    cond=="" and "--" or "",cond=="" and defca[Form[8][10]].c or cond,D.spfx,act=="" and "--" or "",act=="" and defca[Form[8][10]].a or act)
-                or ([[
+%s%s  description:%q
+%s%s  filemask:%q
+%s%s  priority:%s
+%s%s  condition:%s
+%s%s  action:%s
+]]):format(D.spfx,D.spfx,Form[3][10],D.spfx,Form[8][10],Form[6][10]=="" and "--" or "",D.spfx,Form[6][10],
+    Form[12][10]=="" and "--" or "",D.spfx,Form[12][10],Form[10][10]=="50" and "--" or "",D.spfx,Form[10][10],
+    cond=="" and "--" or "",D.spfx,cond=="" and defca[Form[8][10]].c or cond,act=="" and "--" or "",D.spfx,act=="" and defca[Form[8][10]].a or act)
+                   or ((new and "\n" or "")..[[
 Event{
-  ]]..(LMBuild<579 and "u" or "")..[[id=%q;
+  ]]..Uid()..[[=%q;
   group=%q;
 %s  description=%q;
 %s  filemask=%q;
@@ -1407,8 +1224,8 @@ Event{
     Form[10][10]=="50" and "--" or "",Form[10][10],cond=="" and "--" or "",cond=="" and defca[Form[8][10]].c:gsub("end","end;",1) or cond..";",
     act=="" and "--" or "",act=="" and defca[Form[8][10]].a:gsub("end","end;",1) or act..";")
 if new then Write(item.FileName,e) else Replace(item.FileName,D.sbody,e) end -- запишем новый вариант в файл
-if cbody and D.cfile then Replace(D.cfile,D.cbody,cbody) end -- запишем новый текст функции condition в файл
-if abody and D.afile then Replace(D.afile,D.abody,abody) end -- запишем новый текст функции action в файл
+if cbody and D.c.file then Replace(D.c.file,D.c.body,cbody) end -- запишем новый текст функции condition в файл
+if abody and D.a.file then Replace(D.a.file,D.a.body,abody) end -- запишем новый текст функции action в файл
 return new or noreload or far.MacroLoadAll(),L.er.EEvent -- обновим макросы в Farе
 end
 -- +
@@ -1416,49 +1233,34 @@ end
 -- -
 function OpenMenuItemInDialog(item,new,noreload)
 --
-local D,text,textf,act,tbody,abody,m,CurrElem,defta
+local D,textf,act,tbody,abody,CurrElem,defta
 --
-local function DlgProc (hDlg,Msg,Param1,Param2) -- обработка событий диалога
---
-local function EditTextAct(src,what,def) -- редактирование text/action
-local tmpname = far.MkTemp()..item.FileName:lower():match("%..-$") -- временный файл
-Write(tmpname,src=="" and def or src) -- заполним файл
-local dr = hDlg:send(F.DM_GETDLGRECT,0) -- окно диалога
-editor.Editor(tmpname,item.descr..". "..L.diEdit[what]:sub(4), -- отредактируем через дырочку
-  dr.Left+4,dr.Top+2,dr.Right-4,dr.Bottom-2,F.EF_DISABLEHISTORY+F.EF_DISABLESAVEPOS)
-text = Read(tmpname) -- новое значение
-win.DeleteFile(tmpname) -- больше не нужен
-if src=="" and text==def then text = "" end -- вернём пустой текст, если было пусто
-end
---
-if Msg==F.DN_DRAWDLGITEM and ((Param1==16 and type(item.text)~="string") or Param1==20) then -- рисуем вручную
-  FillUserControl(hDlg,Param2,Param1==16 and (textf or "\n") or act,CurrElem==Param1) -- нарисуем
-elseif Msg==F.DN_BTNCLICK and Param1==4 then -- нажата кнопка генерация guid?
+local function DlgProc(hDlg,Msg,Param1,Param2) -- обработка событий диалога
+if Msg==F.DN_BTNCLICK and Param1==4 then -- нажата кнопка генерация guid?
   hDlg:send(F.DM_SETTEXT,Param1-1,GenUid()) -- сгенерируем и запишем
-elseif Msg==F.DN_BTNCLICK and Param1==9 then -- нажата кнопка выбор области из списка?
-  local areas,ok = SetFilter(hDlg:send(F.DM_GETTEXT,Param1-1),L.AreaItems) -- выберем
-  if ok then hDlg:send(F.DM_SETTEXT,Param1-1,areas) end -- запишем
-elseif Msg==F.DN_BTNCLICK and (Param1==17 or Param1==21) then -- нажата кнопка редактировать функцию?
-  EditTextAct(Param1==17 and (tbody or textf) or (abody or act),Param1==17 and "Text" or "MICode",Param1==17 and defta.t or defta.a) -- поредактируем
-  if Param1==17 then -- condition?
-    if tbody then tbody = text else textf = text end -- запишем, куда надо
-  else -- action
-    if abody then abody = text else act = text end -- запишем, куда надо
-  end
-  hDlg:send(F.DM_REDRAW) -- обновим диалог
 elseif Msg==F.DN_EDITCHANGE and Param1==6 then -- изменилось содержимое поля ввода description?
   local s = hDlg:send(F.DM_GETTEXT,Param1)
   item.descr = (s~="") and "'"..s.."'" or item[Id] and Id.."="..item[Id] or "NewMenuItem"
-elseif Msg==F.DN_GOTFOCUS then -- переход на элемент?
-  CurrElem = Param1 -- запомним текущий элемент
-elseif Msg==F.DN_CONTROLINPUT and Param2.VirtualKeyCode==0x70 and band(Param2.ControlKeyState,0x1f)==0 then -- нажатие F1
-  ShowHelp("edit")
+elseif Msg==F.DN_BTNCLICK and Param1==9 then -- нажата кнопка выбор области из списка?
+  local areas,ok = SetFilter(hDlg:send(F.DM_GETTEXT,Param1-1),L.AreaItems) -- выберем
+  if ok then hDlg:send(F.DM_SETTEXT,Param1-1,areas) end -- запишем
+elseif Msg==F.DN_DRAWDLGITEM and ((Param1==16 and type(item.text)~="string") or Param1==20) then -- рисуем вручную
+  FillUserControl(hDlg,Param2,Param1==16 and (textf or "\n") or act,CurrElem==Param1) -- нарисуем
 elseif Msg==F.DN_CONTROLINPUT and((Param1==16 and type(item.text)=="function") or Param1==20) then -- что-то нажали в поле функции?
   if (Param2.VirtualKeyCode==0x73 and band(Param2.ControlKeyState,0x1f)==0)or(Param2.EventFlags==F.DOUBLE_CLICK) then -- F4/DblClick
-    EditTextAct(Param1==16 and textf or act,Param1==16 and "Text" or "MICode",Param1==16 and defta.t or defta.a) -- ОК
-    if Param1==16 then textf = text else act = text end -- запишем, куда надо
+    local t = EditFun(Param1==16 and textf or act,Param1==16 and "Text" or "MICode",Param1==16 and defta.t or defta.a,hDlg,item) -- ОК
+    if Param1==16 then textf = t else act = t end -- запишем, куда надо
     hDlg:send(F.DM_REDRAW) -- обновим экран
   end
+elseif Msg==F.DN_BTNCLICK and (Param1==17 or Param1==21) then -- нажата кнопка редактировать функцию?
+  local t = EditFun(Param1==17 and(tbody or textf)or(abody or act),Param1==17 and"TextBody"or"CodeBody",Param1==17 and defta.t or defta.a,hDlg,item)
+  if Param1==17 then if tbody then tbody = t else textf = t end -- text?
+  else if abody then abody = t else act = t end end -- action; запишем, куда надо
+  hDlg:send(F.DM_REDRAW) -- обновим диалог
+elseif Msg==F.DN_CONTROLINPUT and Param2.VirtualKeyCode==0x70 and band(Param2.ControlKeyState,0x1f)==0 then -- нажатие F1
+  ShowHelp("edit")
+elseif Msg==F.DN_GOTFOCUS then -- переход на элемент?
+  CurrElem = Param1 -- запомним текущий элемент
 elseif Msg==F.DN_CLOSE then -- закрываем диалог?
   hDlg:send(F.DM_SETFOCUS,8) -- переключимся на checkbox
 end
@@ -1470,15 +1272,14 @@ end
 if new then textf,act,D = "","",{smoon = item.FileName:lower():match("%.moon$"),spfx = ""} -- новый пункт меню - сделаем заглушки
 else
   D = PrepareFiles(item) -- достанем всё
-  if D.tname then textf,tbody = D.tname,D.tbody else textf = D.tbody end
-  if D.aname then act,abody = D.aname,D.abody else act = D.abody end
   if not D.sbody then -- скрипт не найден?
     if far.Message(L.MenuItem.." "..item.descr..L.er.NotFound..".\n"..L.edEditMenuItem.."?",nfo.name,";OkCancel")==1 then
       return OpenInEditor(item) else return false,L.MenuItem.." "..item.descr..L.er.NotFound end
   end
+  if D.t.name then textf,tbody = D.t.name,D.t.body else textf = D.t.body end
+  if D.a.name then act,abody = D.a.name,D.a.body else act = D.a.body end
 end
 if not item.area then item.area = "" for n,a in pairs(Areas) do if item.flags[n] then item.area = (item.area.." "..a):gsub("^ ","") end end end
-defta = D.smoon and{t='(menu,area)->""',a='(OpenFrom,Item)->'}or{t='function(menu,area) return"" end',a='function(OpenFrom,Item) end'} -- заготовки
 --
 local Y = type(item.text)~="string" and math.floor((Far.Height+2)/2) or 8 -- начало action
 local Form = {-- диалог редактирования пункта меню
@@ -1517,72 +1318,63 @@ local Form = {-- диалог редактирования пункта меню
 --[[23]] {F.DI_BUTTON,      0,Far.Height-3, 0,Far.Height-3,0,0,0,F.DIF_DEFAULTBUTTON+F.DIF_CENTERGROUP,L.OK},
 --[[24]] {F.DI_BUTTON,      0,Far.Height-3, 0,Far.Height-3,0,0,0,F.DIF_CENTERGROUP,L.Cancel},
 }
+defta = Templates.MenuItem[D.smoon and "moon" or "lua"] -- пустые condition и action
 repeat
 local errs = ""
-  if far.Dialog(Guids.MacroEdit,-1,-1,80,Far.Height,nil,Form,nil,DlgProc)~=23 then return end -- не "ОК" - уйдём
+  if far.Dialog(Guids.MacroEdit,-1,-1,80,Far.Height,nil,Form,nil,DlgProc)~=23 then return true end -- не "ОК" - уйдём
   if act=="" then errs = errs..L.er.NoCode end -- нет обработчика? Ошибка
 until errs=="" or far.Message(L.Macro..L.er.NoPart..errs,L.diEdit.MacroHdr,L.er.NoPartKeys)==1 -- повторяем, если не устраивает
 if Form[3][10]=="" then Form[3][10] = GenUid() end -- нет guid? тут мы можем поправить автоматом
 local menu = ((Form[11][6]==1 and " Plugins" or "")..(Form[12][6]==1 and " Disks" or "")..(Form[13][6]==1 and " Config" or "")):sub(2)
 textf = type(item.text)=="string" and '"'..Form[16][10]..'"' or ((not textf or textf=="") and defta.t or textf)
-m = D.smoon and ([[%sMenuItem
+local m = D.smoon and ((new and "\n" or "")..[[
+%sMenuItem
 %s  guid:%q
 %s  menu:%q
 %s  area:%q
-%s  %sdescription:%q
+%s%s  description:%q
 %s  text:%s
-%s  %saction:%s
-]]):format(D.spfx,D.spfx,Form[3][10],D.spfx,menu,D.spfx,Form[8][10],D.spfx,Form[6][10]=="" and "--" or "",Form[6][10],
-    D.spfx,textf,D.spfx,act=="" and "--" or "",act=="" and defta.a or act)
-                or ([[MenuItem{
+%s%s  action:%s
+]]):format(D.spfx,D.spfx,Form[3][10],D.spfx,menu,D.spfx,Form[8][10],Form[6][10]=="" and "--" or "",D.spfx,Form[6][10],
+    D.spfx,textf,act=="" and "--" or "",D.spfx,act=="" and defta.a or act)
+                   or ((new and "\n" or "")..[[
+MenuItem{
   guid=%q;
   menu=%q;
 %s  area=%q;
 %s  description=%q;
   text=%s;
 %s  action=%s;
-}]]):format(Form[3][10],menu,Form[8][10]=="" and "--" or "",Form[8][10],Form[6][10]=="" and "--" or "",Form[6][10],
+}
+]]):format(Form[3][10],menu,Form[8][10]=="" and "--" or "",Form[8][10],Form[6][10]=="" and "--" or "",Form[6][10],
     textf,act=="" and "--" or "",act=="" and defta.a or act)
 if new then Write(item.FileName,m) else Replace(item.FileName,D.sbody,m) end -- запишем новый вариант в файл
-if tbody and D.tfile then Replace(D.tfile,D.tbody,tbody) end -- запишем новый текст функции text в файл
-if abody and D.afile then Replace(D.afile,D.abody,abody) end -- запишем новый текст функции action в файл
-return new or noreload or far.MacroLoadAll(),L.er.EMacro -- обновим макросы в Farе
+if tbody and D.t.file then Replace(D.t.file,D.t.body,tbody) end -- запишем новый текст функции text в файл
+if abody and D.a.file then Replace(D.a.file,D.a.body,abody) end -- запишем новый текст функции action в файл
+return new or noreload or far.MacroLoadAll(),L.er.EMenuItem -- обновим макросы в Farе
 end
 -- +
 --[==[Редактирование префикса командной строки в диалоге]==]
 -- -
 function OpenPrefixInDialog(item,new,noreload)
 --
-local text,act,abody,CurrElem,defa,D,p
+local act,abody,CurrElem,defa,D
 --
 local function DlgProc(hDlg,Msg,Param1,Param2) -- обработка событий диалога
---
-local function EditAct(src,def) -- редактирование action
-local tmpname = far.MkTemp()..item.FileName:lower():match("%..-$") -- временный файл
-Write(tmpname,src=="" and def or src) -- заполним файл
-local dr = hDlg:send(F.DM_GETDLGRECT,0) -- окно диалога
-editor.Editor(tmpname,item.description..". "..L.diEdit.PCode:sub(4), -- отредактируем через дырочку
-  dr.Left+4,dr.Top+2,dr.Right-4,dr.Bottom-2,F.EF_DISABLEHISTORY+F.EF_DISABLESAVEPOS)
-text = Read(tmpname) -- новое значение
-win.DeleteFile(tmpname) -- больше не нужен
-if src=="" and text==def then text = "" end -- вернём пустой текст, если было пусто
-end
---
 if Msg==F.DN_DRAWDLGITEM and Param1==08 then -- рисуем вручную
     FillUserControl(hDlg,Param2,act,CurrElem==Param1) -- нарисуем
-elseif Msg==F.DN_BTNCLICK and Param1==09 then -- нажата кнопка редактировать функцию?
-  EditAct(abody or act,defa) -- поредактируем
-  if abody then abody = text else act = text end -- запишем, куда надо
-  hDlg:send(F.DM_REDRAW) -- обновим диалог
-elseif Msg==F.DN_GOTFOCUS then -- переход на элемент?
-  CurrElem = Param1 -- запомним текущий элемент
-elseif Msg==F.DN_CONTROLINPUT and Param2.VirtualKeyCode==0x70 and band(Param2.ControlKeyState,0x1f)==0 then -- нажатие F1
-  ShowHelp("edit")
 elseif Msg==F.DN_CONTROLINPUT and Param1==08 and
   ((Param2.VirtualKeyCode==0x73 and band(Param2.ControlKeyState,0x1f)==0)or(Param2.EventFlags==F.DOUBLE_CLICK)) then -- F4/DblClick в поле action?
-  EditAct(act,defa) -- ОК
-  act = text -- запишем, куда надо
+  act = EditFun(act,"PCode",defa.a,hDlg,item) -- ОК
   hDlg:send(F.DM_REDRAW) -- обновим экран
+elseif Msg==F.DN_BTNCLICK and Param1==09 then -- нажата кнопка редактировать функцию?
+  local t = EditFun(abody or act,"CodeBody",defa.a,hDlg,item) -- поредактируем
+  if abody then abody = t else act = t end -- запишем, куда надо
+  hDlg:send(F.DM_REDRAW) -- обновим диалог
+elseif Msg==F.DN_CONTROLINPUT and Param2.VirtualKeyCode==0x70 and band(Param2.ControlKeyState,0x1f)==0 then -- нажатие F1
+  ShowHelp("edit")
+elseif Msg==F.DN_GOTFOCUS then -- переход на элемент?
+  CurrElem = Param1 -- запомним текущий элемент
 elseif Msg==F.DN_CLOSE then -- закрываем диалог?
   hDlg:send(F.DM_SETFOCUS,3) -- переключимся на description
 end
@@ -1594,11 +1386,11 @@ end
 if new then act,D = "",{smoon = item.FileName:lower():match("%.moon$"),spfx = ""} -- новый префикс - сделаем заглушки
 else
   D = PrepareFiles(item) -- достанем всё
-  if D.aname then act,abody = D.aname,D.abody else act = D.abody end
   if not D.sbody then -- префикс не найден?
     if far.Message(L.CommandLine.." "..item.description..L.er.NotFound..".\n"..L.edEditCommandLine.."?",nfo.name,";OkCancel")==1 then
       return OpenInEditor(item) else return false,L.CommandLine.." "..item.description..L.er.NotFound end
   end
+  if D.a.name then act,abody = D.a.name,D.a.body else act = D.a.body end
 end
 --
 local Form = {-- диалог редактирования префикса
@@ -1621,91 +1413,225 @@ local Form = {-- диалог редактирования префикса
 --[[11]] {F.DI_BUTTON,      0,Far.Height-3, 0,Far.Height-3,0,0,0,F.DIF_DEFAULTBUTTON+F.DIF_CENTERGROUP,L.OK},
 --[[12]] {F.DI_BUTTON,      0,Far.Height-3, 0,Far.Height-3,0,0,0,F.DIF_CENTERGROUP,L.Cancel},
 }
-defa = D.smoon and "(prefix,text)->" or "function(prefix,text) end" -- пустой action
+defa = Templates.CommandLine[D.smoon and "moon" or "lua"] -- пустые condition и action
 repeat
 local errs = ""
-  if far.Dialog(Guids.PrefixEdit,-1,-1,80,Far.Height,nil,Form,nil,DlgProc)~=11 then return end -- не "ОК" - уйдём
+  if far.Dialog(Guids.PrefixEdit,-1,-1,80,Far.Height,nil,Form,nil,DlgProc)~=11 then return true end -- не "ОК" - уйдём
   if Form[5][10]=="" then errs = errs..L.er.NoPrefix end -- нет префикса? Ошибка
   if act=="" then errs = errs..L.er.NoCode end -- нет обработчика? Ошибка
 until errs=="" or far.Message(L.CommandLine..L.er.NoPart..errs,L.diEdit.PrefixHdr,L.er.NoPartKeys)==1 -- повторяем, если не устраивает
-p = D.smoon and ([[%sCommandLine
+local p = D.smoon and ((new and "\n" or "")..[[
+%sCommandLine
 %s  prefixes:%q
-%s  %sdescription:%q
-%s  %saction:%s
-]]):format(D.spfx,D.spfx,Form[5][10],D.spfx,Form[3][10]=="" and "--" or "",Form[3][10],D.spfx,act=="" and "--" or "",act=="" and defa or act)
-                or ([[CommandLine{
+%s%s  description:%q
+%s%s  action:%s
+]]):format(D.spfx,D.spfx,Form[5][10],Form[3][10]=="" and "--" or "",D.spfx,Form[3][10],act=="" and "--" or "",D.spfx,act=="" and defa.a or act)
+                   or ((new and "\n" or "")..[[
+CommandLine{
   prefixes=%q;
 %s  description=%q;
 %s  action=%s;
-}]]):format(Form[5][10],Form[3][10]=="" and "--" or "",Form[3][10],act=="" and "--" or "",act=="" and defa or act) -- новый текст префикса
+}
+]]):format(Form[5][10],Form[3][10]=="" and "--" or "",Form[3][10],act=="" and "--" or "",act=="" and defa.a or act) -- новый текст префикса
 if new then Write(item.FileName,p) else Replace(item.FileName,D.sbody,p) end -- запишем новый вариант в файл
-if abody and D.afile then Replace(D.afile,D.abody,abody) end -- запишем новый текст функции action в файл
-return new or noreload or far.MacroLoadAll(),L.er.EMacro -- обновим макросы в Farе
+if abody and D.a.file then Replace(D.a.file,D.a.body,abody) end -- запишем новый текст функции action в файл
+return new or noreload or far.MacroLoadAll(),L.er.ECommandLine -- обновим макросы в Farе
+end
+-- +
+--[==[Редактирование панельного модуля в диалоге]==]
+-- -
+function OpenPanelModuleInDialog(item,new,noreload)
+--
+local fun,funname,fbody,CurrElem,deff,D = {},"",{},2
+--
+local function DlgProc(hDlg,Msg,Param1,Param2) -- обработка событий диалога
+if Msg==F.DN_BTNCLICK and Param1==4 then -- нажали кнопку генерация uid?
+  hDlg:send(F.DM_SETTEXT,Param1-1,GenUid()) -- сгенерируем и запишем
+elseif Msg == F.DN_EDITCHANGE and (Param1==6 or Param1==8)then -- изменение поля Description или Title?
+  local d,t = hDlg:send(F.DM_GETTEXT,6),hDlg:send(F.DM_GETTEXT,8)
+  item.descr = ((t~="") and "'"..t.."'") or ((d~="") and "'"..d.."'") or Noid
+elseif Msg == F.DN_EDITCHANGE and Param1==15 then -- выбрали другую функцию?
+  funname = Param2[10]:match("^.(.-):.*$"):gsub("&","") -- извлечём имя функции
+  hDlg:send(F.DM_ENABLE,19,fun[funname] and 1 or 0) -- разрешим/запретим текст функции
+  hDlg:send(F.DM_ENABLE,20,fbody[funname] and 1 or 0) -- разрешим/запретим кнопку функции
+elseif Msg==F.DN_DRAWDLGITEM and Param1==19 then -- рисуем вручную
+  if hDlg:send(F.DM_ENABLE,Param1,-1)==1 then FillUserControl(hDlg,Param2,fun[funname],CurrElem==Param1) end -- нарисуем
+elseif Msg==F.DN_CONTROLINPUT and Param1==19 and
+  ((Param2.VirtualKeyCode==0x73 and band(Param2.ControlKeyState,0x1f)==0)or(Param2.EventFlags==F.DOUBLE_CLICK)) then -- F4/DblClick в поле action?
+  fun[funname] = EditFun(fun[funname],"FCode",deff[funname],hDlg,item,"("..funname..")") -- ОК
+  local s = ((fun[funname] and fun[funname]~="") and "+" or "-")..hDlg:send(F.DM_GETTEXT,15):sub(2) -- скорректируем строку из ComboBox
+  hDlg:send(F.DM_LISTUPDATE,15,{Index=hDlg:send(F.DM_LISTGETCURPOS,15).SelectPos,Text=s,Flags=F.LIF_SELECTED}) -- поправим ComboBox
+elseif Msg==F.DN_BTNCLICK and Param1==20 then -- нажата кнопка редактировать функцию?
+  local t = EditFun(fbody[funname] or fun[funname],"FunBody",deff[funname],hDlg,item,"("..funname..")") -- поредактируем
+  if fbody[funname] then fbody[funname] = t else fun[funname] = t end -- запишем, куда надо
+  hDlg:send(F.DM_REDRAW) -- обновим диалог
+elseif Msg==F.DN_CONTROLINPUT and Param2.VirtualKeyCode==0x70 and band(Param2.ControlKeyState,0x1f)==0 then -- нажатие F1
+  ShowHelp("edit")
+elseif Msg==F.DN_GOTFOCUS then -- переход на элемент?
+  CurrElem = Param1 -- запомним текущий элемент
+elseif Msg==F.DN_CLOSE then -- закрываем диалог?
+  hDlg:send(F.DM_SETFOCUS,6) -- переключимся на description
+end
+end
+-- начало кода функции
+if not (item.FileName and win.GetFileAttr(item.FileName)) then
+  return false,L.CommandLine.." "..item.description..". "..L.er.NoFile
+end
+if new then D = {smoon = item.FileName:lower():match("%.moon$"),spfx = ""} -- новый префикс - сделаем заглушки
+else
+  D = PrepareFiles(item) -- достанем всё
+  if not D.sbody then -- префикс не найден?
+    if far.Message(L.CommandLine.." "..item.description..L.er.NotFound..".\n"..L.edEditPanelModule.."?",nfo.name,";OkCancel")==1 then
+      return OpenInEditor(item) else return false,L.PanelModule.." "..item.description..L.er.NotFound end
+  end
+end
+for i,fn in ipairs(FuncNames) do
+  if D[fn] and D[fn].name then fun[fn],fbody[fn] = D[fn].name,D[fn].body else fun[fn] = D[fn] and D[fn].body or "" end
+  L.cbFunctionsList[i].Text = ((fun[fn] and fun[fn]~="") and "+" or "-")..L.cbFunctionsList[i].Text:sub(2)
+end
+--
+local Form = {-- диалог редактирования панельного модуля
+--[[01]] {F.DI_DOUBLEBOX,   3, 1,76,Far.Height-2,0,0,0,0,L.diEdit.PanelHdr},
+--[[02]] {F.DI_TEXT,        5, 2, 0, 2,0,0,0,0,L.diEdit.Guid},
+--[[03]] {F.DI_EDIT,       19, 2,58, 2,0,"",0,0,win.Uuid(item.Info.Guid):upper()},
+--[[04]] {F.DI_BUTTON,     60, 2, 0, 2,0,0,0,F.DIF_BTNNOCLOSE,L.diEdit.GenUid},
+--[[05]] {F.DI_TEXT,        5, 3, 0, 3,0,0,0,0,L.diEdit.Desc},
+--[[06]] {F.DI_EDIT,       19, 3,74, 3,0,"PanelDescription",0,F.DIF_HISTORY,item.Info and item.Info.Description},
+--[[07]] {F.DI_TEXT,        5, 4, 0, 4,0,0,0,0,L.diEdit.Title},
+--[[08]] {F.DI_EDIT,       19, 4,74, 4,0,"PanelTitle",0,F.DIF_HISTORY,item.Info and item.Info.Title},
+--[[09]] {F.DI_TEXT,        5, 5, 0, 5,0,0,0,0,L.diEdit.Version},
+--[[10]] {F.DI_EDIT,       19, 5,74, 5,0,"PanelVersion",0,F.DIF_HISTORY,item.Info and item.Info.Version},
+--[[11]] {F.DI_TEXT,        5, 6, 0, 6,0,0,0,0,L.diEdit.Author},
+--[[12]] {F.DI_EDIT,       19, 6,74, 6,0,"PanelAuthor",0,F.DIF_HISTORY,item.Info and item.Info.Author},
+--[[13]] {F.DI_TEXT,       -1, 7, 0, 7,0,0,0,F.DIF_SEPARATOR,""},
+--[[14]] {F.DI_TEXT,        5, 8, 0, 8,0,0,0,0,L.diEdit.Func},
+--[[15]] {F.DI_COMBOBOX,   16, 8,74, 8,L.cbFunctionsList,0,0,F.DIF_DROPDOWNLIST+F.DIF_LISTNOAMPERSAND,("-"):rep(74)},
+--[[16]] {F.DI_TEXT,        5, 9, 0, 9,0,0,0,0,L.diEdit.FCode..L.diEdit.F4},
+--[[17]] {F.DI_TEXT,        5,11, 0,11,0,0,0,0,L.diEdit.FunNotInFile1},
+--[[18]] {F.DI_TEXT,        5,12, 0,12,0,0,0,0,L.diEdit.FunNotInFile2},
+--[[19]] {F.DI_USERCONTROL, 5,10,74, Far.Height-5,0,F.DIF_DISABLE},
+--[[20]] {F.DI_BUTTON,     40, 9, 0, 9,0,0,0,F.DIF_BTNNOCLOSE+F.DIF_DISABLE,L.diEdit.FunBody},
+--[[21]] {F.DI_TEXT,       -1,Far.Height-4, 0,Far.Height-4,0,0,0,F.DIF_SEPARATOR,""},
+--[[22]] {F.DI_BUTTON,      0,Far.Height-3, 0,Far.Height-3,0,0,0,F.DIF_DEFAULTBUTTON+F.DIF_CENTERGROUP,L.OK},
+--[[23]] {F.DI_BUTTON,      0,Far.Height-3, 0,Far.Height-3,0,0,0,F.DIF_CENTERGROUP,L.Cancel},
+}
+deff = Templates.PanelModule[D.smoon and "moon" or "lua"] -- пустые функции
+repeat
+local errs = ""
+  if far.Dialog(Guids.PanelEdit,-1,-1,80,Far.Height,nil,Form,nil,DlgProc)~=22 then return true end -- не "ОК" - уйдём
+  if Form[3][10]=="" then errs = errs..L.er.NoGuid end -- нет GUID? Ошибка
+until errs=="" or far.Message(L.CommandLine..L.er.NoPart..errs,L.diEdit.PanelHdr,L.er.NoPartKeys)==1 -- повторяем, если не устраивает
+local p = D.smoon and ((new and "\n" or "")..[[
+%sPanelModule
+%s  Info:
+%s    Guid:win.Uuid %q
+%s%s    Title:%q
+%s%s    Description:%q
+%s%s    Version:%q
+%s%s    Author:%q
+%s%s  Analyse:%s
+%s%s  ClosePanel:%s
+%s%s  Compare:%s
+%s%s  DeleteFiles:%s
+%s%s  GetFiles:%s
+%s%s  GetFindData:%s
+%s%s  GetOpenPanelInfo:%s
+%s%s  MakeDirectory:%s
+%s%s  Open:%s
+%s%s  ProcessHostFile:%s
+%s%s  ProcessPanelEvent:%s
+%s%s  ProcessPanelInput:%s
+%s%s  PutFiles:%s
+%s%s  SetDirectory:%s
+%s%s  SetFindList:%s
+]]):format(D.spfx,D.spfx,D.spfx,Form[3][10],Form[8][10]=="" and "--" or "",D.spfx,Form[8][10],Form[6][10]=="" and "--" or "",D.spfx,Form[6][10],
+  Form[10][10]=="" and "--" or "",D.spfx,Form[10][10],Form[12][10]=="" and "--" or "",D.spfx,Form[12][10],
+  fun.Analyse=="" and "--" or "",D.spfx,fun.Analyse=="" and deff.Analyse:gsub("end","end;",1) or fun.Analyse,
+  fun.ClosePanel=="" and "--" or "",D.spfx,fun.ClosePanel=="" and deff.ClosePanel:gsub("end","end;",1) or fun.ClosePanel,
+  fun.Compare=="" and "--" or "",D.spfx,fun.Compare=="" and deff.Compare:gsub("end","end;",1) or fun.Compare,
+  fun.DeleteFiles=="" and "--" or "",D.spfx,fun.DeleteFiles=="" and deff.DeleteFiles:gsub("end","end;",1) or fun.DeleteFiles,
+  fun.GetFiles=="" and "--" or "",D.spfx,fun.GetFiles=="" and deff.GetFiles:gsub("end","end;",1) or fun.GetFiles,
+  fun.GetFindData=="" and "--" or "",D.spfx,fun.GetFindData=="" and deff.GetFindData:gsub("end","end;",1) or fun.GetFindData,
+  fun.GetOpenPanelInfo=="" and "--" or "",D.spfx,fun.GetOpenPanelInfo=="" and deff.GetOpenPanelInfo:gsub("end","end;",1) or fun.GetOpenPanelInfo,
+  fun.MakeDirectory=="" and "--" or "",D.spfx,fun.MakeDirectory=="" and deff.MakeDirectory:gsub("end","end;",1) or fun.MakeDirectory,
+  fun.Open=="" and "--" or "",D.spfx,fun.Open=="" and deff.Open:gsub("end","end;",1) or fun.Open,
+  fun.ProcessHostFile=="" and "--" or "",D.spfx,fun.ProcessHostFile=="" and deff.ProcessHostFile:gsub("end","end;",1) or fun.ProcessHostFile,
+  fun.ProcessPanelEvent=="" and "--" or "",D.spfx,fun.ProcessPanelEvent=="" and deff.ProcessPanelEvent:gsub("end","end;",1) or fun.ProcessPanelEvent,
+  fun.ProcessPanelInput=="" and "--" or "",D.spfx,fun.ProcessPanelInput=="" and deff.ProcessPanelInput:gsub("end","end;",1) or fun.ProcessPanelInput,
+  fun.PutFiles=="" and "--" or "",D.spfx,fun.PutFiles=="" and deff.PutFiles:gsub("end","end;",1) or fun.PutFiles,
+  fun.SetDirectory=="" and "--" or "",D.spfx,fun.SetDirectory=="" and deff.SetDirectory:gsub("end","end;",1) or fun.SetDirectory,
+  fun.SetFindList=="" and "--" or "",D.spfx,fun.SetFindList=="" and deff.SetFindList:gsub("end","end;",1) or fun.SetFindList)
+                   or ((new and "\n" or "")..[[
+PanelModule{
+  Info={
+    Guid=win.Uuid(%q);
+%s    Title=%q;
+%s    Description=%q;
+%s    Version=%q;
+%s    Author=%q;
+  };
+%s  Analyse=%s
+%s  ClosePanel=%s
+%s  Compare=%s
+%s  DeleteFiles=%s
+%s  GetFiles=%s
+%s  GetFindData=%s
+%s  GetOpenPanelInfo=%s
+%s  MakeDirectory=%s
+%s  Open=%s
+%s  ProcessHostFile=%s
+%s  ProcessPanelEvent=%s
+%s  ProcessPanelInput=%s
+%s  PutFiles=%s
+%s  SetDirectory=%s
+%s  SetFindList=%s
+}
+]]):format(Form[3][10],Form[8][10]=="" and "--" or "",Form[8][10],Form[6][10]=="" and "--" or "",Form[6][10],  -- новый текст панельного модуля
+  Form[10][10]=="" and "--" or "",Form[10][10],Form[12][10]=="" and "--" or "",Form[12][10],
+  fun.Analyse=="" and "--" or "",fun.Analyse=="" and deff.Analyse:gsub("end","end;",1) or fun.Analyse..";",
+  fun.ClosePanel=="" and "--" or "",fun.ClosePanel=="" and deff.ClosePanel:gsub("end","end;",1) or fun.ClosePanel..";",
+  fun.Compare=="" and "--" or "",fun.Compare=="" and deff.Compare:gsub("end","end;",1) or fun.Compare..";",
+  fun.DeleteFiles=="" and "--" or "",fun.DeleteFiles=="" and deff.DeleteFiles:gsub("end","end;",1) or fun.DeleteFiles..";",
+  fun.GetFiles=="" and "--" or "",fun.GetFiles=="" and deff.GetFiles:gsub("end","end;",1) or fun.GetFiles..";",
+  fun.GetFindData=="" and "--" or "",fun.GetFindData=="" and deff.GetFindData:gsub("end","end;",1) or fun.GetFindData..";",
+  fun.GetOpenPanelInfo=="" and "--" or "",fun.GetOpenPanelInfo=="" and deff.GetOpenPanelInfo:gsub("end","end;",1) or fun.GetOpenPanelInfo..";",
+  fun.MakeDirectory=="" and "--" or "",fun.MakeDirectory=="" and deff.MakeDirectory:gsub("end","end;",1) or fun.MakeDirectory..";",
+  fun.Open=="" and "--" or "",fun.Open=="" and deff.Open:gsub("end","end;",1) or fun.Open..";",
+  fun.ProcessHostFile=="" and "--" or "",fun.ProcessHostFile=="" and deff.ProcessHostFile:gsub("end","end;",1) or fun.ProcessHostFile..";",
+  fun.ProcessPanelEvent=="" and "--" or "",fun.ProcessPanelEvent=="" and deff.ProcessPanelEvent:gsub("end","end;",1) or fun.ProcessPanelEvent..";",
+  fun.ProcessPanelInput=="" and "--" or "",fun.ProcessPanelInput=="" and deff.ProcessPanelInput:gsub("end","end;",1) or fun.ProcessPanelInput..";",
+  fun.PutFiles=="" and "--" or "",fun.PutFiles=="" and deff.PutFiles:gsub("end","end;",1) or fun.PutFiles..";",
+  fun.SetDirectory=="" and "--" or "",fun.SetDirectory=="" and deff.SetDirectory:gsub("end","end;",1) or fun.SetDirectory..";",
+  fun.SetFindList=="" and "--" or "",fun.SetFindList=="" and deff.SetFindList:gsub("end","end;",1) or fun.SetFindList..";")
+if new then Write(item.FileName,p) else Replace(item.FileName,D.sbody,p) end -- запишем новый вариант в файл
+for _,fn in ipairs(FuncNames) do if fbody[fn] and D[fn].file then Replace(D[fn].file,D[fn].body,fbody[fn]) end end -- запишем новый текст функций
+return new or noreload or far.MacroLoadAll(),L.er.EPanelModule -- обновим макросы в Farе
 end
 -- +
 --[==[Редактирование скрипта в редакторе Farа]==]
 -- -
 function OpenInEditor(item,nonmodal)
---
-if not (item.FileName and win.GetFileAttr(item.FileName)) then -- нету - уйдём с ошибкой
-  return false,(L[GetType(item)]).." "..(item.descr or item.name or item.prefix or "?")..". "..L.er.NoFile
-end
-local fm = nonmodal and F.EF_NONMODAL or nil -- преобразуем признак модальности в нужный флаг
-local text1,err = Read(item.FileName) -- получим всё старое содержимое файла
-if err then return nil,err end -- ошибка при чтении? уйдём
-local D = (item.code or item.name) and {} or PrepareFiles(item) -- начальные координаты
-editor.Editor(item.FileName,nil,nil,nil,nil,nil,fm,D.sstarty or 1,D.sstartx or 1) -- поредактируем
+local D,fn,fm = PrepareFiles(item),item.realname or item.FileName,nonmodal and F.EF_NONMODAL or nil -- данные, настоящее имя, флаг модальности
+if not (fn and win.GetFileAttr(fn)) then return false,(L[D.stype]).." "..(item.descr or item.name or item.prefix or "?")..". "..L.er.NoFile end
+local text1,err = Read(fn) -- получим всё старое содержимое файла
+if err then return false,err end -- ошибка при чтении? уйдём
+editor.Editor(fn,nil,nil,nil,nil,nil,fm,D.sstarty or 1,D.sstartx or 1) -- поредактируем
 local text2 = Read(item.FileName) -- получим всё новое содержимое файла
-return text1==text2 or far.MacroLoadAll(),L.er["E"..GetType(item)] -- обновим в Farе, если содержимое файла изменилось
+return text1==text2 or far.MacroLoadAll(),L.er["E"..D.stype] -- обновим в Farе, если содержимое файла изменилось
 end
 -- +
 --[==[Создание нового элемента в файле с текущим]==]
 -- -
 function CreateNew(item)
-if item and item.name then -- модуль?
+if item.name then -- модуль?
     editor.Editor(item.realbase..os.tmpname():gsub("%.","_")..item.type) -- поредактируем новый
-    return far.MacroLoadAll(),L.er.EMacro -- обновим макросы в Farе
+    return far.MacroLoadAll(),L.er.EModule -- обновим макросы в Farе
 end
 if item.code then return false,L.er.AddToKeyMacro end -- клавиатурные не создаём
-local tmpname = far.MkTemp()..(item.FileName and item.FileName:match("%.%a*$") or ".lua") -- Временный файл
-local fname = item and item.FileName or GP.."\\Macros\\scripts"..os.tmpname()..".lua" -- имя файла, куда записывать
---
-local function DlgProc(hDlg,Msg,Param1) -- обработка событий диалога
-if Msg == F.DN_EDITCHANGE then -- изменение поля имени файла?
-  hDlg:send(F.DM_SETTEXT,1,L.diCreate.Hdr..(win.GetFileAttr(hDlg:send(F.DM_GETTEXT,Param1)) and L.diCreate.ExistingFile or L.diCreate.NewFile))
-elseif Msg==F.DN_KILLFOCUS and Param1==2 then -- уход с имени файла?
-  local nv = hDlg:send(F.DM_GETTEXT,Param1) -- новое значение
-  if not regex.match(nv,"\\.(lua|moon)$",1,"i") and nv~="" then hDlg:send(F.DM_SETTEXT,Param1,nv..".lua") end -- имя без расширения - добавим ".lua"
-elseif Msg==F.DN_CLOSE then -- закрываем диалог?
-  hDlg:send(F.DM_SETFOCUS,Param1)
-  if not hDlg:send(F.DM_GETTEXT,2):match("%S") then hDlg:send(F.DM_SETFOCUS,2) return ((Param1>3)and(Param1<8)) and 0 or 1 end
-end
-end
---
-local Form = {-- диалог выбора типа скрипта
---[[01]] {F.DI_DOUBLEBOX,   3, 1,76, 5,0,0,0,0,L.diCreate.Hdr..(win.GetFileAttr(fname) and L.diCreate.ExistingFile or L.diCreate.NewFile)},
---[[02]] {F.DI_EDIT,        5, 2,74, 2,0,"LMFileName",0,F.DIF_HISTORY,fname},
---[[03]] {F.DI_TEXT,       -1, 3, 0, 3,0,0,0,F.DIF_SEPARATOR,""},
---[[04]] {F.DI_BUTTON,      0, 4, 0, 4,0,0,0,F.DIF_DEFAULTBUTTON+F.DIF_CENTERGROUP,"&1 Macro"},
---[[05]] {F.DI_BUTTON,      0, 4, 0, 4,0,0,0,F.DIF_CENTERGROUP,"&2 Event"},
---[[06]] {F.DI_BUTTON,      0, 4, 0, 4,0,0,0,F.DIF_CENTERGROUP,"&3 MenuItem"},
---[[07]] {F.DI_BUTTON,      0, 4, 0, 4,0,0,0,F.DIF_CENTERGROUP,"&4 CommandLine"},
---[[08]] {F.DI_BUTTON,      0, 4, 0, 4,0,0,0,F.DIF_CENTERGROUP,L.Cancel},
-}
-local newitem,fun,ans = {{FileName=tmpname,area="Common",key="",flags=0,descr="NewMacro"},
-                         {FileName=tmpname,group="ExitFAR",descr="NewEvent"},
-                         {FileName=tmpname,guid=win.Uuid(),description="",descr="NewMenuItem",text=function() end,flags={}},
-                         {FileName=tmpname,prefix="",description=""}},
-                        {OpenMacroInDialog,OpenEventInDialog,OpenMenuItemInDialog,OpenPrefixInDialog},
-                        far.Dialog(Guids.CreateNew,-1,-1,80,7,nil,Form,nil,DlgProc)-3
-if ans==1 or ans == 2 or ans==3 or ans == 4 then -- Macro/Event/MenuItem/CommandLine
-  Write(tmpname,"") -- создадим временный файл
-  local ok,errmess = fun[ans](newitem[ans],true) -- отредактируем рыбу
-  local text = Read(tmpname) -- получим всё содержимое временного файла
-  win.DeleteFile(tmpname) -- больше не нужен
-  if ok then Write(Form[2][10],text,"a") far.MacroLoadAll() end -- отредактировали без ошибок? допишем новый скрипт в конец файла
-  return ok,errmess
-end
+local fname = item.FileName or GP.."\\Macros\\scripts"..os.tmpname()..".lua" -- имя файла, куда записывать
+local text,err,newname = CreateAsText(item.FileName and item.FileName:match("%.%a*$"),fname)
+if text and text~="" then Write(newname,text,"a") far.MacroLoadAll() end -- отредактировали без ошибок? допишем новый скрипт в конец файла
+return not not text,err
 end
 -- +
 --[==[Удаление макроса/обработчика событий под курсором]==]
@@ -1720,15 +1646,14 @@ else -- файл
   win.DeleteFile(fullname) -- удалим
 end
 end
---if not (item.FileName and win.GetFileAttr(item.FileName)) then
 if not item.FileName then -- не из файла?
 --!!! far.MacroDelete() требует id от far.MacroAdd()!!!
   return false,(L[GetType(item)]).." "..(item.descr or item.name or item.prefix)..". "..L.er.NoFile -- не удалить :(
 end
-if far.Message(L.DelElement..(item.descr or item.name or item.prefix).."?",nfo.name,";OkCancel")==1 then -- Macro
+if far.Message(L.DelElement.." "..(item.descr or item.name or item.prefix).."?",nfo.name,";OkCancel")==1 then -- файл
   if item.code or item.name then -- клавиатурный огрызок или модуль?
     rem(nil,item.FileName) -- Cтудент не нужен (c)
-    return far.MacroLoadAll(),L.er.EMacro -- обновим макросы в Farе
+    return far.MacroLoadAll(),L.er.EKeyMacro -- обновим макросы в Farе
   end
   if not win.GetFileAttr(item.FileName) then -- файл потерялся?
     return far.MacroLoadAll(),L.er.NoFile -- просто обновим макросы в Farе
@@ -1748,7 +1673,7 @@ end
 -- -
 function Rebind(item)
 --
-local function DlgProc (hDlg,Msg,Param1--[[,Param2--]]) -- обработка событий диалога
+local function DlgProc(hDlg,Msg,Param1--[[,Param2--]]) -- обработка событий диалога
 if Msg==F.DN_BTNCLICK then -- ввод клавиши
   if Param1==12 and item.rebinded then
     hDlg:send(F.DM_SETTEXT,16,item.rebinded)
@@ -1761,15 +1686,14 @@ if Msg==F.DN_BTNCLICK then -- ввод клавиши
 end
 end
 --
-local ID,IDFrom = LMBuild>=579 and item.id~=Noid and item.id or item.uid,LMBuild>=579 and item.id~=Noid and "id" or "Uid"
 local Form = { -- диалог настройки конфигурации
 --[[01]] {F.DI_DOUBLEBOX,   3, 1,65,12,0,0,0,0,L.diRebind.Hdr},
 --[[02]] {F.DI_TEXT,        5, 2, 0, 2,0,0,0,0,L.diRebind.File},
 --[[03]] {F.DI_TEXT,       20, 2, 0, 2,0,0,0,0,item.FileName},
 --[[04]] {F.DI_TEXT,        5, 3, 0, 3,0,0,0,0,L.diRebind.Area},
 --[[05]] {F.DI_TEXT,       20, 3, 0, 3,0,0,0,0,item.area},
---[[06]] {F.DI_TEXT,        5, 4, 0, 4,0,0,0,0,L.diRebind[IDFrom]},
---[[07]] {F.DI_TEXT,       20, 4, 0, 4,0,0,0,0,ID},
+--[[06]] {F.DI_TEXT,        5, 4, 0, 4,0,0,0,0,L.diRebind[item[Uid(item)]]},
+--[[07]] {F.DI_TEXT,       20, 4, 0, 4,0,0,0,0,item[Uid(item)]},
 --[[08]] {F.DI_TEXT,        5, 5, 0, 5,0,0,0,0,L.diRebind.Desc},
 --[[09]] {F.DI_TEXT,       20, 5, 0, 5,0,0,0,0,item.description or L.diRebind.Absent},
 --[[10]] {F.DI_TEXT,        5, 6, 0, 6,0,0,0,0,L.diRebind.OldKey},
@@ -1788,10 +1712,10 @@ local Form = { -- диалог настройки конфигурации
 }
 -- начало кода функции
 if not item.area or item.guid or item.code then return true end -- обрабатываем только стационарные макросы
-if not ID then return false,L.er.NoUid end
+if not item[Uid(item)] then return false,L.er.NoUid end
 if far.Dialog(Guids.Rebind,-1,-1,69,14,nil,Form,nil,DlgProc)~=21 then return end -- вызовем диалог, не "ОК" - уйдём
 if Form[16][10]==item.key then return end -- не изменилось - уйдём, как при отмене
-local ok, err = rb.MacroRebind(ID,Form[16][10]) -- перепривяжем
+local ok, err = rb.MacroRebind(item[Uid(item)],Form[16][10]) -- перепривяжем
 if not ok then return ok, err end -- ошибка - уйдём
 return far.MacroLoadAll(),L.er.EMacro -- обновим макросы в Farе
 end
@@ -1800,9 +1724,8 @@ end
 -- -
 function Disable(item)
 --
-local ID = LMBuild>=579 and item.id~=Noid and item.id or item.uid
-if item.code or item.guid or item.prefix then return true end -- не обрабатываем клавиатурные макросы/пункты меню/префиксы
-if not (item.name or ID) then return false,L.er.NoUid end -- для всех, кроме модулей, нужен id/uid
+if item.code or item.guid or item.prefix or item.Info then return true end -- не обрабатываем клавиатурные макросы/пункты меню/префиксы/панели
+if not (item.name or item[Uid(item)]) then return false,L.er.NoUid end -- для всех, кроме модулей, нужен id/uid
 if item.name then -- модуль?
   if item.FileName:sub(-OffExt:len())==OffExt then -- отключён?
     return win.RenameFile(item.FileName,item.FileName:sub(1,-1-OffExt:len())) -- включим
@@ -1811,7 +1734,7 @@ if item.name then -- модуль?
     return win.RenameFile(item.FileName,item.FileName..OffExt) -- отключим
   end
 else --
-  local _,err = rb.MacroDisable(ID,not item.disabled) -- переключим состояние disabled
+  local _,err = rb.MacroDisable(item[Uid(item)],not item.disabled) -- переключим состояние disabled
   return not err,err
 end
 end
@@ -1820,20 +1743,15 @@ end
 -- -
 function Config()
 --
-local ov,TmpAreaFilter,TmpGroupFilter,TmpPathFilter,TmpMacroSortOrder,TmpEventSortOrder,TmpModuleSortOrder,TmpMISortOrder,TmpPrefixSortOrder
+local Filter,SO,Form,ov = {},{}
 --
-local function DlgProc (hDlg,Msg,Param1,Param2) -- обработка событий диалога
+local function DlgProc(hDlg,Msg,Param1,Param2) -- обработка событий диалога
 if Msg==F.DN_BTNCLICK then
-  if Param1==27 then TmpAreaFilter = SetFilter(TmpAreaFilter,L.AreaItems) -- выбор областей из списка
-  elseif Param1==28 then TmpGroupFilter = SetFilter(TmpGroupFilter,L.GroupItems) -- выбор группы из списка
-  elseif Param1==29 then TmpPathFilter = SetFilter(TmpPathFilter,L.PathItems) -- выбор путей поиска из списка
-  elseif Param1==18 then TmpMacroSortOrder = SortingOrder(TmpMacroSortOrder,L.cbMacroSortVariants) -- сортировка макросов
-  elseif Param1==19 then TmpEventSortOrder = SortingOrder(TmpEventSortOrder,L.cbEventSortVariants) -- сортировка обработчиков событий
-  elseif Param1==20 then TmpModuleSortOrder = SortingOrder(TmpModuleSortOrder,L.cbModuleSortVariants) -- сортировка модулей
-  elseif Param1==21 then TmpMISortOrder = SortingOrder(TmpMISortOrder,L.cbMISortVariants) -- сортировка пунктов меню плагинов
-  elseif Param1==22 then TmpPrefixSortOrder = SortingOrder(TmpPrefixSortOrder,L.cbPrefixSortVariants) -- сортировка префиксов командной строки
-  elseif Param1==26 or Param1==33 or Param1==36 or Param1==39 or Param1==42 or Param1==45 or Param1==48 or Param1==51 or Param1==54 or Param1==57 then
-    hDlg:send(F.DM_SETTEXT,Param1-1,MacroKey(hDlg)) -- фильтр клавиш, ввод клавиши
+  local tSO,tFilter = {[19]="Macro",[20]="Event",[21]="Module",[22]="MI",[23]="Prefix",[24]="Panel"},{[29]="Area",[30]="Group",[31]="Path"}
+  if tSO[Param1] then SO[tSO[Param1]] = SortingOrder(SO[tSO[Param1]],L["cb"..tSO[Param1].."SortVariants"]) -- сортировка макросов
+  elseif tFilter[Param1] then Filter[tFilter[Param1]] = SetFilter(Filter[tFilter[Param1]],L[tFilter[Param1].."Items"]) -- выбор областей из списка
+  elseif Form[Param1][1]==F.DI_BUTTON and Form[Param1-1][1]==F.DI_EDIT then -- ввод клавиши
+    hDlg:send(F.DM_SETTEXT,Param1-1,(hDlg:send(F.DM_GETTEXT,Param1-1).." "..MacroKey(hDlg)):gsub("^ ","")) hDlg:send(F.DM_SETFOCUS,Param1-1)
   end
 elseif Msg==F.DN_GOTFOCUS then
   if Param1==3 or Param1==5 or Param1==7 then ov = hDlg:send(F.DM_GETTEXT,Param1) end -- запомним старое значение
@@ -1844,193 +1762,155 @@ elseif Msg==F.DN_KILLFOCUS then
   end
 elseif Msg==F.DN_CONTROLINPUT and Param2.VirtualKeyCode then -- нажатие клавиши
   local ACS = band(Param2.ControlKeyState,0x1f) -- состояние Alt, Ctrl и Shift
-  if Param2.VirtualKeyCode==0x4d and ACS==0x10 then -- ShiftM - сортировка макросов
-    TmpMacroSortOrder = SortingOrder(TmpMacroSortOrder,L.cbMacroSortVariants)
-  elseif Param2.VirtualKeyCode==0x45 and ACS==0x10 then -- ShiftE - сортировка обработчиков событий
-    TmpEventSortOrder = SortingOrder(TmpEventSortOrder,L.cbEventSortVariants)
-  elseif Param2.VirtualKeyCode==0x4f and ACS==0x10 then -- ShiftO - сортировка модулей
-    TmpModuleSortOrder = SortingOrder(TmpModuleSortOrder,L.cbModuleSortVariants)
-  elseif Param2.VirtualKeyCode==0x4b and ACS==0x10 then -- ShiftI - сортировка пунктов меню плагинов
-    TmpModuleSortOrder = SortingOrder(TmpModuleSortOrder,L.cbModuleSortVariants)
-  elseif Param2.VirtualKeyCode==0x50 and ACS==0x10 then -- ShiftP - сортировка префиксов командной строки
-    TmpPrefixSortOrder = SortingOrder(TmpPrefixSortOrder,L.cbPrefixSortVariants)
-  elseif Param2.VirtualKeyCode==0x4d and band(ACS,0xc)~=0 then -- CtrlM - фильтр областей макросов
-    TmpAreaFilter = SetFilter(TmpAreaFilter,L.AreaItems)
-  elseif Param2.VirtualKeyCode==0x45 and band(ACS,0xc)~=0 then -- CtrlE - фильтр групп обработчиков событий
-    TmpGroupFilter = SetFilter(TmpGroupFilter,L.GroupItems)
-  elseif Param2.VirtualKeyCode==0x4f and band(ACS,0xc)~=0 then -- CtrlO - фильтр путей модулей
-    TmpPathFilter = SetFilter(TmpPathFilter,L.PathItems)
-  elseif Param2.VirtualKeyCode==0x4b and (ACS==0x4 or ACS==0x8 or ACS==0x0c) then -- CtrlK - фильтр клавиш макросов
-    hDlg:send(F.DM_SETTEXT,25,((hDlg:send(F.DM_GETTEXT,25).." "..MacroKey(hDlg)):gsub("^ ","")))
-    hDlg:send(F.DM_SETFOCUS,25) -- переключимся на поле фильтра клавиш
-  elseif Param2.VirtualKeyCode==0x4b and band(ACS,3)~=0 and band(ACS,0xc)~=0 then -- CtrlAltK   - сбросить фильтр клавиш макросов
-    hDlg:send(F.DM_SETTEXT,25,"")
-    hDlg:send(F.DM_SETFOCUS,25) -- переключимся на поле фильтра клавиш
---  elseif Param2.VirtualKeyCode==0x46 and band(ACS,0xc)~=0 then -- CtrlF - фильтр файлов
-  elseif Param2.VirtualKeyCode==0x4d and band(ACS,3)~=0 then -- AltM - показать/скрыть регулярные макросы
-    hDlg:send(F.DM_SETCHECK,10,F.BSTATE_TOGGLE) -- симулируем нажатие
-  elseif Param2.VirtualKeyCode==0x4b and band(ACS,3)~=0 then -- AltK - показать/скрыть клавиатурные макросы
-    hDlg:send(F.DM_SETCHECK,11,F.BSTATE_TOGGLE) -- симулируем нажатие
-  elseif Param2.VirtualKeyCode==0x45 and band(ACS,3)~=0 then -- AltE - показать/скрыть обработчики событий
-    hDlg:send(F.DM_SETCHECK,13,F.BSTATE_TOGGLE) -- симулируем нажатие
-  elseif Param2.VirtualKeyCode==0x4f and band(ACS,3)~=0 then -- AltO - показать/скрыть модули
-    hDlg:send(F.DM_SETCHECK,14,F.BSTATE_TOGGLE) -- симулируем нажатие
-  elseif Param2.VirtualKeyCode==0x49 and band(ACS,3)~=0 then -- AltI - показать/скрыть пункты меню плагинов
-    hDlg:send(F.DM_SETCHECK,15,F.BSTATE_TOGGLE) -- симулируем нажатие
-  elseif Param2.VirtualKeyCode==0x50 and band(ACS,3)~=0 then -- AltP - показать/скрыть префиксы командной строки
-    hDlg:send(F.DM_SETCHECK,16,F.BSTATE_TOGGLE) -- симулируем нажатие
-  elseif Param2.VirtualKeyCode==0x48 and band(ACS,0xc)~=0 then -- CtrlH - показать/скрыть макросы для других областей
-    hDlg:send(F.DM_SETCHECK,12,F.BSTATE_TOGGLE) -- симулируем нажатие
-  elseif Param2.VirtualKeyCode==0x4c and band(ACS,0xc)~=0 then -- CtrlL
-    hDlg:send(F.DM_CLOSE,61) -- закроем диалог с отменой
-    LoadSettings() -- загрузим сохранённые настройки
-    Config() -- заново откроем диалог конфигурации
-  elseif Param2.VirtualKeyCode==0x0d and ACS==0x10 then -- ShiftEnter
-    hDlg:send(F.DM_CLOSE,60) -- закроем диалог
-  elseif (Param2.VirtualKeyCode==0x70 and ACS==0) then -- F1
+  local tAlt = {[0x4d]=10,[0x4b]=11,[0x45]=13,[0x4f]=14,[0x49]=15,[0x50]=16,[0x4e]=17,[0x48]=12} -- элементы диалога для Alt+клавиша
+  local tCtrl = {[0x4d]="Area",[0x45]="Group",[0x4f]="Path"} -- элементы диалога для Ctrl+клавиша
+  local tShift = {[0x4d]="Macro",[0x45]="Event",[0x4f]="Module",[0x49]="MI",[0x50]="Prefix",[0x4e]="PM"} -- элементы диалога для Shift+клавиша
+  if (Param2.VirtualKeyCode==0x70 and ACS==0) then -- F1
     ShowHelp("config")
+  elseif Param2.VirtualKeyCode==0x4c and band(ACS,0xc)~=0 then -- CtrlL
+    hDlg:send(F.DM_CLOSE,66) S = LoadSettings(Def) Config() -- закроем диалог с отменой, загрузим сохранённые настройки, заново откроем диалог
+  elseif Param2.VirtualKeyCode==0x0d and ACS==0x10 then -- ShiftEnter
+    hDlg:send(F.DM_CLOSE,65) -- закроем диалог
+  elseif Param2.VirtualKeyCode==0x4b and band(ACS,0xc)~=0 then -- CtrlK - фильтр клавиш макросов
+    hDlg:send(F.DM_SETTEXT,27,((hDlg:send(F.DM_GETTEXT,27).." "..MacroKey(hDlg)):gsub("^ ",""))) hDlg:send(F.DM_SETFOCUS,27)
+  elseif Param2.VirtualKeyCode==0x4b and band(ACS,3)~=0 and band(ACS,0xc)~=0 then -- CtrlAltK   - сбросить фильтр клавиш макросов
+    hDlg:send(F.DM_SETTEXT,27,"") hDlg:send(F.DM_SETFOCUS,27) -- переключимся на поле фильтра клавиш
+--  elseif Param2.VirtualKeyCode==0x46 and band(ACS,0xc)~=0 then -- CtrlF - фильтр файлов
+  elseif ACS==0x10 and tShift[Param2.VirtualKeyCode] then -- Shift? - сортировка
+    SO[tShift[Param2.VirtualKeyCode]] = SortingOrder(SO[tShift[Param2.VirtualKeyCode]],L["cb"..tShift[Param2.VirtualKeyCode].."SortVariants"])
+  elseif band(ACS,0xc)~=0 and tCtrl[Param2.VirtualKeyCode] then -- Ctrl? - фильтр
+    Filter[tCtrl[Param2.VirtualKeyCode]] = SetFilter(Filter[tCtrl[Param2.VirtualKeyCode]],L[tCtrl[Param2.VirtualKeyCode].."Items"])
+  elseif band(ACS,3)~=0 and tAlt[Param2.VirtualKeyCode] then -- AltM - показать/скрыть регулярные макросы
+    hDlg:send(F.DM_SETCHECK,tAlt[Param2.VirtualKeyCode],F.BSTATE_TOGGLE) -- симулируем нажатие
   else
     return false
   end
-  hDlg:send(F.DM_REDRAW)
-  return true
+  hDlg:send(F.DM_REDRAW) return true
 elseif Msg==F.DN_CLOSE then
   hDlg:send(F.DM_SETFOCUS,10) -- переключимся на чекбокс
 end
 end
 --
-LoadLang() -- загрузим языковую информацию
-local Form = { -- диалог настройки конфигурации
+L = LoadLang(L) if not L.Lang then return ErrMess(L[1]) end -- загрузим языковую информацию; нет - скажем и выйдем
+Form = { -- диалог настройки конфигурации
 --[[01]] {F.DI_DOUBLEBOX,   3, 1,74,23,0,0,0,0,L.diConf.Hdr},
 --[[02]] {F.DI_TEXT,        5, 2, 0, 2,0,0,0,0,L.diConf.MaxKeyField},
---[[03]] {F.DI_EDIT,       34, 2,37, 2,0,0,0,0,MaxKeyWidth},
+--[[03]] {F.DI_EDIT,       34, 2,37, 2,0,0,0,0,S.MaxKeyWidth},
 --[[04]] {F.DI_TEXT,       38, 2, 0, 2,0,0,0,0,L.diConf.MaxFileField},
---[[05]] {F.DI_EDIT,       48, 2,51, 2,0,0,0,0,MaxFileWidth},
+--[[05]] {F.DI_EDIT,       48, 2,51, 2,0,0,0,0,S.MaxFileWidth},
 --[[06]] {F.DI_TEXT,       52, 2, 0, 2,0,0,0,0,L.diConf.MaxDescField},
---[[07]] {F.DI_EDIT,       68, 2,72, 2,0,0,0,0,MacroMaxDescWidth},
+--[[07]] {F.DI_EDIT,       68, 2,72, 2,0,0,0,0,S.MaxDescWidth},
 --[[08]] {F.DI_TEXT,       -1, 3, 0, 3,0,0,0,F.DIF_SEPARATOR,L.diConf.Show},
 --[[09]] {F.DI_TEXT,        5, 4, 0, 4,0,0,0,0,L.diConf.Macro..":"},
---[[10]] {F.DI_CHECKBOX,   14, 4, 0, 4,Show.M and 1 or 0,0,0,0,L.diConf.ShowMacros},
---[[11]] {F.DI_CHECKBOX,   32, 4, 0, 4,Show.K and 1 or 0,0,0,0,L.diConf.ShowKeyMacros},
---[[12]] {F.DI_CHECKBOX,   50, 4, 0, 4,Show.N and 1 or 0,0,0,0,L.diConf.ShowNonActiveMacros},
---[[13]] {F.DI_CHECKBOX,    5, 5, 0, 5,Show.E and 1 or 0,0,0,0,L.diConf.Event},
---[[14]] {F.DI_CHECKBOX,   21, 5, 0, 5,Show.O and 1 or 0,0,0,0,L.diConf.Module},
---[[15]] {F.DI_CHECKBOX,   36, 5, 0, 5,Show.I and 1 or 0,0,0,0,L.diConf.MenuItem},
---[[16]] {F.DI_CHECKBOX,   54, 5, 0, 5,Show.P and 1 or 0,0,0,0,L.diConf.Prefixes},
---[[17]] {F.DI_TEXT,       -1, 6, 0, 6,0,0,0,F.DIF_SEPARATOR,L.diConf.SortingOrder},
---[[18]] {F.DI_BUTTON,      5, 7, 0, 7,0,0,0,F.DIF_BTNNOCLOSE,L.diConf.Macro},
---[[19]] {F.DI_BUTTON,     17, 7, 0, 7,0,0,0,F.DIF_BTNNOCLOSE,L.diConf.Event},
---[[20]] {F.DI_BUTTON,     29, 7, 0, 7,0,0,0,F.DIF_BTNNOCLOSE,L.diConf.Module},
---[[21]] {F.DI_BUTTON,     40, 7, 0, 7,0,0,0,F.DIF_BTNNOCLOSE,L.diConf.MenuItem},
---[[22]] {F.DI_BUTTON,     55, 7, 0, 7,0,0,0,F.DIF_BTNNOCLOSE,L.diConf.Prefixes},
---[[23]] {F.DI_TEXT,       -1, 8, 0, 8,0,0,0,F.DIF_SEPARATOR,L.diConf.Filter},
---[[24]] {F.DI_TEXT,        5, 9, 0, 9,0,0,0,0,L.diConf.KeyFilter},
---[[25]] {F.DI_EDIT,       24, 9,59, 9,0,0,0,0,Filter.K},
---[[26]] {F.DI_BUTTON,     61, 9, 0, 9,0,0,0,F.DIF_BTNNOCLOSE,L.diConf.ChangeBtn},
---[[27]] {F.DI_BUTTON,      5,10, 0,10,0,0,0,F.DIF_BTNNOCLOSE,L.diConf.AreaFilter},
---[[28]] {F.DI_BUTTON,     29,10, 0,10,0,0,0,F.DIF_BTNNOCLOSE,L.diConf.GroupFilter},
---[[29]] {F.DI_BUTTON,     50,10, 0,10,0,0,0,F.DIF_BTNNOCLOSE,L.diConf.PathFilter},
---[[30]] {F.DI_TEXT,       -1,11, 0,11,0,0,0,F.DIF_SEPARATOR,L.diConf.Keys},
---[[31]] {F.DI_TEXT,        5,12, 0,12,0,0,0,0,L.diConf.ManagerKey},
---[[32]] {F.DI_EDIT,       31,12,59,12,0,0,0,0,Key.Manager},
---[[33]] {F.DI_BUTTON,     61,12, 0,12,0,0,0,F.DIF_BTNNOCLOSE,L.diConf.ChangeBtn},
---[[34]] {F.DI_TEXT,        5,13, 0,13,0,0,0,0,L.diConf.InsertScriptKey},
---[[35]] {F.DI_EDIT,       31,13,59,13,0,0,0,0,Key.InsScript},
---[[36]] {F.DI_BUTTON,     61,13, 0,13,0,0,0,F.DIF_BTNNOCLOSE,L.diConf.ChangeBtn},
---[[37]] {F.DI_TEXT,        5,14, 0,14,0,0,0,0,L.diConf.InsertMacroKey},
---[[38]] {F.DI_EDIT,       31,14,59,14,0,0,0,0,Key.InsMacro},
---[[39]] {F.DI_BUTTON,     61,14, 0,14,0,0,0,F.DIF_BTNNOCLOSE,L.diConf.ChangeBtn},
---[[40]] {F.DI_TEXT,        5,15, 0,15,0,0,0,0,L.diConf.InsertEventKey},
---[[41]] {F.DI_EDIT,       31,15,59,15,0,0,0,0,Key.InsEvent},
---[[42]] {F.DI_BUTTON,     61,15, 0,15,0,0,0,F.DIF_BTNNOCLOSE,L.diConf.ChangeBtn},
---[[43]] {F.DI_TEXT,        5,16, 0,16,0,0,0,0,L.diConf.InsertMIKey},
---[[44]] {F.DI_EDIT,       31,16,59,16,0,0,0,0,Key.InsMI},
---[[45]] {F.DI_BUTTON,     61,16, 0,16,0,0,0,F.DIF_BTNNOCLOSE,L.diConf.ChangeBtn},
---[[46]] {F.DI_TEXT,        5,17, 0,17,0,0,0,0,L.diConf.InsertPrefixKey},
---[[47]] {F.DI_EDIT,       31,17,59,17,0,0,0,0,Key.InsPrefix},
---[[48]] {F.DI_BUTTON,     61,17, 0,17,0,0,0,F.DIF_BTNNOCLOSE,L.diConf.ChangeBtn},
---[[49]] {F.DI_TEXT,        5,18, 0,18,0,0,0,0,L.diConf.EditScriptKey},
---[[50]] {F.DI_EDIT,       31,18,59,18,0,0,0,0,Key.EditScript},
---[[51]] {F.DI_BUTTON,     61,18, 0,18,0,0,0,F.DIF_BTNNOCLOSE,L.diConf.ChangeBtn},
---[[52]] {F.DI_TEXT,        5,19, 0,19,0,0,0,0,L.diConf.InsertUidKey},
---[[53]] {F.DI_EDIT,       31,19,59,19,0,0,0,0,Key.InsUid},
---[[54]] {F.DI_BUTTON,     61,19, 0,19,0,0,0,F.DIF_BTNNOCLOSE,L.diConf.ChangeBtn},
---[[55]] {F.DI_TEXT,        5,20, 0,20,0,0,0,0,L.diConf.ReloadKey},
---[[56]] {F.DI_EDIT,       31,20,59,20,0,0,0,0,Key.Reload},
---[[57]] {F.DI_BUTTON,     61,20, 0,20,0,0,0,F.DIF_BTNNOCLOSE,L.diConf.ChangeBtn},
---[[58]] {F.DI_TEXT,       -1,21, 0,21,0,0,0,F.DIF_SEPARATOR,""},
---[[59]] {F.DI_BUTTON,      0,22, 0,22,0,0,0,F.DIF_DEFAULTBUTTON+F.DIF_CENTERGROUP,L.Save},
---[[60]] {F.DI_BUTTON,      0,22, 0,22,0,0,0,F.DIF_CENTERGROUP,L.NoSave},
---[[61]] {F.DI_BUTTON,      0,22, 0,22,0,0,0,F.DIF_CENTERGROUP,L.Cancel},
+--[[10]] {F.DI_CHECKBOX,   14, 4, 0, 4,S.Show.M and 1 or 0,0,0,0,L.diConf.ShowMacros},
+--[[11]] {F.DI_CHECKBOX,   32, 4, 0, 4,S.Show.K and 1 or 0,0,0,0,L.diConf.ShowKeyMacros},
+--[[12]] {F.DI_CHECKBOX,   50, 4, 0, 4,S.Show.H and 1 or 0,0,0,0,L.diConf.ShowNonActiveMacros},
+--[[13]] {F.DI_CHECKBOX,    0, 5, 0, 5,S.Show.E and 1 or 0,0,0,0+F.DIF_CENTERGROUP,L.diConf.Event},
+--[[14]] {F.DI_CHECKBOX,    0, 5, 0, 5,S.Show.O and 1 or 0,0,0,0+F.DIF_CENTERGROUP,L.diConf.Module},
+--[[15]] {F.DI_CHECKBOX,    0, 5, 0, 5,S.Show.I and 1 or 0,0,0,0+F.DIF_CENTERGROUP,L.diConf.MenuItem},
+--[[16]] {F.DI_CHECKBOX,    0, 5, 0, 5,S.Show.P and 1 or 0,0,0,0+F.DIF_CENTERGROUP,L.diConf.Prefixes},
+--[[17]] {F.DI_CHECKBOX,    0, 5, 0, 5,S.Show.N and 1 or 0,0,0,0+F.DIF_CENTERGROUP,L.diConf.Panels},
+--[[18]] {F.DI_TEXT,       -1, 6, 0, 6,0,0,0,F.DIF_SEPARATOR,L.diConf.SortingOrder},
+--[[19]] {F.DI_BUTTON,      0, 7, 0, 7,0,0,0,F.DIF_BTNNOCLOSE+F.DIF_CENTERGROUP,L.diConf.Macro},
+--[[20]] {F.DI_BUTTON,      0, 7, 0, 7,0,0,0,F.DIF_BTNNOCLOSE+F.DIF_CENTERGROUP,L.diConf.Event},
+--[[21]] {F.DI_BUTTON,      0, 7, 0, 7,0,0,0,F.DIF_BTNNOCLOSE+F.DIF_CENTERGROUP,L.diConf.Module},
+--[[22]] {F.DI_BUTTON,      0, 7, 0, 7,0,0,0,F.DIF_BTNNOCLOSE+F.DIF_CENTERGROUP,L.diConf.MenuItem},
+--[[23]] {F.DI_BUTTON,      0, 7, 0, 7,0,0,0,F.DIF_BTNNOCLOSE+F.DIF_CENTERGROUP,L.diConf.Prefixes},
+--[[24]] {F.DI_BUTTON,      0, 7, 0, 7,0,0,0,F.DIF_BTNNOCLOSE+F.DIF_CENTERGROUP,L.diConf.Panels},
+--[[25]] {F.DI_TEXT,       -1, 8, 0, 8,0,0,0,F.DIF_SEPARATOR,L.diConf.Filter},
+--[[26]] {F.DI_TEXT,        5, 9, 0, 9,0,0,0,0,L.diConf.KeyFilter},
+--[[27]] {F.DI_EDIT,       12, 9,29, 9,0,0,0,0,S.Filter.K},
+--[[28]] {F.DI_BUTTON,     30, 9, 0, 9,0,0,0,F.DIF_BTNNOCLOSE,L.diConf.ChangeBtn},
+--[[29]] {F.DI_BUTTON,     42, 9, 0, 9,0,0,0,F.DIF_BTNNOCLOSE,L.diConf.AreaFilter},
+--[[30]] {F.DI_BUTTON,     53, 9, 0, 9,0,0,0,F.DIF_BTNNOCLOSE,L.diConf.GroupFilter},
+--[[31]] {F.DI_BUTTON,     63, 9, 0, 9,0,0,0,F.DIF_BTNNOCLOSE,L.diConf.PathFilter},
+--[[32]] {F.DI_TEXT,       -1,10, 0,10,0,0,0,F.DIF_SEPARATOR,L.diConf.Keys},
+--[[33]] {F.DI_TEXT,        5,11, 0,11,0,0,0,0,L.diConf.ManagerKey},
+--[[34]] {F.DI_EDIT,       31,11,59,11,0,0,0,0,S.Key.Manager},
+--[[35]] {F.DI_BUTTON,     61,11, 0,11,0,0,0,F.DIF_BTNNOCLOSE,L.diConf.ChangeBtn},
+--[[36]] {F.DI_TEXT,        5,12, 0,12,0,0,0,0,L.diConf.InsertScriptKey},
+--[[37]] {F.DI_EDIT,       31,12,59,12,0,0,0,0,S.Key.InsScript},
+--[[38]] {F.DI_BUTTON,     61,12, 0,12,0,0,0,F.DIF_BTNNOCLOSE,L.diConf.ChangeBtn},
+--[[39]] {F.DI_TEXT,        5,13, 0,13,0,0,0,0,L.diConf.InsertMacroKey},
+--[[40]] {F.DI_EDIT,       31,13,59,13,0,0,0,0,S.Key.InsMacro},
+--[[41]] {F.DI_BUTTON,     61,13, 0,13,0,0,0,F.DIF_BTNNOCLOSE,L.diConf.ChangeBtn},
+--[[42]] {F.DI_TEXT,        5,14, 0,14,0,0,0,0,L.diConf.InsertEventKey},
+--[[43]] {F.DI_EDIT,       31,14,59,14,0,0,0,0,S.Key.InsEvent},
+--[[44]] {F.DI_BUTTON,     61,14, 0,14,0,0,0,F.DIF_BTNNOCLOSE,L.diConf.ChangeBtn},
+--[[45]] {F.DI_TEXT,        5,15, 0,15,0,0,0,0,L.diConf.InsertMIKey},
+--[[46]] {F.DI_EDIT,       31,15,59,15,0,0,0,0,S.Key.InsMI},
+--[[47]] {F.DI_BUTTON,     61,15, 0,15,0,0,0,F.DIF_BTNNOCLOSE,L.diConf.ChangeBtn},
+--[[48]] {F.DI_TEXT,        5,16, 0,16,0,0,0,0,L.diConf.InsertPrefixKey},
+--[[49]] {F.DI_EDIT,       31,16,59,16,0,0,0,0,S.Key.InsPrefix},
+--[[50]] {F.DI_BUTTON,     61,16, 0,16,0,0,0,F.DIF_BTNNOCLOSE,L.diConf.ChangeBtn},
+--[[51]] {F.DI_TEXT,        5,17, 0,17,0,0,0,0,L.diConf.InsertPanelKey},
+--[[52]] {F.DI_EDIT,       31,17,59,17,0,0,0,0,S.Key.InsPanel},
+--[[53]] {F.DI_BUTTON,     61,17, 0,17,0,0,0,F.DIF_BTNNOCLOSE,L.diConf.ChangeBtn},
+--[[54]] {F.DI_TEXT,        5,18, 0,18,0,0,0,0,L.diConf.EditScriptKey},
+--[[55]] {F.DI_EDIT,       31,18,59,18,0,0,0,0,S.Key.EditScript},
+--[[56]] {F.DI_BUTTON,     61,18, 0,18,0,0,0,F.DIF_BTNNOCLOSE,L.diConf.ChangeBtn},
+--[[57]] {F.DI_TEXT,        5,19, 0,19,0,0,0,0,L.diConf.InsertUidKey},
+--[[58]] {F.DI_EDIT,       31,19,59,19,0,0,0,0,S.Key.InsUid},
+--[[59]] {F.DI_BUTTON,     61,19, 0,19,0,0,0,F.DIF_BTNNOCLOSE,L.diConf.ChangeBtn},
+--[[60]] {F.DI_TEXT,        5,20, 0,20,0,0,0,0,L.diConf.ReloadKey},
+--[[61]] {F.DI_EDIT,       31,20,59,20,0,0,0,0,S.Key.Reload},
+--[[62]] {F.DI_BUTTON,     61,20, 0,20,0,0,0,F.DIF_BTNNOCLOSE,L.diConf.ChangeBtn},
+--[[63]] {F.DI_TEXT,       -1,21, 0,21,0,0,0,F.DIF_SEPARATOR,""},
+--[[64]] {F.DI_BUTTON,      0,22, 0,22,0,0,0,F.DIF_DEFAULTBUTTON+F.DIF_CENTERGROUP,L.Save},
+--[[65]] {F.DI_BUTTON,      0,22, 0,22,0,0,0,F.DIF_CENTERGROUP,L.NoSave},
+--[[66]] {F.DI_BUTTON,      0,22, 0,22,0,0,0,F.DIF_CENTERGROUP,L.Cancel},
 }
 -- начало кода функции
-TmpAreaFilter,TmpGroupFilter,TmpPathFilter,TmpMacroSortOrder,TmpEventSortOrder,TmpModuleSortOrder,TmpMISortOrder,TmpPrefixSortOrder =
-  Filter.A,Filter.G,Filter.P,SO.M,SO.E,SO.O,SO.I,SO.P -- временные копии фильтров и порядка сортировки
+Filter.Area,Filter.Group,Filter.Path,SO.Macro,SO.Event,SO.Module,SO.MI,SO.Prefix,SO.PM =
+  S.Filter.A,S.Filter.G,S.Filter.P,S.SO.M,S.SO.E,S.SO.O,S.SO.I,S.SO.P,S.SO.N -- временные копии фильтров и порядка сортировки
 local res = far.Dialog(Guids.Config,-1,-1,78,25,nil,Form,nil,DlgProc) -- вызовем диалог
-if res~=59 and res~=60 then return end -- не "ОК" - уйдём
-MaxKeyWidth,MaxFileWidth,MacroMaxDescWidth = tonumber(Form[3][10]),tonumber(Form[5][10]),tonumber(Form[7][10])
-Show.M,Show.K,Show.N = Form[10][6]~=0,Form[11][6]~=0,Form[12][6]~=0 -- новые значения
-Show.E,Show.O,Show.I,Show.P = Form[13][6]~=0,Form[14][6]~=0,Form[15][6]~=0,Form[16][6]~=0
-Filter.K,Filter.A,Filter.G,Filter.P = Form[25][10],TmpAreaFilter,TmpGroupFilter,TmpPathFilter
-SO.M,SO.E,SO.O,SO.I,SO.P = TmpMacroSortOrder,TmpEventSortOrder,TmpModuleSortOrder,TmpMISortOrder,TmpPrefixSortOrder
-local ReLoad = Form[32][10]..Form[35][10]..Form[38][10]..Form[41][10]..Form[44][10]..Form[47][10]..Form[50][10]..Form[53][10]..Form[56][10]
-  ~=Key.Manager..Key.InsScript..Key.InsMacro..Key.InsEvent..Key.InsMI..Key.InsPrefix..Key.EditScript..Key.InsUid..Key.Reload -- признак перезагрузки
-Key.Manager,Key.InsScript,Key.InsMacro,Key.InsEvent,Key.InsMI,Key.InsPrefix,Key.EditScript,Key.InsUid,Key.Reload =
-  Form[32][10],Form[35][10],Form[38][10],Form[41][10],Form[44][10],Form[47][10],Form[50][10],Form[53][10],Form[56][10]
-if res==59 then SaveSettings() end -- сохраним в БД, если надо
+if res~=64 and res~=65 then return end -- не "ОК" - уйдём
+S.MaxKeyWidth,S.MaxFileWidth,S.MaxDescWidth = tonumber(Form[3][10]),tonumber(Form[5][10]),tonumber(Form[7][10])
+S.Show.M,S.Show.K,S.Show.H = Form[10][6]~=0,Form[11][6]~=0,Form[12][6]~=0 -- новые значения
+S.Show.E,S.Show.O,S.Show.I,S.Show.P,S.Show.N = Form[13][6]~=0,Form[14][6]~=0,Form[15][6]~=0,Form[16][6]~=0,Form[17][6]~=0
+S.Filter.K,S.Filter.A,S.Filter.G,S.Filter.P = Form[27][10],Filter.Area,Filter.Group,Filter.Path
+S.SO.M,S.SO.E,S.SO.O,S.SO.I,S.SO.P,S.SO.N = SO.Macro,SO.Event,SO.Module,SO.MI,SO.Prefix,SO.PM
+local ReLoad = Form[34][10]..Form[37][10]..Form[40][10]..Form[43][10]..Form[46][10]..Form[49][10]..Form[55][10]..Form[58][10]..Form[61][10]
+  ~=S.Key.Manager..S.Key.InsScript..S.Key.InsMacro..S.Key.InsEvent..S.Key.InsMI..S.Key.InsPrefix..S.Key.EditScript..S.Key.InsUid..S.Key.Reload
+S.Key.Manager,S.Key.InsScript,S.Key.InsMacro,S.Key.InsEvent,S.Key.InsMI,S.Key.InsPrefix,S.Key.EditScript,S.Key.InsUid,S.Key.Reload =
+  Form[34][10],Form[37][10],Form[40][10],Form[43][10],Form[46][10],Form[49][10],Form[55][10],Form[58][10],Form[61][10] -- новые клавиши
+if res==64 then SaveSettings(S) end -- сохраним в БД, если надо
 if ReLoad then far.MacroLoadAll() end -- обновим макросы в Farе, если клавиши изменились
 end
 --
 if type(nfo)=="table" then nfo.config = Config end
--- +
---[==[Главные функции]==]
--- -
-local InsertScriptIntoEditor,EditScriptUnderCursor,Reload,ManageMacrosEvents
---
+--------------------------------------------------------------------------------
 -- +
 --[==[Вставка скрипта в редактируемый файл]==]
 -- -
 function InsertScriptIntoEditor(stype)
 --
-if not(stype==1 or stype==2 or stype==3 or stype==4) then stype = nil end -- если неверный тип скрипта, будем спрашивать
-LoadLang()
-local tmpname = far.MkTemp()..editor.GetFileName():match("%.%a*$") -- Временный файл
-local newitem,fun,ans = {{FileName=tmpname,area="Common",key="",flags=0,descr="NewMacro"},
-                         {FileName=tmpname,group="ExitFAR",descr="NewEvent"},
-                         {FileName=tmpname,guid=win.Uuid(),description="",descr="NewMenuItem",text=function() end,flags={}},
-                         {FileName=tmpname,prefix="",description=""}},
-                        {OpenMacroInDialog,OpenEventInDialog,OpenMenuItemInDialog,OpenPrefixInDialog},
-                        stype or far.Message(L.CreateNew,nfo.name,L.CreateNewBtns)
-if ans==1 or ans==2 or ans==3 or ans==4 then -- Macro/Event/MenuItem/CommandLine
-  Write(tmpname,"") -- создадим файл
-  local res,err = DoIt(fun[ans],L.CreateNew,newitem[ans],true,true) -- отредактируем новый пустой скрипт
-  if not res then return res,err end -- отредактируем новый пустой скрипт; ошибка - уйдём
-  local text = Read(tmpname) -- получим всё содержимое временного файла
-  win.DeleteFile(tmpname) -- больше не нужен
+if not(stype==1 or stype==2 or stype==3 or stype==4 or stype==5) then stype = nil end -- если неверный тип скрипта, будем спрашивать
+L = LoadLang(L) if not L.Lang then return ErrMess(L[1]) end -- загрузим языковую информацию; нет - скажем и выйдем
+local text,err = CreateAsText(editor.GetFileName():match("%.%a*$"),nil,stype)
+if text and text~="" then -- Получили текст? запишем новый скрипт в файл
   editor.UndoRedo(nil,F.EUR_BEGIN) -- начнём блок отмены
   local mode = band(editor.GetInfo().Options,F.EOPT_AUTOINDENT)~=0 -- запомним текущее состояние автоотступа
   editor.SetParam(nil,F.ESPT_AUTOINDENT,false) -- запретим автооступ
-  res = editor.InsertText(nil,text.."\n") -- вставим скрипт
+  editor.InsertText(nil,text.."\n") -- вставим скрипт
   editor.SetParam(nil,F.ESPT_AUTOINDENT,mode) -- восстановим старое значение автооступа
   editor.UndoRedo(nil,F.EUR_END) -- закончим блок отмены
-  return res,L.er.AddError
-else
-  return false,L.er.Cancel
+elseif not text then ErrMess(err)
 end
 end
 -- +
 --[==[Редактирование скрипта под курсором]==]
 -- -
 function EditScriptUnderCursor(CL)
-LoadLang()
-local list,curr,tmpname = {},{},far.MkTemp()..editor.GetFileName():match("%.%a*$") -- таблица для данных о Macro/Event, временный файл
+L = LoadLang(L) if not L.Lang then return ErrMess(L[1]) end -- загрузим языковую информацию; нет - скажем и выйдем
+local list,curr,tmpname = {},{},far.MkTemp()..editor.GetFileName():match("%.%a*$") -- таблица для данных о скриптах, временный файл
 local text = "" for i=1,Editor.Lines do text = text..Editor.GetStr(i).."\n" end -- достанем текст файла
 if tmpname:match("%.(%a*)$"):upper()=="LUA" then -- lua?
   for _,s in ipairs({"Macro","Event","MenuItem","CommandLine"}) do -- выдернем все Macro, Event, MenuItem и CommandLine
     for t in text:gmatch(s.."%s*%b{}") do list[#list+1] = {text=t,type=s} end
   end
 else -- moon
-  local r = [[/^(([ \t]*)(Macro|Event|MenuItem|CommandLine)[ \t]*\n(\2[ \t]+[^\n]+\n)+)/m]]
+  local r = [[/^(([ \t]*)(Macro|Event|MenuItem|CommandLine|PanelModule)[ \t]*\n(\2[ \t]+[^\n]+\n)+)/m]]
   for s,_,t in regex.gmatch(text,r) do list[#list+1] = {text=s,type=t} end -- выдернем все Macro, Event, MenuItem и CommandLine
 end
 for i,v in ipairs(list) do -- найдём начало и конец каждого
@@ -2058,8 +1938,8 @@ if not curr.l1 then return false,L.er.NotFound end -- не нашли? уйдё�
 Write(tmpname,curr.text) -- закинем текст в файл
 local tbl,lf = {},tmpname:match("%.(%a*)$"):upper()=="LUA" and loadfile or require"moonscript".loadfile -- функция загрузки текста
 local Proc,res,err = function(arg) tbl=arg end,lf(tmpname) -- функция для доставания, загруженный кусок или ошибка
-if res then res,err = pcall(setfenv(res,{Macro=Proc,Event=Proc,MenuItem=Proc,CommandLine=Proc})) end -- загрузим и выполним файл
-if not res then far.Message(err,L.er["E"..curr.type],";Ok","w") return false,err end -- ошибка - скажем и выйдем
+if res then res,err = pcall(setfenv(res,{Macro=Proc,Event=Proc,MenuItem=Proc,CommandLine=Proc,PanelModule=Proc})) end -- загрузим и выполним файл
+if not res then ErrMess(err,L.er["E"..curr.type]) return false,err end -- ошибка - скажем и выйдем
 if tbl.guid then -- MenuItem?
   tbl.flags,tbl.guid = {},win.Uuid(tbl.guid) -- добавим флаги, приведём guid в нужный формат.
   for m in tbl.menu:lower():gmatch("%S+") do if m=="plugins" or m=="disks" or m=="config" then tbl.flags[m]=true end end -- добавим флаги меню
@@ -2069,7 +1949,7 @@ tbl.descr = (tbl.description and not (tbl.code and tbl.description=="")) and "'"
 ({Macro=OpenMacroInDialog,Event=OpenEventInDialog,MenuItem=OpenMenuItemInDialog,CommandLine=OpenPrefixInDialog})[curr.type](tbl,false,true) -- сделаем
 local txt = Read(tmpname) -- достанем новый текст
 if txt==curr.text then return true end -- текст не изменился? ничего не делаем
-text = mf.replace(text,curr.text,txt,0,1) -- заменим правленный фрагмент
+text = text:gsub(curr.text:gsub("[%^%$%(%)%%%.%[%]%*%+%-%?]","%%%0"),txt) -- заменим правленный фрагмент
 editor.UndoRedo(nil,F.EUR_BEGIN) -- начнём блок отмены
 for i=curr.l1,curr.l2 do Editor.SetStr(text:gsub(".-\n","",i-1):match("^[^\n]*"),i) end -- заменим текст скрипта
 for i=curr.l2,txt:gsub("[^\n]*",""):len()+curr.l1-1 do Editor.InsStr(text:gsub(".-\n","",i-1):match("^[^\n]*"),i) end
@@ -2080,13 +1960,12 @@ end
 --[==[Перезагрузка скриптов из редактора]==]
 -- -
 function Reload(onnotsaved)
-if Area.Editor and band(editor.GetInfo().CurState,F.ECSTATE_SAVED)==0 and LoadLang() then -- в редакторе и файл не сохранён?
-  local ans = onnotsaved and ({save=1,ignore=2,cancel=3})[onnotsaved] or far.Message(L.NotSaved,"",L.NotSavedBtns) -- спросим, что делать
-  if ans==1 then editor.SaveFile() -- сохранить и перезагрузить? сохраним
-  elseif ans~=2 then return -- ничего не делать? выйдем, чтоб не перезагружать
-  end
+L = LoadLang(L)
+if Area.Editor and band(editor.GetInfo().CurState,F.ECSTATE_SAVED)==0 then -- в редакторе и файл не сохранён?
+  local ans = onnotsaved and ({save=1,ignore=2,cancel=3})[onnotsaved] or (L.Lang and far.Message(L.NotSaved,"",L.NotSavedBtns) or 1) -- что делать?
+  if ans==1 then editor.SaveFile() elseif ans~=2 then return end -- сохранить и перезагрузить? сохраним; ничего не делать? выйдем
 end
-if far.MacroLoadAll() then far.Message(L and L.ReloadDone or "Scripts reloaded OK") end -- обновим макросы в Farе
+if far.MacroLoadAll() then far.Message(L.Lang and L.ReloadDone or "OK","","") far.Text() mf.waitkey(2000) end -- обновим макросы в Farе
 end
 -- +
 --[==[main function]==]
@@ -2097,8 +1976,8 @@ function ManageMacrosEvents(PTable)
 --  MaSort,EvSort,MoSort,MISort,PrSort - сортировка макросов, обработчиков событий, модулей, пунктов меню плагинов и префиксов командной строки;
 --   параметр - строка букв, можно посмотреть в языковых файлах в cbXXXSortVariants; заглавная/строчная буква - сортировка по возрастанию/убыванию.
 --  AFilter,KFilter,GFilter,PFilter,FFilter,SFilter - фильтр областей, клавиш, групп, путей поиска модулей, файлов со скриптами, пакетов скриптов.
---  MaShow,KMShow,EvShow,MoShow,MIShow,PrShow,AMShow - показывать стационарные/клавиатурные макросы/обработчики событий/модули/пункты меню плагинов,
---   префиксы командной строки, макросы из неактивных областей.
+--  MaShow,KMShow,EvShow,MoShow,MIShow,PrShow,PMShow,AMShow - показывать стационарные/клавиатурные макросы/обработчики событий/модули/пункты меню
+--   плагинов/префиксы командной строки/панельные модули, макросы из неактивных областей.
 -- Значения пропущенных полей берутся из конфигурации скрипта.
 --
 local function ShortArea(area) -- сворачивает список областей в короткую строку фиксированной длины
@@ -2124,9 +2003,8 @@ return g
 end
 --
 local function CompareMacros(a,b) -- сравнение 2 макросов по: "COMMON"?, текущая?, по областям, по клавишам, по маскам файлов, по описаниям
-local as,bs,a1,b1 = "",""
-for c in SO.M:gmatch(".") do
-  a1,b1 = "",""
+local as,bs,a1,b1,f = "",""
+for c in S.SO.M:gmatch(".") do a1,b1 = "",""
   if c:upper()=="O" then a1,b1 = not a.area:upper():cfind("COMMON"),not b.area:upper():cfind("COMMON")
   elseif c:upper()=="C" then a1,b1 = not a.area:upper():cfind(Area.Current:upper()),not b.area:upper():cfind(Area.Current:upper())
   elseif c:upper()=="A" then a1,b1 = ShortArea(a.area),ShortArea(b.area)
@@ -2134,41 +2012,38 @@ for c in SO.M:gmatch(".") do
   elseif c:upper()=="F" then a1,b1 = a.filemask or "",b.filemask or ""
   elseif c:upper()=="D" then a1,b1 = a.description,b.description end
   if far.LIsUpper(c) then a1,b1 = tostring(a1),tostring(b1) else a1,b1 = tostring(b1),tostring(a1) end
-  if a1~=b1 then local f = "%-"..math.max(a1:len(),b1:len()).."s" as,bs = as..f:format(a1),bs..f:format(b1) end
+  a1,b1 = a1=="nil" and""or a1,b1=="nil" and""or b1 f = "%-"..math.max(a1:len(),b1:len()).."s" as,bs = as..f:format(a1),bs..f:format(b1)
 end
 return(as<bs)
 end
 --
 local function CompareEvents(a,b) -- сравнение 2 обработчиков событий по: 1 - по группам; 2 - по маскам файлов; 3 - по описаниям
-local as,bs,a1,b1 = "",""
-for c in SO.E:gmatch(".") do
-  a1,b1 = "",""
+local as,bs,a1,b1,f = "",""
+for c in S.SO.E:gmatch(".") do a1,b1 = "",""
   if c:upper()=="G" then a1,b1 = ShortGroup(a.group),ShortGroup(b.group)
   elseif c:upper()=="F" then a1,b1 = a.filemask or "",b.filemask or ""
   elseif c:upper()=="D" then a1,b1 = a.description,b.description end
   if far.LIsUpper(c) then a1,b1 = tostring(a1),tostring(b1) else a1,b1 = tostring(b1),tostring(a1) end
-  if a1~=b1 then local f = "%-"..math.max(a1:len(),b1:len()).."s" as,bs = as..f:format(a1),bs..f:format(b1) end
+  a1,b1 = a1=="nil" and""or a1,b1=="nil" and""or b1 f = "%-"..math.max(a1:len(),b1:len()).."s" as,bs = as..f:format(a1),bs..f:format(b1)
 end
 return(as<bs)
 end
 --
 local function CompareModules(a,b) -- сравнение 2 модулей по: 1 - тип; 2 - маска поиска; 3 - имя
-local as,bs,a1,b1 = "",""
-for c in SO.O:gmatch(".") do
-  a1,b1 = "",""
+local as,bs,a1,b1,f = "",""
+for c in S.SO.O:gmatch(".") do a1,b1 = "",""
   if c:upper()=="T" then a1,b1 = a.type,b.type
   elseif c:upper()=="M" then a1,b1 = a.mask,b.mask
   elseif c:upper()=="N" then a1,b1 = a.name,b.name end
   if far.LIsUpper(c) then a1,b1 = tostring(a1),tostring(b1) else a1,b1 = tostring(b1),tostring(a1) end
-  if a1~=b1 then local f = "%-"..math.max(a1:len(),b1:len()).."s" as,bs = as..f:format(a1),bs..f:format(b1) end
+  a1,b1 = a1=="nil" and""or a1,b1=="nil" and""or b1 f = "%-"..math.max(a1:len(),b1:len()).."s" as,bs = as..f:format(a1),bs..f:format(b1)
 end
 return(as<bs)
 end
 --
 local function CompareMenuItems(a,b) -- сравнение 2 пунктов меню плагинов по: использующие меню, область, "COMMON"?, текущая?, описание
-local as,bs,a1,b1 = "",""
-for c in SO.I:gmatch(".") do
-  a1,b1 = "",""
+local as,bs,a1,b1,f = "",""
+for c in S.SO.I:gmatch(".") do a1,b1 = "",""
   if c:upper()=="M" then for _,m in pairs({"plugins","disks","config"}) do a1,b1 = a1..(a.flags[m]and"1"or"2"),b1..(b.flags[m]and"1"or"2") end
   elseif c:upper()=="O" then a1,b1 = not a.flags.common,not b.flags.common
   elseif c:upper()=="C" then
@@ -2176,90 +2051,99 @@ for c in SO.I:gmatch(".") do
     a1,b1 = not a.flags[num],not b.flags[num]
   elseif c:upper()=="A" then
     local stbl = LMBuild>=626 and {1,10,11,12,5,13,2,3,4,8,7,14,6,15,16,9,17,18--[[,19--]],0,"common"}
-                         or {1,10,11,12,5,13,2,3,4,8,7,14,6,15,16,9,0,"common"}
+                               or {1,10,11,12,5,13,2,3,4,8,7,14,6,15,16,9,                 0,"common"}
     for _,n in pairs(stbl) do a1,b1 = a1..(a.flags[n]and"1"or"2"),b1..(b.flags[n]and"1"or"2") end
   elseif c:upper()=="D" then a1,b1 = a.description,b.description end
   if far.LIsUpper(c) then a1,b1 = tostring(a1),tostring(b1) else a1,b1 = tostring(b1),tostring(a1) end
-  if a1~=b1 then local f = "%-"..math.max(a1:len(),b1:len()).."s" as,bs = as..f:format(a1),bs..f:format(b1) end
+  a1,b1 = a1=="nil" and""or a1,b1=="nil" and""or b1 f = "%-"..math.max(a1:len(),b1:len()).."s" as,bs = as..f:format(a1),bs..f:format(b1)
 end
 return(as<bs)
 end
 --
 local function ComparePrefixes(a,b) -- сравнение 2 префиксов командной строки по: 1 - префикс; 2 - описание
-local as,bs,a1,b1 = "",""
-for c in SO.P:gmatch(".") do
-  a1,b1 = "",""
+local as,bs,a1,b1,f = "",""
+for c in S.SO.P:gmatch(".") do a1,b1 = "",""
   if c:upper()=="P" then a1,b1 = a.prefix,b.prefix
   elseif c:upper()=="D" then a1,b1 = a.description,b.description end
   if far.LIsUpper(c) then a1,b1 = tostring(a1),tostring(b1) else a1,b1 = tostring(b1),tostring(a1) end
-  if a1~=b1 then local f = "%-"..math.max(a1:len(),b1:len()).."s" as,bs = as..f:format(a1),bs..f:format(b1) end
+  a1,b1 = a1=="nil" and""or a1,b1=="nil" and""or b1 f = "%-"..math.max(a1:len(),b1:len()).."s" as,bs = as..f:format(a1),bs..f:format(b1)
 end
 return(as<bs)
 end
 --
-local function ProcMod(_,fullname,bp,mask,modules,off) -- обработка найденных потенциальных модулей
-local mn = fullname:sub(bp:len()+1):gsub(OffExt.."$",""):gsub("%.%a*$",""):gsub("\\","%.") -- имя модуля
+local function ComparePanels(a,b) -- сравнение 2 панельных модулей по: 1 - описание
+local as,bs,a1,b1,f = "",""
+for c in S.SO.N:gmatch(".") do a1,b1 = "",""
+  if c:upper()=="D" then a1,b1 = a.Info.Description,b.Info.Description
+  elseif c:upper()=="T" then a1,b1 = a.Info.Title,b.Info.Title
+  elseif c:upper()=="A" then a1,b1 = a.Info.Author,b.Info.Author end
+  if far.LIsUpper(c) then a1,b1 = tostring(a1),tostring(b1) else a1,b1 = tostring(b1),tostring(a1) end
+  a1,b1 = a1=="nil" and""or a1,b1=="nil" and""or b1 f = "%-"..math.max(a1:len(),b1:len()).."s" as,bs = as..f:format(a1),bs..f:format(b1)
+end
+return(as<bs)
+end
+--
+local function ProcMod(_,fullname,bp,fmask,mask,modules,off) -- обработка найденных потенциальных модулей
+local mn,fn = fullname:sub(bp:len()+1):gsub(OffExt.."$",""):gsub("%.%a*$",""):gsub("\\","%."),fullname -- имя модуля
 if mask:find("?\\init",1,true) then -- модуль - каталог с init.lua внутри?
-  mn,fullname = mn:match("^(.*)%.init$"),fullname:gsub(OffExt.."$",""):match("^(.*)init%.%a*$") -- скорректируем имя модуля и полный путь
+  mn,fn = mn:match("^(.*)%.init$"),fullname:gsub(OffExt.."$",""):match("^(.*)init%.%a*$") -- скорректируем имя модуля и полный путь
 else -- модуль - .lua-файл
   if mn:find("%.init$") then return end -- init.lua? пропускаем
 end
-if not modules[fullname] then -- ещё не найден? добавим в таблицу
+if FMatch(fullname,fmask..";"..fmask..OffExt)>0 and not modules[fn] then -- подходит по маске файла и ещё не найден? добавим в таблицу
   if off then -- перебираем отключённые?
-    modules[fullname] = {res="?",disabled=true,name=mn,realbase=bp,mask=mask,FileName=fullname,type=mask:match("%.(%a*)$"):lower()} -- добавим
+    modules[fn] = {res="?",disabled=true,name=mn,realbase=bp,realname=fullname,mask=mask,FileName=fn,type=mask:match("%.(%a*)$"):lower()} -- добавим
   else
-    modules[fullname] = {res=package.loaded[mn],name=mn,realbase=bp,mask=mask,FileName=fullname,type=mask:match("%.(%a*)$"):lower()} -- добавим
+    modules[fn] = {res=package.loaded[mn],name=mn,realbase=bp,realname=fullname,mask=mask,FileName=fn,type=mask:match("%.(%a*)$"):lower()} -- добавим
   end
 end
 end
 -- старт
-LoadSettings() -- восстановим настройки
+S = LoadSettings(Def) if not L.Lang then return ErrMess(L[1]) end -- восстановим настройки; нет языковой информации - скажем и выйдем
 if type(PTable)~="table" then PTable = {} end
-if PTable.ResetFilters then -- сбросить все фильтры?
-  Filter,Show = {A=DefFilter.A,K=DefFilter.K,G=DefFilter.G,P=DefFilter.P,F="*"},{M=true,K=true,E=true,O=true,I=true,P=true,N=true} -- сбросим
+if PTable.ResetFilters then -- сбросить все фильтры? сбросим
+  S.Filter,S.Show = {A=Def.AreaFilter,K="",G=Def.GroupFilter,P=Def.PathFilter,F="*"},{M=true,K=true,E=true,O=true,I=true,P=true,N=true,H=true}
 end
-SO.M,SO.E,SO.O,SO.I,SO.P = PTable.MaSort or SO.M,PTable.EvSort or SO.E,PTable.MoSort or SO.O,PTable.MISort or SO.I,PTable.PrSort or SO.P
-Filter.A,Filter.K,Filter.G,Filter.P = PTable.AFilter or Filter.A,PTable.KFilter or Filter.K,PTable.GFilter or Filter.G,PTable.PFilter or Filter.P
-Filter.F = (not PTable.FFilter or mf.fmatch(">:<",PTable.FFilter)<0) and "*" or PTable.FFilter
+S.SO.M,S.SO.E,S.SO.O,S.SO.I = PTable.MaSort or S.SO.M,PTable.EvSort or S.SO.E,PTable.MoSort or S.SO.O,PTable.MISort or S.SO.I
+S.SO.P = PTable.PrSort or S.SO.P
+S.Filter.A,S.Filter.K,S.Filter.G = PTable.AFilter or S.Filter.A,PTable.KFilter or S.Filter.K,PTable.GFilter or S.Filter.G
+S.Filter.P,S.Filter.F = PTable.PFilter or S.Filter.P,(not PTable.FFilter or FMatch(">:<",PTable.FFilter)<0) and "*" or PTable.FFilter
 if PTable.SFilter and type(PTable.SFilter)=="string" then
   if not rs then
-    far.Message(L.er.No_regscript,nfo.name,";Ok","w")
+    ErrMess(L.er.No_regscript)
   else
     local info
     for _,i in ipairs(rs.scripts) do if i.name==PTable.SFilter then info = i break end end -- заполним список
     if info then
       local files = {info.FileName} -- список файлов, входящих в пакет
       for _,i in ipairs(rs.scripts) do if i.parent_id==info.id then files[#files+1] = i.FileName end end -- заполним список
-      Filter.F = table.concat(files,",")..L.PkgFilter..info.description -- изменим маску файла
+      S.Filter.F = table.concat(files,",")..L.PkgFilter..info.description -- изменим маску файла
     else
-      far.Message(L.er.NoScript,nfo.name,";Ok","w")
+      ErrMess(L.er.NoScript)
     end
   end
 end
-if PTable.MaShow~=nil then Show.M = PTable.MaShow end if PTable.KMShow~=nil then Show.K = PTable.KMShow end
-if PTable.EvShow~=nil then Show.E = PTable.EvShow end if PTable.MoShow~=nil then Show.O = PTable.MoShow end
-if PTable.MIShow~=nil then Show.I = PTable.MIShow end if PTable.PrShow~=nil then Show.P = PTable.PrShow end
-if PTable.AMShow~=nil then Show.N = PTable.AMShow end -- скорректируем настройки в соответствии с параметрами функции
+if PTable.MaShow~=nil then S.Show.M = PTable.MaShow end if PTable.KMShow~=nil then S.Show.K = PTable.KMShow end -- скорректируем настройки
+if PTable.EvShow~=nil then S.Show.E = PTable.EvShow end if PTable.MoShow~=nil then S.Show.O = PTable.MoShow end --  в соответствии
+if PTable.MIShow~=nil then S.Show.I = PTable.MIShow end if PTable.PrShow~=nil then S.Show.P = PTable.PrShow end --  с параметрами функции
+if PTable.PMShow~=nil then S.Show.P = PTable.PMShow end if PTable.AMShow~=nil then S.Show.H = PTable.AMShow end
 repeat -- работаем, пока не надоест
-  local ff = Filter.F:match("^[^\n]*")
-  local events,macros,keymacros,modules,menuitems,prefixes,items,KeyW,MDescW,GroupW,MaskW,FileW,EDescW,MNameW,MMaskW,MIDescW,PrPrefW,PrDescW =
-        {},    {},    {},       {},     {},       {},      {},   0,   0,     0,     0,    0,    0,     0,     0,     0,      0,      0
+  local ff = S.Filter.F:match("^[^\n]*")
+  local events,macros,keymacros,modules,menuitems,prefixes,panels,items = {},{},{},{},{},{},{},{}
+  local KeyW,MDescW,GroupW,MaskW,FileW,EDescW,MNameW,MMaskW,MIDescW,PrPrefW,PrDescW,PMTtlW,PMDescW = 0,0,0,0,0,0,0,0,0,0,0,0,0
   for k=1,math.huge do -- переберём все мыслимые idы
     local me = mf.GetMacroCopy(k) -- получим макрос/обработчик событий
     if not me then break end -- кончились - закончим перебор
     me.descr = (me.description and not (me.code and me.description=="")) and "'"..me.description.."'" or Id.."="..me[Id]
     me.desc2 = (me.description and not (me.code and me.description=="")) and me.description or Id.."="..me[Id]
-   if me.area then -- это макрос?
+    local infilter = FMatch(me.FileName,ff)>0 -- отсеем по файловой маске
+    if me.area then -- это макрос?
       me.key = me.key or NoKey -- если вдруг нету клавиш
-      local infilter
-      for s in Filter.A:gmatch("%w+") do
-        if (" "..me.area.." "):upper():cfind((" "..s.." "):upper()) then infilter = 1 break end
-      end
-      if me.code then infilter = infilter and Show.K else infilter = infilter and Show.M end -- отсеем отключённые
-      infilter = infilter and (Filter.K=="" or (me.key:match("^/.*/$") and regex.find(Filter.K,me.key,1,"i"))
-        or regex.find(me.key,"(^| )"..Filter.K.."($| )",1,"i")) -- отсеем клавиши
-      infilter = infilter and (Show.N or regex.find(" "..me.area.." ","( Common | "..Area.Current.." )",1,"i")) -- отсеем нетекущие?
-      infilter = infilter and mf.fmatch(me.FileName,ff)>0 -- отсеем по файловой маске
+      infilter = infilter and regex.find(" "..S.Filter.A.." ","/( "..me.area:gsub(" "," | ").." )/i") -- отфильтруем по областям
+      if me.code then infilter = infilter and S.Show.K else infilter = infilter and S.Show.M end -- отсеем отключённые
+      infilter = infilter and (S.Filter.K=="" or (me.key:match("^/.*/$") and regex.find(S.Filter.K,me.key,1,"i"))
+        or regex.find(me.key,"(^| )"..S.Filter.K.."($| )",1,"i")) -- отсеем клавиши
+      infilter = infilter and (S.Show.H or regex.find(" "..me.area.." ","( Common | "..Area.Current.." )",1,"i")) -- отсеем нетекущие?
       if infilter then -- не отфильтрован?
         if me.code then keymacros[#keymacros+1] = me else macros[#macros+1] = me end -- запомним
         KeyW = math.max(KeyW,me.key:len()) -- вычислим максимальную ширину поля клавиши, имени файла и описания
@@ -2267,12 +2151,8 @@ repeat -- работаем, пока не надоест
         for s in (me.desc2.."\n"):gmatch("([^\n]*)\n") do MDescW = math.max(MDescW,s:len()) end
       end
     else -- это обработчик событий
-      local infilter
-      for s in Filter.G:gmatch("%w+") do
-        if me.group:upper():cfind(s:upper()) then infilter = 1 break end
-      end
-      infilter = infilter and mf.fmatch(me.FileName,ff)>0 -- отсеем по файловой маске
-      if infilter and Show.E then -- не отфильтрован и не отключены?
+      infilter = infilter and (" "..S.Filter.G:upper().." "):find(" "..me.group:upper().." ") -- отфильтруем по группе
+      if infilter and S.Show.E then -- не отфильтрован и не отключены?
         events[#events+1],GroupW,MaskW =  -- запомним обработчик событий, вычислим максимальную ширину поля группы, имени файла,
           me,math.max(GroupW,me.group:len()),math.max(MaskW,me.filemask and me.filemask:len() or 0) --  маски файлов и описания
         FileW = math.max(FileW,(me.FileName or ""):match("[^\\]*$"):len())
@@ -2280,232 +2160,242 @@ repeat -- работаем, пока не надоест
       end
     end
   end -- for - перебор id
-  if Show.O then -- показывать модули?
-    for v in Filter.P:gmatch('"([^"]*)"') do -- переберём все возможные места расположения модулей
+  if S.Show.O then -- показывать модули?
+    for v in S.Filter.P:gmatch('"([^"]*)"') do -- переберём все возможные места расположения модулей
       local path,fmask = far.ConvertPath(v):gsub("%?","%*"):match("^([^%*]*).-([^\\]*)$") -- путь и маска
-      far.RecursiveSearch(path,fmask,ProcMod,F.FRS_RECUR,path,v,modules) -- переберём все кандидаты
-      far.RecursiveSearch(path,fmask..OffExt,ProcMod,F.FRS_RECUR,path,v,modules,OffExt) -- переберём все кандидаты
+      far.RecursiveSearch(path,fmask,ProcMod,F.FRS_RECUR,path,ff,v,modules) -- переберём все кандидаты
+      far.RecursiveSearch(path,fmask..OffExt,ProcMod,F.FRS_RECUR,path,ff,v,modules,OffExt) -- переберём все кандидаты
     end
   end
-  if Show.I then -- показывать пункты меню?
+  if S.Show.I then -- показывать пункты меню?
     for _,t in ipairs(GetMenuItems()) do -- переберём все
-      local tbl = {} -- копия элемента
+      local tbl,infilter = {},false -- копия элемента, признак прохождения фильтра
       for n,v in pairs(t) do tbl[n] = v end -- заполним
       tbl.desc2 = t.description~="" and t.description or Id.."="..t[Id]
       tbl.descr = t.description~="" and "'"..t.description.."'" or Id.."="..t[Id]
-      if mf.fmatch(t.FileName,ff)>0 then -- отсеем по файловой маске
+      local function A2I(area) for i,a in pairs(Areas) do if a:upper()==area:upper() then return i end end end
+      for a in S.Filter.A:gmatch("%w+") do infilter = infilter or t.flags[A2I(a)] end -- отфильтруем по областям
+      if FMatch(t.FileName,ff)>0 and infilter and(S.Show.H or t.flags.common or t.flags[A2I(Area.Current)]) then -- отсеем по маске файла и прочему
         menuitems[#menuitems+1] = tbl -- добавим, посчитаем максимальную длину описания
         FileW = math.max(FileW,(tbl.FileName or ""):match("[^\\]*$"):len())
         for s in (tbl.desc2.."\n"):gmatch("([^\n]*)\n") do MIDescW = math.max(MIDescW,s:len()) end
       end
     end
   end
-  if Show.P then -- показывать префиксы?
+  if S.Show.P then -- показывать префиксы?
     for p in GetPrefixes()[1]:gmatch("[^:]+") do -- переберём все
       local tbl = {} -- копия элемента
       for n,v in pairs(GetPrefixes()[p]) do tbl[n] = v end -- заполним и
-      if mf.fmatch(tbl.FileName,ff)>0 then -- отсеем по файловой маске
+      if FMatch(tbl.FileName,ff)>0 then -- отсеем по файловой маске
         prefixes[#prefixes+1],PrPrefW = tbl,math.max(PrPrefW,p:len()) -- добавим
         FileW = math.max(FileW,(tbl.FileName or ""):match("[^\\]*$"):len())
         for s in (tbl.description.."\n"):gmatch("([^\n]*)\n") do PrDescW = math.max(PrDescW,s:len()) end
       end
     end
   end
-  local tmp = {} -- временная таблица для перехода со строковых индексов на числовые (для сортировки и т. п.)
-  for n,m in pairs(modules) do -- вычислим, сколько места надо под имена и маски поиска
-    if mf.fmatch(n,ff)>0 or(n:sub(-1)=="\\" and mf.fmatch(n.."init.lua",ff)>0 or mf.fmatch(n.."init.moon",ff)>0) then -- отсеем по файловой маске
-      MNameW,MMaskW,tmp[#tmp+1] = math.max(MNameW,m.name:len()),math.max(MMaskW,m.mask:len()),modules[n] -- имена и маски поиска модулей, записи
-      FileW = math.max(FileW,(m.FileName or ""):match("[^\\]*$"):len())
+  if GetPanelModules and (S.Show.N) then -- показывать панельные модули?
+    for _,t in ipairs(GetPanelModules()) do -- переберём все
+      local tbl = {Info={}} -- копия элемента
+      for n,v in pairs(t.Info) do tbl.Info[n] = v end -- заполним
+      for n,v in pairs(t) do if n~="Info" then tbl[n] = v end end -- заполним
+      tbl.descr = (t.Info.Title and "'"..t.Info.Title.."'") or (t.Info.Description and "'"..t.Info.Description.."'") or Noid
+      if FMatch(t.FileName,ff)>0 then -- отсеем по файловой маске
+        panels[#panels+1] = tbl -- добавим, посчитаем максимальную длину описания
+        FileW = math.max(FileW,(tbl.FileName or ""):match("[^\\]*$"):len())
+        PMTtlW = math.max(PMTtlW,(t.Info.Title or ""):len())
+        for s in ((tbl.Info.Description or "").."\n"):gmatch("([^\n]*)\n") do PMDescW = math.max(PMDescW,s:len()) end
+      end
     end
   end
-  modules = tmp -- теперь таблица индексирована числами
-  if MaxKeyWidth~=0 then KeyW = math.min(KeyW,math.abs(MaxKeyWidth)) end -- место под клавиши с учётом ограничения
-  FileW = MaxFileWidth~=0 and math.min(FileW,math.abs(MaxFileWidth))+3 or 0 -- место под имя файла с учётом разделителя
-  if MacroMaxDescWidth~=0 and MacroMaxDescWidth~=-1 then -- место под описания, место под маски: с учётом ограничения
-    MDescW,EDescW,MMaskW,MIDescW,PrDescW = math.min(MDescW,math.abs(MacroMaxDescWidth)),math.min(EDescW,math.abs(MacroMaxDescWidth)),
-      math.min(MMaskW,math.abs(MacroMaxDescWidth)),math.min(MIDescW,math.abs(MacroMaxDescWidth)),math.min(PrDescW,math.abs(MacroMaxDescWidth))
+  local tmp = {} -- временная таблица для перехода со строковых индексов на числовые (для сортировки и т. п.)
+  for n,m in pairs(modules) do -- вычислим, сколько места надо под имена и маски поиска
+    MNameW,MMaskW,tmp[#tmp+1] = math.max(MNameW,m.name:len()),math.max(MMaskW,m.mask:len()),modules[n] -- имена и маски поиска модулей, записи
+    FileW = math.max(FileW,(m.FileName or ""):match("[^\\]*$"):len())
   end
-  local --[[W4,]]W3,W2--[[,W1]] = --[[4*2+3*3,]]4*2+3*2,4*2+3--[[,4*2]] -- место занимаемое элементами формата для разного количества колонок
-  local MOther,EOther,OOther,IOther,POther = AreasCount+KeyW+FileW+W3,GroupW+MaskW+FileW+(MaskW>0 and W3 or W2),MNameW+FileW+W2,
-                                             AreasCount+3+FileW+W3,PrPrefW+FileW+W2
-  local MaxMenuwidth = math.max(MOther+MDescW,EOther+EDescW,OOther+MMaskW,IOther+MIDescW,POther+PrDescW)
-  local MenuWidth = math.min(MaxMenuwidth,Far.Width) -- полная ширина меню, ширина меню
-  MDescW,EDescW,MMaskW,MIDescW,PrDescW = MenuWidth-MOther,MenuWidth-EOther,MenuWidth-OOther,MenuWidth-IOther,MenuWidth-POther -- подровняем описания
-  table.sort(macros,CompareMacros) table.sort(keymacros,CompareMacros) -- отсортируем макросы и обработчики событий
-  table.sort(events,CompareEvents) table.sort(modules,CompareModules) table.sort(menuitems,CompareMenuItems) table.sort(prefixes,ComparePrefixes)
-  local af,kf,gf = ShortArea(Filter.A)==ShortArea(DefFilter.A)and""or ShortArea(Filter.A),Filter.K,Filter.G==DefFilter.G and""or ShortGroup(Filter.G)
-  local pf,mif,prf,pos = DefFilter.P==Filter.P and "" or " *","","",1
+  modules = tmp -- теперь таблица индексирована числами
+  table.sort(macros,CompareMacros) table.sort(keymacros,CompareMacros) table.sort(events,CompareEvents) table.sort(modules,CompareModules)
+  table.sort(menuitems,CompareMenuItems) table.sort(prefixes,ComparePrefixes) table.sort(panels,ComparePanels) -- отсортируем всё
+  local hf,af,gf,pf,prf,paf,pos = S.Show.H and""or"(-H)",ShortArea(S.Filter.A)==ShortArea(Def.AreaFilter)and""or"(A="..ShortArea(S.Filter.A)..")",
+    S.Filter.G==Def.GroupFilter and""or "(G="..ShortGroup(S.Filter.G)..")",S.Filter.P==Def.PathFilter and""or"*","","",1 -- фильтры в подзаголовки
+  if S.MaxKeyWidth~=0 then KeyW = math.min(KeyW,math.abs(S.MaxKeyWidth)) end -- место под клавиши с учётом ограничения
+  FileW = S.MaxFileWidth~=0 and math.min(FileW,math.abs(S.MaxFileWidth)) or 0 -- место под имя файла с учётом разделителя
+  local W4,W3,W2--[[,W1--]] = 4*2+3*3,4*2+3*2,4*2+3--[[,4*2--]] -- место занимаемое элементами формата для разного количества колонок
+  if S.MaxDescWidth~=0 and S.MaxDescWidth~=-1 then -- место под описания, место под маски: с учётом ограничения
+    MDescW  = math.min(MDescW ,math.abs(S.MaxDescWidth),Far.Width-AreasCount-KeyW-FileW-(FileW>0 and W4 or W3))
+    EDescW  = math.min(EDescW ,math.abs(S.MaxDescWidth),Far.Width-GroupW-MaskW-FileW-(FileW+MaskW==0 and W2 or (FileW*MaskW==0 and W3 or W4)))
+    MMaskW  = math.min(MMaskW ,math.abs(S.MaxDescWidth),Far.Width-MNameW-FileW-(FileW>0 and W3 or W2))
+    MIDescW = math.min(MIDescW,math.abs(S.MaxDescWidth),Far.Width-AreasCount-3-FileW-(FileW>0 and W4 or W3))
+    PrDescW = math.min(PrDescW,math.abs(S.MaxDescWidth),Far.Width-PrPrefW-FileW-(FileW>0 and W3 or W2))
+    PMDescW = math.min(PMDescW,math.abs(S.MaxDescWidth),Far.Width-AreasCount-FileW-(FileW>0 and W4 or W3))
+  end
   if #macros>0 then -- если макросы есть
-    items[#items+1] = {separator=true,text=L.MainMac..((af=="" and "" or "(A="..af..")")..(kf=="" and "" or "(K="..kf..")"))} -- подзаголовок
-    local frm = "%s │%s%-"..(KeyW+1).."s"..(MaxFileWidth~=0 and "│ " or "").."%-"..(FileW-2).."s│ %s" -- формат для строки элемента
+    items[#items+1] = {separator=true,text=L.MainMac..hf..af..(S.Filter.K==""and""or"(K="..S.Filter.K..")")} -- подзаголовок
+    local frm = "%s │%1s%-"..(KeyW+1)..(S.MaxFileWidth~=0 and "s│ %-"..(FileW+1) or "s%").."s│ %-"..MDescW.."s" -- формат для строки элемента
     for _,m in ipairs(macros) do -- переберём все
-      local K,FN,D = {},{},{} -- разобьём клавиши, имена файлов и описания на подстроки
-      for s in (m.key..(" "):rep(KeyW-1)):gmatch(("."):rep(KeyW)) do K[#K+1] = s end
-      if MaxKeyWidth<0 and K[2] then K = {K[1]..CNT} end -- если клавиши в одну строку, урезаются и эти урезаны, исправим
-      if MaxFileWidth~=0 then
-        for s in ((m.FileName or L.Absent):match("[^\\]*$")..(" "):rep(FileW-4)):gmatch(("."):rep(FileW-3)) do FN[#FN+1] = s end
-      end
-      if MaxFileWidth<0 and FN[2] then FN = {FN[1]..CNT} end -- если имя файла в одну строку, урезается и не влазит в одну строку, исправим
+      local K,FN,D,f = {},{},{},(m.FileName or L.Absent):match("[^\\]*$") -- разобьём клавиши, имена файлов и описания на подстроки
+      for i=1,m.key:len(),KeyW do K[#K+1] = m.key:sub(i,i+KeyW-1) end
+      if S.MaxKeyWidth<0 and K[2] then K = {K[1]..CNT} end -- если клавиши в одну строку, урезаются и эти урезаны, исправим
+      if S.MaxFileWidth~=0 then for i=1,f:len(),FileW do FN[#FN+1] = f:sub(i,i+FileW-1) end end -- разобьём имя файла на части
+      if S.MaxFileWidth<0 and FN[2] then FN = {FN[1]..CNT} end -- если имя файла в одну строку, урезается и не влазит в одну строку, исправим
       for s in (m.desc2.."\n"):gmatch("([^\n]*)\n") do -- выводим описание построчно
-        if MacroMaxDescWidth==0 then if s:len()>0 or #D==0 then D[#D+1] = s..(" "):rep(MaxMenuwidth-MOther-s:len()) end -- каждую строку целиком
-        elseif MacroMaxDescWidth==-1 then D = {s..(m.desc2:find("\n") and CNT or " ")..(" "):rep(MaxMenuwidth-MOther-s:len()-1)} break -- первую
-        elseif MacroMaxDescWidth<0 then if s:len()>0 then D[#D+1] = s:len()>MDescW and s:sub(1,MDescW-1)..CNT or s end -- обрежем каждую строку
-        else for ss in (s..(" "):rep(MDescW-1)):gmatch(("."):rep(MDescW)) do D[#D+1] = ss end end -- разобьём каждую строку на подстроки
+        if S.MaxDescWidth==-1 then D[#D+1] = s..(m.desc2:find("\n") and CNT or "") break end -- первую
+        for i=1,s:len(),MDescW do if S.MaxDescWidth<0 and i>1 then D[#D] = D[#D]:sub(1,-2)..CNT break end D[#D+1] = s:sub(i,i+MDescW-1) end
       end
       m.desc2 = nil -- расширенное описание больше не нужно
-      local gr = not regex.find(" "..m.area.." ","( Common | "..Area.Current.." )",1,"i") -- повторяемые элементы
-      local ch,re,sp = m.disabled and DSB,m.rebinded and RBN or " ",(" "):rep((D[1] or ""):len())
-      items[#items+1] = {from=m,grayed=gr,checked=ch,pos="M"..m[Id],text=frm:format(ShortArea(m.area),re,K[1],FN[1] or "",D[1] or sp)}
+      local gr,ch,re = not regex.find(" "..m.area.." ","( Common | "..Area.Current.." )",1,"i"),m.disabled and DSB,m.rebinded and RBN or " "
+      items[#items+1] = {from=m,grayed=gr,checked=ch,pos="M"..m[Id],text=frm:format(ShortArea(m.area),re,K[1],FN[1] or "",D[1] or "")}
       if oldpos==items[#items].pos then pos = #items end
       for j=2,math.max(#K,#FN,#D) do
-        items[#items+1] = {from=m,grayed=gr,checked=ch,pos="M"..m[Id],text=frm:format((" "):rep(AreasCount)," ",K[j]or"",FN[j] or "",D[j] or sp)}
+        items[#items+1] = {from=m,grayed=gr,checked=ch,pos="M"..m[Id],text=frm:format((" "):rep(AreasCount),"",K[j]or"",FN[j] or "",D[j] or "")}
       end
     end
   end
   if #keymacros>0 then -- если клавиатурные макросы есть
-    items[#items+1] = {separator=true,text=L.MainKey..((af=="" and "" or "(A="..af..")")..(kf=="" and "" or "(K="..kf..")"))} -- подзаголовок
-    local frm = "%s │%s%-"..(KeyW+1).."s"..(MaxFileWidth~=0 and "│ " or "").."%-"..(FileW-2).."s│ %s" -- формат для строки элемента
+    items[#items+1] = {separator=true,text=L.MainKey..hf..af..(S.Filter.K==""and""or"(K="..S.Filter.K..")")} -- подзаголовок
+    local frm = "%s │%1s%-"..(KeyW+1)..(S.MaxFileWidth~=0 and "s│ %-"..(FileW+1) or "s%").."s│ %-"..MDescW.."s" -- формат для строки элемента
     for _,m in ipairs(keymacros) do -- переберём все
-      local K,FN,D = {},{},{} -- разобьём клавиши, имена файлов и описания на подстроки
-      for s in (m.key..(" "):rep(KeyW-1)):gmatch(("."):rep(KeyW)) do K[#K+1] = s end
-      if MaxKeyWidth<0 and K[2] then K = {K[1]..CNT} end -- если клавиши в одну строку, урезаются и эти урезаны, исправим
-      if MaxFileWidth~=0 then
-        for s in ((m.FileName or L.Absent):match("[^\\]*$")..(" "):rep(FileW-4)):gmatch(("."):rep(FileW-3)) do FN[#FN+1] = s end
-      end
-      if MaxFileWidth<0 and FN[2] then FN = {FN[1]..CNT} end -- если имя файла в одну строку, урезается и не влазит в одну строку, исправим
+      local K,FN,D,f = {},{},{},(m.FileName or L.Absent):match("[^\\]*$") -- разобьём клавиши, имена файлов и описания на подстроки
+      for i=1,m.key:len(),KeyW do K[#K+1] = m.key:sub(i,i+KeyW-1) end
+      if S.MaxKeyWidth<0 and K[2] then K = {K[1]..CNT} end -- если клавиши в одну строку, урезаются и эти урезаны, исправим
+      if S.MaxFileWidth~=0 then for i=1,f:len(),FileW do FN[#FN+1] = f:sub(i,i+FileW-1) end end -- разобьём имя файла на части
+      if S.MaxFileWidth<0 and FN[2] then FN = {FN[1]..CNT} end -- если имя файла в одну строку, урезается и не влазит в одну строку, исправим
       for s in (m.desc2.."\n"):gmatch("([^\n]*)\n") do -- выводим описание построчно
-        if MacroMaxDescWidth==0 then if s:len()>0 or #D==0 then D[#D+1] = s..(" "):rep(MaxMenuwidth-MOther-s:len()) end -- каждую строку целиком
-        elseif MacroMaxDescWidth==-1 then D = {s..(" "):rep(MaxMenuwidth-MOther-s:len())} break -- первую строку целиком
-        elseif MacroMaxDescWidth<0 then if s:len()>0 then D[#D+1] = s:len()>MDescW and s:sub(1,MDescW-1)..CNT or s end -- обрежем каждую строку
-        else for ss in (s..(" "):rep(MDescW-1)):gmatch(("."):rep(MDescW)) do D[#D+1] = ss end end -- разобьём каждую строку на подстроки
+        if S.MaxDescWidth==-1 then D[#D+1] = s..(m.desc2:find("\n") and CNT or "") break end -- первую
+        for i=1,s:len(),MDescW do if S.MaxDescWidth<0 and i>1 then D[#D] = D[#D]:sub(1,-2)..CNT break end D[#D+1] = s:sub(i,i+MDescW-1) end
       end
       m.desc2 = nil -- расширенное описание больше не нужно
-      local gr = not regex.find(" "..m.area.." ","( Common | "..Area.Current.." )",1,"i") -- повторяемые элементы
-      local ch,re,sp = m.disabled and DSB,m.rebinded and RBN or " ",(" "):rep((D[1] or ""):len())
-      items[#items+1] = {from=m,grayed=gr,checked=ch,pos="M"..m[Id],text=frm:format(ShortArea(m.area),re,K[1],FN[1] or "",D[1] or sp)}
+      local gr,ch,re = not regex.find(" "..m.area.." ","( Common | "..Area.Current.." )",1,"i"),m.disabled and DSB,m.rebinded and RBN or ""
+      items[#items+1] = {from=m,grayed=gr,checked=ch,pos="M"..m[Id],text=frm:format(ShortArea(m.area),re,K[1],FN[1] or "",D[1] or "")}
       if oldpos==items[#items].pos then pos = #items end
       for j=2,math.max(#K,#FN,#D) do
-        items[#items+1] = {from=m,grayed=gr,checked=ch,pos="M"..m[Id],text=frm:format((" "):rep(AreasCount)," ",K[j]or"",FN[j] or "",D[j] or sp)}
+        items[#items+1] = {from=m,grayed=gr,checked=ch,pos="M"..m[Id],text=frm:format((" "):rep(AreasCount),"",K[j]or"",FN[j] or "",D[j] or "")}
       end
     end
   end
   if #events>0 then -- если обработчики событий есть
-    items[#items+1] = {separator=true,text=L.MainEvents..(gf=="" and "" or "(G="..gf..")")} -- подзаголовок
-    local frm = "%-"..GroupW.."s │ %-"..MaskW.."s"..(MaskW>0 and " " or "")..(MaxFileWidth~=0 and "│ " or "").."%-"..(FileW-2).."s│ %s"
+    items[#items+1] = {separator=true,text=L.MainEvents..gf} -- подзаголовок
+    local frm = "%-"..(GroupW+1)..(MaskW>0 and "s│ %-"..(MaskW+1) or "s%")..(S.MaxFileWidth~=0 and "s│ %-"..(FileW+1) or "s%").."s│ %-"..EDescW.."s"
     for _,e in ipairs(events) do -- переберём все
       if LMBuild>=579 and rb then e.condition,e.original_condition = e.original_condition,nil end
-      local FN,D = {},{} -- разобьём имена файлов и описания на подстроки
-      if MaxFileWidth~=0 then
-        for s in ((e.FileName or L.Absent):match("[^\\]*$")..(" "):rep(FileW-4)):gmatch(("."):rep(FileW-3)) do FN[#FN+1] = s end
-      end
-      if MaxFileWidth<0 and FN[2] then FN = {FN[1]..CNT} end -- если имя файла в одну строку, урезается и не влазит в одну строку, исправим
+      local FN,D,f = {},{},(e.FileName or L.Absent):match("[^\\]*$") -- разобьём имена файлов и описания на подстроки
+      if S.MaxFileWidth~=0 then for i=1,f:len(),FileW do FN[#FN+1] = f:sub(i,i+FileW-1) end end -- разобьём имя файла на части
+      if S.MaxFileWidth<0 and FN[2] then FN = {FN[1]..CNT} end -- если имя файла в одну строку, урезается и не влазит в одну строку, исправим
       for s in (e.desc2.."\n"):gmatch("([^\n]*)\n") do -- выводим описание построчно
-        if MacroMaxDescWidth==0 then if s:len()>0 or #D==0 then D[#D+1] = s..(" "):rep(MaxMenuwidth-EOther-s:len()) end -- каждую строку целиком
-        elseif MacroMaxDescWidth==-1 then D = {s..(" "):rep(MaxMenuwidth-EOther-s:len())} break -- первую строку целиком
-        elseif MacroMaxDescWidth<0 then if s:len()>0 then D[#D+1] = s:len()>EDescW and s:sub(1,EDescW-1)..CNT or s end -- обрежем каждую строку
-        else for ss in (s..(" "):rep(EDescW-1)):gmatch(("."):rep(EDescW)) do D[#D+1] = ss end end -- разобьём каждую строку на подстроки
+        if S.MaxDescWidth==-1 then D[#D+1] = s..(e.desc2:find("\n") and CNT or "") break end -- первую
+        for i=1,s:len(),EDescW do if S.MaxDescWidth<0 and i>1 then D[#D] = D[#D]:sub(1,-2)..CNT break end D[#D+1] = s:sub(i,i+EDescW-1) end
       end
       e.desc2 = nil -- расширенное описание больше не нужно
-      items[#items+1] = {from=e,grayed=true,checked=e.disabled and DSB,pos="E"..e[Id],text=frm:format(e.group,e.filemask or "",FN[1] or "",D[1] or "")}
+      items[#items+1] = {from=e,grayed=true,checked=e.disabled and DSB,pos="E"..e[Id],text=frm:format(e.group,e.filemask or"",FN[1] or"",D[1] or"")}
       if oldpos==items[#items].pos then pos = #items end
       for j=2,math.max(#FN,#D) do
-        items[#items+1] = {from=e,grayed=true,checked=e.disabled and DSB,pos="E"..e[Id],text=frm:format("","",FN[j] or "",D[j] or "")}
+        items[#items+1] = {from=e,grayed=true,checked=e.disabled and DSB,pos="E"..e[Id],text=frm:format("","",FN[j] or"",D[j] or"")}
       end
     end
   end
   if #modules>0 then -- если модули есть
     items[#items+1] = {separator=true,text=L.MainModules..pf} -- подзаголовок
-    local frm = "%-"..MNameW.."s "..(MaxFileWidth~=0 and "│ " or "").."%-"..(FileW-2).."s│ %s"
+    local frm = "%-"..(MNameW+1)..(S.MaxFileWidth~=0 and "s│ %-"..(FileW+1) or "s%").."s│ %-"..MMaskW.."s"
     for _,m in ipairs(modules) do -- переберём все
-      local FN,M = {},{} -- разобьём именя файлов и маску поиска модуля на подстроки
-      if MaxFileWidth~=0 then
-        for s in ((m.FileName or L.Absent):match("[^\\]*$")..(" "):rep(FileW-4)):gmatch(("."):rep(FileW-3)) do FN[#FN+1] = s end
-      end
-      if MaxFileWidth<0 and FN[2] then FN = {FN[1]..CNT} end -- если имя файла в одну строку, урезается и не влазит в одну строку, исправим
-      for s in (m.mask..(" "):rep(MMaskW-1)):gmatch(("."):rep(MMaskW)) do M[#M+1] = s end
-      if MacroMaxDescWidth<0 and M[2] then M = {M[1]..CNT} end -- если маски поиска в одну строку, урезаются и эти урезаны, исправим
-      if MacroMaxDescWidth==0 then M = {m.mask..(" "):rep(MaxMenuwidth-OOther-m.mask:len())} end -- если маска не разбивается, дополним пробелами
+      local FN,M,f = {},{},(m.FileName or L.Absent):gsub("\\$","\\init.lua"):match("[^\\]*$") -- разобьём имена файлов и маски поиска модуля
+      if S.MaxFileWidth~=0 then for i=1,f:len(),FileW do FN[#FN+1] = f:sub(i,i+FileW-1) end end -- разобьём имя файла на части
+      if S.MaxFileWidth<0 and FN[2] then FN = {FN[1]..CNT} end -- если имя файла в одну строку, урезается и не влазит в одну строку, исправим
+      for i=1,m.mask:len(),MMaskW do if S.MaxDescWidth<0 and i>1 then M[#M] = M[#M]:sub(1,-2)..CNT break end M[#M+1] = m.mask:sub(i,i+MMaskW-1) end
+      if (S.MaxDescWidth==0)or(S.MaxDescWidth==-1) then M = {m.mask} end -- если маска не разбивается
       items[#items+1] = {from=m,grayed=true,checked=m.disabled and DSB,pos="O"..m.name,text=frm:format(m.name,FN[1] or "",M[1])}
       if oldpos==items[#items].pos then pos = #items end
-      for j = 2,#M do items[#items+1] = {from=m,grayed=true,checked=m.disabled and DSB,pos="O"..m.name,text=frm:format("",FN[j] or "",M[j] or "")} end
+      for j=2,math.max(#FN,#M) do
+        items[#items+1] = {from=m,grayed=true,checked=m.disabled and DSB,pos="O"..m.name,text=frm:format("",FN[j] or "",M[j] or "")}
+      end
     end
   end
   if #menuitems>0 then -- если есть пункты меню плагинов
-    items[#items+1] = {separator=true,text=L.MainMenuItems..mif} -- подзаголовок
-    local frm = "%s │ %s "..(MaxFileWidth~=0 and "│ " or "").."%-"..(FileW-2).."s│ %s"
+    items[#items+1] = {separator=true,text=L.MainMenuItems..hf..af} -- подзаголовок
+    local frm = "%s │ %-4"..(S.MaxFileWidth~=0 and "s│ %-"..(FileW+1) or "s%").."s│ %-"..MIDescW.."s"
     for _,mi in ipairs(menuitems) do -- переберём все
-      local tmenu,area,smenu = {plugins="P",config="C",disks="D"},"","" -- переведём флаги в области и меню
-      for n,v in pairs(tmenu) do smenu = smenu..(mi.flags[n] and v or ".") end
+      local smenu,area = (mi.flags.plugins and"P"or".")..(mi.flags.config and"C"or".")..(mi.flags.disks and"D"or"."),"" -- меню, области действия
       for n,v in pairs(Areas) do area = area.." "..(mi.flags[n] and v or "") end
-      local FN,D = {},{} -- разобьём имена файлов и описания на подстроки
-      if MaxFileWidth~=0 then
-        for s in ((mi.FileName or L.Absent):match("[^\\]*$")..(" "):rep(FileW-4)):gmatch(("."):rep(FileW-3)) do FN[#FN+1] = s end
-      end
-      if MaxFileWidth<0 and FN[2] then FN = {FN[1]..CNT} end -- если имя файла в одну строку, урезается и не влазит в одну строку, исправим
+      local FN,D,f = {},{},(mi.FileName or L.Absent):match("[^\\]*$") -- разобьём имена файлов и описания на подстроки
+      if S.MaxFileWidth~=0 then for i=1,f:len(),FileW do FN[#FN+1] = f:sub(i,i+FileW-1) end end -- разобьём имя файла на части
+      if S.MaxFileWidth<0 and FN[2] then FN = {FN[1]..CNT} end -- если имя файла в одну строку, урезается и не влазит в одну строку, исправим
       for s in (mi.desc2.."\n"):gmatch("([^\n]*)\n") do -- выводим описание построчно
-        if MacroMaxDescWidth==0 then if s:len()>0 or #D==0 then D[#D+1] = s..(" "):rep(MaxMenuwidth-IOther-s:len()) end -- каждую строку целиком
-        elseif MacroMaxDescWidth==-1 then D = {s..(" "):rep(MaxMenuwidth-IOther-s:len())} break -- первую строку целиком
-        elseif MacroMaxDescWidth<0 then if s:len()>0 then D[#D+1] = s:len()>MIDescW and s:sub(1,MIDescW-1)..CNT or s end -- обрежем каждую строку
-        else for ss in (s..(" "):rep(MIDescW-1)):gmatch(("."):rep(MIDescW)) do D[#D+1] = ss end end -- разобьём каждую строку на подстроки
+        if S.MaxDescWidth==-1 then D[#D+1] = s..(mi.desc2:find("\n") and CNT or "") break end -- первую
+        for i=1,s:len(),MIDescW do if S.MaxDescWidth<0 and i>1 then D[#D] = D[#D]:sub(1,-2)..CNT break end D[#D+1] = s:sub(i,i+MIDescW-1) end
       end
       mi.desc2 = nil -- расширенное описание больше не нужно
       local gr = not(mi.flags.common or area:lower():find(Area.Current:lower())) -- повторяемые элементы
       items[#items+1] = {from=mi,grayed=gr,pos="I"..mi.guid,text=frm:format(ShortArea(area),smenu,FN[1] or "",D[1] or "")}
       if oldpos==items[#items].pos then pos = #items end
       for j = 2,math.max(#FN,#D) do
-        items[#items+1] = {from=mi,grayed=gr,pos="I"..mi.guid,text=frm:format((" "):rep(AreasCount),"   ",FN[j] or "",D[j] or "")}
+        items[#items+1] = {from=mi,grayed=gr,pos="I"..mi.guid,text=frm:format((" "):rep(AreasCount),"",FN[j] or "",D[j] or "")}
       end
     end
   end
   if #prefixes>0 then -- если модули есть
     items[#items+1] = {separator=true,text=L.MainPrefixes..prf} -- подзаголовок
-    local frm = "%-"..PrPrefW.."s "..(MaxFileWidth~=0 and "│ " or "").."%-"..(FileW-2).."s│ %s"
+    local frm = "%-"..(PrPrefW+1)..(S.MaxFileWidth~=0 and "s│ %-"..(FileW+1) or "s%").."s│ %-"..PrDescW.."s"
     for _,p in ipairs(prefixes) do -- переберём все
-      local FN,D = {},{} -- разобьём имена файлов и описания на подстроки
-      if MaxFileWidth~=0 then
-        for s in ((p.FileName or L.Absent):match("[^\\]*$")..(" "):rep(FileW-4)):gmatch(("."):rep(FileW-3)) do FN[#FN+1] = s end
-      end
-      if MaxFileWidth<0 and FN[2] then FN = {FN[1]..CNT} end -- если имя файла в одну строку, урезается и не влазит в одну строку, исправим
+      local FN,D,f = {},{},(p.FileName or L.Absent):match("[^\\]*$") -- разобьём имена файлов и описания на подстроки
+      if S.MaxFileWidth~=0 then for i=1,f:len(),FileW do FN[#FN+1] = f:sub(i,i+FileW-1) end end -- разобьём имя файла на части
+      if S.MaxFileWidth<0 and FN[2] then FN = {FN[1]..CNT} end -- если имя файла в одну строку, урезается и не влазит в одну строку, исправим
       for s in (p.description.."\n"):gmatch("([^\n]*)\n") do -- выводим описание построчно
-        if MacroMaxDescWidth==0 then if s:len()>0 or #D==0 then D[#D+1] = s..(" "):rep(MaxMenuwidth-POther-s:len()) end -- каждую строку целиком
-        elseif MacroMaxDescWidth==-1 then D = {s..(" "):rep(MaxMenuwidth-POther-s:len())} break -- первую строку целиком
-        elseif MacroMaxDescWidth<0 then if s:len()>0 then D[#D+1] = s:len()>PrDescW and s:sub(1,PrDescW-1)..CNT or s end -- обрежем каждую строку
-        else for ss in (s..(" "):rep(PrDescW-1)):gmatch(("."):rep(PrDescW)) do D[#D+1] = ss end end -- разобьём каждую строку на подстроки
+        if S.MaxDescWidth==-1 then D[#D+1] = s..(p.description:find("\n") and CNT or "") break end -- первую
+        for i=1,s:len(),PrDescW do if S.MaxDescWidth<0 and i>1 then D[#D] = D[#D]:sub(1,-2)..CNT break end D[#D+1] = s:sub(i,i+PrDescW-1) end
       end
       items[#items+1] = {from=p,grayed=not Area.Shell,pos="P"..p.prefix,text=frm:format(p.prefix,FN[1] or "",D[1] or "")}
       if oldpos==items[#items].pos then pos = #items end
       for j = 2,math.max(#FN,#D) do items[#items+1] = {from=p,grayed=not Area.Shell,pos="P"..p.prefix,text=frm:format("",FN[j] or "",D[j] or "")} end
     end
   end
-  local title = ((Show.M or Show.K) and (L.TitleMac..(af..kf=="" and "" or " *")..". ") or "")..
-    (Show.E and (L.TitleEvents..(gf=="" and "" or " *")..". ") or "")..(Show.O and (L.TitleModules..pf..". ") or "")..
-    (Show.I and (L.TitleMenuItems..mif..". ") or "")..(Show.P and (L.TitlePrefixes..prf..". ") or "")..
-    (Filter.F~="*" and (L.diEdit.Mask:sub(4)..' "'..Filter.F:match("[^\n]*$")..'".') or "")
+  if #panels>0 then -- если панели есть
+    items[#items+1] = {separator=true,text=L.MainPanels..paf} -- подзаголовок
+    local frm = "%"..#FuncNames.."s │ %-"..(PMTtlW+1)..(S.MaxFileWidth~=0 and "s│ %-"..(FileW+1) or "s%").."s│ %-"..PMDescW.."s"
+    for _,p in ipairs(panels) do -- переберём все
+      local FN,D,f,fnl = {},{},(p.FileName or L.Absent):match("[^\\]*$"),"" -- разобьём имена файлов и описания на подстроки
+      if S.MaxFileWidth~=0 then for i=1,f:len(),FileW do FN[#FN+1] = f:sub(i,i+FileW-1) end end -- разобьём имя файла на части
+      if S.MaxFileWidth<0 and FN[2] then FN = {FN[1]..CNT} end -- если имя файла в одну строку, урезается и не влазит в одну строку, исправим
+      for s in ((p.Info.Description or "").."\n"):gmatch("([^\n]*)\n") do -- выводим описание построчно
+        if S.MaxDescWidth==-1 then D[#D+1] = s..((p.Info.Description or ""):find("\n") and CNT or "") break end -- первую
+        for i=1,s:len(),PMDescW do if S.MaxDescWidth<0 and i>1 then D[#D] = D[#D]:sub(1,-2)..CNT break end D[#D+1] = s:sub(i,i+PMDescW-1) end
+      end
+      for _,fn in ipairs(FuncNames) do fnl = fnl..(p[fn] and fn:sub(1,1)or ".") end
+      items[#items+1] = {from=p,grayed=not Area.Shell,pos="N"..p.Info.Guid,text=frm:format(fnl,(p.Info.Title or ""),FN[1] or "",D[1] or "")}
+      if oldpos==items[#items].pos then pos = #items end
+      for j=2,math.max(#FN,#D) do items[#items+1] = {from=p,grayed=not Area.Shell,pos="N"..p.Info.Guid,text=frm:format("","",FN[j]or"",D[j]or"")} end
+    end
+  end
+  local title = ((S.Show.M or S.Show.K) and (L.TitleMac..(hf..af..S.Filter.K=="" and "" or "*")..".") or "")..
+    (S.Show.E and (L.TitleEvents..(gf=="" and "" or "*")..".") or "")..(S.Show.O and (L.TitleModules..pf..".") or "")..
+    (S.Show.I and (L.TitleMenuItems..(hf..af=="" and "" or "*")..".") or "")..(S.Show.P and (L.TitlePrefixes..prf..".") or "")..
+    (S.Show.N and (L.TitlePanels..paf..".") or "")..(S.Filter.F~="*" and (L.diEdit.Mask:sub(4)..' "'..S.Filter.F:match("[^\n]*$")..'".') or "")
   local breaks,bottom,item = {{BreakKey="F1"},{BreakKey="F3"},le and {BreakKey="A+F3"},{BreakKey="F4"},{BreakKey="A+F4"},{BreakKey="C+F4"},
-    {BreakKey="F9"},{BreakKey="INSERT"},{BreakKey="NUMPAD0"},{BreakKey="DELETE"},{BreakKey="DECIMAL"},{BreakKey="C+NEXT"},{BreakKey="C+NUMPAD3"},
-    {BreakKey="C+H"},rb and {BreakKey="C+R"},(rb or #modules>0) and {BreakKey="C+D"},rs and {BreakKey="C+S"},{BreakKey="C+L"},{BreakKey="A+L"},
-    {BreakKey="C+A"},{BreakKey="C+K"},{BreakKey="CS+K"},{BreakKey="CA+K"},{BreakKey="C+F"},{BreakKey="CS+F"},{BreakKey="CA+F"},{BreakKey="C+M"},
-    {BreakKey="C+E"},{BreakKey="C+O"},{BreakKey="CA+M"},{BreakKey="CA+E"},{BreakKey="CA+O"},{BreakKey="A+M"},{BreakKey="A+K"},{BreakKey="A+E"},
-    {BreakKey="A+O"},{BreakKey="A+I"},{BreakKey="A+P"},{BreakKey="A+F"},
-    {BreakKey="S+M"},{BreakKey="S+E"},{BreakKey="S+O"},{BreakKey="S+I"},{BreakKey="S+P"}},
-    "Enter,Esc,F1,F3,"..(le and "AltF3," or "").."F4,Alt/CtrlF4,Ins,Del,CtrlPgDn"..(rb and ",CtrlR/D" or "")..(rs and ",CtrlS" or "")..",F9"
+    {BreakKey="INSERT"},{BreakKey="NUMPAD0"},{BreakKey="DELETE"},{BreakKey="DECIMAL"},{BreakKey="C+NEXT"},{BreakKey="C+NUMPAD3"},{BreakKey="F9"},
+    rb and {BreakKey="C+R"},(rb or #modules>0) and {BreakKey="C+D"},{BreakKey="A+F"},{BreakKey="C+A"},{BreakKey="A+L"},{BreakKey="C+L"},
+    {BreakKey="S+M"},{BreakKey="S+E"},{BreakKey="S+O"},{BreakKey="S+I"},{BreakKey="S+P"},{BreakKey="S+N"},
+    {BreakKey="C+M"},{BreakKey="CA+M"},{BreakKey="C+E"},{BreakKey="CA+E"},{BreakKey="C+O"},{BreakKey="CA+O"},
+    {BreakKey="C+K"},{BreakKey="CS+K"},{BreakKey="CA+K"},{BreakKey="C+F"},{BreakKey="CS+F"},{BreakKey="CA+F"},rs and {BreakKey="C+S"},
+    {BreakKey="A+M"},{BreakKey="A+K"},{BreakKey="A+H"},{BreakKey="A+E"},{BreakKey="A+O"},{BreakKey="A+I"},{BreakKey="A+P"},{BreakKey="A+N"}},
+    "Enter,Esc,F1,F3,"..(le and "AltF3," or "").."F4,Alt/CtrlF4,Ins,Del,CtrlPgDn"..(rb and ",CtrlR/D" or "")..",F9"
   local res,menupos = far.Menu({Title=title,Bottom=bottom,Flags=F.FMENU_WRAPMODE+F.FMENU_SHOWAMPERSAND,SelectIndex=pos,Id=Guids.Menu},items,breaks)
   if not res then break end -- Esc. "работаем, пока не надоест"? Надоело...
-  oldpos,item = items[menupos].pos,items[menupos].from -- запомним позицию курсора, пункт меню
+  if items[menupos] then oldpos,item = items[menupos].pos,items[menupos].from end-- запомним позицию курсора, пункт меню
   if res.BreakKey then -- не Enter или Esc?
     if res.BreakKey=="F1" then -- F1 - выведем справку
       ShowHelp("main")
     elseif res.BreakKey=="F3" then -- смотреть?
-      local ttl = item.guid and L.diShowMenuItem or(item.prefix and L.diShowCommandLine or(item.name and L.diShowModule or
-                   (item.group and L.diShowEvent or(item.code and L.diShowKeyMacro or L.diShowMacro))))
+      local ttl = item.Info and L.diShowPanelModule or(item.guid and L.diShowMenuItem or(item.prefix and L.diShowCommandLine or
+                   (item.name and L.diShowModule or(item.group and L.diShowEvent or(item.code and L.diShowKeyMacro or L.diShowMacro)))))
       if DoIt(ShowInfo,ttl,item) then break end -- сделаем и выйдем (если после действия надо завершить)
     elseif res.BreakKey=="A+F3" then -- открыть в LuaExplorer?
       item.descr = nil le(item) -- сделаем
     elseif res.BreakKey=="F4" then -- редактировать в диалоге?
-      if item.guid then -- пункт меню плагинов?
-        DoIt(OpenMenuItemInDialog,L.diEditMenuItem,item) -- сделаем
+      if item.Info then -- панельный модуль?
+        DoIt(OpenPanelModuleInDialog,L.diEditPanelModule,item) -- сделаем
       elseif item.prefix then -- префикс?
         DoIt(OpenPrefixInDialog,L.diEditCommandLine,item) -- сделаем
+      elseif item.guid then -- пункт меню плагинов?
+        DoIt(OpenMenuItemInDialog,L.diEditMenuItem,item) -- сделаем
+      elseif item.name then -- модуль?
+        DoIt(OpenInEditor,L.edEditModule,item,false) -- сделаем
       elseif item.group then -- обработчик событий
         DoIt(OpenEventInDialog,L.diEditEvent,item) -- сделаем
       elseif item.code then -- клавиатурный огрызок?
@@ -2520,9 +2410,9 @@ repeat -- работаем, пока не надоест
     elseif res.BreakKey=="DELETE" or res.BreakKey=="DECIMAL" then -- удалить текущий?
       DoIt(DeleteCurrent,L.DelElement,item) -- сделаем
     elseif (res.BreakKey=="C+NEXT" or res.BreakKey=="C+NUMPAD3") then -- перейти к файлу в панели?
-      if not Area.Shell then far.Message(L.er.NotFilePanel,L.goFile,";Ok","w") -- не панель? низзя!
+      if not Area.Shell then ErrMess(L.er.NotFilePanel,L.goFile) -- не панель? низзя!
       elseif item.FileName then Panel.SetPath(0,item.FileName:match("(.*)\\([^\\]*)")) break -- перешли, всё
-      else far.Message(L[GetType(item)].." "..(item.descr or item.name or item.prefix)..". "..L.er.NoFile,L.goFile,";Ok","w") end
+      else ErrMess(L[GetType(item)].." "..(item.descr or item.name or item.prefix)..". "..L.er.NoFile,L.goFile) end
     elseif res.BreakKey=="C+R" then -- переназначить клавишу с помощью Rebind?
       DoIt(Rebind,L.Rebind,item) -- переназначим
     elseif res.BreakKey=="C+D" then -- включить/выключить скрипт?
@@ -2533,62 +2423,58 @@ repeat -- работаем, пока не надоест
         while info.parent_id do info = rs.getscript(info.parent_id) end -- найдём родителя
         local files = {info.FileName} -- список файлов, входящих в пакет
         for _,i in ipairs(rs.scripts) do if i.parent_id==info.id then files[#files+1] = i.FileName end end -- заполним список
-      Filter.F = table.concat(files,",")..L.PkgFilter..info.description -- изменим маску файла
+      S.Filter.F = table.concat(files,",")..L.PkgFilter..info.description -- изменим маску файла
       else -- не нашли
-        far.Message(L.er.NoNFO,item.descr,";Ok","w") -- так и скажем
+        ErrMess(L.er.NoNFO,item.descr) -- так и скажем
       end
     elseif res.BreakKey=="F9" then -- настройка параметров?
       Config()
-    elseif regex.match(res.BreakKey,[[^S\+(M|E|O|I|P)$]]) then -- редактировать порядок сортировки?
-      local tL = {M=L.cbMacroSortVariants,E=L.cbEventSortVariants,O=L.cbModuleSortVariants,I=L.cbMISortVariants,P=L.cbPrefixSortVariants}
-      SO[res.BreakKey:sub(3)] = SortingOrder(SO[res.BreakKey:sub(3)],tL[res.BreakKey:sub(3)])
+    elseif regex.match(res.BreakKey,[[^S\+(M|E|O|I|P|N)$]]) then -- редактировать порядок сортировки?
+      local tL,C = {M=L.cbMacroSortVariants,E=L.cbEventSortVariants,O=L.cbModuleSortVariants,I=L.cbMISortVariants,P=L.cbPrefixSortVariants,
+                    N=L.cbPMSortVariants},res.BreakKey:sub(3) S.SO[C] = SortingOrder(S.SO[C],tL[C])
     elseif res.BreakKey=="C+K" then -- редактировать фильтр клавиш?
-      Filter.K = MacroKey()
+      S.Filter.K = MacroKey()
     elseif res.BreakKey=="CS+K" then -- вручную указать маску клавиш?
-      local M = far.InputBox(nil,"",L.InputKeyMask,"LMKeyMaskHistory",Filter.K,nil,nil,F.FIB_BUTTONS+F.FIB_ENABLEEMPTY+F.FIB_EXPANDENV)
-      if M then Filter.K = M end -- если ввели маску, запомним новую
+      local M = far.InputBox(nil,"",L.InputKeyMask,"LMKeyMaskHistory",S.Filter.K,nil,nil,F.FIB_BUTTONS+F.FIB_ENABLEEMPTY+F.FIB_EXPANDENV)
+      if M then S.Filter.K = M end -- если ввели маску, запомним новую
     elseif res.BreakKey=="CA+K" then -- отменить фильтр клавиш?
-      Filter.K = SavedFilter.K
+      S.Filter.K = S.SavedFilter.K
     elseif res.BreakKey=="C+M" then -- редактировать фильтр областей?
-      Filter.A,res = SetFilter(Filter.A,L.AreaItems)
-      if res then Show.M,Show.K = true,true end -- включим показ макросов
+      S.Filter.A = SetFilter(S.Filter.A,L.AreaItems)
     elseif res.BreakKey=="CA+M" then -- сбросить фильтр областей?
-      Filter.A = SavedFilter.A
+      S.Filter.A = S.SavedFilter.A
     elseif res.BreakKey=="C+E" then -- редактировать фильтр групп?
-      Filter.G,res = SetFilter(Filter.G,L.GroupItems)
-      if res then Show.E = true end -- включим показ обработчиков событий
+      S.Filter.G,res = SetFilter(S.Filter.G,L.GroupItems)
+      if res then S.Show.E = true end -- включим показ обработчиков событий
     elseif res.BreakKey=="CA+E" then -- сбросить фильтр групп?
-      Filter.G = SavedFilter.G
+      S.Filter.G = S.SavedFilter.G
     elseif res.BreakKey=="C+O" then -- редактировать фильтр путей поиска модулей?
-      Filter.P,res = SetFilter(Filter.P,L.PathItems)
-      if res then Show.O = true end -- включим показ модулей
+      S.Filter.P,res = SetFilter(S.Filter.P,L.PathItems)
+      if res then S.Show.O = true end -- включим показ модулей
     elseif res.BreakKey=="CA+O" then -- сбросить фильтр путей поиска модулей?
-      Filter.P = SavedFilter.P
+      S.Filter.P = S.SavedFilter.P
     elseif res.BreakKey=="C+F" then -- показывать только из того же файла?
-      Filter.F = item.FileName or "*" -- изменим маску файла
+      S.Filter.F = item.FileName or "*" -- изменим маску файла
     elseif res.BreakKey=="CS+F" then -- показывать только из файлов по маске?
-      local M = far.InputBox(nil,"",L.InputFileMask,"LMFileMaskHistory",Filter.F,nil,nil,F.FIB_BUTTONS+F.FIB_ENABLEEMPTY+F.FIB_EXPANDENV)
+      local M = far.InputBox(nil,"",L.InputFileMask,"LMFileMaskHistory",S.Filter.F,nil,nil,F.FIB_BUTTONS+F.FIB_ENABLEEMPTY+F.FIB_EXPANDENV)
       if M=="" or M=="*.*" then M = "*" end -- приведём маску "все файлы" к стандартному виду
       if M then -- если ввели маску
-        if M:sub(1,1)~="*" and not M:find("\\") then M = "*\\"..M end -- не указан каталог? ищем в любом каталоге
         if not M:match("[^\\]*$"):find(".",1,true) then M = M..".lua;"..M..".moon" end -- нет расширения? добавим стандартные
-        Filter.F = M -- запомним новую маску
+        S.Filter.F = M -- запомним новую маску
       end
     elseif res.BreakKey=="CA+F" then -- показывать из всех файлов?
-      Filter.F = "*" -- сбросим маску файла
-    elseif regex.match(res.BreakKey,[[^A\+(M|K|E|O|I|P)$]]) then -- скрывать/показывать?
-      Show[res.BreakKey:sub(3)] = not Show[res.BreakKey:sub(3)]
+      S.Filter.F = "*" -- сбросим маску файла
+    elseif regex.match(res.BreakKey,[[^A\+(M|K|E|O|I|P|N|H)$]]) then -- скрывать/показывать?
+      local C = res.BreakKey:sub(3) S.Show[C] = not S.Show[C]
     elseif res.BreakKey=="A+F" then -- скрывать/показывать имена файлов?
-      MaxFileWidth = MaxFileWidth==0 and 1000 or 0
-    elseif res.BreakKey=="C+H" then -- скрывать/показывать макросы для других областей?
-      Show.N = not Show.N
+      S.MaxFileWidth = S.MaxFileWidth==0 and 1000 or 0
     elseif res.BreakKey=="C+L" then -- сбросить настройки на сохранённые?
-      LoadSettings()
+      S = LoadSettings(Def)
     elseif res.BreakKey=="A+L" then -- восстановить последние фильтры?
-      if LastFilter then Filter,LastFilter = LastFilter,nil end
+      if LastFilter then S.Filter,LastFilter = LastFilter,nil end
     elseif res.BreakKey=="C+A" then -- Всё показать?
       local AllModules = ('"'..package.path..";"..package.moonpath..";"..package.cpath..'"'):gsub(";",'" "')
-      Filter,Show = {A=DefFilter.A,K=DefFilter.K,G=DefFilter.G,P=AllModules,F="*"},{M=1,K=1,E=1,O=1,I=1,P=1,N=1}
+      S.Filter,S.Show = {A=Def.AreaFilter,K="",G=Def.GroupFilter,P=AllModules,F="*"},{M=true,K=true,E=true,O=true,I=true,P=true,F=true,N=true}
     end
   elseif item then -- Enter
     if item.prefix then
@@ -2603,23 +2489,23 @@ repeat -- работаем, пока не надоест
     end
   end
 until false
-LastFilter,Filter = Filter,{A=SavedFilter.A,K=SavedFilter.K,G=SavedFilter.G,P=SavedFilter.P} -- запомним для сбрасывания к ним
+LastFilter,S.Filter = S.Filter,{A=S.SavedFilter.A,K=S.SavedFilter.K,G=S.SavedFilter.G,P=S.SavedFilter.P} -- запомним для сбрасывания к ним
 end
 --
 if type(nfo)=="table" then nfo.execute = function() ManageMacrosEvents() end end
 --
 local function idx(self,key)
-return function(...) local fun = rawget(self,key) if L and not fun then far.Message(L.er.NotLMFun,"",";Ok","w") else fun(...) end end
+return function(...) local fun = rawget(self,key) if fun then fun(...) else ErrMess(L.Lang and L.er.NotLMFun or L[1]) end end
 end
 --
-LoadSettings()
+S = LoadSettings(Def)
 --
 return setmetatable({ -- что возвращает модуль
-  Main = L and ManageMacrosEvents;
-  Config = L and Config;
-  InsertScript = L and function(stype) if Area.Editor then return InsertScriptIntoEditor(stype) else return false,L.er.NotEditor end end;
-  EditScript =L and function(line) if Area.Editor then return EditScriptUnderCursor(line) else return false,L.er.NotEditor end end;
+  Main = ManageMacrosEvents;
+  Config = Config;
+  InsertScript = function(stype) if Area.Editor then return InsertScriptIntoEditor(stype) else ErrMess(L.Lang and L.er.NotEditor or L[1]) end end;
+  EditScript = function(line) if Area.Editor then return EditScriptUnderCursor(line) else ErrMess(L.Lang and L.er.NotEditor or L[1]) end end;
   InsUid = function() print(GenUid()) end;
   Reload = Reload;
-  __MData = function() return L,Guids,Key end;
+  __MData = function() return L,Guids,S.Key end;
 },{__index=idx;__call=function(self,...) return self.Main(...) end;})
