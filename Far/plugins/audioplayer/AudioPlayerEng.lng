@@ -1,6 +1,6 @@
 ﻿.Language=English,English
 
-"Audio player"
+"AudioPlayer"
 
 "Output device:"
 "Open by Enter key press"
@@ -12,8 +12,9 @@
 
 "Error playing file"
 
-"Volume:"
-"Repeat mode:"
-"Disabled"
-"Current file"
-"All files"
+"Volume"
+"Playback"
+"Current only"
+"Repeat current"
+"To the end"
+"Repeat all"
