@@ -1,3 +1,9 @@
+AudioPlayer 3.36 15-05-2018
+---------------------------
+ + .aimppl
+ * load/saveall new setting (without GUI)
+ + background mode
+
 AudioPlayer 3.35 14-05-2018
 ---------------------------
  + Поддержка .cue
