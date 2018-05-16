@@ -59,6 +59,7 @@ Usage: curl [options...] <url>
  -g, --globoff       Disable URL sequences and ranges using {} and []
      --happy-eyeballs-timeout-ms How long to wait in milliseconds for IPv6 before trying IPv4
  -I, --head          Show document info only
+     --haproxy-protocol Send HAProxy PROXY protocol header
  -H, --header <header/@file> Pass custom header(s) to server
  -h, --help          This help text
      --hostpubmd5 <md5> Acceptable MD5 hash of the host public key
@@ -90,7 +91,7 @@ Usage: curl [options...] <url>
  -M, --manual        Display the full manual
      --max-filesize <bytes> Maximum file size to download
      --max-redirs <num> Maximum number of redirects allowed
- -m, --max-time <time> Maximum time allowed for the transfer
+ -m, --max-time <seconds> Maximum time allowed for the transfer
      --metalink      Process given URLs as metalink XML file
      --negotiate     Use HTTP Negotiate (SPNEGO) authentication
  -n, --netrc         Must read .netrc for user name and password
