@@ -2,7 +2,7 @@
 local nfo = Info {
   name          = "LuaManager";
   description   = "Менеджер Lua/Moon-скриптов для Fara";
-  version       = "4.0.5"; --в формате semver: http://semver.org/lang/ru/
+  version       = "5.0.1"; --в формате semver: http://semver.org/lang/ru/
   author        = "IgorZ";
   url           = "http://forum.farmanager.com/viewtopic.php?t=7936";
   id            = "180EE412-CBDE-40C7-9AE6-37FC64673CBD";
@@ -21,7 +21,7 @@ local nfo = Info {
     Значения пропущенных полей берутся из конфигурации скрипта.
   - require"LuaManager".Config(). Настройка параметров.
   - require"LuaManager".InsertScript([<тип скрипта>]). Вставить скрипт в текущий открытый на редактирование файл. Тип скрипта:
-      1 - макрос, 2 - обработчик событий, 3 - пункт меню плагинов, 4 - префикс командной строки, иначе запрашивается.
+      1 - макрос, 2 - обработчик событий, 3 - пункт меню плагинов, 4 - префикс командной строки, 5 - панельный модуль, иначе запрашивается.
   - require"LuaManager".EditScript([<строка>]). Редактировать скрипт из текущего открытого на редактирование файла. Строка:
       если указана, редактируется скрипт, в который входит строка с указанным номером, иначе предлагается выбор из всех в файле.
   - require"LuaManager".InsUid(). Вставка сгенерированного uid в позиции курсора.
@@ -142,6 +142,8 @@ history         = [[
                     Более корректное определение номеров строк в .moon файлах. Доработана индикация фильтрации в главном меню.
                     Пункты меню плагинов фильтруются по областям аналогично макросам. В целях единообразия показ/скрытие макросов
                     и пунктов меню плагинов не из текущей области перенесён с CtrlH на AltH. Тотальный рефакторинг.
+2018/05/18 v5.0.1 - Шаблон события ExitFar скорректирован в соответствии с изменениями в плагине. Исправлена ошибка с обработкой нажатия кнопки
+                    "Панели" в диалоге конфигурации. Ещё всякие мелочи.
 ]];
 }
 if not nfo then return nfo end
@@ -265,14 +267,12 @@ return Cfg
 end
 --
 function SaveSettings(Cfg) --[[сохранить настройки в БД]]
-local obj,key,S1
-function S1(n,v) v = v==true and 1 or v==false and 0 or v local t = type(v)=="string" and F.FST_STRING or F.FST_QWORD
-                 if obj:Get(key,n,t)~=v then obj:Set(key,n,t,v) end end
---
 if Cfg.Profile==F.PSL_LOCAL then win.CreateDir(LP.."\\PluginsData") end -- создадим папку для локальных настроек (если надо)
-obj = far.CreateSettings(nil,Cfg.Profile) -- откроем ранее прочитанные или предпочтительные настройки
-key = obj:CreateSubkey(obj:CreateSubkey(0,Author),ConfPart) -- откроем/создадим раздел
-S1("MaxKeyWidth",Cfg.MaxKeyWidth) S1("MaxFileWidth",Cfg.MaxFileWidth) S1("MacroMaxDescWidth",Cfg.MaxDescWidth) S1("MacroSortingOrder",Cfg.SO.M)
+local obj = far.CreateSettings(nil,Cfg.Profile) -- откроем ранее прочитанные или предпочтительные настройки
+local key = obj:CreateSubkey(obj:CreateSubkey(0,Author),ConfPart) -- откроем/создадим раздел
+local function S1(n,v) v = (v==nil)and Cfg[n]or v;v = v==true and 1 or v==false and 0 or v;local t = type(v)=="string" and F.FST_STRING or F.FST_QWORD
+                       if obj:Get(key,n,t)~=v then obj:Set(key,n,t,v) end end
+S1("MaxKeyWidth") S1("MaxFileWidth") S1("MacroMaxDescWidth") S1("MacroSortingOrder",Cfg.SO.M)
 S1("EventSortingOrder",Cfg.SO.E) S1("ModuleSortingOrder",Cfg.SO.O) S1("MISortingOrder",Cfg.SO.I) S1("PrefixSortingOrder",Cfg.SO.P)
 S1("PanelSortingOrder",Cfg.SO.N) S1("KeyFilter",Cfg.Filter.K) S1("AreaFilter",Cfg.Filter.A) S1("GroupFilter",Cfg.Filter.G)
 S1("PathFilter",Cfg.Filter.P:gsub(GP,"%%FarProfile%%"):gsub(LP,"%%FarLocalProfile%%"):gsub(FH,"%%FarHome%%"))
@@ -1747,7 +1747,7 @@ local Filter,SO,Form,ov = {},{}
 --
 local function DlgProc(hDlg,Msg,Param1,Param2) -- обработка событий диалога
 if Msg==F.DN_BTNCLICK then
-  local tSO,tFilter = {[19]="Macro",[20]="Event",[21]="Module",[22]="MI",[23]="Prefix",[24]="Panel"},{[29]="Area",[30]="Group",[31]="Path"}
+  local tSO,tFilter = {[19]="Macro",[20]="Event",[21]="Module",[22]="MI",[23]="Prefix",[24]="PM"},{[29]="Area",[30]="Group",[31]="Path"}
   if tSO[Param1] then SO[tSO[Param1]] = SortingOrder(SO[tSO[Param1]],L["cb"..tSO[Param1].."SortVariants"]) -- сортировка макросов
   elseif tFilter[Param1] then Filter[tFilter[Param1]] = SetFilter(Filter[tFilter[Param1]],L[tFilter[Param1].."Items"]) -- выбор областей из списка
   elseif Form[Param1][1]==F.DI_BUTTON and Form[Param1-1][1]==F.DI_EDIT then -- ввод клавиши

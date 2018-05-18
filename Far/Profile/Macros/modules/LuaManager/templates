@@ -12,8 +12,14 @@
   Event = {
     moon = {
       ExitFAR = {
-        c = "-> true",
-        a = "->",
+        c = [=[
+(bReloadMacro) -> true
+--bReloadMacro: boolean (Reload macro/Unload plugin, exit Far)
+]=],
+        a = [=[
+(bReloadMacro) ->
+--bReloadMacro: boolean (Reload macro/Unload plugin, exit Far)
+]=],
       },
       DialogEvent = {
         c = [=[
@@ -116,8 +122,14 @@
     },
     lua  = {
       ExitFAR = {
-        c = "function() return true end",
-        a = "function() end",
+        c = [=[
+function(bReloadMacro) return true end
+--bReloadMacro: boolean (Reload macro/Unload plugin, exit Far)
+]=],
+        a = [=[
+function(bReloadMacro) end
+--bReloadMacro: boolean (Reload macro/Unload plugin, exit Far)
+]=],
       },
       DialogEvent = {
         c = [=[
