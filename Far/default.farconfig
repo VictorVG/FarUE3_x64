@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<farconfig version="3.0.5213">
+<farconfig version="3.0.5223">
 	<generalconfig>
 		<setting key="Cmdline" name="AutoComplete" type="qword" value="0000000000000001"/>
 		<setting key="Cmdline" name="DelRemovesBlocks" type="qword" value="0000000000000001"/>
@@ -483,6 +483,7 @@
 		<filetype mask="*.pdf" description="Adobe PDF">
 			<command type="0" enabled="1" command="&quot;!=\!.!&quot;"/>
 			<command type="1" enabled="1" command="observe:&quot;!=\!.!&quot;"/>
+			<command type="2" enabled="1" command="view:&quot;!=\!.!&quot;"/>
 		</filetype>
 		<filetype mask="*.hlf" description="Far Help">
 			<command type="0" enabled="1" command="hlf:&quot;!=\!+!&quot; !?Go to topic ((Contents if empty)):?!"/>
@@ -1163,32 +1164,6 @@
 				</key>
 			</hierarchicalconfig>
 		</plugin>
-		<plugin guid="0785F214-65B9-47B6-B9D8-F24FADC60AA0">
-			<hierarchicalconfig>
-				<key name="0785F214-65B9-47B6-B9D8-F24FADC60AA0" description="LUA File List">
-					<key name="data">
-						<value name="appendinfile" type="qword" value="0000000000000000"/>
-						<value name="charset" type="text" value="OEM"/>
-						<value name="filename" type="text" value="list.txt"/>
-						<value name="first" type="text" value=""/>
-						<value name="format" type="text" value="[url][b]%F[/b][/url] ( %S Kb)"/>
-						<value name="inclipboard" type="qword" value="0000000000000000"/>
-						<value name="infile" type="qword" value="0000000000000001"/>
-						<value name="istart" type="qword" value="0000000000000000"/>
-						<value name="istep" type="qword" value="0000000000000001"/>
-						<value name="iwidth" type="qword" value="0000000000000001"/>
-						<value name="last" type="text" value=""/>
-						<value name="recurse" type="qword" value="0000000000000000"/>
-						<value name="skipdir" type="qword" value="0000000000000001"/>
-						<value name="skipempty" type="qword" value="0000000000000000"/>
-						<value name="skipfiles" type="qword" value="0000000000000000"/>
-						<value name="skipidirs" type="qword" value="0000000000000000"/>
-						<value name="sortres" type="text" value="---"/>
-						<value name="unselected" type="qword" value="0000000000000001"/>
-					</key>
-				</key>
-			</hierarchicalconfig>
-		</plugin>
 		<plugin guid="0E92FC81-4888-4297-A85D-31C79E0E0CEE">
 			<hierarchicalconfig>
 				<key name="0E92FC81-4888-4297-A85D-31C79E0E0CEE" description="EditCase"/>
@@ -1345,7 +1320,7 @@
 					<value name="ExportDefaultValueFirst" type="hex" value="01"/>
 					<value name="LargeKeyCount" type="hex" value="E8,03,00,00"/>
 					<value name="LargeKeyTimeout" type="hex" value="2C,01,00,00"/>
-					<value name="LastRegPath" type="text" value="HKEY_LOCAL_MACHINE\SYSTEM\Select"/>
+					<value name="LastRegPath" type="text" value=""/>
 					<value name="LoadDescriptions" type="hex" value="01"/>
 					<value name="RefreshChanges" type="hex" value="01"/>
 					<value name="RefreshKeyTimeout" type="hex" value="E8,03,00,00"/>
@@ -1456,6 +1431,7 @@
 							<value name="MaxKeyWidth" type="qword" value="00000000000003E8"/>
 							<value name="ModuleSortingOrder" type="text" value="TMN"/>
 							<value name="PanelSortingOrder" type="text" value="AT"/>
+							<value name="PathFilter" type="text" value="&quot;%FarProfile%\Macros\modules\?.lua&quot; &quot;%FarProfile%\Macros\modules\?\init.lua&quot; &quot;%FarProfile%\Macros\modules\?.moon&quot; &quot;%FarProfile%\Macros\modules\?\init.moon&quot;"/>
 							<value name="PrefixSortingOrder" type="text" value="P"/>
 							<value name="ReloadKey" type="text" value="CtrlF9"/>
 							<value name="ShowEvents" type="qword" value="0000000000000001"/>
@@ -1467,9 +1443,6 @@
 							<value name="ShowPanels" type="qword" value="0000000000000001"/>
 							<value name="ShowPrefixes" type="qword" value="0000000000000001"/>
 						</key>
-					</key>
-					<key name="LuaMacro">
-						<value name="MacroBrowser" type="hex" value="6C,6F,63,61,6C,20,69,64,78,3D,7B,7D,3B,20,66,6F,72,20,69,3D,31,2C,31,20,64,6F,20,69,64,78,5B,69,5D,3D,7B,7D,20,65,6E,64,0A,64,6F,20,6C,6F,63,61,6C,20,74,3D,69,64,78,5B,31,5D,0A,20,20,74,5B,22,49,6E,76,53,6F,72,74,22,5D,20,3D,20,31,0A,20,20,74,5B,22,53,6F,72,74,4B,65,79,22,5D,20,3D,20,22,43,2B,46,31,22,0A,65,6E,64,0A,72,65,74,75,72,6E,20,69,64,78,5B,31,5D,0A"/>
 					</key>
 				</key>
 			</hierarchicalconfig>
@@ -1539,12 +1512,6 @@
 							<value name="level" type="qword" value="0000000000000007"/>
 						</key>
 					</key>
-				</key>
-			</hierarchicalconfig>
-		</plugin>
-		<plugin guid="6F332978-08B8-4919-847A-EFBB6154C99A">
-			<hierarchicalconfig>
-				<key name="6F332978-08B8-4919-847A-EFBB6154C99A" description="LuaFAR for Editor">
 				</key>
 			</hierarchicalconfig>
 		</plugin>
@@ -1619,12 +1586,6 @@
 		<plugin guid="7E509EC9-41A3-44A3-B228-D6C94BE46AEE">
 			<hierarchicalconfig>
 				<key name="7E509EC9-41A3-44A3-B228-D6C94BE46AEE" description="Mine Sweeper"/>
-			</hierarchicalconfig>
-		</plugin>
-		<plugin guid="8E11EA75-0303-4374-AC60-D1E38F865449">
-			<hierarchicalconfig>
-				<key name="8E11EA75-0303-4374-AC60-D1E38F865449" description="LuaFAR Search">
-				</key>
 			</hierarchicalconfig>
 		</plugin>
 		<plugin guid="919C1FC6-A571-4642-99DF-BDACE840ED18">
@@ -1719,7 +1680,10 @@
 		<plugin guid="9C3A61FC-F349-48E8-9B78-DAEBD821694B">
 			<hierarchicalconfig>
 				<key name="9C3A61FC-F349-48E8-9B78-DAEBD821694B" description="Audio player">
+					<value name="" type="qword" value="0000000000000000"/>
 					<value name="add_to_panel_menu" type="qword" value="0000000000000001"/>
+					<value name="buttons_action" type="text" value=" bb pp ff s "/>
+					<value name="buttons_text" type="text" value=" |◄ || ►| ■ "/>
 					<value name="cmd_prefix" type="text" value="AudioPlayer"/>
 					<value name="default_cp" type="qword" value="0000000000000000"/>
 					<value name="enter_as_next" type="qword" value="0000000000000001"/>
@@ -1727,9 +1691,11 @@
 					<value name="ignored_subtitles" type="text" value="YOUR DONATION "/>
 					<value name="move_step1" type="qword" value="000000000000C350"/>
 					<value name="move_step2" type="qword" value="00000000004C4B40"/>
+					<value name="out_click_close" type="qword" value="0000000000000001"/>
 					<value name="out_device" type="qword" value="FFFFFFFFFFFFFFFF"/>
+					<value name="remove_album" type="qword" value="0000000000000001"/>
 					<value name="use_analyze" type="qword" value="0000000000000001"/>
-					<value name="volume" type="qword" value="00000000000003D4"/>
+					<value name="volume" type="qword" value="0000000000000104"/>
 				</key>
 			</hierarchicalconfig>
 		</plugin>
@@ -2040,7 +2006,7 @@
 						<key name="{65642111-AA69-4B84-B4B8-9249579EC4FA}">
 							<value name="Hidden" type="qword" value="0000000000000000"/>
 							<value name="Hotkey" type="text" value=""/>
-							<value name="LastAccess" type="qword" value="000000004A2A7A8A"/>
+							<value name="LastAccess" type="qword" value="000000004CB81744"/>
 							<value name="NewName" type="text" value=""/>
 						</key>
 						<key name="{6F332978-08B8-4919-847A-EFBB6154C99A}">
@@ -2146,7 +2112,7 @@
 						<key name="{9C3A61FC-F349-48E8-9B78-DAEBD821694B}">
 							<value name="Hidden" type="qword" value="0000000000000000"/>
 							<value name="Hotkey" type="text" value=""/>
-							<value name="LastAccess" type="qword" value="000000004CAE7DF0"/>
+							<value name="LastAccess" type="qword" value="000000004CBA8100"/>
 							<value name="NewName" type="text" value=""/>
 						</key>
 						<key name="{9D4A59D9-AD2D-478C-8F66-7D233CBB788D}">
@@ -2216,7 +2182,7 @@
 						<key name="{AE501DD6-AD57-4A26-A5DF-39ACC3A9DB99}">
 							<value name="Hidden" type="qword" value="0000000000000000"/>
 							<value name="Hotkey" type="text" value="/"/>
-							<value name="LastAccess" type="qword" value="000000004CA9B590"/>
+							<value name="LastAccess" type="qword" value="000000004CB7A131"/>
 							<value name="NewName" type="text" value=""/>
 						</key>
 						<key name="{AF4DAB38-C00A-4653-900E-7A8230308010}">
@@ -2399,7 +2365,7 @@
 						<key name="{F6E77027-05BA-4ECF-A8D3-7D57B2D80C53}">
 							<value name="Hidden" type="qword" value="0000000000000000"/>
 							<value name="Hotkey" type="text" value="2"/>
-							<value name="LastAccess" type="qword" value="000000004CAA209B"/>
+							<value name="LastAccess" type="qword" value="000000004CB72202"/>
 							<value name="NewName" type="text" value=""/>
 						</key>
 						<key name="{F9AF80C3-54AC-4924-B607-FE05A3866A88}">
@@ -2600,6 +2566,7 @@
 		<plugin guid="D4BC5EA7-8229-4FFE-AAC1-5A4F51A0986A">
 			<hierarchicalconfig>
 				<key name="D4BC5EA7-8229-4FFE-AAC1-5A4F51A0986A" description="Polygon">
+					<value name="root" type="hex" value="64,6F,20,6C,6F,63,61,6C,20,74,20,3D,20,7B,7D,3B,20,44,61,74,61,20,3D,20,74,0A,20,20,64,6F,20,6C,6F,63,61,6C,20,74,20,3D,20,7B,7D,3B,20,44,61,74,61,5B,22,70,6C,75,67,69,6E,22,5D,20,3D,20,74,0A,20,20,20,20,74,5B,22,75,73,65,72,5F,6D,6F,64,75,6C,65,73,22,5D,20,3D,20,74,72,75,65,0A,20,20,20,20,74,5B,22,65,78,74,65,6E,73,69,6F,6E,73,22,5D,20,3D,20,74,72,75,65,0A,20,20,20,20,74,5B,22,66,6F,72,65,69,67,6E,5F,6B,65,79,73,22,5D,20,3D,20,74,72,75,65,0A,20,20,20,20,74,5B,22,70,72,65,66,69,78,22,5D,20,3D,20,22,70,6F,6C,79,67,6F,6E,22,0A,20,20,20,20,74,5B,22,61,64,64,5F,74,6F,5F,6D,65,6E,75,22,5D,20,3D,20,74,72,75,65,0A,20,20,65,6E,64,0A,20,20,64,6F,20,6C,6F,63,61,6C,20,74,20,3D,20,7B,7D,3B,20,44,61,74,61,5B,22,65,78,70,6F,72,74,65,72,22,5D,20,3D,20,74,0A,20,20,20,20,74,5B,22,66,6F,72,6D,61,74,22,5D,20,3D,20,22,74,65,78,74,22,0A,20,20,20,20,74,5B,22,6D,75,6C,74,69,6C,69,6E,65,22,5D,20,3D,20,74,72,75,65,0A,20,20,65,6E,64,0A,65,6E,64,0A"/>
 					<key name="files"/>
 				</key>
 			</hierarchicalconfig>

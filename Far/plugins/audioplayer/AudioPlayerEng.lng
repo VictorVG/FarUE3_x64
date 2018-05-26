@@ -2,10 +2,10 @@
 
 "AudioPlayer"
 
-"Output device:"
-"Open by Enter key press"
-"Add to the panel plugin menu"
-"Prefix:"
+"Output &device:"
+"&Open by Enter key press"
+"&Add to the panel plugin menu"
+"&Prefix:"
 
 "OK"
 "Cancel"
@@ -13,8 +13,8 @@
 "Error playing file"
 
 "Volume"
-"Playback"
-"Current only"
-"Repeat current"
-"To the end"
-"Repeat all"
+"&Playback"
+"Current &only"
+"Repeat &current"
+"To the &end"
+"Repeat &all"

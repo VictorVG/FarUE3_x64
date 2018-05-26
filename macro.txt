@@ -328,6 +328,7 @@
   ║  ········D··········· │ End                                                              │ Plugin_Review.lua                          │ Review: Goto Last Image                         ║
   ║  ········D··········· │ Enter Home End Up Down PgUp PgDn Left Right CtrlPgUp CtrlPgDn    │ Plugin_SizeManager.lua                     │ Size Manager: panel navigation                  ║
   ║  ········D··········· │ F CtrlF                                                          │ Plugin_Review.lua                          │ Review: Fullscreen mode On/Off                  ║
+  ║  ········D··········· │ F1                                                               │ Plugin_AudioPlayer.lua                     │ AudioPlayer: key bindings help by F1            ║
   ║  ········D··········· │ F3                                                               │ Dialog_DialogTools.lua                     │ DialogTools: Show password                      ║
   ║  ········D··········· │ F4                                                               │ Dialog_DialogTools.lua                     │ DialogTools: Edit                               ║
   ║  ········D··········· │ F4                                                               │ Dialog_ToEditor.lua                        │ Редактирование поля ввода диалога в             ║
@@ -426,4 +427,4 @@
   ║                                                                                                                                                                                         ║
   ╚═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
                                                                                                                                                                                                16.05.2018 20:01:29 +0300
-  16.05.2018 21:24:07 +0300
+  26.05.2018 04:04:41 +0300
