@@ -1,6 +1,6 @@
 ﻿.Language=Russian,Russian (Русский)
 
-//Version: 3.0 build 5224
+//Version: 3.0 build 5226
 
 //[MYes]
 "Да"
@@ -1625,8 +1625,6 @@
 "Переключение на юникодную кодовую страницу {0} не поддерживается"
 //[MEditorCPNotSupported]
 "Кодовая страница {0} не поддерживается вашей системой"
-//[MEditorCPNotDetected]
-"Не удалось определить кодовую страницу"
 
 //[MColumnName]
 "Имя"

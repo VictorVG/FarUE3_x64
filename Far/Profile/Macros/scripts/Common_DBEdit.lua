@@ -1,4 +1,4 @@
-﻿local Info = Info or package.loaded.regscript or function(...) return ... end --luacheck: ignore 113/Info
+local Info = Info or package.loaded.regscript or function(...) return ... end --luacheck: ignore 113/Info
 local nfo = Info {... or _filename,
   name          = "DBEdit";
   description   = "Импорт/экспорт/редактирование данных плагинов";
@@ -10,8 +10,8 @@ local nfo = Info {... or _filename,
   files         = [[*Eng.hlf;*Rus.hlf;*Eng.lng;*Rus.lng]]; --вспомогательные файлы скрипта
   helptxt       = [=[
 Управление:
-  Alt+Shift+F2 - вызов главного меню
-  Alt+Shift+F3 - вызов диалога импорта
+  Alt+Shift+F4 - вызов главного меню
+  Alt+Shift+F5 - вызов диалога импорта
 
 Префиксы командной строки:
   dbexp:[<плагин>][шаблон]    - экспорт ключа/переменной из указанного плагина ("<" и ">" обязательны) по указанному шаблону или вызов главного меню
@@ -105,7 +105,7 @@ for _,v in ipairs(list) do -- переберём все
 end
 return res,#list -- вернём результат и количество элементов в корне дерева
 end
--- 
+--
 function PutElem(obj,key,elem) --[[запишем элемент или поддерево]]
 if elem.type==F.FST_SUBKEY then -- таблица?
   key = obj:CreateSubkey(key,elem.name) -- откроем/создадим раздел
@@ -585,10 +585,10 @@ end
 --[=[Макросы]=]
 -- -
 Macro{
-  area="Common"; key="AltShiftF2"; description=L.EMDesc; [(LMBuild<579 and "u" or "").."id"]=Guids.ExpMacro; action=Save;
+  area="Common"; key="AltShiftF4"; description=L.EMDesc; [(LMBuild<579 and "u" or "").."id"]=Guids.ExpMacro; action=Save;
 }
 Macro{
-  area="Common"; key="AltShiftF3"; description=L.IMDesc; [(LMBuild<579 and "u" or "").."id"]=Guids.ImpMacro; action=Restore;
+  area="Common"; key="AltShiftF5"; description=L.IMDesc; [(LMBuild<579 and "u" or "").."id"]=Guids.ImpMacro; action=Restore;
 }
 -- +
 --[=[Пункт меню]=]

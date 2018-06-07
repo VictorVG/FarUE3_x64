@@ -1,6 +1,6 @@
 ﻿.Language=Ukrainian,Ukrainian (Українська)
 
-//Version: 3.0 build 5224
+//Version: 3.0 build 5226
 
 //[MYes]
 "Так"
@@ -1625,8 +1625,6 @@
 "Переключення на юнікодну кодову сторінку {0} не підтримується"
 //[MEditorCPNotSupported]
 "Кодова сторінка {0} не підтримується вашою системою"
-//[MEditorCPNotDetected]
-"Не вдалося визначити кодову сторінку"
 
 //[MColumnName]
 "Ім'я"

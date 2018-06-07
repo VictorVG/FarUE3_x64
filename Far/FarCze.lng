@@ -1,6 +1,6 @@
 ﻿.Language=Czech,Czech (Čeština)
 
-//Version: 3.0 build 5224
+//Version: 3.0 build 5226
 
 //[MYes]
 "Ano"
@@ -1680,8 +1680,6 @@
 "Přepnutí na kódovou stránku Unicode {0} není podporované"
 //[MEditorCPNotSupported]
 "Kódová stránka {0} není podporovaná ve vašem systému"
-//[MEditorCPNotDetected]
-"Kódová stránka nebyla detekována"
 
 //[MColumnName]
 "Název"

@@ -79,8 +79,8 @@ $^Plugin select
 $^Script macros list
   #Key#          |  #Script#
 
-  #AltShiftF2# - |~Main window~@main@.
-  #AltShiftF3# - |Import dialog.
+  #AltShiftF4# - |~Main window~@main@.
+  #AltShiftF5# - |Import dialog.
 
 @=
 

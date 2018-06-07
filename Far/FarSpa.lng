@@ -1,6 +1,6 @@
 ﻿.Language=Spanish,Spanish (Español)
 
-//Version: 3.0 build 5224
+//Version: 3.0 build 5226
 
 //[MYes]
 "Si"
@@ -1626,8 +1626,6 @@
 "Cambio a página de códigos unicode {0} no está soportado"
 //[MEditorCPNotSupported]
 "Página de códigos {0} no está soportado en su sistema"
-//[MEditorCPNotDetected]
-"No se pudo determinar página de códigos"
 
 //[MColumnName]
 "Nombre"

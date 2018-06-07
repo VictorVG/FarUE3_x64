@@ -1,6 +1,6 @@
 ﻿.Language=Italian,Italian (Italiano)
 
-//Version: 3.0 build 5224
+//Version: 3.0 build 5226
 
 //[MYes]
 "&Si"
@@ -1642,8 +1642,6 @@
 "Il Cambio In Unicode {0} Non è Supportato"
 //[MEditorCPNotSupported]
 "La Codifica {0} Non è Supportata Nel Tuo Sistema"
-//[MEditorCPNotDetected]
-"Non Riesco A Determinare Il Tipo Di Codifica"
 
 //[MColumnName]
 "Nome"

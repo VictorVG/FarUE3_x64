@@ -12,8 +12,8 @@
   ║ ···················C │ AltShiftE                                                         │ Common_EnvManager.lua                      │ Менеджер переменных окружения: меню             ║
   ║ ···················C │ AltShiftF11                                                       │ Common_LMMacros.lua                        │ Менеджер lua/moon скриптов                      ║
   ║ ···················C │ AltShiftF12                                                       │ Common_Notebook.lua                        │ Notebook                                        ║
-  ║ ···················C │ AltShiftF2                                                        │ Common_DBEdit.lua                          │ Редактор баз данных плагинов: меню              ║
-  ║ ···················C │ AltShiftF3                                                        │ Common_DBEdit.lua                          │ Редактор баз данных плагинов: импорт            ║
+  ║ ···················C │ AltShiftF4                                                        │ Common_DBEdit.lua                          │ Редактор баз данных плагинов: меню              ║
+  ║ ···················C │ AltShiftF5                                                        │ Common_DBEdit.lua                          │ Редактор баз данных плагинов: импорт            ║
   ║ ···················C │ AltShiftR                                                         │ Common_ReloadMacros.lua                    │ Reload macros                                   ║
   ║ ···················C │ AltShiftUp AltShiftDown AltShiftLeft AltShiftRight                │ Plugin_ConsoleControl-Macros.lua           │ Console Control: Change Windows Size            ║
   ║ ···················C │ Ctrl/                                                             │ Common_KeyName.lua                         │ Получение названия клавиши. © SimSU             ║
@@ -427,4 +427,4 @@
   ║                                                                                                                                                                                         ║
   ╚═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
                                                                                                                                                                                                16.05.2018 20:01:29 +0300
-  26.05.2018 04:04:41 +0300
+  06.06.2018 16:35:11 +0300

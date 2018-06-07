@@ -1,6 +1,6 @@
 ﻿.Language=German,German (Deutsch)
 
-//Version: 3.0 build 5224
+//Version: 3.0 build 5226
 
 //[MYes]
 "Ja"
@@ -1654,8 +1654,6 @@
 "Wechseln zu Unicode Codepage {0} ist nicht unterstützt"
 //[MEditorCPNotSupported]
 "Codepage {0} ist nicht unterstützt"
-//[MEditorCPNotDetected]
-"Codepage kann nicht definiert werden"
 
 //[MColumnName]
 "Name"

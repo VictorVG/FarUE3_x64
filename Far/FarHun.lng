@@ -1,6 +1,6 @@
 ﻿.Language=Hungarian,Hungarian (Magyar)
 
-//Version: 3.0 build 5224
+//Version: 3.0 build 5226
 
 //[MYes]
 "Igen"
@@ -1760,9 +1760,6 @@
 // need translation:
 //[MEditorCPNotSupported]
 "Code page {0} is not supported in your system"
-// need translation:
-//[MEditorCPNotDetected]
-"Cannot determine the code page"
 
 //[MColumnName]
 "Név"

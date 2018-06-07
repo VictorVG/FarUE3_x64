@@ -1,6 +1,6 @@
 ﻿.Language=English,English
 
-//Version: 3.0 build 5224
+//Version: 3.0 build 5226
 
 //[MYes]
 "Yes"
@@ -1625,8 +1625,6 @@
 "Switch to unicode code page {0} is not supported"
 //[MEditorCPNotSupported]
 "Code page {0} is not supported in your system"
-//[MEditorCPNotDetected]
-"Cannot determine the code page"
 
 //[MColumnName]
 "Name"

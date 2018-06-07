@@ -1,6 +1,6 @@
 ﻿.Language=Slovak,Slovak (Slovenčina)
 
-//Version: 3.0 build 5224
+//Version: 3.0 build 5226
 
 //[MYes]
 "Áno"
@@ -1655,8 +1655,6 @@
 "Prepínač na tabuľku Unicode {0} nie je podporovaný"
 //[MEditorCPNotSupported]
 "Tabuľka znakov {0} nie je podporovaná vo vašom systéme"
-//[MEditorCPNotDetected]
-"Nebola zistená tabuľka znakov"
 
 //[MColumnName]
 "Názov"
