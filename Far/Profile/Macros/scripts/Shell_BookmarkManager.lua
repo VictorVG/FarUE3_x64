@@ -2,7 +2,7 @@
 local nfo = Info {_filename or ...,
   name          = "Bookmark manager";
   description   = "Менеджер закладок на папки для Fara";
-  version       = "3.0.0"; --http://semver.org/lang/ru/
+  version       = "3.0.1"; --http://semver.org/lang/ru/
   author        = "IgorZ";
   url           = "http://forum.farmanager.com/viewtopic.php?t=8465";
   id            = "F93842EB-FFD3-481A-8AA8-2E7DCEBDF2B1";
@@ -76,11 +76,13 @@ history         = [[
                     вызывать как функцию, параметры как для префиксов. При наборе последовательности символов она опционально отображается на экране.
                     При неполном наборе закладки/переменной, если подходит всего один вариант, меню может не выводиться (настраивается).
                     Отдельная настройка для показа переменных окружения в меню. Рефакторинг.
+2018/07/27 v3.0.1 - Исправление ошибки с переходом в сетевую папку. Исправление справки. Рефакторинг.
 ]];
 }
 if not nfo then return end
---
--- константы
+-- +
+--[[константы]]
+-- -
 local F,Author,KeysPart,ConfPart = far.Flags,"IgorZ","BookmarkManagerData","BookmarkManagerConfig"
 local ToCtrl = { -- таблица замены символов на те, которые вводятся с Ctrl
 ["~"]="`",["!"]="1",["@"]="2",["#"]="3",["№"]="3",["$"]="4",["%"]="5",["^"]="6",["&"]="7",["*"]="8",["("]="9",
@@ -101,10 +103,10 @@ local Guids = {
   diEdit      = win.Uuid("6BDD26FF-1D69-492C-A023-94B9AFF58F0F"),
   Config      = win.Uuid("CF79A927-A0B9-4B13-9DEB-A39E2DAA7CC6"),
 }
+local PathName = debug.getinfo(function()end).source:match("^@?([^@].*)%.lua$") -- путь к модулю
 local LMBuild = far.GetPluginInformation(far.FindPlugin(F.PFM_GUID,Guids.LuaMacro)).GInfo.Version[4] -- запомним версию LuaMacro
 local PanelColor = far.AdvControl(F.ACTL_GETCOLOR,far.Colors.COL_PANELBOX) -- цвет панели
--- Настройки по умолчанию
-local Def = {
+local Def = { -- настройки по умолчанию
   UseLocal = 1, -- использовать локальные закладки
   UseGlobal = 1, -- использовать глобальные закладки
   UseEnv = 1, -- использовать переменные окружения
@@ -121,9 +123,11 @@ local DefProfile = F.PSL_ROAMING -- место хранения настроек
 local DefBMProfile = F.PSL_LOCAL -- место хранения закладок по умолчанию: локальные
 --local DefBMProfile = F.PSL_ROAMING -- место хранения закладок по умолчанию: глобальные
 local OneProfile = win.GetEnv("FARLOCALPROFILE")==win.GetEnv("FARPROFILE") -- локальные и глобальные настройки в одном профиле
--- Переменные
-local PathName,L = debug.getinfo(function()end).source:match("^@?([^@].*)%.lua$"),{} -- путь к модулю
-local S,InProcess,UsedProfile -- настройки, признак обработки нажатой клавиатурной комбинации, откуда загрузили настройки
+-- +
+--[[переменные]]
+-- -
+local L,S,InProcess,UsedProfile -- язык, настройки, признак обработки нажатой клавиатурной комбинации, откуда загрузили настройки
+--------------------------------------------------------------------------------
 -- +
 --[=[вспомогательные функции]=]
 -- -
@@ -139,14 +143,14 @@ if not key then -- настроек нет?
   key = obj:OpenSubkey(obj:OpenSubkey(0,Author) or 0,ConfPart) -- есть раздел?
   if key then UsedProfile = DefProfile==F.PSL_LOCAL and F.PSL_ROAMING or F.PSL_LOCAL end -- из другого профиля открылись? запомним профиль
 end
-local function L1(n) return not ForceDef and obj:Get(key or -1,n,({string=F.FST_STRING,number=F.FST_QWORD})[type(Def[n])]) or Def[n] end
+local function L1(n) return not ForceDef and obj:Get(key or -1,n,type(Def[n])=="string" and F.FST_STRING or F.FST_QWORD) or Def[n] end
 S = { UseLocal = L1("UseLocal")~=0 and F.PSL_LOCAL,UseGlobal = L1("UseGlobal")~=0 and F.PSL_ROAMING,UseEnv = L1("UseEnv")~=0,
       ShowEnv = L1("ShowEnv")~=0,ExtMask = L1("ExtMask")~=0,MenuForOne = L1("MenuForOne")~=0,
       SeqColor = L1("SeqColor"),SeqLine = L1("SeqLine"),GoToMessDelay = L1("GoToMessDelay"),SaveMessDelay = L1("SaveMessDelay")}
 obj:Free() -- приберёмся
 if S.UseLocal and S.UseGlobal and OneProfile then S.UseLocal = nil end
 local FL,dummy = Far.GetConfig("Language.Main"):sub(1,3),function() return {"Cannot find languages files"} end -- язык, пустая функция
-if L.Lang~=FL then L = (loadfile(PathName..FL..".lng") or loadfile(PathName.."Eng.lng") or dummy)(LMBuild) end -- обновим, если язык другой
+if not L or L.Lang~=FL then L = (loadfile(PathName..FL..".lng") or loadfile(PathName.."Eng.lng") or dummy)(LMBuild) end -- обновим, если язык другой
 end -- LoadSettings
 --
 function SaveSettings() --[[сохранить настройки в БД]]
@@ -196,7 +200,7 @@ for AP,Pnl in pairs({[1]=A,[0]=P}) do -- переберём панели (есл
       local Path,L1,Root,Rest = p..trail,{} -- путь поиска, список результатов одной части, корень пути, всё, кроме корня
       if Path:match([[^[A-Za-z*]:]]) then Root,Rest = Path:upper():match([[^(.):\*(.*)$]]) -- имя диска в стиле Windows? достанем, запомним остаток
         for d in ("ABCDEFGHIJKLMNOPQRSTUVWXYZ"):gmatch(".") do if d:match(Root) or Root=="*" then L1[#L1+1] = d..[[:\]] end end -- раскроем корень
-      elseif Path:match([[^\\]]) then L1[1],Rest = Path:match([[^(\\[^\]+\[^\]+\)(.*)$]]) -- имя сетевой папки? достанем, запомним остаток
+      elseif Path:match([[^\\]]) then L1[1],Rest = Path:match([[^(\\[^\]+\[^\]+\?)(.*)$]]) -- имя сетевой папки? достанем, запомним остаток
       else ErrMess(L.BadBMValue..":\n"..Path,L.Hdr) return end -- выведем сообщение об ошибке
       for s in Rest:gsub([[\+]],[[\]]):gmatch([[[^\]+]]) do -- разберём остаток
         local tmp = {} -- новый список
@@ -343,6 +347,7 @@ end -- ShowHelp
 if type(nfo)=="table" then nfo.help = function() ShowHelp() end end
 --
 function ErrMess(msg,ttl) far.Message(msg,ttl or nfo.name,";Ok","wl") end --[[вывести сообщение об ошибке]]
+--------------------------------------------------------------------------------
 -- +
 --[==[Основные функции]==]
 -- -
@@ -523,7 +528,7 @@ else -- дёргаем переменные окружения
   local env = C.GetEnvironmentStringsW() -- выдернем все переменные окружения в виде последовательности 0-терминированных строк
   local p = env -- указатель на очередную
   while true do -- разберём
-    local len = C.wcslen(p) if len == 0 then break end -- длина очередной строки; нулевая - закончим
+    local len = C.wcslen(p) if len==0 then break end -- длина очередной строки; нулевая - закончим
     local s = win.Utf16ToUtf8(ffi.string(ffi.cast("char*",p),2*(len+1))) -- получим очередную строку
     if s:sub(1,1)~="=" then -- закинем каталог в таблицу (кроме "=<диск>=<путь>")
       local n,v = s:match("^(.-)=(.*)$") -- выдернем имя и значение; если существующий каталог - добавим
@@ -649,7 +654,7 @@ elseif p13=="bmr" then -- удаление?
   DelBM(bm,lg,true) -- удалим
 end
 end -- CLProc
---
+--------------------------------------------------------------------------------
 if Macro then
   LoadSettings() --[[первичная загрузка настроек]]
 -- +

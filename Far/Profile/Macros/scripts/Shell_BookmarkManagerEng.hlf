@@ -10,10 +10,10 @@ $^Main menu
    Bookmark manager allows you to assign a bookmark to a folder or file and jump to bookmark or to existing folders from environment variables.
 Additionally for element may do two commands from system context menu: open and edit.
 Also it is possible to use ~key combinations~@keys@, ~prefixes~@prefix@ and call script from Far plugin or drive menu.
-For use from drive menu script hides in bookmarks folders, that do not suit (e.g., folders for right panel only in left panel menu).
+For use from drive menu script hides in bookmarks objects, that do not suit (e.g., folders for right panel only in left panel menu).
 Empty bookmarks are grayed and cannot be used for jumping.
 On starting script from panel drive menu active is panel, for which drive menu was selected, and passive - other.
-Bookmark is a sequence of characters (letters and digits), which mapped one or more folders.
+Bookmark is a sequence of characters (letters and digits), which mapped one or more folders (files).
 This menu lets you to manage bookmarks interactive.
 And it may be caused when the typed sequence overlaps with an existing bookmark or environment variable.
 
@@ -166,11 +166,12 @@ Value can contain environment variables.
   In case, if for one panel some folders indicate or many tags are followed by modifier, last variant acts.
 
   Full folder format for any bookmark:
-    [#Plugin#]||[#File#]|[#Path in plugin/file#]|[#Parameter#], allowable
+    [#Plugin#]||[#File-container#]|[#Path in plugin/file-container#]|[#Parameter#], allowable
     [#Plugin#]||[#Path in plugin#]|[#Parameter#] or
-    [#Plugin#]||[#File#]|[#Path in plugin/file#] or
+    [#Plugin#]||[#File#]|[#Path in plugin/file-container#] or
     [#Plugin#]||[#Path in plugin#] or
-    #Path#.
+    #Path#,
+  where #Path# - path to file or folder.
 
 ^#Hotkeys#
 
@@ -275,7 +276,7 @@ $^About
 
  Author:       #IgorZ#
 
- Version:      #3.0.0#
+ Version:      #3.0.1#
 
  Net address: ~http://forum.farmanager.com/viewtopic.php?t=8465~@http://forum.farmanager.com/viewtopic.php?t=8465@
 @=‗
