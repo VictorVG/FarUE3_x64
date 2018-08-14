@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<farconfig version="3.0.5223">
+<farconfig version="3.0.5255">
 	<generalconfig>
 		<setting key="Cmdline" name="AutoComplete" type="qword" value="0000000000000001"/>
 		<setting key="Cmdline" name="DelRemovesBlocks" type="qword" value="0000000000000001"/>
@@ -1431,7 +1431,6 @@
 							<value name="MaxKeyWidth" type="qword" value="00000000000003E8"/>
 							<value name="ModuleSortingOrder" type="text" value="TMN"/>
 							<value name="PanelSortingOrder" type="text" value="AT"/>
-							<value name="PathFilter" type="text" value="&quot;%FarProfile%\Macros\modules\?.lua&quot; &quot;%FarProfile%\Macros\modules\?\init.lua&quot; &quot;%FarProfile%\Macros\modules\?.moon&quot; &quot;%FarProfile%\Macros\modules\?\init.moon&quot;"/>
 							<value name="PrefixSortingOrder" type="text" value="P"/>
 							<value name="ReloadKey" type="text" value="CtrlF9"/>
 							<value name="ShowEvents" type="qword" value="0000000000000001"/>
@@ -1485,7 +1484,7 @@
 					<value name="exclude_masks" type="text" value="*.chm,*.dll,*.doc,*.docx,*.dotx,*.flv,*.md5,*.msi,*.msp,*.ods,*.odt,*.ppsx,*.ppt,*.pptm,*.pptx,*.rar,*.r[0-9][0-9],*.sha1,*.sha256,*.sha512,*.swf,*.sys,*.xls,*.xlsm,*.xlsx"/>
 					<value name="extract_overwrite" type="qword" value="0000000000000001"/>
 					<value name="extract_separate_dir" type="qword" value="0000000000000001"/>
-					<value name="include_masks" type="text" value="*.zip,*.zipx,*.jar,*.xpi,*.odt,*.ods,*.docx,*.xlsx,*.epub,*.bz2,*.bzip2,*.tbz2,*.tbz,*.rar,*.r00,*.arj,*.z,*.taz,*.lzh,*.lha,*.7z,*.cab,*.nsis,*.lzma,*.lzma86,*.xz,*.txz,*.pmd,*.ext,*.ext2,*.ext3,*.ext4,*.img,*.vmdk,*.vdi,*.qcow,*.qcow2,*.qcow2c,*.gpt,*.mbr,*.rar,*.r00,*.ihex,*.hxs,*.hxi,*.hxr,*.hxq,*.hxw,*.lit,*.te,*.scap,*.uefif,*.squashfs,*.cramfs,*.apm,*.mslz,*.flv,*.swf,*.swf,*.ntfs,*.img,*.fat,*.img,*.mbr,*.vhd,*.exe,*.dll,*.sys,*.elf,*.macho,*.udf,*.iso,*.img,*.xar,*.pkg,*.mub,*.hfs,*.hfsx,*.dmg,*.msi,*.msp,*.doc,*.xls,*.ppt,*.wim,*.swm,*.esd,*.iso,*.img,*.chm,*.chi,*.chq,*.chw,*.001,*.rpm,*.ar,*.a,*.deb,*.lib,*.cpio,*.tar,*.ova,*.gz,*.gzip,*.tgz,*.tpz,*.lz,*.lzip"/>
+					<value name="include_masks" type="text" value="*.zip,*.zipx,*.jar,*.xpi,*.odt,*.ods,*.docx,*.xlsx,*.epub,*.bz2,*.bzip2,*.tbz2,*.tbz,*.rar,*.r00,*.arj,*.z,*.taz,*.lzh,*.lha,*.7z,*.cab,*.nsis,*.lzma,*.lzma86,*.xz,*.txz,*.pmd,*.ext,*.ext2,*.ext3,*.ext4,*.img,*.vmdk,*.vdi,*.qcow,*.qcow2,*.qcow2c,*.gpt,*.mbr,*.ihex,*.hxs,*.hxi,*.hxr,*.hxq,*.hxw,*.lit,*.te,*.scap,*.uefif,*.squashfs,*.cramfs,*.apm,*.mslz,*.flv,*.swf,*.ntfs,*.fat,*.vhd,*.exe,*.dll,*.sys,*.elf,*.macho,*.udf,*.iso,*.xar,*.pkg,*.mub,*.hfs,*.hfsx,*.dmg,*.msi,*.msp,*.doc,*.xls,*.ppt,*.wim,*.swm,*.esd,*.chm,*.chi,*.chq,*.chw,*.001,*.rpm,*.ar,*.a,*.deb,*.lib,*.cpio,*.tar,*.ova,*.gz,*.gzip,*.tgz,*.tpz,*.lz,*.lzip"/>
 					<value name="max_check_size" type="qword" value="0000000000800000"/>
 					<value name="panel_view_mode" type="qword" value="0000000000000009"/>
 					<value name="update_level" type="qword" value="0000000000000007"/>
