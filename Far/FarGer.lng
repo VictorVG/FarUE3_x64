@@ -1,6 +1,6 @@
 ﻿.Language=German,German (Deutsch)
 
-//Version: 3.0 build 5261
+//Version: 3.0 build 5263
 
 //[MYes]
 "Ja"
@@ -2919,7 +2919,7 @@
 //[MChangeDriveShowDiskType]
 "&Typ des Datenspeichers anzeigen"
 //[MChangeDriveShowPath]
-"&Netzwerkname/SUBST Pfad/VHD Name anzeigen"
+"&Netzwerkname / SUBST Pfad / VHD Name anzeigen"
 //[MChangeDriveShowLabel]
 "&Plattenkennung anzeigen"
 //[MChangeDriveShowFileSystem]

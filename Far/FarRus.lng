@@ -1,6 +1,6 @@
 ﻿.Language=Russian,Russian (Русский)
 
-//Version: 3.0 build 5261
+//Version: 3.0 build 5263
 
 //[MYes]
 "Да"
@@ -2867,7 +2867,7 @@
 //[MChangeDriveShowDiskType]
 "Показывать &тип диска"
 //[MChangeDriveShowPath]
-"Показывать &сетевое имя/путь SUBST/имя VHD"
+"Показывать &сетевое имя / путь SUBST / имя VHD"
 //[MChangeDriveShowLabel]
 "Показывать &метку диска"
 //[MChangeDriveShowFileSystem]

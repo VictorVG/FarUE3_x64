@@ -1,6 +1,6 @@
 ﻿.Language=Italian,Italian (Italiano)
 
-//Version: 3.0 build 5261
+//Version: 3.0 build 5263
 
 //[MYes]
 "&Si"
@@ -2888,7 +2888,7 @@
 //[MChangeDriveShowDiskType]
 "Mostra Tipo &Disco"
 //[MChangeDriveShowPath]
-"Mostra Nome &Rete/SUBST/VHD"
+"Mostra Nome &Rete / SUBST / VHD"
 //[MChangeDriveShowLabel]
 "Mostra &Etichetta"
 //[MChangeDriveShowFileSystem]

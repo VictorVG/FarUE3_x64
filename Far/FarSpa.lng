@@ -1,6 +1,6 @@
 ﻿.Language=Spanish,Spanish (Español)
 
-//Version: 3.0 build 5261
+//Version: 3.0 build 5263
 
 //[MYes]
 "Si"
@@ -2871,7 +2871,7 @@
 //[MChangeDriveShowDiskType]
 "Mostrar &tipo de disco"
 //[MChangeDriveShowPath]
-"Mostrar nombre/SUBST ruta/VHD de nombre de &red"
+"Mostrar nombre / SUBST ruta / VHD de nombre de &red"
 //[MChangeDriveShowLabel]
 "Mostrar etiqueta de disco"
 //[MChangeDriveShowFileSystem]

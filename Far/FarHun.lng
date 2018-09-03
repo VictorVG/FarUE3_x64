@@ -1,6 +1,6 @@
 ﻿.Language=Hungarian,Hungarian (Magyar)
 
-//Version: 3.0 build 5261
+//Version: 3.0 build 5263
 
 //[MYes]
 "Igen"
@@ -3078,7 +3078,7 @@
 "Show disk type"
 // need translation:
 //[MChangeDriveShowPath]
-"Show &network name/SUBST path/VHD name"
+"Show &network name / SUBST path / VHD name"
 // need translation:
 //[MChangeDriveShowLabel]
 "Show disk &label"

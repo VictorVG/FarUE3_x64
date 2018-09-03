@@ -1,6 +1,6 @@
 ﻿.Language=Ukrainian,Ukrainian (Українська)
 
-//Version: 3.0 build 5261
+//Version: 3.0 build 5263
 
 //[MYes]
 "Так"
@@ -2867,7 +2867,7 @@
 //[MChangeDriveShowDiskType]
 "Показувати &тип диска"
 //[MChangeDriveShowPath]
-"Показувати &мережеве ім'я/шлях SUBST/ім'я VHD"
+"Показувати &мережеве ім'я / шлях SUBST / ім'я VHD"
 //[MChangeDriveShowLabel]
 "Показувати м&ітку диска"
 //[MChangeDriveShowFileSystem]
