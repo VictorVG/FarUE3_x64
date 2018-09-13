@@ -1,3 +1,7 @@
+JClassInfo 3.10 13-09-2018
+--------------------------
+ * Fernflower обновлён, может декомпилировать java 8 (thanks to Anonymous - https://sourceforge.net/p/farplugs/tickets/110/)
+
 JClassInfo 3.9 17-10-2013
 -------------------------
  + Нативный декомпилятор (javap.exe)
