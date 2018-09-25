@@ -1,0 +1,141 @@
+﻿.Language=English,English
+.PluginContents=AudioPlayer
+
+@Contents
+$ #AudioPlayer#
+	Simple audio player based on the ~BASS~@http://www.un4seen.com/@ library.
+
+	[~Site~@https://sourceforge.net/projects/farplugs/@]
+	[~Discussion~@https://forum.farmanager.com/viewtopic.php?f=5&t=6879@]
+	[~Announcement~@https://forum.farmanager.com/viewtopic.php?f=11&t=6878@]
+	[~PlugRing~@https://plugring.farmanager.com/plugin.php?pid=881@]
+
+	~Player Control~@Player@
+	~Settings~@Config@
+
+	The following file formats are supported: 
+		*.aac;*.ac3;*.aif;*.aiff;*.ape;
+		*.fla;*.flac;
+		*.it;
+		*.kar;
+		*.m4a;*.m4b;*.m4r;*.mac;*.mid;*.midi;*.mo3;*.mod;*.mp+;*.mp1;*.mp2;*.mp3;[*.mp4];*.mpc;*.mpp;*.mtm;
+		*.oga;*.ogg;*.opus;
+		*.rmi;
+		*.s3m;*.spx;
+		*.umx;
+		*.wav;*.wma;*.wv;
+		*.xm
+
+	The following playlist formats are supported:
+		*.m3u;*.plc;*.pls;*.aimppl;*.cue
+
+	Can be used to playback NetRadio channels.
+	NetRadio links can be included in playlists.
+
+   It is possible to play audio file, playlist or NetRadio channel via the plugin prefix syntax.
+   Example: #AudioPlayer:my_list.m3u#
+
+	Player uses non-modal FAR Manager dialog so background playback is possible.
+
+	Install:
+		Unpack the archive to the Far plugins directory (...\Far\Plugins).
+
+	Warning:
+		This plugin is provided "as is". The author is not responsible for the consequences of using this software.
+
+@Player
+$ #Player dialog#
+
+	┌──────────── Dave Brubeck - Take Five ────────────┐ 1
+	│▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░│ 2
+	│1:01                   3:04                  -2:03│ 3
+	│Playback            MP3 44.1 2              Volume│ 4
+	│To the end              ↓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░░░░░░░░░│ 5
+	└ 19 ────────────────────────────────── |◄ || ►| ■ ┘ 6
+
+	┌───────────────────── Title ──────────────────────┐ 1
+	│▓▓▓▓▓▓▓▓▓▓▓▓▓p▓r▓o░g░r░e░s░s░░b░a░r░░░░░░░░░░░░░░░│ 2
+	│played                total                   left│ 3
+	│                    parameters                    │ 4
+	│play mode               ↓▓▓▓▓▓▓▓▓v▓o▓l▓u░m░e░░░░░░│ 5
+	└ index ───────────────────────────────── Controls ┘ 6
+
+	Progress bar area can be used as network radio track subtitle.
+	Index - panel item position or playlist index/total.
+	Playback control buttons and their actions can be customized in ~settings~@Config@.
+
+	#Close player         # - Esc, Click #■#, MEDIA_STOP, Out-of-dialog click (!settings)
+	#Background mode      # - Screen select menu (F12), Ctrl+Tab, Out-of-dialog click (!settings)
+	#Pause/Play           # - Space, MEDIA_PLAY_PAUSE, Enter (!settings), Click #||#
+	#Change title source  # - F2, Title area click (whichever exist: playlist -> tag -> filename ->)
+	#Select played file   # - Ins (panel mode only)
+	#Next track           # - Ctrl+Right, PgDn, MEDIA_NEXT, Click #►|#, Enter (!settings)
+	#Previous track       # - Ctrl+Left, PgUp, MEDIA_PREV, Click #|◄#
+	#First track          # - Ctrl+Home, Ctrl+PgUp
+	#Last track           # - Ctrl+End, Ctrl+PgDn
+	#Volume adjust        # - Up/Down or Volume bar click
+	#Played track position# - Home (start), Progress bar click, [Shift+]Left/Right or Mouse wheel (back/forward 5 [seconds]percents !settings)
+
+	~Next playing track selection mode~@PlayMode@
+
+	~Settings~@Config@
+	~Contents~@Contents@
+
+@PlayMode
+$ #Play mode#
+
+	#Current only  # - play one track and stop
+	#Repeat current# - play the same track cyclically (loop)
+	#To the end    # - play all panel or playlist tracks and stop
+	#Repeat all    # - play all panel/playlist tracks cyclically
+
+	Play mode selection is possible in ~Player~@Player@ or ~Settings~@Config@
+
+@Config
+$ #Plugin settings#
+
+	Press #Alt+Shift+F9# to open Settings dialog.
+
+	╔════════════════════════ AudioPlayer ═════════════════════════╗
+	║ Output device:                                               ║
+	║ #Default#                                                     ↓║
+	╟──────────────────────────────────────────────────────────────╢
+	║ #[x]# Add to the plugin menu    #[x]# Open by Enter key press    ║
+	║ Prefix: #AudioPlayer:ap#        Skip exts #mp4#                  ║
+	╟──────────────────────────────────────────────────────────────╢
+	║ Playback #To the end#                ↓  Enter = #Forward#       ↓║
+	║ #[ ]# Restore dialog position   #[?]# Exit by Out dialog click   ║
+	║ Play moves #5%, 5s#             Def.detect codepage #0#          ║
+	╟──────────────────────────────────────────────────────────────╢
+	║ #[ ]# Buttons on top      Buttons # |◄ || ►| ■·#                 ║
+	║ #[ ]# Double box          Actions # bb pp ff s·#                 ║
+	║ #[x]# Remove [Album]      Ignores #YOUR DONATION·#               ║
+	╟──────────────────────────────────────────────────────────────╢
+	║                { OK } #[ Default ]# #[ Cancel ]#                 ║
+	╚══════════════════════════════════════════════════════════════╝
+
+	Dialog above contains default settings
+
+	The following settings are available:
+	#Output device           # - output audio device selection
+	#Add to the plugin menu  # - add AudioPlayer to the plugin menu commands (F11)
+	#Open by Enter key press # - open supported files by Enter/Ctrl+PgDn press in panel
+	#Prefix                  # - command line plugin prefix(es) (colon-separated)
+	#Skip exts               # - ignored file extensions (semicolon-separated)
+	#Playback                # - ~play mode~@PlayMode@
+	#Enter =                 # - select action for Enter key press in ~player dialog~@Player@
+	#Restore dialog position # - keep player dialog position for the next time it's opened
+	#Exit by Out dialog click# - [ ] ignored, [x] exit player, [?] background mode
+	#Play moves              # - play position change step for Left/Right and Mouse wheel (without/with Shift)
+	#Def.detect codepage     # - titles' codepage if autodetect failed (0 - ACP) 
+	#Buttons on top          # - control buttons position in ~player dialog~@Player@
+	#Double box              # - single or double frame in ~player dialog~@Player@
+	#Remove [Album]          # - delete tail [Album] part of titles
+	#Buttons                 # - customize appearance of playback control buttons
+	#Actions                 # - playback control buttons' actions mask: 'b'ackward, 'f'orward, 'p'ause, 'h'ide, 's'top
+	#Ignores                 # - ignore subtitles with listed prefixes (| separated)
+	#[ Default ]             # - reset settings to default values
+	#[ Cancel ]              # - cancel all changes (reopen the Settings dialog if Shift is pressed)
+
+	~Player control~@Player@
+	~Contents~@Contents@

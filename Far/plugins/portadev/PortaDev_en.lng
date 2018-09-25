@@ -1,0 +1,53 @@
+﻿.Language=English,English
+
+"Portable Devices"
+
+"Reading directory..."
+"Creating directory \"%s\"..."
+"Deleting directory \"%s\"..."
+"Deleting file \"%s\"..."
+"Renaming \"%s\" to \"%s\"..."
+
+"Create directory"
+"Directory name:"
+
+"Copy"
+"Copy file \"%s\" to:"
+"Copy directory \"%s\" to:"
+"Copy selected items (%i) to:"
+
+"Move/Rename"
+"Move/Rename file \"%s\" to:"
+"Move/Rename directory \"%s\" to:"
+"Move selected items (%i) to:"
+
+"Delete"
+"Are you really want to delete file \"%s\"?"
+"Are you really want to delete directory \"%s\"?"
+"Are you really want to delete selected items (%i)?"
+
+"Source:"
+"Destination:"
+"Total:"
+"Processed objects: %i of %i"
+"Time: %02i:%02i:%02i"
+"Remaining: %02i:%02i:%02i"
+
+"Are you sure you want to cancel?"
+
+"Warning"
+"File already exist"
+"New file size:"
+"Existing file size:"
+"&Remember my selection"
+"&Overwrite"
+"&Skip"
+"&Cancel"
+
+"Error reading directory \"%s\"\n0x%08x: %s"
+"Error creating directory \"%s\"\n0x%08x: %s"
+"Error deleting directory \"%s\"\n0x%08x: %s"
+"Error deleting file \"%s\"\n0x%08x: %s"
+"Error renaming\n\"%s\"\nto\n\"%s\"\n0x%08x: %s"
+"Error reading file \"%s\"\n0x%08x: %s"
+"Error writing file \"%s\"\n0x%08x: %s"

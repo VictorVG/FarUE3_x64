@@ -1,0 +1,53 @@
+﻿.Language=Spanish,Spanish
+
+"Portable Devices"
+
+"Leyendo directorio..."
+"Creando directorio \"%s\"..."
+"Borrando directorio \"%s\"..."
+"Borrando archivo \"%s\"..."
+"Renombrando \"%s\" a \"%s\"..."
+
+"Crear directorio"
+"Nombre de directorio:"
+
+"Copiar"
+"Copiar archivo \"%s\" a:"
+"Copiar directorio \"%s\" a:"
+"Copiar ítems seleccionados (%i) a:"
+
+"Mover/Renombrar"
+"Mover/Renombrar archivo \"%s\" a:"
+"Mover/Renombrar directorio \"%s\" a:"
+"Mover ítems seleccionados (%i) a:"
+
+"Borrar"
+"Está seguro de borrar el archivo \"%s\"?"
+"Está seguro de borrar el directorio \"%s\"?"
+"Está seguro de borrar los ítems seleccionados (%i)?"
+
+"Origen:"
+"Destino:"
+"Total:"
+"Objetos procesados: %i de %i"
+"Tiempo: %02i:%02i:%02i"
+"Restante: %02i:%02i:%02i"
+
+"Está seguro de cancelar?"
+
+"Advertencia"
+"Archivo ya existe"
+"Nuevo tamaño de archivo:"
+"Tamaño de archivo existente:"
+"&Recordar mi selección"
+"&Sobrescribir"
+"Sa&ltar"
+"&Cancelar"
+
+"Error leyendo directorio \"%s\"\n0x%08x: %s"
+"Error creando directorio \"%s\"\n0x%08x: %s"
+"Error borrando directorio \"%s\"\n0x%08x: %s"
+"Error borrando archivo \"%s\"\n0x%08x: %s"
+"Error renombrando\n\"%s\"\na\n\"%s\"\n0x%08x: %s"
+"Error leyendo archivo \"%s\"\n0x%08x: %s"
+"Error escribiendo archivo \"%s\"\n0x%08x: %s"
