@@ -1,6 +1,6 @@
 ﻿.Language=Spanish,Spanish (Español)
 
-//Version: 3.0 build 5273
+//Version: 3.0 build 5275
 
 //[MYes]
 "Si"
@@ -1710,6 +1710,7 @@
 "P"
 //[MListEb]
 "E"
+{3} replacement field can receive a sum of files & folders
 //[MListFileSize]
 "Bytes: {0}, archivos: {1}, carpetas: {2}"
 //[MListFileSizeStatus]

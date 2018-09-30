@@ -1,6 +1,6 @@
 ﻿.Language=Polish,Polish (Polski)
 
-//Version: 3.0 build 5273
+//Version: 3.0 build 5275
 
 //[MYes]
 "Tak"
@@ -1858,6 +1858,7 @@
 "P"
 //[MListEb]
 "E"
+{3} replacement field can receive a sum of files & folders
 // need translation:
 //[MListFileSize]
 "Bytes: {0}, files: {1}, folders: {2}"

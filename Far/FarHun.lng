@@ -1,6 +1,6 @@
 ﻿.Language=Hungarian,Hungarian (Magyar)
 
-//Version: 3.0 build 5273
+//Version: 3.0 build 5275
 
 //[MYes]
 "Igen"
@@ -1850,6 +1850,7 @@
 "P"
 //[MListEb]
 "E"
+{3} replacement field can receive a sum of files & folders
 // need translation:
 //[MListFileSize]
 "Bytes: {0}, files: {1}, folders: {2}"

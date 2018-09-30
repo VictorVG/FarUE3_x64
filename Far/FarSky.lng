@@ -1,6 +1,6 @@
 ﻿.Language=Slovak,Slovak (Slovenčina)
 
-//Version: 3.0 build 5273
+//Version: 3.0 build 5275
 
 //[MYes]
 "Áno"
@@ -1709,6 +1709,7 @@
 "P"
 //[MListEb]
 "E"
+{3} replacement field can receive a sum of files & folders
 //[MListFileSize]
 "Bytov: {0}, súborov: {1}, adresárov: {2}"
 //[MListFileSizeStatus]

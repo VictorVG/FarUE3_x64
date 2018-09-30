@@ -1,6 +1,6 @@
 ﻿.Language=Russian,Russian (Русский)
 
-//Version: 3.0 build 5273
+//Version: 3.0 build 5275
 
 //[MYes]
 "Да"
@@ -1709,6 +1709,7 @@
 "П"
 //[MListEb]
 "Э"
+{3} replacement field can receive a sum of files & folders
 //[MListFileSize]
 "Байт: {0}, файлов: {1}, папок: {2}"
 //[MListFileSizeStatus]
