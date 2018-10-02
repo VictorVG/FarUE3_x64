@@ -1,6 +1,6 @@
 ﻿.Language=Russian,Russian (Русский)
 
-//Version: 3.0 build 5275
+//Version: 3.0 build 5277
 
 //[MYes]
 "Да"
@@ -2386,10 +2386,8 @@
 "&6. Пометка"
 //[MHighlightMarking4]
 "&8. Пометка"
-//[MHighlightExample1]
-"║filename.ext │"
-//[MHighlightExample2]
-"║ filename.ext│"
+//[MHighlightExample]
+"filename.ext"
 //[MHighlightContinueProcessing]
 "Продолжать &обработку"
 

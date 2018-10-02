@@ -1,6 +1,6 @@
 ﻿.Language=Spanish,Spanish (Español)
 
-//Version: 3.0 build 5275
+//Version: 3.0 build 5277
 
 //[MYes]
 "Si"
@@ -2388,10 +2388,8 @@
 "&6. Marcado"
 //[MHighlightMarking4]
 "&8. Marcado"
-//[MHighlightExample1]
-"║nombre.ext  │"
-//[MHighlightExample2]
-"║ nombre.ext │"
+//[MHighlightExample]
+"nombre.ext"
 //[MHighlightContinueProcessing]
 "Contin&uar procesando"
 

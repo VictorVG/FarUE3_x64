@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<farconfig version="3.0.5255">
+<farconfig version="3.0.5277">
 	<generalconfig>
 		<setting key="Cmdline" name="AutoComplete" type="qword" value="0000000000000001"/>
 		<setting key="Cmdline" name="DelRemovesBlocks" type="qword" value="0000000000000001"/>
@@ -521,7 +521,8 @@
 			<command type="4" enabled="1" command="edit:&quot;!=\!+!&quot;"/>
 			<command type="5" enabled="1" command="reg2:&quot;!=\!+!&quot;"/>
 		</filetype>
-	</associations><pluginhotkeys>
+	</associations>
+	<pluginhotkeys>
 		<plugin key="04D07C91-6FFE-481C-9E02-A070D3380883">
 			<hotkey menu="plugins" guid="0730559C-99FA-4748-86D4-012B71E72173" hotkey="b"/>
 		</plugin>
@@ -680,17 +681,12 @@
 					<value name="AttrSet" type="qword" value="0000000000000002"/>
 					<value name="ContinueProcessing" type="qword" value="0000000000000000"/>
 					<value name="CursorColor" type="color" background="00000003" foreground="FF000008" flags="fg4bit bg4bit"/>
-					<value name="DateAfter" type="hex" value="00,00,00,00,00,00,00,00"/>
-					<value name="DateBefore" type="hex" value="00,00,00,00,00,00,00,00"/>
 					<value name="DateRelative" type="qword" value="0000000000000000"/>
 					<value name="DateTimeAfter" type="qword" value="0000000000000000"/>
 					<value name="DateTimeBefore" type="qword" value="0000000000000000"/>
 					<value name="DateType" type="qword" value="0000000000000000"/>
-					<value name="ExcludeAttributes" type="qword" value="0000000000000000"/>
 					<value name="HardLinksAbove" type="qword" value="0000000000000000"/>
 					<value name="HardLinksBelow" type="qword" value="0000000000000000"/>
-					<value name="IgnoreMask" type="qword" value="0000000000000000"/>
-					<value name="IncludeAttributes" type="qword" value="0000000000000002"/>
 					<value name="MarkChar" type="qword" value="0000000000000000"/>
 					<value name="MarkCharCursorColor" type="color" background="00000000" foreground="FF000000" flags="fg4bit bg4bit"/>
 					<value name="MarkCharNormalColor" type="color" background="00000000" foreground="FF000000" flags="fg4bit bg4bit"/>
@@ -698,7 +694,6 @@
 					<value name="MarkCharSelectedCursorColor" type="color" background="00000000" foreground="FF000000" flags="fg4bit bg4bit"/>
 					<value name="Mask" type="text" value="*.*"/>
 					<value name="NormalColor" type="color" background="00000001" foreground="FF000003" flags="fg4bit bg4bit"/>
-					<value name="RelativeDate" type="qword" value="0000000000000000"/>
 					<value name="SelectedColor" type="color" background="00000000" foreground="FF000000" flags="fg4bit bg4bit"/>
 					<value name="SelectedCursorColor" type="color" background="00000000" foreground="FF000000" flags="fg4bit bg4bit"/>
 					<value name="SizeAboveS" type="text" value=""/>
@@ -715,17 +710,12 @@
 					<value name="AttrSet" type="qword" value="0000000000000004"/>
 					<value name="ContinueProcessing" type="qword" value="0000000000000000"/>
 					<value name="CursorColor" type="color" background="00000003" foreground="FF000008" flags="fg4bit bg4bit"/>
-					<value name="DateAfter" type="hex" value="00,00,00,00,00,00,00,00"/>
-					<value name="DateBefore" type="hex" value="00,00,00,00,00,00,00,00"/>
 					<value name="DateRelative" type="qword" value="0000000000000000"/>
 					<value name="DateTimeAfter" type="qword" value="0000000000000000"/>
 					<value name="DateTimeBefore" type="qword" value="0000000000000000"/>
 					<value name="DateType" type="qword" value="0000000000000000"/>
-					<value name="ExcludeAttributes" type="qword" value="0000000000000000"/>
 					<value name="HardLinksAbove" type="qword" value="0000000000000000"/>
 					<value name="HardLinksBelow" type="qword" value="0000000000000000"/>
-					<value name="IgnoreMask" type="qword" value="0000000000000000"/>
-					<value name="IncludeAttributes" type="qword" value="0000000000000004"/>
 					<value name="MarkChar" type="qword" value="0000000000000000"/>
 					<value name="MarkCharCursorColor" type="color" background="00000000" foreground="FF000000" flags="fg4bit bg4bit"/>
 					<value name="MarkCharNormalColor" type="color" background="00000000" foreground="FF000000" flags="fg4bit bg4bit"/>
@@ -733,7 +723,6 @@
 					<value name="MarkCharSelectedCursorColor" type="color" background="00000000" foreground="FF000000" flags="fg4bit bg4bit"/>
 					<value name="Mask" type="text" value="*.*"/>
 					<value name="NormalColor" type="color" background="00000001" foreground="FF000003" flags="fg4bit bg4bit"/>
-					<value name="RelativeDate" type="qword" value="0000000000000000"/>
 					<value name="SelectedColor" type="color" background="00000000" foreground="FF000000" flags="fg4bit bg4bit"/>
 					<value name="SelectedCursorColor" type="color" background="00000000" foreground="FF000000" flags="fg4bit bg4bit"/>
 					<value name="SizeAboveS" type="text" value=""/>
@@ -750,17 +739,12 @@
 					<value name="AttrSet" type="qword" value="0000000000000010"/>
 					<value name="ContinueProcessing" type="qword" value="0000000000000000"/>
 					<value name="CursorColor" type="color" background="00000003" foreground="FF00000F" flags="fg4bit bg4bit"/>
-					<value name="DateAfter" type="hex" value="00,00,00,00,00,00,00,00"/>
-					<value name="DateBefore" type="hex" value="00,00,00,00,00,00,00,00"/>
 					<value name="DateRelative" type="qword" value="0000000000000000"/>
 					<value name="DateTimeAfter" type="qword" value="0000000000000000"/>
 					<value name="DateTimeBefore" type="qword" value="0000000000000000"/>
 					<value name="DateType" type="qword" value="0000000000000000"/>
-					<value name="ExcludeAttributes" type="qword" value="0000000000000000"/>
 					<value name="HardLinksAbove" type="qword" value="0000000000000000"/>
 					<value name="HardLinksBelow" type="qword" value="0000000000000000"/>
-					<value name="IgnoreMask" type="qword" value="0000000000000000"/>
-					<value name="IncludeAttributes" type="qword" value="0000000000000010"/>
 					<value name="MarkChar" type="qword" value="0000000000000000"/>
 					<value name="MarkCharCursorColor" type="color" background="00000000" foreground="FF000000" flags="fg4bit bg4bit"/>
 					<value name="MarkCharNormalColor" type="color" background="00000000" foreground="FF000000" flags="fg4bit bg4bit"/>
@@ -768,7 +752,6 @@
 					<value name="MarkCharSelectedCursorColor" type="color" background="00000000" foreground="FF000000" flags="fg4bit bg4bit"/>
 					<value name="Mask" type="text" value="*.*|.."/>
 					<value name="NormalColor" type="color" background="00000001" foreground="FF00000F" flags="fg4bit bg4bit"/>
-					<value name="RelativeDate" type="qword" value="0000000000000000"/>
 					<value name="SelectedColor" type="color" background="00000000" foreground="FF000000" flags="fg4bit bg4bit"/>
 					<value name="SelectedCursorColor" type="color" background="00000000" foreground="FF000000" flags="fg4bit bg4bit"/>
 					<value name="SizeAboveS" type="text" value=""/>
@@ -785,17 +768,12 @@
 					<value name="AttrSet" type="qword" value="0000000000000010"/>
 					<value name="ContinueProcessing" type="qword" value="0000000000000000"/>
 					<value name="CursorColor" type="color" background="00000000" foreground="FF000000" flags="fg4bit bg4bit"/>
-					<value name="DateAfter" type="hex" value="00,00,00,00,00,00,00,00"/>
-					<value name="DateBefore" type="hex" value="00,00,00,00,00,00,00,00"/>
 					<value name="DateRelative" type="qword" value="0000000000000000"/>
 					<value name="DateTimeAfter" type="qword" value="0000000000000000"/>
 					<value name="DateTimeBefore" type="qword" value="0000000000000000"/>
 					<value name="DateType" type="qword" value="0000000000000000"/>
-					<value name="ExcludeAttributes" type="qword" value="0000000000000000"/>
 					<value name="HardLinksAbove" type="qword" value="0000000000000000"/>
 					<value name="HardLinksBelow" type="qword" value="0000000000000000"/>
-					<value name="IgnoreMask" type="qword" value="0000000000000000"/>
-					<value name="IncludeAttributes" type="qword" value="0000000000000010"/>
 					<value name="MarkChar" type="qword" value="0000000000000000"/>
 					<value name="MarkCharCursorColor" type="color" background="00000000" foreground="FF000000" flags="fg4bit bg4bit"/>
 					<value name="MarkCharNormalColor" type="color" background="00000000" foreground="FF000000" flags="fg4bit bg4bit"/>
@@ -803,7 +781,6 @@
 					<value name="MarkCharSelectedCursorColor" type="color" background="00000000" foreground="FF000000" flags="fg4bit bg4bit"/>
 					<value name="Mask" type="text" value=".."/>
 					<value name="NormalColor" type="color" background="00000000" foreground="FF000000" flags="fg4bit bg4bit"/>
-					<value name="RelativeDate" type="qword" value="0000000000000000"/>
 					<value name="SelectedColor" type="color" background="00000000" foreground="FF000000" flags="fg4bit bg4bit"/>
 					<value name="SelectedCursorColor" type="color" background="00000000" foreground="FF000000" flags="fg4bit bg4bit"/>
 					<value name="SizeAboveS" type="text" value=""/>
@@ -820,17 +797,12 @@
 					<value name="AttrSet" type="qword" value="0000000000000000"/>
 					<value name="ContinueProcessing" type="qword" value="0000000000000000"/>
 					<value name="CursorColor" type="color" background="00000003" foreground="FF00000A" flags="fg4bit bg4bit"/>
-					<value name="DateAfter" type="hex" value="00,00,00,00,00,00,00,00"/>
-					<value name="DateBefore" type="hex" value="00,00,00,00,00,00,00,00"/>
 					<value name="DateRelative" type="qword" value="0000000000000000"/>
 					<value name="DateTimeAfter" type="qword" value="0000000000000000"/>
 					<value name="DateTimeBefore" type="qword" value="0000000000000000"/>
 					<value name="DateType" type="qword" value="0000000000000000"/>
-					<value name="ExcludeAttributes" type="qword" value="0000000000000000"/>
 					<value name="HardLinksAbove" type="qword" value="0000000000000000"/>
 					<value name="HardLinksBelow" type="qword" value="0000000000000000"/>
-					<value name="IgnoreMask" type="qword" value="0000000000000000"/>
-					<value name="IncludeAttributes" type="qword" value="0000000000000000"/>
 					<value name="MarkChar" type="qword" value="0000000000000000"/>
 					<value name="MarkCharCursorColor" type="color" background="00000000" foreground="FF000000" flags="fg4bit bg4bit"/>
 					<value name="MarkCharNormalColor" type="color" background="00000000" foreground="FF000000" flags="fg4bit bg4bit"/>
@@ -838,7 +810,6 @@
 					<value name="MarkCharSelectedCursorColor" type="color" background="00000000" foreground="FF000000" flags="fg4bit bg4bit"/>
 					<value name="Mask" type="text" value="&lt;exec&gt;"/>
 					<value name="NormalColor" type="color" background="00000001" foreground="FF00000A" flags="fg4bit bg4bit"/>
-					<value name="RelativeDate" type="qword" value="0000000000000000"/>
 					<value name="SelectedColor" type="color" background="00000000" foreground="FF000000" flags="fg4bit bg4bit"/>
 					<value name="SelectedCursorColor" type="color" background="00000000" foreground="FF000000" flags="fg4bit bg4bit"/>
 					<value name="SizeAboveS" type="text" value=""/>
@@ -855,17 +826,12 @@
 					<value name="AttrSet" type="qword" value="0000000000000000"/>
 					<value name="ContinueProcessing" type="qword" value="0000000000000000"/>
 					<value name="CursorColor" type="color" background="00000003" foreground="FF00000D" flags="fg4bit bg4bit"/>
-					<value name="DateAfter" type="hex" value="00,00,00,00,00,00,00,00"/>
-					<value name="DateBefore" type="hex" value="00,00,00,00,00,00,00,00"/>
 					<value name="DateRelative" type="qword" value="0000000000000000"/>
 					<value name="DateTimeAfter" type="qword" value="0000000000000000"/>
 					<value name="DateTimeBefore" type="qword" value="0000000000000000"/>
 					<value name="DateType" type="qword" value="0000000000000000"/>
-					<value name="ExcludeAttributes" type="qword" value="0000000000000000"/>
 					<value name="HardLinksAbove" type="qword" value="0000000000000000"/>
 					<value name="HardLinksBelow" type="qword" value="0000000000000000"/>
-					<value name="IgnoreMask" type="qword" value="0000000000000000"/>
-					<value name="IncludeAttributes" type="qword" value="0000000000000000"/>
 					<value name="MarkChar" type="qword" value="0000000000000000"/>
 					<value name="MarkCharCursorColor" type="color" background="00000000" foreground="FF000000" flags="fg4bit bg4bit"/>
 					<value name="MarkCharNormalColor" type="color" background="00000000" foreground="FF000000" flags="fg4bit bg4bit"/>
@@ -873,7 +839,6 @@
 					<value name="MarkCharSelectedCursorColor" type="color" background="00000000" foreground="FF000000" flags="fg4bit bg4bit"/>
 					<value name="Mask" type="text" value="&lt;arc&gt;"/>
 					<value name="NormalColor" type="color" background="00000001" foreground="FF00000D" flags="fg4bit bg4bit"/>
-					<value name="RelativeDate" type="qword" value="0000000000000000"/>
 					<value name="SelectedColor" type="color" background="00000000" foreground="FF000000" flags="fg4bit bg4bit"/>
 					<value name="SelectedCursorColor" type="color" background="00000000" foreground="FF000000" flags="fg4bit bg4bit"/>
 					<value name="SizeAboveS" type="text" value=""/>
@@ -890,17 +855,12 @@
 					<value name="AttrSet" type="qword" value="0000000000000000"/>
 					<value name="ContinueProcessing" type="qword" value="0000000000000000"/>
 					<value name="CursorColor" type="color" background="00000003" foreground="FF000006" flags="fg4bit bg4bit"/>
-					<value name="DateAfter" type="hex" value="00,00,00,00,00,00,00,00"/>
-					<value name="DateBefore" type="hex" value="00,00,00,00,00,00,00,00"/>
 					<value name="DateRelative" type="qword" value="0000000000000000"/>
 					<value name="DateTimeAfter" type="qword" value="0000000000000000"/>
 					<value name="DateTimeBefore" type="qword" value="0000000000000000"/>
 					<value name="DateType" type="qword" value="0000000000000000"/>
-					<value name="ExcludeAttributes" type="qword" value="0000000000000000"/>
 					<value name="HardLinksAbove" type="qword" value="0000000000000000"/>
 					<value name="HardLinksBelow" type="qword" value="0000000000000000"/>
-					<value name="IgnoreMask" type="qword" value="0000000000000000"/>
-					<value name="IncludeAttributes" type="qword" value="0000000000000000"/>
 					<value name="MarkChar" type="qword" value="0000000000000000"/>
 					<value name="MarkCharCursorColor" type="color" background="00000000" foreground="FF000000" flags="fg4bit bg4bit"/>
 					<value name="MarkCharNormalColor" type="color" background="00000000" foreground="FF000000" flags="fg4bit bg4bit"/>
@@ -908,7 +868,6 @@
 					<value name="MarkCharSelectedCursorColor" type="color" background="00000000" foreground="FF000000" flags="fg4bit bg4bit"/>
 					<value name="Mask" type="text" value="&lt;temp&gt;"/>
 					<value name="NormalColor" type="color" background="00000001" foreground="FF000006" flags="fg4bit bg4bit"/>
-					<value name="RelativeDate" type="qword" value="0000000000000000"/>
 					<value name="SelectedColor" type="color" background="00000000" foreground="FF000000" flags="fg4bit bg4bit"/>
 					<value name="SelectedCursorColor" type="color" background="00000000" foreground="FF000000" flags="fg4bit bg4bit"/>
 					<value name="SizeAboveS" type="text" value=""/>
@@ -925,17 +884,12 @@
 					<value name="AttrSet" type="qword" value="0000000000000010"/>
 					<value name="ContinueProcessing" type="qword" value="0000000000000000"/>
 					<value name="CursorColor" type="color" background="00000003" foreground="FF00000F" flags="fg4bit bg4bit"/>
-					<value name="DateAfter" type="hex" value="00,00,00,00,00,00,00,00"/>
-					<value name="DateBefore" type="hex" value="00,00,00,00,00,00,00,00"/>
 					<value name="DateRelative" type="qword" value="0000000000000000"/>
 					<value name="DateTimeAfter" type="qword" value="0000000000000000"/>
 					<value name="DateTimeBefore" type="qword" value="0000000000000000"/>
 					<value name="DateType" type="qword" value="0000000000000000"/>
-					<value name="ExcludeAttributes" type="qword" value="0000000000000000"/>
 					<value name="HardLinksAbove" type="qword" value="0000000000000000"/>
 					<value name="HardLinksBelow" type="qword" value="0000000000000000"/>
-					<value name="IgnoreMask" type="qword" value="0000000000000001"/>
-					<value name="IncludeAttributes" type="qword" value="0000000000000010"/>
 					<value name="MarkChar" type="qword" value="0000000000000000"/>
 					<value name="MarkCharCursorColor" type="color" background="00000000" foreground="FF000000" flags="fg4bit bg4bit"/>
 					<value name="MarkCharNormalColor" type="color" background="00000000" foreground="FF000000" flags="fg4bit bg4bit"/>
@@ -943,7 +897,6 @@
 					<value name="MarkCharSelectedCursorColor" type="color" background="00000000" foreground="FF000000" flags="fg4bit bg4bit"/>
 					<value name="Mask" type="text" value="*.*"/>
 					<value name="NormalColor" type="color" background="00000001" foreground="FF00000F" flags="fg4bit bg4bit"/>
-					<value name="RelativeDate" type="qword" value="0000000000000000"/>
 					<value name="SelectedColor" type="color" background="00000000" foreground="FF000000" flags="fg4bit bg4bit"/>
 					<value name="SelectedCursorColor" type="color" background="00000000" foreground="FF000000" flags="fg4bit bg4bit"/>
 					<value name="SizeAboveS" type="text" value=""/>
@@ -1365,16 +1318,14 @@
 		<plugin guid="4EBBEFC8-2084-4B7F-94C0-692CE136894D">
 			<hierarchicalconfig>
 				<key name="4EBBEFC8-2084-4B7F-94C0-692CE136894D" description="LuaMacro">
+					<key name="Duplicate Fighter">
+						<value name="settings" type="hex" value="6C,6F,63,61,6C,20,69,64,78,3D,7B,7D,3B,20,66,6F,72,20,69,3D,31,2C,31,20,64,6F,20,69,64,78,5B,69,5D,3D,7B,7D,20,65,6E,64,0A,64,6F,20,6C,6F,63,61,6C,20,74,3D,69,64,78,5B,31,5D,0A,20,20,74,5B,22,73,74,61,74,69,73,74,69,63,73,22,5D,20,3D,20,74,72,75,65,0A,20,20,74,5B,22,6D,65,74,68,6F,64,22,5D,20,3D,20,32,0A,20,20,74,5B,22,6B,65,65,70,65,6D,70,74,79,22,5D,20,3D,20,66,61,6C,73,65,0A,20,20,74,5B,22,74,6F,62,6F,6F,6C,65,61,6E,22,5D,20,3D,20,74,72,75,65,0A,20,20,74,5B,22,75,73,65,65,78,70,72,22,5D,20,3D,20,66,61,6C,73,65,0A,65,6E,64,0A,72,65,74,75,72,6E,20,69,64,78,5B,31,5D,0A"/>
+					</key>
 					<key name="IgorZ">
 						<key name="BookmarkManagerConfig">
-							<value name="ExtMask" type="qword" value="0000000000000001"/>
 							<value name="GoToMessDelay" type="qword" value="FFFFFFFFFFFFFFFF"/>
-							<value name="MenuForOne" type="qword" value="0000000000000001"/>
 							<value name="MessDelay" type="qword" value="FFFFFFFFFFFFFFFF"/>
 							<value name="SaveMessDelay" type="qword" value="0000000000000320"/>
-							<value name="SeqColor" type="qword" value="0000000000000000"/>
-							<value name="SeqLine" type="qword" value="0000000000000000"/>
-							<value name="ShowEnv" type="qword" value="0000000000000001"/>
 							<value name="UseEnv" type="qword" value="0000000000000001"/>
 							<value name="UseGlobal" type="qword" value="0000000000000001"/>
 							<value name="UseLocal" type="qword" value="0000000000000000"/>
@@ -1418,7 +1369,6 @@
 							<value name="InsertEventKey" type="text" value="RCtrlF11"/>
 							<value name="InsertMIKey" type="text" value="RCtrlF11"/>
 							<value name="InsertMacroKey" type="text" value="RCtrlF11"/>
-							<value name="InsertPanelKey" type="text" value="RCtrlF11"/>
 							<value name="InsertPrefixKey" type="text" value="RCtrlF11"/>
 							<value name="InsertScriptKey" type="text" value="LCtrlF11"/>
 							<value name="InsertUidKey" type="text" value="RCtrlU"/>
@@ -1427,10 +1377,8 @@
 							<value name="MacroMaxDescWidth" type="qword" value="00000000000003E8"/>
 							<value name="MacroSortingOrder" type="text" value="OCAKD"/>
 							<value name="ManagerKey" type="text" value="AltShiftF11"/>
-							<value name="MaxFileWidth" type="qword" value="0000000000000032"/>
 							<value name="MaxKeyWidth" type="qword" value="00000000000003E8"/>
 							<value name="ModuleSortingOrder" type="text" value="TMN"/>
-							<value name="PanelSortingOrder" type="text" value="AT"/>
 							<value name="PrefixSortingOrder" type="text" value="P"/>
 							<value name="ReloadKey" type="text" value="CtrlF9"/>
 							<value name="ShowEvents" type="qword" value="0000000000000001"/>
@@ -1439,7 +1387,6 @@
 							<value name="ShowMenuItems" type="qword" value="0000000000000001"/>
 							<value name="ShowModules" type="qword" value="0000000000000001"/>
 							<value name="ShowNonActiveMacros" type="qword" value="0000000000000001"/>
-							<value name="ShowPanels" type="qword" value="0000000000000001"/>
 							<value name="ShowPrefixes" type="qword" value="0000000000000001"/>
 						</key>
 					</key>
@@ -2340,7 +2287,7 @@
 						<key name="{F1EBAFF4-A643-4046-9F0B-7D0A9A577299}">
 							<value name="Hidden" type="qword" value="0000000000000000"/>
 							<value name="Hotkey" type="text" value=""/>
-							<value name="LastAccess" type="qword" value="0000000048728C28"/>
+							<value name="LastAccess" type="qword" value="000000004D2D6EEA"/>
 							<value name="NewName" type="text" value=""/>
 						</key>
 						<key name="{F250C12A-78E2-4ABC-A784-3FDD3156E415}">
@@ -2364,7 +2311,7 @@
 						<key name="{F6E77027-05BA-4ECF-A8D3-7D57B2D80C53}">
 							<value name="Hidden" type="qword" value="0000000000000000"/>
 							<value name="Hotkey" type="text" value="2"/>
-							<value name="LastAccess" type="qword" value="000000004CB72202"/>
+							<value name="LastAccess" type="qword" value="000000004D3B2347"/>
 							<value name="NewName" type="text" value=""/>
 						</key>
 						<key name="{F9AF80C3-54AC-4924-B607-FE05A3866A88}">

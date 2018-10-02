@@ -1,6 +1,6 @@
 ﻿.Language=German,German (Deutsch)
 
-//Version: 3.0 build 5275
+//Version: 3.0 build 5277
 
 //[MYes]
 "Ja"
@@ -2430,10 +2430,8 @@
 "&6. Markierung"
 //[MHighlightMarking4]
 "&8. Markierung"
-//[MHighlightExample1]
-"║dateinam.erw │"
-//[MHighlightExample2]
-"║ dateinam.erw│"
+//[MHighlightExample]
+"dateinam.erw"
 //[MHighlightContinueProcessing]
 "Verarbeitung f&ortsetzen"
 

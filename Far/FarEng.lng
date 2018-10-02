@@ -1,6 +1,6 @@
 ﻿.Language=English,English
 
-//Version: 3.0 build 5275
+//Version: 3.0 build 5277
 
 //[MYes]
 "Yes"
@@ -2386,10 +2386,8 @@
 "&6. Marking"
 //[MHighlightMarking4]
 "&8. Marking"
-//[MHighlightExample1]
-"║filename.ext │"
-//[MHighlightExample2]
-"║ filename.ext│"
+//[MHighlightExample]
+"filename.ext"
 //[MHighlightContinueProcessing]
 "C&ontinue processing"
 

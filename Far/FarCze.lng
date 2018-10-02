@@ -1,6 +1,6 @@
 ﻿.Language=Czech,Czech (Čeština)
 
-//Version: 3.0 build 5275
+//Version: 3.0 build 5277
 
 //[MYes]
 "Ano"
@@ -2448,10 +2448,8 @@
 "&6. Označení"
 //[MHighlightMarking4]
 "&8. Označení"
-//[MHighlightExample1]
-"║filename.ext │"
-//[MHighlightExample2]
-"║ filename.ext│"
+//[MHighlightExample]
+"filename.ext"
 //[MHighlightContinueProcessing]
 "Pokračovat ve zpracová&ní"
 

@@ -1,6 +1,6 @@
 ﻿.Language=Polish,Polish (Polski)
 
-//Version: 3.0 build 5275
+//Version: 3.0 build 5277
 
 //[MYes]
 "Tak"
@@ -2550,10 +2550,8 @@
 "&6. Zaznaczenie"
 //[MHighlightMarking4]
 "&8. Zaznaczenie"
-//[MHighlightExample1]
-"║nazwa.roz    │"
-//[MHighlightExample2]
-"║ nazwa.roz   │"
+//[MHighlightExample]
+"nazwa.roz"
 //[MHighlightContinueProcessing]
 "K&ontynuuj przetwarzanie"
 

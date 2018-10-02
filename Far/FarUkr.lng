@@ -1,6 +1,6 @@
 ﻿.Language=Ukrainian,Ukrainian (Українська)
 
-//Version: 3.0 build 5275
+//Version: 3.0 build 5277
 
 //[MYes]
 "Так"
@@ -2386,10 +2386,8 @@
 "&6. Помітка"
 //[MHighlightMarking4]
 "&8. Помітка"
-//[MHighlightExample1]
-"║filename.ext │"
-//[MHighlightExample2]
-"║ filename.ext│"
+//[MHighlightExample]
+"filename.ext"
 //[MHighlightContinueProcessing]
 "Продовжити &обробку"
 

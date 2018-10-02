@@ -1,6 +1,6 @@
 ﻿.Language=Slovak,Slovak (Slovenčina)
 
-//Version: 3.0 build 5275
+//Version: 3.0 build 5277
 
 //[MYes]
 "Áno"
@@ -2386,10 +2386,8 @@
 "&6. Označenie"
 //[MHighlightMarking4]
 "&8. Označenie"
-//[MHighlightExample1]
-"║filename.ext │"
-//[MHighlightExample2]
-"║ filename.ext│"
+//[MHighlightExample]
+"filename.ext"
 //[MHighlightContinueProcessing]
 "Pokračovať v spracúva&ní"
 

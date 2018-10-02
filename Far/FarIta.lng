@@ -1,6 +1,6 @@
 ﻿.Language=Italian,Italian (Italiano)
 
-//Version: 3.0 build 5275
+//Version: 3.0 build 5277
 
 //[MYes]
 "&Si"
@@ -2406,10 +2406,8 @@
 "&6. Marca"
 //[MHighlightMarking4]
 "&8. Marca"
-//[MHighlightExample1]
-"║nome.ext │"
-//[MHighlightExample2]
-"║ nome.ext│"
+//[MHighlightExample]
+"nome.ext"
 //[MHighlightContinueProcessing]
 "&Continua L'Elaborazione"
 

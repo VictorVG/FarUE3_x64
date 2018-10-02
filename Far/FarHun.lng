@@ -1,6 +1,6 @@
 ﻿.Language=Hungarian,Hungarian (Magyar)
 
-//Version: 3.0 build 5275
+//Version: 3.0 build 5277
 
 //[MYes]
 "Igen"
@@ -2538,10 +2538,8 @@
 "&6. Jelölő kar.:"
 //[MHighlightMarking4]
 "&8. Jelölő kar.:"
-//[MHighlightExample1]
-"║fájlneve.kit │"
-//[MHighlightExample2]
-"║ fájlneve.kit│"
+//[MHighlightExample]
+"fájlneve.kit"
 //[MHighlightContinueProcessing]
 "Folyamatos f&eldolgozás"
 
