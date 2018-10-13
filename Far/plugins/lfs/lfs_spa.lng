@@ -20,6 +20,8 @@
 "&Borrar;&Todo;&Saltar;&Cancelar"
 "&Máscara:"
 "Bu&scar por:"
+// need translation:
+"Skip:"
 "&Reemplazar con:"
 "Modo f&unción"
 "&Borrar línea vacía"
@@ -87,6 +89,8 @@
 "Número de grupo no válido"
 "error de sintaxis"
 "Patrón de Búsqueda"
+// need translation:
+"Skip Pattern"
 "Patrón de Reemplazo"
 "Función de Reemplazo"
 "Resultados de búsqueda"
