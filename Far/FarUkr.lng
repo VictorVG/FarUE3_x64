@@ -1,6 +1,6 @@
 ﻿.Language=Ukrainian,Ukrainian (Українська)
 
-//Version: 3.0 build 5286
+//Version: 3.0 build 5287
 
 //[MYes]
 "Так"
@@ -396,10 +396,6 @@
 "Показувати букву режиму сор&тування"
 //[MConfigShowDotsInRoot]
 "Показувати \"..\" в кореневих каталогах"
-//[MConfigHighlightColumnSeparator]
-"Підсвічувати роздільники колонок"
-//[MConfigDoubleStripeSeparator]
-"Подвоювати роздільники шпальт"
 
 //[MConfigInterfaceTitle]
 "Налаштування інтерфейсу"

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<farconfig version="3.0.5277">
+<farconfig version="3.0.5287">
 	<generalconfig>
 		<setting key="Cmdline" name="AutoComplete" type="qword" value="0000000000000001"/>
 		<setting key="Cmdline" name="DelRemovesBlocks" type="qword" value="0000000000000001"/>
@@ -1319,7 +1319,6 @@
 			<hierarchicalconfig>
 				<key name="4EBBEFC8-2084-4B7F-94C0-692CE136894D" description="LuaMacro">
 					<key name="Duplicate Fighter">
-						<value name="settings" type="hex" value="6C,6F,63,61,6C,20,69,64,78,3D,7B,7D,3B,20,66,6F,72,20,69,3D,31,2C,31,20,64,6F,20,69,64,78,5B,69,5D,3D,7B,7D,20,65,6E,64,0A,64,6F,20,6C,6F,63,61,6C,20,74,3D,69,64,78,5B,31,5D,0A,20,20,74,5B,22,73,74,61,74,69,73,74,69,63,73,22,5D,20,3D,20,74,72,75,65,0A,20,20,74,5B,22,6D,65,74,68,6F,64,22,5D,20,3D,20,32,0A,20,20,74,5B,22,6B,65,65,70,65,6D,70,74,79,22,5D,20,3D,20,66,61,6C,73,65,0A,20,20,74,5B,22,74,6F,62,6F,6F,6C,65,61,6E,22,5D,20,3D,20,74,72,75,65,0A,20,20,74,5B,22,75,73,65,65,78,70,72,22,5D,20,3D,20,66,61,6C,73,65,0A,65,6E,64,0A,72,65,74,75,72,6E,20,69,64,78,5B,31,5D,0A"/>
 					</key>
 					<key name="IgorZ">
 						<key name="BookmarkManagerConfig">
@@ -1803,7 +1802,7 @@
 						<key name="{1D1BA1CB-3A05-4F4B-91B3-F8E71A55420E}">
 							<value name="Hidden" type="qword" value="0000000000000000"/>
 							<value name="Hotkey" type="text" value="s"/>
-							<value name="LastAccess" type="qword" value="000000004C6128F6"/>
+							<value name="LastAccess" type="qword" value="000000004D4E7BD3"/>
 							<value name="NewName" type="text" value=""/>
 						</key>
 						<key name="{2099F3F1-A147-4D0F-BB82-60E472513BC0}">
@@ -2128,7 +2127,7 @@
 						<key name="{AE501DD6-AD57-4A26-A5DF-39ACC3A9DB99}">
 							<value name="Hidden" type="qword" value="0000000000000000"/>
 							<value name="Hotkey" type="text" value="/"/>
-							<value name="LastAccess" type="qword" value="000000004CB7A131"/>
+							<value name="LastAccess" type="qword" value="000000004D4B0CD9"/>
 							<value name="NewName" type="text" value=""/>
 						</key>
 						<key name="{AF4DAB38-C00A-4653-900E-7A8230308010}">
@@ -2192,7 +2191,7 @@
 						<key name="{D4BC5EA7-8229-4FFE-AAC1-5A4F51A0986A}">
 							<value name="Hidden" type="qword" value="0000000000000000"/>
 							<value name="Hotkey" type="text" value=""/>
-							<value name="LastAccess" type="qword" value="000000004CAE7F77"/>
+							<value name="LastAccess" type="qword" value="000000004D474479"/>
 							<value name="NewName" type="text" value=""/>
 						</key>
 						<key name="{D7302F8C-C73D-4143-9B39-B439CF2E7ACC}">
@@ -2311,7 +2310,7 @@
 						<key name="{F6E77027-05BA-4ECF-A8D3-7D57B2D80C53}">
 							<value name="Hidden" type="qword" value="0000000000000000"/>
 							<value name="Hotkey" type="text" value="2"/>
-							<value name="LastAccess" type="qword" value="000000004D3B2347"/>
+							<value name="LastAccess" type="qword" value="000000004D4A2CA7"/>
 							<value name="NewName" type="text" value=""/>
 						</key>
 						<key name="{F9AF80C3-54AC-4924-B607-FE05A3866A88}">
@@ -2469,7 +2468,7 @@
 					<value name="UseThumbnail" type="qword" value="0000000000000000"/>
 					<key name="Plugins">
 						<key name="Image">
-							<value name="MaxSize" type="qword" value="0000000000000030"/>
+							<value name="MaxSize" type="qword" value="0000000000000020"/>
 						</key>
 					</key>
 				</key>
@@ -2512,7 +2511,6 @@
 		<plugin guid="D4BC5EA7-8229-4FFE-AAC1-5A4F51A0986A">
 			<hierarchicalconfig>
 				<key name="D4BC5EA7-8229-4FFE-AAC1-5A4F51A0986A" description="Polygon">
-					<value name="root" type="hex" value="64,6F,20,6C,6F,63,61,6C,20,74,20,3D,20,7B,7D,3B,20,44,61,74,61,20,3D,20,74,0A,20,20,64,6F,20,6C,6F,63,61,6C,20,74,20,3D,20,7B,7D,3B,20,44,61,74,61,5B,22,70,6C,75,67,69,6E,22,5D,20,3D,20,74,0A,20,20,20,20,74,5B,22,75,73,65,72,5F,6D,6F,64,75,6C,65,73,22,5D,20,3D,20,74,72,75,65,0A,20,20,20,20,74,5B,22,65,78,74,65,6E,73,69,6F,6E,73,22,5D,20,3D,20,74,72,75,65,0A,20,20,20,20,74,5B,22,66,6F,72,65,69,67,6E,5F,6B,65,79,73,22,5D,20,3D,20,74,72,75,65,0A,20,20,20,20,74,5B,22,70,72,65,66,69,78,22,5D,20,3D,20,22,70,6F,6C,79,67,6F,6E,22,0A,20,20,20,20,74,5B,22,61,64,64,5F,74,6F,5F,6D,65,6E,75,22,5D,20,3D,20,74,72,75,65,0A,20,20,65,6E,64,0A,20,20,64,6F,20,6C,6F,63,61,6C,20,74,20,3D,20,7B,7D,3B,20,44,61,74,61,5B,22,65,78,70,6F,72,74,65,72,22,5D,20,3D,20,74,0A,20,20,20,20,74,5B,22,66,6F,72,6D,61,74,22,5D,20,3D,20,22,74,65,78,74,22,0A,20,20,20,20,74,5B,22,6D,75,6C,74,69,6C,69,6E,65,22,5D,20,3D,20,74,72,75,65,0A,20,20,65,6E,64,0A,65,6E,64,0A"/>
 					<key name="files"/>
 				</key>
 			</hierarchicalconfig>
@@ -2805,4 +2803,5 @@
 				</key>
 			</hierarchicalconfig>
 		</plugin>
-	</pluginsconfig></farconfig>
+	</pluginsconfig>
+</farconfig>

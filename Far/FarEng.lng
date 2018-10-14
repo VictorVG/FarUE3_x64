@@ -1,6 +1,6 @@
 ﻿.Language=English,English
 
-//Version: 3.0 build 5286
+//Version: 3.0 build 5287
 
 //[MYes]
 "Yes"
@@ -396,10 +396,6 @@
 "Show sort &mode letter"
 //[MConfigShowDotsInRoot]
 "Show \"..\" in root folders"
-//[MConfigHighlightColumnSeparator]
-"Highlight column separators"
-//[MConfigDoubleStripeSeparator]
-"Double stripe separators"
 
 //[MConfigInterfaceTitle]
 "Interface settings"

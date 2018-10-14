@@ -1,6 +1,6 @@
 ﻿.Language=Spanish,Spanish (Español)
 
-//Version: 3.0 build 5286
+//Version: 3.0 build 5287
 
 //[MYes]
 "Si"
@@ -396,11 +396,6 @@
 "Mostrar letra para &modo de orden"
 //[MConfigShowDotsInRoot]
 "Mostrar \"..\" en directorio raíz"
-//[MConfigHighlightColumnSeparator]
-"Resaltar separador de columnas"
-// need translation:
-//[MConfigDoubleStripeSeparator]
-"Separador de columna doble"
 
 //[MConfigInterfaceTitle]
 "Configuración de interfaz"

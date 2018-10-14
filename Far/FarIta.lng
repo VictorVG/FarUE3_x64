@@ -1,6 +1,6 @@
 ﻿.Language=Italian,Italian (Italiano)
 
-//Version: 3.0 build 5286
+//Version: 3.0 build 5287
 
 //[MYes]
 "&Si"
@@ -403,11 +403,6 @@
 "Mostra Lettera Per Ordi&namento"
 //[MConfigShowDotsInRoot]
 "Mostra \"..\" Nella Cartella Principale"
-//[MConfigHighlightColumnSeparator]
-"Evidenzia Separatori Di Colonna"
-// need translation:
-//[MConfigDoubleStripeSeparator]
-"Raddoppia Il Separatore di Banda"
 
 //[MConfigInterfaceTitle]
 "Impostazioni  Interfaccia"

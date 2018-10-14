@@ -1,6 +1,6 @@
 ﻿.Language=Russian,Russian (Русский)
 
-//Version: 3.0 build 5286
+//Version: 3.0 build 5287
 
 //[MYes]
 "Да"
@@ -396,10 +396,6 @@
 "Показывать букву режима сор&тировки"
 //[MConfigShowDotsInRoot]
 "Показывать \"..\" в корневых каталогах"
-//[MConfigHighlightColumnSeparator]
-"Подсвечивать разделители колонок"
-//[MConfigDoubleStripeSeparator]
-"Удваивать разделители полос"
 
 //[MConfigInterfaceTitle]
 "Настройки интерфейса"

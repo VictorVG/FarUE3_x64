@@ -1,6 +1,6 @@
 ﻿.Language=Czech,Czech (Čeština)
 
-//Version: 3.0 build 5286
+//Version: 3.0 build 5287
 
 //[MYes]
 "Ano"
@@ -413,11 +413,6 @@
 "Zobrazovat písmeno &módu řazení"
 //[MConfigShowDotsInRoot]
 "Zobrazovat \"..\" v kořenových adresářích"
-//[MConfigHighlightColumnSeparator]
-"Zvýrazňovat oddělovače sloupců"
-// need translation:
-//[MConfigDoubleStripeSeparator]
-"Dvojité oddělovače hlavních sloupců"
 
 //[MConfigInterfaceTitle]
 "Nastavení rozhraní"

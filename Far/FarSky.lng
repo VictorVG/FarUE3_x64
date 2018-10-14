@@ -1,6 +1,6 @@
 ﻿.Language=Slovak,Slovak (Slovenčina)
 
-//Version: 3.0 build 5286
+//Version: 3.0 build 5287
 
 //[MYes]
 "Áno"
@@ -396,10 +396,6 @@
 "Zobrazovať písmeno &módu triedenia"
 //[MConfigShowDotsInRoot]
 "Zobrazovať \"..\" v koreňových priečinkoch"
-//[MConfigHighlightColumnSeparator]
-"Zvýrazňovať oddeľovače stĺpcov"
-//[MConfigDoubleStripeSeparator]
-"Zdvojený oddeľovač pruhov"
 
 //[MConfigInterfaceTitle]
 "Nastavenie rozhrania"
