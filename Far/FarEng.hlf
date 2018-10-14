@@ -45,7 +45,7 @@
 
 @Contents
 $^#File and archive manager#
-$^#3.0 build 5285 x64#
+$^#3.0 build 5286 x64#
 $^#Copyright © 1996-2000 Eugene Roshal#
 $^#Copyright © 2000-2018 Far Group#
    ~Help file index~@Index@
@@ -185,13 +185,6 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 @CmdLine
 $ # Far: command line switches#
   The following switches can be used in the command line:
-
-  #/a#
-  Disable display of characters with codes 0 - 31 and 255. Can be useful when
-executing Far under telnet.
-
-  #/ag#
-  Disable display of pseudo-graphic characters.
 
   #/e[<line>[:<pos>]] <filename>#
   Edit the specified file. After /e you can optionally specify editor start line

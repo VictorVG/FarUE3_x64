@@ -4,7 +4,7 @@
 
 @Contents
 $^#Fájl- és archívumkezelő program#
-$^#3.0 build 5285 x64#
+$^#3.0 build 5286 x64#
 $^#Copyright © 1996-2000 Eugene Roshal#
 $^#Copyright © 2000-2018 Far Group#
 $^(help file last translated for build 882)
@@ -143,11 +143,6 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 $ # FAR: a FAR parancssori kapcsolói#
   A FAR a következő parancssori kapcsolókkal indítható:
 
-  #/a#    ^<wrap>Letiltja a 0-31-ig terjedő és a 255-ös ASCII kódú
-karakterek megjelenítését. Hasznos lehet, ha a FAR-t telnet alól használjuk.
-
-  #/ag#   Letiltja a pszeudografikus karakterek megjelenítését.
-        ^<wrap>
   #/e[<sor>[:<pozíció>]] <fájlnév>#  A megadott fájlt szerkesztésre
 nyitja meg. A /e után megadható, hogy melyik sor hányadik karakterhelyére
 álljon a kurzor.
