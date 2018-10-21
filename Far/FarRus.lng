@@ -1,6 +1,6 @@
 ﻿.Language=Russian,Russian (Русский)
 
-//Version: 3.0 build 5287
+//Version: 3.0 build 5289
 
 //[MYes]
 "Да"
@@ -421,6 +421,8 @@
 "Показывать общий индикатор &удаления"
 //[MConfigPgUpChangeDisk]
 "Использовать Ctrl+PgUp для в&ыбора диска"
+//[MConfigUseVirtualTerminalForRendering]
+"Использовать Virtual Terminal для рендеринга"
 //[MConfigClearType]
 "Перер&исовка с поддержкой ClearType (может быть медленной)"
 //[MConfigSetConsoleIcon]
@@ -3290,6 +3292,8 @@
 "&Текст"
 //[MSetColorBackground]
 "&Фон"
+//[MSetColorAdvanced]
+"Дополнительно"
 //[MSetColorForeTransparent]
 "&Прозрачный"
 //[MSetColorBackTransparent]

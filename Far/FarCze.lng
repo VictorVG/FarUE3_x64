@@ -1,6 +1,6 @@
 ﻿.Language=Czech,Czech (Čeština)
 
-//Version: 3.0 build 5287
+//Version: 3.0 build 5289
 
 //[MYes]
 "Ano"
@@ -438,6 +438,9 @@
 "Zobrazit indikátor celkového průběhu ma&zání"
 //[MConfigPgUpChangeDisk]
 "Použít Ctrl+Pg&Up pro změnu jednotky"
+// need translation:
+//[MConfigUseVirtualTerminalForRendering]
+"Use Virtual Terminal for rendering"
 //[MConfigClearType]
 "Použít &ClearType (pomalejší)"
 // need translation:
@@ -3361,6 +3364,8 @@
 "&Popředí"
 //[MSetColorBackground]
 "Po&zadí"
+//[MSetColorAdvanced]
+"Pokročilé"
 //[MSetColorForeTransparent]
 "Průhlednos&t"
 //[MSetColorBackTransparent]

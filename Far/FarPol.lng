@@ -1,6 +1,6 @@
 ﻿.Language=Polish,Polish (Polski)
 
-//Version: 3.0 build 5287
+//Version: 3.0 build 5289
 
 //[MYes]
 "Tak"
@@ -450,6 +450,9 @@
 "Show total delete progress indicator"
 //[MConfigPgUpChangeDisk]
 "Użyj Ctrl+Pg&Up do zmiany napędu"
+// need translation:
+//[MConfigUseVirtualTerminalForRendering]
+"Use Virtual Terminal for rendering"
 // need translation:
 //[MConfigClearType]
 "ClearType friendly redraw (can be slow)"
@@ -3550,6 +3553,8 @@
 "&Pierwszy plan"
 //[MSetColorBackground]
 "&Tło"
+//[MSetColorAdvanced]
+"Zaawansowane"
 //[MSetColorForeTransparent]
 "P&rzezroczyste"
 //[MSetColorBackTransparent]

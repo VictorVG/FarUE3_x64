@@ -1,6 +1,6 @@
 ﻿.Language=Italian,Italian (Italiano)
 
-//Version: 3.0 build 5287
+//Version: 3.0 build 5289
 
 //[MYes]
 "&Si"
@@ -428,6 +428,9 @@
 "Mostra Indicatore Di Cancella&zione"
 //[MConfigPgUpChangeDisk]
 "Usa [CTRL-Pag&Su] Per Cambiare Unità"
+// need translation:
+//[MConfigUseVirtualTerminalForRendering]
+"Use Virtual Terminal for rendering"
 //[MConfigClearType]
 "Modalità ClearT&ype (può rallentare)"
 //[MConfigSetConsoleIcon]
@@ -3314,6 +3317,8 @@
 "&PrimoPiano"
 //[MSetColorBackground]
 "&Sfondo"
+//[MSetColorAdvanced]
+"Avanzate"
 //[MSetColorForeTransparent]
 "&Trasparente"
 //[MSetColorBackTransparent]

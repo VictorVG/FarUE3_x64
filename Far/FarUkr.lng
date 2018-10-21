@@ -1,6 +1,6 @@
 ﻿.Language=Ukrainian,Ukrainian (Українська)
 
-//Version: 3.0 build 5287
+//Version: 3.0 build 5289
 
 //[MYes]
 "Так"
@@ -421,6 +421,8 @@
 "Показувати загальний індикатор видалення"
 //[MConfigPgUpChangeDisk]
 "Використовувати Ctrl+PgUp для вибору диска"
+//[MConfigUseVirtualTerminalForRendering]
+"Використовувати Virtual Terminal для рендерингу"
 //[MConfigClearType]
 "Перемальовка з підтримкою ClearType (може бути повільною)"
 //[MConfigSetConsoleIcon]
@@ -3290,6 +3292,8 @@
 "&Текст"
 //[MSetColorBackground]
 "&Фон"
+//[MSetColorAdvanced]
+"Додатково"
 //[MSetColorForeTransparent]
 "&Прозорий"
 //[MSetColorBackTransparent]

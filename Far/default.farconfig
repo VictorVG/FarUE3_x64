@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<farconfig version="3.0.5287">
+<farconfig version="3.0.5289">
 	<generalconfig>
 		<setting key="Cmdline" name="AutoComplete" type="qword" value="0000000000000001"/>
 		<setting key="Cmdline" name="DelRemovesBlocks" type="qword" value="0000000000000001"/>
@@ -82,7 +82,7 @@
 		<setting key="Interface" name="AltF9" type="qword" value="0000000000000001"/>
 		<setting key="Interface" name="ClearType" type="qword" value="0000000000000001"/>
 		<setting key="Interface" name="CopyShowTotal" type="qword" value="0000000000000001"/>
-		<setting key="Interface" name="CtrlPgUp" type="qword" value="0000000000000002"/>
+		<setting key="Interface" name="CtrlPgUp" type="qword" value="0000000000000001"/>
 		<setting key="Interface" name="CursorSize1" type="qword" value="000000000000000F"/>
 		<setting key="Interface" name="CursorSize2" type="qword" value="000000000000000A"/>
 		<setting key="Interface" name="CursorSize3" type="qword" value="0000000000000063"/>
@@ -103,6 +103,7 @@
 		<setting key="Interface" name="TitleAddons" type="text" value="%Ver.%Build %Platform %Admin [PID %PID]"/>
 		<setting key="Interface" name="UseVk_oem_x" type="qword" value="0000000000000001"/>
 		<setting key="Interface" name="ViewerTitleFormat" type="text" value="%Lng %File"/>
+		<setting key="Interface" name="VirtualTerminalRendering" type="qword" value="0000000000000001"/>
 		<setting key="Interface.Completion" name="Append" type="qword" value="0000000000000000"/>
 		<setting key="Interface.Completion" name="ModalList" type="qword" value="0000000000000000"/>
 		<setting key="Interface.Completion" name="ShowList" type="qword" value="0000000000000001"/>
@@ -1117,6 +1118,11 @@
 				</key>
 			</hierarchicalconfig>
 		</plugin>
+		<plugin guid="0785F214-65B9-47B6-B9D8-F24FADC60AA0">
+			<hierarchicalconfig>
+				<key name="0785F214-65B9-47B6-B9D8-F24FADC60AA0" description="LUA File List"/>
+			</hierarchicalconfig>
+		</plugin>
 		<plugin guid="0E92FC81-4888-4297-A85D-31C79E0E0CEE">
 			<hierarchicalconfig>
 				<key name="0E92FC81-4888-4297-A85D-31C79E0E0CEE" description="EditCase"/>
@@ -1389,6 +1395,8 @@
 							<value name="ShowPrefixes" type="qword" value="0000000000000001"/>
 						</key>
 					</key>
+					<key name="LuaMacro">
+					</key>
 				</key>
 			</hierarchicalconfig>
 		</plugin>
@@ -1457,6 +1465,12 @@
 							<value name="level" type="qword" value="0000000000000007"/>
 						</key>
 					</key>
+				</key>
+			</hierarchicalconfig>
+		</plugin>
+		<plugin guid="6F332978-08B8-4919-847A-EFBB6154C99A">
+			<hierarchicalconfig>
+				<key name="6F332978-08B8-4919-847A-EFBB6154C99A" description="LuaFAR for Editor">
 				</key>
 			</hierarchicalconfig>
 		</plugin>
@@ -1533,6 +1547,12 @@
 				<key name="7E509EC9-41A3-44A3-B228-D6C94BE46AEE" description="Mine Sweeper"/>
 			</hierarchicalconfig>
 		</plugin>
+		<plugin guid="8E11EA75-0303-4374-AC60-D1E38F865449">
+			<hierarchicalconfig>
+				<key name="8E11EA75-0303-4374-AC60-D1E38F865449" description="LuaFAR Search">
+				</key>
+			</hierarchicalconfig>
+		</plugin>
 		<plugin guid="919C1FC6-A571-4642-99DF-BDACE840ED18">
 			<hierarchicalconfig>
 				<key name="919C1FC6-A571-4642-99DF-BDACE840ED18" description="Media info">
@@ -1559,6 +1579,12 @@
 					<value name="save_file_pos" type="qword" value="0000000000000001"/>
 					<value name="show_dword_seps" type="qword" value="0000000000000001"/>
 					<value name="std_cursor_size" type="qword" value="0000000000000001"/>
+					<key name="history">
+						<value name="datetime00" type="qword" value="000000005BB2D1B3"/>
+						<value name="name00" type="text" value="G:\dev\far3\20\far3lua_update.nsi"/>
+						<value name="offsc00" type="qword" value="0000000000002D6D"/>
+						<value name="offsv00" type="qword" value="0000000000002B70"/>
+					</key>
 				</key>
 			</hierarchicalconfig>
 		</plugin>
@@ -1622,6 +1648,12 @@
 				</key>
 			</hierarchicalconfig>
 		</plugin>
+		<plugin guid="9BF0E19D-B943-4E6D-B7B0-D71E3DAF446A">
+			<hierarchicalconfig>
+				<key name="9BF0E19D-B943-4E6D-B7B0-D71E3DAF446A" description="Portable Devices">
+				</key>
+			</hierarchicalconfig>
+		</plugin>
 		<plugin guid="9C3A61FC-F349-48E8-9B78-DAEBD821694B">
 			<hierarchicalconfig>
 				<key name="9C3A61FC-F349-48E8-9B78-DAEBD821694B" description="Audio player">
@@ -1659,6 +1691,11 @@
 					<value name="use_quickview" type="qword" value="0000000000000000"/>
 					<value name="use_view" type="qword" value="0000000000000001"/>
 				</key>
+			</hierarchicalconfig>
+		</plugin>
+		<plugin guid="9F9554B3-AD82-437A-8C2B-D84192B8E2FA">
+			<hierarchicalconfig>
+				<key name="9F9554B3-AD82-437A-8C2B-D84192B8E2FA" description="Hunspell"/>
 			</hierarchicalconfig>
 		</plugin>
 		<plugin guid="A227A268-5682-4C83-9341-EAE3405D4666">
@@ -2511,7 +2548,6 @@
 		<plugin guid="D4BC5EA7-8229-4FFE-AAC1-5A4F51A0986A">
 			<hierarchicalconfig>
 				<key name="D4BC5EA7-8229-4FFE-AAC1-5A4F51A0986A" description="Polygon">
-					<key name="files"/>
 				</key>
 			</hierarchicalconfig>
 		</plugin>

@@ -1,6 +1,6 @@
 ﻿.Language=German,German (Deutsch)
 
-//Version: 3.0 build 5287
+//Version: 3.0 build 5289
 
 //[MYes]
 "Ja"
@@ -426,6 +426,9 @@
 "Gesamtfor&tschritt beim Löschen anzeigen"
 //[MConfigPgUpChangeDisk]
 "Strg+Pg&Up wechselt das Laufwerk"
+// need translation:
+//[MConfigUseVirtualTerminalForRendering]
+"Use Virtual Terminal for rendering"
 //[MConfigClearType]
 "Neu mit der ClearType zeichnen (kann langsam sein)"
 //[MConfigSetConsoleIcon]
@@ -3353,6 +3356,8 @@
 "&Vordergrund"
 //[MSetColorBackground]
 "&Hintergrund"
+//[MSetColorAdvanced]
+"Erweitert"
 //[MSetColorForeTransparent]
 "&Transparent"
 //[MSetColorBackTransparent]

@@ -1,6 +1,6 @@
 ﻿.Language=Spanish,Spanish (Español)
 
-//Version: 3.0 build 5287
+//Version: 3.0 build 5289
 
 //[MYes]
 "Si"
@@ -421,6 +421,9 @@
 "Mostrar indicador de progreso de borrado total"
 //[MConfigPgUpChangeDisk]
 "Usar Ctrl+Pg&Up para cambiar unidad"
+// need translation:
+//[MConfigUseVirtualTerminalForRendering]
+"Use Virtual Terminal for rendering"
 //[MConfigClearType]
 "Limpiar rediseño (puede ser lento)"
 //[MConfigSetConsoleIcon]
@@ -3293,6 +3296,8 @@
 "&Caracteres"
 //[MSetColorBackground]
 "&Fondo"
+//[MSetColorAdvanced]
+"Avanzado"
 //[MSetColorForeTransparent]
 "&Transparente"
 //[MSetColorBackTransparent]

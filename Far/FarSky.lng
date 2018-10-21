@@ -1,6 +1,6 @@
 ﻿.Language=Slovak,Slovak (Slovenčina)
 
-//Version: 3.0 build 5287
+//Version: 3.0 build 5289
 
 //[MYes]
 "Áno"
@@ -421,6 +421,9 @@
 "Zobraziť indikátor celkového priebehu ma&zania"
 //[MConfigPgUpChangeDisk]
 "Použiť Ctrl+Pg&Up na zmenu disku"
+// need translation:
+//[MConfigUseVirtualTerminalForRendering]
+"Use Virtual Terminal for rendering"
 //[MConfigClearType]
 "Použiť &ClearType (pomalšie)"
 //[MConfigSetConsoleIcon]
@@ -3290,6 +3293,8 @@
 "&Popredie"
 //[MSetColorBackground]
 "Po&zadie"
+//[MSetColorAdvanced]
+"Pokročilé"
 //[MSetColorForeTransparent]
 "Priehľadnos&ť"
 //[MSetColorBackTransparent]

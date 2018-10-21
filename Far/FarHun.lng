@@ -1,6 +1,6 @@
 ﻿.Language=Hungarian,Hungarian (Magyar)
 
-//Version: 3.0 build 5287
+//Version: 3.0 build 5289
 
 //[MYes]
 "Igen"
@@ -450,6 +450,9 @@
 "Show total delete progress indicator"
 //[MConfigPgUpChangeDisk]
 "A Ctrl+Pg&Up meghajtót vált"
+// need translation:
+//[MConfigUseVirtualTerminalForRendering]
+"Use Virtual Terminal for rendering"
 // need translation:
 //[MConfigClearType]
 "ClearType friendly redraw (can be slow)"
@@ -3529,6 +3532,8 @@
 "&Előtér"
 //[MSetColorBackground]
 "&Háttér"
+//[MSetColorAdvanced]
+"Haladó"
 //[MSetColorForeTransparent]
 "Átlá&tszó"
 //[MSetColorBackTransparent]
