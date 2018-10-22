@@ -1,6 +1,6 @@
 ﻿.Language=English,English
 
-"OK"
+"&OK"
 "Cancel"
 "Warning"
 "Error"
@@ -108,7 +108,7 @@
 "In all non-removable drives"
 "In all local drives"
 "In PATH folders"
-"Search for f&olders"
+"Search for folders"
 "Search in symbolic lin&ks"
 "File fi&lter"
 "Tune"
