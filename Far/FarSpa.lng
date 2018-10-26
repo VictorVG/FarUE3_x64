@@ -1,6 +1,6 @@
 ﻿.Language=Spanish,Spanish (Español)
 
-//Version: 3.0 build 5293
+//Version: 3.0 build 5294
 
 //[MYes]
 "Si"
@@ -3296,8 +3296,6 @@
 "&Caracteres"
 //[MSetColorBackground]
 "&Fondo"
-//[MSetColorAdvanced]
-"Avanzado"
 //[MSetColorForeTransparent]
 "&Transparente"
 //[MSetColorBackTransparent]

@@ -1,6 +1,6 @@
 ﻿.Language=Ukrainian,Ukrainian (Українська)
 
-//Version: 3.0 build 5293
+//Version: 3.0 build 5294
 
 //[MYes]
 "Так"
@@ -3292,8 +3292,6 @@
 "&Текст"
 //[MSetColorBackground]
 "&Фон"
-//[MSetColorAdvanced]
-"Додатково"
 //[MSetColorForeTransparent]
 "&Прозорий"
 //[MSetColorBackTransparent]

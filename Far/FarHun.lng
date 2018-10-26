@@ -1,6 +1,6 @@
 ﻿.Language=Hungarian,Hungarian (Magyar)
 
-//Version: 3.0 build 5293
+//Version: 3.0 build 5294
 
 //[MYes]
 "Igen"
@@ -3532,8 +3532,6 @@
 "&Előtér"
 //[MSetColorBackground]
 "&Háttér"
-//[MSetColorAdvanced]
-"Haladó"
 //[MSetColorForeTransparent]
 "Átlá&tszó"
 //[MSetColorBackTransparent]

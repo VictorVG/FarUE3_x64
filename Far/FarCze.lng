@@ -1,6 +1,6 @@
 ﻿.Language=Czech,Czech (Čeština)
 
-//Version: 3.0 build 5293
+//Version: 3.0 build 5294
 
 //[MYes]
 "Ano"
@@ -3364,8 +3364,6 @@
 "&Popředí"
 //[MSetColorBackground]
 "Po&zadí"
-//[MSetColorAdvanced]
-"Pokročilé"
 //[MSetColorForeTransparent]
 "Průhlednos&t"
 //[MSetColorBackTransparent]

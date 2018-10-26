@@ -1,6 +1,6 @@
 ﻿.Language=Russian,Russian (Русский)
 
-//Version: 3.0 build 5293
+//Version: 3.0 build 5294
 
 //[MYes]
 "Да"
@@ -3292,8 +3292,6 @@
 "&Текст"
 //[MSetColorBackground]
 "&Фон"
-//[MSetColorAdvanced]
-"Дополнительно"
 //[MSetColorForeTransparent]
 "&Прозрачный"
 //[MSetColorBackTransparent]
