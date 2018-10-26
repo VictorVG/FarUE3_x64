@@ -1,6 +1,6 @@
 ﻿.Language=Slovak,Slovak (Slovenčina)
 
-//Version: 3.0 build 5294
+//Version: 3.0 build 5296
 
 //[MYes]
 "Áno"
@@ -3293,6 +3293,14 @@
 "&Popredie"
 //[MSetColorBackground]
 "Po&zadie"
+
+// 3 characters max
+//[MSetColorForeRGB]
+"&RGB"
+
+// 3 characters max
+//[MSetColorBackRGB]
+"R&GB"
 //[MSetColorForeTransparent]
 "Priehľadnos&ť"
 //[MSetColorBackTransparent]

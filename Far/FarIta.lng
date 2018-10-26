@@ -1,6 +1,6 @@
 ﻿.Language=Italian,Italian (Italiano)
 
-//Version: 3.0 build 5294
+//Version: 3.0 build 5296
 
 //[MYes]
 "&Si"
@@ -3317,6 +3317,14 @@
 "&PrimoPiano"
 //[MSetColorBackground]
 "&Sfondo"
+
+// 3 characters max
+//[MSetColorForeRGB]
+"&RGB"
+
+// 3 characters max
+//[MSetColorBackRGB]
+"R&GB"
 //[MSetColorForeTransparent]
 "&Trasparente"
 //[MSetColorBackTransparent]

@@ -1,6 +1,6 @@
 ﻿.Language=German,German (Deutsch)
 
-//Version: 3.0 build 5294
+//Version: 3.0 build 5296
 
 //[MYes]
 "Ja"
@@ -3356,6 +3356,14 @@
 "&Vordergrund"
 //[MSetColorBackground]
 "&Hintergrund"
+
+// 3 characters max
+//[MSetColorForeRGB]
+"&RGB"
+
+// 3 characters max
+//[MSetColorBackRGB]
+"R&GB"
 //[MSetColorForeTransparent]
 "&Transparent"
 //[MSetColorBackTransparent]

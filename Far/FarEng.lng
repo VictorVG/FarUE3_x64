@@ -1,6 +1,6 @@
 ﻿.Language=English,English
 
-//Version: 3.0 build 5294
+//Version: 3.0 build 5296
 
 //[MYes]
 "Yes"
@@ -3292,6 +3292,14 @@
 "&Foreground"
 //[MSetColorBackground]
 "&Background"
+
+// 3 characters max
+//[MSetColorForeRGB]
+"&RGB"
+
+// 3 characters max
+//[MSetColorBackRGB]
+"R&GB"
 //[MSetColorForeTransparent]
 "&Transparent"
 //[MSetColorBackTransparent]

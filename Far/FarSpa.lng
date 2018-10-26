@@ -1,6 +1,6 @@
 ﻿.Language=Spanish,Spanish (Español)
 
-//Version: 3.0 build 5294
+//Version: 3.0 build 5296
 
 //[MYes]
 "Si"
@@ -3296,6 +3296,14 @@
 "&Caracteres"
 //[MSetColorBackground]
 "&Fondo"
+
+// 3 characters max
+//[MSetColorForeRGB]
+"&RGB"
+
+// 3 characters max
+//[MSetColorBackRGB]
+"R&GB"
 //[MSetColorForeTransparent]
 "&Transparente"
 //[MSetColorBackTransparent]

@@ -1,6 +1,6 @@
 ﻿.Language=Polish,Polish (Polski)
 
-//Version: 3.0 build 5294
+//Version: 3.0 build 5296
 
 //[MYes]
 "Tak"
@@ -3553,6 +3553,14 @@
 "&Pierwszy plan"
 //[MSetColorBackground]
 "&Tło"
+
+// 3 characters max
+//[MSetColorForeRGB]
+"&RGB"
+
+// 3 characters max
+//[MSetColorBackRGB]
+"R&GB"
 //[MSetColorForeTransparent]
 "P&rzezroczyste"
 //[MSetColorBackTransparent]
