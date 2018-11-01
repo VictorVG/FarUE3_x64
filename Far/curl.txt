@@ -35,6 +35,7 @@ Usage: curl [options...] <url>
      --dns-ipv4-addr <address> IPv4 address to use for DNS requests
      --dns-ipv6-addr <address> IPv6 address to use for DNS requests
      --dns-servers <addresses> DNS server addrs to use
+     --doh-url <URL> Resolve host names over DOH
  -D, --dump-header <filename> Write the received headers to <filename>
      --egd-file <file> EGD socket path for random data
      --engine <name> Crypto engine to use
@@ -199,10 +200,10 @@ Usage: curl [options...] <url>
      --tlspassword   TLS password
      --tlsuser <name> TLS user name
  -1, --tlsv1         Use TLSv1.0 or greater
-     --tlsv1.0       Use TLSv1.0
-     --tlsv1.1       Use TLSv1.1
-     --tlsv1.2       Use TLSv1.2
-     --tlsv1.3       Use TLSv1.3
+     --tlsv1.0       Use TLSv1.0 or greater
+     --tlsv1.1       Use TLSv1.1 or greater
+     --tlsv1.2       Use TLSv1.2 or greater
+     --tlsv1.3       Use TLSv1.3 or greater
      --tr-encoding   Request compressed transfer encoding
      --trace <file>  Write a debug trace to FILE
      --trace-ascii <file> Like --trace, but without hex output
