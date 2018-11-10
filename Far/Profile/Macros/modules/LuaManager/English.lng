@@ -395,6 +395,7 @@ return {
   InsertEventDesc = "Insert Event into current .lua/.moon file",
   InsertMIDesc = "Insert plugin menu item into current .lua/.moon file",
   InsertPrefixDesc = "Insert command line prefix into current .lua/.moon file",
+  InsertPanelDesc = "Insert panel module into current .lua/.moon file",
   EditDesc = "Edit script under cursor",
   MacroDesc = "Manage available lua/moon scripts",
   ReloadDesc = "Reload all scripts"

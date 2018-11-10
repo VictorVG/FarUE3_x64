@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<farconfig version="3.0.5289">
+<farconfig version="3.0.5310">
 	<generalconfig>
 		<setting key="Cmdline" name="AutoComplete" type="qword" value="0000000000000001"/>
 		<setting key="Cmdline" name="DelRemovesBlocks" type="qword" value="0000000000000001"/>
@@ -1118,11 +1118,6 @@
 				</key>
 			</hierarchicalconfig>
 		</plugin>
-		<plugin guid="0785F214-65B9-47B6-B9D8-F24FADC60AA0">
-			<hierarchicalconfig>
-				<key name="0785F214-65B9-47B6-B9D8-F24FADC60AA0" description="LUA File List"/>
-			</hierarchicalconfig>
-		</plugin>
 		<plugin guid="0E92FC81-4888-4297-A85D-31C79E0E0CEE">
 			<hierarchicalconfig>
 				<key name="0E92FC81-4888-4297-A85D-31C79E0E0CEE" description="EditCase"/>
@@ -1152,15 +1147,6 @@
 					<value name="MaskFile" type="text" value="*.hlf"/>
 					<value name="ProcessEditorInput" type="qword" value="0000000000000001"/>
 					<value name="Style" type="qword" value="0000000000000000"/>
-				</key>
-			</hierarchicalconfig>
-		</plugin>
-		<plugin guid="1D1BA1CB-3A05-4F4B-91B3-F8E71A55420E">
-			<hierarchicalconfig>
-				<key name="1D1BA1CB-3A05-4F4B-91B3-F8E71A55420E" description="NTFS File Information">
-					<value name="ContentOptionsSHA256" type="qword" value="0000000000000001"/>
-					<value name="FilePanelShowMainStream" type="qword" value="0000000000000001"/>
-					<value name="FilePanelSortMode" type="qword" value="0000000000000002"/>
 				</key>
 			</hierarchicalconfig>
 		</plugin>
@@ -1325,20 +1311,29 @@
 			<hierarchicalconfig>
 				<key name="4EBBEFC8-2084-4B7F-94C0-692CE136894D" description="LuaMacro">
 					<key name="Duplicate Fighter">
+						<value name="settings" type="hex" value="6C,6F,63,61,6C,20,69,64,78,3D,7B,7D,3B,20,66,6F,72,20,69,3D,31,2C,31,20,64,6F,20,69,64,78,5B,69,5D,3D,7B,7D,20,65,6E,64,0A,64,6F,20,6C,6F,63,61,6C,20,74,3D,69,64,78,5B,31,5D,0A,20,20,74,5B,22,73,74,61,74,69,73,74,69,63,73,22,5D,20,3D,20,74,72,75,65,0A,20,20,74,5B,22,6D,65,74,68,6F,64,22,5D,20,3D,20,32,0A,20,20,74,5B,22,6B,65,65,70,65,6D,70,74,79,22,5D,20,3D,20,66,61,6C,73,65,0A,20,20,74,5B,22,74,6F,62,6F,6F,6C,65,61,6E,22,5D,20,3D,20,74,72,75,65,0A,20,20,74,5B,22,75,73,65,65,78,70,72,22,5D,20,3D,20,66,61,6C,73,65,0A,65,6E,64,0A,72,65,74,75,72,6E,20,69,64,78,5B,31,5D,0A"/>
 					</key>
 					<key name="IgorZ">
 						<key name="BookmarkManagerConfig">
+							<value name="ExtMask" type="qword" value="0000000000000001"/>
 							<value name="GoToMessDelay" type="qword" value="FFFFFFFFFFFFFFFF"/>
+							<value name="MenuForOne" type="qword" value="0000000000000001"/>
 							<value name="MessDelay" type="qword" value="FFFFFFFFFFFFFFFF"/>
 							<value name="SaveMessDelay" type="qword" value="0000000000000320"/>
+							<value name="SeqColor" type="qword" value="0000000000000000"/>
+							<value name="SeqLine" type="qword" value="0000000000000000"/>
+							<value name="ShowEnv" type="qword" value="0000000000000001"/>
 							<value name="UseEnv" type="qword" value="0000000000000001"/>
 							<value name="UseGlobal" type="qword" value="0000000000000001"/>
 							<value name="UseLocal" type="qword" value="0000000000000000"/>
 						</key>
 						<key name="CASArrowsDiskSwitch">
 							<value name="ExcludeDrives" type="text" value=""/>
+							<value name="FixedPerm" type="qword" value="0000000000000000"/>
 							<value name="LowerCurDrive" type="qword" value="0000000000000001"/>
+							<value name="OutCol" type="text" value="1"/>
 							<value name="OutStr" type="qword" value="0000000000000000"/>
+							<value name="PermPanel" type="qword" value="0000000000000000"/>
 							<value name="SpDelim" type="qword" value="0000000000000000"/>
 							<value name="SwitchPanelsOn" type="qword" value="0000000000000000"/>
 							<value name="UseHidden" type="qword" value="0000000000000001"/>
@@ -1348,11 +1343,13 @@
 								<value name="Ctrl" type="text" value=""/>
 								<value name="L" type="text" value="RAlt"/>
 								<value name="Left" type="text" value="Left"/>
+								<value name="Left1" type="text" value="Left"/>
 								<value name="P" type="text" value=""/>
 								<value name="R" type="text" value="Alt"/>
 								<value name="RAlt" type="text" value="L"/>
 								<value name="RCtrl" type="text" value=""/>
 								<value name="Right" type="text" value="Right"/>
+								<value name="Right1" type="text" value="Right"/>
 								<value name="Shift" type="text" value="A"/>
 							</key>
 							<key name="Plugins">
@@ -1363,7 +1360,7 @@
 								<value name="5" type="text" value="65642111-aa69-4b84-b4b8-9249579ec4fa"/>
 								<value name="6" type="text" value="148fe5e0-7129-4269-b30f-a1a866dd009a"/>
 								<value name="=" type="text" value="06771932-e01f-4259-a7a5-a899dec06fc7"/>
-								<value name="PlugStr" type="text" value="352=106"/>
+								<value name="PlugStr" type="text" value="352=10"/>
 							</key>
 						</key>
 						<key name="LuaManager">
@@ -1374,6 +1371,7 @@
 							<value name="InsertEventKey" type="text" value="RCtrlF11"/>
 							<value name="InsertMIKey" type="text" value="RCtrlF11"/>
 							<value name="InsertMacroKey" type="text" value="RCtrlF11"/>
+							<value name="InsertPanelKey" type="text" value="RCtrlF11"/>
 							<value name="InsertPrefixKey" type="text" value="RCtrlF11"/>
 							<value name="InsertScriptKey" type="text" value="LCtrlF11"/>
 							<value name="InsertUidKey" type="text" value="RCtrlU"/>
@@ -1382,8 +1380,10 @@
 							<value name="MacroMaxDescWidth" type="qword" value="00000000000003E8"/>
 							<value name="MacroSortingOrder" type="text" value="OCAKD"/>
 							<value name="ManagerKey" type="text" value="AltShiftF11"/>
+							<value name="MaxFileWidth" type="qword" value="0000000000000032"/>
 							<value name="MaxKeyWidth" type="qword" value="00000000000003E8"/>
 							<value name="ModuleSortingOrder" type="text" value="TMN"/>
+							<value name="PanelSortingOrder" type="text" value="AT"/>
 							<value name="PrefixSortingOrder" type="text" value="P"/>
 							<value name="ReloadKey" type="text" value="CtrlF9"/>
 							<value name="ShowEvents" type="qword" value="0000000000000001"/>
@@ -1392,26 +1392,13 @@
 							<value name="ShowMenuItems" type="qword" value="0000000000000001"/>
 							<value name="ShowModules" type="qword" value="0000000000000001"/>
 							<value name="ShowNonActiveMacros" type="qword" value="0000000000000001"/>
+							<value name="ShowPanels" type="qword" value="0000000000000001"/>
 							<value name="ShowPrefixes" type="qword" value="0000000000000001"/>
 						</key>
 					</key>
 					<key name="LuaMacro">
+						<value name="MacroBrowser" type="hex" value="6C,6F,63,61,6C,20,69,64,78,3D,7B,7D,3B,20,66,6F,72,20,69,3D,31,2C,31,20,64,6F,20,69,64,78,5B,69,5D,3D,7B,7D,20,65,6E,64,0A,64,6F,20,6C,6F,63,61,6C,20,74,3D,69,64,78,5B,31,5D,0A,20,20,74,5B,22,49,6E,76,53,6F,72,74,22,5D,20,3D,20,31,0A,20,20,74,5B,22,53,6F,72,74,4B,65,79,22,5D,20,3D,20,22,43,2B,46,31,22,0A,65,6E,64,0A,72,65,74,75,72,6E,20,69,64,78,5B,31,5D,0A"/>
 					</key>
-				</key>
-			</hierarchicalconfig>
-		</plugin>
-		<plugin guid="59223378-9DCD-45FC-97C9-AD0251A3C53F">
-			<hierarchicalconfig>
-				<key name="59223378-9DCD-45FC-97C9-AD0251A3C53F" description="UCharMap">
-					<value name="FontName" type="text" value="Lucida Console"/>
-					<value name="FontSize" type="qword" value="0000000000000020"/>
-					<value name="GroupBy" type="qword" value="0000000000000001"/>
-					<value name="Maximized" type="qword" value="0000000000000000"/>
-					<value name="ShowCharName" type="qword" value="0000000000000001"/>
-					<value name="ShowGroupName" type="qword" value="0000000000000000"/>
-					<value name="ShowHidden" type="qword" value="0000000000000001"/>
-					<value name="ShowHints" type="qword" value="0000000000000001"/>
-					<value name="ShowNumbers" type="qword" value="0000000000000001"/>
 				</key>
 			</hierarchicalconfig>
 		</plugin>
@@ -1471,6 +1458,7 @@
 		<plugin guid="6F332978-08B8-4919-847A-EFBB6154C99A">
 			<hierarchicalconfig>
 				<key name="6F332978-08B8-4919-847A-EFBB6154C99A" description="LuaFAR for Editor">
+					<value name="alldata" type="hex" value="64,6F,20,6C,6F,63,61,6C,20,74,20,3D,20,7B,7D,3B,20,44,61,74,61,20,3D,20,74,0A,20,20,64,6F,20,6C,6F,63,61,6C,20,74,20,3D,20,7B,7D,3B,20,44,61,74,61,5B,22,50,6C,75,67,69,6E,53,65,74,74,69,6E,67,73,22,5D,20,3D,20,74,0A,20,20,65,6E,64,0A,65,6E,64,0A"/>
 				</key>
 			</hierarchicalconfig>
 		</plugin>
@@ -1550,6 +1538,7 @@
 		<plugin guid="8E11EA75-0303-4374-AC60-D1E38F865449">
 			<hierarchicalconfig>
 				<key name="8E11EA75-0303-4374-AC60-D1E38F865449" description="LuaFAR Search">
+					<value name="alldata" type="hex" value="64,6F,20,6C,6F,63,61,6C,20,74,20,3D,20,7B,7D,3B,20,44,61,74,61,20,3D,20,74,0A,20,20,64,6F,20,6C,6F,63,61,6C,20,74,20,3D,20,7B,7D,3B,20,44,61,74,61,5B,22,72,65,6E,61,6D,65,22,5D,20,3D,20,74,0A,20,20,65,6E,64,0A,20,20,64,6F,20,6C,6F,63,61,6C,20,74,20,3D,20,7B,7D,3B,20,44,61,74,61,5B,22,6D,61,69,6E,22,5D,20,3D,20,74,0A,20,20,20,20,74,5B,22,73,53,63,6F,70,65,22,5D,20,3D,20,22,67,6C,6F,62,61,6C,22,0A,20,20,20,20,74,5B,22,73,46,69,6E,61,6C,46,75,6E,63,22,5D,20,3D,20,22,22,0A,20,20,20,20,74,5B,22,62,4D,75,6C,74,69,50,61,74,74,65,72,6E,73,22,5D,20,3D,20,66,61,6C,73,65,0A,20,20,20,20,74,5B,22,62,55,73,65,46,69,6C,65,46,69,6C,74,65,72,22,5D,20,3D,20,66,61,6C,73,65,0A,20,20,20,20,74,5B,22,62,52,65,67,45,78,70,72,22,5D,20,3D,20,66,61,6C,73,65,0A,20,20,20,20,74,5B,22,62,49,6E,76,65,72,73,65,53,65,61,72,63,68,22,5D,20,3D,20,66,61,6C,73,65,0A,20,20,20,20,74,5B,22,62,44,65,6C,4E,6F,6E,4D,61,74,63,68,4C,69,6E,65,22,5D,20,3D,20,66,61,6C,73,65,0A,20,20,20,20,74,5B,22,62,44,65,6C,45,6D,70,74,79,4C,69,6E,65,22,5D,20,3D,20,66,61,6C,73,65,0A,20,20,20,20,74,5B,22,62,48,69,67,68,6C,69,67,68,74,22,5D,20,3D,20,66,61,6C,73,65,0A,20,20,20,20,74,5B,22,73,4F,72,69,67,69,6E,22,5D,20,3D,20,22,63,75,72,73,6F,72,22,0A,20,20,20,20,74,5B,22,73,49,6E,69,74,46,75,6E,63,22,5D,20,3D,20,22,22,0A,20,20,20,20,74,5B,22,62,57,72,61,70,41,72,6F,75,6E,64,22,5D,20,3D,20,66,61,6C,73,65,0A,20,20,20,20,74,5B,22,62,43,61,73,65,53,65,6E,73,22,5D,20,3D,20,66,61,6C,73,65,0A,20,20,20,20,74,5B,22,73,52,65,67,65,78,4C,69,62,22,5D,20,3D,20,22,66,61,72,22,0A,20,20,20,20,74,5B,22,62,45,78,74,65,6E,64,65,64,22,5D,20,3D,20,66,61,6C,73,65,0A,20,20,20,20,74,5B,22,73,53,65,61,72,63,68,50,61,74,22,5D,20,3D,20,22,5F,22,0A,20,20,20,20,74,5B,22,73,52,65,70,6C,61,63,65,50,61,74,22,5D,20,3D,20,22,20,22,0A,20,20,20,20,74,5B,22,73,46,69,6C,74,65,72,46,75,6E,63,22,5D,20,3D,20,22,22,0A,20,20,20,20,74,5B,22,62,55,73,65,44,69,72,46,69,6C,74,65,72,22,5D,20,3D,20,66,61,6C,73,65,0A,20,20,20,20,74,5B,22,73,4F,72,69,67,69,6E,49,6E,47,6C,6F,62,61,6C,22,5D,20,3D,20,22,63,75,72,73,6F,72,22,0A,20,20,20,20,74,5B,22,62,57,68,6F,6C,65,57,6F,72,64,73,22,5D,20,3D,20,66,61,6C,73,65,0A,20,20,20,20,74,5B,22,62,43,6F,6E,66,69,72,6D,52,65,70,6C,61,63,65,22,5D,20,3D,20,74,72,75,65,0A,20,20,20,20,74,5B,22,62,41,64,76,61,6E,63,65,64,22,5D,20,3D,20,66,61,6C,73,65,0A,20,20,20,20,74,5B,22,62,53,65,61,72,63,68,42,61,63,6B,22,5D,20,3D,20,66,61,6C,73,65,0A,20,20,20,20,74,5B,22,62,47,72,65,70,49,6E,76,65,72,73,65,53,65,61,72,63,68,22,5D,20,3D,20,66,61,6C,73,65,0A,20,20,20,20,74,5B,22,62,52,65,70,49,73,46,75,6E,63,22,5D,20,3D,20,66,61,6C,73,65,0A,20,20,65,6E,64,0A,20,20,64,6F,20,6C,6F,63,61,6C,20,74,20,3D,20,7B,7D,3B,20,44,61,74,61,5B,22,74,6D,70,70,61,6E,65,6C,22,5D,20,3D,20,74,0A,20,20,20,20,74,5B,22,53,74,61,72,74,53,6F,72,74,69,6E,67,22,5D,20,3D,20,22,31,34,2C,30,22,0A,20,20,20,20,74,5B,22,43,6F,6C,75,6D,6E,54,79,70,65,73,22,5D,20,3D,20,22,4E,52,2C,53,22,0A,20,20,20,20,74,5B,22,50,72,65,73,65,72,76,65,43,6F,6E,74,65,6E,74,73,22,5D,20,3D,20,74,72,75,65,0A,20,20,20,20,74,5B,22,4E,65,77,50,61,6E,65,6C,46,6F,72,53,65,61,72,63,68,52,65,73,75,6C,74,73,22,5D,20,3D,20,74,72,75,65,0A,20,20,20,20,74,5B,22,43,6F,70,79,43,6F,6E,74,65,6E,74,73,22,5D,20,3D,20,30,0A,20,20,20,20,74,5B,22,46,75,6C,6C,53,63,72,65,65,6E,50,61,6E,65,6C,22,5D,20,3D,20,66,61,6C,73,65,0A,20,20,20,20,74,5B,22,53,74,61,74,75,73,43,6F,6C,75,6D,6E,57,69,64,74,68,73,22,5D,20,3D,20,22,30,2C,38,2C,30,2C,35,22,0A,20,20,20,20,74,5B,22,53,74,61,74,75,73,43,6F,6C,75,6D,6E,54,79,70,65,73,22,5D,20,3D,20,22,4E,52,2C,53,43,2C,44,2C,54,22,0A,20,20,20,20,74,5B,22,52,65,70,6C,61,63,65,4D,6F,64,65,22,5D,20,3D,20,74,72,75,65,0A,20,20,20,20,74,5B,22,43,6F,6C,75,6D,6E,57,69,64,74,68,73,22,5D,20,3D,20,22,30,2C,38,22,0A,20,20,65,6E,64,0A,20,20,64,6F,20,6C,6F,63,61,6C,20,74,20,3D,20,7B,7D,3B,20,44,61,74,61,5B,22,65,64,69,74,6F,72,22,5D,20,3D,20,74,0A,20,20,20,20,64,6F,20,6C,6F,63,61,6C,20,74,20,3D,20,7B,7D,3B,20,44,61,74,61,5B,22,65,64,69,74,6F,72,22,5D,5B,22,6D,65,6E,75,22,5D,20,3D,20,74,0A,20,20,20,20,20,20,74,5B,22,70,6F,73,69,74,69,6F,6E,22,5D,20,3D,20,32,0A,20,20,20,20,65,6E,64,0A,20,20,65,6E,64,0A,20,20,64,6F,20,6C,6F,63,61,6C,20,74,20,3D,20,7B,7D,3B,20,44,61,74,61,5B,22,63,6F,6E,66,69,67,22,5D,20,3D,20,74,0A,20,20,20,20,74,5B,22,45,64,69,74,6F,72,48,69,67,68,6C,69,67,68,74,43,6F,6C,6F,72,22,5D,20,3D,20,32,30,37,0A,20,20,20,20,74,5B,22,47,72,65,70,4C,69,6E,65,4E,75,6D,4D,61,74,63,68,43,6F,6C,6F,72,22,5D,20,3D,20,31,36,30,0A,20,20,20,20,74,5B,22,62,55,73,65,46,61,72,48,69,73,74,6F,72,79,22,5D,20,3D,20,74,72,75,65,0A,20,20,20,20,74,5B,22,47,72,65,70,4C,69,6E,65,4E,75,6D,43,6F,6E,74,65,78,74,43,6F,6C,6F,72,22,5D,20,3D,20,31,32,38,0A,20,20,65,6E,64,0A,65,6E,64,0A"/>
 				</key>
 			</hierarchicalconfig>
 		</plugin>
@@ -1651,6 +1640,7 @@
 		<plugin guid="9BF0E19D-B943-4E6D-B7B0-D71E3DAF446A">
 			<hierarchicalconfig>
 				<key name="9BF0E19D-B943-4E6D-B7B0-D71E3DAF446A" description="Portable Devices">
+					<key name="storages"/>
 				</key>
 			</hierarchicalconfig>
 		</plugin>
@@ -1672,7 +1662,7 @@
 					<value name="out_device" type="qword" value="FFFFFFFFFFFFFFFF"/>
 					<value name="remove_album" type="qword" value="0000000000000001"/>
 					<value name="use_analyze" type="qword" value="0000000000000001"/>
-					<value name="volume" type="qword" value="0000000000000104"/>
+					<value name="volume" type="qword" value="00000000000003AC"/>
 				</key>
 			</hierarchicalconfig>
 		</plugin>
@@ -1691,11 +1681,6 @@
 					<value name="use_quickview" type="qword" value="0000000000000000"/>
 					<value name="use_view" type="qword" value="0000000000000001"/>
 				</key>
-			</hierarchicalconfig>
-		</plugin>
-		<plugin guid="9F9554B3-AD82-437A-8C2B-D84192B8E2FA">
-			<hierarchicalconfig>
-				<key name="9F9554B3-AD82-437A-8C2B-D84192B8E2FA" description="Hunspell"/>
 			</hierarchicalconfig>
 		</plugin>
 		<plugin guid="A227A268-5682-4C83-9341-EAE3405D4666">
@@ -2347,7 +2332,7 @@
 						<key name="{F6E77027-05BA-4ECF-A8D3-7D57B2D80C53}">
 							<value name="Hidden" type="qword" value="0000000000000000"/>
 							<value name="Hotkey" type="text" value="2"/>
-							<value name="LastAccess" type="qword" value="000000004D4A2CA7"/>
+							<value name="LastAccess" type="qword" value="000000004D69AF50"/>
 							<value name="NewName" type="text" value=""/>
 						</key>
 						<key name="{F9AF80C3-54AC-4924-B607-FE05A3866A88}">
@@ -2491,6 +2476,11 @@
 				</key>
 			</hierarchicalconfig>
 		</plugin>
+		<plugin guid="C5508DDB-5175-4736-9A10-C8F6EED7B32F">
+			<hierarchicalconfig>
+				<key name="C5508DDB-5175-4736-9A10-C8F6EED7B32F" description="MultiArc"/>
+			</hierarchicalconfig>
+		</plugin>
 		<plugin guid="CDF48DA0-0334-4169-8453-69048DD3B51C">
 			<hierarchicalconfig>
 				<key name="CDF48DA0-0334-4169-8453-69048DD3B51C" description="FarHints">
@@ -2548,12 +2538,8 @@
 		<plugin guid="D4BC5EA7-8229-4FFE-AAC1-5A4F51A0986A">
 			<hierarchicalconfig>
 				<key name="D4BC5EA7-8229-4FFE-AAC1-5A4F51A0986A" description="Polygon">
+					<key name="files"/>
 				</key>
-			</hierarchicalconfig>
-		</plugin>
-		<plugin guid="D82D6847-0C7B-4BF4-9A31-B0B929707854">
-			<hierarchicalconfig>
-				<key name="D82D6847-0C7B-4BF4-9A31-B0B929707854" description="MBlockEditor"/>
 			</hierarchicalconfig>
 		</plugin>
 		<plugin guid="D888455B-4E68-43F8-8D54-9A96913974B2">
@@ -2641,39 +2627,6 @@
 					<value name="Prefix" type="text" value="svcmgr"/>
 					<value name="waitForState" type="qword" value="0000000000000001"/>
 					<value name="waitTimeout" type="qword" value="0000000000002710"/>
-				</key>
-			</hierarchicalconfig>
-		</plugin>
-		<plugin guid="ED0C4BD8-D2F0-4B6E-A19F-B0B0137C9B0C">
-			<hierarchicalconfig>
-				<key name="ED0C4BD8-D2F0-4B6E-A19F-B0B0137C9B0C" description="AdvCmpEx">
-					<value name="Cache" type="qword" value="0000000000000000"/>
-					<value name="CmpCase" type="qword" value="0000000000000001"/>
-					<value name="CmpContents" type="qword" value="0000000000000001"/>
-					<value name="CmpSize" type="qword" value="0000000000000001"/>
-					<value name="CmpTime" type="qword" value="0000000000000000"/>
-					<value name="Dialog" type="qword" value="0000000000000000"/>
-					<value name="DupContents" type="qword" value="0000000000000000"/>
-					<value name="DupName" type="qword" value="0000000000000001"/>
-					<value name="DupSize" type="qword" value="0000000000000000"/>
-					<value name="Filter" type="qword" value="0000000000000000"/>
-					<value name="Ignore" type="qword" value="0000000000000000"/>
-					<value name="IgnoreMissing" type="qword" value="0000000000000002"/>
-					<value name="IgnoreTimeZone" type="qword" value="0000000000000000"/>
-					<value name="LightSync" type="qword" value="0000000000000000"/>
-					<value name="Mode" type="qword" value="0000000000000000"/>
-					<value name="OnlyTimeDiff" type="qword" value="0000000000000001"/>
-					<value name="Partly" type="qword" value="0000000000000000"/>
-					<value name="ProcessSelected" type="qword" value="0000000000000000"/>
-					<value name="Seconds" type="qword" value="0000000000000000"/>
-					<value name="SelectedNew" type="qword" value="0000000000000000"/>
-					<value name="ShowMsg" type="qword" value="0000000000000001"/>
-					<value name="SkipSubstr" type="qword" value="0000000000000000"/>
-					<value name="Sound" type="qword" value="0000000000000000"/>
-					<value name="StopDiffDup" type="qword" value="0000000000000000"/>
-					<value name="Subfolders" type="qword" value="0000000000000001"/>
-					<value name="SyncOnlyRight" type="qword" value="0000000000000000"/>
-					<value name="TotalProgress" type="qword" value="0000000000000000"/>
 				</key>
 			</hierarchicalconfig>
 		</plugin>
@@ -2839,5 +2792,4 @@
 				</key>
 			</hierarchicalconfig>
 		</plugin>
-	</pluginsconfig>
-</farconfig>
+	</pluginsconfig></farconfig>

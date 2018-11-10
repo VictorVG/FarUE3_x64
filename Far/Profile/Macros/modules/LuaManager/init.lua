@@ -2,7 +2,7 @@
 local nfo = Info {
   name          = "LuaManager";
   description   = "Менеджер Lua/Moon-скриптов для Fara";
-  version       = "5.0.1"; --в формате semver: http://semver.org/lang/ru/
+  version       = "5.0.2"; --в формате semver: http://semver.org/lang/ru/
   author        = "IgorZ";
   url           = "http://forum.farmanager.com/viewtopic.php?t=7936";
   id            = "180EE412-CBDE-40C7-9AE6-37FC64673CBD";
@@ -144,6 +144,7 @@ history         = [[
                     и пунктов меню плагинов не из текущей области перенесён с CtrlH на AltH. Тотальный рефакторинг.
 2018/05/18 v5.0.1 - Шаблон события ExitFar скорректирован в соответствии с изменениями в плагине. Исправлена ошибка с обработкой нажатия кнопки
                     "Панели" в диалоге конфигурации. Ещё всякие мелочи.
+2018/11/06 v5.0.2 - Добавлен макрос вставки панельного плагина. Рефакторинг. Мелкие правки.
 ]];
 }
 if not nfo then return nfo end
@@ -169,6 +170,7 @@ local Guids = {
   InsEventMacro = "1776FD94-AFE8-447B-9E90-6C506C199BAF", -- уникальный guid макроса вставки обработчиков событий
   InsMIMacro = "A21C70C7-86B1-4BE0-85B6-868271FD2B38", -- уникальный guid макроса вставки пункта меню плагинов
   InsPrefixMacro = "C275B229-75B8-44AA-9615-3DD22DD6CFF8", -- уникальный guid макроса вставки префикса командной строки
+  InsPanelMacro = "EC6643CD-0B85-4C81-A069-1E089AF3C887", -- уникальный guid макроса вставки панельного модуля
   EditScriptMacro = "D403B2B0-0ADB-4100-BCEA-16AD93CBE0E8", -- уникальный guid макроса редактирования скрипта под курсором
   MMEMacro = "06C265AA-7147-4007-88DA-379793DEFD5C", -- уникальный guid меню макроса менеджера скриптов
   ReloadMacro = "AF149264-4BED-492C-8093-473796CAC60C", -- уникальный guid макроса перезагрузки скриптов
@@ -187,10 +189,8 @@ local FuncNames = {"Analyse","ClosePanel","Compare","DeleteFiles","GetFiles","Ge
 -- Шаблоны для диалогов редактирования
 local Templates = (loadfile(Path.."templates") or function() return setmetatable({},
   {__index=function(t,i) for _,fn in ipairs(FuncNames) do if i==fn then i = "!" break end end return i:len()==1 and "" or t end}) end)()
--- Настройки по умолчанию
-local Def = {
+local Def = { -- Настройки по умолчанию
   TableRecursion = true, -- при просмотре переменных разворачивать таблицы
-  Profile = F.PSL_ROAMING--[[F.PSL_LOCAL--]], -- место хранения настроек по умолчанию: глобальные/локальные
   MaxKeyWidth=0,MaxFileWidth=0,MacroMaxDescWidth=0, -- клавиши выводятся полностью; имена файлов не выводятся; описания выводятся полностью
   MacroSortingOrder="OCAKD",EventSortingOrder="GD",ModuleSortingOrder="TMN",MISortingOrder="A",PrefixSortingOrder="P",PanelSortingOrder="AT",
   AreaFilter="",KeyFilter="",GroupFilter="DialogEvent ViewerEvent EditorEvent EditorInput ConsoleInput ExitFAR", -- фильтры
@@ -200,8 +200,7 @@ local Def = {
   InsertMacroKey="RCtrlF11",InsertEventKey="RCtrlF11",InsertMIKey="RCtrlF11",InsertPrefixKey="RCtrlF11",InsertPanelKey="RCtrlF11",
 }
 for _,a in pairs(Areas) do Def.AreaFilter = (Def.AreaFilter.." "..a):gsub("^ ","") end
--- Настройки
-local S,L,LastFilter = {},{} -- конфигурация, языковые данные, последний применённый фильтр
+local DefProfile = F.PSL_ROAMING--[[F.PSL_LOCAL--]] -- место хранения настроек по умолчанию: глобальные/локальные
 -- доставалка префиксов, пунктов меню плагинов и редактора несохранённых клавиатурок
 local GetMenuItems,GetPrefixes,GetPanelModules,EditUnsavedMacro do
   local utils
@@ -210,6 +209,10 @@ local GetMenuItems,GetPrefixes,GetPanelModules,EditUnsavedMacro do
   if LMBuild>=590 then EditUnsavedMacro = assert(utils.EditUnsavedMacro) end
   if LMBuild>=647--[[638--]] then GetPanelModules = assert(utils.GetPanelModules) end
 end
+-- +
+--[[переменные]]
+-- -
+local S,L,LastFilter,UsedProfile -- конфигурация, языковые данные, последний применённый фильтр
 -- +
 --[==[Подключаемые модули]==]
 -- -
@@ -232,28 +235,26 @@ local ShowInfo,OpenMacroInDialog,OpenInternalMacroInDialog,OpenEventInDialog,Ope
 local InsertScriptIntoEditor,EditScriptUnderCursor,Reload,ManageMacrosEvents
 --------------------------------------------------------------------------------
 function LoadLang(Lng--[[,Path,LMBuild--]]) --[[загрузить настройки языка]]
-local FL,dummy = Far.GetConfig("Language.Main"),function() return {"Cannot find languages files"} end -- язык, пустая функция
-return Lng.Lang==FL and Lng or (loadfile(Path..FL..".lng") or loadfile(Path.."English.lng") or dummy)(LMBuild) -- обновим, если язык другой
+local FL,dummy = Far.GetConfig("Language.Main"),function() return {"Cannot find language files"} end -- язык, пустая функция
+return Lng and Lng.Lang==FL and Lng or (loadfile(Path..FL..".lng") or loadfile(Path.."English.lng") or dummy)(LMBuild) -- обновим, если язык другой
 end
 --
-function LoadSettings(Df,ForceDef) --[[загрузить настройки из БД]]
-local Cfg,obj,key,L1
-function L1(n) return not ForceDef and obj:Get(key or -1,n,({string=F.FST_STRING,number=F.FST_QWORD})[type(Df[n])]) or Df[n] end
---
+function LoadSettings(ForceDef) --[[загрузить настройки из БД]]
 L = LoadLang(L) -- загрузим язык
 L.PathItems = {type = "Module"} -- запишем куда надо все пути поиска модулей
 for v in (package.path..";"..package.moonpath..";"..package.cpath..";"):gmatch("(.-);") do -- переберём все возможные места расположения
   L.PathItems[#L.PathItems+1] = {text = v} -- допишем очередное
 end
-obj = far.CreateSettings(nil,Def.Profile) -- откроем предпочтительные настройки
-key = obj:OpenSubkey(obj:OpenSubkey(0,Author) or 0,ConfPart) -- есть раздел?
+local obj = far.CreateSettings(nil,DefProfile) -- откроем предпочтительные настройки
+local key = obj:OpenSubkey(obj:OpenSubkey(0,Author) or 0,ConfPart) -- есть раздел?
+UsedProfile = DefProfile -- запомним профиль
 if not key then -- настроек нет?
-  obj:Free() obj = far.CreateSettings(nil,Def.Profile==F.PSL_LOCAL and F.PSL_ROAMING or F.PSL_LOCAL) -- откроем другие настройки
+  obj:Free() obj = far.CreateSettings(nil,DefProfile==F.PSL_LOCAL and F.PSL_ROAMING or F.PSL_LOCAL) -- откроем другие настройки
   key = obj:OpenSubkey(obj:OpenSubkey(0,Author) or 0,ConfPart) -- есть раздел? если нет, неважно, какой открыт, всё равно брать умолчания
-  Cfg = key and (Def.Profile==F.PSL_LOCAL and F.PSL_ROAMING or F.PSL_LOCAL) -- временно запомним профиль, если открылся альтернативный
+  if key then UsedProfile = DefProfile==F.PSL_LOCAL and F.PSL_ROAMING or F.PSL_LOCAL end -- из другого профиля открылись? запомним профиль
 end
-Cfg = { Profile = Cfg or Def.Profile, -- запомним профиль
-  MaxKeyWidth = L1("MaxKeyWidth"),MaxFileWidth = L1("MaxFileWidth"),MaxDescWidth = L1("MacroMaxDescWidth"), -- считаем настройки
+local function L1(n) return not ForceDef and obj:Get(key or -1,n,({string=F.FST_STRING,number=F.FST_QWORD})[type(Def[n])]) or Def[n] end
+S = { MaxKeyWidth = L1("MaxKeyWidth"),MaxFileWidth = L1("MaxFileWidth"),MaxDescWidth = L1("MacroMaxDescWidth"), -- считаем настройки
   SO = {M=L1("MacroSortingOrder"),E=L1("EventSortingOrder"),O=L1("ModuleSortingOrder"),I=L1("MISortingOrder"),P=L1("PrefixSortingOrder"),
         N=L1("PanelSortingOrder")},
   Filter = {K=L1("KeyFilter"),A=L1("AreaFilter"),G=L1("GroupFilter"),P=L1("PathFilter"):gsub("%%(.-)%%",win.GetEnv),F="*"},
@@ -261,28 +262,27 @@ Cfg = { Profile = Cfg or Def.Profile, -- запомним профиль
           P=L1("ShowPrefixes")~=0,N=L1("ShowPanels")~=0,H=L1("ShowNonActiveMacros")~=0},
   Key = {Manager=L1("ManagerKey"),Reload=L1("ReloadKey"),InsUid=L1("InsertUidKey"),InsScript=L1("InsertScriptKey"),EditScript=L1("EditScriptKey"),
   InsMacro=L1("InsertMacroKey"),InsEvent=L1("InsertEventKey"),InsMI=L1("InsertMIKey"),InsPrefix=L1("InsertPrefixKey"),InsPanel=L1("InsertPanelKey")}}
-far.FreeSettings() -- приберёмся
-Cfg.SavedFilter = {A=Cfg.Filter.A,K=Cfg.Filter.K,G=Cfg.Filter.G,P=Cfg.Filter.P}
-return Cfg
+obj:Free() -- приберёмся
+S.SavedFilter = {A=S.Filter.A,K=S.Filter.K,G=S.Filter.G,P=S.Filter.P}
 end
 --
-function SaveSettings(Cfg) --[[сохранить настройки в БД]]
-if Cfg.Profile==F.PSL_LOCAL then win.CreateDir(LP.."\\PluginsData") end -- создадим папку для локальных настроек (если надо)
-local obj = far.CreateSettings(nil,Cfg.Profile) -- откроем ранее прочитанные или предпочтительные настройки
+function SaveSettings() --[[сохранить настройки в БД]]
+if UsedProfile==F.PSL_LOCAL then win.CreateDir(LP.."\\PluginsData") end -- создадим папку для локальных настроек (если надо)
+local obj = far.CreateSettings(nil,UsedProfile) -- откроем ранее прочитанные или предпочтительные настройки
 local key = obj:CreateSubkey(obj:CreateSubkey(0,Author),ConfPart) -- откроем/создадим раздел
-local function S1(n,v) v = (v==nil)and Cfg[n]or v;v = v==true and 1 or v==false and 0 or v;local t = type(v)=="string" and F.FST_STRING or F.FST_QWORD
+local function S1(n,v) v = (v==nil)and S[n]or v;v = v==true and 1 or v==false and 0 or v;local t = type(v)=="string" and F.FST_STRING or F.FST_QWORD
                        if obj:Get(key,n,t)~=v then obj:Set(key,n,t,v) end end
-S1("MaxKeyWidth") S1("MaxFileWidth") S1("MacroMaxDescWidth") S1("MacroSortingOrder",Cfg.SO.M)
-S1("EventSortingOrder",Cfg.SO.E) S1("ModuleSortingOrder",Cfg.SO.O) S1("MISortingOrder",Cfg.SO.I) S1("PrefixSortingOrder",Cfg.SO.P)
-S1("PanelSortingOrder",Cfg.SO.N) S1("KeyFilter",Cfg.Filter.K) S1("AreaFilter",Cfg.Filter.A) S1("GroupFilter",Cfg.Filter.G)
-S1("PathFilter",Cfg.Filter.P:gsub(GP,"%%FarProfile%%"):gsub(LP,"%%FarLocalProfile%%"):gsub(FH,"%%FarHome%%"))
-S1("ShowMacros",Cfg.Show.M) S1("ShowKeyMacros",Cfg.Show.K) S1("ShowEvents",Cfg.Show.E) S1("ShowModules",Cfg.Show.O)
-S1("ShowMenuItems",Cfg.Show.I) S1("ShowPrefixes",Cfg.Show.P) S1("ShowPanels",Cfg.Show.N) S1("ShowNonActiveMacros",Cfg.Show.H)
-S1("ManagerKey",Cfg.Key.Manager) S1("InsertScriptKey",Cfg.Key.InsScript) S1("InsertMacroKey",Cfg.Key.InsMacro)
-S1("InsertEventKey",Cfg.Key.InsEvent) S1("InsertMIKey",Cfg.Key.InsMI) S1("InsertPrefixKey",Cfg.Key.InsPrefix) S1("InsertPanelKey",Cfg.Key.InsPanel)
-S1("EditScriptKey",Cfg.Key.EditScript) S1("InsertUidKey",Cfg.Key.InsUid) S1("ReloadKey",Cfg.Key.Reload)
-far.FreeSettings() -- приберёмся
-Cfg.SavedFilter = {A=Cfg.Filter.A,K=Cfg.Filter.K,G=Cfg.Filter.G,P=Cfg.Filter.P} -- запомним для сбрасывания к ним
+S1("MaxKeyWidth") S1("MaxFileWidth") S1("MacroMaxDescWidth") S1("MacroSortingOrder",S.SO.M)
+S1("EventSortingOrder",S.SO.E) S1("ModuleSortingOrder",S.SO.O) S1("MISortingOrder",S.SO.I) S1("PrefixSortingOrder",S.SO.P)
+S1("PanelSortingOrder",S.SO.N) S1("KeyFilter",S.Filter.K) S1("AreaFilter",S.Filter.A) S1("GroupFilter",S.Filter.G)
+S1("PathFilter",S.Filter.P:gsub(GP,"%%FarProfile%%"):gsub(LP,"%%FarLocalProfile%%"):gsub(FH,"%%FarHome%%"))
+S1("ShowMacros",S.Show.M) S1("ShowKeyMacros",S.Show.K) S1("ShowEvents",S.Show.E) S1("ShowModules",S.Show.O)
+S1("ShowMenuItems",S.Show.I) S1("ShowPrefixes",S.Show.P) S1("ShowPanels",S.Show.N) S1("ShowNonActiveMacros",S.Show.H)
+S1("ManagerKey",S.Key.Manager) S1("InsertScriptKey",S.Key.InsScript) S1("InsertMacroKey",S.Key.InsMacro)
+S1("InsertEventKey",S.Key.InsEvent) S1("InsertMIKey",S.Key.InsMI) S1("InsertPrefixKey",S.Key.InsPrefix) S1("InsertPanelKey",S.Key.InsPanel)
+S1("EditScriptKey",S.Key.EditScript) S1("InsertUidKey",S.Key.InsUid) S1("ReloadKey",S.Key.Reload)
+obj:Free() -- приберёмся
+S.SavedFilter = {A=S.Filter.A,K=S.Filter.K,G=S.Filter.G,P=S.Filter.P} -- запомним для сбрасывания к ним
 end
 --
 function GenUid() return win.Uuid(win.Uuid()):upper() end --[[генерировать новый uid]]
@@ -1768,7 +1768,7 @@ elseif Msg==F.DN_CONTROLINPUT and Param2.VirtualKeyCode then -- нажатие �
   if (Param2.VirtualKeyCode==0x70 and ACS==0) then -- F1
     ShowHelp("config")
   elseif Param2.VirtualKeyCode==0x4c and band(ACS,0xc)~=0 then -- CtrlL
-    hDlg:send(F.DM_CLOSE,66) S = LoadSettings(Def) Config() -- закроем диалог с отменой, загрузим сохранённые настройки, заново откроем диалог
+    hDlg:send(F.DM_CLOSE,66) LoadSettings() Config() -- закроем диалог с отменой, загрузим сохранённые настройки, заново откроем диалог
   elseif Param2.VirtualKeyCode==0x0d and ACS==0x10 then -- ShiftEnter
     hDlg:send(F.DM_CLOSE,65) -- закроем диалог
   elseif Param2.VirtualKeyCode==0x4b and band(ACS,0xc)~=0 then -- CtrlK - фильтр клавиш макросов
@@ -2099,7 +2099,7 @@ if FMatch(fullname,fmask..";"..fmask..OffExt)>0 and not modules[fn] then -- по
 end
 end
 -- старт
-S = LoadSettings(Def) if not L.Lang then return ErrMess(L[1]) end -- восстановим настройки; нет языковой информации - скажем и выйдем
+LoadSettings() if not L.Lang then return ErrMess(L[1]) end -- восстановим настройки; нет языковой информации - скажем и выйдем
 if type(PTable)~="table" then PTable = {} end
 if PTable.ResetFilters then -- сбросить все фильтры? сбросим
   S.Filter,S.Show = {A=Def.AreaFilter,K="",G=Def.GroupFilter,P=Def.PathFilter,F="*"},{M=true,K=true,E=true,O=true,I=true,P=true,N=true,H=true}
@@ -2126,7 +2126,7 @@ end
 if PTable.MaShow~=nil then S.Show.M = PTable.MaShow end if PTable.KMShow~=nil then S.Show.K = PTable.KMShow end -- скорректируем настройки
 if PTable.EvShow~=nil then S.Show.E = PTable.EvShow end if PTable.MoShow~=nil then S.Show.O = PTable.MoShow end --  в соответствии
 if PTable.MIShow~=nil then S.Show.I = PTable.MIShow end if PTable.PrShow~=nil then S.Show.P = PTable.PrShow end --  с параметрами функции
-if PTable.PMShow~=nil then S.Show.P = PTable.PMShow end if PTable.AMShow~=nil then S.Show.H = PTable.AMShow end
+if PTable.PMShow~=nil then S.Show.N = PTable.PMShow end if PTable.AMShow~=nil then S.Show.H = PTable.AMShow end
 repeat -- работаем, пока не надоест
   local ff = S.Filter.F:match("^[^\n]*")
   local events,macros,keymacros,modules,menuitems,prefixes,panels,items = {},{},{},{},{},{},{},{}
@@ -2469,7 +2469,7 @@ repeat -- работаем, пока не надоест
     elseif res.BreakKey=="A+F" then -- скрывать/показывать имена файлов?
       S.MaxFileWidth = S.MaxFileWidth==0 and 1000 or 0
     elseif res.BreakKey=="C+L" then -- сбросить настройки на сохранённые?
-      S = LoadSettings(Def)
+      LoadSettings()
     elseif res.BreakKey=="A+L" then -- восстановить последние фильтры?
       if LastFilter then S.Filter,LastFilter = LastFilter,nil end
     elseif res.BreakKey=="C+A" then -- Всё показать?
@@ -2498,7 +2498,7 @@ local function idx(self,key)
 return function(...) local fun = rawget(self,key) if fun then fun(...) else ErrMess(L.Lang and L.er.NotLMFun or L[1]) end end
 end
 --
-S = LoadSettings(Def)
+LoadSettings()
 --
 return setmetatable({ -- что возвращает модуль
   Main = ManageMacrosEvents;
@@ -2507,5 +2507,5 @@ return setmetatable({ -- что возвращает модуль
   EditScript = function(line) if Area.Editor then return EditScriptUnderCursor(line) else ErrMess(L.Lang and L.er.NotEditor or L[1]) end end;
   InsUid = function() print(GenUid()) end;
   Reload = Reload;
-  __MData = function() return L,Guids,S.Key end;
+  __MData = function() return L,Guids,S.Key,LMBuild end;
 },{__index=idx;__call=function(self,...) return self.Main(...) end;})

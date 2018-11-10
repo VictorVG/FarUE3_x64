@@ -441,7 +441,7 @@ $^Список макросов скрипта
 @module
 $^Использование скрипта как модуля
 
-  Скрипт автоматически добавляет себя в список модулей.
+  Скрипт состоит из модуля и набора макросов для его вызова. Ниже описаны параметры вызова модуля.
 
 ^#Возможные варианты вызова#
 
@@ -508,11 +508,12 @@ $^Использование скрипта как модуля
 
    3. #require"LuaManager".InsertScript([<тип скрипта>])#.
       |Вставить скрипт в текущий открытый на редактирование файл. Тип скрипта:
-        #1#         - макрос.
-        #2#         - обработчик событий.
-        #3#         - пункт меню плагинов.
-        #4#         - префикс командной строки.
-        #не указан# - запрашивается.
+        #1#         - |макрос.
+        #2#         - |обработчик событий.
+        #3#         - |пункт меню плагинов.
+        #4#         - |префикс командной строки.
+        #5#         - |панельный модуль.
+        #не указан# - |запрашивается.
 
    4. #require"LuaManager".EditScript([<строка>])#.
       |Редактировать скрипт из текущего открытого на редактирование файла. Если строка указана, редактируется скрипт,
@@ -533,35 +534,39 @@ $^Использование скрипта как модуля
   local LM = require"LuaManager"
   Macro{
     area="Common"; key="F12"; description="LuaManager: макросы"; sortpriority=10; condition=function() return LM end;
-    action=function() LM({MaShow=true,KMShow=true,EvShow=false,MoShow=false,MIShow=false,PrShow=false,AMShow=true,KFilter=""}) end;
+    action=function() LM({MaShow=true,KMShow=true,EvShow=false,MoShow=false,MIShow=false,PrShow=false,PMShow=false,AMShow=true,KFilter=""}) end;
   }
   Macro{
     area="Common"; key="F12"; description="LuaManager: обработчики событий"; sortpriority=9; condition=function() return LM end;
-    action=function() LM({MaShow=false,KMShow=false,EvShow=true,MoShow=false,MIShow=false,PrShow=false}) end;
+    action=function() LM({MaShow=false,KMShow=false,EvShow=true,MoShow=false,MIShow=false,PrShow=false,PMShow=false}) end;
   }
   Macro{
     area="Common"; key="F12"; description="LuaManager: префиксы"; sortpriority=8; condition=function() return LM end;
-    action=function() LM({MaShow=false,KMShow=false,EvShow=false,MoShow=false,MIShow=false,PrShow=true}) end;
+    action=function() LM({MaShow=false,KMShow=false,EvShow=false,MoShow=false,MIShow=false,PrShow=true,PMShow=false}) end;
   }
   Macro{
     area="Common"; key="F12"; description="LuaManager: пункты меню плагинов"; sortpriority=7; condition=function() return LM end;
-    action=function() LM({MaShow=false,KMShow=false,EvShow=false,MoShow=false,MIShow=true,PrShow=false}) end;
+    action=function() LM({MaShow=false,KMShow=false,EvShow=false,MoShow=false,MIShow=true,PrShow=false,PMShow=false}) end;
   }
   Macro{
-    area="Common"; key="F12"; description="LuaManager: модули"; sortpriority=6; condition=function() return LM end;
-    action=function() LM({MaShow=false,KMShow=false,EvShow=false,MoShow=true,MIShow=false,PrShow=false}) end;
+    area="Common"; key="F12"; description="LuaManager: панельные модули"; sortpriority=6; condition=function() return LM end;
+    action=function() LM({MaShow=false,KMShow=false,EvShow=false,MoShow=false,MIShow=false,PrShow=false,PMShow=true}) end;
   }
   Macro{
-   area="Shell"; key="F12"; description="LuaManager: всё в текущем файле"; flags="NoPluginPanels"; sortpriority=5; condition=function() return LM end;
-    action=function() LM({MaShow=true,KMShow=true,EvShow=true,MoShow=true,MIShow=true,PrShow=true,AMShow=true,FFilter=APanel.Path.."\\".. APanel.Current}) end;
+    area="Common"; key="F12"; description="LuaManager: модули"; sortpriority=5; condition=function() return LM end;
+    action=function() LM({MaShow=false,KMShow=false,EvShow=false,MoShow=true,MIShow=false,PrShow=false,PMShow=false}) end;
   }
   Macro{
-    area="Editor"; key="F12"; description="LuaManager: всё в текущем файле"; sortpriority=5; condition=function() return LM end;
-    action=function() LM({MaShow=true,KMShow=true,EvShow=true,MoShow=true,MIShow=true,PrShow=true,AMShow=true,FFilter=Editor.FileName}) end;
+    area="Shell"; key="F12"; description="LuaManager: всё в текущем файле"; flags="NoPluginPanels"; sortpriority=4; condition=function() return LM end;
+    action=function() LM({MaShow=true,KMShow=true,EvShow=true,MoShow=true,MIShow=true,PrShow=true,PMShow=true,AMShow=true,FFilter=APanel.Path.."\\".. APanel.Current}) end;
   }
   Macro{
-    area="Viewer"; key="F12"; description="LuaManager: всё в текущем файле"; sortpriority=5; condition=function() return LM end;
-    action=function() LM({MaShow=true,KMShow=true,EvShow=true,MoShow=true,MIShow=true,PrShow=true,AMShow=true,FFilter=Viewer.FileName}) end;
+    area="Editor"; key="F12"; description="LuaManager: всё в текущем файле"; sortpriority=4; condition=function() return LM end;
+    action=function() LM({MaShow=true,KMShow=true,EvShow=true,MoShow=true,MIShow=true,PrShow=true,PMShow=true,AMShow=true,FFilter=Editor.FileName}) end;
+  }
+  Macro{
+    area="Viewer"; key="F12"; description="LuaManager: всё в текущем файле"; sortpriority=4; condition=function() return LM end;
+    action=function() LM({MaShow=true,KMShow=true,EvShow=true,MoShow=true,MIShow=true,PrShow=true,PMShow=true,AMShow=true,FFilter=Viewer.FileName}) end;
   }
 
 @=
@@ -598,7 +603,7 @@ $^О скрипте
 
  Автор:        #IgorZ#
 
- Версия:       #5.0.1#
+ Версия:       #5.0.2#
 
  Адрес в сети: ~http://forum.farmanager.com/viewtopic.php?t=7936~@http://forum.farmanager.com/viewtopic.php?t=7936@
 @=‗

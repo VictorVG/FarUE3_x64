@@ -395,6 +395,7 @@ return {
   InsertEventDesc = "Вставить обработчик событий в текущий .lua/.moon файл",
   InsertMIDesc = "Вставить пункт меню плагинов в текущий .lua/.moon файл",
   InsertPrefixDesc = "Вставить префикс командной строки в текущий .lua/.moon файл",
+  InsertPanelDesc = "Вставить панельный модуль в текущий .lua/.moon файл",
   EditDesc = "Редактировать скрипт под курсором",
   MacroDesc = "Менеджер lua/moon скриптов",
   ReloadDesc = "Перезагрузить все скрипты"

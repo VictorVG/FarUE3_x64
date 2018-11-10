@@ -2,7 +2,7 @@
 local nfo = Info {... or _filename,
   name          = "LuaManager macros";
   description   = "Набор макросов и пункт меню плагинов для LuaManager";
-  version       = "1.0.2"; --в формате semver: http://semver.org/lang/ru/
+  version       = "1.0.3"; --в формате semver: http://semver.org/lang/ru/
   author        = "IgorZ";
   url           = "http://forum.farmanager.com/viewtopic.php?t=7936";
   id            = "2062CE37-181E-4721-95A4-ED1019E61586";
@@ -16,6 +16,7 @@ local nfo = Info {... or _filename,
                 Вставка Lua/Moon-обработчика событий в редактируемый .Lua/Moon файл;
                 Вставка Lua/Moon-пункта меню плагинов в редактируемый .Lua/Moon файл;
                 Вставка Lua/Moon-префикса командной строки в редактируемый .Lua/Moon файл
+                Вставка Lua/Moon-панельного плагина в редактируемый .Lua/Moon файл
   CtrlF12     - Редактирование Lua/Moon-скрипта под курсором
   RCtrlU      - Вставка guid в редактируемый .Lua/Moon файл
   CtrlF9      - Перезагрузка всех скриптов
@@ -25,8 +26,7 @@ if not nfo then return nfo end
 --
 local OK_LM,LM = pcall(require,"LuaManager") -- найдём LuaManager
 if not OK_LM then far.Message("Cannot find LuaManager module ",nfo.name,";Ok","w") return end -- не нашли - ничего не будет
-local L,G,K = LM.__MData() -- языковые данные, guid-ы, клавиши вызова
-local LMBuild = far.GetPluginInformation(far.FindPlugin(far.Flags.PFM_GUID,G.LuaMacro)).GInfo.Version[4] -- запомним версию LuaMacro
+local L,G,K,LMBuild = LM.__MData() -- языковые данные, guid-ы, клавиши вызова, версия LuaMacro
 -- +
 --[==[Макросы]==]
 -- -
@@ -53,6 +53,10 @@ Macro{
 Macro{
   description=L.InsertPrefixDesc; area="Editor"; filemask="*.lua,*.moon"; key=K.InsPrefix;
   [(LMBuild<579 and "u" or "").."id"]=G.InsPrefixMacro; action=function() LM.InsertScript(4) end;
+}
+Macro{
+  description=L.InsertPanelDesc; area="Editor"; filemask="*.lua,*.moon"; key=K.InsPanel;
+  [(LMBuild<579 and "u" or "").."id"]=G.InsPanelMacro; action=function() LM.InsertScript(5) end;
 }
 Macro{
   description=L.EditDesc; area="Editor"; filemask="*.lua,*.moon"; key=K.EditScript;

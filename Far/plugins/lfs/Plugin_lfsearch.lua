@@ -1,29 +1,28 @@
 --[[ ВНИМАНИЕ! Макрос назначен на RAltL чтобы для его вызова хватало
      пальцев одной руки что собственно и было задумано - минимум неудобства,
      максимум  простоты вызова.
-     Выбор функции производится в меню - дадим оператору время подумать.
+
+     Выбор функции производится в меню - дадим  оператору время подумать.
+
+     Используется модификация по хоткеям стандартного скрипта из поставки плагина
+     которые были подобраны по принципу сохранения возможностей управления Far,
+     имеющихся скриптов и плагинов.
 
      /VictorVG @ VikSoft.Ru/
---]]
 
-local LFID = "8E11EA75-0303-4374-AC60-D1E38F865449"
-Macro {
-  description="LuaFAR Search"; area="Shell Editor"; key="RAltL"; action=function()
-   Plugin.Menu(LFID)
-  end;
-}
---[[
-  Далее идёт модификация по хоткеям стандартного скрипта из поставки плагина
-  которые были подобраны по принципу сохранения возможностей управления Far,
-  имеющихся скриптов и плагинов.
-
-     /VictorVG @ VikSoft.Ru/
+     v1.1 Рефакторинг. VictorVG @ VikSoft.Ru 08.11.2018 17:51:20 +0300
 --]]
 
 local Guid = "8E11EA75-0303-4374-AC60-D1E38F865449"
 local function LFS_Editor(...) Plugin.Call(Guid, "own", "editor", ...) end
 local function LFS_Panels(...) Plugin.Call(Guid, "own", "panels", ...) end
 local function LFS_Exist() return Plugin.Exist(Guid) end
+
+Macro {
+  description="LuaFAR Search"; area="Shell Editor"; key="RAltL"; action=function()
+   Plugin.Menu(Guid)
+  end;
+}
 
 Macro {
   description="LuaFAR Search: Editor Find";
@@ -98,7 +97,6 @@ Macro {
   action = function() LFS_Panels "grep" end
 }
 
-
 Macro {
   description="LuaFAR Search: Panel Rename";
   area="Shell QView Tree Info"; key="CtrlShiftJ"; condition=LFS_Exist;
@@ -116,14 +114,13 @@ Macro {
   area="Editor"; key="CtrlShiftG";
   action=function()
     local lnum = editor.GetString(nil,nil,3):match("^(%d+)[:-]")
-    if lnum == nil then return end
     local EI = editor.GetInfo()
-    for n = EI.CurLine-1,1,-1 do
+     for n = EI.CurLine,1,-1 do
       local fname = editor.GetString(nil,n,3):match("^%[%d+%]%s+(.+)")
       if fname then
         editor.Editor(fname,nil,nil,nil,nil,nil,
           {EF_NONMODAL=1,EF_IMMEDIATERETURN=1,EF_ENABLE_F6=1,EF_OPENMODE_USEEXISTING=1},
-          lnum, math.max(1, EI.CurPos-lnum:len()-1))
+          lnum or 1, lnum and math.max(1, EI.CurPos-lnum:len()-1) or 1)
         break
       end
     end

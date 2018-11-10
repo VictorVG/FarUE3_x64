@@ -3,6 +3,58 @@ This file is a translation of the main russian changelog and is provided by volu
 It might not always be as up to date as the main changelog.
 =======================================================================================
 
+drkns 10.11.2018 00:09:59 +0000 - build 5310
+
+1. Small file sorting optimisations.
+
+2. Refactoring.
+
+w17 09.11.2018 14:25:26 +0300 - build 5309
+
+1. GH #77 3.0.5300: Viewer Save file position is broken
+
+drkns 09.11.2018 09:02:24 +0000 - build 5308
+
+1. 5307 revealed an ancient bug - incorrect handle usage.
+
+drkns 08.11.2018 21:55:13 +0000 - build 5307
+
+1. Some improvements in exception throwing and handling.
+
+2. After 5304 the profile was consireded "read only" in some cases.
+
+3. Refactoring.
+
+drkns 08.11.2018 08:56:21 +0000 - build 5306
+
+1. Forum: Far hangs after moving the system date back a day.
+   Some genius in MS implemented sleep_for in terms of sleep_until. *facepalm*
+
+drkns 08.11.2018 00:26:26 +0000 - build 5305
+
+1. Some improvements in exception handling.
+
+2. Redundant allocations during subsequent SCTL_CREATESUBKEY calls.
+
+drkns 06.11.2018 20:35:22 +0000 - build 5304
+
+1. Major SQLite changes: now instead of returning false or error code (which we almost never checked anyway) on failures
+   exceptions will be thrown. Currently they are handled during db opening (due all the shenanigans we do there)
+   and plugin settings instantiation (for obvious reasons), i.e. SCTL_CREATE, as promised, will return FALSE in case of failure.
+   This should also fix 0002940: SCTL_CREATE: issues when creating multiple instances of settings.
+   In the rest of the code these possible exceptions are (currently) not handled, so you will notice if anything goes wrong.
+   SQLITE_BUSY is processed separately - after a 5-sec timeout it will be possible to either retry or abort the operation
+
+   In other words - these changes are quite experimental, here be dragons.
+
+MZK 05.11.2018 22:34:40 -0800
+
+1. Translated help page @OSCommands into English and reworked the Russian page.
+
+drkns 05.11.2018 18:44:11 +0000 - build 5303
+
+1. Fix 5281.2.
+
 drkns 30.10.2018 22:03:16 +0000 - build 5302
 
 1. GH #74 Problem with relative paths in arguments if running from directory with full path longer than MAX_PATH chars

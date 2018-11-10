@@ -54,7 +54,7 @@ Lucida Console,15 (15pt). ≈сли вы указали запуск в полноэкранном режиме
  .NET Frimework 4.0 (иначе он не запуститс€), дл€ иных плагинов .NET
  Framework не требуетс€.
 
- OpenSSL Toolkit v1.1.0f и новее.
+ OpenSSL Toolkit v1.1.1 и новее.
 
  Perl v5.24 и новее дл€ работы конверторов Markdown в BB-code и/или HTML.
 
