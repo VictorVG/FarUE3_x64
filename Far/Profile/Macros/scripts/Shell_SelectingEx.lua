@@ -1,103 +1,106 @@
--------------------------------------------------------------------------------
--- Расширенная работа с выделением файлов. © SimSU
+﻿-------------------------------------------------------------------------------
+-- Расширенная работа с пометкой файлов. © SimSU
 -------------------------------------------------------------------------------
 
 ---- Настройки
 local function Settings()
 -- Начало файла Profile\SimSU\Shell_SelectingEx.cfg
 return{
-  Key="AltS"; --Prior=50;
-  KeyToEdit="CtrlShiftE"; --PriorToEdit=50;
-  KeyMark="CtrlShiftM"; --PriorMark=50;
-  KeyUnMark="CtrlShiftR"; --PriorUnMark=50;
-  KeySync="Divide"; --PriorSync=50;
-  KeyFirst="AltHome"; --PriorFirst=50;
-  KeyPrev="AltUp"; --PriorPrev=50;
-  KeyNext="AltDown"; --PriorNext=50;
-  KeyLast="AltEnd"; --PriorLast=50;
+  Key       = "AltS";         --Prior       = 50; --Sort       = 50;
+  KeyToEdit = "CtrlShiftE";   --PriorToEdit = 50; --SortToEdit = 50;
+  KeyMark   = "CtrlShiftM";   --PriorMark   = 50; --SortMark   = 50;
+  KeyUnMark = "CtrlShiftR";   --PriorUnMark = 50; --SortUnMark = 50;
+  KeySync   = "Divide";       --PriorSync   = 50; --SortSync   = 50;
+  KeyFirst  = "AltHome";      --PriorFirst  = 50; --SortFirst  = 50;
+  KeyPrev   = "AltUp";        --PriorPrev   = 50; --SortPrev   = 50;
+  KeyNext   = "AltDown";      --PriorNext   = 50; --SortNext   = 50;
+  KeyLast   = "AltEnd";       --PriorLast   = 50; --SortLast   = 50;
+  KeyDay    = "CtrlAltD";     --PriorDay    = 50; --SortDay    = 50;
 
-  FileName="Files.bbs"; -- Имя Файла с именами Файлов.
-  EOL="\r\n"; -- Перевод строк.
+  FileName = "Files.bbs"; -- Имя Файла с именами Файлов.
+  EOL      = "\r\n"; -- Перевод строк при вставке списка в редактор.
+  SEP      = "%,%;\r\""; -- Что считать разделителями имён файлов в буфере обмена.
 }
 -- Конец файла Profile\SimSU\Shell_SelectingEx.cfg
 end
 
 ---- Локализация
 _G.far.lang=far.lang or win.GetEnv("farlang")
--- Встроенные языки / Buildin laguages
+-- Встроенные языки / Built-in laguages
 local function Messages()
 if far.lang=="Russian" then
 -- Начало файла Profile\SimSU\Shell_SelectingExRussian.lng
 return{
-  Descr="Расширенная работа с выделением файлов. © SimSU";
-  DescrToEdit="Копирование имён помеченных файлов в редактор. © SimSU";
-  DescrMark="Пометка файлов имена которых находятся в буфере обмена. © SimSU";
-  DescrUnMark="Снятие пометки с файлов имена которых находятся в буфере обмена. © SimSU";
-  DescrSync="Пометка одинаковых файлов на обоих панелях. © SimSU";
-  DescrFirst="Переход на первый выделенный файл. © SimSU";
-  DescrPrev="Переход на предыдущий выделенный файл. © SimSU";
-  DescrNext="Переход на следующий выделенный файл. © SimSU";
-  DescrLast="Переход на последний выделенный файл. © SimSU";
+  Descr       = "Расширенная работа с пометкой файлов. © SimSU";
+  DescrToEdit = "Копирование имён помеченных файлов в редактор. © SimSU";
+  DescrMark   = "Пометка файлов имена которых находятся в буфере обмена. © SimSU";
+  DescrUnMark = "Снятие пометки с файлов имена которых находятся в буфере обмена. © SimSU";
+  DescrSync   = "Пометка одинаковых файлов на обоих панелях. © SimSU";
+  DescrFirst  = "Переход на первый помеченный файл. © SimSU";
+  DescrPrev   = "Переход на предыдущий помеченный файл. © SimSU";
+  DescrNext   = "Переход на следующий помеченный файл. © SimSU";
+  DescrLast   = "Переход на последний помеченный файл. © SimSU";
+  DescrDay    = "Пометка файлов с днём записи равным дню записи файла под курсором. © SimSU";
 
-  mTitle="Работа с пометкой";
-  mToEdit ="&E Имена в редактор";
-  mClip   ="Буфер обмена";
-  mCopy   ="&C Копировать";
-  mMark   ="&M Пометить";
-  mRemMark="&R Снять пометку";
-  mPanels ="Панели";
-  mSync   ="&S Синхронизировать";
-  mAddName="&A +Имена";
-  mAddExt ="&T +Расширения";
-  mUnName ="&B -Имена";
-  mUnExt  ="&U -Расширения";
-  mAddMark="&+ Выделить";
-  mUnMark ="&- Снять выделение";
-  mAddAll ="&! Выделить все";
-  mUnAll  ="&% Снять выделение со всех";
-  mInvert ="&* Инвертировать";
-  mMove   ="Передвижение";
-  mFirst  ="&F Первый";
-  mPrev   ="&P Предыдущий";
-  mNext   ="&N Следующий";
-  mLast   ="&L Последний";
+  mTitle   = "Работа с пометкой";
+  mToEdit  = "&E Имена в редактор";
+  mClip    = "Буфер обмена";
+  mCopy    = "&C Копировать в буфер";
+  mMark    = "&M Пометить из буфера";
+  mRemMark = "&R Снять пометку из буфера";
+  mPanels  = "Панели";
+  mSync    = "&S Синхронизировать";
+  mAddName = "&A +Имена";
+  mAddExt  = "&T +Расширения";
+  mUnName  = "&B -Имена";
+  mUnExt   = "&U -Расширения";
+  mAddMark = "&+ Добавить к помеченным...";
+  mUnMark  = "&- Убрать из помеченных...";
+  mAddAll  = "&! Пометить все";
+  mUnAll   = "&% Снять пометку со всех";
+  mInvert  = "&* Инвертировать";
+  mMove    = "Позиционироваться на";
+  mFirst   = "&F Первый";
+  mPrev    = "&P Предыдущий";
+  mNext    = "&N Следующий";
+  mLast    = "&L Последний";
 }
 -- Конец файла Profile\SimSU\Shell_SelectingExRussian.lng
 else--if far.lang=="English" then
 -- Begin of file Profile\SimSU\Shell_SelectingExEnglish.lng
 return{
-  Descr="The expanded work with selection of files. © SimSU";
-  DescrToEdit="Копирование имён помеченных файлов в редактор. © SimSU";
-  DescrMark="Пометка файлов имена которых находятся в буфере обмена. © SimSU";
-  DescrUnMark="Снятие пометки с файлов имена которых находятся в буфере обмена. © SimSU";
-  DescrSync="Пометка одинаковых файлов на обоих панелях. © SimSU";
-  DescrFirst="Переход на первый выделенный файл. © SimSU";
-  DescrPrev="Переход на предыдущий выделенный файл. © SimSU";
-  DescrNext="Переход на следующий выделенный файл. © SimSU";
-  DescrLast="Переход на последний выделенный файл. © SimSU";
+  Descr       = "The expanded work with selection of files. © SimSU";
+  DescrToEdit = "Копирование имён помеченных файлов в редактор. © SimSU";
+  DescrMark   = "Пометка файлов имена которых находятся в буфере обмена. © SimSU";
+  DescrUnMark = "Снятие пометки с файлов имена которых находятся в буфере обмена. © SimSU";
+  DescrSync   = "Пометка одинаковых файлов на обоих панелях. © SimSU";
+  DescrFirst  = "Переход на первый помеченный файл. © SimSU";
+  DescrPrev   = "Переход на предыдущий помеченный файл. © SimSU";
+  DescrNext   = "Переход на следующий помеченный файл. © SimSU";
+  DescrLast   = "Переход на последний помеченный файл. © SimSU";
 
-  mTitle="Work with mark";
-  mToEdit ="&E Name to editor";
-  mClip   ="Clipboard";
-  mCopy   ="&C Copy";
-  mMark   ="&M Mark";
-  mRemMark="&R Remove mark";
-  mPanels ="Panels";
-  mSync   ="&S Synchronize";
-  mAddName="&A +Names";
-  mAddExt ="&T +Expansions";
-  mUnName ="&B -Names";
-  mUnExt  ="&U -Expansions";
-  mAddMark="&+ Add mark";
-  mUnMark ="&- Remove mark";
-  mAddAll ="&! Mark all";
-  mUnAll  ="&% Unmark all";
-  mInvert ="&* Reverse";
-  mMove   ="Movement";
-  mFirst  ="&F First";
-  mPrev   ="&P Previous";
-  mNext   ="&N Next";
-  mLast   ="&L Last";
+  mTitle   = "Operations on selection";
+  mToEdit  = "&E Bring selection to editor";
+  mClip    = "Clipboard";
+  mCopy    = "&C Copy to clipboard";
+  mMark    = "&M Select from clipboard";
+  mRemMark = "&R Unselect from clipboard";
+  mPanels  = "Panels";
+  mSync    = "&S Synchronize";
+  mAddName = "&A +Names";
+  mAddExt  = "&T +Extensions";
+  mUnName  = "&B -Names";
+  mUnExt   = "&U -Extensions";
+  mAddMark = "&+ Add to selection...";
+  mUnMark  = "&- Subtract from selection...";
+  mAddAll  = "&! Select all";
+  mUnAll   = "&% Unselect all";
+  mInvert  = "&* Reverse selection";
+  mMove    = "Position to";
+  mFirst   = "&F First";
+  mPrev    = "&P Previous";
+  mNext    = "&N Next";
+  mLast    = "&L Last";
 }
 -- End of file Profile\SimSU\Shell_SelectingExEnglish.lng
 end end
@@ -105,73 +108,105 @@ end end
 local M=(loadfile(win.GetEnv("FARPROFILE").."\\SimSU\\Shell_SelectingEx"..far.lang..".lng") or Messages)()
 local S=(loadfile(win.GetEnv("FARLOCALPROFILE").."\\SimSU\\Shell_SelectingEx.cfg") or loadfile(win.GetEnv("FARPROFILE").."\\SimSU\\Shell_SelectingEx.cfg") or Settings)()
 
-local SimSU=SimSU or {}
-SimSU.Shell_SelectingEx={}
+local SimSU=_G.SimSU or {}
 -------------------------------------------------------------------------------
-local FileName=S.FileName or "Files.bbs"
-local EOL=S.EOL or "\r\n"
+local F=far.Flags
+S.FileName = S.FileName==nil and Settings().FileName or S.FileName
+S.EOL      = S.EOL     ==nil and Settings().EOL      or S.EOL
+S.SEP      = S.SEP     ==nil and Settings().SEP      or S.SEP
+
 local LastItem=1
 
-function SimSU.Shell_SelectingEx.ToEditor()
+local function ToEditor()
   local Files={}
   for i=1, panel.GetPanelInfo(nil,1).SelectedItemsNumber do
     Files[i]=panel.GetSelectedPanelItem(nil,1,i).FileName
   end
-  Files=table.concat(Files,EOL)
-  editor.Editor(FileName,nil,nil,nil,nil,nil,far.Flags.EF_NONMODAL+far.Flags.EF_IMMEDIATERETURN); print(Files..EOL)
+  local Names=table.concat(Files,S.EOL)..S.EOL
+  editor.Editor(S.FileName,nil,nil,nil,nil,nil,F.EF_NONMODAL+F.EF_IMMEDIATERETURN)
+  print(Names)
+  return Files
 end
 
-function SimSU.Shell_SelectingEx.ClipboardMark(Mark)
-  local Mark= Mark==nil and true or Mark
+local function ClipboardMark(Mark)
+  Mark= Mark and 1 or 0
   -- panel.select(0,0,2,clip(0)) -- FAR не проверяет пути если они есть.
   -- panel.select(0,1,2,clip(0)) -- FAR не проверяет пути если они есть.
   -- Делаем работу за FAR.
   local FileList=mf.clip(0)
-  FileList=FileList:gsub("[%,%;\r\"]","\n"):upper().."\n"
+  FileList=(FileList:gsub("["..S.SEP.."]","\n"):upper().."\n"):gsub("\\\n","\n")
   local PanelPath=APanel.Path:upper()
   for FullFileName in FileList:gmatch("[^\n]+") do
-    local FilePath=mf.fsplit(FullFileName,0x1+0x2)
-    local FileName=mf.fsplit(FullFileName,0x4+0x8)
-    far.Show("'"..FilePath.."'","'"..FileName.."'")
+    local FilePath=mf.fsplit(FullFileName,0x1+0x2):gsub("\\$","")
+    local Name=mf.fsplit(FullFileName,0x4+0x8)
     if FilePath=="" or FilePath==PanelPath then
-      Panel.Select(0,Mark and 1 or 0,2,FileName)
+      Panel.Select(0,Mark,2,Name)
     end
   end
+  return true
 end
 
-function SimSU.Shell_SelectingEx.Synchronize()
-  local AFiles={}
+local function Synchronize()
+  local AFiles = {}
   for i=1,panel.GetPanelInfo(nil,1).ItemsNumber do
     AFiles[i]=panel.GetPanelItem(nil,1,i).FileName
   end
-  AFiles=table.concat(AFiles,"\n")
-  local PFiles={} for i=1,panel.GetPanelInfo(nil,0).ItemsNumber do
+  local PFiles = {}
+  for i=1,panel.GetPanelInfo(nil,0).ItemsNumber do
     PFiles[i]=panel.GetPanelItem(nil,0,i).FileName
   end
-  PFiles=table.concat(PFiles,"\n")
-  Panel.Select(0,0) Panel.Select(0,1,2,PFiles)
-  Panel.Select(1,0) Panel.Select(1,1,2,AFiles)
+  Panel.Select(0,0); Panel.Select(0,1,2,table.concat(PFiles,"\n"))
+  Panel.Select(1,0); Panel.Select(1,1,2,table.concat(AFiles,"\n"))
+  return AFiles, PFiles
 end
 
-function SimSU.Shell_SelectingEx.GoFirst()
-  Panel.SetPosIdx(0,1,1)
+local function DayMark()
+  local mSecInDay=1000*60*60*24
+  local PanelItem=panel.GetCurrentPanelItem(nil,1)
+  local Sel=(band(PanelItem.Flags,F.PPIF_SELECTED)==0)
+  local DateMin= PanelItem.FileName == ".." and win.GetSystemTimeAsFileTime() or PanelItem.LastWriteTime
+  DateMin=math.floor(DateMin/mSecInDay)*mSecInDay
+  local DateMax=DateMin+mSecInDay
+  for i=1,panel.GetPanelInfo(nil,1).ItemsNumber do
+    PanelItem=panel.GetPanelItem(nil,1,i)
+    if PanelItem.LastWriteTime>DateMin and PanelItem.LastWriteTime<DateMax then
+      panel.SetSelection(nil,1,i,Sel)
+    end
+  end
+  panel.RedrawPanel(nil,1)
 end
 
-function SimSU.Shell_SelectingEx.GoPrevious()
-  _ = Panel.SetPosIdx(0,0,1)==1 and Panel.SetPosIdx(0,APanel.SelCount,1) or Panel.SetPosIdx(0,Panel.SetPosIdx(0,0,1)-1,1)
+local function GoFirst()
+  return Panel.SetPosIdx(0,1,1)
 end
 
-function SimSU.Shell_SelectingEx.GoNext()
-  _ = Panel.SetPosIdx(0,0,1)==APanel.SelCount and Panel.SetPosIdx(0,1,1) or Panel.SetPosIdx(0,Panel.SetPosIdx(0,0,1)+1,1)
+local function GoPrevious()
+--  return Panel.SetPosIdx(0,0,1)==1 and Panel.SetPosIdx(0,APanel.SelCount,1) or Panel.SetPosIdx(0,Panel.SetPosIdx(0,0,1)-1,1)
+  local PanelInfo=panel.GetPanelInfo(nil,1)
+  local CI=PanelInfo.CurrentItem
+  for i=CI-1,1,-1 do
+    if panel.GetPanelItem(nil,1,i).Flags==F.PPIF_SELECTED then CI=i; Panel.SetPosIdx(0,CI,0); break end
+  end
+  if CI==PanelInfo.CurrentItem then Panel.SetPosIdx(0,APanel.SelCount,1) end
 end
 
-function SimSU.Shell_SelectingEx.GoLast()
-  Panel.SetPosIdx(0,APanel.SelCount,1)
+local function GoNext()
+--  return Panel.SetPosIdx(0,0,1)==APanel.SelCount and Panel.SetPosIdx(0,1,1) or Panel.SetPosIdx(0,Panel.SetPosIdx(0,0,1)+1,1)
+  local PanelInfo=panel.GetPanelInfo(nil,1)
+  local CI=PanelInfo.CurrentItem
+  for i=CI+1,PanelInfo.ItemsNumber do
+    if band(panel.GetPanelItem(nil,1,i).Flags,F.PPIF_SELECTED)~=0 then CI=i; Panel.SetPosIdx(0,CI,0); break end
+  end
+  if CI==PanelInfo.CurrentItem then Panel.SetPosIdx(0,1,1) end
 end
 
-function SimSU.Shell_SelectingEx.Select()
+local function GoLast()
+  return Panel.SetPosIdx(0,APanel.SelCount,1)
+end
+
+local function Select()
   local item={}
-  local len,l = 0,0
+  local len = 0
   item[01]=M.mToEdit
   item[02]="\1 "..M.mClip
   item[03]=M.mCopy
@@ -193,16 +228,20 @@ function SimSU.Shell_SelectingEx.Select()
   item[19]=M.mPrev
   item[20]=M.mNext
   item[21]=M.mLast
-  for i=1,#item do len= item[i]:len()>len and item[i]:find("\1",1,true)~=1 and item[i]:len() or len end
+  for i=1,#item do
+    len= item[i]:len()>len and item[i]:find("\1",1,true)~=1 and item[i]:len() or len
+  end
   len=len+2
-  for i=1,#item do item[i]= item[i]:find("\1",1,true)~=1 and item[i]..(' '):rep(len-item[i]:len()) or item[i] end
+  for i=1,#item do
+    item[i]= item[i]:find("\1",1,true)~=1 and item[i]..(' '):rep(len-item[i]:len()) or item[i]
+  end
   item[01]=item[01]..(S.KeyToEdit or "")
   --
   item[03]=item[03].."CtrlShiftIns"
-  item[04]=item[04]..(S.KeyMark or "")
+  item[04]=item[04]..(S.KeyMark   or "")
   item[05]=item[05]..(S.KeyUnMark or "")
   --
-  item[ 7]=item[07]..(S.KeySync or "")
+  item[ 7]=item[07]..(S.KeySync   or "")
   item[ 8]=item[08].."AltAdd"
   item[09]=item[09].."CtrlAdd"
   item[10]=item[10].."AltSubtract"
@@ -213,73 +252,102 @@ function SimSU.Shell_SelectingEx.Select()
   item[15]=item[15].."ShiftSubtract"
   item[16]=item[16].."Multiply"
   --
-  item[18]=item[18]..(S.KeyFirst or "")
-  item[19]=item[19]..(S.KeyPrev or "")
-  item[20]=item[20]..(S.KeyNext or "")
-  item[21]=item[21]..(S.KeyLast or "")
+  item[18]=item[18]..(S.KeyFirst  or "")
+  item[19]=item[19]..(S.KeyPrev   or "")
+  item[20]=item[20]..(S.KeyNext   or "")
+  item[21]=item[21]..(S.KeyLast   or "")
 
   LastItem=Menu.Show(table.concat(item,"\n"),M.mTitle,0x8,LastItem)
-  _=
-  LastItem==01 and SimSU.Shell_SelectingEx.ToEditor() or
 
-  LastItem==03 and Keys("CtrlShiftIns") or
-  LastItem==04 and SimSU.Shell_SelectingEx.ClipboardMark(true) or
-  LastItem==05 and SimSU.Shell_SelectingEx.ClipboardMark(false) or
-
-  LastItem==07 and SimSU.Shell_SelectingEx.Synchronize() or
-  LastItem==08 and Keys("AltAdd") or
-  LastItem==09 and Keys("CtrlAdd") or
-  LastItem==10 and Keys("AltSubtract") or
-  LastItem==11 and Keys("CtrlSubtract") or
-  LastItem==12 and Keys("Add") or
-  LastItem==13 and Keys("Subtract") or
-  LastItem==14 and Keys("ShiftAdd") or
-  LastItem==15 and Keys("ShiftSubtract") or
-  LastItem==16 and Keys("Multiply") or
-
-  LastItem==18 and SimSU.Shell_SelectingEx.GoFirst() or
-  LastItem==19 and SimSU.Shell_SelectingEx.GoPrevious() or
-  LastItem==20 and SimSU.Shell_SelectingEx.GoNext() or
-  LastItem==21 and SimSU.Shell_SelectingEx.GoLast()
+  return
+  LastItem==01 and ToEditor()                                   or
+  --                                                            or
+  LastItem==03 and Keys("CtrlShiftIns")                         or
+  LastItem==04 and ClipboardMark(true)                          or
+  LastItem==05 and ClipboardMark(false)                         or
+  --                                                            or
+  LastItem==07 and Synchronize()                                or
+  LastItem==08 and Keys("AltAdd")                               or
+  LastItem==09 and Keys("CtrlAdd")                              or
+  LastItem==10 and Keys("AltSubtract")                          or
+  LastItem==11 and Keys("CtrlSubtract")                         or
+  LastItem==12 and Keys("Add")                                  or
+  LastItem==13 and Keys("Subtract")                             or
+  LastItem==14 and Keys("ShiftAdd")                             or
+  LastItem==15 and Keys("ShiftSubtract")                        or
+  LastItem==16 and Keys("Multiply")                             or
+  --                                                            or
+  LastItem==18 and GoFirst()                                    or
+  LastItem==19 and GoPrevious()                                 or
+  LastItem==20 and GoNext()                                     or
+  LastItem==21 and GoLast()
 end
--------------------------------------------------------------------------------
-if not Macro then return {Shell_SelectingEx=SimSU.Shell_SelectingEx} end
 
-local ok, mod = pcall(require,"SimSU.Shell_SelectingEx"); if ok then SimSU=mod else _G.SimSU=SimSU end
+-------------------------------------------------------------------------------
+local Shell_SelectingEx={
+  ToEditor      = ToEditor     ;
+  ClipboardMark = ClipboardMark;
+  Synchronize   = Synchronize  ;
+  DayMark       = DayMark      ;
+  GoFirst       = GoFirst      ;
+  GoPrevious    = GoPrevious   ;
+  GoNext        = GoNext       ;
+  GoLast        = GoLast       ;
+  Select        = Select       ;
+}
+local function filename() return Select() end -- Меню
+-------------------------------------------------------------------------------
+if _filename then return filename(...) end
+if not Macro then return {Shell_SelectingEx=Shell_SelectingEx} end
+SimSU.Shell_SelectingEx=Shell_SelectingEx; _G.SimSU=SimSU
 -------------------------------------------------------------------------------
 
-Macro {area="Shell"; key=S.KeyToEdit; priority=S.PriorToEdit; description=M.DescrToEdit;
-  condition = function() return APanel.Visible and APanel.FilePanel end;
-  action=SimSU.Shell_SelectingEx.ToEditor;
+Macro {id="7ff37302-a606-4a17-972d-b51c006c4da7";
+  area="Shell"; key=S.Key;       priority=S.Prior;       sortpriority=S.Sort;       description=M.Descr;
+  action=Select;
 }
-Macro {area="Shell"; key=S.KeyMark; priority=S.PriorMark; description=M.DescrMark;
+Macro {id="5fb1e2d0-87fc-4eda-a398-28e20a3eaf2f";
+  area="Shell"; key=S.KeyToEdit; priority=S.PriorToEdit; sortpriority=S.SortToEdit; description=M.DescrToEdit;
   condition = function() return APanel.Visible and APanel.FilePanel end;
-  action=SimSU.Shell_SelectingEx.ClipboardMark;
+  action=ToEditor;
 }
-Macro {area="Shell"; key=S.KeyUnMark; priority=S.PriorUnMark; description=M.DescrUnMark;
+Macro {id="6c556f56-da67-4a52-a490-90430947d7c2";
+  area="Shell"; key=S.KeyMark;   priority=S.PriorMark;   sortpriority=S.SortMark;   description=M.DescrMark;
   condition = function() return APanel.Visible and APanel.FilePanel end;
-  action=function() SimSU.Shell_SelectingEx.ClipboardMark(false) end;
+  action=function() ClipboardMark(true) end;
 }
-Macro {area="Shell"; key=S.KeySync; priority=S.PriorSync; description=M.DescrSync;
+Macro {id="db6e5645-0053-4598-94d7-cf6bb133c20f";
+  area="Shell"; key=S.KeyUnMark; priority=S.PriorUnMark; sortpriority=S.SortUnMark; description=M.DescrUnMark;
+  condition = function() return APanel.Visible and APanel.FilePanel end;
+  action=function() ClipboardMark(false) end;
+}
+Macro {id="512a4220-7018-4d02-9ca7-833c01269575";
+  area="Shell"; key=S.KeySync;   priority=S.PriorSync;   sortpriority=S.SortSync;   description=M.DescrSync;
   condition = function() return APanel.Visible and APanel.FilePanel and PPanel.Visible and PPanel.FilePanel end;
-  action=SimSU.Shell_SelectingEx.Synchronize;
+  action=Synchronize;
 }
-Macro {area="Shell"; key=S.KeyFirst; priority=S.PriorFirst; description=M.DescrFirst; flags="Selection";
+Macro {id="bf643ce8-5cec-41b9-803b-e794a0a3e97b";
+  area="Shell"; key=S.KeyFirst;  priority=S.PriorFirst;  sortpriority=S.SortFirst;  description=M.DescrFirst; flags="Selection";
   condition = function() return APanel.Visible and APanel.FilePanel end;
-  action=SimSU.Shell_SelectingEx.GoFirst;
+  action=GoFirst;
 }
-Macro {area="Shell"; key=S.KeyPrev; priority=S.PriorPrev; description=M.DescrPrev; flags="Selection";
+Macro {id="a67c3e04-7061-4f6c-a525-bbde0ad7fe0d";
+  area="Shell"; key=S.KeyPrev;   priority=S.PriorPrev;   sortpriority=S.SortPrev;   description=M.DescrPrev; flags="Selection";
   condition = function() return APanel.Visible and APanel.FilePanel end;
-  action=SimSU.Shell_SelectingEx.GoPrevious;
+  action=GoPrevious;
 }
-Macro {area="Shell"; key=S.KeyNext; priority=S.PriorNext; description=M.DescrNext; flags="Selection";
+Macro {id="904c717f-5e8b-4da4-bd1b-63dbf464094b";
+  area="Shell"; key=S.KeyNext;   priority=S.PriorNext;   sortpriority=S.SortNext;   description=M.DescrNext; flags="Selection";
   condition = function() return APanel.Visible and APanel.FilePanel end;
-  action=SimSU.Shell_SelectingEx.GoNext;
+  action=GoNext;
 }
-Macro {area="Shell"; key=S.KeyLast; priority=S.PriorLast; description=M.DescrLast; flags="Selection";
+Macro {id="8e60772c-2a38-41f2-9f75-49335df9ee63";
+  area="Shell"; key=S.KeyLast;   priority=S.PriorLast;   sortpriority=S.SortLast;   description=M.DescrLast; flags="Selection";
   condition = function() return APanel.Visible and APanel.FilePanel end;
-  action=SimSU.Shell_SelectingEx.GoLast;
+  action=GoLast;
 }
-Macro {area="Shell"; key=S.Key; priority=S.Prior; description=M.Descr;
-  action=SimSU.Shell_SelectingEx.Select;
+Macro {id="4afe7929-4974-49e6-8db2-59e3822e457f";
+  area="Shell"; key=S.KeyDay;    priority=S.PriorDay;    sortpriority=S.SortDay;    description=M.DescrDay;
+  condition = function() return APanel.Visible and APanel.FilePanel end;
+  action=DayMark;
 }

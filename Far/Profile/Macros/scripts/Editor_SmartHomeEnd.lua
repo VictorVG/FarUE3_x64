@@ -6,19 +6,19 @@
 local function Settings()
 -- Начало файла Profile\SimSU\Editor_SmartHomeEnd.cfg
 return{
-  KeyHome="Home"; --PriorHome=50;
-  KeyEnd="End"; --PriorEnd=50;
-  KeyShiftHome="ShiftHome"; --PriorShiftHome=50;
-  KeyAltHome="AltHome AltShiftHome"; --PriorAltHome=50;
-  KeyShiftEnd="ShiftEnd"; --PriorShiftEnd=50;
-  KeyAltEnd="AltEnd AltShiftEnd"; --PriorAltEnd=50;
+  KeyHome     ="Home";                 --PriorHome     =50; --SortHome     =50;
+  KeyEnd      ="End";                  --PriorEnd      =50; --SortEnd      =50;
+  KeyShiftHome="ShiftHome";            --PriorShiftHome=50; --SortShiftHome=50;
+  KeyAltHome  ="AltHome AltShiftHome"; --PriorAltHome  =50; --SortAltHome  =50;
+  KeyShiftEnd ="ShiftEnd";             --PriorShiftEnd =50; --SortShiftEnd =50;
+  KeyAltEnd   ="AltEnd AltShiftEnd";   --PriorAltEnd   =50; --SortAltEnd   =50;
 }
 -- Конец файла Profile\SimSU\Editor_SmartHomeEnd.cfg
 end
 
 ---- Локализация
 _G.far.lang=far.lang or win.GetEnv("farlang")
--- Встроенные языки / Buildin laguages
+-- Встроенные языки / Built-in laguages
 local function Messages()
 if far.lang=="Russian" then
 -- Начало файла Profile\SimSU\Editor_SmartHomeEndRussian.lng
@@ -47,31 +47,32 @@ end end
 local M=(loadfile(win.GetEnv("FARPROFILE").."\\SimSU\\Editor_SmartHomeEnd"..far.lang..".lng") or Messages)()
 local S=(loadfile(win.GetEnv("FARLOCALPROFILE").."\\SimSU\\Editor_SmartHomeEnd.cfg") or loadfile(win.GetEnv("FARPROFILE").."\\SimSU\\Editor_SmartHomeEnd.cfg") or Settings)()
 
-local SimSU=SimSU or {}
-SimSU.Editor_SmartHomeEnd={}
+local SimSU=_G.SimSU or {}
 -------------------------------------------------------------------------------
-function SimSU.Editor_SmartHomeEnd.Home()
-  Editor.Pos(1,5,1); if Editor.Set(2,-1)==0 then Editor.Sel(4) end
+
+local function Home()
+  Editor.Pos(1,5,1); if Editor.Set(2,-1)==0 and band(Editor.State,0x30)~=0 then Editor.Sel(4) end
   local First=(Editor.Value):cfind("%S")
   Editor.Pos(1,2,Editor.RealPos~=First and First or 1)
 end
 
-function SimSU.Editor_SmartHomeEnd.End()
-  if Editor.Set(2,-1)==0 then Editor.Sel(4) end
+local function End()
+  if Editor.Set(2,-1)==0 and band(Editor.State,0x30)~=0 then Editor.Sel(4) end
   local Last=(Editor.Value):cfind("%s+$")
-  Editor.Pos(1,2,Editor.RealPos~=Last and Last or (Editor.Value):len()+1)
+  local Len=(Editor.Value):len()+1
+  Editor.Pos(1,2,Editor.RealPos>Len and Len or Editor.RealPos~=Last and Last or Len)
 end
 
-function SimSU.Editor_SmartHomeEnd.Select(HomeOrEnd,BlockType)
-  local BlockType= BlockType or 1
+local function Select(HomeOrEnd,BlockType)
+  BlockType= BlockType or 1
   local Line=Editor.CurLine; local Pos=Editor.RealPos; local Pos2= BlockType==2 and Editor.CurPos or nil
   local Sel=editor.GetSelection()
-  if HomeOrEnd then SimSU.Editor_SmartHomeEnd.Home() else SimSU.Editor_SmartHomeEnd.End() end
+  if HomeOrEnd then Home() else End() end
   local NewPos=Editor.RealPos; local NewPos2= BlockType==2 and Editor.CurPos or nil
   if Sel and BlockType==2 then Sel.StartPos2=editor.RealToTab(nil,Sel.StartLine,Sel.StartPos); Sel.EndPos2=editor.RealToTab(nil,Sel.EndLine,Sel.EndPos) end
   if not Sel or BlockType~=Sel.BlockType or -- Нет выделения или другой тип блока или
     not ((BlockType==1 and ((Line==Sel.StartLine and Pos==Sel.StartPos) or (Line==Sel.EndLine and Pos==Sel.EndPos+1  or (Sel.EndPos==-1 and Pos==1)))) or (BlockType==2 and (Line==Sel.StartLine or Line==Sel.EndLine) and (Pos==Sel.StartPos or Pos==Sel.EndPos+1))) -- не продолжение (курсос не в углах).
-    and not BlockType==2
+    --and not BlockType==2
   then -- Новое выделение.
     editor.Select(nil,BlockType,Line,NewPos>Pos and (Pos2 or Pos) or (NewPos2 or NewPos),NewPos>Pos and (NewPos2 and NewPos2-Pos2 or NewPos-Pos) or (NewPos2 and Pos2-NewPos2 or Pos-NewPos),1)
   elseif Line==Sel.StartLine and Sel.StartLine==Sel.EndLine and Pos==Sel.StartPos then -- Корректируем начало в однострочном блоке.
@@ -88,26 +89,39 @@ function SimSU.Editor_SmartHomeEnd.Select(HomeOrEnd,BlockType)
 end
 
 -------------------------------------------------------------------------------
-if not Macro then return {Editor_SmartHomeEnd=SimSU.Editor_SmartHomeEnd} end
-
-local ok, mod = pcall(require,"SimSU.Editor_SmartHomeEnd"); if ok then SimSU=mod else _G.SimSU=SimSU end
+local Editor_SmartHomeEnd={
+  Home   = Home  ;
+  End    = End   ;
+  Select = Select;
+}
+local function filename() return end
+-------------------------------------------------------------------------------
+if _filename then return filename(...) end
+if not Macro then return {Editor_SmartHomeEnd=Editor_SmartHomeEnd} end
+SimSU.Editor_SmartHomeEnd=Editor_SmartHomeEnd; _G.SimSU=SimSU
 -------------------------------------------------------------------------------
 
-Macro {area="Editor"; key=S.KeyHome; priority=S.PriorHome; description=M.DescrHome;
-  action=SimSU.Editor_SmartHomeEnd.Home;
+Macro {id="aee06b9b-f428-4d8e-93b3-71176e6c6a79";
+  area="Editor"; key=S.KeyHome;      priority=S.PriorHome;      sortpriority=S.SortHome;      description=M.DescrHome;
+  action=Home;
 }
-Macro {area="Editor"; key=S.KeyEnd; priority=S.PriorEnd; description=M.DescrEnd;
-  action=SimSU.Editor_SmartHomeEnd.End;
+Macro {id="4b9a2144-5468-44fe-9fef-ce690488eec3";
+  area="Editor"; key=S.KeyEnd;       priority=S.PriorEnd;       sortpriority=S.SortEnd;       description=M.DescrEnd;
+  action=End;
 }
-Macro {area="Editor"; key=S.KeyShiftHome; priority=S.PriorShiftHome; description=M.DescrShiftHome;
-  action=function() SimSU.Editor_SmartHomeEnd.Select(true,1) end;
+Macro {id="a2fd702e-cc45-4bdd-9104-895ef64938dc";
+  area="Editor"; key=S.KeyShiftHome; priority=S.PriorShiftHome; sortpriority=S.SortShiftHome; description=M.DescrShiftHome;
+  action=function() Select(true,1) end;
 }
-Macro {area="Editor"; key=S.KeyAltHome; priority=S.PriorAltHome; description=M.DescrAltHome;
-  action=function() SimSU.Editor_SmartHomeEnd.Select(true,2) end;
+Macro {id="06bc096b-df42-469b-b144-0d49b4b5112b";
+  area="Editor"; key=S.KeyAltHome;   priority=S.PriorAltHome;   sortpriority=S.SortAltHome;   description=M.DescrAltHome;
+  action=function() Select(true,2) end;
 }
-Macro {area="Editor"; key=S.KeyShiftEnd; priority=S.PriorShiftEnd; description=M.DescrShiftEnd;
-  action=function() SimSU.Editor_SmartHomeEnd.Select(false,1) end;
+Macro {id="edd0e9e0-633d-428b-a50a-4ba025a96c8b";
+  area="Editor"; key=S.KeyShiftEnd;  priority=S.PriorShiftEnd;  sortpriority=S.SortShiftEnd;  description=M.DescrShiftEnd;
+  action=function() Select(false,1) end;
 }
-Macro {area="Editor"; key=S.KeyAltEnd; priority=S.PriorAltEnd; description=M.DescrAltEnd;
-  action=function() SimSU.Editor_SmartHomeEnd.Select(false,2) end;
+Macro {id="c32cf6fa-cefe-4c0e-92b9-e7a0a16875a5";
+  area="Editor"; key=S.KeyAltEnd;    priority=S.PriorAltEnd;    sortpriority=S.SortAltEnd;    description=M.DescrAltEnd;
+  action=function() Select(false,2) end;
 }

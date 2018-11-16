@@ -1,4 +1,4 @@
--------------------------------------------------------------------------------
+﻿-------------------------------------------------------------------------------
 --     Назад/вперед по папкам используя историю. © SimSU
 -------------------------------------------------------------------------------
 
@@ -6,15 +6,15 @@
 local function Settings()
 -- Начало файла Profile\SimSU\Shell_HistoryPath.cfg
 return{
-  KeyBack ="AltBS"; --PriorBack=50;
-  KeyForward ="ShiftBS"; --PriorForward=50;
+  KeyBack    ="AltBS"  ; --SortBack   =50;  --PriorBack   =50;
+  KeyForward ="ShiftBS"; --SortForward=50;  --PriorForward=50;
 }
 -- Конец файла Profile\SimSU\Shell_HistoryPath.cfg
 end
 
 ---- Локализация
 _G.far.lang=far.lang or win.GetEnv("farlang")
--- Встроенные языки / Buildin laguages
+-- Встроенные языки / Built-in laguages
 local function Messages()
 if far.lang=="Russian" then
 -- Начало файла Profile\SimSU\Shell_HistoryPathRussian.lng
@@ -32,14 +32,15 @@ return{
 -- End of file Profile\SimSU\Shell_HistoryPathEnglish.lng
 end end
 
--------------------------------------------------------------------------------
 local M=(loadfile(win.GetEnv("FARPROFILE").."\\SimSU\\Shell_HistoryPath"..far.lang..".lng") or Messages)()
 local S=(loadfile(win.GetEnv("FARLOCALPROFILE").."\\SimSU\\Shell_HistoryPath.cfg") or loadfile(win.GetEnv("FARPROFILE").."\\SimSU\\Shell_HistoryPath.cfg") or Settings)()
 
-local SimSU=SimSU or {}
-SimSU.Shell_HistoryPath={}
+local SimSU=_G.SimSU or {}
 -------------------------------------------------------------------------------
-function SimSU.Shell_HistoryPath.Back()
+local _
+local ok, mod = pcall(require,"SimSU.Shell_RememberSelected"); if ok then SimSU.Shell_RememberSelected=mod.Shell_RememberSelected end
+
+local function Backward()
   _ = SimSU.Shell_RememberSelected and SimSU.Shell_RememberSelected.Save and SimSU.Shell_RememberSelected.Save(APanel);
   Keys("AltF12")
   if Object.ItemCount==0 or (Object.ItemCount~=1 and Object.CurPos==1) then -- Некуда возвращаться.
@@ -52,12 +53,11 @@ function SimSU.Shell_HistoryPath.Back()
       Keys("Up ShiftEnter") -- Перешли и сменили положение в истории.
     end
   end
-  far.Timer(100, function(h) if Area.Shell then h:Close(); _ = SimSU.Shell_RememberSelected and SimSU.Shell_RememberSelected.Restore and SimSU.Shell_RememberSelected.Restore(APanel) end end)
---  while not Area.Shell do mmode(1,mmode(1,0),Keys(mf.waitkey(100))) end -- Вопросы...
---  _ = SimSU.Shell_RememberSelected and SimSU.Shell_RememberSelected.Restore and SimSU.Shell_RememberSelected.Restore(APanel)
+  _ = SimSU.Shell_RememberSelected and SimSU.Shell_RememberSelected.RestoreLater and SimSU.Shell_RememberSelected.RestoreLater(APanel)
+  return true
 end
 
-function SimSU.Shell_HistoryPath.Forward()
+local function Forward()
   _ = SimSU.Shell_RememberSelected and SimSU.Shell_RememberSelected.Save and SimSU.Shell_RememberSelected.Save(APanel); Panel.Select(0)
   Keys("AltF12")
   if Object.ItemCount==0 or Object.CurPos==Object.ItemCount then -- Некуда переходить.
@@ -65,21 +65,27 @@ function SimSU.Shell_HistoryPath.Forward()
   else
     Keys("Down ShiftEnter") -- Перешли и сменили положение в истории.
   end
-  far.Timer(100, function(h) if Area.Shell then h:Close(); _ = SimSU.Shell_RememberSelected and SimSU.Shell_RememberSelected.Restore and SimSU.Shell_RememberSelected.Restore(APanel) end end)
---  while not Area.Shell do mmode(1,mmode(1,0),Keys(mf.waitkey(100))) end -- Вопросы...
---  _ = SimSU.Shell_RememberSelected and SimSU.Shell_RememberSelected.Restore and SimSU.Shell_RememberSelected.Restore(APanel)
+  _ = SimSU.Shell_RememberSelected and SimSU.Shell_RememberSelected.RestoreLater and SimSU.Shell_RememberSelected.RestoreLater(APanel)
+  return true
 end
 
 -------------------------------------------------------------------------------
-if not Macro then return {Shell_HistoryPath=SimSU.Shell_HistoryPath} end
-
-local ok, mod = pcall(require,"SimSU.Shell_HistoryPath"); if ok then SimSU=mod else _G.SimSU=SimSU end
-local ok, mod = pcall(require,"SimSU.Shell_RememberSelected"); if ok then SimSU.Shell_RememberSelected=mod.Shell_RememberSelected end
+local Shell_HistoryPath={
+  Back    = Back   ;
+  Forward = Forward;
+}
+local function filename() return Back() end
+-------------------------------------------------------------------------------
+if _filename then return filename(...) end
+if not Macro then return {Shell_HistoryPath=Shell_HistoryPath} end
+SimSU.Shell_HistoryPath=Shell_HistoryPath; _G.SimSU=SimSU
 -------------------------------------------------------------------------------
 
-Macro {area="Shell"; key=S.KeyBack; priority=S.PriorBack; description=M.DescrBack;
-  action=SimSU.Shell_HistoryPath.Back;
+Macro {id="2453f255-aae4-4414-9190-1d37a74c6ff1";
+  area="Shell"; key=S.KeyBack;    priority=S.PriorBack;    sortpriority=S.SortBack;    description=M.DescrBack;
+  action=Backward;
 }
-Macro {area="Shell"; key=S.KeyForward; priority=S.PriorForward; description=M.DescrForward;
-  action=SimSU.Shell_HistoryPath.Forward;
+Macro {id="81c14ac1-83eb-4107-acbe-01f60f789d53";
+  area="Shell"; key=S.KeyForward; priority=S.PriorForward; sortpriority=S.SortForward; description=M.DescrForward;
+  action=Forward;
 }

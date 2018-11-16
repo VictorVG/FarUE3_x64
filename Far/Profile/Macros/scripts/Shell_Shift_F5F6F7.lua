@@ -1,27 +1,18 @@
-local far,F,msg = far,far.Flags,far.SendDlgMessage
-------------------------------------------------------------------------------
+﻿------------------------------------------------------------------------------
 -- Расширение возможностей копирования, переноса и создания папок. © SimSU
--- версия от 06.09.2015
---
--- Изменения и исправления:
---
--- исправлен баг с вызовом SimSU.Shell_Shift_F5F6F7.MkDir() на временной панели
--- за подсказку спасибо Shmuel. Баг существовал с версии скрипта от 21.07.2013.
--- закомментированы макросы для F5 и F6 ибо вечно чудят создавая ошибочную
--- рекурсию каталогов при операциях COPY/MOVE.
--- /авторы изменений и исправлений VictorVG и Shmuel/
 -------------------------------------------------------------------------------
+local win,far,F,msg = win,far,far.Flags,far.SendDlgMessage
 
 ---- Настройки
 local function Settings()
 -- Начало файла Profile\SimSU\Shell_Shift_F5F6F7.cfg
 return{
-  KeyCopy="F5"; --PriorCopy=50;
-  KeyMove="F6"; --PriorMove=50;
-  KeyMkDir="F7"; --PriorMkDir=50;
-  KeyDuplicate="ShiftF5"; --PriorDuplicate=50;
-  KeyRename="ShiftF6"; --PriorRename=50;
-  KeyNameDir="ShiftF7"; --PriorNameDir=50;
+  KeyCopy     ="F5";      --PriorCopy=50;       --SortCopy=50;
+  KeyMove     ="F6";      --PriorMove=50;       --SortMove=50;
+  KeyMkDir    ="F7";      --PriorMkDir=50;      --SortMkDir=50;
+  KeyDuplicate="ShiftF5"; --PriorDuplicate=50;  --SortDuplicate=50;
+  KeyRename   ="ShiftF6"; --PriorRename=50;     --SortRename=50;
+  KeyNameDir  ="ShiftF7"; --PriorNameDir=50;    --SortNameDir=50;
 
   NameFormat="%Y_%m_%d";
 
@@ -32,7 +23,7 @@ end
 
 ---- Локализация
 _G.far.lang=far.lang or win.GetEnv("farlang")
--- Встроенные языки / Buildin laguages
+-- Встроенные языки / Built-in laguages
 local function Messages()
 if far.lang=="Russian" then
 -- Начало файла Profile\SimSU\Shell_Shift_F5F6F7Russian.lng
@@ -63,14 +54,13 @@ end end
 local M=(loadfile(win.GetEnv("FARPROFILE").."\\SimSU\\Shell_Shift_F5F6F7"..far.lang..".lng") or Messages)()
 local S=(loadfile(win.GetEnv("FARLOCALPROFILE").."\\SimSU\\Shell_Shift_F5F6F7.cfg") or loadfile(win.GetEnv("FARPROFILE").."\\SimSU\\Shell_Shift_F5F6F7.cfg") or Settings)()
 
-local SimSU=SimSU or {}
-SimSU.Shell_Shift_F5F6F7={}
+local SimSU=_G.SimSU or {}
 -------------------------------------------------------------------------------
-S.NameFormat= S.NameFormat or "%Y_%m_%d"
-local Hdlg,Id
+S.NameFormat = S.NameFormat==nil and Settings().NameFormat or S.NameFormat
+
 local _
 
-function SimSU.Shell_Shift_F5F6F7.CopyMove(Key)
+local function CopyMove(Key)
   Key=Key or "F5"
   if APanel.SelCount<2 and APanel.Path~=PPanel.Path and PPanel.Visible and PPanel.Type==0 and not APanel.Bof then
     Keys(Key.." End")
@@ -84,26 +74,24 @@ function SimSU.Shell_Shift_F5F6F7.CopyMove(Key)
   return true
 end
 
-function SimSU.Shell_Shift_F5F6F7.MkDir()
+local function MkDir()
   Keys("F7")--; print(os.date(NameFormat)); Keys("Home ShiftEnd")
-    Hdlg=far.AdvControl(F.ACTL_GETWINDOWINFO).Id
-    Id=msg(Hdlg,F.DM_GETFOCUS)
+    local Hdlg=far.AdvControl(F.ACTL_GETWINDOWINFO).Id
+    local Id=msg(Hdlg,F.DM_GETFOCUS)
     msg(Hdlg,F.DM_SETTEXT,Id,os.date(S.NameFormat))
     local Value=msg(Hdlg,F.DM_GETTEXT,Id,os.date(S.NameFormat))
     msg(Hdlg,F.DM_EDITUNCHANGEDFLAG,Id,1)
   return Value
 end
 
-function SimSU.Shell_Shift_F5F6F7.DupRen(Key)
+local function DupRen(Key)
   Key=Key or "ShiftF5"
   Keys(Key)
-  if mf.fsplit(Dlg.GetValue(-1,0),0x8)~="" then
-    Keys("Home ShiftEnd CtrlShiftLeft ShiftLeft")
-  end
+  if mf.fsplit(Dlg.GetValue(-1,0),0x8)~="" then Keys("Home ShiftEnd CtrlShiftLeft ShiftLeft") end
   return true
 end
 
-function SimSU.Shell_Shift_F5F6F7.NameDir()
+local function NameDir()
   local path=PPanel.Path.."\\"..mf.fsplit(APanel.Current,0x4)
   win.CreateDir(path)
   Panel.SetPath(1,path)
@@ -125,29 +113,42 @@ end
 --end
 
 -------------------------------------------------------------------------------
-if not Macro then return {Shell_Shift_F5F6F7=SimSU.Shell_Shift_F5F6F7} end
-
-local ok, mod = pcall(require,"SimSU.Shell_Shift_F5F6F7"); if ok then SimSU=mod else _G.SimSU=SimSU end
+local Shell_Shift_F5F6F7={
+  CopyMove = CopyMove;
+  MkDir    = MkDir   ;
+  DupRen   = DupRen  ;
+  NameDir  = NameDir ;
+}
+local function filename() return MkDir() end
 -------------------------------------------------------------------------------
---[[
-Macro {area="Shell Tree Search"; key=S.KeyCopy; priority=S.PriorCopy; description=M.DescrCopy; flags="NoPluginPanels NoPluginPPanels";
-  action=function()  SimSU.Shell_Shift_F5F6F7.CopyMove("F5") end;
+if _filename then return filename(...) end
+if not Macro then return {Shell_Shift_F5F6F7=Shell_Shift_F5F6F7} end
+SimSU.Shell_Shift_F5F6F7=Shell_Shift_F5F6F7; _G.SimSU=SimSU
+-------------------------------------------------------------------------------
+
+Macro {id="1d93d055-e220-4b6b-aa73-2783b2c16947";
+  area="Shell Tree Search"; key=S.KeyCopy;      priority=S.PriorCopy;      sortpriority=S.SortCopy;      description=M.DescrCopy;      flags="NoPluginPanels NoPluginPPanels";
+  action=function()  CopyMove("F5") end;
 }
-Macro {area="Shell Tree Search"; key=S.KeyMove; priority=S.PriorMove; description=M.DescrMove; flags="NoPluginPanels NoPluginPPanels";
-  action=function()  SimSU.Shell_Shift_F5F6F7.CopyMove("F6") end;
+Macro {id="d1a184d8-3b4a-4f70-bbc5-9f0bc4cdd8c0";
+  area="Shell Tree Search"; key=S.KeyMove;      priority=S.PriorMove;      sortpriority=S.SortMove;      description=M.DescrMove;      flags="NoPluginPanels NoPluginPPanels";
+  action=function()  CopyMove("F6") end;
 }
---]]
-Macro {area="Shell Tree Search"; key=S.KeyMkDir; priority=S.PriorMkDir; description=M.DescrMkDir; flags="NoPluginPanels";
-  action=SimSU.Shell_Shift_F5F6F7.MkDir;
+Macro {id="0ee8ac37-1fd4-4986-b4b6-446c5aaf7be8";
+  area="Shell Tree Search"; key=S.KeyMkDir;     priority=S.PriorMkDir;     sortpriority=S.SortMkDir;     description=M.DescrMkDir;     flags="NoPluginPanels";
+  action=MkDir;
 }
-Macro {area="Shell Tree Search"; key=S.KeyDuplicate; priority=S.PriorDuplicate; description=M.DescrDuplicate; flags="NoPluginPanels";
-  action=function()  SimSU.Shell_Shift_F5F6F7.DupRen("ShiftF5") end;
+Macro {id="e54df8c5-7f87-41d1-a43e-927df827e48e";
+  area="Shell Tree Search"; key=S.KeyDuplicate; priority=S.PriorDuplicate; sortpriority=S.SortDuplicate; description=M.DescrDuplicate; flags="NoPluginPanels";
+  action=function()  DupRen("ShiftF5") end;
 }
-Macro {area="Shell Tree Search"; key=S.KeyRename; priority=S.PriorRename; description=M.DescrRename; flags="NoPluginPanels";
-  action=function()  SimSU.Shell_Shift_F5F6F7.DupRen("ShiftF6") end;
+Macro {id="1415735a-c181-4909-be96-d7b8d8195772";
+  area="Shell Tree Search"; key=S.KeyRename;    priority=S.PriorRename;    sortpriority=S.SortRename;    description=M.DescrRename;    flags="NoPluginPanels";
+  action=function()  DupRen("ShiftF6") end;
 }
-Macro {area="Shell Tree Search"; key=S.KeyNameDir; priority=S.PriorNameDir; description=M.DescrNameDir; flags="NoPluginPanels";
-  action=SimSU.Shell_Shift_F5F6F7.NameDir;
+Macro {id="faa66e8f-0d9f-44fd-bbc1-dae556e0d169";
+  area="Shell Tree Search"; key=S.KeyNameDir;   priority=S.PriorNameDir;   sortpriority=S.SortNameDir;   description=M.DescrNameDir;   flags="NoPluginPPanels";
+  action=NameDir;
 }
 
 --Event {group="DialogEvent"; priority=S.ProirDisableHistory; description=M.DescrDisableHistory;

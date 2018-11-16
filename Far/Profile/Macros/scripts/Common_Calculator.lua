@@ -1,4 +1,4 @@
--------------------------------------------------------------------------------
+﻿-------------------------------------------------------------------------------
 --        Набор макросов для математических вычислений. © SimSU
 -------------------------------------------------------------------------------
 -- Умеет:
@@ -11,51 +11,14 @@
 local function Settings()
 -- Начало файла Profile\SimSU\Common_Calculator.cfg
 return{
-  SelectResult=true; -- Выделять результат при вычислении выделенного текста?
   -- Клавиши выполнения:
-  CalcKey="AltNumLock"; --CalcPrior=50; -- Окно с запросом выражения.
-  ClipKey="CtrlNumLock"; --ClipPrior=50; -- Вычисляет математическое выражение находящееся в буфере обмена, результат помещает в буфер обмена.
-  SelKey ="ShiftNumLock"; --SelPrior=50; -- Вычисляет выделенное математическое выражение, результат вставляется обратно.
-}
--- Конец файла Profile\SimSU\Common_Calculator.cfg
-end
+  KeyCalc="AltNumLock";   --PriorCalc=50; --SortCalc=50; -- Окно с запросом выражения.
+  KeyClip="CtrlNumLock";  --PriorClip=50; --SortClip=50; -- Вычисляет математическое выражение находящееся в буфере обмена, результат помещает в буфер обмена.
+  KeySel ="ShiftNumLock"; --PriorSel =50; --SortSel =50; -- Вычисляет выделенное математическое выражение, результат вставляется обратно.
 
----- Локализация
-_G.far.lang=far.lang or win.GetEnv("farlang")
--- Встроенные языки / Buildin laguages
-local function Messages()
-if far.lang=="Russian" then
--- Начало файла Profile\SimSU\SimSU\Common_CalculatorRussian.lng
-return{
-CalcDescr="Калькулятор. © SimSU";
-Title="Калькулятор";
-Prompt="Введите математическое выражение и нажмите Enter";
-ClipDescr="Калькулятор буфера обмена. © SimSU";
-SelDescr="Калькулятор выделенного текста. © SimSU";
-}
--- Конец файла Profile\SimSU\Common_CalculatorRussian.lng
-else--if far.lang=="English" then
--- Begin of file Profile\SimSU\Common_CalculatorEnglish.lng
-return{
-CalcDescr="Calculator © SimSU";
-Title="Calculator";
-Prompt="Enter a mathematical expression and press Enter";
-ClipDescr="Clipbord Calculator. © SimSU";
-SelDescr="Select text Calculator. © SimSU";
-}
--- End of file Profile\SimSU\Common_CalculatorEnglish.lng
-end end
-
--------------------------------------------------------------------------------
-local M=(loadfile(win.GetEnv("FARPROFILE").."\\SimSU\\Common_Calculator"..far.lang..".lng") or Messages)()
-local S=(loadfile(win.GetEnv("FARLOCALPROFILE").."\\SimSU\\Common_Calculator.cfg") or loadfile(win.GetEnv("FARPROFILE").."\\SimSU\\Common_Calculator.cfg") or Settings)()
-
-local SimSU=SimSU or {}
-SimSU.Common_Calculator={}
--------------------------------------------------------------------------------
-function SimSU.Common_Calculator.Calc(Expression) -- Функция вычисления математического выражения. © SimSU
-  local func=-- Переименование математических функций
-    [[-- Calculator © SimSU
+  SelectResult=true; -- Выделять результат при вычислении выделенного текста?
+  -- Сокращения и Переименование математических функций
+  Aliases=[[
     local abs        = math.abs
     local acos       = math.acos
     local asin       = math.asin
@@ -86,25 +49,68 @@ function SimSU.Common_Calculator.Calc(Expression) -- Функция вычисл
     local sqrt       = math.sqrt
     local tan        = math.tan
     local tanh       = math.tanh
-    ]]
-  --
-  local function Calc(Expression) -- Обёртка для обработки ошибок интерпретатора.
-    return loadstring(func.."local Result="..Expression.." return Result")()
+    local id         = win.Uuid(win.Uuid())
+  ]]
+}
+-- Конец файла Profile\SimSU\Common_Calculator.cfg
+end
+
+---- Локализация
+_G.far.lang=far.lang or win.GetEnv("farlang")
+-- Встроенные языки / Built-in laguages
+local function Messages()
+if far.lang=="Russian" then
+-- Начало файла Profile\SimSU\SimSU\Common_CalculatorRussian.lng
+return{
+CalcDescr="Калькулятор. © SimSU";
+ClipDescr="Калькулятор буфера обмена. © SimSU";
+SelDescr ="Калькулятор выделенного текста. © SimSU";
+Title    ="Калькулятор";
+Prompt   ="Введите математическое выражение и нажмите Enter";
+}
+-- Конец файла Profile\SimSU\Common_CalculatorRussian.lng
+else--if far.lang=="English" then
+-- Begin of file Profile\SimSU\Common_CalculatorEnglish.lng
+return{
+CalcDescr="Calculator © SimSU";
+ClipDescr="Clipbord Calculator. © SimSU";
+SelDescr ="Select text Calculator. © SimSU";
+Title    ="Calculator";
+Prompt   ="Enter a mathematical expression and press Enter";
+}
+-- End of file Profile\SimSU\Common_CalculatorEnglish.lng
+end end
+
+-------------------------------------------------------------------------------
+local M=(loadfile(win.GetEnv("FARPROFILE").."\\SimSU\\Common_Calculator"..far.lang..".lng") or Messages)()
+local S=(loadfile(win.GetEnv("FARLOCALPROFILE").."\\SimSU\\Common_Calculator.cfg") or loadfile(win.GetEnv("FARPROFILE").."\\SimSU\\Common_Calculator.cfg") or Settings)()
+
+local SimSU=_G.SimSU or {}
+-------------------------------------------------------------------------------
+local F,msg = far.Flags,far.SendDlgMessage
+S.SelectResult = S.SelectResult==nil and Settings().SelectResult or S.SelectResult
+S.Aliases      = S.Aliases     ==nil and Settings().Aliases      or S.Aliases
+
+local _
+
+local function Calc(Expression) -- Функция вычисления математического выражения. © SimSU
+  local function CALC(Expr) -- Обёртка для обработки ошибок интерпретатора.
+    return loadstring(S.Aliases.."local Result="..Expr.." return Result")()
   end
   --
-  local state, err = pcall(Calc,Expression)
-  if not state then state, err = pcall(Calc,mf.trim(Expression):gsub("[%c%s]+","%+")) end -- Попробуем просто просуммировать.
+  local state, err = pcall(CALC,Expression)
+  if not state then _, err = pcall(CALC,mf.trim(Expression):gsub("[%c%s]+","%+")) end -- Попробуем просто просуммировать.
   return err
 end
 
-function SimSU.Common_Calculator.RestoreNumLock(Key) -- Если сочетание клавиш меняет состояние NumLock, то вернём обратно.
+local function RestoreNumLock(Key) -- Если сочетание клавиш меняет состояние NumLock, то вернём обратно.
   if Key=="AltNumLock" or Key=="ShiftNumLock" or Key=="CtrlShiftNumLock" or Key=="CtrlAltNumLock" or Key=="RCtrlShiftNumLock" or Key=="RCtrlAltNumLock" or Key=="CtrlRAltNumLock" or Key=="RCtrlRAltNumLock" then
     local o=mf.flock(0,-1); local n=o
     while n==o do n=mf.flock(0,2) end
   end
 end
 
-function SimSU.Common_Calculator.Prompt() -- Окно с запросом выражения.
+local function Prompt() -- Окно с запросом выражения.
   SimSU.Common_Calculator.RestoreNumLock(akey(1))
   local Expression=true
   local Result=0
@@ -114,48 +120,73 @@ function SimSU.Common_Calculator.Prompt() -- Окно с запросом выр
   end
 end
 
-function SimSU.Common_Calculator.ClipCalc() -- Вычисляет математическое выражение находящееся в буфере обмена, результат помещает в буфер обмена.
+local function ClipCalc() -- Вычисляет математическое выражение находящееся в буфере обмена, результат помещает в буфер обмена.
   SimSU.Common_Calculator.RestoreNumLock(akey(1))
   mf.clip(1,tostring(SimSU.Common_Calculator.Calc(mf.clip(0))))
 end
 
-function SimSU.Common_Calculator.SelCalc() -- Вычисляет выделенное математическое выражение, результат вставляется обратно.
+local function SelCalc() -- Вычисляет выделенное математическое выражение, результат вставляется обратно.
   SimSU.Common_Calculator.RestoreNumLock(akey(1))
   if Object.Selected then
-    local BlockType, Expression
     if Area.Editor then
-      Expression=Editor.SelValue
-      BlockType=Editor.Sel(0,4)
+      local Result=tostring(SimSU.Common_Calculator.Calc(Editor.SelValue))
+      local EdSel=editor.GetSelection()
+      if editor.DeleteBlock() then
+        local str=editor.GetString().StringText
+        local start=EdSel.BlockType==2 and (editor.RealToTab(nil,EdSel.StartLine,EdSel.StartPos)) or (EdSel.StartPos)
+        editor.SetString(nil, EdSel.StartLine, str:sub(1,start-1)..Result..str:sub(start))
+        if S.SelectResult then
+          EdSel.BlockStartLine= EdSel.StartLine
+          EdSel.BlockStartPos = start
+          EdSel.BlockWidth    = Result:len()
+          EdSel.BlockHeight   = 1
+          editor.Select(nil,EdSel)
+        end
+      end
     elseif Area.Dialog then
-      local Id=far.AdvControl("ACTL_GETWINDOWINFO").Id
-      local Index=far.SendDlgMessage(Id,"DM_GETFOCUS")
-      local Sel=far.SendDlgMessage(Id,"DM_GETSELECTION",Index)
-      Expression=far.SendDlgMessage(Id,"DM_GETTEXT",Index):sub(Sel.BlockStartPos, Sel.BlockStartPos+Sel.BlockWidth)
+      local Id=far.AdvControl(F.ACTL_GETWINDOWINFO).Id
+      local Index=msg(Id,F.DM_GETFOCUS)
+      local Sel=msg(Id,F.DM_GETSELECTION,Index)
+      local str=msg(Id,F.DM_GETTEXT,Index)
+      local Result=tostring(SimSU.Common_Calculator.Calc(str:sub(Sel.BlockStartPos, Sel.BlockStartPos+Sel.BlockWidth)))
+      msg(Id,F.DM_SETTEXT,Index,str:sub(1,Sel.BlockStartPos-1)..Result..str:sub(Sel.BlockStartPos+Sel.BlockWidth+1))
+      Sel.BlockWidth=Result:len()
+      msg(Id,F.DM_SETCURSORPOS,Index,{X=Sel.BlockStartPos-1})
+      msg(Id,F.DM_SETSELECTION,Index,Sel)
     elseif Area.Shell then
       local SelStart, SelEnd = panel.GetCmdLineSelection()
-      Expression=panel.GetCmdLine():sub(SelStart, SelEnd)
-    end
-    local Result=tostring(SimSU.Common_Calculator.Calc(Expression))
-    print(Result)
-    if S.SelectResult then -- !!TODO:: надо бы, всё таки разобраться как через апи выделять в строках ввода!
-      local l=Result:len()
-      for i=1,l do Keys("Left") end
-      for i=1,l do Keys("ShiftRight") end
+      local str=panel.GetCmdLine()
+      local Result=tostring(SimSU.Common_Calculator.Calc(str:sub(SelStart, SelEnd)))
+      panel.SetCmdLine(nil,str:sub(1,SelStart-1)..Result..str:sub(SelEnd+1))
+      panel.SetCmdLinePos(nil,SelStart)
+      panel.SetCmdLineSelection(nil,SelStart,SelStart+Result:len()-1)
     end
   end
 end
 -------------------------------------------------------------------------------
-if not Macro then return {Common_Calculator=SimSU.Common_Calculator; Calc=SimSU.Calc} end
-
-local ok, mod = pcall(require,"SimSU.Common_Calculator"); if ok then SimSU=mod else _G.SimSU=SimSU end
+local Common_Calculator={
+  Calc           = Calc          ;
+  RestoreNumLock = RestoreNumLock;
+  Prompt         = Prompt        ;
+  ClipCalc       = ClipCalc      ;
+  SelCalc        = SelCalc       ;
+}
+local function filename() Prompt() end
+-------------------------------------------------------------------------------
+if _filename then return filename(...) end
+if not Macro then return {Common_Calculator=Common_Calculator} end
+SimSU.Common_Calculator=Common_Calculator; _G.SimSU=SimSU
 -------------------------------------------------------------------------------
 
-Macro {area="Common"; key=S.CalcKey; priority=S.CalcPrior; description=M.CalcDescr;
-  action=SimSU.Common_Calculator.Prompt;
+Macro {id="c14ec47b-10b4-4e20-9a24-c1276d62513e";
+  area="Common"; key=S.KeyCalc; priority=S.PriorCalc; sortpriority=S.SortCalc; description=M.CalcDescr;
+  action=Prompt;
 }
-Macro {area="Common"; key=S.ClipKey; priority=S.ClipPrior; description=M.ClipDescr;
-  action=SimSU.Common_Calculator.ClipCalc;
+Macro {id="13ae2551-c8ed-49cb-8f23-587485a5f7af";
+  area="Common"; key=S.KeyClip; priority=S.PriorClip; sortpriority=S.SortClip; description=M.ClipDescr;
+  action=ClipCalc;
 }
-Macro {area="Common"; key=S.SelKey; priority=S.SelPrior; description=M.SelDescr;
-  action=SimSU.Common_Calculator.SelCalc;
+Macro {id="f0e8628e-c2b9-4f2a-b4f8-1f7ef76ab7d6";
+  area="Common"; key=S.KeySel;  priority=S.PriorSel;  sortpriority=S.SortSel;  description=M.SelDescr;
+  action=SelCalc;
 }

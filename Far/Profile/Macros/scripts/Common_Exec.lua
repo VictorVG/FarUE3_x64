@@ -1,4 +1,4 @@
--------------------------------------------------------------------------------
+﻿-------------------------------------------------------------------------------
 -- Выполнение команды через меню пользователя. © SimSU
 -------------------------------------------------------------------------------
 
@@ -6,7 +6,7 @@
 local function Settings()
 -- Начало файла Profile\SimSU\Common_Exec.cfg
 return{
-  Key="Enter NumEnter"; Prior=52;
+  Key="Enter NumEnter"; Prior=52; --Sort=50;
 
   CmdLinePrefix="Exec:"; -- Префикс командной строки который заставит выполняться коммандную строку через меню пользователя.
 }
@@ -15,7 +15,7 @@ end
 
 ---- Локализация
 _G.far.lang=far.lang or win.GetEnv("farlang")
--- Встроенные языки / Buildin laguages
+-- Встроенные языки / Built-in laguages
 local function Messages()
 if far.lang=="Russian" then
 -- Начало файла Profile\SimSU\Common_ExecRussian.lng
@@ -34,13 +34,17 @@ end end
 local M=(loadfile(win.GetEnv("FARPROFILE").."\\SimSU\\Common_Exec"..far.lang..".lng") or Messages)()
 local S=(loadfile(win.GetEnv("FARLOCALPROFILE").."\\SimSU\\Common_Exec.cfg") or loadfile(win.GetEnv("FARPROFILE").."\\SimSU\\Common_Exec.cfg") or Settings)()
 
-local SimSU=SimSU or {}
-SimSU.Common_Exec={}
+local SimSU=_G.SimSU or {}
 -------------------------------------------------------------------------------
-local CmdLinePrefix=S.CmdLinePrefix or "Exec:"
+local F=far.Flags
+S.CmdLinePrefix = S.CmdLinePrefix==nil and Settings().CmdLinePrefix or S.CmdLinePrefix
 
-function SimSU.Common_Exec.Prompt(VAL)
-  if not Area.Shell then Keys("F12"); Keys("0") end-- Выходим в панели.
+local _
+local ok, mod = pcall(require,"SimSU.Shell_RememberSelected"); if ok then SimSU.Shell_RememberSelected=mod.Shell_RememberSelected end
+      ok, mod = pcall(require,"SimSU.Shell_Aliases")         ; if ok then SimSU.Shell_Aliases         =mod.Shell_Aliases          end
+
+local function Prompt(CMD)
+  if not Area.Shell then Keys("F12"); Keys("1") end-- Выходим в панели.
   if Area.Shell then
     Keys("F2 ShiftF2")
     if Menu.Select("SimSU Exec",2)>0 then
@@ -48,58 +52,73 @@ function SimSU.Common_Exec.Prompt(VAL)
     else
       Keys("End Ins Enter Tab"); print("SimSU Exec"); Keys("Tab"); print("!?Command?!"); Keys("Tab Enter CtrlDown Enter") -- Создаём и запускаем пункт меню.
     end
-    if VAL then Keys("CtrlY") print(VAL) end
+    if Area.Dialog then Keys("CtrlY") print(CMD or "") end
   end
 end
 
-function SimSU.Common_Exec.Exec(CMD)
+local function ReturnLater(Inf)
+  far.Timer(100,
+    function(h)
+      h:Close()
+      local Ind
+      for i=1,far.AdvControl(F.ACTL_GETWINDOWCOUNT) do
+        local CInf=far.AdvControl(F.ACTL_GETWINDOWINFO,i)
+        if CInf.Type==Inf.Type and CInf.Name==Inf.Name then Ind=i; break end
+      end
+      if Ind then far.AdvControl(F.ACTL_SETCURRENTWINDOW,Ind); far.AdvControl(F.ACTL_COMMIT) end
+    end
+  )
+  return true
+end
+
+local function Exec(CMD)
   if not CMD then return false end
-  local CurentScr
-  if not Area.Shell then
-    Keys("F12"); CurentScr=Menu.GetValue(0); Keys("0") -- Выходим в панели.
+  local Inf=far.AdvControl(F.ACTL_GETWINDOWINFO)
+  local Ind=0
+  for i=1,far.AdvControl(F.ACTL_GETWINDOWCOUNT) do
+    if far.AdvControl(F.ACTL_GETWINDOWINFO,i).Type==1 then Ind=i; break end
   end
+  far.AdvControl(F.ACTL_SETCURRENTWINDOW,Ind); far.AdvControl(F.ACTL_COMMIT)
   if Area.Shell then
     _ = SimSU.Shell_RememberSelected and SimSU.Shell_RememberSelected.Save and SimSU.Shell_RememberSelected.Save(APanel)
-    SimSU.Common_Exec.Prompt()
-    Keys("CtrlY"); print(CMD); Keys("Enter") -- Запускаем команду.
-    while not Area.Shell do mmode(1,mmode(1,0),Keys(mf.waitkey(100))) end -- Вопросы...
-    _ = SimSU.Shell_RememberSelected and SimSU.Shell_RememberSelected.Restore and SimSU.Shell_RememberSelected.Restore(APanel)
-    if CurentScr then
-      Keys("F12"); Menu.Select(CurentScr,0); Keys("Enter")
-    end -- Возвращаемся.
+    SimSU.Common_Exec.Prompt(CMD); Keys("Enter")
+    _ = SimSU.Shell_RememberSelected and SimSU.Shell_RememberSelected.RestoreLater and SimSU.Shell_RememberSelected.RestoreLater(APanel)
+    SimSU.Common_Exec.ReturnLater(Inf)
     return true
   else
     return false
   end
 end
 
-function SimSU.Common_Exec.CmdLine()
-  _ = SimSU.Shell_Aliases and SimSU.Shell_Aliases.Work and SimSU.Shell_Aliases.Work()
-  if not CmdLine.Empty then
-    local cmd=mf.trim(CmdLine.Value)
-    if cmd:find(CmdLinePrefix,1,true)==1 then
-      cmd=cmd:sub(CmdLinePrefix:len()+1)
-      _ = SimSU.Shell_RememberSelected and SimSU.Shell_RememberSelected.Save and SimSU.Shell_RememberSelected.Save(APanel)
-      Keys("CtrlY")
-      SimSU.Common_Exec.Exec(cmd)
-      _ = SimSU.Shell_RememberSelected and SimSU.Shell_RememberSelected.Restore and SimSU.Shell_RememberSelected.Restore(APanel)
+local function CmdLine()
+  if not(SimSU.Shell_Aliases and SimSU.Shell_Aliases.Work and SimSU.Shell_Aliases.Work()) then
+    local cmd=mf.trim(_G.CmdLine.Value)
+    if cmd:find(S.CmdLinePrefix,1,true)==1 then
+      cmd=cmd:sub(S.CmdLinePrefix:len()+1)
+      Keys("CtrlY"); SimSU.Common_Exec.Exec(cmd)
     else
       _ = SimSU.Shell_RememberSelected and SimSU.Shell_RememberSelected.Save and SimSU.Shell_RememberSelected.Save(APanel)
       mmode(1,mmode(1,0),Keys("Enter"))
-      far.Timer(100, function(h) if Area.Shell then h:Close(); _ = SimSU.Shell_RememberSelected and SimSU.Shell_RememberSelected.Restore and SimSU.Shell_RememberSelected.Restore(APanel) end end)
---      while not Area.Shell do mmode(1,mmode(1,0),Keys(mf.waitkey(100))) end -- Вопросы...
---      _ = SimSU.Shell_RememberSelected and SimSU.Shell_RememberSelected.Restore and SimSU.Shell_RememberSelected.Restore(APanel)
+      _ = SimSU.Shell_RememberSelected and SimSU.Shell_RememberSelected.RestoreLater and SimSU.Shell_RememberSelected.RestoreLater(APanel)
     end
   end
 end
--------------------------------------------------------------------------------
-if not Macro then return {Common_Exec=SimSU.Common_Exec} end
 
-local ok, mod = pcall(require,"SimSU.Common_Exec"); if ok then SimSU=mod else _G.SimSU=SimSU end
-local ok, mod = pcall(require,"SimSU.Shell_RememberSelected"); if ok then SimSU.Shell_RememberSelected=mod.Shell_RememberSelected end
-local ok, mod = pcall(require,"SimSU.Shell_Aliases"); if ok then SimSU.Shell_Aliases=mod.Shell_Aliases end
+-------------------------------------------------------------------------------
+local Common_Exec={
+  Prompt      = Prompt     ;
+  ReturnLater = ReturnLater;
+  Exec        = Exec       ;
+  CmdLine     = CmdLine    ;
+}
+local function filename() SimSU.Common_Exec.Prompt() end
+-------------------------------------------------------------------------------
+if _filename then return filename(...) end
+if not Macro then return {Common_Exec=Common_Exec} end
+SimSU.Common_Exec=Common_Exec; _G.SimSU=SimSU
 -------------------------------------------------------------------------------
 
-Macro {area="Shell"; key=S.Key; priority=S.Prior; description=M.Descr; flags="NotEmptyCommandLine";
-  action=SimSU.Common_Exec.CmdLine;
+Macro {id="a116558f-987c-40e4-bfb7-0707bde5c238";
+  area="Shell"; key=S.Key; priority=S.Prior; sortpriority=S.Sort; description=M.Descr; flags="NotEmptyCommandLine";
+  action=CmdLine;
 }

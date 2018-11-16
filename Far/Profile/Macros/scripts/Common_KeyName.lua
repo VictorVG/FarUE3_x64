@@ -1,4 +1,4 @@
--------------------------------------------------------------------------------
+﻿-------------------------------------------------------------------------------
 --       Получение названия клавиши. © SimSU   Благодарность: Shmuel.
 -------------------------------------------------------------------------------
 
@@ -6,14 +6,16 @@
 local function Settings()
 -- Начало файла Profile\SimSU\Common_KeyName.cfg
 return{
-  Key="Ctrl/"; --Prior=50; -- Получение названия клавиши.
+  Key="Ctrl/"; --Prior=50; --Sort=50; -- Получение названия клавиши.
+
+  Format="%s: %d (0x%X)"; --Формат строки приглашения (до пяти повторений кодов клавишь)
 }
 -- Конец файла Profile\SimSU\Common_KeyName.cfg
 end
 
 ---- Локализация
 _G.far.lang=far.lang or win.GetEnv("farlang")
--- Встроенные языки / Buildin laguages
+-- Встроенные языки / Built-in laguages
 local function Messages()
 if far.lang=="Russian" then
 -- Начало файла Profile\SimSU\SimSU\Common_KeyNameRussian.lng
@@ -38,19 +40,26 @@ end end
 local M=(loadfile(win.GetEnv("FARPROFILE").."\\SimSU\\Common_KeyName"..far.lang..".lng") or Messages)()
 local S=(loadfile(win.GetEnv("FARLOCALPROFILE").."\\SimSU\\Common_KeyName.cfg") or loadfile(win.GetEnv("FARPROFILE").."\\SimSU\\Common_KeyName.cfg") or Settings)()
 
-local SimSU=SimSU or {}
+local SimSU=_G.SimSU or {}
 -------------------------------------------------------------------------------
-function SimSU.Common_KeyName() -- Получение названия клавиши.
+S.Format = S.Format==nil and Settings().CmdLinePrefix or S.Format
+
+local function Common_KeyName() -- Получение названия клавиши.
   far.Message(M.Press,"","")
   local VK=mf.waitkey(0,1)
-  VK=prompt(M.Name,("%s: %d (0x%X)"):format(M.Code,VK,VK),0x01+0x10,mf.key(VK))
+  VK=prompt(M.Name,S.Format:format(M.Code,VK,VK,VK,VK,VK),0x01+0x10,mf.key(VK))
   return VK
 end
+
 -------------------------------------------------------------------------------
-if not Macro then return {Common_KeyName=SimSU.Common_KeyName} end
-local ok, mod = pcall(require,"SimSU.Common_KeyName"); if ok then SimSU=mod else _G.SimSU=SimSU end
+local function filename() return print(Common_KeyName() or "")   end
+-------------------------------------------------------------------------------
+if _filename then return filename(...) end
+if not Macro then return {Common_KeyName=Common_KeyName} end
+SimSU.Common_KeyName=Common_KeyName; _G.SimSU=SimSU
 -------------------------------------------------------------------------------
 
-Macro {area="Common"; key=S.Key; priority=S.Prior; description=M.Descr;
-  action=function() local VK=SimSU.Common_KeyName(); if VK then print(VK) end end;
+Macro {id="7c2dcdba-f16b-4933-8b26-ae3e7e94b44a";
+  area="Common"; key=S.Key; priority=S.Prior; sortpriority=S.Sort; description=M.Descr;
+  action=function() local VK=Common_KeyName(); if VK then print(VK) end end;
 }

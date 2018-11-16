@@ -15,17 +15,17 @@
 local function Settings()
 -- Начало файла Profile\SimSU\Editor_Remarks.cfg
 return{
-  KeyOptions="CtrlAltR"; --Prior=50; -- Настройка комментирования для различных типов файлов.
-  KeyComment="AltR"; --Prior=50;  -- Комментирование текущей строки или выделенного блока.
-  KeyUnComment= "CtrlR"; --Prior=50;  -- Снятие комментирования текущей строки или выделенного блока.
-  KeyTab="Tab"; --Prior=50;  -- Табулирование строк выделенного блока.
-  KeyUnTab= "ShiftTab"; --Prior=50;  -- Отмена табулирования строк выделенного блока.
+  KeyComment  ="AltR";     --PriorComment  =50; --SortComment  =50; -- Комментирование текущей строки или выделенного блока.
+  KeyUnComment="CtrlR";    --PriorUnComment=50; --SortUnComment=50; -- Снятие комментирования текущей строки или выделенного блока.
+  KeyOptions  ="CtrlAltR"; --PriorOptions  =50; --SortOptions  =50; -- Настройка комментирования для различных типов файлов.
+  KeyTab      ="Tab";      --PriorTab      =50; --SortTab      =50; -- Табулирование строк выделенного блока.
+  KeyUnTab    ="ShiftTab"; --PriorUnTab    =50; --SortUnTab    =50; -- Отмена табулирования строк выделенного блока.
 }
 -- Конец файла Profile\SimSU\Editor_Remarks.cfg
 end
 
 _G.far.lang=far.lang or win.GetEnv("farlang")
--- Встроенные языки / Buildin laguages
+-- Встроенные языки / Built-in laguages
 local function Messages()
 if far.lang=="Russian" then
 -- Начало файла Profile\SimSU\Editor_RemarksRussian.lng
@@ -70,15 +70,14 @@ end end
 local M=(loadfile(win.GetEnv("FARPROFILE").."\\SimSU\\Editor_Remarks"..far.lang..".lng") or Messages)()
 local S=(loadfile(win.GetEnv("FARLOCALPROFILE").."\\SimSU\\Editor_Remarks.cfg") or loadfile(win.GetEnv("FARPROFILE").."\\SimSU\\Editor_Remarks.cfg") or Settings)()
 
-local SimSU=SimSU or {}
-SimSU.Editor_Remarks={}
+local SimSU=_G.SimSU or {}
 -------------------------------------------------------------------------------
+local F=far.Flags
 local Rem=mf.mload("SimSU","Remarks") or {}
 
-function SimSU.Editor_Remarks.Options()
+local function Options()
 -- Функция настройки символов комментирования.
   local FileName=editor.GetFileName(nil)
-  local Mask local Data={}
   local Items,Index={},{} local Idx
   for Mask,Data in pairs(Rem) do
     Items[#Items+1]=(Mask or ""):sub(1,20)..(" "):rep(20-((Mask or ""):len())).."  │  "..(Data.Desc or "")
@@ -91,6 +90,7 @@ function SimSU.Editor_Remarks.Options()
   Items=table.concat(Items,"\n")
   Idx=Menu.Show(Items,M.MenuTitle,0x8+0x80,Idx)
 
+  local Mask; local Data={}
   if Idx>0 then
     Mask=Index[Idx]
     Data=Mask and Rem[Mask] or {}
@@ -107,7 +107,8 @@ function SimSU.Editor_Remarks.Options()
       --[[10]]  {"DI_BUTTON",    0, 9, 0, 6, 0,nil,nil,"DIF_CENTERGROUP",M.No,nil,nil},
       --[[11]]  {"DI_BUTTON",    0, 9, 0, 6, 0,nil,nil,"DIF_CENTERGROUP",M.Delete,nil,nil},
     }
-    local result=far.Dialog("",-1,-1,44,12,nil,Items,nil,nil)
+    local guid = win.Uuid("c3487851-e1d8-450c-b696-51ac45a46b2b")
+    local result=far.Dialog(guid,-1,-1,44,12,nil,Items,nil,nil)
     if result==9 then
       Mask=Items[3][10]
       Data.Symb=Items[5][10]
@@ -125,7 +126,7 @@ function SimSU.Editor_Remarks.Options()
   return Data.Symb
 end
 
-function SimSU.Editor_Remarks.CommUnComm(Comm,Symb)
+local function CommUnComm(Comm,Symb)
   local FileName=editor.GetFileName()
   if not Symb then
     for Mask in pairs(Rem) do
@@ -135,45 +136,60 @@ function SimSU.Editor_Remarks.CommUnComm(Comm,Symb)
       end
     end
   end
-  if not Symb then Symb=SimSU.Editor_Remarks.Options() end
+  if not Symb then Symb=Options() end
   local len=Symb and Symb:len()+1 or 1
   if len>1 then
-    local Inf=editor.GetInfo() local Sel=editor.GetSelection(Inf.EditorID)
-    local Beg = Sel and Sel.StartLine or Inf.CurLine
-    local End = Sel and Sel.EndLine-(Sel.EndPos==0 and 1 or 0) or Inf.CurLine
-    if (Inf.CurLine>=Beg and Inf.CurLine<=End) or (Sel and Sel.EndPos==0 and Inf.CurLine==Sel.EndLine+0) then
-      editor.UndoRedo(Inf.EditorID,0)
+    local tEdt=editor.GetInfo()
+    local ID=tEdt.EditorID
+    local tSel=editor.GetSelection(ID)
+    local Beg = tSel and tSel.StartLine or tEdt.CurLine
+    local End = tSel and tSel.EndLine-(tSel and tSel.EndPos==0 and tSel.BlockType~=F.BTYPE_COLUMN and 1 or 0) or tEdt.CurLine
+    if (tEdt.CurLine>=Beg and tEdt.CurLine<=End) or (tSel and tSel.EndPos==0 and tEdt.CurLine==tSel.EndLine) then
+      editor.UndoRedo(ID,0)
       local Str,Eol
       for i=Beg,End do
-        Str,Eol=editor.GetString(Inf.EditorID,i,3)
+        Str,Eol=editor.GetString(ID,i,3)
         if Comm then
-          editor.SetString(Inf.EditorID,i,Symb..Str,Eol)
+          editor.SetString(ID,i,Symb..Str,Eol)
         elseif Str:find(Symb,1,true)==1 then
-          editor.SetString(Inf.EditorID,i,Str:sub(len),Eol)
+          editor.SetString(ID,i,Str:sub(len),Eol)
         end
       end
-      editor.UndoRedo(Inf.EditorID,1)
+      editor.UndoRedo(ID,1)
     end
   end
 end
--------------------------------------------------------------------------------
-if not Macro then return {Editor_Remarks=SimSU.Editor_Remarks} end
 
-local ok, mod = pcall(require,"SimSU.Editor_Remarks"); if ok then SimSU=mod else _G.SimSU=SimSU end
+-------------------------------------------------------------------------------
+local Editor_Remarks={
+  CommUnComm = CommUnComm;
+  Options    = Options   ;
+}
+local function filename() return CommUnComm() end
+-------------------------------------------------------------------------------
+if _filename then return filename(...) end
+if not Macro then return {Editor_Remarks=Editor_Remarks} end
+SimSU.Editor_Remarks=Editor_Remarks; _G.SimSU=SimSU
 -------------------------------------------------------------------------------
 
-Macro {area="Editor"; key=S.KeyOptions; priority=S.Prior; description=M.DescrOptions;
-  action=SimSU.Editor_Remarks.Options;
+Macro {id="25cce9ac-0dcf-44af-8a4b-bb286f05276e";
+  area="Editor"; key=S.KeyOptions;   priority=S.PriorOptions;   sortpriority=S.SortOptions;   description=M.DescrOptions;
+  action=Options;
 }
-Macro {area="Editor"; key=S.KeyComment; priority=S.Prior; description=M.DescrComment;
-  action=function() SimSU.Editor_Remarks.CommUnComm(true) end;
+Macro {id="05194455-816f-435b-9887-3ecd382fd699";
+  area="Editor"; key=S.KeyComment;   priority=S.PriorComment;   sortpriority=S.SortComment;   description=M.DescrComment;
+  action=function() CommUnComm(true) end;
 }
-Macro {area="Editor"; key=S.KeyUnComment; priority=S.Prior; description=M.DescrUnComment;
-  action=function() SimSU.Editor_Remarks.CommUnComm(false) end;
+Macro {id="e2f89002-2a3d-48f6-ab29-59905b9446b5";
+  area="Editor"; key=S.KeyUnComment; priority=S.PriorUnComment; sortpriority=S.SortUnComment; description=M.DescrUnComment;
+  action=function() CommUnComm(false) end;
 }
-Macro {area="Editor"; key=S.KeyTab; priority=S.Prior; description=M.DescrTab; flags="EVSelection";
-  action=function() SimSU.Editor_Remarks.CommUnComm(true,"\t") end;
+Macro {id="63c9f50f-c1d9-4027-914f-49976e1e2808";
+  area="Editor"; key=S.KeyTab;       priority=S.PriorTab;       sortpriority=S.SortTab;       description=M.DescrTab;
+  condition=function() return editor.GetInfo().BlockType==F.BTYPE_STREAM end;
+  action=function() CommUnComm(true,"\t") end;
 }
-Macro {area="Editor"; key=S.KeyUnTab; priority=S.Prior; description=M.DescrUnTab; flags="EVSelection";
-  action=function() SimSU.Editor_Remarks.CommUnComm(false,"\t") end;
+Macro {id="dc7e93d1-39ac-4cee-800e-06d94e3b9ec3";
+  area="Editor"; key=S.KeyUnTab;     priority=S.PriorUnTab;     sortpriority=S.SortUnTab;     description=M.DescrUnTab;     flags="EVSelection";
+  action=function() CommUnComm(false,"\t") end;
 }

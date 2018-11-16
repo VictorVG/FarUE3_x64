@@ -6,17 +6,17 @@
 local function Settings()
 -- Начало файла Profile\SimSU\Shell_CmdLine.cfg
 return{
-  KeyHome="Home"; --PriorHome=50;
-  KeyEnd="End"; --PriorEnd=50;
-  KeyShiftHome="ShiftHome"; --PriorShiftHome=50;
-  KeyShiftEnd="ShiftEnd"; --PriorShiftEnd=50;
+  KeyHome     ="Home"     ; --PriorHome     =50;  --SortHome     =50;
+  KeyEnd      ="End"      ; --PriorEnd      =50;  --SortEnd      =50;
+  KeyShiftHome="ShiftHome"; --PriorShiftHome=50;  --SortShiftHome=50;
+  KeyShiftEnd ="ShiftEnd" ; --PriorShiftEnd =50;  --SortShiftEnd =50;
 }
 -- Конец файла Profile\SimSU\Shell_CmdLine.cfg
 end
 
 ---- Локализация
 _G.far.lang=far.lang or win.GetEnv("farlang")
--- Встроенные языки / Buildin laguages
+-- Встроенные языки / Built-in laguages
 local function Messages()
 if far.lang=="Russian" then
 -- Начало файла Profile\SimSU\Shell_CmdLineRussian.lng
@@ -41,37 +41,37 @@ end end
 local M=(loadfile(win.GetEnv("FARPROFILE").."\\SimSU\\Shell_CmdLine"..far.lang..".lng") or Messages)()
 local S=(loadfile(win.GetEnv("FARLOCALPROFILE").."\\SimSU\\Shell_CmdLine.cfg") or loadfile(win.GetEnv("FARPROFILE").."\\SimSU\\Shell_CmdLine.cfg") or Settings)()
 
-local SimSU=SimSU or {}
-SimSU.Shell_CmdLine={}
+local SimSU=_G.SimSU or {}
 -------------------------------------------------------------------------------
-function SimSU.Shell_CmdLine.Home()
+
+local function Home()
   panel.SetCmdLineSelection(nil,-1,-1)
   panel.SetCmdLinePos(nil,1)
 end
 
-function SimSU.Shell_CmdLine.End()
+local function End()
   panel.SetCmdLineSelection(nil,-1,-1)
   panel.SetCmdLinePos(nil,panel.GetCmdLine():len()+1)
 end
 
-function SimSU.Shell_CmdLine.ShiftHome()
-  local Beg,End = panel.GetCmdLineSelection()
+local function ShiftHome()
+  local BEG,END = panel.GetCmdLineSelection()
   local Pos=panel.GetCmdLinePos()
-  Pos= Pos==Beg and End+1 or Pos==End+1 and Beg or Pos
+  Pos= Pos==BEG and END+1 or Pos==END+1 and BEG or Pos
   panel.SetCmdLineSelection(nil,1,Pos-1)
   panel.SetCmdLinePos(nil,1)
 end
 
-function SimSU.Shell_CmdLine.ShiftEnd()
-  local Beg,End = panel.GetCmdLineSelection()
+local function ShiftEnd()
+  local BEG,END = panel.GetCmdLineSelection()
   local Pos=panel.GetCmdLinePos()
   local Len=panel.GetCmdLine():len()
-  Pos= Pos==Beg and End+1 or Pos==End+1 and Beg or Pos
+  Pos= Pos==BEG and END+1 or Pos==END+1 and BEG or Pos
   panel.SetCmdLineSelection(nil,Pos,Len)
   panel.SetCmdLinePos(nil,Len+1)
 end
 
-function SimSU.Shell_CmdLine.Save()
+local function Save()
   local Cmd={}
   Cmd.Text=panel.GetCmdLine()
   Cmd.Pos=panel.GetCmdLinePos()
@@ -79,28 +79,39 @@ function SimSU.Shell_CmdLine.Save()
   return Cmd
 end
 
-function SimSU.Shell_CmdLine.Restore(Cmd)
-  if Cmd then
-    panel.SetCmdLine(Cmd.Text)
-    panel.SetCmdLinePos(Cmd.Pos)
-    panel.GetCmdLineSelection(Cmd.SelStart,Cmd.SelEnd)
-  end
+local function Restore(Cmd)
+  return Cmd and panel.SetCmdLine(nil,Cmd.Text) and panel.SetCmdLinePos(nil,Cmd.Pos) and panel.SetCmdLineSelection(nil,Cmd.SelStart,Cmd.SelEnd)
 end
--------------------------------------------------------------------------------
-if not Macro then return {Shell_CmdLine=SimSU.Shell_CmdLine} end
 
-local ok, mod = pcall(require,"SimSU.Shell_CmdLine"); if ok then SimSU=mod else _G.SimSU=SimSU end
+-------------------------------------------------------------------------------
+local Shell_CmdLine={
+Home      = Home     ;
+End       = End      ;
+ShiftHome = ShiftHome;
+ShiftEnd  = ShiftEnd ;
+Save      = Save     ;
+Restore   = Restore  ;
+}
+local function filename() return Restore() end
+-------------------------------------------------------------------------------
+if _filename then return filename(...) end
+if not Macro then return {Shell_CmdLine=Shell_CmdLine} end
+SimSU.Shell_CmdLine=Shell_CmdLine; _G.SimSU=SimSU
 -------------------------------------------------------------------------------
 
-Macro {area="Shell Info QView Tree"; key=S.KeyHome; priority=S.PriorHome; description=M.DescrHome; flags="NotEmptyCommandLine";
-  action=SimSU.Shell_CmdLine.Home;
+Macro {id="a36290a5-3f43-4e4f-831e-b8ed917dc295";
+  area="Shell Info QView Tree"; key=S.KeyHome;      priority=S.PriorHome;      sortpriority=S.SortHome;      description=M.DescrHome;      flags="NotEmptyCommandLine";
+  action=Home;
 }
-Macro {area="Shell Info QView Tree"; key=S.KeyEnd; priority=S.PriorEnd; description=M.DescrEnd; flags="NotEmptyCommandLine";
-  action=SimSU.Shell_CmdLine.End;
+Macro {id="50ef7206-187e-47ec-93bb-c34ef8fe617c";
+  area="Shell Info QView Tree"; key=S.KeyEnd;       priority=S.PriorEnd;       sortpriority=S.SortEnd;       description=M.DescrEnd;       flags="NotEmptyCommandLine";
+  action=End;
 }
-Macro {area="Shell Info QView Tree"; key=S.KeyShiftHome; priority=S.PriorShiftHome; description=M.DescrShiftHome; flags="NotEmptyCommandLine";
-  action=SimSU.Shell_CmdLine.ShiftHome;
+Macro {id="0a75f866-4c10-463d-8ff4-4d158a55b4cc";
+  area="Shell Info QView Tree"; key=S.KeyShiftHome; priority=S.PriorShiftHome; sortpriority=S.SortShiftHome; description=M.DescrShiftHome; flags="NotEmptyCommandLine";
+  action=ShiftHome;
 }
-Macro {area="Shell Info QView Tree"; key=S.KeyShiftEnd; priority=S.PriorShiftEnd; description=M.DescrShiftEnd; flags="NotEmptyCommandLine";
-  action=SimSU.Shell_CmdLine.ShiftEnd;
+Macro {id="04cce125-359f-4ebc-87f5-c6ca204124d7";
+  area="Shell Info QView Tree"; key=S.KeyShiftEnd;  priority=S.PriorShiftEnd;  sortpriority=S.SortShiftEnd;  description=M.DescrShiftEnd;  flags="NotEmptyCommandLine";
+  action=ShiftEnd;
 }
