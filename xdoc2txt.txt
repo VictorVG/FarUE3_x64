@@ -1,72 +1,498 @@
-xdoc2txt v2.16
+xdoc2txt2 - Extract text from various binary documents such as PDF, WORD, EXCEL, Ichitaro
 
-URL: http://ebstudio.info/home/xdoc2txt.html
+Overview
 
-[CMD/COM/DLL] xdoc2txt - Extract text from pdf/doc/xls ...
+- Xdoc2txt extracts text elements from various binary documents such as PDF, WORD, EXCEL, Ichitaro
+  It is a general-purpose text converter to be operated on the Windows command line.
+- Because xdoc2txt directly analyzes the structure of various documents, it can convert independently. WORD and
+  You do not need to install the original application such as Acrobat.
+- It operates at high speed, so it is suitable for filter of various full text search engines.
+- The type of document is determined from the extension. It corresponds to the file with the following extension.
 
-xdoc2txt can convert many document formats to txt, without needed to install Acrobat and WORD.
+.sxw OpenOffice.org Writer
+.sxc OpenOffice.org Calc
+.sxi OpenOffice.org Impress
+.sxd OpenOffice.org Draw
+.odt Open Document (text documemts)
+.ods Open Document (spreadsheet documemts)
+.odp Open Document (presentation documemts)
+.odg Open Document (drawing documemts)
+.docx / .docm WORD 2007/2010/2013
+. xlsx /. xlsm Excel 2007/2010/2013
+.pptx / .pptm PowerPoint 2007/2010/2013
+.doc WORD ver 5.0 / 95/97/2000 / Xp / 2003
+. xls Excel ver 5.0 / 95/97/2000 / Xp / 2003
+.ppt PowerPoint 97/2000 / Xp / 2003
+.rtf Rich Text
+.jaw / jtw Ichitaro ver5
+.jbw / juw Ichitaro ver6
+.jfw / jvw Ichitaro ver.7
+.jtd / jtt Ichitaro ver8 / 9/10/11/12
+.oas / oa2 / oa3 OASYS / Win
+.bun Shinmatsu / pine 5 / pine 6
+. wj 2 / wj 3 / wk 3 / wk 4/123 Lotus 123
+.wri Windows 3.1 Write
+.pdf Adobe PDF
+.mht
+.html HTML
+.eml Mail export format of Outlook Express
 
-Supported formats:
+- From Ver2.0, iFilter is compatible. Text extension can be performed even if the extension that xdoc2txt does not correspond natively, if there is a corresponding iFilter. (It is only function of exe version)
+- There are exe version, Dll version, COM DLL version. Text extraction functions are equivalent.
 
- .sxw                   OpenOffice.org Writer
- .sxc                   OpenOffice.org Calc
- .sxi                   OpenOffice.org Impress
- .sxd                   OpenOffice.org Draw
- .odt                   Open Document (text documemts)
- .ods                   Open Document (spreadsheet documemts)
- .odp                   Open Document (presentation documemts)
- .odg                   Open Document (drawing documemts)
- .docx/.docm            WORD 2007/2010/2013
- .xlsx/.xlsm            Excel 2007/2010/2013
- .pptx/.pptm            PowerPoint 2007/2010/2013
- .doc	                WORD ver5.0/95/97/2000/Xp/2003
- .xls	                Excel ver5.0/95/97/2000/Xp/2003
- .ppt	                PowerPoint 97/2000/Xp/2003
- .rtf                   Microsoft RTF
- .jaw/jtw               Ichitaro ver5
- .jbw/juw               Ichitaro ver6
- .jfw/jvw               Ichitaro ver7
- .jtd/jtt               Ichitaro ver8/9/10/11/12
- .oas/oa2/oa3	        OASYS/Win
- .bun	                5/6 new pine pine / pine
- .wj2/wj3/wk3/wk4/123	Lotus 123
- .wri	                Windows 3.1 Writer
- .pdf	                Adobe PDF
- .mht                   Web archive
- .html	                HTML
- .eml	                Export formats OutlookExpress.
+Operating environment
 
-Three versions provided:
+ ver1.x (MBCS version)
 
-    xdoc2txt.exe - Command line tool
-    xd2txcom.dll - COM component version
-    xd2txlib.dll - Dll version
+   Windows 95/98 / NT / 2000 / XP / Vista / 7 (32/64) / 8 (32/64) / Server 2003 / Server 2008 R2 / Server 2012 (64 bit) / Server 2012 R2 (64 bit)
 
-Supported OS:
+ ver2.x (Unicode version)
 
-Windows 2000/XP/Vista/7(32/64 bit)/8.x (32/64 bit)/10 (32/64 bit) /Server 2003/Server 2008 R2/Server 2012 (64 bit)/Server 2012 R2 (64 bit)
+   Windows 2000 / XP / Vista / 7 (32/64) / 8 (32/64) / 10 (32/64) / Server 2003 / Server 2008 R2 / Server 2012 (64 bit) / Server 2012 R2 (64 bit)
 
-Usage:
+Required file
 
-xdoc2txt [-s|-e|-j|-u|-8][-f][-p] <filename...>
+To execute Ver 2.0, the following packages need to be installed.
 
- -s : convert to ShiftJIS (default)
- -e : convert to EUC
- -j : convert to JIS
- -u : convert to UTF16 LE
- -8 : convert to UTF8
- -f : output to file
- -p : print property
- -r=(0|1|2) : ruby style (0: suppress, 1: parentheses, 2: aozora bunko)
- -o=0 : other option; -o=0: no show PDF page#
- -g=# : PDF gap parameter
- -v : show version number
- -x : output existing cell only (for EXCEL2007)
- -z=# : max input file size (default 256 Mb)
- -i : use IFilter, if possible
+"Microsoft Visual C ++ 2010 redistributable package (x86)"
 
-Examples:
+"The specified program can not be executed." If an error message such as "Application could not be started due to incorrect side-by-side configuration of this application" is displayed,
+Please install the above package from Microsoft's distribution site.
 
-Command line example:
+Copyright and Terms of Use
 
-xdoc2txt.exe -8 test.doc | iconv -f utf-8 -c
+- If xdoc2txt is not for profit, it can be used free. Use of individuals and non-profit organizations, corporations and corporations
+Usage on the internal intranet, when building the Internet publishing server on its own
+(Including the management of commercial sites) is not a commercial use, so you can use it freely.
+- If you sell products that incorporate xdoc2txt and gain profits, it is a commercial license,
+Please consult the author.
+- When distributing xdoc2txt included in Hyper Estraier with Hyper Estraier,
+It is excluded from commercial license.
+- When redistributing xdoc2txt, distribute all files included in the package without changing them
+. When incorporating xdoc 2 txt into software created by the user, the fact that xdoc 2 txt is used
+Please indicate in the place where user can understand such as manual. Also, be sure to distribute the author to the author
+Please take it.
+- The copyright of all files included in the xdoc2txt package belongs to hishida.
+- Xdoc2txt is offered without any warranty as it is. From the inability to use or disable xdoc 2 txt
+Any damages (including lost profits, business interruption, loss of business information and other financial damage)
+As for the author, we are not responsible at all.
+- We permit publishing / recording of this software in magazines, and reprint on the internet.
+If it is posted, please contact me about the magazine to the author so it is fine in the after-report.
+
+Distribution file
+
+xdoc2txt.exe program body
+xdoc2txt.txt document
+
+(When distributing, please include the above two files)
+
+Command Options
+
+xdoc2txt.exe [options ..] <filename ...>
+
+-h Display help
+-s Output encoding is ShiftJIS (default)
+   The encoding of -j output is JIS
+-e Output encoding is EUC
+-u Output encoding is UTF-16 (LE) * Ver 2.0 or later
+-8 Output encoding is UTF-8 * Ver 2.0 or later
+-i Prioritize iFilter if available. Ver 2.0 or later
+-f Output the conversion result to a file. Output to standard output by default
+-p Display document properties (valid for MS Office, OpenOffice.org, Ichitaro)
+-r = Ruby conversion of HTML document
+-r = 0 ruby ​​deleted
+-r = 1 ()
+-r = 2 "" Aozora Bunko Format
+-o = other options
+-o = 0 Do not display page numbers in the format -? - in PDF
+-o = 1 Delete newlines in PDF (used when line feeds are renewed line by line)
+-g = # Inter-character adjustment option of PDF (default value is 92)
+# Is a percentage of 0 or more (in the case of 60%, it is specified as -g = 60)
+     When the space between characters is opened higher than (* / 100) character height, it is regarded as being empty and the space is output
+-g = 0 Do not adjust between characters
+-g = 60 If you open more than 60% of the character height, it is assumed that the space between characters is empty
+-v Display version number
+-x Display only cells that exist in EXCEL 2007 (xdoc2txt 1.33 or later)
+-z = # Maximum input file size (byte) Initial value is 256 MB
+-z = 512000000 Set the input file size limit to 512 MB
+-z = 0 Unlimited. Do not check file size.
+
+<filename> The file name of the conversion source. Wildcard characters (*?) Are allowed.
+* When enclosing a file name including a space, enclose it with "".
+
+※ The following option has been abolished from Ver. 2.0.
+-n Ignore setting of access permission for PDF document (cryptlib.dll is required)
+-c PDF cache on (default is off)
+
+How to use xdoc2txt
+
+- Typical usage is as follows.
+
+Example
+
+xdoc2txt sample.doc
+In this example, the text contained in the sample.doc of the MS-Word document is written to standard output.
+
+- You can also save to a file by redirecting the output destination as follows.
+
+Example:
+
+xdoc2txt sample.doc> sample.txt
+
+- With the -f option, you can change the output destination to a file. The extension automatically becomes. Txt.
+
+Example:
+
+xdoc2txt - f sample.doc sample.xls
+Since you can use wild card *?, You can convert multiple files into text at once.
+And you can.
+
+Example:
+
+xdoc2txt - f *. xls
+
+- For MS Office documents (including 2007), OpenOffice.org documents, Ichitaro Documents (Ver.8 or later), document properties can be displayed with the -p option.
+Properties are displayed only for set items.
+
+Example:
+
+xdoc2txt -p manual .doc
+
+Execution result:
+
+<Title> KWIC Finder Manual </ Title>
+<Author> hishida </ Author>
+<Template> Normal.dot </ Template>
+<LastAuthor> hishida </ LastAuthor>
+<RevisionNumber> 1 </ RevisionNumber>
+<AppName> Microsoft Word 9.0 </ AppName>
+<Lastprinted> 2004/03/23 19: 39: 00 </ Lastprinted>
+<Created> 2004/03/23 19: 35: 00 </ Created>
+<LastSaved> 2004/03/23 19: 44: 00 </ LastSaved>
+<PageCount> 1 </ PageCount>
+<WordCount> 21 </ WordCount>
+<CharCount> 121 </ CharCount>
+
+About iFilter
+
+In Ver2.0 and later, iFilter is supported.
+If the -i option is specified, if iFilter for the extension is available, iFilter takes precedence.
+It is verified with the following iFilter.
+
+- Ichitaro IFilter
+- DocuWorks Content Filter
+- Microsoft Office Filter Pack
+- Adobe Reader 9.5 included iFilter
+* Adobe Reader 10 and later included iFilter, and "Adobe PDF IFilter v6.0" distributed separately
+  "Adobe PDF iFilter 9 for 64-bit platforms" can not be used.
+
+* If you comply with iFilter's terms, you can also use other third-party iFilters.
+
+Restriction on each file format
+
+Microsoft WORD 2007/2010
+
+- It corresponds to the extension .docx .docm.
+
+Microsoft WORD
+
+- It corresponds to 5.0 / 95/97/2000/2003.
+- Since text is displayed in the order of storage of Word documents, the text box is placed after the body text
+  It shows. Therefore, in a document using a text box, display conclusion in Word
+  The display will be different, but the search will be done normally.
+- Ruby is displayed in the form of (phonetic). Enclosed characters are displayed in the form (character).
+- Password protected Word documents can not be searched / displayed.
+- It is not compatible with high-speed save mode.
+
+- It corresponds to the extension .xlsx. Xlsm.
+- .Xlsb (EXCEL 2007 binary book) is not supported.
+
+Microsoft EXCEL 5.0 / 95/97/2000/2003
+
+- Text, numerical values, calculation result, text in the text box are searched and displayed.
+  Calculations and macros are not subject to search.
+- Since text boxes are displayed in the order of storage in the file, they are not necessarily apparent on the EXCEL
+  It will not be in the same order.
+- Excel documents protected by password can not be searched / displayed.
+
+Microsoft PowerPoint 2007/2010
+
+- It corresponds to extension .pptx .pptm.
+- Text elements are displayed.
+
+Microsoft PowerPoint 95/97/2000/2003
+
+- Text elements are displayed.
+- In high-speed save mode, it may not be displayed correctly.
+
+RTF (Rich Text Format)
+
+- Only the text part is displayed - It is subject to search. Layouts such as tables are not reproduced.
+
+Ichitaro
+
+- It corresponds to ver5 (.jaw) / 6 (.jbw) / 7 (.jfw) / 8 or later (.jtd).
+- Text - annotation - layout frame - footnote will be searched - displayed.
+- In ver 5/6, ruled lines are also displayed.
+- Fields such as annotations are indicated by [].
+- Ichitaro document protected by password can not be searched / displayed.
+- It is not compatible with high-speed save mode. (From Ichitaro 2008, fast saving mode is abolished)
+- Compression format after Ichitaro 2007 is not supported.
+
+Fujitsu OASYS Win
+
+- It corresponds to OASYS document (.OAS), OASYS 2 document (.OA2 / .OA3).
+- Convert OASYS special characters to JIS Kanji as close as possible. However, double lines are bold lines,
+  Dotted lines are converted to thin lines.
+- You can not search OASYS floppies for word processor special purpose machines. Once OASYS / Win or commercially available
+Please convert it to OASYS format (.OAS .OA2 .OA3. DOC) on Windows with a professional converter.
+
+Shin Shin
+
+- Supports .bun format of Shinmatsu / Pine 5 / Pine 6. Pine 85 is not supported.
+- Only the text part is searched - displayed. Ruled lines etc. are ignored.
+
+Lotus 123
+
+- It corresponds to .WJ 2. WJ 3 .WK 3. WK 4. 123.
+- .WJ2. WJ3 displays text, numerical values ​​and calculation results.
+- Only .WK3 .WK4. 123 is displayed with text.
+
+Adobe PDF
+
+- It conforms to PDF 1.3 described in the following book.
+  "PDF Reference 2nd Edition - Adobe Portable Document Format Version 1.3" Adobe Systems (Author)
+- 256 bit AES encrypted PDF added in PDF 1.7 or later can not be displayed.
+- Only text in the text will be searched and displayed. It does not correspond to annotations etc.
+- In Ver1.x, to display PDF encrypted with no password, add cryptlib.dll separately
+  Download from http://ebstudio.info/home/KWIC.html and unpack it,
+  It must be placed in the installation directory of xdoc2txt.
+  As of Ver2.0 and later, PDF encrypted with no password is supported as standard.
+- PDF of custom encoding with font embedding is encoded in PDF document
+  Can not search / display subjects without map information (/ ToUnicode) (eg: Ghostscript
+  Type 3 font). However, such a file is a text tool of Acrobat Reader
+  Even text can not be extracted.
+- The display order of the text elements in the page is done in order of storing data in the page (= PDF document
+  Drawing order of created application). For this reason it differs from the display order in Acrobat Reader.
+  And there is.
+- Vertical writing correspondence is incomplete at the present time, and it is displayed with line feed character by character.
+- The types of supported encoding (CMAP) are as follows.
+
+/ Identity - H (V) / UniJIS - UCS 2 - H (V)
+/ 90 ms - RKSJ - H (V) / 78 ms - RKSJ - H (V)
+/ 90 pv - RKSJ - H (V) / 83 pv - RKSJ - H (V)
+/ MacRomanEncoding / WinAnsiEncoding
+/ H / V
+
+- The content stream decode filter (/ Filter) is / Ascii85Decode,
+/ FlateDecode, / LZWDecode (xdoc2txt Ver 2.0 or later) is supported.
+- We checked the operation of the PDF generated by the following application.
+
+Acrobat PDFWriter 3.0 / 4.0 / 5.0
+Acrobat PDFMaker 5.0
+Acrobat Distiller 3.0 / 4.0 / 5.0 / 6.0
+Acrobat Web Capture 5.0
+Adobe PageMaker 6.0J / 6.5
+Adobe Illustrator 5.5J / 8.0
+Adobe InDesign 2.0
+FrameMaker 6.0
+pdfTeX
+Ghostscript (English only, Japanese is not good)
+Read and Coco Ver9 (Transparent Text)
+Reading Revolution (transparent text)
+eTypist (transparent text)
+SkyPDF Driver 1.02
+Suddenly PDF
+OpenOffice.Org.1.1
+ActiveReports 2.0
+easyPDF 3.1
+Jaws PDF Creator
+eXPert PDF
+JustSystem PDF Creater
+PFU ScanSnap Manager 4.1
+Microsoft Office 2013
+
+About using with mouse operation
+
+- You can create shortcuts on the desktop and convert them to text by mouse operation.
+
+(1) Right mouse button on xdoc2txt.exe in Explorer → [Send (N)] → [Desktop (Create shortcut)]
+(2) Right button menu above the icon created on the desktop → [Property (R)]
+(3) -f is added to the end of [link destination (T)].
+
+Example
+
+"C: \ Program Files \ kwic \ xdoc2txt.exe" -f
+
+(4) If you drag and drop the file you want to convert to the icon, you can create a file with extension .txt in the same directory.
+
+Reference article: http://www.forest.impress.co.jp/article/2003/11/19/xdoc2txt.html
+
+History
+
+2.17 2018/10/15 - Fixed an issue where extra descriptors are displayed in RTF after RTF 1.9 (Word 2007)
+                - Ruby removal of docx
+                - Fixed an issue that ended abnormally with some PDF
+2.16.1 2016/06/27 - Removed dependency of VC90.CRT from manifest
+2.16 2016/04/26 - Fixed problem that part of format control information is displayed when using control with xlsx
+2.15 2016/04/07 - Fixed problem that control characters not appearing in body text are displayed in docx
+2.14 2015/11/19 - Fixed an issue that ended abnormally with some PDF
+2.13 2015/08/24 - Scan Snap's transparent text may missing characters Problem fixes
+                  Fixed an issue in which PDF encrypted with some 128bit-AES can not be read
+2.12 2015/07/18 - Adjustment of English language character parameters
+                - Compiler changed from Visual C ++ 2008 to C ++ 2010
+2.11 2015/05/29 - Performance improvement of text extraction from EXCEL 2007 format (. Xlsx)
+2.10 2015/04/15 - Fixed bug not released after extractText () in com version PDF
+                - Added ExtractTextEx () function to the com and Dll versions. Command line option available.
+                  (Only valid for -r - o - g - x)
+2.09 2015/04/09 - Ligatures (ligatures) can not be displayed in PDF Case fix
+- Fixed an issue that ended abnormally with some .mht
+- Added sample file FileFind using Dll
+2.08 2015/03/10 - When the extension is .pdf and the content is not PDF Skip
+- Improved memory leak when extracting PDF
+- Sample program cdecl calling Dll is specified
+2.07 2014/10/27 - Fixed an issue that ended abnormally with specific xlsx
+(A document with an extremely long format string, which is usually not possible)
+2.06 2014/10/09 - Fixed bug when changing character color of part of character string in cell with xlsx can not extract character
+2.05 2014/08/31 - Avoid abnormal termination in broken PDF as much as possible
+2.04 2014/07/29 - Fixed a problem that some Japanese mail garbled at .eml
+- In the command version, the input file size upper limit is 256 MB (it can be set with -z =)
+2.03 2014/07/16 - Part of .xlsx terminated abnormally
+2.02 2014/05/04 - Fixed bug in part of PDF abnormally
+2.01 2014/02/17 - Corresponds to Hankaku Kana of EUC code
+2.00 2013/01/23 - Official version
+2.00β4 2012/12/28 - bug fix
+2.00β3 2012/12/24 - Fixed an issue where line feed of standard output was set to \ r \ r \ n
+- Correcting a problem that ends abnormally when using the -f option in a writable directory
+- Fixed an issue that some ruby ​​in Word document was not displayed
+- Fixed a problem that some characters of PDF outputted in Word 2007 could not be extracted
+
+2.00 β 2 2012/12/19 - Correct bug that end abnormally with some .odt
+- Corrected bug that terminates abnormally with length 0 doc
+2.00β1 2012/12/01 - Version resource added to xdoc2txt.exe (to distinguish it from 1.x series)
+2.00 � 0 2012/11/26 - Fixed problem of freezing with some PDF
+2.00 � 3 2012/11/17 - fixed problem that entity reference was not interpreted in Office 2007/2010 document
+2.00 � 2 2012/11/15 - Add VC ++ sample, make the argument order of DLL version same as COM version.
+2.00�.1 2012/11/14 - Added COM Dll version
+
+2.00 � 0 2012/11/13 - Perform internal Unicode. Changed the compiler from VC ++ 6.0 to VC ++ 2008.
+- Added -u (UTF 16) and - 8 (UTF 8) as output options
+- Supports iFilter (-i option).
+Even if the extension xdoc2txt does not support natively,
+Text extraction can be performed if there is a corresponding iFilter.
+- Supports PDF encoded with / LZWDecode (Unisys patent expired).
+- Integrate cryptlib.dll and standardize to PDF encrypted with no password.
+- DLL version is offered. Attach sample to be called from C # and VB.Net
+
+* Ver2.0 has undergone significant revision internally.
+Please test again when migrating xdoc2txt included in the application from 1.x to 2.x.
+
+- -
+1.52 2015/11/19 - Fixed an issue that ended abnormally with some PDF
+1.51 2015/08/24 - Scan Snap's transparent text may missing characters Problem fixes
+Fixed an issue in which PDF encrypted with some 128bit-AES could not be read (cryptlib.dll required)
+1.50 2014/10/27 - Fixed an issue that ended abnormally with specific xlsx
+(A document with an extremely long format string, which is usually not possible)
+1.49 2014/10/09 - When changing the character color of only a part of the character string in the cell with xlsx, characters can not be extracted bug fixed
+- Do not attach OCX version (please use dll version after ver 2.00)
+1.48 2014/05/04 - Fixed an issue that ended abnormally with some PDF
+1.47 2013/11/30 - Correct bug when Word document contains long link
+1.46 2012/12/24 - Fixed an issue that some ruby ​​in Word document was not displayed
+- Fixed a problem that some characters of PDF outputted in Word 2007 could not be extracted
+1.45 2012/11/26 - Fixed problem of freezing with some PDF
+1.44 2012/11/17 - Corresponds to garbled characters of some characters in docx
+1.43 October 17, 2012 - Fixed an issue that sometimes abnormally ends with xlsx which does not conform to "Office Open XML File Formats"
+1.42 2012/05/17 - Fixed an issue that may end abnormally with some PDF
+1.41 2011/07/31 - The final character is missing in EXCEL text box bug fix (bug mixed in 1.37)
+1.40 2011/05/16 - Fixed a problem that text display might be missing in some PDF.
+1.39 2011/04/28 - Fixed an issue that extra characters were displayed in some PDF (documents using language specification by / Lang)
+1.38 2010/12/21 - Fixed a problem that ended abnormally with some PDF (some conditions when / XRef is used in PDF 1.5)
+1.37 2010/05/16 - coping with garbled characters of PDF outputted by some PDF writer (Brava! Desktop)
+- Fixed case where garbage enters in EXCEL text box
+1.36 2010/01/09 - Fixed problem that garbled PDF of EUC encoding
+1.35 2009/08/24 - Empty Office 2007 document
+1.34 2009/06/22 - Office 2007 documents with passwords should be displayed as "encrypted file."
+- Zlib.dll unnecessary from this version (it was made static link)
+1.33 2009/06/07 - Corrected a case where abnormal termination occurred in broken PDF
+Fixed garbled characters in OpenOffice documents with passwords (indicated as "encrypted file.")
+- Corrected a case where abnormal termination occurs in Excel 2007 documents which has an extremely large number of sheets and lines.
+- Added -x option. Display only existing cells in EXCEL 2007
+1.32 December 1, 2008 - Corrected that there are cases where infinite loop becomes corrupted PDF
+Acrobat 7.0 or later, 128-bit AES encrypted PDF read support
+(cryptlib.dll needs to be installed)
+1.31 2008/11/05 - Fixed garbled characters in damaged Office 2007 files.
+- Fixed an issue that caused abnormal termination when Excel 2007 exceeds nearly 100 sheets
+2008/08/18 - Publish AtiveX version xdoc2txt.ocx. Distribution condition is the same as exe version.
+1.30 2008/05/22 - -p option: "company name" "classification" "administrator name" is added to property document of Office document
+
+1.29 May 18, 2008 - Fixed an issue that sometimes abnormally ends with a PDF file created with PDF creation software other than Acrobat
+- Fixed a problem that abnormally ends with 0 byte size PDF
+1.28 2008/03/17 - Corresponds to PDF created with PDFMaker 8.1
+1.27 2008/01/20 - When an input file path name exceeds 256 bytes, "error in file name" is displayed and it can not be processed.
+
+1.26a 2007/10/21 - Fixed buffer overrun cases in HTML where line feed is not 0x0D, 0x0A
+- Make sure docx handles doc files normally
+1.26 2007/05/11 - Part of the column is not displayed in Microsoft Office Excel 2007 bug fixed
+- 2 bug fixes related to PDF (countermeasures against display and abnormal termination)
+1.25 2007/02/28 - Corresponds to display of the insertion field name of Microsoft Word
+1.24 2007/02/18 - Microsoft Office Word 2007 / Excel 2007 / PowerPoint 2007,
+OpenOffice.org Writer / Calc / Impress / Draw,
+Compatible with Open Document Format
+- Bug fix abnormally when using digits with large number of digits like 1E + 275 in EXCEL.
+1.23 2006/08/29 - Addresses problems that can not extract text from PDF created with AntenaHouse PDF Driver 2.0
+(Corresponding to Cross-Reference Streams since PDF 1.5)
+- Fixed an issue where text could not be extracted up to the end of the file depending on PDF
+1.22 2006/05/28 - '' "is garbled due to PDF encoding bug Correction
+- May 10, 2006 - Changing conditions of use for commercial use
+1.21 2006/05/08 - [Important] Searching for documents with password of Ichitaro Ver6 will result in insufficient memory bug
+1.20 2006/02/17 Ligature support for Unicode mapping in PDF (ff, fi, etc.)
+1.19 2006/02/08 - Preventive correction of buffer overrun in PDF
+1.18 2006/02/04 - Supports PowerPoint 95
+2006/01/26 - All contents of the line may not be displayed in EXCEL bug fixed
+1.17 2005/09/19 - Added intergraph adjustment parameter of PDF - g
+1.16 2005/05/02 - Add / H / V to the type of CMAP supported by PDF (JIS encoding)
+- Fix bug which fails to allocate memory when huge figure is compressed with / FlateDecode in PDF
+- Added option of PDF
+-O = 0 Do not display page numbers in the format -? - in PDF
+-O = 1 Delete line breaks in PDF (in case of line feed at each character in vertical writing)
+- HTML ruby ​​output option
+-r = 0 None
+-r = 1 ()
+-r = 2 "" Aozora Bunko Format
+- Fixed bug in which text immediately after HTML tag disappears
+1.15 2005/04/23 - Corrected case that part of text can not be converted with PDF created with Acrobat 4
+- Fixed bug that can not convert PDF stamped even once in Acrobat into text
+1.14 2005/01/31 - bug fix abnormally ended with PDF created with Justsystem PDF Creator
+- Fixed bug with cases where abnormally ended abnormally with PDF without text with text only
+1.13 2004/05/30 - Adjust calculation of character in PDF
+- There are cases where abnormal termination occurs at WK 4 (123) bug fixed
+1.12 May 5, 2004 - Option to ignore setting of access right of PDF document (-n)
+- Halfwidth CID is not displayed in PDF bug fixed
+- Extra line breaks are displayed when outputting to standard output bug fix
+1.11 2004/04/04 - PDF compliant with no password encryption (up to 128 bit encryption).
+However, it is necessary to download cryptlib.dll separately
+- Compatible with PDF created with "easyPDF 3.1" and "Jaws PDF Creator"
+- Dealing with the issue that tab characters are deleted after Ichitaro V7
+- Added -p option. Display property of Office document
+1.10 2004/03 / 13 - It corresponds to PDF created in "OpenOffice.org 1.1"
+1.09 2004/02/25 - Corresponds to PDF created with "ActiveReports 2.0J"
+- Bug fix abnormally terminated in specific PDF
+1.08 2004/01/28 - Result of calculation formula of EXCEL When full width "± × ÷" appears in the character string,
+Correct bug in garbled characters
+Removing extra newlines
+1.07 2004/01/26 Full-width "± x ÷" in half-width kana in Word, EXCEL, PowerPoint
+It may be garbled, bug fixed
+- January 18, 2004 - Clearly state "copyright and use conditions".
+1.06 2003/11/09 - First row of RTF saved in Wordpad is not displayed bug fixed
+- If the OLE document with extension .doc does not contain a Word document
+Correct bug that ends abnormally
+1.05 2003/07/15 - Display of PDF created with Acrobat 6.0
+1.04 2003/03/26 - Improvement of computation between Japanese characters in Japanese PDF
+1.03 November 23, 2002 - PDF support for Unicode encoding
+1.02 2002/10/18 - corresponds to mht / html
+1.01 September 9, 2002 - Added -c option
+1.00 2002/07/08 - Text extraction part is separated from KWIC Finder and opened as a filter.
+
+Copyright (C) 2002-2014, hishida
+http://ebstudio.info/
+hishida@bg.mbn.or.jp
