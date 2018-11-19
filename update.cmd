@@ -8,8 +8,10 @@ if exist "Profile\PluginsData\FC97A376-00D9-4DE4-B2E1-BFDC3A8D8B0B.db" (del /s/q
 if exist "Profile\colors.db" (del /s/q "Profile\colors.db" > nul)
 if exist "Profile\highlight.db" (del /s/q "Profile\highlight.db" > nul)
 if exist "Profile\Macros\scripts\Shell_DelTmp.lua" (del /s/q "Profile\Macros\scripts\Shell_DelTmp.lua" > nul)
+if exist "Profile\Macros\scripts\Shell_DeepTarball.lua" (del /s/q "Profile\Macros\scripts\Shell_DeepTarball.lua" > nul)
 if exist "Profile\Macros\scripts\Dialog_ToEditor.lua" (del /s/q "Profile\Macros\scripts\Dialog_ToEditor.lua" > nul)
 if exist "Profile\Macros\scripts\Editor_IntegrateMacro.lua" (del /s/q "Profile\Macros\scripts\Editor_IntegrateMacro.lua" > nul)
+if exist "plugins\multiarc\Formats\targz.fmt" (del /s/q "plugins\multiarc\Formats\targz.fmt" > nul)
 far /import default.farconfig
 cd ../ > nul
 del /f/q update.cmd > nul
