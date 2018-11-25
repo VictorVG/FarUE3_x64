@@ -1,6 +1,6 @@
 ﻿.Language=Italian,Italian (Italiano)
 
-//Version: 3.0 build 5325
+//Version: 3.0 build 5326
 
 //[MYes]
 "&Si"
@@ -569,6 +569,12 @@
 "Salva &Tabella Caratteri"
 //[MViewConfigSaveWrapMode]
 "Salva Stato Di &A Capo Automatico"
+// need translation:
+//[MViewConfigSaveViewMode]
+"Save view mode"
+// need translation:
+//[MViewConfigDetectDumpMode]
+"Detect dump mode view"
 //[MViewAutoDetectCodePage]
 "Autorile&va Tabella Caratteri"
 //[MViewConfigTabSize]

@@ -1,6 +1,6 @@
 ﻿.Language=Slovak,Slovak (Slovenčina)
 
-//Version: 3.0 build 5325
+//Version: 3.0 build 5326
 
 //[MYes]
 "Áno"
@@ -562,6 +562,12 @@
 "Uložiť tabuľku z&nakov súboru"
 //[MViewConfigSaveWrapMode]
 "Uložiť &režim zalomenia"
+// need translation:
+//[MViewConfigSaveViewMode]
+"Save view mode"
+// need translation:
+//[MViewConfigDetectDumpMode]
+"Detect dump mode view"
 //[MViewAutoDetectCodePage]
 "&Automaticky zistiť tabuľku znakov"
 //[MViewConfigTabSize]

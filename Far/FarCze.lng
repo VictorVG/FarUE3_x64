@@ -1,6 +1,6 @@
 ﻿.Language=Czech,Czech (Čeština)
 
-//Version: 3.0 build 5325
+//Version: 3.0 build 5326
 
 //[MYes]
 "Ano"
@@ -598,6 +598,12 @@
 "Uložit &kódovou stránku u souboru"
 //[MViewConfigSaveWrapMode]
 "Uložit &režim zalomení"
+// need translation:
+//[MViewConfigSaveViewMode]
+"Save view mode"
+// need translation:
+//[MViewConfigDetectDumpMode]
+"Detect dump mode view"
 //[MViewAutoDetectCodePage]
 "&Automaticky detekovat kódovou stránku"
 //[MViewConfigTabSize]

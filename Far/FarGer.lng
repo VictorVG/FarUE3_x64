@@ -1,6 +1,6 @@
 ﻿.Language=German,German (Deutsch)
 
-//Version: 3.0 build 5325
+//Version: 3.0 build 5326
 
 //[MYes]
 "Ja"
@@ -569,6 +569,12 @@
 "&Codepage der Datei speichern"
 //[MViewConfigSaveWrapMode]
 "&Verschieben-Modus speichern"
+// need translation:
+//[MViewConfigSaveViewMode]
+"Save view mode"
+// need translation:
+//[MViewConfigDetectDumpMode]
+"Detect dump mode view"
 // need translation:
 //[MViewAutoDetectCodePage]
 "Zeichentabelle &automatisch erkennen"

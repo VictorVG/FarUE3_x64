@@ -1,6 +1,6 @@
 ﻿.Language=Russian,Russian (Русский)
 
-//Version: 3.0 build 5325
+//Version: 3.0 build 5326
 
 //[MYes]
 "Да"
@@ -548,7 +548,7 @@
 //[MViewConfigTitle]
 "Программа просмотра"
 //[MViewConfigExternalF3]
-"Запускать внешнюю программу просмотра по F3 вместо Alt+F3"
+"Запускать вне&шнюю программу просмотра по F3 вместо Alt+F3"
 //[MViewConfigExternalCommand]
 "&Команда просмотра:"
 //[MViewConfigInternal]
@@ -561,6 +561,10 @@
 "Сохранять ко&довую страницу файла"
 //[MViewConfigSaveWrapMode]
 "Сохранять &режим переноса"
+//[MViewConfigSaveViewMode]
+"Сохранять р&ежим просмотра"
+//[MViewConfigDetectDumpMode]
+"Автов&ыбор дамп режима просмотра"
 //[MViewAutoDetectCodePage]
 "&Автоопределение кодовой страницы"
 //[MViewConfigTabSize]

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<farconfig version="3.0.5311">
+<farconfig version="3.0.5326">
 	<generalconfig>
 		<setting key="Cmdline" name="AutoComplete" type="qword" value="0000000000000001"/>
 		<setting key="Cmdline" name="DelRemovesBlocks" type="qword" value="0000000000000001"/>
@@ -219,7 +219,7 @@
 		<setting key="System" name="DeleteToRecycleBin" type="qword" value="0000000000000001"/>
 		<setting key="System" name="DriveDisconnectMode" type="qword" value="0000000000000001"/>
 		<setting key="System" name="DriveMenuMode" type="qword" value="00000000000002E7"/>
-		<setting key="System" name="ElevationMode" type="qword" value="000000000FFFFFFF"/>
+		<setting key="System" name="ElevationMode" type="qword" value="FFFFFFFFFFFFFFFF"/>
 		<setting key="System" name="ExcludeCmdHistory" type="qword" value="0000000000000007"/>
 		<setting key="System" name="FileSearchMode" type="qword" value="0000000000000004"/>
 		<setting key="System" name="FindAlternateStreams" type="qword" value="0000000000000000"/>
@@ -295,11 +295,13 @@
 		<setting key="VMenu" name="RBtnClick" type="qword" value="0000000000000001"/>
 		<setting key="Viewer" name="AutoDetectCodePage" type="qword" value="0000000000000001"/>
 		<setting key="Viewer" name="DefaultCodePage" type="qword" value="00000000000004E3"/>
+		<setting key="Viewer" name="DetectDumpMode" type="qword" value="0000000000000001"/>
 		<setting key="Viewer" name="ExternalViewerName" type="text" value=""/>
 		<setting key="Viewer" name="F8CPs" type="text" value="ANSI,UTF8,OEM"/>
 		<setting key="Viewer" name="IsWrap" type="qword" value="0000000000000000"/>
 		<setting key="Viewer" name="MaxLineSize" type="qword" value="0000000000002710"/>
 		<setting key="Viewer" name="PersistentBlocks" type="qword" value="0000000000000000"/>
+		<setting key="Viewer" name="SaveViewMode" type="qword" value="0000000000000001"/>
 		<setting key="Viewer" name="SaveViewerCodepage" type="qword" value="0000000000000001"/>
 		<setting key="Viewer" name="SaveViewerPos" type="qword" value="0000000000000001"/>
 		<setting key="Viewer" name="SaveViewerShortPos" type="qword" value="0000000000000001"/>
@@ -1307,144 +1309,10 @@
 				<key name="3A2AF458-43E2-4715-AFEA-93D33D56C0C2" description="FARCmds"/>
 			</hierarchicalconfig>
 		</plugin>
-		<plugin guid="42E4AEB1-A230-44F4-B33C-F195BB654931">
-			<hierarchicalconfig>
-				<key name="42E4AEB1-A230-44F4-B33C-F195BB654931" description="NetBox">
-					<key name="Configuration">
-						<value name="Version" type="text" value="2.4.5"/>
-						<key name="CDCache">
-						</key>
-						<key name="Interface">
-							<value name="AutoReadDirectoryAfterOp" type="qword" value="0000000000000001"/>
-							<value name="BeepOnFinish" type="qword" value="0000000000000000"/>
-							<value name="BeepOnFinishAfter" type="hex" value="17,6C,C1,16,6C,C1,36,3F"/>
-							<value name="CacheDirectoryChangesMaxSize" type="qword" value="0000000000000064"/>
-							<value name="ChecksumAlg" type="text" value="md5"/>
-							<value name="CollectUsage" type="qword" value="0000000000000000"/>
-							<value name="ConfirmCommandSession" type="qword" value="0000000000000001"/>
-							<value name="ConfirmOverwriting" type="qword" value="0000000000000001"/>
-							<value name="ConfirmResume" type="qword" value="0000000000000001"/>
-							<value name="ContinueOnError" type="qword" value="0000000000000000"/>
-							<value name="ExternalIpAddress" type="text" value=""/>
-							<value name="IgnoreCancelBeforeFinish" type="hex" value="DF,BC,9A,78,56,34,02,3F"/>
-							<value name="KeepUpToDateChangeDelay" type="qword" value="00000000000001F4"/>
-							<value name="MaxWatchDirectories" type="qword" value="00000000000001F4"/>
-							<value name="PuttyPassword" type="qword" value="0000000000000000"/>
-							<value name="PuttyPath" type="text" value="%25PROGRAMFILES%25%5CPuTTY%5Cputty.exe"/>
-							<value name="PuttyRegistryStorageKey" type="text" value="Software%5CSimonTatham%5CPuTTY"/>
-							<value name="PuttySession" type="text" value="WinSCP%20temporary%20session"/>
-							<value name="QueueAutoPopup" type="qword" value="0000000000000001"/>
-							<value name="QueueKeepDoneItems" type="qword" value="0000000000000001"/>
-							<value name="QueueKeepDoneItemsFor" type="qword" value="000000000000000F"/>
-							<value name="QueueRememberPassword" type="qword" value="0000000000000000"/>
-							<value name="QueueTransfersLimit" type="qword" value="0000000000000002"/>
-							<value name="RandomSeedFile" type="text" value="%25APPDATA%25%5Cwinscp.rnd"/>
-							<value name="SessionReopenAuto" type="qword" value="0000000000001388"/>
-							<value name="SessionReopenAutoIdle" type="qword" value="0000000000002328"/>
-							<value name="SessionReopenAutoMaximumNumberOfRetries" type="qword" value="0000000000000063"/>
-							<value name="SessionReopenAutoStall" type="qword" value="000000000000EA60"/>
-							<value name="SessionReopenBackground" type="qword" value="00000000000007D0"/>
-							<value name="SessionReopenTimeout" type="qword" value="0000000000000000"/>
-							<value name="ShowFtpWelcomeMessage" type="qword" value="0000000000000000"/>
-							<value name="SynchronizeMode" type="qword" value="0000000000000000"/>
-							<value name="SynchronizeModeAuto" type="qword" value="FFFFFFFFFFFFFFFF"/>
-							<value name="SynchronizeOptions" type="qword" value="0000000000000005"/>
-							<value name="SynchronizeParams" type="qword" value="0000000000000042"/>
-							<value name="TelnetForFtpInPutty" type="qword" value="0000000000000000"/>
-							<value name="TryFtpWhenSshFails" type="qword" value="0000000000000001"/>
-							<value name="TunnelLocalPortNumberHigh" type="qword" value="000000000000C3B3"/>
-							<value name="TunnelLocalPortNumberLow" type="qword" value="000000000000C350"/>
-							<key name="Interface">
-								<key name="Bookmarks">
-									<key name="Local"/>
-									<key name="Options"/>
-									<key name="Remote"/>
-									<key name="ShortCuts"/>
-								</key>
-								<key name="CopyParam">
-									<value name="AddXToDirectories" type="qword" value="0000000000000001"/>
-									<value name="CPSLimit" type="qword" value="0000000000000000"/>
-									<value name="CalculateSize" type="qword" value="0000000000000001"/>
-									<value name="ClearArchive" type="qword" value="0000000000000000"/>
-									<value name="CopyParamList" type="qword" value="FFFFFFFFFFFFFFFF"/>
-									<value name="FileNameCase" type="qword" value="0000000000000000"/>
-									<value name="IgnorePermErrors" type="qword" value="0000000000000000"/>
-									<value name="IncludeFileMask" type="text" value=""/>
-									<value name="LocalInvalidChars" type="text" value="/%5C:%2A%3F&quot;&lt;&gt;|"/>
-									<value name="Masks" type="text" value="%2A.%2Ahtml;%20%2A.htm;%20%2A.txt;%20%2A.php;%20%2A.php3;%20%2A.cgi;%20%2A.c;%20%2A.cpp;%20%2A.h;%20%2A.pas;%20%2A.bas;%20%2A.tex;%20%2A.pl;%20%2A.js;%20.htaccess;%20%2A.xtml;%20%2A.css;%20%2A.cfg;%20%2A.ini;%20%2A.sh;%20%2A.xml"/>
-									<value name="NewerOnly" type="qword" value="0000000000000000"/>
-									<value name="PreserveReadOnly" type="qword" value="0000000000000000"/>
-									<value name="PreserveRights" type="qword" value="0000000000000000"/>
-									<value name="PreserveTime" type="qword" value="0000000000000001"/>
-									<value name="PreserveTimeDirs" type="qword" value="0000000000000000"/>
-									<value name="Queue" type="qword" value="0000000000000000"/>
-									<value name="QueueIndividually" type="qword" value="0000000000000000"/>
-									<value name="QueueNoConfirmation" type="qword" value="0000000000000001"/>
-									<value name="RemoveBOM" type="qword" value="0000000000000000"/>
-									<value name="RemoveCtrlZ" type="qword" value="0000000000000000"/>
-									<value name="ReplaceInvalidChars" type="qword" value="0000000000000001"/>
-									<value name="ResumeSupport" type="qword" value="0000000000000001"/>
-									<value name="ResumeThreshold" type="qword" value="0000000000019000"/>
-									<value name="Text" type="text" value="rw-r--r--"/>
-									<value name="TransferMode" type="qword" value="0000000000000000"/>
-								</key>
-								<key name="Far">
-									<value name="ApplyCommandCommand" type="text" value=""/>
-									<value name="ApplyCommandParams" type="qword" value="0000000000000000"/>
-									<value name="ColumnTypesDetailed" type="text" value="N,S,DM,O,G,R"/>
-									<value name="ColumnWidthsDetailed" type="text" value="0,8,14,0,0,9"/>
-									<value name="CommandPrefixes" type="text" value="netbox,ftp,scp,sftp,ftps,http,https,webdav"/>
-									<value name="ConfirmOverwritingOverride" type="qword" value="0000000000000000"/>
-									<value name="ConfirmSynchronizedBrowsing" type="qword" value="0000000000000001"/>
-									<value name="CustomPanelModeDetailed" type="qword" value="0000000000000001"/>
-									<value name="DisksMenu" type="qword" value="0000000000000001"/>
-									<value name="DisksMenuHotKey" type="qword" value="0000000000000000"/>
-									<value name="EditorDownloadDefaultMode" type="qword" value="0000000000000001"/>
-									<value name="EditorMultiple" type="qword" value="0000000000000000"/>
-									<value name="EditorUploadOnSave" type="qword" value="0000000000000001"/>
-									<value name="EditorUploadSameOptions" type="qword" value="0000000000000001"/>
-									<value name="FullScreenDetailed" type="qword" value="0000000000000001"/>
-									<value name="HostNameInTitle" type="qword" value="0000000000000001"/>
-									<value name="PluginsMenu" type="qword" value="0000000000000001"/>
-									<value name="PluginsMenuCommands" type="qword" value="0000000000000001"/>
-									<value name="QueueBeep" type="qword" value="0000000000000001"/>
-									<value name="SessionNameInTitle" type="qword" value="0000000000000001"/>
-									<value name="StatusColumnTypesDetailed" type="text" value="NR"/>
-									<value name="StatusColumnWidthsDetailed" type="text" value="0"/>
-								</key>
-								<key name="Interface">
-									<key name="NewDirectory">
-										<value name="Valid" type="hex" value="00,00,00,00,00,00,00,00"/>
-									</key>
-								</key>
-							</key>
-						</key>
-						<key name="Logging">
-							<value name="LogFileAppend" type="qword" value="0000000000000001"/>
-							<value name="LogWindowLines" type="qword" value="0000000000000064"/>
-							<value name="PermanentActionsLogFileName" type="text" value="%25TEMP%25%5C&amp;S.xml"/>
-							<value name="PermanentLogActions" type="qword" value="0000000000000000"/>
-							<value name="PermanentLogFileName" type="text" value="%25TEMP%25%5C&amp;S.log"/>
-							<value name="PermanentLogProtocol" type="qword" value="0000000000000000"/>
-							<value name="PermanentLogSensitive" type="qword" value="0000000000000000"/>
-							<value name="PermanentLogging" type="qword" value="0000000000000000"/>
-						</key>
-						<key name="Usage"/>
-					</key>
-					<key name="Sessions">
-						<key name="Default%20Settings">
-							<value name="FSProtocol" type="text" value="SFTP%20(SCP)"/>
-							<value name="Version" type="text" value="2.4.4"/>
-						</key>
-					</key>
-				</key>
-			</hierarchicalconfig>
-		</plugin>
 		<plugin guid="4EBBEFC8-2084-4B7F-94C0-692CE136894D">
 			<hierarchicalconfig>
 				<key name="4EBBEFC8-2084-4B7F-94C0-692CE136894D" description="LuaMacro">
 					<key name="Duplicate Fighter">
-						<value name="settings" type="hex" value="6C,6F,63,61,6C,20,69,64,78,3D,7B,7D,3B,20,66,6F,72,20,69,3D,31,2C,31,20,64,6F,20,69,64,78,5B,69,5D,3D,7B,7D,20,65,6E,64,0A,64,6F,20,6C,6F,63,61,6C,20,74,3D,69,64,78,5B,31,5D,0A,20,20,74,5B,22,73,74,61,74,69,73,74,69,63,73,22,5D,20,3D,20,74,72,75,65,0A,20,20,74,5B,22,6D,65,74,68,6F,64,22,5D,20,3D,20,32,0A,20,20,74,5B,22,6B,65,65,70,65,6D,70,74,79,22,5D,20,3D,20,66,61,6C,73,65,0A,20,20,74,5B,22,74,6F,62,6F,6F,6C,65,61,6E,22,5D,20,3D,20,74,72,75,65,0A,20,20,74,5B,22,75,73,65,65,78,70,72,22,5D,20,3D,20,66,61,6C,73,65,0A,65,6E,64,0A,72,65,74,75,72,6E,20,69,64,78,5B,31,5D,0A"/>
 					</key>
 					<key name="IgorZ">
 						<key name="BookmarkManagerConfig">
@@ -1530,7 +1398,6 @@
 						</key>
 					</key>
 					<key name="LuaMacro">
-						<value name="MacroBrowser" type="hex" value="6C,6F,63,61,6C,20,69,64,78,3D,7B,7D,3B,20,66,6F,72,20,69,3D,31,2C,31,20,64,6F,20,69,64,78,5B,69,5D,3D,7B,7D,20,65,6E,64,0A,64,6F,20,6C,6F,63,61,6C,20,74,3D,69,64,78,5B,31,5D,0A,20,20,74,5B,22,49,6E,76,53,6F,72,74,22,5D,20,3D,20,31,0A,20,20,74,5B,22,53,6F,72,74,4B,65,79,22,5D,20,3D,20,22,43,2B,46,31,22,0A,65,6E,64,0A,72,65,74,75,72,6E,20,69,64,78,5B,31,5D,0A"/>
 					</key>
 				</key>
 			</hierarchicalconfig>
@@ -1551,7 +1418,7 @@
 		</plugin>
 		<plugin guid="65642111-AA69-4B84-B4B8-9249579EC4FA">
 			<hierarchicalconfig>
-				<key name="65642111-AA69-4B84-B4B8-9249579EC4FA" description="arclite">
+				<key name="65642111-AA69-4B84-B4B8-9249579EC4FA" description="ArcLite">
 					<value name="correct_name_mode" type="qword" value="0000000000000073"/>
 					<value name="disabled_formats" type="text" value="Chm,Compound,FLV,MD5,Rar,Rar5,SHA-1,SHA-256,SHA-512"/>
 					<value name="enabled_formats" type="text" value="7z,APM,Ar,Arj,bzip2,Cab,Cpio,CramFS,Dmg,ELF,Ext,FAT,FLV,GPT,gzip,HFS,Hxs,IHex,Iso,Lzh,LZIP,lzma,lzma86,MachO,MBR,MsLZ,Mub,Nsis,NTFS,Ppmd,QCOW,Rpm,Split,SquashFS,SWF,SWFc,tar,TE,Udf,UEFIc,UEFIf,VDI,VHD,VMDK,wim,Xar,xz,Z,zip"/>
@@ -1591,7 +1458,6 @@
 		<plugin guid="6F332978-08B8-4919-847A-EFBB6154C99A">
 			<hierarchicalconfig>
 				<key name="6F332978-08B8-4919-847A-EFBB6154C99A" description="LuaFAR for Editor">
-					<value name="alldata" type="hex" value="64,6F,20,6C,6F,63,61,6C,20,74,20,3D,20,7B,7D,3B,20,44,61,74,61,20,3D,20,74,0A,20,20,64,6F,20,6C,6F,63,61,6C,20,74,20,3D,20,7B,7D,3B,20,44,61,74,61,5B,22,50,6C,75,67,69,6E,53,65,74,74,69,6E,67,73,22,5D,20,3D,20,74,0A,20,20,65,6E,64,0A,65,6E,64,0A"/>
 				</key>
 			</hierarchicalconfig>
 		</plugin>
@@ -1671,7 +1537,6 @@
 		<plugin guid="8E11EA75-0303-4374-AC60-D1E38F865449">
 			<hierarchicalconfig>
 				<key name="8E11EA75-0303-4374-AC60-D1E38F865449" description="LuaFAR Search">
-					<value name="alldata" type="hex" value="64,6F,20,6C,6F,63,61,6C,20,74,20,3D,20,7B,7D,3B,20,44,61,74,61,20,3D,20,74,0A,20,20,64,6F,20,6C,6F,63,61,6C,20,74,20,3D,20,7B,7D,3B,20,44,61,74,61,5B,22,72,65,6E,61,6D,65,22,5D,20,3D,20,74,0A,20,20,65,6E,64,0A,20,20,64,6F,20,6C,6F,63,61,6C,20,74,20,3D,20,7B,7D,3B,20,44,61,74,61,5B,22,6D,61,69,6E,22,5D,20,3D,20,74,0A,20,20,20,20,74,5B,22,73,53,63,6F,70,65,22,5D,20,3D,20,22,67,6C,6F,62,61,6C,22,0A,20,20,20,20,74,5B,22,73,46,69,6E,61,6C,46,75,6E,63,22,5D,20,3D,20,22,22,0A,20,20,20,20,74,5B,22,62,4D,75,6C,74,69,50,61,74,74,65,72,6E,73,22,5D,20,3D,20,66,61,6C,73,65,0A,20,20,20,20,74,5B,22,62,55,73,65,46,69,6C,65,46,69,6C,74,65,72,22,5D,20,3D,20,66,61,6C,73,65,0A,20,20,20,20,74,5B,22,62,52,65,67,45,78,70,72,22,5D,20,3D,20,66,61,6C,73,65,0A,20,20,20,20,74,5B,22,62,49,6E,76,65,72,73,65,53,65,61,72,63,68,22,5D,20,3D,20,66,61,6C,73,65,0A,20,20,20,20,74,5B,22,62,44,65,6C,4E,6F,6E,4D,61,74,63,68,4C,69,6E,65,22,5D,20,3D,20,66,61,6C,73,65,0A,20,20,20,20,74,5B,22,62,44,65,6C,45,6D,70,74,79,4C,69,6E,65,22,5D,20,3D,20,66,61,6C,73,65,0A,20,20,20,20,74,5B,22,62,48,69,67,68,6C,69,67,68,74,22,5D,20,3D,20,66,61,6C,73,65,0A,20,20,20,20,74,5B,22,73,4F,72,69,67,69,6E,22,5D,20,3D,20,22,63,75,72,73,6F,72,22,0A,20,20,20,20,74,5B,22,73,49,6E,69,74,46,75,6E,63,22,5D,20,3D,20,22,22,0A,20,20,20,20,74,5B,22,62,57,72,61,70,41,72,6F,75,6E,64,22,5D,20,3D,20,66,61,6C,73,65,0A,20,20,20,20,74,5B,22,62,43,61,73,65,53,65,6E,73,22,5D,20,3D,20,66,61,6C,73,65,0A,20,20,20,20,74,5B,22,73,52,65,67,65,78,4C,69,62,22,5D,20,3D,20,22,66,61,72,22,0A,20,20,20,20,74,5B,22,62,45,78,74,65,6E,64,65,64,22,5D,20,3D,20,66,61,6C,73,65,0A,20,20,20,20,74,5B,22,73,53,65,61,72,63,68,50,61,74,22,5D,20,3D,20,22,5F,22,0A,20,20,20,20,74,5B,22,73,52,65,70,6C,61,63,65,50,61,74,22,5D,20,3D,20,22,20,22,0A,20,20,20,20,74,5B,22,73,46,69,6C,74,65,72,46,75,6E,63,22,5D,20,3D,20,22,22,0A,20,20,20,20,74,5B,22,62,55,73,65,44,69,72,46,69,6C,74,65,72,22,5D,20,3D,20,66,61,6C,73,65,0A,20,20,20,20,74,5B,22,73,4F,72,69,67,69,6E,49,6E,47,6C,6F,62,61,6C,22,5D,20,3D,20,22,63,75,72,73,6F,72,22,0A,20,20,20,20,74,5B,22,62,57,68,6F,6C,65,57,6F,72,64,73,22,5D,20,3D,20,66,61,6C,73,65,0A,20,20,20,20,74,5B,22,62,43,6F,6E,66,69,72,6D,52,65,70,6C,61,63,65,22,5D,20,3D,20,74,72,75,65,0A,20,20,20,20,74,5B,22,62,41,64,76,61,6E,63,65,64,22,5D,20,3D,20,66,61,6C,73,65,0A,20,20,20,20,74,5B,22,62,53,65,61,72,63,68,42,61,63,6B,22,5D,20,3D,20,66,61,6C,73,65,0A,20,20,20,20,74,5B,22,62,47,72,65,70,49,6E,76,65,72,73,65,53,65,61,72,63,68,22,5D,20,3D,20,66,61,6C,73,65,0A,20,20,20,20,74,5B,22,62,52,65,70,49,73,46,75,6E,63,22,5D,20,3D,20,66,61,6C,73,65,0A,20,20,65,6E,64,0A,20,20,64,6F,20,6C,6F,63,61,6C,20,74,20,3D,20,7B,7D,3B,20,44,61,74,61,5B,22,74,6D,70,70,61,6E,65,6C,22,5D,20,3D,20,74,0A,20,20,20,20,74,5B,22,53,74,61,72,74,53,6F,72,74,69,6E,67,22,5D,20,3D,20,22,31,34,2C,30,22,0A,20,20,20,20,74,5B,22,43,6F,6C,75,6D,6E,54,79,70,65,73,22,5D,20,3D,20,22,4E,52,2C,53,22,0A,20,20,20,20,74,5B,22,50,72,65,73,65,72,76,65,43,6F,6E,74,65,6E,74,73,22,5D,20,3D,20,74,72,75,65,0A,20,20,20,20,74,5B,22,4E,65,77,50,61,6E,65,6C,46,6F,72,53,65,61,72,63,68,52,65,73,75,6C,74,73,22,5D,20,3D,20,74,72,75,65,0A,20,20,20,20,74,5B,22,43,6F,70,79,43,6F,6E,74,65,6E,74,73,22,5D,20,3D,20,30,0A,20,20,20,20,74,5B,22,46,75,6C,6C,53,63,72,65,65,6E,50,61,6E,65,6C,22,5D,20,3D,20,66,61,6C,73,65,0A,20,20,20,20,74,5B,22,53,74,61,74,75,73,43,6F,6C,75,6D,6E,57,69,64,74,68,73,22,5D,20,3D,20,22,30,2C,38,2C,30,2C,35,22,0A,20,20,20,20,74,5B,22,53,74,61,74,75,73,43,6F,6C,75,6D,6E,54,79,70,65,73,22,5D,20,3D,20,22,4E,52,2C,53,43,2C,44,2C,54,22,0A,20,20,20,20,74,5B,22,52,65,70,6C,61,63,65,4D,6F,64,65,22,5D,20,3D,20,74,72,75,65,0A,20,20,20,20,74,5B,22,43,6F,6C,75,6D,6E,57,69,64,74,68,73,22,5D,20,3D,20,22,30,2C,38,22,0A,20,20,65,6E,64,0A,20,20,64,6F,20,6C,6F,63,61,6C,20,74,20,3D,20,7B,7D,3B,20,44,61,74,61,5B,22,65,64,69,74,6F,72,22,5D,20,3D,20,74,0A,20,20,20,20,64,6F,20,6C,6F,63,61,6C,20,74,20,3D,20,7B,7D,3B,20,44,61,74,61,5B,22,65,64,69,74,6F,72,22,5D,5B,22,6D,65,6E,75,22,5D,20,3D,20,74,0A,20,20,20,20,20,20,74,5B,22,70,6F,73,69,74,69,6F,6E,22,5D,20,3D,20,32,0A,20,20,20,20,65,6E,64,0A,20,20,65,6E,64,0A,20,20,64,6F,20,6C,6F,63,61,6C,20,74,20,3D,20,7B,7D,3B,20,44,61,74,61,5B,22,63,6F,6E,66,69,67,22,5D,20,3D,20,74,0A,20,20,20,20,74,5B,22,45,64,69,74,6F,72,48,69,67,68,6C,69,67,68,74,43,6F,6C,6F,72,22,5D,20,3D,20,32,30,37,0A,20,20,20,20,74,5B,22,47,72,65,70,4C,69,6E,65,4E,75,6D,4D,61,74,63,68,43,6F,6C,6F,72,22,5D,20,3D,20,31,36,30,0A,20,20,20,20,74,5B,22,62,55,73,65,46,61,72,48,69,73,74,6F,72,79,22,5D,20,3D,20,74,72,75,65,0A,20,20,20,20,74,5B,22,47,72,65,70,4C,69,6E,65,4E,75,6D,43,6F,6E,74,65,78,74,43,6F,6C,6F,72,22,5D,20,3D,20,31,32,38,0A,20,20,65,6E,64,0A,65,6E,64,0A"/>
 				</key>
 			</hierarchicalconfig>
 		</plugin>
@@ -1701,12 +1566,6 @@
 					<value name="save_file_pos" type="qword" value="0000000000000001"/>
 					<value name="show_dword_seps" type="qword" value="0000000000000001"/>
 					<value name="std_cursor_size" type="qword" value="0000000000000001"/>
-					<key name="history">
-						<value name="datetime00" type="qword" value="000000005BB2D1B3"/>
-						<value name="name00" type="text" value="G:\dev\far3\20\far3lua_update.nsi"/>
-						<value name="offsc00" type="qword" value="0000000000002D6D"/>
-						<value name="offsv00" type="qword" value="0000000000002B70"/>
-					</key>
 				</key>
 			</hierarchicalconfig>
 		</plugin>
@@ -2668,11 +2527,9 @@
 				</key>
 			</hierarchicalconfig>
 		</plugin>
-		<plugin guid="D4BC5EA7-8229-4FFE-AAC1-5A4F51A0986A">
+		<plugin guid="D82D6847-0C7B-4BF4-9A31-B0B929707854">
 			<hierarchicalconfig>
-				<key name="D4BC5EA7-8229-4FFE-AAC1-5A4F51A0986A" description="Polygon">
-					<key name="files"/>
-				</key>
+				<key name="D82D6847-0C7B-4BF4-9A31-B0B929707854" description="MBlockEditor"/>
 			</hierarchicalconfig>
 		</plugin>
 		<plugin guid="D888455B-4E68-43F8-8D54-9A96913974B2">

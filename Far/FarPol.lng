@@ -1,6 +1,6 @@
 ﻿.Language=Polish,Polish (Polski)
 
-//Version: 3.0 build 5325
+//Version: 3.0 build 5326
 
 //[MYes]
 "Tak"
@@ -641,6 +641,12 @@
 // need translation:
 //[MViewConfigSaveWrapMode]
 "Save w&rap mode"
+// need translation:
+//[MViewConfigSaveViewMode]
+"Save view mode"
+// need translation:
+//[MViewConfigDetectDumpMode]
+"Detect dump mode view"
 //[MViewAutoDetectCodePage]
 "Rozpozn&aj tablicę znaków"
 //[MViewConfigTabSize]

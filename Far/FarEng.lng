@@ -1,6 +1,6 @@
 ﻿.Language=English,English
 
-//Version: 3.0 build 5325
+//Version: 3.0 build 5326
 
 //[MYes]
 "Yes"
@@ -548,7 +548,7 @@
 //[MViewConfigTitle]
 "Viewer"
 //[MViewConfigExternalF3]
-"Use external viewer for F3 instead of Alt+F3"
+"Use e&xternal viewer for F3 instead of Alt+F3"
 //[MViewConfigExternalCommand]
 "&Viewer command:"
 //[MViewConfigInternal]
@@ -561,6 +561,10 @@
 "Save file &code page"
 //[MViewConfigSaveWrapMode]
 "Save w&rap mode"
+//[MViewConfigSaveViewMode]
+"Save vi&ew mode"
+//[MViewConfigDetectDumpMode]
+"Detect d&ump mode view"
 //[MViewAutoDetectCodePage]
 "&Autodetect code page"
 //[MViewConfigTabSize]
