@@ -1,6 +1,6 @@
 ﻿.Language=Ukrainian,Ukrainian (Українська)
 
-//Version: 3.0 build 5326
+//Version: 3.0 build 5327
 
 //[MYes]
 "Так"
@@ -561,12 +561,10 @@
 "Зберігати ко&дову сторінку файлу"
 //[MViewConfigSaveWrapMode]
 "Зберігати &режим переносу"
-// need translation:
 //[MViewConfigSaveViewMode]
-"Save view mode"
-// need translation:
+"Зберігати режим перегляду"
 //[MViewConfigDetectDumpMode]
-"Detect dump mode view"
+"Автовизначення дамп-режиму перегляду"
 //[MViewAutoDetectCodePage]
 "&Автовизначення кодової сторінки"
 //[MViewConfigTabSize]

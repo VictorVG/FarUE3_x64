@@ -1,6 +1,6 @@
 ﻿.Language=Russian,Russian (Русский)
 
-//Version: 3.0 build 5326
+//Version: 3.0 build 5327
 
 //[MYes]
 "Да"
@@ -564,7 +564,7 @@
 //[MViewConfigSaveViewMode]
 "Сохранять р&ежим просмотра"
 //[MViewConfigDetectDumpMode]
-"Автов&ыбор дамп режима просмотра"
+"Автов&ыбор дамп-режима просмотра"
 //[MViewAutoDetectCodePage]
 "&Автоопределение кодовой страницы"
 //[MViewConfigTabSize]

@@ -2,7 +2,7 @@
 local nfo = Info {_filename or ...,
   name          = "Bookmark manager";
   description   = "Менеджер закладок на папки для Fara";
-  version       = "3.0.1"; --http://semver.org/lang/ru/
+  version       = "3.0.2"; --http://semver.org/lang/ru/
   author        = "IgorZ";
   url           = "http://forum.farmanager.com/viewtopic.php?t=8465";
   id            = "F93842EB-FFD3-481A-8AA8-2E7DCEBDF2B1";
@@ -77,6 +77,7 @@ history         = [[
                     При неполном наборе закладки/переменной, если подходит всего один вариант, меню может не выводиться (настраивается).
                     Отдельная настройка для показа переменных окружения в меню. Рефакторинг.
 2018/07/27 v3.0.1 - Исправление ошибки с переходом в сетевую папку. Исправление справки. Рефакторинг.
+2018/11/26 v3.0.2 - При вызове скрипта как функции без параметров ошибка не выдаётся. Исправлена ошибка при переходе в плагин.
 ]];
 }
 if not nfo then return end
@@ -235,7 +236,7 @@ for AP,Pnl in pairs({[1]=A,[0]=P}) do -- переберём панели (есл
   if Pnl.Cmd:find("[XE]") then
     win.ShellExecute(nil,Pnl.Cmd=="X" and "open" or "edit",Pnl.Folder) return -- запустить/редактировать - передать в систему
   else
-    if not win.GetFileAttr(Pnl.Folder):match('d') then Pnl.Folder,Pnl.FN = Pnl.Folder:match([[^(.*)([^\]*)$]]) end -- файл? поделим
+    if not Pnl.id and not win.GetFileAttr(Pnl.Folder):match('d') then Pnl.Folder,Pnl.FN = Pnl.Folder:match([[^(.*)([^\]*)$]]) end -- файл? поделим
     local cd = panel.SetPanelDirectory(nil,AP,{PluginId=Pnl.id,File=Pnl.File,Name=Pnl.Folder,Param=Pnl.Param}) -- сменим каталог
     if cd and (Pnl.Cmd=="C") and AP==0 then cd = panel.SetActivePanel(nil,0) end -- если данную пассивную панель надо сделать активной, сделаем
     if cd and Pnl.FN then Panel.SetPos(Pnl.Cmd=="C" and 0 or 1-AP,Pnl.FN) end -- если надо позиционироваться на файле, сделаем
@@ -633,8 +634,8 @@ end -- QSMenu
 -- -
 function CLProc(pref,line)
 LoadSettings()
-local p13,p4,bm,folder,trail = pref:sub(1,3),pref:sub(4),line:match("^(%S*)%s*(.*)$") -- функция, профиль, закладка, папка/и
-if pref=="bm" then bm,trail = line:match("^([^\\]*)(.-)$") end -- для перехода формат и содержание строки другие
+local p13,p4,bm,folder,trail = (pref or ""):sub(1,3),(pref or ""):sub(4),(line or ""):match("^(%S*)%s*(.*)$") -- функция, профиль, закладка, папка/и
+if pref=="bm" then bm,trail = (line or ""):match("^([^\\]*)(.-)$") end -- для перехода формат и содержание строки другие
 local lg = p4=="l" and F.PSL_LOCAL or p4=="g" and F.PSL_ROAMING or S.UseLocal and S.UseGlobal and DefBMProfile or S.UseLocal or S.UseGlobal -- профиль
 if not lg and p13~="bm" then return end -- если профиль не задан явно, все закладки отключены, и это не переход, выйдем
 bm = bm:upper():gsub(".",ToCtrl) -- преобразуем закладку к виду, вводимому с Ctrl

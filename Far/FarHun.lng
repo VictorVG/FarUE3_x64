@@ -1,6 +1,6 @@
 ﻿.Language=Hungarian,Hungarian (Magyar)
 
-//Version: 3.0 build 5326
+//Version: 3.0 build 5327
 
 //[MYes]
 "Igen"
@@ -645,7 +645,7 @@
 "Save view mode"
 // need translation:
 //[MViewConfigDetectDumpMode]
-"Detect dump mode view"
+"Detect dump view mode"
 //[MViewAutoDetectCodePage]
 "&Kódlap automatikus felismerése"
 //[MViewConfigTabSize]

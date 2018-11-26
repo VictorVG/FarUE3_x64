@@ -1,6 +1,6 @@
 ﻿.Language=Slovak,Slovak (Slovenčina)
 
-//Version: 3.0 build 5326
+//Version: 3.0 build 5327
 
 //[MYes]
 "Áno"
@@ -567,7 +567,7 @@
 "Save view mode"
 // need translation:
 //[MViewConfigDetectDumpMode]
-"Detect dump mode view"
+"Detect dump view mode"
 //[MViewAutoDetectCodePage]
 "&Automaticky zistiť tabuľku znakov"
 //[MViewConfigTabSize]

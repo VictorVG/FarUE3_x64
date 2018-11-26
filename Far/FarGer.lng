@@ -1,6 +1,6 @@
 ﻿.Language=German,German (Deutsch)
 
-//Version: 3.0 build 5326
+//Version: 3.0 build 5327
 
 //[MYes]
 "Ja"
@@ -574,7 +574,7 @@
 "Save view mode"
 // need translation:
 //[MViewConfigDetectDumpMode]
-"Detect dump mode view"
+"Detect dump view mode"
 // need translation:
 //[MViewAutoDetectCodePage]
 "Zeichentabelle &automatisch erkennen"
