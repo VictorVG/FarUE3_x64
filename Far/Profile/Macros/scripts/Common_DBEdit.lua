@@ -2,7 +2,7 @@ local Info = Info or package.loaded.regscript or function(...) return ... end --
 local nfo = Info {... or _filename,
   name          = "DBEdit";
   description   = "Импорт/экспорт/редактирование данных плагинов";
-  version       = "2.1.2"; --в формате semver: http://semver.org/lang/ru/
+  version       = "2.1.3.1"; --в формате semver: http://semver.org/lang/ru/
   author        = "IgorZ";
   url           = "http://forum.farmanager.com/viewtopic.php?t=10120";
   id            = "51465236-592A-4C28-A047-929FCBFD8672";
@@ -10,12 +10,13 @@ local nfo = Info {... or _filename,
   files         = [[*Eng.hlf;*Rus.hlf;*Eng.lng;*Rus.lng]]; --вспомогательные файлы скрипта
   helptxt       = [=[
 Управление:
-  Alt+Shift+F4 - вызов главного меню
+  Ctrl+Shift+F5 - вызов главного меню
   Alt+Shift+F5 - вызов диалога импорта
 
 Префиксы командной строки:
-  dbexp:[<плагин>][шаблон]    - экспорт ключа/переменной из указанного плагина ("<" и ">" обязательны) по указанному шаблону или вызов главного меню
-  dbimp:[<плагин>][имя файла] - импорт из указанного файла в указанный плагин ("<" и ">" обязательны) или вызов диалога импорта
+  dbshow:[<плагин>][корень]            - показ данных из БД умолчательного или указанного плагина ("<" и ">" обязательны)
+  dbexp:[<плагин>][шаблон] [имя файла] - экспорт ключа/переменной из указанного плагина ("<" и ">" обязательны) по указанному шаблону или всей БД
+  dbimp:[<плагин>][имя файла]          - импорт из указанного файла в указанный плагин ("<" и ">" обязательны) или вызов диалога импорта
 
 Вызов, как модуля:
   require"DBEdit"([<таблица параметров>]) или require"DBEdit".Main([<таблица параметров>]). Поля таблицы:
@@ -58,13 +59,17 @@ history         = [[
                     Если при вызове модуля в режиме показа не указан явно тип БД (LOCAL/GLOBAL), то скрипт сам выбирает наилучший вариант.
                     CtrlC/CtrlG/CtrlL переходят в тот  же ключ в другой/глобальной/локальной базе. Рефакторинг. Мелкие правки.
 2016/11/16 v2.1.2 - Enter на значении открывает редактирование элемента. Backspace работает как Esc. Рефакторинг. Мелкие правки.
+2018/11/06 v2.1.3 - Добавлен префикс dbshow:. Для dbexp: можно задавать имя файла. Исправлены ошибки в справке. Рефакторинг.
+2018/12/01 v2.1.3.1 - Косметика: правка хоткеев Alt-Shift-F2 на Ctrl-Shift-F5, Alt-Shift-F3 на Alt-Shift-F5 - не трогаем хоткеи Far-а и плагинов!
+                    Rebind конечно аргумент... для оправдания неудачных технических решений, но как у врача НЕ НАВРЕДИ, так в технике РАБОТАЕТ -
+                    НЕ ЛОМАЙ! Хоткеи специально подбирались с учётом наличия в ОС клавишных комбинаций типа Ctrl-Alt-F4
+                    (немедленное завершение активной программы) которые она обрабатывает сама. /VictorVG, 02.12.2018 18:29:44 +0300/
 ]];
 }
 if not nfo then return nfo end
 -- +
 --[==[Константы]==]
 -- -
---
 local F = far.Flags
 local Guids = {
   LuaMacro = win.Uuid("4EBBEFC8-2084-4B7F-94C0-692CE136894D"); -- guid LuaMacro
@@ -75,27 +80,24 @@ local Guids = {
   Menu     = win.Uuid("85F3972E-0C71-4A45-A91D-E44DD52B91A2"),
   ExpFN    = win.Uuid("896AA787-16D2-41B8-9678-73EF33AE18EE"),
   ImpFN    = win.Uuid("1CC55C37-3642-4E44-8943-B16F51A0367A"),
-  ImpOW    = win.Uuid("0251977A-AA09-4D07-B6E5-2F367CD8EBEE"),
+--  ImpOW    = win.Uuid("0251977A-AA09-4D07-B6E5-2F367CD8EBEE"),
   SelPlug  = win.Uuid("234AEF34-B8FF-4995-97FE-E527271712A9"),
 }
 local LMBuild = far.GetPluginInformation(far.FindPlugin(F.PFM_GUID,Guids.LuaMacro)).GInfo.Version[4] -- запомним версию LuaMacro
+local PathName = debug.getinfo(function()end).source:sub(2):match("(.*)%.lua$") -- получим заготовку для имён языковых файлов
+-- +
 --[==[переменные]==]
-local overwrite -- перезапись переменных
-local tbl_format = "internal" -- чем форматировать таблицы
-local PName,UID = "LuaMacro" -- открываемый плагин
---[=[Языковые настройки]=]
-local PathName,FarLang,HlpLang,L = (...):match("(.*)%.lua")
+-- -
+local tbl_format,PName,UID,overwrite,L = "internal","LuaMacro" -- чем форматировать таблицы, открываемый плагин,перезапись переменных,локализация
 -- +
 --[=[вспомогательные функции]=]
 -- -
 local LoadLang,GetTree,PutElem,SaveToFile,ReadFromFile,Edit,Remove,ReadDB,SelPlugin,DATAToStrings,ElemToStr,ShowHelp
 --
 function LoadLang() --[[загрузить настройки языка]]
-local FL,HL = win.GetEnv("FARLANG"):sub(1,3),Far.GetConfig("Language.Help"):sub(1,3) -- язык (первые 3 буквы)
-FL = win.GetFileAttr(PathName..FL..".lng") and FL or "Eng" -- скорректируем: если такого файла нет, берём английский
-HlpLang = win.GetFileAttr(PathName..HL..".hlf") and HL or "Eng" -- язык для файла справки
-if FarLang~=FL then FarLang,L = FL,dofile(PathName..FL..".lng") end -- если не совпадает с текущим, обновим язык
-end
+local FL,dummy = Far.GetConfig("Language.Main"):sub(1,3),function() return {"Cannot find languages files"} end -- язык, пустая функция
+if not L or L.Lang~=FL then L = (loadfile(PathName..FL..".lng") or loadfile(PathName.."Eng.lng") or dummy)(LMBuild) end -- обновим, если язык другой
+end --LoadLang
 --
 function GetTree(obj,id,parent) --[[прочитаем поддерево]]
 local list,res = obj:Enum(id),{} -- список элементов поддерева, результат
@@ -130,14 +132,15 @@ end
 --
 function SaveToFile(tbl,fname,key) --[[сохраним поддерево в файл]]
 --
-local function SaveOne(file,elem) --сохраним очередной элемент
+local function SaveOne(file,elem,i0) --сохраним очередной элемент
 local indent = (" "):rep(elem.parent:len()+2) -- отступ для него
-local s1 = ("[%s]\n%sName = %s\n%sType = %d\n%sValue = "):format(elem.parent,indent,elem.name,indent,elem.type,indent) -- всё, кроме значения
+i0 = i0 or ""
+local s1 = i0..("[%s]\n%sName = %s\n%sType = %d\n%sValue = "):format(elem.parent,indent,elem.name,indent,elem.type,indent):gsub("\n","\n"..i0)
 if elem.type==F.FST_SUBKEY then -- таблица?
-  file:write(s1.."\n[\n]\n") -- запишем шапку
-  for _,v in pairs(elem.value) do SaveOne(file,v) end -- вызовем себя с каждым элементом таблицы
+  file:write(s1.."\n") -- запишем шапку
+  for _,v in pairs(elem.value) do SaveOne(file,v,indent..i0) end -- вызовем себя с каждым элементом таблицы
 else
-  file:write(s1..tostring(elem.value):gsub("\n","\\n").."\n[\n]\n") -- добавим значение к шапке и запишем
+  file:write(s1..tostring(elem.value):gsub("\n","\\n").."\n") -- добавим значение к шапке и запишем
 end
 end -- SaveOne
 --
@@ -173,23 +176,15 @@ return true -- благополучное завершение
 end -- SaveToFile
 --
 function ReadFromFile(fname) --[[прочитаем файл в таблицу]]
---
-local function erfun(message,text,str)
-local _,n1 = text:sub(1,text:cfind(str,1,true)-1):gsub("\n","")
-local _,n2 = str:gsub("\n","")
-return L.Err.EF1..(n1+1)..L.Err.EF2..(n1+n2+1)..L.Err.EF3..str.."\n\n"..message
-end
--- начало ReadFromFile
 if fname then -- делаем?
   local file,err = io.open(fname,"r") -- откроем файл
   if file then -- создался? работаем
     local text = file:read("*a")
     file:close() -- закроем файл
     local res = {} -- возвращаемая таблица
-    for s in text:gmatch("(.-)\n%[\n%]\n") do -- выдернем очередную порцию
-      local par,name,type,value = s:match("^%[(.*)%]\n%s*Name = (.*)\n%s*Type = (.*)\n%s*Value = (.*)$") -- местоположение, имя, тип и значение
-      type = tonumber(type) -- тип преобразуем в число
-      if not (par and name and type and value) then return nil,erfun(L.Err.BB,text,s) end -- чего-то нет - плохой блок
+    for s1 in text:gmatch(" *%[.-%]\n%s*Name = [^\n]+\n%s*Type = %d+\n%s*Value = [^\n]*") do -- очередная запись
+      local ind,par,name,type,value = s1:match("( *)%[(.-)%]\n%s*Name = ([^\n]+)\n%s*Type = (%d+)\n%s*Value = ([^\n]*)") -- разберём
+      type,par = tonumber(type),par:gsub("\n"..ind,"\n") -- тип преобразуем в число, выкинем отступы
       local ptr = res -- установим указатель на корень таблицы
       for ss in (par.."\n"):gmatch("([^\n]+)\n") do -- переберём все составляющие полного имени родительской папки
         if not ptr[ss] then ptr[ss] = {name=ss,type=F.FST_SUBKEY,value={}} end -- такой подтаблицы ещё нет? вставим её
@@ -197,7 +192,11 @@ if fname then -- делаем?
       end
       ptr[name] = {name=name,type=type,parent = par} -- запишем имя, тип элемента и родительский ключ
       if type==F.FST_SUBKEY then -- подключ?
-        if value~="" then return nil,erfun(L.ErrSubVal,text,s) end -- Для подключа значение идёт в следующих строках
+        if value~="" then -- для подключа указано значение?
+          local _,n1 = text:sub(1,text:cfind(s1,1,true)-1):gsub("\n","") -- посчитаем количество строк до
+          local _,n2 = s1:gsub("\n","") -- и количество строк в нём
+          return nil,L.Err.EF1..(n1+1)..L.Err.EF2..(n1+n2+1)..L.Err.EF3..s1.."\n\n"..L.Err.SubVal -- вернём сообщение об ошибке
+        end
         ptr[name].value = {} -- подтаблица для содержимого подключа
       else -- переменная
         ptr[name].value = type==F.FST_QWORD and tonumber(value) or value:gsub("\\n","\n") -- запишем с восстановлением изначального вида
@@ -239,7 +238,31 @@ local form = { -- диалог редактирования
 }
 --
 local function DlgProc (hDlg,Msg,Param1,Param2) -- обработка событий диалога
-if Msg==F.DN_DRAWDLGITEM and Param1==11 then -- рисуем вручную FST_DATA
+if Msg==F.DN_KILLFOCUS and Param1==3 then -- уход с родителя?
+  local lg,path = hDlg:send(F.DM_GETTEXT,Param1):match("^([^/]*)(.-)$") -- разделим на указание профиля и остаток
+  hDlg:send(F.DM_SETTEXT,Param1,(lg:upper()=="LOCAL" or lg:upper()=="GLOBAL") and lg:upper()..path or ov) -- переведём в заглавные или откатим
+elseif Msg==F.DN_EDITCHANGE and Param1==7 then -- изменение типа
+  local nv = Param2[6].SelectIndex
+  if nv~=ov then
+    h = nv==F.FST_DATA and 20 or nv==F.FST_SUBKEY and 9 or 10 -- отрегулируем высоту окна
+    CurrVal = ""
+    hDlg:send(F.DM_SETTEXT,9,CurrVal)
+    hDlg:send(F.DM_SHOWITEM,9,(nv==F.FST_DATA or nv==F.FST_SUBKEY) and 0 or 1)
+    hDlg:send(F.DM_SHOWITEM,10,nv==F.FST_DATA and 1 or 0)
+    hDlg:send(F.DM_SHOWITEM,11,nv==F.FST_DATA and 1 or 0)
+    hDlg:send(F.DM_RESIZEDIALOG,0,{X=66,Y=h})
+    hDlg:send(F.DM_SETITEMPOSITION,1,{Left=3,Top=1,Right=62,Bottom=h-2})
+    hDlg:send(F.DM_SETITEMPOSITION,12,{Left=-1,Top=h-4,Right=0,Bottom=h-4})
+    local rect = hDlg:send(F.DM_GETITEMPOSITION,13)
+    hDlg:send(F.DM_SETITEMPOSITION,13,{Left=rect.Left,Top=h-3,Right=rect.Right,Bottom=h-3})
+    rect = hDlg:send(F.DM_GETITEMPOSITION,14)
+    hDlg:send(F.DM_SETITEMPOSITION,14,{Left=rect.Left,Top=h-3,Right=rect.Right,Bottom=h-3})
+    far.RestoreScreen(screen)
+    screen = far.SaveScreen()
+  end
+elseif Msg==F.DN_KILLFOCUS and Param1==9 and far.GetDlgItem(hDlg,7)[6].SelectIndex==F.FST_QWORD then -- уход с численного значения?
+  if not tonumber(hDlg:send(F.DM_GETTEXT,Param1)) then hDlg:send(F.DM_SETTEXT,Param1,ov) end -- не число - откатим
+elseif Msg==F.DN_DRAWDLGITEM and Param1==11 then -- рисуем вручную FST_DATA
   local strings,rect = {},hDlg:send(F.DM_GETDLGRECT,0) -- текст по строкам,окно диалога
   local C = far.AdvControl(F.ACTL_GETCOLOR,CurrElem==Param1 and far.Colors.COL_DIALOGEDITUNCHANGED or far.Colors.COL_DIALOGEDIT) -- цвет текста
   local Left,Top,Height,Width = rect.Left+Param2[2],rect.Top+Param2[3]-1,Param2[5]-Param2[3]+1,Param2[4]-Param2[2]+1 -- координаты области вывода
@@ -260,34 +283,10 @@ elseif Msg==F.DN_CONTROLINPUT and Param1==11 and (Param2.VirtualKeyCode==0x73 an
   hDlg:send(F.DM_REDRAW) -- обновим экран
 elseif Msg==F.DN_GOTFOCUS then -- переход на элемент?
   CurrElem,ov = Param1,hDlg:send(F.DM_GETTEXT,Param1) -- запомним текущий элемент и старое значение
-elseif Msg==F.DN_KILLFOCUS and Param1==3 then -- уход с родителя?
-  local lg,path = hDlg:send(F.DM_GETTEXT,Param1):match("^([^/]*)(.-)$") -- разделим на указание профиля и остаток
-  hDlg:send(F.DM_SETTEXT,Param1,(lg:upper()=="LOCAL" or lg:upper()=="GLOBAL") and lg:upper()..path or ov) -- переведём в заглавные или откатим
-elseif Msg==F.DN_KILLFOCUS and Param1==9 and far.GetDlgItem(hDlg,7)[6].SelectIndex==F.FST_QWORD then -- уход с численного значения?
-  if not tonumber(hDlg:send(F.DM_GETTEXT,Param1)) then hDlg:send(F.DM_SETTEXT,Param1,ov) end -- не число - откатим
-elseif Msg==F.DN_EDITCHANGE and Param1==7 then -- изменение типа
-  local nv = Param2[6].SelectIndex
-  if nv~=ov then
-    h = nv==F.FST_DATA and 20 or nv==F.FST_SUBKEY and 9 or 10 -- отрегулируем высоту окна
-    CurrVal = ""
-    hDlg:send(F.DM_SETTEXT,9,CurrVal)
-    hDlg:send(F.DM_SHOWITEM,9,(nv==F.FST_DATA or nv==F.FST_SUBKEY) and 0 or 1)
-    hDlg:send(F.DM_SHOWITEM,10,nv==F.FST_DATA and 1 or 0)
-    hDlg:send(F.DM_SHOWITEM,11,nv==F.FST_DATA and 1 or 0)
-    hDlg:send(F.DM_RESIZEDIALOG,0,{X=66,Y=h})
-    hDlg:send(F.DM_SETITEMPOSITION,1,{Left=3,Top=1,Right=62,Bottom=h-2})
-    hDlg:send(F.DM_SETITEMPOSITION,12,{Left=-1,Top=h-4,Right=0,Bottom=h-4})
-    local rect = hDlg:send(F.DM_GETITEMPOSITION,13)
-    hDlg:send(F.DM_SETITEMPOSITION,13,{Left=rect.Left,Top=h-3,Right=rect.Right,Bottom=h-3})
-    rect = hDlg:send(F.DM_GETITEMPOSITION,14)
-    hDlg:send(F.DM_SETITEMPOSITION,14,{Left=rect.Left,Top=h-3,Right=rect.Right,Bottom=h-3})
-    far.RestoreScreen(screen)
-    screen = far.SaveScreen()
-  end
-elseif Msg==F.DN_CLOSE then -- закрываем диалог?
-  far.SendDlgMessage(hDlg,"DM_SETFOCUS",13) -- переключимся на кнопку
 elseif Msg==F.DN_CONTROLINPUT and (Param2.VirtualKeyCode==0x70 and band(Param2.ControlKeyState,0x1f)==0) then -- F1
   return true,ShowHelp("Edit")
+elseif Msg==F.DN_CLOSE then -- закрываем диалог?
+  far.SendDlgMessage(hDlg,"DM_SETFOCUS",13) -- переключимся на кнопку
 end
 end
 -- начало тела функции Edit
@@ -319,7 +318,7 @@ if elem.type==F.FST_SUBKEY then -- это подключ?
 else
   obj:Delete(key,elem.name) -- удалим данный элемент
 end
-far.FreeSettings() -- закроем профиль
+obj:Free() -- закроем профиль
 end -- Remove
 --
 function ReadDB() --[[прочитать данные из БД]]
@@ -345,7 +344,7 @@ repeat
       if ext then -- расширенный список?
         local objg,objl = far.CreateSettings(pu,F.PSL_ROAMING),far.CreateSettings(pu,F.PSL_LOCAL) -- откроем БД
         local lg = (#objl:Enum(0)>0 and"L " or "  ")..(#objg:Enum(0)>0 and"G  " or "   ") -- признак наличия данных
-        far.FreeSettings() -- закроем БД
+        objg:Free() objl:Free() -- закроем БД
         if lg:match(ext) then list[#list+1] = {name=pt,uid=pu,text=lg..pt} end -- добавим в список
       else
         list[#list+1] = {name=pt,uid=pu,text=pt} -- добавим в список
@@ -413,8 +412,9 @@ return s
 end
 --
 function ShowHelp(text) --[[Вывести справку]]
-far.ShowHelp(PathName..HlpLang..".hlf",text,F.FHELP_CUSTOMFILE)
-end
+local HL = Far.GetConfig("Language.Help"):sub(1,3) -- язык (первые 3 буквы)
+far.ShowHelp(PathName..(win.GetFileAttr(PathName..HL..".hlf") and HL or "Eng")..".hlf",text,F.FHELP_CUSTOMFILE) -- выведем
+end --ShowHelp
 --
 if type(nfo)=="table" then nfo.help = function() ShowHelp() end end
 -- +
@@ -431,6 +431,7 @@ local HotKeys = {{BreakKey="F1"},{BreakKey="F2"},{BreakKey="F3"},{BreakKey="F4"}
   {BreakKey="NUMPAD0"},{BreakKey="DELETE"},{BreakKey="DECIMAL"},{BreakKey="C+PRIOR"},{BreakKey="C+NUMPAD9"},{BreakKey="C+S"},{BreakKey="C+C"},
   {BreakKey="C+L"},{BreakKey="C+G"},{BreakKey="C+1"},{BreakKey="C+2"},{BreakKey="C+3"},{BreakKey="BACK"},{BreakKey="ESCAPE"},{BreakKey="RETURN"}}
 --
+LoadLang() -- обновим язык
 repeat
   local tbl,r2 = ReadDB(),"" -- прочитаем БД
   if tbl.GLOBAL.n>0 and tbl.LOCAL.n==0 then root = root or "GLOBAL" -- если одного раздела нет, переведём корень сразу в другой
@@ -497,19 +498,14 @@ repeat
   end
 until false
 end -- ShowMenu
+--
+if type(nfo)=="table" then nfo.execute = ShowMenu end
 -- +
 --[==[Экспорт]==]
 -- -
 function Save(KName,file)
-if KName then -- задан шаблон имени ключа/переменной?
-  SaveToFile(ReadDB(),type(file)=="string" and file or APanel.Path.."\\"..PName.."."..KName..".dbedit",KName) -- сразу сохраним по шаблону
-else -- не указан шаблон
-  LoadLang() -- обновим язык
-  ShowMenu() -- покажем рабочее меню
+SaveToFile(ReadDB(),type(file)=="string"and file or APanel.Path.."\\"..PName.."."..(KName or"All")..".dbedit",KName or"") -- сразу сохраним по шаблону
 end
-end
---
-if type(nfo)=="table" then nfo.execute = function() Save() end end
 -- +
 --[==[Импорт]==]
 -- -
@@ -533,16 +529,19 @@ end
 -- -
 function CLProc(pref,line)
 LoadLang() -- обновим язык
-local plug = line:match("^%b<>") -- выдернем имя плагина, если есть
-if plug then plug = plug:sub(2,-2) SelPlugin(plug) end -- есть? обрежем скобки и выберем его
-local param = plug and line:match("%b<>%s*(.*)$") or line -- строка после/вместо имени плагина
-if pref=="dbexp" then -- экспорт?
-  Save(param~="" and param or nil) -- экспортируем
+local p,plug,file = PName,line:match("^%b<>") -- выдернем имя плагина, если есть
+if plug then plug,line = plug:sub(2,-2),line:match("^%b<>%s*(.*)$") SelPlugin(plug) end -- есть? обрежем скобки и выберем его; скорректируем строку
+if pref=="dbshow" then -- просмотр?
+  ShowMenu(line:gsub("([^/])/([^/])","%1\n%2"):gsub("//","/")) -- преобразуем к нужному формату и покажем
+elseif pref=="dbexp" then -- экспорт?
+  if line:find('^".+"$') then line = line:sub(2,-2) -- если вся строка в кавычках, просто раскавычим её
+  elseif line:find('"$') then line,file = line:match('^(.-)%s+(%b"")$') -- если в кавычках конец строки, это имя файла, разделим параметр и файл
+  elseif line:find("%s") then line,file = line:match("^(.-)%s+([^%s]*)$") end -- если есть пробел(ы), после последнего - имя файла, разделим
+  Save(line~="" and line or nil,file~="" and file or nil) SelPlugin(p) -- экспортируем, вернём старый плагин
 elseif pref=="dbimp" then -- импорт?
-  Restore(param~="" and param or nil) -- импортируем
+  Restore(line~="" and line or nil) SelPlugin(p) -- импортируем, вернём старый плагин
 end
 end
-
 -- +
 --[==[Обработка вызова модуля]==]
 -- -
@@ -563,15 +562,14 @@ elseif params.show==true or not(params.import or params.export or params.show) t
 end
 end
 --
-PathName = debug.getinfo(ModProc).source:sub(2):match("(.*)%.lua$") -- получим заготовку для имён языковых и справочных файлов
 local function idx(self,key)
 return function(...) local fun = rawget(self,key) if fun then fun(...) else far.Message("DBEdit: bad function name") end end
 end
 local Result = setmetatable({ -- что возвращает модуль
   Main = ModProc;
-  Show = function(root,plugin) ModProc({plugin=plugin,show=root}) end;
-  Import = function(file,plugin) if plugin and SelPlugin(plugin) or not plugin then Restore(file) end end;
-  Export = function(pattern,file,plugin) if plugin and SelPlugin(plugin) or not plugin then Save(pattern or "",file) end end;
+  Show = function(root,plug) local p = PName ModProc({plugin=plug,show=root}) SelPlugin(p) end;
+  Import = function(file,plug) local p = PName if plug and SelPlugin(plug) or not plug then Restore(file) SelPlugin(p) end end;
+  Export = function(patt,file,plug) local p = PName if plug and SelPlugin(plug) or not plug then Save(patt or "",file) SelPlugin(p) end end;
 },{__index=idx;__call=function(self,...) return self.Main(...) end;})
 if not Macro then return Result end -- не первоначальная загрузка? сделаем модулем
 LoadLang() --[[первичная загрузка языка]]
@@ -585,7 +583,7 @@ end
 --[=[Макросы]=]
 -- -
 Macro{
-  area="Common"; key="AltShiftF4"; description=L.EMDesc; [(LMBuild<579 and "u" or "").."id"]=Guids.ExpMacro; action=Save;
+  area="Common"; key="CtrlShiftF5"; description=L.EMDesc; [(LMBuild<579 and "u" or "").."id"]=Guids.ExpMacro; action=ShowMenu;
 }
 Macro{
   area="Common"; key="AltShiftF5"; description=L.IMDesc; [(LMBuild<579 and "u" or "").."id"]=Guids.ImpMacro; action=Restore;
@@ -595,10 +593,11 @@ Macro{
 -- -
 MenuItem{
   description = L.PlugDesc; menu = "Plugins"; area = "Common"; guid = Guids.PlugMenu;
-  text = function() return L.Hdr:sub(1,-6) end; action = function() if SelPlugin() then Save() end end;
+  text = function() return L.Hdr:sub(1,-6) end; action = function() if SelPlugin() then ShowMenu() end end;
 }
 -- +
 --[=[Префикс]=]
 -- -
+CommandLine { description = L.CLDescShow; prefixes = "dbshow"; action = CLProc; }
 CommandLine { description = L.CLDescExp; prefixes = "dbexp"; action = CLProc; }
 CommandLine { description = L.CLDescImp; prefixes = "dbimp"; action = CLProc; }

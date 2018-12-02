@@ -1,5 +1,6 @@
 ﻿local F = far.Flags
 return {
+  Lang = "Eng",
   diEdit = {
     Hdr = {
       Edit = "Edit %s variable",
@@ -50,6 +51,7 @@ return {
   EMDesc = "Plugins DB editor: menu",
   IMDesc = "Plugins DB editor: import",
   PlugDesc = "Plugins DB editor: plugin menu",
+  CLDescShow = "Plugins DB editor: show prefix",
   CLDescExp = "Plugins DB editor: export prefix",
   CLDescImp = "Plugins DB editor: import prefix",
 }

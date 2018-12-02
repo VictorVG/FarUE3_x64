@@ -79,8 +79,8 @@ $^Plugin select
 $^Script macros list
   #Key#          |  #Script#
 
-  #AltShiftF4# - |~Main window~@main@.
-  #AltShiftF5# - |Import dialog.
+  #AltShiftF2# - |~Main window~@main@.
+  #AltShiftF3# - |Import dialog.
 
 @=
 
@@ -90,12 +90,20 @@ $^Script macros list
 $^Command line
 ^#list#
 
-  #dbexp:[<plugin>][pattern]#   - |Export variable/subkeys int file. If plugin name is not set, used previous selection
-(or LuaMacro, if plugin was not selected). Plugin name must be in #<# and #>#.
-If pattern is set, exported all variables/subkeys with names, which contained pattern. If pattern is not set, ~main menu~@main@ showed.
-File name compiled from current path, plugin name, pattern and #.dbedit# extension.
+  #dbshow:[<plugin>][root]#              - |Show data from DB. Root: string like #"GLOBAL/IgorZ/'//' sample"# - show subkey specified.
+If subkey is not exists, used nearest existing above the tree. #/# - subkey names delimiter.
+In subkey name #/# is replaced by #//#.
+If #LOCAL#/#GLOBAL# omitted, subkey is searched in both DBs and best fit selected.
+If plugin name is not set, used current selected (or LuaMacro, if plugin was not selected). Plugin name must be in #<# and #>#.
 
-  #dbimp:[<plugin>][file name]# - |Import into DB from file. If plugin name is not set, used previous selection
+  #dbexp:[<plugin>][pattern] [filename]# - |Export variable/subkeys int file. If plugin name is not set, used current selected
+(or LuaMacro, if plugin was not selected). Plugin name must be in #<# and #>#.
+If pattern is set, exported all variables/subkeys with names, which contained pattern. If pattern is not set, all base exported.
+If filename contains spaces, it must be quoted. Else filename is all characters after last space.
+If filename is omitted, it compiled from current path, plugin name, pattern (or "All") and #.dbedit# extension.
+If patern contains spaces and filename is omitted, than pattern must be quoted.
+
+  #dbimp:[<plugin>][file name]#          - |Import into DB from file. If plugin name is not set, used current selected
 (or LuaMacro, if plugin was not selected). Plugin name must be in #<# and #>#.
 If file name in not set, input file name dialog showed.
 
@@ -121,9 +129,9 @@ Order of executing denotes by order in action list from this help.
         #import#   - |Import from file to DB. Value of command - true/false.
         #show#     - |Show data from DB. Value of command: boolean true - show all DB,
 table like #{"GLOBAL","IgorZ","'/' sample"}# or string like #"GLOBAL/IgorZ/'//' sample"# - show subkey specified.
-If subkey not exists, used nearest existing above the tree. In string #/# - subkey names delimiter.
+If subkey is not exists, used nearest existing above the tree. In string #/# - subkey names delimiter.
 In subkey name #/# is replaced by #//#.
-If #LOCAL#/#GLOBAL# omited, subkey is searched in both DBs and best fit selected.
+If #LOCAL#/#GLOBAL# omitted, subkey is searched in both DBs and best fit selected.
 
       #Parameters#. Strings.
         #FileName# - |File name for export/import.
@@ -131,25 +139,32 @@ If omitted, on export compiled from current path, plugin name, pattern and #.dbe
         #plugin#   - |Plugin name, for which DB is opened.
 If omitted, used previous plugin DB (or LuaMacro, if plugin was not selected).
 If plugin name is incorrect or not found, plugin select menu is showed. On #Esc# script exiting.
+Specified plugin becomes default for script.
 
    2. #require"DBEdit".Show([<subkey>[,<plugin>]])#.
       |Show data from DB.
-        #Subkey#  - |String or table, as #show# in first variant. If omited, root is showed.
+        #Subkey#  - |String or table, as #show# in first variant. If omitted, root is showed.
         #Plugin#  - |String, plugin name, which DB must be showed.
 If omitted, used previous plugin DB (or LuaMacro, if plugin was not selected).
+If plugin name is incorrect or not found, plugin select menu is showed. On #Esc# script exiting.
+In this mode default plugin does not changes.
 
    3. #require"DBEdit".Import([<file>[,<plugin>]])#.
       |Import from file to DB.
         #File#    - |String, file name to import. If omitted, requested.
-        #Plugin#  - |String, plugin name in which DB file content wil be imported.
+        #Plugin#  - |String, plugin name in which DB file content will be imported.
 If omitted, used previous plugin DB (or LuaMacro, if plugin was not selected).
+If plugin name is incorrect or not found, plugin select menu is showed. On #Esc# script exiting.
+In this mode default plugin does not changes.
 
    4. #require"DBEdit".Export([<pattern>][,<file>[,<plugin>]]])#.
       |Export from DB into file by pattern.
-        #Pattern# - |String. Variable and subkey names, that match to pattern, will be exported. If omited, all will be exported.
+        #Pattern# - |String. Variable and subkey names, that match to pattern, will be exported. If omitted, all will be exported.
         #File#    - |String, file name to export. If omitted, compiled from current path, plugin name, pattern and #.dbedit# extension.
         #Plugin#  - |String, plugin name, data from which DB will be exported into file.
 If omitted, used previous plugin DB (or LuaMacro, if plugin was not selected).
+If plugin name is incorrect or not found, plugin select menu is showed. On #Esc# script exiting.
+In this mode default plugin does not changes.
 
 ^#Sample#
 
@@ -175,7 +190,7 @@ $^About
 
  Author:       #IgorZ#
 
- Version:      #2.1.2#
+ Version:      #2.1.3#
 
  Net address: ~http://forum.farmanager.com/viewtopic.php?t=10120~@http://forum.farmanager.com/viewtopic.php?t=10120@
 @=‗
