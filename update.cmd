@@ -1,4 +1,9 @@
 @echo off
+setlocal enableextensions
+for /f "tokens=4" %%a in ('ver') do (set prm=%%a)
+set prm=%prm:~0,3% && set M=%prm:~0,1% && set N=%prm:~2,1%
+if %M% geq 6 (if %N% geq 1 (move /y Far\wget.ex7 Far\wget.exe > nul & move /y Far\wget.tx7 Far\wget.txt > nul))
+if exist Far\wget.*7 (del /f/q Far\wget.*7 > nul)
 cd /d Far > nul
 if exist "plugins\intchecker\scripts\InChecker.GetFileHash.lua" (del /f/q "plugins\intchecker\scripts\InChecker.GetFileHash.lua" > nul)
 if exist "plugins\intchecker\scripts\intchecker_run.lua" (del /f/q "plugins\intchecker\scripts\intchecker_run.lua" > nul)
@@ -12,7 +17,7 @@ if exist "Profile\Macros\scripts\Shell_DeepTarball.lua" (del /s/q "Profile\Macro
 if exist "Profile\Macros\scripts\Dialog_ToEditor.lua" (del /s/q "Profile\Macros\scripts\Dialog_ToEditor.lua" > nul)
 if exist "Profile\Macros\scripts\Editor_IntegrateMacro.lua" (del /s/q "Profile\Macros\scripts\Editor_IntegrateMacro.lua" > nul)
 if exist "plugins\multiarc\Formats\targz.fmt" (del /s/q "plugins\multiarc\Formats\targz.fmt" > nul)
-far /import default.farconfig
+rem far /import default.farconfig
 cd ../ > nul
 del /f/q update.cmd > nul
 exit /b 0 > nul

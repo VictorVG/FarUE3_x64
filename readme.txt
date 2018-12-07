@@ -1,4 +1,4 @@
-Сборка Far Manager UE3 (Far UE3, FarUE3) 32/64-х битная редакция
+Сборка Far Manager UE3 (Far UE3, FarUE3) 64-х битная редакция
 
 Общее описание:
 
