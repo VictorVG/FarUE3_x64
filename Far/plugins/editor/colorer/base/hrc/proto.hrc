@@ -168,9 +168,21 @@
     <firstline weight='4'>/-\*- ruby -\*-/i</firstline>
     <firstline>/bin\/ruby/i</firstline>
   </prototype>
+  <prototype name="nix" group="main" description="Nix">
+    <location link="jar:common.jar!base/nix.hrc"/>
+    <filename>/\.(nix)$/i</filename>
+    <parameters>
+      <param name="tabs-as-errors" value="true" description="Shows tabulation symbol as error"/>
+      <param name="spaces-as-errors" value="true" description="Shows trailing spaces as error"/>
+    </parameters>
+  </prototype>
+  <prototype name="haxe" group="main" description="Haxe">
+    <location link="jar:common.jar!base/haxe.hrc"/>
+    <filename>/\.hx$/i</filename>
+  </prototype>
   <prototype name="scala" group="main" description="Scala">
     <location link="jar:common.jar!base/scala.hrc"/>
-    <filename>/\.scala$/i</filename>
+    <filename>/\.(scala|sc|sbt)$/i</filename>
   </prototype>
   <prototype name="tcltk" group="main" description="Tcl/Tk/Expect">
     <location link="jar:common.jar!base/tcltk.hrc"/>
@@ -187,6 +199,19 @@
   <prototype name="kotlin" group="main" description="Kotlin">
     <location link="jar:common.jar!base/kotlin.hrc"/>
     <filename>/\.kt$/i</filename>
+  </prototype>
+  <prototype name="groovy" group="main" description="Groovy">
+    <location link="jar:common.jar!base/groovy.hrc"/>
+    <filename>/\.groovy$/i</filename>
+    <filename>/\.gdsl$/i</filename>
+    <filename>/Jenkinsfile/i</filename>
+    <firstline>/^import/</firstline>
+    <firstline>/^#!groovy/</firstline>
+    <parameters>
+      <param name="j2se-classes" value="true" description="Use some common used J2SE class names"/>
+      <param name="tabs-as-errors" value="false" description="Shows tabulation symbol as error"/>
+      <param name="spaces-as-errors" value="false" description="Shows trailing spaces as error"/>
+    </parameters>
   </prototype>
 
   <prototype name="rust" group="main" description="Rust">
@@ -261,6 +286,10 @@
   <prototype name="jsp" group="inet" description="jsp">
     <location link="jar:common.jar!inet/jsp.hrc"/>
     <filename>/\.(jspf?|tag)$/i</filename>
+  </prototype>
+  <prototype name="gsp" group="inet" description="gsp">
+   <location link="jar:common.jar!inet/gsp.hrc"/>
+   <filename>/\.gsp$/i</filename>
   </prototype>
 
   <prototype name="php" group="inet" description="php">
@@ -373,7 +402,7 @@
   <!--  xml types  -->
   <prototype name="xml" group="xml" description="xml">
     <location link="jar:common.jar!xml/xml.hrc"/>
-    <filename>/\.(xml|gi2|gpr|ui)$/i</filename>
+    <filename>/\.(xml|\w*proj|gi2|gpr|ui)$/i</filename>
     <filename>/\.(wxs|fb2)$/i</filename>
     <firstline>/^&lt;\?xml | &lt;\!DOCTYPE | xmlns /x</firstline>
     <firstline>/^\s*&lt;\w+&gt;\s*/</firstline><!-- (\s+\w+\s*=\*([&quot;&apos;]).+?\2)*\s* -->
@@ -542,6 +571,8 @@
     <location link="jar:common.jar!scripts/sh.hrc"/>
     <filename>/\.(sh|spec)$/i</filename>
     <filename>/^PKGBUILD$/i</filename>
+    <filename>/\.(bash_|z)?profile/</filename>
+    <filename>/\.(ba|k|z)?shrc/</filename>
     <firstline weight='2'>/^\#(!\s*.+sh\b)/</firstline>
   </prototype>
   <prototype name="avisynth" group="scripts" description="AviSynth">
@@ -591,6 +622,12 @@
   <prototype name="qmake" group="scripts" description="Qt qmake">
     <location link="jar:common.jar!scripts/qmake.hrc"/>
     <filename>/\.pr[oif]$/i</filename>
+  </prototype>
+  <prototype name="cmake" group="scripts" description="CMake script">
+    <location link="jar:common.jar!scripts/cmake/cmake.hrc"/>
+    <filename>/(\.cmake)$/i</filename>
+    <filename weight="3">/(^CMakeLists\.txt)$/i</filename>
+    <firstline weight="2">/^cmake_minimum_required/xi</firstline>
   </prototype>
   <prototype name="solution" group="scripts" description="Microsoft Visual Studio Solution File">
     <location link="jar:common.jar!scripts/solution.hrc"/>

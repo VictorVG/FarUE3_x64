@@ -318,28 +318,23 @@
 "Per La Lettura"
 //[MConfigElevationUsePrivileges]
 "Usa Permessi Aggiuntivi"
-// need translation:
 //[MConfigSortingCollation]
-"Sorting collation:"
-// need translation:
+"Ordinamento Collation:"
 //[MConfigSortingOrdinal]
-"ordinal"
-// need translation:
+"Ordinale"
 //[MConfigSortingInvariant]
-"invariant"
-// need translation:
+"Invariante"
 //[MConfigSortingLinguistic]
-"linguistic"
-// need translation:
+"Linguistico"
 //[MConfigSortingDigitsAsNumbers]
-"Treat digits as numbers"
+"Tratta Cifre Come Numeri"
 //[MConfigSortingCase]
 "&Minuscole/MAIUSCOLE"
 //[MConfigAutoSave]
 "Salvataggio A&utomatico Impostazioni"
 
 //[MConfigTreeTitle]
-"Impostazioni  Albero"
+"Impostazioni ► Albero"
 //[MConfigTreeAutoChange]
 "&Cambia Automaticamente"
 //[MConfigTreeLabelMinFolder]
@@ -354,19 +349,17 @@
 "Percordi Di Rete"
 //[MConfigTreeLabelRemovableDisk]
 "Dischi Rimovibili"
-// need translation:
 //[MConfigTreeLabelCDDisk]
-"optical drives"
+"Dischi Ottici"
 //[MConfigTreeLabelExceptPath]
 "Non Creare File Per I Seguenti Oggetti:"
-// need translation:
 //[MConfigTreeLabelSaveLocalPath]
-"Path for local, removale and optical drives:"
+"Percorso Locale Per Supporti Ottici/Rimovibili:"
 //[MConfigTreeLabelSaveNetPath]
 "Modo Per Unità Di Rete E Percorsi:"
 
 //[MConfigPanelTitle]
-"Impostazione  Dei Pannelli"
+"Impostazione ► Dei Pannelli"
 //[MConfigHidden]
 "Mostra Files &Nascosti"
 //[MConfigHighlight]
@@ -405,7 +398,7 @@
 "Mostra \"..\" Nella Cartella Principale"
 
 //[MConfigInterfaceTitle]
-"Impostazioni  Interfaccia"
+"Impostazioni ► Interfaccia"
 //[MConfigClock]
 "&Orologio Nei Pannelli"
 //[MConfigViewerEditorClock]
@@ -428,9 +421,8 @@
 "Mostra Indicatore Di Cancella&zione"
 //[MConfigPgUpChangeDisk]
 "Usa [CTRL-Pag&Su] Per Cambiare Unità"
-// need translation:
 //[MConfigUseVirtualTerminalForRendering]
-"Use Virtual Terminal for rendering"
+"Usa Terminale Virtuale Per Il Rendering"
 //[MConfigClearType]
 "Modalità ClearT&ype (può rallentare)"
 //[MConfigSetConsoleIcon]
@@ -441,7 +433,7 @@
 "Opzioni Barra Della &Finestra Far"
 
 //[MConfigDlgSetsTitle]
-"Impostazioni  Finestre Di Dialogo"
+"Impostazioni ► Finestre Di Dialogo"
 //[MConfigDialogsEditHistory]
 "Cronologia Dei &Dati Inseriti"
 //[MConfigDialogsEditBlock]
@@ -456,7 +448,7 @@
 "Chiudi &Finestra Se Clicchi Fuori Col Mouse"
 
 //[MConfigVMenuTitle]
-"Impostazioni  Menu"
+"Impostazioni ► Menu"
 //[MConfigVMenuLBtnClick]
 "Tasto Sinistro Clicca Fuori Menu"
 //[MConfigVMenuRBtnClick]
@@ -471,7 +463,7 @@
 "Fai Niente"
 
 //[MConfigCmdlineTitle]
-"Impostazioni  Linea Comando"
+"Impostazioni ► Linea Comando"
 //[MConfigCmdlineEditBlock]
 "&Blocchi Persistenti"
 //[MConfigCmdlineDelRemovesBlocks]
@@ -486,7 +478,7 @@
 "A&mministratore"
 
 //[MConfigAutoCompleteTitle]
-"Impostazioni  AutoCompletamento"
+"Impostazioni ► AutoCompletamento"
 
 //[MConfigAutoCompleteShowList]
 "&Mostra Lista"
@@ -498,7 +490,7 @@
 "&Accoda Primo Oggetto Corrispondente"
 
 //[MConfigInfoPanelTitle]
-"Impostazioni  Panello Info"
+"Impostazioni ► Panello Info"
 //[MConfigInfoPanelCNTitle]
 "Formato Nome Co&mputer"
 //[MConfigInfoPanelCNPhysicalNetBIOS]
@@ -522,7 +514,7 @@
 //[MConfigInfoPanelUNFullyQualifiedDN]
 "Nome Dominio Completo"
 //[MConfigInfoPanelUNSamCompatible]
-"Sam Compatibile"
+"SAM Compatibile"
 //[MConfigInfoPanelUNDisplay]
 "Visualizza Nome"
 //[MConfigInfoPanelUNUniqueId]
@@ -554,7 +546,7 @@
 "&Stato Energetico"
 
 //[MViewConfigTitle]
-"Impostazioni  Visualizzatore"
+"Impostazioni ► Visualizzatore"
 //[MViewConfigExternalF3]
 "Usa Visualizzatore Esterno [F3] Invece Di [Alt-F3]"
 //[MViewConfigExternalCommand]
@@ -569,12 +561,10 @@
 "Salva &Tabella Caratteri"
 //[MViewConfigSaveWrapMode]
 "Salva Stato Di &A Capo Automatico"
-// need translation:
 //[MViewConfigSaveViewMode]
-"Save view mode"
-// need translation:
+"Salva Modo Vista"
 //[MViewConfigDetectDumpMode]
-"Detect dump view mode"
+"Rileva Modo Vista Dump"
 //[MViewAutoDetectCodePage]
 "Autorile&va Tabella Caratteri"
 //[MViewConfigTabSize]
@@ -595,7 +585,7 @@
 "Auto Riposiziona Dialogo Di &Ricerca"
 
 //[MEditConfigTitle]
-"Impostazioni  Editor"
+"Impostazioni ► Editor"
 //[MEditConfigEditorF4]
 "Usa Editor Esterno Per F4 Invece Di Alt+F4"
 //[MEditConfigEditorCommand]
@@ -768,12 +758,10 @@
 "Salta &Tutti"
 //[MCopyCancel]
 "&Annulla"
-// need translation:
 //[MCopyDecrypt]
-"Decrypt"
-// need translation:
+"Decripta"
 //[MCopyDecryptAll]
-"Decrypt all"
+"Decripta Tutti"
 
 //[MCopyCannotCreateLink]
 "Non Posso Creare Il Collegamento"
@@ -874,7 +862,6 @@
 
 //[MCopyFilesTotalInfo]
 "Files:"
-// need translation:
 //[MCopyBytesTotalInfo]
 "Bytes:"
 //[MCopyMoving]
@@ -940,18 +927,14 @@
 "Le Cartelle Seguenti Verranno Distrutti:"
 //[MRecycleFolderConfirm]
 "Le Cartelle Seguenti Verranno Spostate Nel Cestino:"
-// need translation:
 //[MRecycleFolderConfirmDeleteLink1]
-"Folder contains symbolic links."
-// need translation:
+"La Cartella Contiene Link Simbolici"
 //[MRecycleFolderConfirmDeleteLink2]
-"To prevent the loss of their content when clearing Recyle Bin"
-// need translation:
+"Per Prevenire Perdite Di Dati Durante Lo Svuotamento Del Cestino"
 //[MRecycleFolderConfirmDeleteLink3]
-"those links will be broken now."
-// need translation:
+"Questi Collegamenti Saranno Disattivati"
 //[MRecycleFolderConfirmDeleteLink4]
-"It would be impossible to restore them later."
+"Sarà Impossibile Ripristinarli In Seguito"
 //[MDeleteWipe]
 "Distruzione"
 //[MDeleteRecycle]
@@ -1070,12 +1053,10 @@
 "Ricerca"
 //[MEditSearchFor]
 "Ricerca &Di"
-// need translation:
 //[MEditSearchPickWord]
-"Word"
-// need translation:
+"Parola"
 //[MEditSearchPickSelection]
-"Selection"
+"Selezione"
 //[MEditSearchCase]
 "&Minuscole/MAIUSCOLE"
 //[MEditSearchWholeWords]
@@ -1683,7 +1664,7 @@
 "???"
 
 //[MListUp]
-"Su"
+"↑Su↑"
 //[MListFolder]
 "Cartel"
 //[MListSymlink]
@@ -1710,9 +1691,8 @@
 "DEDUP"
 //[MListNFS]
 "NFS"
-// need translation:
 //[MListPlaceholder]
-"Placeholder"
+"Segnaposto"
 //[MListUnknownReparsePoint]
 "?Symlink?"
 //[MListBrackets]
@@ -1732,9 +1712,8 @@
 //[MListEb]
 "E"
 {3} replacement field can receive a sum of files & folders
-// need translation:
 //[MListFileSize]
-"Bytes: {0}, files: {1}, folders: {2}"
+"Bytes: {0}, Files: {1}, Cartelle: {2}"
 //[MListFileSizeStatus]
 "{0} ({1}/{2}) {3} {4}"
 //[MListFreeSize]
@@ -2363,7 +2342,6 @@
 "[Ctrl-H] [Canc] [Ins] [F4]"
 //[MGetCodePageBottomShortTitle]
 "[Ctrl-H] [Canc] [F4]"
-// need translation:
 //[MGetCodePageEditCodePageName]
 "Modifica Nome Codepage"
 //[MGetCodePageResetCodePageName]
@@ -2677,49 +2655,49 @@
 "Lista Periferiche &USB"
 
 //[MMenuSystemSettings]
-" &Sistema"
+"► &Sistema"
 //[MMenuPanelSettings]
-" &Pannelli"
+"► &Pannelli"
 //[MMenuTreeSettings]
-" &Albero Cartelle"
+"► &Albero Cartelle"
 //[MMenuInterface]
-" &Interfaccia"
+"► &Interfaccia"
 //[MMenuLanguages]
-" &Lingua"
+"► &Lingua"
 //[MMenuPluginsConfig]
-" Pl&ug-In"
+"► Pl&ug-In"
 //[MMenuPluginsManagerSettings]
-" &Gestore Plug-In"
+"► &Gestore Plug-In"
 //[MMenuDialogSettings]
-" &Finestre"
+"► &Finestre"
 //[MMenuVMenuSettings]
-" Imposta &Menu"
+"► Imposta &Menu"
 //[MMenuCmdlineSettings]
-" P&rompt Dei Commandi"
+"► P&rompt Dei Commandi"
 //[MMenuAutoCompleteSettings]
-" Au&tocompletamento"
+"► Au&tocompletamento"
 //[MMenuInfoPanelSettings]
-" Pa&nnello Informazioni"
+"► Pa&nnello Informazioni"
 //[MMenuMaskGroups]
-" Masc&here Filtri"
+"► Masc&here Filtri"
 //[MMenuConfirmation]
-" C&onferme"
+"► C&onferme"
 //[MMenuFilePanelModes]
-" Modi Di &Visualizzazione"
+"► Modi Di &Visualizzazione"
 //[MMenuFileDescriptions]
-" &Descrizioni Files"
+"► &Descrizioni Files"
 //[MMenuFolderInfoFiles]
-" D&escrizioni Cartelle"
+"► D&escrizioni Cartelle"
 //[MMenuViewer]
-" Visuali&zzatore Interno"
+"► Visuali&zzatore Interno"
 //[MMenuEditor]
-" Editor In&terno"
+"► Editor In&terno"
 //[MMenuCodePages]
-" Codifica Caratteri"
+"► Codifica Caratteri"
 //[MMenuColors]
-" Colori Far"
+"► Colori Far"
 //[MMenuFilesHighlighting]
-" Colori Files"
+"► Colori Files"
 //[MMenuSaveSetup]
 "• Salva Le Impostazioni"
 //[MMenuTogglePanelRight]
@@ -2728,18 +2706,18 @@
 "Cambia Unità"
 
 //[MMenuLeftTitle]
-" &Sinistra"
+"◄ &Sinistra"
 //[MMenuFilesTitle]
-" &Archivi"
+"▼ &Archivi"
 //[MMenuCommandsTitle]
-" &Comandi"
+"▼ &Comandi"
 //[MMenuOptionsTitle]
-" &Opzioni"
+"▼ &Opzioni"
 //[MMenuRightTitle]
-"&Destra "
+"&Destra ►"
 
 //[MMenuSortTitle]
-" Ordina Per..."
+"► Ordina Per..."
 //[MMenuSortByName]
 "Nome"
 //[MMenuSortByExt]
@@ -2794,7 +2772,7 @@
 "Totale: {0}"
 
 //[MChangeDriveTitle]
-" Unità"
+"► Unità"
 //[MChangeDriveRemovable]
 "Removibile"
 //[MChangeDriveFixed]
@@ -2837,9 +2815,8 @@
 "Non Posso Disconnettermi Da {0}:"
 //[MChangeDriveCannotDelSubst]
 "Non Posso Eliminare Un Drive SUBST {0}"
-// need translation:
 //[MChangeDriveCannotDetach]
-"Cannot detach virtual disk {0}"
+"Non Posso Scollegare Disco Virtuale {0}"
 //[MChangeDriveOpenFiles]
 "Se Non Chiudete I Files Aperti, I Dati Potrebbero Esser Persi!"
 
@@ -2898,9 +2875,8 @@
 "Mostra &File System"
 //[MChangeDriveShowSize]
 "Mostra Dimensio&ne"
-// need translation:
 //[MChangeDriveShowSizeFloat]
-"Show size as a decimal fraction"
+"Mostra Dimensione Come Frazione Decimale"
 //[MChangeDriveShowRemovableDrive]
 "Mostra Parametri Disc&hi USB"
 //[MChangeDriveShowPlugins]
@@ -2973,9 +2949,8 @@
 "DEDUP"
 //[MQuickViewNFS]
 "NFS"
-// need translation:
 //[MQuickViewPlaceholder]
-"Placeholder"
+"Segnaposto"
 //[MQuickViewUnknownReparsePoint]
 "Punto Reparse Ignoto"
 //[MQuickViewNoData]
@@ -3037,12 +3012,10 @@
 "P&unto Di Reparse"
 //[MSetAttrVirtual]
 "&Virtuale"
-// need translation:
 //[MSetAttrIntegrityStream]
-"Integrity stream"
-// need translation:
+"Integrità Flusso"
 //[MSetAttrNoScrubData]
-"No scrub data"
+"Nessun Dato Scrub"
 //[MSetAttrSubfolders]
 "Elabora Sott&o Cartelle"
 //[MSetAttrOwner]
@@ -3650,9 +3623,8 @@
 "&Descrizione:"
 //[MEditMenuConfirmation]
 "Salva I Cambiamenti?"
-// need translation:
 //[MEditMenuError]
-"Cannot update menu"
+"Non Posso Aggiornare Il Menu"
 
 //[MViewerTitle]
 "Visualizzatore"
@@ -3902,14 +3874,12 @@
 "Eccezione Interna"
 //[MExcException]
 "Eccezione:"
-// need translation:
 //[MExcDetails]
-"Details:"
+"Dettagli:"
 //[MExcAddress]
 "Indirizzo:"
-// need translation:
 //[MExcSource]
-"Source:"
+"Origine:"
 //[MExcFunction]
 "Funzione:"
 //[MExcModule]
@@ -3918,10 +3888,8 @@
 "Termina FAR"
 //[MExcUnload]
 "Scarica Plugin"
-// need translation:
 //[MExcStack]
 "Stack"
-// need translation:
 //[MExcMinidump]
 "Minidump"
 
@@ -4279,9 +4247,8 @@
 ""
 //[MInfoCtrlF11]
 ""
-// need translation:
 //[MInfoCtrlF12]
-"Mode"
+"Modo"
 
 // InfoPanel KeyBar AltShiftF1-12
 //[MInfoAltShiftF1]
@@ -4901,12 +4868,10 @@
 "Non In &Linea"
 //[MFileFilterAttrVirtual]
 "&Virtuale"
-// need translation:
 //[MFileFilterAttrIntegrityStream]
-"Integrity stream"
-// need translation:
+"Integrità Flusso"
 //[MFileFilterAttrNoScrubData]
-"No scrub data"
+"Dati Scrub Mancanti"
 //[MFileFilterReset]
 "&Resetta"
 //[MFileFilterCancel]
@@ -4958,9 +4923,8 @@
 "Non Richiedere Per Questa Sessione"
 //[MCompletionHistoryTitle]
 "Cronologia"
-// need translation:
 //[MCompletionEnvironmentTitle]
-"Environment"
+"Ambiente"
 //[MCompletionFilesTitle]
 "Files"
 //[MObjectLockedReason]
@@ -4971,35 +4935,28 @@
 "modifi"
 //[MObjectLockedReasonOpened]
 "aperto"
-// need translation:
 //[MObjectLockedAndMore]
-"and {0} more processes."
+"e {0} altri processi"
 //[MObjectLockedSwitchTo]
 "Vai A"
 //[MObjectLockedClose]
 "Chiudi File"
-// need translation:
 //[MObjectLockedReasonSessionMismatch]
-"One or more processes are running in another Terminal Services session."
-// need translation:
+"Uno O Più Processi Sono In Esecuzione In Altre Sessioni Di Terminali"
 //[MObjectLockedReasonCriticalProcess]
-"One or more processes are critical processes."
-// need translation:
+"Uno O Più Processi Sono Processi Critici"
 //[MObjectLockedReasonCriticalService]
-"One or more services are critical services."
-// need translation:
+"Uno O Più Servizi Sono Servizi Critici"
 //[MObjectLockedReasonDetectedSelf]
-"The file is opened by the current process."
+"Il File E' Aperto Dal Processo Corrente"
 //[MProblemDb]
 "Problema Al dBase Di Configurazione"
 //[MShowConfigFolders]
 "Mostra Cartella Configurazione"
-// need translation:
 //[MBadLanguageFile]
-"Incorrect language file"
-// need translation:
+"File Di Lingua Errato"
 //[MLanguageStringNotFound]
-"String {0} not found"
+"Stringa {0} Non Trovata"
 // keys
 //[MKeyLaunchMediaSelect]
 ""
