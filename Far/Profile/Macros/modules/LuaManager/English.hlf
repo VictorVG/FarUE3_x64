@@ -103,6 +103,7 @@ Detail info about filters applied showed for macros, keyboard macros, event hand
 
   #CtrlK#      - |Set filter on macro keys.
   #CtrlShiftK# - |Set arbitrary macro keys filter. Regular expression are supported.
+Special value #none# lets to select macros without keys or with pseudokeys.
   #CtrlAltK#   - |Reset filter on macro keys.
   #CtrlM#      - |~Set filter on macros and plugin menu items areas~@filter@.
   #CtrlAltM#   - |Reset filter on macros and plugin menu items areas.
@@ -322,6 +323,7 @@ Multiline descriptions printed by line.
 ^#4.# Filter. Script filtering by different parameters
 
   #Filter for keys#      - |Setting macro start keys filter. Regular expression are allowed.
+Special value #none# lets to select macros without keys or with pseudokeys.
   #Change#               - |Set macro start key filter from keyboard.
   #Filter for areas#     - |Start ~macro and plugin menu items area filter configuration menu~@filter@.
   #Filter for groups#    - |Start ~event handlers group filter configuration menu~@filter@.
@@ -470,6 +472,7 @@ Values of skipped fields are taken from script configuration.
       #Filtering#. Each parameter is a string.
         #AFilter#    - |Areas filter for macros. String is a list of areas, divided by spaces.
         #KFilter#    - |Keys filter for macros. String defined similarly keys in macro definition. Regular expression allowed.
+Special value #none# lets to select macros without keys or with pseudokeys.
         #GFilter#    - |Event groups filter for event handlers.String is a list of groups, divided by spaces.
         #PFilter#    - |Search paths filter for modules. String is a list of paths in #"#, divided by spaces.
         #FFilter#    - |Files with scripts filter. String is Far file mask.
@@ -589,7 +592,7 @@ $^About
 
  Author:       #IgorZ#
 
- Version:      #5.0.2#
+ Version:      #5.0.3#
 
  Net address: ~http://forum.farmanager.com/viewtopic.php?t=7936~@http://forum.farmanager.com/viewtopic.php?t=7936@
 @=‗

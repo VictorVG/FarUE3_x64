@@ -2,7 +2,7 @@
 local nfo = Info {
   name          = "LuaManager";
   description   = "Менеджер Lua/Moon-скриптов для Fara";
-  version       = "5.0.2"; --в формате semver: http://semver.org/lang/ru/
+  version       = "5.0.3"; --в формате semver: http://semver.org/lang/ru/
   author        = "IgorZ";
   url           = "http://forum.farmanager.com/viewtopic.php?t=7936";
   id            = "180EE412-CBDE-40C7-9AE6-37FC64673CBD";
@@ -145,6 +145,7 @@ history         = [[
 2018/05/18 v5.0.1 - Шаблон события ExitFar скорректирован в соответствии с изменениями в плагине. Исправлена ошибка с обработкой нажатия кнопки
                     "Панели" в диалоге конфигурации. Ещё всякие мелочи.
 2018/11/06 v5.0.2 - Добавлен макрос вставки панельного плагина. Рефакторинг. Мелкие правки.
+2018/12/10 v5.0.3 - Добавлена фильтрация по фиктивному/отстутствующему key. Доработана поддержка несохранённых клавиатурных макросов.
 ]];
 }
 if not nfo then return nfo end
@@ -656,7 +657,8 @@ repeat
   local strings,sf,D = {},"",PrepareFiles(item) -- список вывода, флаги как строка, разобранный скрипт
   if item.disabled then strings[#strings+1] = {text=L.diShow.Space..L.diShow.Disabled,item=item.disabled} -- заполним данными
                         strings[#strings+1] = {text=L.diShow.Space} end
-  strings[#strings+1] = {text=L.diShow[item.FileName:sub(-1)=="\\" and "Dir" or "File"]..(item.FileName or L.Absent),item=item.FileName}
+  strings[#strings+1] = {text=L.diShow[(item.FileName or ""):sub(-1)=="\\" and "Dir" or "File"]..(item.FileName or L.Absent),item=item.FileName}
+  if item.needsave then strings[#strings+1] = {text=L.diShow.Space..L.diShow.NeedSave,item=item.needsave} end
   if item.Info then -- PanelModule?
     strings[#strings+1] = {text=L.diShow.guid..win.Uuid(item.Info.Guid),item=win.Uuid(item.Info.Guid)}
     strings[#strings+1] = {text=L.diShow.Name..(item.Info.Title and item.Info.Title or L.Absent),item=item.Info.Title}
@@ -796,7 +798,7 @@ repeat
   elseif res.BreakKey=="C+D" then -- включить/выключить с помощью Rebind?
     DoIt(Disable,L.Disable,item) -- переключим
     item.disabled = not item.disabled -- надо для корректного отображения
-  elseif res.BreakKey=="C+S" then -- включить/выключить с помощью Rebind?
+  elseif res.BreakKey=="C+S" then -- открыть в ScriptBrowser?
     local info = rs.getscript_byfile(item.FileName) -- поищем info для данного файла
     if info then -- нашли?
       while info.parent_id do info = rs.getscript(info.parent_id) end -- найдём родителя
@@ -2136,13 +2138,18 @@ repeat -- работаем, пока не надоест
     if not me then break end -- кончились - закончим перебор
     me.descr = (me.description and not (me.code and me.description=="")) and "'"..me.description.."'" or Id.."="..me[Id]
     me.desc2 = (me.description and not (me.code and me.description=="")) and me.description or Id.."="..me[Id]
-    local infilter = FMatch(me.FileName,ff)>0 -- отсеем по файловой маске
+    local infilter = me.needsave or FMatch(me.FileName or "",ff)>0 -- отсеем по файловой маске
     if me.area then -- это макрос?
       me.key = me.key or NoKey -- если вдруг нету клавиш
       infilter = infilter and regex.find(" "..S.Filter.A.." ","/( "..me.area:gsub(" "," | ").." )/i") -- отфильтруем по областям
       if me.code then infilter = infilter and S.Show.K else infilter = infilter and S.Show.M end -- отсеем отключённые
-      infilter = infilter and (S.Filter.K=="" or (me.key:match("^/.*/$") and regex.find(S.Filter.K,me.key,1,"i"))
-        or regex.find(me.key,"(^| )"..S.Filter.K.."($| )",1,"i")) -- отсеем клавиши
+      if S.Filter.K:lower()=="none" then -- выводим только с псевдоклавишами?
+        infilter = infilter and not me.key:match("^/.*/$") -- регэкспы отсеиваем
+        for sk in me.key:gmatch("%S+") do infilter = infilter and not far.NameToInputRecord(sk:gsub("LCtrl","Ctrl"):gsub("LAlt","Alt")) end
+      else -- с нормальными
+        infilter = infilter and (S.Filter.K=="" or (me.key:match("^/.*/$") and regex.find(S.Filter.K,me.key,1,"i"))
+          or regex.find(me.key,"(^| )"..S.Filter.K.."($| )",1,"i")) -- отсеем клавиши
+      end
       infilter = infilter and (S.Show.H or regex.find(" "..me.area.." ","( Common | "..Area.Current.." )",1,"i")) -- отсеем нетекущие?
       if infilter then -- не отфильтрован?
         if me.code then keymacros[#keymacros+1] = me else macros[#macros+1] = me end -- запомним

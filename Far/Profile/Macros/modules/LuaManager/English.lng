@@ -179,6 +179,7 @@ return {
     Version  = "Version:      │",
     Space    = "              │",
     Disabled = "<Temporary disabled>",
+    NeedSave = "<Macro is not saved>",
     Default = "<Default>",
     NoFile = "<No Source text file>",
     NotFound = "<Failed to find>",
