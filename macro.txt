@@ -15,7 +15,7 @@
   ║  ···················C │ AltShiftF5                     │ Common_DBEdit.lua                          │ Редактор баз данных плагинов: импорт                                             ║
   ║  ···················C │ AltShiftR                      │ Common_ReloadMacros.lua                    │ Reload macros                                                                    ║
   ║  ···················C │ AltShiftUp AltShiftDown        │ Plugin_ConsoleControl-Macros.lua           │ Console Control: Change Windows Size                                             ║
-  ║                       │ AltShiftLeft AltShiftRight     │                                            │                                                                                  ║
+  ║                       │ fAltShitLeft AltShiftRight     │                                            │                                                                                  ║
   ║  ···················C │ Ctrl/                          │ Common_KeyName.lua                         │ Получение названия клавиши. © SimSU                                              ║
   ║  ···················C │ CtrlAlt1 CtrlAlt0              │ Plugin_ConsoleControl-Macros.lua           │ Window size 80x25                                                                ║
   ║  ···················C │ CtrlAlt2 CtrlAlt0              │ Plugin_ConsoleControl-Macros.lua           │ Window size 80x50                                                                ║
@@ -120,6 +120,7 @@
   ║  S··················· │ CtrlS                          │ Shell_CtrlS.lua                            │ Use Ctrl-S for quick search like mc.                                             ║
   ║  S··················· │ CtrlShiftA                     │ Shell_CDup.lua                             │ Menu with list of parent directories (CD up)                                     ║
   ║  S··················· │ CtrlShiftC                     │ Plugin_GitShell.lua                        │ GitShell commit tools                                                            ║
+  ║  S··················· │ CtrlShiftD                     │ Shell_DelEmptyDir.lua                      │ Delete empty folder                                                              ║
   ║  S··················· │ CtrlShiftE                     │ Shell_SelectingEx.lua                      │ Копирование имён помеченных файлов в редактор. © SimSU                           ║
   ║  S··················· │ CtrlShiftF12                   │ Shell_SortDir.lua                          │ Sort files with StrCmpLogicalW                                                   ║
   ║  S··················· │ CtrlShiftF8                    │ Shell_CmdsFromCurDir.lua                   │ Display commands that have been launched from the current directory              ║
@@ -258,8 +259,8 @@
   ║  ·······E············ │ ShiftF5                        │ Plugin_EditWrap.lua                        │ Wrap/unwrap lines virtually                                                      ║
   ║  ·······E············ │ ShiftHome                      │ Editor_SmartHomeEnd.lua                    │ В начало строки или на первую букву с выделением строчного блока. © SimSU        ║
   ║  ·······E············ │ ShiftMsLClick                  │ Editor_MouseSelect.lua                     │ Выделение с вырезанием. © SimSU                                                  ║
-  ║  ·······E············ │ ShiftSpace                     │ Editor_LuaMacroComplit.lua                 │ Список завершения LuaMacro. © SimSU                                              ║
   ║  ·······E············ │ ShiftSpace                     │ Editor_MacroComplete.lua                   │ Список завершения LuaMacro. © SimSU                                              ║
+  ║  ·······E············ │ ShiftSpace                     │ Editor_LuaMacroComplit.lua                 │ Список завершения LuaMacro. © SimSU                                              ║
   ║  ·······E············ │ ShiftTab                       │ Editor_Remarks.lua                         │ Отмена табулирования строк выделенного блока. © SimSU                            ║
   ║  ·······E············ │ Tab                            │ Editor_Remarks.lua                         │ Табулирование строк выделенного блока. © SimSU                                   ║
   ║  ········Dm·········· │ CtrlG                          │ DlgMnu_ShowGUID.lua                        │ Show dialog/menu ID                                                              ║
@@ -301,7 +302,7 @@
   ║  ··········MU········ │ F2                             │ Shell_UserMenu.lua                         │ Call Far local user menu.                                                        ║
   ║  ············d······· │ MsLClick MsWheelClick          │ Disks_MsWhlDskSel.lua                      │ MsLeft or MsWheel click disk select                                              ║
   ║                       │ MsM1Click MsM2Click            │                                            │                                                                                  ║
-  ║  ·················e·· │ Esc CtrlTab CtrlO              │ Common_CtrlO.lua                           │ CtrlO/Esc - quit Desktop                                                         ║
+  ║  ·················e·· │ Esc CtrlTab CtrlO              │ Common_CtrlO.lua                           │ CtrlO/Esc - quit Desktop                                                         ║  ║                                                                                                                                                                                        ║
   ║                                                                                                                                                                                        ║
   ╟────────────────────────────────────────────────────────── Обработчики событий ─────────────────────────────────────────────────────────────────────────────────────────────────────────╢
   ║                                                                                                                                                                                        ║
@@ -387,4 +388,4 @@
   ║  luacheck       │ Shell_LuaCheck.lua                         │ luacheck commandline                                                                                                    ║
   ║                                                                                                                                                                                        ║
   ╚════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
-  02.12.2018 11:10:21 +0300
+  12.12.2018 05:52:50 +0300
