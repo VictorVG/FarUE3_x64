@@ -194,7 +194,7 @@ Usage: curl [options...] <url>
      --tftp-blksize <value> Set TFTP BLKSIZE option
      --tftp-no-options Do not send any TFTP options
  -z, --time-cond <time> Transfer based on a time condition
-     --tls-max <VERSION> Use TLSv1.0 or greater
+     --tls-max <VERSION> Set maximum allowed TLS version
      --tls13-ciphers <list of TLS 1.3 ciphersuites> TLS 1.3 cipher suites to use
      --tlsauthtype <type> TLS authentication type
      --tlspassword   TLS password
