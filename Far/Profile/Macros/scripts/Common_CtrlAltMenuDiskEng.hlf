@@ -67,8 +67,8 @@ Keys may be more as one. In field there are delimited with spaces. Key designati
 
   #Separate symbols in panel with spaces# - |Defines, out symbols in work panel together or separate with spaces.
   #Current drive in lowercase#            - |Defines, out current drive char in lowercase, or in uppercase as other.
-  #Mini-bar out string(s)#                - |Far panel rows numbers, in which at plugin work mini-bars with drives and plugins list are outed.
-Numbers delimited by #,# or #;#.
+  #Mini-bar coordinates.   Y:...X:#       - |Far panel rows and column (from panel start) numbers,
+in which at plugin work mini-bars with drives and plugins list are outed. Rows numbers delimited by #,# or #;#.
 Possible values:
                                           #>=0# - |rows counted from the top, 0 = upper Far panel string;
                                            #<0# - |rows counted from the bottom, -1 = lower Far panel string.
@@ -113,7 +113,7 @@ $^About
 
  Author:        #IgorZ#
 
- Version:       #v4.1.0#
+ Version:       #v4.1.1#
 
  Net address: ~http://forum.farmanager.com/viewtopic.php?t=7471~@http://forum.farmanager.com/viewtopic.php?t=7471@
 @=‗

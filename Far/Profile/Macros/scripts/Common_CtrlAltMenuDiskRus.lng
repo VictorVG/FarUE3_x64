@@ -1,6 +1,6 @@
 ﻿return{
 -- язык
-  Lang = "Russian",
+  Lang = "Rus",
 -- диалог конфигурации
   diConf = {
     Hdr = "Конфигурация",

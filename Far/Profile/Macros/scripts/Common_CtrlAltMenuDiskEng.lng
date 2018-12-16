@@ -1,6 +1,6 @@
 ﻿return{
 -- language
-  Lang = "English",
+  Lang = "Eng",
 -- config dialog
   diConf = {
     Hdr = "Config",
