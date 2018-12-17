@@ -533,44 +533,52 @@ end
 function mf.mdelete (key, name, location)
   checkarg(key, 1, "string")
   checkarg(name, 2, "string")
+  local ret = false
   local obj = far.CreateSettings(nil, location=="local" and "PSL_LOCAL" or "PSL_ROAMING")
-  local subkey = obj:OpenSubkey(0, key)
-  if subkey then
-    obj:Delete(subkey, name~="*" and name or nil)
+  if obj then
+    local subkey = obj:OpenSubkey(0, key)
+    ret = (subkey or false) and obj:Delete(subkey, name~="*" and name or nil)
+    obj:Free()
   end
-  obj:Free()
+  return ret
 end
 
 function mf.msave (key, name, value, location)
   checkarg(key, 1, "string")
   checkarg(name, 2, "string")
+  local ret = false
   local str = serialize(value)
   if str then
     local obj = far.CreateSettings(nil, location=="local" and "PSL_LOCAL" or "PSL_ROAMING")
     if obj then
       local subkey = obj:CreateSubkey(0, key)
-      obj:Set(subkey, name, F.FST_DATA, str)
+      ret = (subkey or false) and obj:Set(subkey, name, F.FST_DATA, str)
       obj:Free()
-      return true
     end
   end
-  return false
+  return ret
 end
 
 function mf.mload (key, name, location)
   checkarg(key, 1, "string")
   checkarg(name, 2, "string")
+  local val, err = nil, nil
   local obj = far.CreateSettings(nil, location=="local" and "PSL_LOCAL" or "PSL_ROAMING")
-  if not obj then
-    return error("far.CreateSettings() failed", 3)
+  if obj then
+    local subkey = obj:OpenSubkey(0, key)
+    if subkey then
+      local chunk = obj:Get(subkey, name, F.FST_DATA)
+      if chunk then val = assert(loadstring(chunk))()
+      else err = "method Get() failed"
+      end
+    else
+      err = "method OpenSubkey() failed"
+    end
+    obj:Free()
+  else
+    err = "far.CreateSettings() failed"
   end
-  local subkey = obj:OpenSubkey(0, key)
-  local chunk = subkey and obj:Get(subkey, name, F.FST_DATA)
-  obj:Free()
-  if chunk then
-    return assert(loadstring(chunk))()
-  end
-  return nil
+  return val, err
 end
 --------------------------------------------------------------------------------
 
