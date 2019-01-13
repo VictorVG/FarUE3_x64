@@ -1,4 +1,4 @@
-local STP = require "StackTracePlus"
+п»їlocal STP = require "StackTracePlus"
 debug.traceback = function(...) return STP.stacktrace(...):gsub("\r\n","\n") end
 
 ------------------------
@@ -22,6 +22,6 @@ end
 
 local rebind = require"rebind"
 if type(rebind)=="table" then
-  rebind.Setup {auto_uids=true,no_warnings=true} -- опционально: разрешаем автоназначение идентификаторов, без вывода ошибок
-  rebind.LoadBindings()                          -- опционально: загружаем настройки из файла "bindings"
+  rebind.Setup {auto_uids=true,no_warnings=true} -- РѕРїС†РёРѕРЅР°Р»СЊРЅРѕ: СЂР°Р·СЂРµС€Р°РµРј Р°РІС‚РѕРЅР°Р·РЅР°С‡РµРЅРёРµ РёРґРµРЅС‚РёС„РёРєР°С‚РѕСЂРѕРІ, Р±РµР· РІС‹РІРѕРґР° РѕС€РёР±РѕРє
+  rebind.LoadBindings()                          -- РѕРїС†РёРѕРЅР°Р»СЊРЅРѕ: Р·Р°РіСЂСѓР¶Р°РµРј РЅР°СЃС‚СЂРѕР№РєРё РёР· С„Р°Р№Р»Р° "bindings"
 end

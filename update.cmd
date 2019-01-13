@@ -5,6 +5,7 @@ set prm=%prm:~0,3% && set M=%prm:~0,1% && set N=%prm:~2,1%
 if %M% geq 6 (if %N% geq 1 (move /y Far\wget.ex7 Far\wget.exe > nul & move /y Far\wget.tx7 Far\wget.txt > nul))
 if exist Far\wget.*7 (del /f/q Far\wget.*7 > nul)
 cd /d Far > nul
+if exist "plugins\arclite\Formats\Forensic7z.*.format" (del /f/q plugins\arclite\Formats\Forensic7z.*.format > nul)
 if exist "plugins\sqlitedb" (rd /s/q "plugins\sqlitedb" > nul)
 if exist "plugins\dnd\holder_x86*.dnd"  (del /s/q "plugins\dnd\holder_x86*.dnd" > nul)
 if exist "plugins\farhints\Plugins\Folders" (rd /s/q "plugins\farhints\Plugins\Folders" > nul)
