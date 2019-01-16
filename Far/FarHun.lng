@@ -1,6 +1,6 @@
 ﻿.Language=Hungarian,Hungarian (Magyar)
 
-//Version: 3.0 build 5351
+//Version: 3.0 build 5352
 
 //[MYes]
 "Igen"
@@ -3084,6 +3084,9 @@
 // need translation:
 //[MChangeDriveShowLabel]
 "Show disk &label"
+// need translation:
+//[MChangeDriveShowLabelUseShell]
+"Use shell name"
 // need translation:
 //[MChangeDriveShowFileSystem]
 "Show &file system type"

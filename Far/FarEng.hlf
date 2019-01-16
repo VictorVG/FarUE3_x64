@@ -45,7 +45,7 @@
 
 @Contents
 $^#File and archive manager#
-$^#3.0 build 5351 x64#
+$^#3.0 build 5352 x64#
 $^#Copyright © 1996-2000 Eugene Roshal#
 $^#Copyright © 2000-2019 Far Group#
    ~Help file index~@Index@
@@ -3492,6 +3492,9 @@ $ #Change Drive Menu Options#
     #Show disk label#
     Show disk label (if available).
     Key combination in #Change drive# menu: #Ctrl+3#.
+
+    #Use shell name#
+    Request the disk name from Windows Shell.
 
     #Show file system type#
     Show file system type: “NTFS”, “FAT”, etc.

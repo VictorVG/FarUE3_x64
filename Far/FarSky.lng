@@ -1,6 +1,6 @@
 ﻿.Language=Slovak,Slovak (Slovenčina)
 
-//Version: 3.0 build 5351
+//Version: 3.0 build 5352
 
 //[MYes]
 "Áno"
@@ -2874,6 +2874,9 @@
 "Zobraziť sieťový &názov / cesta SUBST / názov VHD"
 //[MChangeDriveShowLabel]
 "Zobraziť názov disk&u"
+// need translation:
+//[MChangeDriveShowLabelUseShell]
+"Use shell name"
 //[MChangeDriveShowFileSystem]
 "Zobraziť ty&p systému súborov"
 //[MChangeDriveShowSize]

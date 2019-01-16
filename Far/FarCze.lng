@@ -1,6 +1,6 @@
 ﻿.Language=Czech,Czech (Čeština)
 
-//Version: 3.0 build 5351
+//Version: 3.0 build 5352
 
 //[MYes]
 "Ano"
@@ -2938,6 +2938,9 @@
 "Zobrazit síťový &název / cestu SUBST / název VHD"
 //[MChangeDriveShowLabel]
 "Zobrazit název disku"
+// need translation:
+//[MChangeDriveShowLabelUseShell]
+"Use shell name"
 //[MChangeDriveShowFileSystem]
 "Zobrazit ty&p souborového systému"
 //[MChangeDriveShowSize]

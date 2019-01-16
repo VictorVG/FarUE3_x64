@@ -1,6 +1,6 @@
 ﻿.Language=Spanish,Spanish (Español)
 
-//Version: 3.0 build 5351
+//Version: 3.0 build 5352
 
 //[MYes]
 "Si"
@@ -2877,6 +2877,9 @@
 "Mostrar nombre / SUBST ruta / VHD de nombre de &red"
 //[MChangeDriveShowLabel]
 "Mostrar etiqueta de disco"
+// need translation:
+//[MChangeDriveShowLabelUseShell]
+"Use shell name"
 //[MChangeDriveShowFileSystem]
 "Mostrar sistema de archivos"
 //[MChangeDriveShowSize]

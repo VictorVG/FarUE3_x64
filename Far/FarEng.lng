@@ -1,6 +1,6 @@
 ﻿.Language=English,English
 
-//Version: 3.0 build 5351
+//Version: 3.0 build 5352
 
 //[MYes]
 "Yes"
@@ -2871,6 +2871,8 @@
 "Show &network name / SUBST path / VHD name"
 //[MChangeDriveShowLabel]
 "Show disk &label"
+//[MChangeDriveShowLabelUseShell]
+"Use shell name"
 //[MChangeDriveShowFileSystem]
 "Show &file system type"
 //[MChangeDriveShowSize]
