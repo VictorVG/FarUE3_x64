@@ -1,6 +1,6 @@
 ﻿.Language=Italian,Italian (Italiano)
 
-//Version: 3.0 build 5351
+//Version: 3.0 build 5352
 
 //[MYes]
 "&Si"
@@ -2871,6 +2871,9 @@
 "Mostra Nome &Rete / SUBST / VHD"
 //[MChangeDriveShowLabel]
 "Mostra &Etichetta"
+// need translation:
+//[MChangeDriveShowLabelUseShell]
+"Use shell name"
 //[MChangeDriveShowFileSystem]
 "Mostra &File System"
 //[MChangeDriveShowSize]

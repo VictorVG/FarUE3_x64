@@ -1,6 +1,6 @@
 ﻿.Language=German,German (Deutsch)
 
-//Version: 3.0 build 5351
+//Version: 3.0 build 5352
 
 //[MYes]
 "Ja"
@@ -2925,6 +2925,9 @@
 "&Netzwerkname / SUBST Pfad / VHD Name anzeigen"
 //[MChangeDriveShowLabel]
 "&Plattenkennung anzeigen"
+// need translation:
+//[MChangeDriveShowLabelUseShell]
+"Use shell name"
 //[MChangeDriveShowFileSystem]
 "&Dateisystemtyp anzeigen"
 //[MChangeDriveShowSize]

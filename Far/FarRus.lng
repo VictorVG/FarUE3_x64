@@ -1,6 +1,6 @@
 ﻿.Language=Russian,Russian (Русский)
 
-//Version: 3.0 build 5351
+//Version: 3.0 build 5352
 
 //[MYes]
 "Да"
@@ -2871,6 +2871,8 @@
 "Показывать &сетевое имя / путь SUBST / имя VHD"
 //[MChangeDriveShowLabel]
 "Показывать &метку диска"
+//[MChangeDriveShowLabelUseShell]
+"Использовать имя оболочки"
 //[MChangeDriveShowFileSystem]
 "Показывать тип &файловой системы"
 //[MChangeDriveShowSize]
