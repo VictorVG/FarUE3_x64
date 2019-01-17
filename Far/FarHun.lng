@@ -1,0 +1,5509 @@
+﻿.Language=Hungarian,Hungarian (Magyar)
+
+//Version: 3.0 build 5354
+
+//[MYes]
+"Igen"
+//[MNo]
+"Nem"
+//[MOk]
+"OK"
+
+//[MHYes]
+"I&gen"
+//[MHNo]
+"Ne&m"
+//[MHOk]
+"&OK"
+
+//[MCancel]
+"Mégsem"
+// need translation:
+//[MReset]
+"&Reset"
+//[MRetry]
+"Újra"
+//[MSkip]
+"Kihagy"
+//[MAbort]
+"Megszakít"
+//[MIgnore]
+"Mégis"
+//[MDelete]
+"Töröl"
+//[MSplit]
+"Feloszt"
+
+//[MHCancel]
+"Még&sem"
+//[MHRetry]
+"Ú&jra"
+//[MHSkip]
+"Ki&hagy"
+//[MHSkipAll]
+"Kihagy &mind"
+//[MHAbort]
+"Megsza&kít"
+//[MHIgnore]
+"Mé&gis"
+//[MHDelete]
+"&Töröl"
+//[MHRemove]
+"Eltá&volít"
+//[MHSplit]
+"Fel&oszt"
+
+//[MWarning]
+"Figyelem"
+//[MError]
+"Hiba"
+
+//[MQuit]
+"Kilépés"
+//[MAskQuit]
+"Biztosan kilép a FAR-ból?"
+
+//functional keys - 6 characters max
+//[MF1]
+"Súgó"
+//[MF2]
+"FhMenü"
+//[MF3]
+"Megnéz"
+//[MF4]
+"Szerk."
+//[MF5]
+"Másol"
+//[MF6]
+"AtnMoz"
+//[MF7]
+"ÚjMapp"
+//[MF8]
+"Töröl"
+//[MF9]
+"KonfMn"
+//[MF10]
+"Kilép"
+//[MF11]
+"Plugin"
+//[MF12]
+"Képrny"
+
+//[MShiftF1]
+"Tömört"
+//[MShiftF2]
+"Kibont"
+//[MShiftF3]
+"TömPar"
+//[MShiftF4]
+"ÚjFájl"
+//[MShiftF5]
+"Másol"
+//[MShiftF6]
+"ÁtnMoz"
+//[MShiftF7]
+""
+//[MShiftF8]
+"Töröl"
+//[MShiftF9]
+"Mentés"
+//[MShiftF10]
+"UtsMnü"
+//[MShiftF11]
+"Csoprt"
+//[MShiftF12]
+"KijFel"
+
+//[MAltF1]
+"Bal"
+//[MAltF2]
+"Jobb"
+//[MAltF3]
+"Néző.."
+//[MAltF4]
+"Szrk.."
+//[MAltF5]
+"Nyomt"
+//[MAltF6]
+"ÚjLink"
+//[MAltF7]
+"Keres"
+//[MAltF8]
+"ParElő"
+//[MAltF9]
+"Video"
+//[MAltF10]
+"MapKer"
+//[MAltF11]
+"NézElő"
+//[MAltF12]
+"MapElő"
+
+//[MCtrlF1]
+"Bal"
+//[MCtrlF2]
+"Jobb"
+//[MCtrlF3]
+"Név"
+//[MCtrlF4]
+"Kiterj"
+// need translation:
+//[MCtrlF5]
+"Write"
+//[MCtrlF6]
+"Méret"
+//[MCtrlF7]
+"NincsR"
+//[MCtrlF8]
+"Keletk"
+//[MCtrlF9]
+"Hozzáf"
+//[MCtrlF10]
+"Megjgy"
+//[MCtrlF11]
+"Tulajd"
+//[MCtrlF12]
+"RendMd"
+
+// Main AltShift
+//[MAltShiftF1]
+""
+//[MAltShiftF2]
+""
+//[MAltShiftF3]
+""
+//[MAltShiftF4]
+""
+//[MAltShiftF5]
+""
+//[MAltShiftF6]
+""
+//[MAltShiftF7]
+""
+//[MAltShiftF8]
+""
+//[MAltShiftF9]
+"PluKnf"
+//[MAltShiftF10]
+""
+//[MAltShiftF11]
+""
+//[MAltShiftF12]
+""
+
+//Main CtrlShift
+//[MCtrlShiftF1]
+""
+//[MCtrlShiftF2]
+""
+//[MCtrlShiftF3]
+"Megnéz"
+//[MCtrlShiftF4]
+"Szerk."
+//[MCtrlShiftF5]
+""
+//[MCtrlShiftF6]
+""
+//[MCtrlShiftF7]
+""
+//[MCtrlShiftF8]
+""
+//[MCtrlShiftF9]
+""
+//[MCtrlShiftF10]
+""
+//[MCtrlShiftF11]
+""
+//[MCtrlShiftF12]
+""
+
+// Main CtrlAlt
+//[MCtrlAltF1]
+""
+//[MCtrlAltF2]
+""
+//[MCtrlAltF3]
+""
+//[MCtrlAltF4]
+""
+//[MCtrlAltF5]
+""
+//[MCtrlAltF6]
+""
+//[MCtrlAltF7]
+""
+//[MCtrlAltF8]
+""
+//[MCtrlAltF9]
+""
+//[MCtrlAltF10]
+""
+//[MCtrlAltF11]
+""
+//[MCtrlAltF12]
+""
+
+// Main CtrlAltShift
+//[MCtrlAltShiftF1]
+""
+//[MCtrlAltShiftF2]
+""
+//[MCtrlAltShiftF3]
+""
+//[MCtrlAltShiftF4]
+""
+//[MCtrlAltShiftF5]
+""
+//[MCtrlAltShiftF6]
+""
+//[MCtrlAltShiftF7]
+""
+//[MCtrlAltShiftF8]
+""
+//[MCtrlAltShiftF9]
+""
+//[MCtrlAltShiftF10]
+""
+//[MCtrlAltShiftF11]
+""
+//End of functional keys
+//[MCtrlAltShiftF12]
+""
+
+//[MHistoryTitle]
+"Parancs előzmények"
+//[MFolderHistoryTitle]
+"Mappa előzmények"
+// need translation:
+//[MViewHistoryTitle]
+"Fájl előzmények"
+//[MViewHistoryIsCreate]
+"Fájl létrehozása?"
+//[MHistoryView]
+"Nézett"
+//[MHistoryEdit]
+"Szerk."
+//[MHistoryExt]
+"Kit."
+
+//[MHistoryClear]
+"Az előzmények minden eleme törlődik. Folytatja?"
+//[MClear]
+"Elő&zmények törlése"
+
+//[MConfigSystemTitle]
+"Rendszer beállítások"
+//[MConfigRecycleBin]
+"&Törlés a Lomtárba"
+//[MConfigSystemCopy]
+"&Másoláshoz a rendszerrutin használata"
+//[MConfigCopySharing]
+"Írásra megnyitott &fájlok másolhatók"
+//[MConfigScanJunction]
+"Szimbolikus linkek &vizsgálata"
+// need translation:
+//[MConfigSmartFolderMonitor]
+"Update panels only when Far is active"
+//[MConfigSaveHistory]
+"Parancs elő&zmények mentése"
+//[MConfigSaveFoldersHistory]
+"M&appa előzmények mentése"
+//[MConfigSaveViewHistory]
+"Nézőke és &szerkesztő előzmények mentése"
+//[MConfigRegisteredTypes]
+"&Windows reg. fájltípusok használata"
+// need translation:
+//[MConfigUpdateEnvironment]
+"Automatic update of environment variables"
+// need translation:
+//[MConfigElevation]
+"request administrator rights:"
+// need translation:
+//[MConfigElevationModify]
+"for modification"
+// need translation:
+//[MConfigElevationRead]
+"for read"
+// need translation:
+//[MConfigElevationUsePrivileges]
+"use additional privileges"
+// need translation:
+//[MConfigSortingCollation]
+"Sorting collation:"
+// need translation:
+//[MConfigSortingOrdinal]
+"ordinal"
+// need translation:
+//[MConfigSortingInvariant]
+"invariant"
+// need translation:
+//[MConfigSortingLinguistic]
+"linguistic"
+// need translation:
+//[MConfigSortingDigitsAsNumbers]
+"Treat digits as numbers"
+//[MConfigSortingCase]
+"&Nagy/kisbetű érz."
+//[MConfigAutoSave]
+"B&eállítások automatikus mentése"
+
+// need translation:
+//[MConfigTreeTitle]
+"Tree settings"
+//[MConfigTreeAutoChange]
+"&Automatikus mappaváltás"
+// need translation:
+//[MConfigTreeLabelMinFolder]
+"&Minimum number of folders:"
+// need translation:
+//[MConfigTreeLabel1]
+"Store a file with folder structure for:"
+// need translation:
+//[MConfigTreeLabelLocalDisk]
+"local drives"
+// need translation:
+//[MConfigTreeLabelNetDisk]
+"network drives"
+// need translation:
+//[MConfigTreeLabelNetPath]
+"network paths"
+// need translation:
+//[MConfigTreeLabelRemovableDisk]
+"removable drives"
+// need translation:
+//[MConfigTreeLabelCDDisk]
+"optical drives"
+// need translation:
+//[MConfigTreeLabelExceptPath]
+"Don't create the file for following drives and paths:"
+// need translation:
+//[MConfigTreeLabelSaveLocalPath]
+"Path for local, removale and optical drives:"
+// need translation:
+//[MConfigTreeLabelSaveNetPath]
+"Path for network drives and paths:"
+
+//[MConfigPanelTitle]
+"Panel beállítások"
+//[MConfigHidden]
+"&Rejtett és rendszerfájlok mutatva"
+//[MConfigHighlight]
+"Fá&jlok kiemelése"
+//[MConfigSelectFolders]
+"A ma&ppák is kijelölhetők"
+// need translation:
+//[MConfigRightClickSelect]
+"Right click selects files"
+//[MConfigSortFolderExt]
+"Mappák is rendezhetők &kiterjesztés szerint"
+//[MConfigReverseSort]
+"Fordí&tott rendezés engedélyezése"
+//[MConfigAutoUpdateLimit]
+"Pan&el automatikus frissítése kikapcsolva,"
+//[MConfigAutoUpdateLimit2]
+"ha több elem van, mint:"
+//[MConfigAutoUpdateRemoteDrive]
+"Hálózati meghajtók autom. &frissítése"
+//[MConfigShowColumns]
+"Oszlop&nevek mutatva"
+//[MConfigShowStatus]
+"Á&llapotsor mutatva"
+// need translation:
+//[MConfigDetailedJunction]
+"Detect volume mount &points"
+//[MConfigShowTotal]
+"Fájl össze&s információja mutatva"
+//[MConfigShowFree]
+"Sza&bad lemezterület mutatva"
+//[MConfigShowScrollbar]
+"Gördítősá&v mutatva"
+//[MConfigShowScreensNumber]
+"&Háttérképernyők száma mutatva"
+//[MConfigShowSortMode]
+"Rendezési mó&d betűjele mutatva"
+// need translation:
+//[MConfigShowDotsInRoot]
+"Show \"..\" in root folders"
+
+//[MConfigInterfaceTitle]
+"Kezelőfelület beállítások"
+//[MConfigClock]
+"Ór&a a paneleken"
+//[MConfigViewerEditorClock]
+"Ó&ra a nézőkében és szerkesztőben"
+//[MConfigMouse]
+"&Egér kezelése"
+//[MConfigKeyBar]
+"&Funkcióbillentyűk sora mutatva"
+//[MConfigMenuBar]
+"A &menüsor mindig látszik"
+//[MConfigSaver]
+"&Képernyőpihentető"
+//[MConfigSaverMinutes]
+"perc tétlenség után"
+//[MConfigCopyTotal]
+"Másolás összesen folyamat&jelző"
+//[MConfigCopyTimeRule]
+"Má&solási idő mutatva"
+// need translation:
+//[MConfigDeleteTotal]
+"Show total delete progress indicator"
+//[MConfigPgUpChangeDisk]
+"A Ctrl+Pg&Up meghajtót vált"
+// need translation:
+//[MConfigUseVirtualTerminalForRendering]
+"Use Virtual Terminal for rendering"
+// need translation:
+//[MConfigClearType]
+"ClearType-friendly redraw (can be slow)"
+// need translation:
+//[MConfigSetConsoleIcon]
+"Set console icon"
+// need translation:
+//[MConfigSetAdminConsoleIcon]
+"Alternate for Administrator"
+// need translation:
+//[MConfigTitleAddons]
+"Far window title addons:"
+
+//[MConfigDlgSetsTitle]
+"Párbeszédablak beállítások"
+//[MConfigDialogsEditHistory]
+"&Beviteli sor előzmények mentése"
+//[MConfigDialogsEditBlock]
+"Maradó b&lokkok a beviteli sorokban"
+//[MConfigDialogsDelRemovesBlocks]
+"A &Del törli a beviteli sorok blokkjait"
+//[MConfigDialogsAutoComplete]
+"Beviteli sor a&utomatikus kiegészítése"
+//[MConfigDialogsEULBsClear]
+"A Ba&ckspace törli a változatlan szöveget"
+//[MConfigDialogsMouseButton]
+"&Egérkattintás a párb.ablakon kívül: bezárja"
+
+// need translation:
+//[MConfigVMenuTitle]
+"Menu settings"
+// need translation:
+//[MConfigVMenuLBtnClick]
+"Left mouse click outside a menu"
+// need translation:
+//[MConfigVMenuRBtnClick]
+"Right mouse click outside a menu"
+// need translation:
+//[MConfigVMenuMBtnClick]
+"Middle mouse click outside a menu"
+// need translation:
+//[MConfigVMenuClickCancel]
+"Cancel menu"
+// need translation:
+//[MConfigVMenuClickApply]
+"Execute selected item"
+// need translation:
+//[MConfigVMenuClickIgnore]
+"Do nothing"
+
+// need translation:
+//[MConfigCmdlineTitle]
+"Command line settings"
+// need translation:
+//[MConfigCmdlineEditBlock]
+"Persistent blocks"
+// need translation:
+//[MConfigCmdlineDelRemovesBlocks]
+"Del removes blocks"
+// need translation:
+//[MConfigCmdlineAutoComplete]
+"AutoComplete"
+//[MConfigCmdlineUsePromptFormat]
+"Parancssori &prompt formátuma"
+// need translation:
+//[MConfigCmdlineUseHomeDir]
+"Use &home dir"
+// need translation:
+//[MConfigCmdlinePromptFormatAdmin]
+"Administrator"
+
+// need translation:
+//[MConfigAutoCompleteTitle]
+"AutoComplete settings"
+
+// need translation:
+//[MConfigAutoCompleteShowList]
+"&Show a list"
+
+// need translation:
+//[MConfigAutoCompleteModalList]
+"&Modal mode"
+
+// need translation:
+//[MConfigAutoCompleteAutoAppend]
+"&Append the first matched item"
+
+// need translation:
+//[MConfigInfoPanelTitle]
+"InfoPanel settings"
+// need translation:
+//[MConfigInfoPanelCNTitle]
+"Computer &name format"
+// need translation:
+//[MConfigInfoPanelCNPhysicalNetBIOS]
+"Physical NetBIOS"
+// need translation:
+//[MConfigInfoPanelCNPhysicalDnsHostname]
+"Physical DNS hostname"
+// need translation:
+//[MConfigInfoPanelCNPhysicalDnsDomain]
+"Physical DNS domain"
+// need translation:
+//[MConfigInfoPanelCNPhysicalDnsFullyQualified]
+"Physical DNS fully-qualified"
+//[MConfigInfoPanelCNNetBIOS]
+"NetBIOS"
+// need translation:
+//[MConfigInfoPanelCNDnsHostname]
+"DNS hostname"
+// need translation:
+//[MConfigInfoPanelCNDnsDomain]
+"DNS domain"
+// need translation:
+//[MConfigInfoPanelCNDnsFullyQualified]
+"DNS fully-qualified"
+// need translation:
+//[MConfigInfoPanelUNTitle]
+"&User name format"
+// need translation:
+//[MConfigInfoPanelUNFullyQualifiedDN]
+"Fully Qualified Domain Name"
+// need translation:
+//[MConfigInfoPanelUNSamCompatible]
+"Sam Compatible"
+// need translation:
+//[MConfigInfoPanelUNDisplay]
+"Display Name"
+// need translation:
+//[MConfigInfoPanelUNUniqueId]
+"Unique Id"
+// need translation:
+//[MConfigInfoPanelUNCanonical]
+"Canonical Name"
+// need translation:
+//[MConfigInfoPanelUNUserPrincipal]
+"User Principial Name"
+// need translation:
+//[MConfigInfoPanelUNServicePrincipal]
+"Service Principal"
+// need translation:
+//[MConfigInfoPanelUNDnsDomain]
+"DNS Domain"
+// need translation:
+//[MConfigInfoPanelShowPowerStatus]
+"Show &power status"
+// need translation:
+//[MConfigInfoPanelShowCDInfo]
+"Show &CD drive parameters"
+
+// need translation:
+//[MMenuInfoShowModeTitle]
+"Show Info"
+// need translation:
+//[MMenuInfoShowModeDisk]
+"&Disk"
+// need translation:
+//[MMenuInfoShowModeMemory]
+"&Memory"
+// need translation:
+//[MMenuInfoShowModeDirDiz]
+"&Description"
+// need translation:
+//[MMenuInfoShowModePluginDiz]
+"Plu&gin panel"
+// need translation:
+//[MMenuInfoShowModePower]
+"&Power status"
+
+//[MViewConfigTitle]
+"Nézőke"
+//[MViewConfigExternalF3]
+"Alt+F3 helyett F3 indítja a külső nézőkét"
+//[MViewConfigExternalCommand]
+"Nézőke &parancs:"
+//[MViewConfigInternal]
+"Belső nézőke"
+//[MViewConfigSavePos]
+"&Fájlpozíció mentése"
+//[MViewConfigSaveShortPos]
+"Könyv&jelzők mentése"
+// need translation:
+//[MViewConfigSaveCodepage]
+"Save file &code page"
+// need translation:
+//[MViewConfigSaveWrapMode]
+"Save w&rap mode"
+// need translation:
+//[MViewConfigSaveViewMode]
+"Save view mode"
+// need translation:
+//[MViewConfigDetectDumpMode]
+"Detect dump view mode"
+//[MViewAutoDetectCodePage]
+"&Kódlap automatikus felismerése"
+//[MViewConfigTabSize]
+"Ta&bulátor mérete"
+//[MViewConfigScrollbar]
+"Gör&dítősáv mutatva"
+//[MViewConfigArrows]
+"Gördítőn&yilak mutatva"
+//[MViewConfigPersistentSelection]
+"&Maradó blokkok"
+// need translation:
+//[MViewConfigDefaultCodePage]
+"Default code page:"
+// need translation:
+//[MViewConfigMaxLineSize]
+"Maximum line width"
+// need translation:
+//[MViewConfigVisible0x00]
+"Visible '\\0'"
+// need translation:
+//[MViewConfigEditAutofocus]
+"Search dialog auto-focus"
+
+//[MEditConfigTitle]
+"Szerkesztő"
+//[MEditConfigEditorF4]
+"Alt+F4 helyett F4 indítja a külső szerkesztőt"
+//[MEditConfigEditorCommand]
+"&Szerkesztő parancs:"
+//[MEditConfigInternal]
+"Belső szerkesztő"
+//[MEditConfigExpandTabsTitle]
+"&Tabulátorból szóközök:"
+
+//[MEditConfigDoNotExpandTabs]
+"Ne helyettesítse a tabulátorokat"
+//[MEditConfigExpandTabs]
+"Újonnan beírt tabulátorból szóközök"
+//[MEditConfigConvertAllTabsToSpaces]
+"Minden tabulátorból szóközök"
+//[MEditConfigPersistentBlocks]
+"&Maradó blokkok"
+
+//[MEditConfigDelRemovesBlocks]
+"A &Del törli a blokkokat"
+//[MEditConfigAutoIndent]
+"Automatikus &behúzás"
+//[MEditConfigSavePos]
+"Fájl&pozíció mentése"
+//[MEditConfigSaveShortPos]
+"Könyv&jelzők mentése"
+//[MEditCursorBeyondEnd]
+"Kurzor a sor&végjel után is"
+//[MEditAutoDetectCodePage]
+"&Kódlap automatikus felismerése"
+//[MEditShareWrite]
+"Írásra m&egnyitott fájlok szerkeszthetők"
+//[MEditLockROFileModification]
+"Csak olvasható fájlok s&zerkesztése tiltva"
+//[MEditWarningBeforeOpenROFile]
+"Figyelmeztet &csak olvasható fájl megnyitásakor"
+//[MEditConfigTabSize]
+"Tab&ulátor mérete"
+//[MEditConfigScrollbar]
+"&Gördítősáv mutatva"
+// need translation:
+//[MEditShowWhiteSpace]
+"Show white space"
+//[MEditConfigSelFound]
+"&Találat kijelölése"
+// need translation:
+//[MEditConfigCursorAtEnd]
+"Cursor at the end"
+// need translation:
+//[MEditConfigDefaultCodePage]
+"Default code page:"
+
+//[MSaveSetupTitle]
+"Beállítások mentése"
+//[MSaveSetupAsk1]
+"Elmenti a jelenlegi"
+//[MSaveSetupAsk2]
+"beállításokat?"
+//[MSaveSetup]
+"Mentés"
+
+//[MCopyDlgTitle]
+"Másolás"
+//[MMoveDlgTitle]
+"Átnevezés-Mozgatás"
+//[MLinkDlgTitle]
+"Link létrehozása"
+//[MCopySecurity]
+"Hozzáférési &jogok:"
+//[MCopySecurityCopy]
+"Más&ol"
+//[MCopySecurityInherit]
+"Ö&rököl"
+//[MCopySecurityLeave]
+"Ala&pért."
+//[MCopyIfFileExist]
+"Már &létező fájloknál:"
+//[MCopyAsk]
+"Kér&dez"
+//[MCopyAskRO]
+"&Csak olvasható fájloknál is kérdez"
+//[MCopyOnlyNewerFiles]
+"Cs&ak az újabb fájlokat"
+//[MLinkType]
+"Link &típusa:"
+//[MLinkTypeJunction]
+"Mappa &csomópont"
+//[MLinkTypeHardlink]
+"&Hardlink"
+//[MLinkTypeSymlink]
+"Szimbolikus link"
+//[MLinkTypeSymlinkFile]
+"Szimbolikus link (&fájl)"
+//[MLinkTypeSymlinkDirectory]
+"Szimbolikus link (&mappa)"
+//[MCopySymLinkContents]
+"Sz&imbolikus linkek másolása"
+//[MCopyMultiActions]
+"Tö&bbszörös cél létrehozása"
+//[MCopyDlgCopy]
+"&Másolás"
+//[MCopyDlgTree]
+"F10-&Fa"
+//[MCopyDlgCancel]
+"Még&sem"
+//[MCopyDlgRename]
+"Át&nevez-Mozgat"
+// need translation:
+//[MCopyDlgLink]
+"Create &link"
+//[MCopyDlgTotal]
+"Összesen"
+//[MCopyPrepareSecury]
+"Hozzáférési jogok alkalmazása..."
+//[MCopyUseFilter]
+"Szűrő&vel"
+//[MCopySetFilter]
+"S&zűrő"
+
+//[MCopyFile]
+"Másolása {0} {1}:"
+// need translation:
+//[MMoveFile]
+"átnevezése-mozgatása {0} {1}:"
+// need translation:
+//[MLinkFile]
+"Create link to {0} {1}:"
+//[MCopyFiles]
+"{0} elem másolása{1} {2}:"
+//[MMoveFiles]
+"{0} elem átnevezése-mozgatása{1} {2}:"
+// need translation:
+//[MLinkFiles]
+"Create links to {0} item{1} {2}:"
+//[MCMLTargetTO]
+"ide"
+// need translation:
+//[MCMLTargetIN]
+"&in"
+//[MCMLItems0]
+""
+//[MCMLItemsA]
+""
+//[MCMLItemsS]
+""
+
+//[MCopyIncorrectTargetList]
+"Érvénytelen céllista"
+
+//[MCopyCopyingTitle]
+"Másolás"
+//[MCopyMovingTitle]
+"Mozgatás"
+
+//[MCopyCannotFind]
+"A fájl nem található:"
+
+//[MCannotCopyFolderToItself1]
+"A mappa:"
+//[MCannotCopyFolderToItself2]
+"nem másolható önmagába/önmagára"
+
+//[MCopyCannotCreateFolder]
+"A mappa nem hozható létre:"
+//[MCopyCannotChangeFolderAttr]
+"A mappa attribútumok beállítása sikertelen"
+//[MCopyCannotRenameFolder]
+"A mappa nem nevezhető át:"
+//[MCopyIgnore]
+"Mé&gis"
+//[MCopyIgnoreAll]
+"Min&d"
+//[MCopyRetry]
+"Ú&jra"
+//[MCopySkip]
+"&Kihagy"
+//[MCopySkipAll]
+"Mi&nd"
+//[MCopyCancel]
+"Még&sem"
+//[MCopyDecrypt]
+"&Titk. felold"
+//[MCopyDecryptAll]
+"&Mind"
+
+//[MCopyCannotCreateLink]
+"A link nem hozható létre:"
+//[MCopyFolderNotEmpty]
+"A célmappának üresnek kell lennie"
+//[MCopyCannotCreateJunctionToFile]
+"A csomópont nem hozható létre. A fájl már létezik:"
+
+//[MCopyCannotCreateVolMount]
+"Kötet mountpont hiba"
+//[MCopyMountVolFailed]
+""{0}" kötet mountolása"
+//[MCopyMountVolFailed2]
+"nem sikerült: "{0}""
+//[MCopyMountName]
+"Disk_"
+
+//[MCannotCopyFileToItself1]
+"A fájl"
+//[MCannotCopyFileToItself2]
+"nem másolható önmagára"
+
+//[MCopyStream1]
+"A forrásfájl több stream-et tartalmaz,"
+//[MCopyStream2]
+"de nem a rendszer másolórutinját használja."
+//[MCopyStream3]
+"de a célkötet nem támogatja ezt a lehetőséget."
+//[MCopyStream4]
+"Az adatok egy része el fog veszni."
+
+// need translation:
+//[MCopyDirectoryOrFile]
+"Does it specify a folder name or file name?"
+// need translation:
+//[MCopyDirectoryOrFileDirectory]
+"Folder"
+// need translation:
+//[MCopyDirectoryOrFileFile]
+"File"
+
+//[MCopyFileExist]
+"A fájl már létezik:"
+//[MCopySource]
+"Ú&j verzió:"
+//[MCopyDest]
+"Létező &verzió:"
+//[MCopyOverwrite]
+"&Felülír"
+//[MCopySkipOvr]
+"&Kihagy"
+//[MCopyAppend]
+"Hoz&záfűz"
+//[MCopyResume]
+"Fol&ytat"
+//[MCopyRename]
+"Á&tnevez"
+//[MCopyCancelOvr]
+"&Mégsem"
+//[MCopyRememberChoice]
+"Mind&ent a kiválasztott módon"
+//[MCopyRenameTitle]
+"Átnevezés"
+//[MCopyRenameText]
+"Ú&j név:"
+
+//[MCopyFileRO]
+"A fájl csak olvasható:"
+//[MCopyAskDelete]
+"Biztosan törölni akarja?"
+//[MCopyDeleteRO]
+"&Törli"
+//[MCopyDeleteAllRO]
+"Min&det"
+//[MCopySkipRO]
+"&Kihagyja"
+//[MCopySkipAllRO]
+"Mind&et"
+//[MCopyCancelRO]
+"&Mégsem"
+
+//[MCannotCopy]
+"Nem másolható"
+//[MCannotMove]
+"Nem mozgatható"
+//[MCannotLink]
+"Nem linkelhető"
+//[MCannotCopyTo]
+"ide:"
+//[MCopyEncryptWarn1]
+"A fájl"
+//[MCopyEncryptWarn2]
+"csak titkosítása elvesztésével másolható vagy mozgatható."
+//[MCopyEncryptWarn3]
+"Ennek ellenére folytathatja vagy felfüggesztheti."
+
+//[MCopyReadError]
+"Nem olvasható adat innen:"
+//[MCopyWriteError]
+"Nem írható adat ide:"
+
+//[MCopyFilesTotalInfo]
+"Fájl:"
+// need translation:
+//[MCopyBytesTotalInfo]
+"Bytes:"
+//[MCopyMoving]
+"Fájl mozgatása"
+//[MCopyCopying]
+"Fájl másolása"
+//[MCopyTo]
+"ide:"
+
+//[MCopyErrorDiskFull]
+"A lemez megtelt, kérem a következőt"
+
+//[MDeleteTitle]
+"Törlés"
+//[MAskDeleteFolder]
+"Törölni akarja a mappát?"
+//[MAskDeleteFile]
+"Törölni akarja a fájlt?"
+//[MAskDelete]
+"Törölni akar"
+//[MAskDeleteRecycleFolder]
+"A Lomtárba akarja dobni a mappát?"
+//[MAskDeleteRecycleFile]
+"A Lomtárba akarja dobni a fájlt?"
+//[MAskDeleteRecycle]
+"A Lomtárba akar dobni"
+//[MDeleteWipeTitle]
+"Kisöprés"
+//[MAskWipeFolder]
+"Ki akarja söpörni a mappát?"
+//[MAskWipeFile]
+"Ki akarja söpörni a fájlt?"
+//[MAskWipe]
+"Ki akar söpörni"
+//[MDeleteLinkTitle]
+"Link törlése"
+//[MAskDeleteLink]
+"linkelve ide:"
+//[MAskDeleteLinkFolder]
+"mappa"
+//[MAskDeleteLinkFile]
+"fájl"
+//[MAskDeleteItems]
+"{0} elemet{1}"
+//[MAskDeleteItems0]
+""
+//[MAskDeleteItemsA]
+""
+//[MAskDeleteItemsS]
+""
+
+//[MDeleteFolderTitle]
+"Mappa törlése"
+//[MWipeFolderTitle]
+"Mappa kisöprése"
+//[MDeleteFilesTitle]
+"Fájlok törlése"
+//[MWipeFilesTitle]
+"Fájlok kisöprése"
+//[MDeleteFolderConfirm]
+"A mappa törlődik:"
+//[MWipeFolderConfirm]
+"A mappa kisöprődik:"
+// need translation:
+//[MRecycleFolderConfirm]
+"The following folder will be moved to the Recycle Bin:"
+// need translation:
+//[MRecycleFolderConfirmDeleteLink1]
+"Folder contains symbolic links."
+// need translation:
+//[MRecycleFolderConfirmDeleteLink2]
+"To prevent the loss of their content when clearing Recyle Bin"
+// need translation:
+//[MRecycleFolderConfirmDeleteLink3]
+"those links will be broken now."
+// need translation:
+//[MRecycleFolderConfirmDeleteLink4]
+"It would be impossible to restore them later."
+//[MDeleteWipe]
+"Kisöpör"
+// need translation:
+//[MDeleteRecycle]
+"Move"
+//[MDeleteFileDelete]
+"&Töröl"
+//[MDeleteFileWipe]
+"Kisö&pör"
+//[MDeleteFileAll]
+"Min&det"
+//[MDeleteFileSkip]
+"&Kihagy"
+//[MDeleteFileSkipAll]
+"Mind&et"
+//[MDeleteFileCancel]
+"&Mégsem"
+
+//[MDeleteLinkDelete]
+"Link törlése"
+
+//[MDeletingTitle]
+"Törlés"
+
+//[MDeleting]
+"Fájl vagy mappa törlése"
+//[MDeletingWiping]
+"Fájl vagy mappa kisöprése"
+
+//[MDeleteRO]
+"A fájl csak olvasható:"
+//[MAskDeleteRO]
+"Mégis törölni akarja?"
+//[MAskWipeRO]
+"Mégis ki akarja söpörni?"
+
+//[MDeleteHardLink1]
+"Több hardlink kapcsolódik a fájlhoz, a fájl"
+//[MDeleteHardLink2]
+"kisöprése a linkelt fájlokat is megsemmisíti."
+//[MDeleteHardLink3]
+"Biztosan kisöpri a fájlt?"
+
+//[MCannotDeleteFile]
+"A fájl nem törölhető"
+//[MCannotDeleteFolder]
+"A mappa nem törölhető"
+//[MDeleteRetry]
+"Ú&jra"
+//[MDeleteSkip]
+"&Kihagy"
+//[MDeleteSkipAll]
+"Min&d"
+//[MDeleteCancel]
+"&Mégsem"
+// need translation:
+//[MCannotRecycleFile]
+"Cannot move file to the Recycle Bin"
+// need translation:
+//[MCannotRecycleFolder]
+"Cannot move folder to the Recycle Bin"
+
+//[MCannotGetSecurity]
+"A fájlhoz nincs hozzáférési joga:"
+//[MCannotSetSecurity]
+"A fájl hozzáférési jogát nem állíthatja:"
+
+//[MEditTitle]
+"Szerkesztő"
+//[MAskReload]
+"fájl már be van töltve. Hogyan szerkeszti?"
+//[MCurrent]
+"A mostanit &folytatja"
+//[MReload]
+"Újra&tölti"
+//[MNewOpen]
+"Ú&j példányban"
+//[MEditCannotOpen]
+"A fájl nem nyitható meg"
+//[MEditReading]
+"Fájl olvasása"
+// need translation:
+//[MEditAskSave]
+"A fájl megváltozott. Save?"
+// need translation:
+//[MEditAskSaveExt]
+"A fájlt egy külső program megváltoztatta. Save?"
+//[MEditBtnSaveAs]
+"Mentés más&ként..."
+
+//[MEditRO]
+"csak olvasható fájl"
+//[MEditExists]
+"már létezik"
+//[MEditOvr]
+"Felül akarja írni?"
+//[MEditSaving]
+"Fájl mentése"
+// need translation:
+//[MEditStatusLine]
+"Sor"
+// need translation:
+//[MEditStatusCol]
+"Oszlop"
+// need translation:
+//[MEditStatusChar]
+"Ch"
+
+//[MEditRSH]
+"csak olvasható fájl"
+//[MEditFileGetSizeError]
+"A fájlméret megállapíthatatlan."
+//[MEditFileLong]
+"mérete {0},"
+//[MEditFileLong2]
+"meghaladja {0} beállított maximumát."
+//[MEditROOpen]
+"Mégis szerkeszti?"
+
+//[MEditCanNotEditDirectory]
+"A mappa nem szerkeszthető"
+
+//[MEditSearchTitle]
+"Keresés"
+//[MEditSearchFor]
+"&Keresés:"
+// need translation:
+//[MEditSearchPickWord]
+"Word"
+// need translation:
+//[MEditSearchPickSelection]
+"Selection"
+//[MEditSearchCase]
+"&Nagy/kisbetű érz."
+//[MEditSearchWholeWords]
+"Csak e&gész szavak"
+//[MEditSearchReverse]
+"&Visszafelé keres"
+// need translation:
+//[MEditSearchRegexp]
+"Re&gular expressions"
+// need translation:
+//[MEditSearchPreserveStyle]
+"&Megőrzése stílus"
+//[MEditSearchSearch]
+"Kere&sés"
+// need translation:
+//[MEditSearchAll]
+"&All"
+//[MEditSearchCancel]
+"&Mégsem"
+
+//[MEditReplaceTitle]
+"Keresés és csere"
+//[MEditReplaceWith]
+"&Erre cseréli:"
+//[MEditReplaceReplace]
+"&Csere"
+
+//[MEditSearchingFor]
+"Keresett szöveg:"
+// need translation:
+//[MEditSearchStatistics]
+"Occurrences: {0}, lines: {1}"
+//[MEditFindAllMenuFooter]
+"F1, F5, Ctrl+Enter, Ctrl+Up/Down, Add"
+//[MEditNotFound]
+"A szöveg nem található:"
+
+//[MEditAskReplace]
+"Ezt cseréli:"
+//[MEditAskReplaceWith]
+"erre a szövegre:"
+//[MEditReplace]
+"&Csere"
+//[MEditReplaceAll]
+"&Mindet"
+//[MEditSkip]
+"&Kihagy"
+//[MEditCancel]
+"Mé&gsem"
+//[MEditOpenCreateLabel]
+"Fájl megnyitása/&létrehozása:"
+//[MEditOpenAutoDetect]
+"Automatikus felismerés"
+// need translation:
+//[MDefaultCP]
+"Default"
+
+//[MGoTo]
+"Ugrás"
+//[MGoToHex]
+"&Hexában"
+
+//[MFolderShortcutsTitle]
+"Mappa gyorsbillentyűk"
+//[MFolderShortcutBottom]
+"Szerk.: Del,Ins,F4"
+//[MFolderShortcutBottomSub]
+"Szerk.: Del,Ins,F4"
+//[MShortcutNone]
+"<nincs>"
+//[MShortcutPlugin]
+"<plugin>"
+// need translation:
+//[MFSShortcutName]
+"Title:"
+// need translation:
+//[MFSShortcutPath]
+"Path:"
+//[MFSShortcutPluginFile]
+"Fájl:"
+// need translation:
+//[MFSShortcutPluginData]
+"Data:"
+//[MNeedNearPath]
+"Ugrás a legközelebbi létező mappára?"
+//[MSaveThisShortcut]
+"Mentsem a gyorsbillentyűket?"
+
+//functional keys - 6 characters max, 12 keys, "OEM" is F8 dupe!
+//[MEditF1]
+"Súgó"
+//[MEditF2]
+"Mentés"
+//[MEditF3]
+""
+//[MEditF4]
+"Kilép"
+//[MEditF5]
+""
+//[MEditF6]
+"Megnéz"
+//[MEditF7]
+"Keres"
+//[MEditF8]
+"ANSI"
+//[MEditF9]
+""
+//[MEditF10]
+"Kilép"
+//[MEditF11]
+"Plugin"
+//[MEditF12]
+"Képrny"
+
+//Editor: Shift
+//[MEditShiftF1]
+""
+//[MEditShiftF2]
+"Ment.."
+//[MEditShiftF3]
+""
+//[MEditShiftF4]
+"Szrk.."
+//[MEditShiftF5]
+""
+//[MEditShiftF6]
+""
+//[MEditShiftF7]
+"TovKer"
+//[MEditShiftF8]
+"Kódlap"
+//[MEditShiftF9]
+""
+//[MEditShiftF10]
+"MentKi"
+//[MEditShiftF11]
+""
+//[MEditShiftF12]
+""
+
+//Editor: Alt
+//[MEditAltF1]
+""
+//[MEditAltF2]
+""
+//[MEditAltF3]
+""
+//[MEditAltF4]
+""
+//[MEditAltF5]
+""
+//[MEditAltF6]
+""
+//[MEditAltF7]
+"VisKer"
+//[MEditAltF8]
+"Ugrás"
+//[MEditAltF9]
+"Video"
+//[MEditAltF10]
+""
+//[MEditAltF11]
+"NézElő"
+//[MEditAltF12]
+""
+
+//Editor: Ctrl
+//[MEditCtrlF1]
+""
+//[MEditCtrlF2]
+""
+//[MEditCtrlF3]
+""
+//[MEditCtrlF4]
+""
+//[MEditCtrlF5]
+""
+//[MEditCtrlF6]
+""
+//[MEditCtrlF7]
+"Csere"
+//[MEditCtrlF8]
+""
+//[MEditCtrlF9]
+""
+//[MEditCtrlF10]
+"FájlPz"
+//[MEditCtrlF11]
+""
+//[MEditCtrlF12]
+""
+
+//Editor: AltShift
+//[MEditAltShiftF1]
+""
+//[MEditAltShiftF2]
+""
+//[MEditAltShiftF3]
+""
+//[MEditAltShiftF4]
+""
+//[MEditAltShiftF5]
+""
+//[MEditAltShiftF6]
+""
+//[MEditAltShiftF7]
+""
+//[MEditAltShiftF8]
+""
+//[MEditAltShiftF9]
+"Beáll."
+//[MEditAltShiftF10]
+""
+//[MEditAltShiftF11]
+""
+//[MEditAltShiftF12]
+""
+
+//Editor: CtrlShift
+//[MEditCtrlShiftF1]
+""
+//[MEditCtrlShiftF2]
+""
+//[MEditCtrlShiftF3]
+""
+//[MEditCtrlShiftF4]
+""
+//[MEditCtrlShiftF5]
+""
+//[MEditCtrlShiftF6]
+""
+//[MEditCtrlShiftF7]
+""
+//[MEditCtrlShiftF8]
+""
+//[MEditCtrlShiftF9]
+""
+//[MEditCtrlShiftF10]
+""
+//[MEditCtrlShiftF11]
+""
+//[MEditCtrlShiftF12]
+""
+
+// Editor: CtrlAlt
+//[MEditCtrlAltF1]
+""
+//[MEditCtrlAltF2]
+""
+//[MEditCtrlAltF3]
+""
+//[MEditCtrlAltF4]
+""
+//[MEditCtrlAltF5]
+""
+//[MEditCtrlAltF6]
+""
+//[MEditCtrlAltF7]
+""
+//[MEditCtrlAltF8]
+""
+//[MEditCtrlAltF9]
+""
+//[MEditCtrlAltF10]
+""
+//[MEditCtrlAltF11]
+""
+//[MEditCtrlAltF12]
+""
+
+// Editor: CtrlAltShift
+//[MEditCtrlAltShiftF1]
+""
+//[MEditCtrlAltShiftF2]
+""
+//[MEditCtrlAltShiftF3]
+""
+//[MEditCtrlAltShiftF4]
+""
+//[MEditCtrlAltShiftF5]
+""
+//[MEditCtrlAltShiftF6]
+""
+//[MEditCtrlAltShiftF7]
+""
+//[MEditCtrlAltShiftF8]
+""
+//[MEditCtrlAltShiftF9]
+""
+//[MEditCtrlAltShiftF10]
+""
+//[MEditCtrlAltShiftF11]
+""
+//[MEditCtrlAltShiftF12]
+""
+// End of functional keys (Editor)
+// it's a F8 another text
+//[MEditF8DOS]
+"OEM"
+
+//Single Editor: functional keys - 6 characters max, 12 keys, "OEM" is F8 dupe!
+//[MSingleEditF1]
+"Súgó"
+//[MSingleEditF2]
+"Mentés"
+//[MSingleEditF3]
+""
+//[MSingleEditF4]
+"Kilép"
+//[MSingleEditF5]
+""
+//[MSingleEditF6]
+"Megnéz"
+//[MSingleEditF7]
+"Keres"
+//[MSingleEditF8]
+"ANSI"
+//[MSingleEditF9]
+""
+//[MSingleEditF10]
+"Kilép"
+//[MSingleEditF11]
+"Plugin"
+//[MSingleEditF12]
+"Képrny"
+
+//Single Editor: Shift
+//[MSingleEditShiftF1]
+""
+//[MSingleEditShiftF2]
+"Ment.."
+//[MSingleEditShiftF3]
+""
+//[MSingleEditShiftF4]
+""
+//[MSingleEditShiftF5]
+""
+//[MSingleEditShiftF6]
+""
+//[MSingleEditShiftF7]
+"TovKer"
+//[MSingleEditShiftF8]
+"Kódlap"
+//[MSingleEditShiftF9]
+""
+//[MSingleEditShiftF10]
+"MentKi"
+//[MSingleEditShiftF11]
+""
+//[MSingleEditShiftF12]
+""
+
+//Single Editor: Alt
+//[MSingleEditAltF1]
+""
+//[MSingleEditAltF2]
+""
+//[MSingleEditAltF3]
+""
+//[MSingleEditAltF4]
+""
+//[MSingleEditAltF5]
+""
+//[MSingleEditAltF6]
+""
+//[MSingleEditAltF7]
+""
+//[MSingleEditAltF8]
+"Ugrás"
+//[MSingleEditAltF9]
+"Video"
+//[MSingleEditAltF10]
+""
+//[MSingleEditAltF11]
+"NézElő"
+//[MSingleEditAltF12]
+""
+
+//Single Editor: Ctrl
+//[MSingleEditCtrlF1]
+""
+//[MSingleEditCtrlF2]
+""
+//[MSingleEditCtrlF3]
+""
+//[MSingleEditCtrlF4]
+""
+//[MSingleEditCtrlF5]
+""
+//[MSingleEditCtrlF6]
+""
+//[MSingleEditCtrlF7]
+"Csere"
+//[MSingleEditCtrlF8]
+""
+//[MSingleEditCtrlF9]
+""
+//[MSingleEditCtrlF10]
+""
+//[MSingleEditCtrlF11]
+""
+//[MSingleEditCtrlF12]
+""
+
+//Single Editor: AltShift
+//[MSingleEditAltShiftF1]
+""
+//[MSingleEditAltShiftF2]
+""
+//[MSingleEditAltShiftF3]
+""
+//[MSingleEditAltShiftF4]
+""
+//[MSingleEditAltShiftF5]
+""
+//[MSingleEditAltShiftF6]
+""
+//[MSingleEditAltShiftF7]
+""
+//[MSingleEditAltShiftF8]
+""
+//[MSingleEditAltShiftF9]
+"Beáll."
+//[MSingleEditAltShiftF10]
+""
+//[MSingleEditAltShiftF11]
+""
+//[MSingleEditAltShiftF12]
+""
+
+//Single Editor: CtrlShift
+//[MSingleEditCtrlShiftF1]
+""
+//[MSingleEditCtrlShiftF2]
+""
+//[MSingleEditCtrlShiftF3]
+""
+//[MSingleEditCtrlShiftF4]
+""
+//[MSingleEditCtrlShiftF5]
+""
+//[MSingleEditCtrlShiftF6]
+""
+//[MSingleEditCtrlShiftF7]
+""
+//[MSingleEditCtrlShiftF8]
+""
+//[MSingleEditCtrlShiftF9]
+""
+//[MSingleEditCtrlShiftF10]
+""
+//[MSingleEditCtrlShiftF11]
+""
+//[MSingleEditCtrlShiftF12]
+""
+
+//Single Editor: CtrlAlt
+//[MSingleEditCtrlAltF1]
+""
+//[MSingleEditCtrlAltF2]
+""
+//[MSingleEditCtrlAltF3]
+""
+//[MSingleEditCtrlAltF4]
+""
+//[MSingleEditCtrlAltF5]
+""
+//[MSingleEditCtrlAltF6]
+""
+//[MSingleEditCtrlAltF7]
+""
+//[MSingleEditCtrlAltF8]
+""
+//[MSingleEditCtrlAltF9]
+""
+//[MSingleEditCtrlAltF10]
+""
+//[MSingleEditCtrlAltF11]
+""
+//[MSingleEditCtrlAltF12]
+""
+
+//Single Editor: CtrlAltShift
+//[MSingleEditCtrlAltShiftF1]
+""
+//[MSingleEditCtrlAltShiftF2]
+""
+//[MSingleEditCtrlAltShiftF3]
+""
+//[MSingleEditCtrlAltShiftF4]
+""
+//[MSingleEditCtrlAltShiftF5]
+""
+//[MSingleEditCtrlAltShiftF6]
+""
+//[MSingleEditCtrlAltShiftF7]
+""
+//[MSingleEditCtrlAltShiftF8]
+""
+//[MSingleEditCtrlAltShiftF9]
+""
+//[MSingleEditCtrlAltShiftF10]
+""
+//[MSingleEditCtrlAltShiftF11]
+""
+//[MSingleEditCtrlAltShiftF12]
+""
+// End of functional keys (Single Editor)
+// it's a F8 another text
+//[MSingleEditF8DOS]
+"OEM"
+
+//[MEditSaveAs]
+"Fá&jl mentése, mint:"
+//[MEditCodePage]
+"Kódlap:"
+//[MEditAddSignature]
+"Uni&code bájtsorrend jelzővel (BOM)"
+//[MEditSaveAsFormatTitle]
+"Sortörés konverzió:"
+//[MEditSaveOriginal]
+"Nincs &konverzió"
+//[MEditSaveDOS]
+"&DOS/Windows formátum (CR LF)"
+//[MEditSaveUnix]
+"&UNIX formátum (LF)"
+//[MEditSaveMac]
+"&Mac formátum (CR)"
+//[MEditCannotSave]
+"A fájl nem menthető"
+//[MEditSavedChangedNonFile]
+"A fájl megváltozott, de a fájlt vagy a mappáját"
+//[MEditSavedChangedNonFile1]
+"A fájlt vagy a mappáját"
+// need translation:
+//[MEditSavedChangedNonFile2]
+"időközben áthelyezte/átnevezte vagy törölte. Save?"
+//[MEditNewPath1]
+"A szerkesztendő fájl célmappája még"
+//[MEditNewPath2]
+"nem létezik, de mentéskor létrejön."
+//[MEditNewPath3]
+"Folytatja?"
+//[MEditNewPlugin1]
+"A szerkesztendő fájlnak nevet kell adni"
+// need translation:
+//[MEditorLoadCPWarn1]
+"File contains characters that cannot be"
+// need translation:
+//[MEditorLoadCPWarn2]
+"correctly read using selected code page."
+// need translation:
+//[MEditorReloadCPWarnLost1]
+"File has to be reloaded to change code page."
+// need translation:
+//[MEditorReloadCPWarnLost2]
+"All unsaved changes will be lost."
+// need translation:
+//[MEditorSaveCPWarn1]
+"Editor contains characters that cannot be"
+// need translation:
+//[MEditorSaveCPWarn2]
+"correctly saved using selected code page."
+// need translation:
+//[MEditorSwitchCPWarn1]
+"Editor contains characters that cannot be"
+// need translation:
+//[MEditorSwitchCPWarn2]
+"correctly translated using selected code page [{0}]"
+// need translation:
+//[MEditorSwitchCPConfirm]
+"Continue?"
+// need translation:
+//[MEditDataLostWarn]
+"During file editing some data were lost."
+//[MEditorSaveNotRecommended]
+"A fájl mentése nem ajánlott."
+//[MEditorSave]
+"Mentés"
+// need translation:
+//[MEditorSaveCPWarnShow]
+"Show"
+// need translation:
+//[MEditorSwitchUnicodeCPDisabled]
+"Unicode code page switch is not supported"
+// need translation:
+//[MEditorTryReloadFile]
+"You can reload file using custom code page (ShiftF4)"
+// need translation:
+//[MEditorSwitchToUnicodeCPDisabled]
+"Switch to unicode code page {0} is not supported"
+// need translation:
+//[MEditorCPNotSupported]
+"Code page {0} is not supported in your system"
+
+//[MColumnName]
+"Név"
+// need translation:
+//[MColumnExtension]
+"Extension"
+//[MColumnSize]
+"Méret"
+// need translation:
+//[MColumnAlocatedSize]
+"Allocated"
+//[MColumnDate]
+"Dátum"
+//[MColumnTime]
+"Idő"
+// need translation:
+//[MColumnWrited]
+"Write"
+//[MColumnCreated]
+"Létrejött"
+//[MColumnAccessed]
+"Hozzáférés"
+// need translation:
+//[MColumnChanged]
+"Change"
+//[MColumnAttr]
+"Attrib"
+//[MColumnDescription]
+"Megjegyzés"
+//[MColumnOwner]
+"Tulajdonos"
+//[MColumnMumLinks]
+"Lnk"
+//[MColumnNumStreams]
+"Stm"
+//[MColumnStreamsSize]
+"StmMér"
+//[MColumnUnknown]
+"???"
+
+//[MListUp]
+"Fel"
+//[MListFolder]
+"Mappa"
+//[MListSymlink]
+"SzimLnk"
+//[MListJunction]
+"Csomópt"
+// need translation:
+//[MListVolMount]
+"Volume"
+//[MListDFS]
+"DFS"
+//[MListDFSR]
+"DFSR"
+//[MListHSM]
+"HSM"
+//[MListHSM2]
+"HSM2"
+//[MListSIS]
+"SIS"
+//[MListWIM]
+"WIM"
+//[MListCSV]
+"CSV"
+//[MListDEDUP]
+"DEDUP"
+//[MListNFS]
+"NFS"
+// need translation:
+//[MListPlaceholder]
+"Placeholder"
+//[MListUnknownReparsePoint]
+"?SzimLnk?"
+//[MListBrackets]
+"<>"
+//[MListBytes]
+"B"
+//[MListKb]
+"k"
+//[MListMb]
+"M"
+//[MListGb]
+"G"
+//[MListTb]
+"T"
+//[MListPb]
+"P"
+//[MListEb]
+"E"
+{3} replacement field can receive a sum of files & folders
+// need translation:
+//[MListFileSize]
+"Bytes: {0}, files: {1}, folders: {2}"
+//[MListFileSizeStatus]
+"{0} ({1}/{2}) {3} {4}"
+//[MListFreeSize]
+"{0} szabad bájt"
+
+//[MDirInfoViewTitle]
+"Vizsgálat"
+//[MFileToEdit]
+"Szerkesztendő fájl:"
+
+//[MUnselectTitle]
+"Kijelölést levesz"
+//[MSelectTitle]
+"Kijelölés"
+//[MSelectFilter]
+"&Szűrő"
+
+//[MCompareTitle]
+"Összehasonlítás"
+//[MCompareFilePanelsRequired1]
+"Mappák összehasonlításához"
+//[MCompareFilePanelsRequired2]
+"két fájlpanel szükséges"
+//[MCompareSameFolders1]
+"A mappák tartalma"
+//[MCompareSameFolders2]
+"azonosnak tűnik"
+
+//[MSelectAssocTitle]
+"Válasszon társítást"
+
+//[MAssocTitle]
+"Fájltársítások"
+//[MAssocBottom]
+"Szerk.: Del,Ins,F4"
+//[MAskDelAssoc]
+"Törölni szeretné a társítást?"
+
+//[MFileAssocTitle]
+"Fájltársítások szerkesztése"
+//[MFileAssocMasks]
+"F&ájlmaszk(ok, vesszővel elválasztva):"
+//[MFileAssocDescr]
+"A &társítás leírása:"
+//[MFileAssocExec]
+"&Végrehajtandó parancs (Enterre):"
+//[MFileAssocAltExec]
+"Vé&grehajtandó parancs (Ctrl+PgDown-ra):"
+//[MFileAssocView]
+"&Nézőke parancs (F3-ra):"
+//[MFileAssocAltView]
+"N&ézőke parancs (Alt+F3-ra):"
+//[MFileAssocEdit]
+"S&zerkesztés parancs (F4-re):"
+//[MFileAssocAltEdit]
+"Sze&rkesztés parancs (Alt+F4-re):"
+
+//Viewer: functional keys, 12 keys, except F2 - 2 keys, and F8 - 2 keys
+//[MViewF1]
+"Súgó"
+// this is another text for F2
+//[MViewF2]
+"SorTör"
+//[MViewF3]
+"Kilép"
+//[MViewF4]
+"Hexa"
+//[MViewF5]
+""
+//[MViewF6]
+"Szerk."
+//[MViewF7]
+"Keres"
+//[MViewF8]
+"ANSI"
+//[MViewF9]
+""
+//[MViewF10]
+"Kilép"
+//[MViewF11]
+"Plugin"
+//[MViewF12]
+"Képrny"
+
+//Viewer: Shift
+//[MViewShiftF1]
+""
+//[MViewShiftF2]
+"SzóTör"
+//[MViewShiftF3]
+""
+// need translation:
+//[MViewShiftF4]
+"Mode"
+//[MViewShiftF5]
+""
+//[MViewShiftF6]
+""
+//[MViewShiftF7]
+"TovKer"
+//[MViewShiftF8]
+"Kódlap"
+//[MViewShiftF9]
+""
+//[MViewShiftF10]
+""
+//[MViewShiftF11]
+""
+//[MViewShiftF12]
+""
+
+//Viewer: Alt
+//[MViewAltF1]
+""
+//[MViewAltF2]
+""
+//[MViewAltF3]
+""
+//[MViewAltF4]
+""
+//[MViewAltF5]
+""
+//[MViewAltF6]
+""
+//[MViewAltF7]
+"VisKer"
+//[MViewAltF8]
+"Ugrás"
+//[MViewAltF9]
+"Video"
+//[MViewAltF10]
+""
+//[MViewAltF11]
+"NézElő"
+//[MViewAltF12]
+""
+
+//Viewer: Ctrl
+//[MViewCtrlF1]
+""
+//[MViewCtrlF2]
+""
+//[MViewCtrlF3]
+""
+//[MViewCtrlF4]
+""
+//[MViewCtrlF5]
+""
+//[MViewCtrlF6]
+""
+//[MViewCtrlF7]
+""
+//[MViewCtrlF8]
+""
+//[MViewCtrlF9]
+""
+//[MViewCtrlF10]
+"FájlPz"
+//[MViewCtrlF11]
+""
+//[MViewCtrlF12]
+""
+
+//Viewer: AltShift
+//[MViewAltShiftF1]
+""
+//[MViewAltShiftF2]
+""
+//[MViewAltShiftF3]
+""
+//[MViewAltShiftF4]
+""
+//[MViewAltShiftF5]
+""
+//[MViewAltShiftF6]
+""
+//[MViewAltShiftF7]
+""
+//[MViewAltShiftF8]
+""
+//[MViewAltShiftF9]
+"Beáll."
+//[MViewAltShiftF10]
+""
+//[MViewAltShiftF11]
+""
+//[MViewAltShiftF12]
+""
+
+//Viewer: CtrlShift
+//[MViewCtrlShiftF1]
+""
+//[MViewCtrlShiftF2]
+""
+//[MViewCtrlShiftF3]
+""
+//[MViewCtrlShiftF4]
+""
+//[MViewCtrlShiftF5]
+""
+//[MViewCtrlShiftF6]
+""
+//[MViewCtrlShiftF7]
+""
+//[MViewCtrlShiftF8]
+""
+//[MViewCtrlShiftF9]
+""
+//[MViewCtrlShiftF10]
+""
+//[MViewCtrlShiftF11]
+""
+//[MViewCtrlShiftF12]
+""
+
+//Viewer: CtrlAlt
+//[MViewCtrlAltF1]
+""
+//[MViewCtrlAltF2]
+""
+//[MViewCtrlAltF3]
+""
+//[MViewCtrlAltF4]
+""
+//[MViewCtrlAltF5]
+""
+//[MViewCtrlAltF6]
+""
+//[MViewCtrlAltF7]
+""
+//[MViewCtrlAltF8]
+""
+//[MViewCtrlAltF9]
+""
+//[MViewCtrlAltF10]
+""
+//[MViewCtrlAltF11]
+""
+//[MViewCtrlAltF12]
+""
+
+//Viewer: CtrlAltShift
+//[MViewCtrlAltShiftF1]
+""
+//[MViewCtrlAltShiftF2]
+""
+//[MViewCtrlAltShiftF3]
+""
+//[MViewCtrlAltShiftF4]
+""
+//[MViewCtrlAltShiftF5]
+""
+//[MViewCtrlAltShiftF6]
+""
+//[MViewCtrlAltShiftF7]
+""
+//[MViewCtrlAltShiftF8]
+""
+//[MViewCtrlAltShiftF9]
+""
+//[MViewCtrlAltShiftF10]
+""
+//[MViewCtrlAltShiftF11]
+""
+//[MViewCtrlAltShiftF12]
+""
+//[MViewF2Unwrap]
+"NemTör"
+// this is another text for F4
+//[MViewF4Text]
+"Szöveg"
+// this is another text for F4
+// need translation:
+//[MViewF4Dump]
+"Dump"
+// this is another text for F8
+// end of functional keys (Viewer)
+//[MViewF8DOS]
+"OEM"
+
+//Single Viewer: functional keys, 12 keys, except F2 - 2 keys, and F8 - 2 keys
+//[MSingleViewF1]
+"Súgó"
+//[MSingleViewF2]
+"SorTör"
+//[MSingleViewF3]
+"Kilép"
+//[MSingleViewF4]
+"Hexa"
+//[MSingleViewF5]
+""
+//[MSingleViewF6]
+"Szerk."
+//[MSingleViewF7]
+"Keres"
+//[MSingleViewF8]
+"ANSI"
+//[MSingleViewF9]
+""
+//[MSingleViewF10]
+"Kilép"
+//[MSingleViewF11]
+"Plugin"
+//[MSingleViewF12]
+"Képrny"
+
+//Single Viewer: Shift
+//[MSingleViewShiftF1]
+""
+//[MSingleViewShiftF2]
+"SzóTör"
+//[MSingleViewShiftF3]
+""
+//[MSingleViewShiftF4]
+""
+//[MSingleViewShiftF5]
+""
+//[MSingleViewShiftF6]
+""
+//[MSingleViewShiftF7]
+"TovKer"
+//[MSingleViewShiftF8]
+"Kódlap"
+//[MSingleViewShiftF9]
+""
+//[MSingleViewShiftF10]
+""
+//[MSingleViewShiftF11]
+""
+//[MSingleViewShiftF12]
+""
+
+//Single Viewer: Alt
+//[MSingleViewAltF1]
+""
+//[MSingleViewAltF2]
+""
+//[MSingleViewAltF3]
+""
+//[MSingleViewAltF4]
+""
+//[MSingleViewAltF5]
+""
+//[MSingleViewAltF6]
+""
+//[MSingleViewAltF7]
+"VisKer"
+//[MSingleViewAltF8]
+"Ugrás"
+//[MSingleViewAltF9]
+"Video"
+//[MSingleViewAltF10]
+""
+//[MSingleViewAltF11]
+"NézElő"
+//[MSingleViewAltF12]
+""
+
+//Single Viewer: Ctrl
+//[MSingleViewCtrlF1]
+""
+//[MSingleViewCtrlF2]
+""
+//[MSingleViewCtrlF3]
+""
+//[MSingleViewCtrlF4]
+""
+//[MSingleViewCtrlF5]
+""
+//[MSingleViewCtrlF6]
+""
+//[MSingleViewCtrlF7]
+""
+//[MSingleViewCtrlF8]
+""
+//[MSingleViewCtrlF9]
+""
+//[MSingleViewCtrlF10]
+""
+//[MSingleViewCtrlF11]
+""
+//[MSingleViewCtrlF12]
+""
+
+//Single Viewer: AltShift
+//[MSingleViewAltShiftF1]
+""
+//[MSingleViewAltShiftF2]
+""
+//[MSingleViewAltShiftF3]
+""
+//[MSingleViewAltShiftF4]
+""
+//[MSingleViewAltShiftF5]
+""
+//[MSingleViewAltShiftF6]
+""
+//[MSingleViewAltShiftF7]
+""
+//[MSingleViewAltShiftF8]
+""
+//[MSingleViewAltShiftF9]
+"Beáll."
+//[MSingleViewAltShiftF10]
+""
+//[MSingleViewAltShiftF11]
+""
+//[MSingleViewAltShiftF12]
+""
+
+//Single Viewer: CtrlShift
+//[MSingleViewCtrlShiftF1]
+""
+//[MSingleViewCtrlShiftF2]
+""
+//[MSingleViewCtrlShiftF3]
+""
+//[MSingleViewCtrlShiftF4]
+""
+//[MSingleViewCtrlShiftF5]
+""
+//[MSingleViewCtrlShiftF6]
+""
+//[MSingleViewCtrlShiftF7]
+""
+//[MSingleViewCtrlShiftF8]
+""
+//[MSingleViewCtrlShiftF9]
+""
+//[MSingleViewCtrlShiftF10]
+""
+//[MSingleViewCtrlShiftF11]
+""
+//[MSingleViewCtrlShiftF12]
+""
+
+//Single Viewer: CtrlAlt
+//[MSingleViewCtrlAltF1]
+""
+//[MSingleViewCtrlAltF2]
+""
+//[MSingleViewCtrlAltF3]
+""
+//[MSingleViewCtrlAltF4]
+""
+//[MSingleViewCtrlAltF5]
+""
+//[MSingleViewCtrlAltF6]
+""
+//[MSingleViewCtrlAltF7]
+""
+//[MSingleViewCtrlAltF8]
+""
+//[MSingleViewCtrlAltF9]
+""
+//[MSingleViewCtrlAltF10]
+""
+//[MSingleViewCtrlAltF11]
+""
+//[MSingleViewCtrlAltF12]
+""
+
+//Single Viewer: CtrlAltShift
+//[MSingleViewCtrlAltShiftF1]
+""
+//[MSingleViewCtrlAltShiftF2]
+""
+//[MSingleViewCtrlAltShiftF3]
+""
+//[MSingleViewCtrlAltShiftF4]
+""
+//[MSingleViewCtrlAltShiftF5]
+""
+//[MSingleViewCtrlAltShiftF6]
+""
+//[MSingleViewCtrlAltShiftF7]
+""
+//[MSingleViewCtrlAltShiftF8]
+""
+//[MSingleViewCtrlAltShiftF9]
+""
+//[MSingleViewCtrlAltShiftF10]
+""
+//[MSingleViewCtrlAltShiftF11]
+""
+//[MSingleViewCtrlAltShiftF12]
+""
+// this is another text for F2
+//[MSingleViewF2Unwrap]
+"NemTör"
+// this is another text for F4
+//[MSingleViewF4Text]
+"Szöveg"
+// this is another text for F4
+// end of functional keys (Single Viewer)
+//[MSingleViewF8DOS]
+"OEM"
+// need translation:
+//[MViewMode]
+"View mode"
+//[MInViewer]
+"megnézése"
+//[MInEditor]
+"szerkesztése"
+
+//[MFilterTitle]
+"Szűrők menü"
+//[MFilterBottom]
+"+,-,Szóköz,I,X,BS,Shift+BS,Ins,Del,F4,F5,Ctrl+Fel,Ctrl+Le"
+//[MPanelFileType]
+"A panel fájltípusa"
+//[MFolderFileType]
+"Mappák"
+//[MCanEditCustomFilterOnly]
+"Csak saját szűrő szerkeszthető"
+//[MAskDeleteFilter]
+"Törölni szeretné a szűrőt?"
+//[MCanDeleteCustomFilterOnly]
+"Csak saját szűrő törölhető"
+
+//[MFindFileTitle]
+"Fájlkeresés"
+//[MFindFileMasks]
+"Fájlm&aszk(ok, vesszővel elválasztva):"
+//[MFindFileText]
+"&Tartalmazza a szöveget:"
+//[MFindFileHex]
+"Tartalmazza a he&xát:"
+//[MFindFileCodePage]
+"Kó&dlap:"
+//[MFindFileCodePageBottom]
+"Space, Ins"
+//[MFindFileCase]
+"&Nagy/kisbetű érzékeny"
+//[MFindFileWholeWords]
+"Csak egés&z szavak"
+// need translation:
+//[MFindFileAllCodePages]
+"Minden kódlappal"
+// need translation:
+//[MFindFileSelectedCodePages]
+"Selected code pages"
+//[MFindArchives]
+"Keresés t&ömörítettekben"
+//[MFindFolders]
+"Keresés mapp&ákra"
+//[MFindSymLinks]
+"Keresés sz&imbolikus linkekben"
+// need translation:
+//[MFindAlternateStreams]
+"Search in alternate streams"
+//[MSearchForHex]
+"Keresés &hexákra"
+// need translation:
+//[MSearchNotContaining]
+"Not containing"
+//[MSearchWhere]
+"Keresés hatós&ugara:"
+//[MSearchAllDisks]
+"Minden &fix meghajtón"
+//[MSearchAllButNetwork]
+"Minden hel&yi meghajtón"
+//[MSearchInPATH]
+"A &PATH mappáiban"
+//[MSearchFromRootOfDrive]
+"Meghajtó &gyökerétől:"
+//[MSearchFromRootFolder]
+"A &gyökérmappától"
+//[MSearchFromCurrent]
+"Az akt&uális mappától"
+//[MSearchInCurrent]
+"&Csak az aktuális mappában"
+//[MSearchInSelected]
+"A ki&jelölt mappákban"
+//[MFindUseFilter]
+"Sz&űrővel"
+//[MFindUsingFilter]
+"szűrővel"
+//[MFindFileFind]
+"K&eres"
+//[MFindFileDrive]
+"Meghajt&ó"
+//[MFindFileSetFilter]
+"Szű&rő"
+//[MFindFileAdvanced]
+"Ha&ladó"
+//[MFindSearchingIn]
+"{0} keresése"
+//[MFindNewSearch]
+"&Új keresés"
+//[MFindGoTo]
+"U&grás"
+//[MFindView]
+"Meg&néz"
+//[MFindPanel]
+"&Panel"
+//[MFindStop]
+"&Állj"
+
+//[MFindDone]
+"A keresés kész. {0} fájlt és {1} mappát találtam."
+//[MFindCancel]
+"&Mégsem"
+
+//[MFindFound]
+"Fájlt: {0}, mappát: {1}"
+
+//[MFindFileAdvancedTitle]
+"Fájlkeresés haladó beállításai"
+//[MFindFileSearchFirst]
+"Keresés csak az első &x bájtban:"
+// need translation:
+//[MFindFileSearchOutputFormat]
+"&Output format:"
+//[MFindAlternateModeTypes]
+"Oszlop&típusok"
+//[MFindAlternateModeWidths]
+"Oszlop&szélességek"
+
+//[MFoldTreeSearch]
+"Keresés:"
+
+//[MGetCodePageTitle]
+"Kódlapok"
+//[MGetCodePageSystem]
+"Rendszer"
+//[MGetCodePageUnicode]
+"Unicode"
+//[MGetCodePageFavorites]
+"Kedvencek"
+//[MGetCodePageOther]
+"Egyéb"
+//[MGetCodePageBottomTitle]
+"Ctrl+H, Del, Ins, F4"
+//[MGetCodePageBottomShortTitle]
+"Ctrl+H, Del, F4"
+// need translation:
+//[MGetCodePageEditCodePageName]
+"Rename the code page"
+// need translation:
+//[MGetCodePageResetCodePageName]
+"&Reset"
+
+//[MHighlightTitle]
+"Fájlkiemelések, rendezési csoportok"
+//[MHighlightBottom]
+"Ins,Del,F4,F5,Ctrl+Fel,Ctrl+Le"
+//[MHighlightUpperSortGroup]
+"Felsőbbrendű csoport"
+//[MHighlightLowerSortGroup]
+"Alsóbbrendű csoport"
+//[MHighlightLastGroup]
+"Legalacsonyabb rendű csoport"
+//[MHighlightAskDel]
+"Biztosan törli a kiemelést?"
+//[MHighlightWarning]
+"Minden változtatás elvész"
+//[MHighlightAskRestore]
+"Visszaállítja az alapértelmezett kiemeléseket?"
+
+//[MHighlightEditTitle]
+"Fájlkiemelés szerkesztése"
+//[MHighlightMarkChar]
+"Megadható &jelölő karakter"
+//[MHighlightTransparentMarkChar]
+"át&látszó"
+//[MHighlightColors]
+"Fájlnév színek (feketén fekete = alapértelmezett szín)"
+//[MHighlightFileName1]
+"&1. Normál fájlnév"
+//[MHighlightFileName2]
+"&3. Kijelölt fájlnév"
+//[MHighlightFileName3]
+"&5. Kurzor alatti fájlnév"
+//[MHighlightFileName4]
+"&7. Kurzor alatti kijelölt fájlnév"
+//[MHighlightMarking1]
+"&2. Jelölő kar.:"
+//[MHighlightMarking2]
+"&4. Jelölő kar.:"
+//[MHighlightMarking3]
+"&6. Jelölő kar.:"
+//[MHighlightMarking4]
+"&8. Jelölő kar.:"
+//[MHighlightExample]
+"fájlneve.kit"
+//[MHighlightContinueProcessing]
+"Folyamatos f&eldolgozás"
+
+//[MInfoTitle]
+"Információk"
+//[MInfoCompName]
+"Számítógép neve"
+// need translation:
+//[MInfoCompDescription]
+"Computer description"
+//[MInfoUserName]
+"Felhasználói név"
+// need translation:
+//[MInfoUserDescription]
+"User description"
+// need translation:
+//[MInfoUserAccessLevel]
+"Access level"
+// need translation:
+//[MInfoUserAccessLevelGuest]
+"Guest"
+// need translation:
+//[MInfoUserAccessLevelUser]
+"User"
+// need translation:
+//[MInfoUserAccessLevelAdministrator]
+"Administrator"
+// need translation:
+//[MInfoUserAccessLevelUnknown]
+"Unknown"
+//[MInfoDiskTitle]
+"Lemez"
+//[MInfoRemovable]
+"Kivehető"
+//[MInfoFixed]
+"Fix"
+//[MInfoNetwork]
+"Hálózati"
+//[MInfoCDROM]
+"CD-ROM"
+//[MInfoCD_RW]
+"CD-RW"
+//[MInfoCD_RWDVD]
+"CD-RW/DVD"
+//[MInfoDVD_ROM]
+"DVD-ROM"
+//[MInfoDVD_RW]
+"DVD-RW"
+//[MInfoDVD_RAM]
+"DVD-RAM"
+//[MInfoRAM]
+"RAM"
+//[MInfoSUBST]
+"Subst"
+// need translation:
+//[MInfoVirtual]
+"Virtual"
+// need translation:
+//[MInfoUnknown]
+"Unknown"
+//[MInfoDisk]
+"lemez"
+//[MInfoDiskTotal]
+"Összes bájt"
+//[MInfoDiskFree]
+"Szabad bájt"
+//[MInfoDiskLabel]
+"Kötet címke"
+//[MInfoDiskNumber]
+"Sorozatszám"
+//[MInfoMemory]
+"Memória"
+//[MInfoMemoryLoad]
+"Használt memória"
+// need translation:
+//[MInfoMemoryInstalled]
+"Installed memory"
+//[MInfoMemoryTotal]
+"Összes memória"
+//[MInfoMemoryFree]
+"Szabad memória"
+//[MInfoVirtualTotal]
+"Összes virtuális"
+//[MInfoVirtualFree]
+"Szabad virtuális"
+// need translation:
+//[MInfoPageFileTotal]
+"Total paging file"
+// need translation:
+//[MInfoPageFileFree]
+"Free paging file"
+//[MInfoDescription]
+"Megjegyzés"
+//[MInfoDizAbsent]
+"Mappa megjegyzésfájl nincs"
+//[MInfoPlugin]
+"Plugin"
+// need translation:
+//[MInfoPowerStatus]
+"Power Status"
+// need translation:
+//[MInfoPowerStatusAC]
+"AC power status"
+// need translation:
+//[MInfoPowerStatusACOffline]
+"Offline"
+// need translation:
+//[MInfoPowerStatusACOnline]
+"Online"
+// need translation:
+//[MInfoPowerStatusACBackUp]
+"Backup power"
+// need translation:
+//[MInfoPowerStatusACUnknown]
+"Unknown"
+// need translation:
+//[MInfoPowerStatusBCLifePercent]
+"Battery life percent"
+// need translation:
+//[MInfoPowerStatusBCLifePercentUnknown]
+"Unknown"
+// need translation:
+//[MInfoPowerStatusBC]
+"Battery charge status"
+// need translation:
+//[MInfoPowerStatusBCHigh]
+"High"
+// need translation:
+//[MInfoPowerStatusBCLow]
+"Low"
+// need translation:
+//[MInfoPowerStatusBCCritical]
+"Critical"
+// need translation:
+//[MInfoPowerStatusBCCharging]
+"Charging"
+// need translation:
+//[MInfoPowerStatusBCNoSysBat]
+"No system battery"
+// need translation:
+//[MInfoPowerStatusBCUnknown]
+"Unknown"
+// need translation:
+//[MInfoPowerStatusBCTimeRem]
+"Battery life time"
+// need translation:
+//[MInfoPowerStatusBCFullTimeRem]
+"Battery full time"
+// need translation:
+//[MInfoPowerStatusUnknown]
+"Unknown"
+//[MAccessDenied]
+"Hozzáférés megtagadva"
+
+//[MCannotExecute]
+"Nem végrehajtható:"
+// need translation:
+//[MCannotInvokeComspec]
+"Cannot invoke command interpreter"
+// need translation:
+//[MCheckComspecVar]
+"Check COMSPEC environment variable"
+//[MScanningFolder]
+"Mappák olvasása..."
+
+//[MMakeFolderTitle]
+"Új mappa létrehozása"
+//[MCreateFolder]
+"Mappa &neve:"
+//[MMakeFolderLinkType]
+"Link típusa:"
+// need translation:
+//[MMakeFolderLinkNone]
+"None"
+//[MMakeFolderLinkJunction]
+"Mappa csomópont"
+//[MMakeFolderLinkSymlink]
+"Szimbolikus link"
+// need translation:
+//[MMakeFolderLinkTarget]
+"Target:"
+//[MMultiMakeDir]
+"Töb&b név feldolgozása"
+//[MIncorrectDirList]
+"Hibás mappalista"
+//[MCannotCreateFolder]
+"A mappa nem hozható létre"
+
+//[MMenuBriefView]
+"&Rövid"
+//[MMenuMediumView]
+"&Közepes"
+//[MMenuFullView]
+"&Teljes"
+//[MMenuWideView]
+"&Széles"
+//[MMenuDetailedView]
+"Rész&letes"
+//[MMenuDizView]
+"Fájl&megjegyzések"
+//[MMenuLongDizView]
+"&Hosszú megjegyzés"
+//[MMenuOwnersView]
+"Fájl tula&jdonos"
+//[MMenuLinksView]
+"Fájl li&nkek"
+//[MMenuAlternativeView]
+"&Alternatív teljes"
+
+//[MMenuInfoPanel]
+"&Info panel"
+//[MMenuTreePanel]
+"&Fastruktúra"
+//[MMenuQuickView]
+"&Gyorsnézet"
+//[MMenuSortModes]
+"R&endezési elv"
+//[MMenuLongNames]
+"H&osszú fájlnevek"
+//[MMenuTogglePanel]
+"&Panel be/ki"
+//[MMenuReread]
+"Friss&ítés"
+//[MMenuChangeDrive]
+"Meghajtó&váltás"
+
+//[MMenuView]
+"&Megnéz"
+//[MMenuEdit]
+"&Szerkeszt"
+//[MMenuCopy]
+"Más&ol"
+//[MMenuMove]
+"Át&nevez-Mozgat"
+// need translation:
+//[MMenuLink]
+"Link"
+//[MMenuCreateFolder]
+"Ú&j mappa"
+//[MMenuDelete]
+"&Töröl"
+//[MMenuWipe]
+"&Kisöpör"
+//[MMenuAdd]
+"Tömörhöz ho&zzáad"
+//[MMenuExtract]
+"Tömörből ki&bont"
+//[MMenuArchiveCommands]
+"Tömörítő &parancsok"
+//[MMenuAttributes]
+"Fájl &attribútumok"
+//[MMenuApplyCommand]
+"Parancs &végrehajtása"
+//[MMenuDescribe]
+"Fájlmegje&gyzés"
+//[MMenuSelectGroup]
+"Csoport k&ijelölése"
+//[MMenuUnselectGroup]
+"Jelölést l&evesz"
+//[MMenuInvertSelection]
+"Jelölést meg&fordít"
+//[MMenuRestoreSelection]
+"Jel&ölést visszatesz"
+
+//[MMenuFindFile]
+"Fájl&keresés"
+//[MMenuHistory]
+"Parancs &előzmények"
+//[MMenuVideoMode]
+"&Video mód"
+//[MMenuFindFolder]
+"&Mappakeresés"
+//[MMenuViewHistory]
+"Fáj&l előzmények"
+//[MMenuFoldersHistory]
+"Ma&ppa előzmények"
+//[MMenuSwapPanels]
+"Panel&csere"
+//[MMenuTogglePanels]
+"Panelek &be/ki"
+//[MMenuCompareFolders]
+"Mappák össze&hasonlítása"
+//[MMenuUserMenu]
+"Felhasználói m&enü szerk."
+//[MMenuFileAssociations]
+"Fájl&társítások"
+//[MMenuFolderShortcuts]
+"Mappa gyorsbillent&yűk"
+//[MMenuFilter]
+"Fájlpanel &szűrők"
+//[MMenuPluginCommands]
+"Pl&ugin parancsok"
+//[MMenuWindowsList]
+"Képer&nyők"
+//[MMenuProcessList]
+"Futó p&rogramok"
+//[MMenuHotPlugList]
+"H&otplug eszközök"
+
+//[MMenuSystemSettings]
+"&Rendszer beállítások"
+//[MMenuPanelSettings]
+"&Panel beállítások"
+// need translation:
+//[MMenuTreeSettings]
+"Tree settings"
+//[MMenuInterface]
+"Kezelő&felület beállítások"
+//[MMenuLanguages]
+"N&yelvek (Languages)"
+//[MMenuPluginsConfig]
+"Pl&ugin beállítások"
+// need translation:
+//[MMenuPluginsManagerSettings]
+"Plugins manager settings"
+//[MMenuDialogSettings]
+"Pár&beszédablak beállítások"
+// need translation:
+//[MMenuVMenuSettings]
+"Menu settings"
+// need translation:
+//[MMenuCmdlineSettings]
+"Command line settings"
+// need translation:
+//[MMenuAutoCompleteSettings]
+"AutoComplete settings"
+// need translation:
+//[MMenuInfoPanelSettings]
+"Inf&oPanel settings"
+// need translation:
+//[MMenuMaskGroups]
+"Groups of file masks"
+//[MMenuConfirmation]
+"Meg&erősítések"
+//[MMenuFilePanelModes]
+"Fájlpanel mód&ok"
+//[MMenuFileDescriptions]
+"Fájl &megjegyzésfájlok"
+//[MMenuFolderInfoFiles]
+"M&appa megjegyzésfájlok"
+//[MMenuViewer]
+"&Nézőke beállítások"
+//[MMenuEditor]
+"&Szerkesztő beállítások"
+// need translation:
+//[MMenuCodePages]
+"Kódlapok"
+//[MMenuColors]
+"S&zínek"
+//[MMenuFilesHighlighting]
+"Fájlkiemelések, rendezési &csoportok"
+//[MMenuSaveSetup]
+"Beállítások men&tése"
+//[MMenuTogglePanelRight]
+"Panel be/&ki"
+//[MMenuChangeDriveRight]
+"Meghajtó&váltás"
+
+//[MMenuLeftTitle]
+"&Bal"
+//[MMenuFilesTitle]
+"&Fájlok"
+//[MMenuCommandsTitle]
+"&Parancsok"
+//[MMenuOptionsTitle]
+"B&eállítások"
+//[MMenuRightTitle]
+"&Jobb"
+
+//[MMenuSortTitle]
+"Rendezési elv"
+//[MMenuSortByName]
+"&Név"
+//[MMenuSortByExt]
+"Ki&terjesztés"
+// need translation:
+//[MMenuSortByWrite]
+"&Write time"
+//[MMenuSortBySize]
+"&Méret"
+//[MMenuUnsorted]
+"&Rendezetlen"
+//[MMenuSortByCreation]
+"Ke&letkezés ideje"
+//[MMenuSortByAccess]
+"&Hozzáférés ideje"
+// need translation:
+//[MMenuSortByChange]
+"Change time"
+//[MMenuSortByDiz]
+"Megjegyzé&sek"
+//[MMenuSortByOwner]
+"Tula&jdonos"
+// need translation:
+//[MMenuSortByAllocatedSize]
+"Allocated size"
+//[MMenuSortByNumLinks]
+"Hardlinkek s&záma"
+//[MMenuSortByNumStreams]
+"Stream-e&k száma"
+//[MMenuSortByStreamsSize]
+"Stream-ek m&érete"
+// need translation:
+//[MMenuSortByFullName]
+"&Full name"
+// need translation:
+//[MMenuSortByCustomData]
+"Cus&tom data"
+//[MMenuSortUseGroups]
+"Rend. cs&oport haszn."
+//[MMenuSortSelectedFirst]
+"Kijel&ölteket előre"
+// need translation:
+//[MMenuSortDirectoriesFirst]
+"Sho&w directories first"
+//[MMaskGroupBottom]
+"Szerk.: Ins, Del, F4, F7, Ctrl+R"
+//[MMaskGroupName]
+"&Neve:"
+//[MMaskGroupMasks]
+"F&ájlmaszk(ok, vesszővel elválasztva):"
+//[MMaskGroupAskDelete]
+"Törölni akar"
+// need translation:
+//[MMaskGroupRestore]
+"Do you wish to restore default mask sets?"
+//[MMaskGroupFindMask]
+"&Maszk:"
+//[MMaskGroupTotal]
+"Összesen: {0}"
+
+//[MChangeDriveTitle]
+"Meghajtók"
+//[MChangeDriveRemovable]
+"kivehető"
+//[MChangeDriveFixed]
+"fix"
+//[MChangeDriveNetwork]
+"hálózati"
+//[MChangeDriveDisconnectedNetwork]
+"leválasztva"
+//[MChangeDriveCDROM]
+"CD-ROM"
+//[MChangeDriveCD_RW]
+"CD-RW"
+//[MChangeDriveCD_RWDVD]
+"CD-RW/DVD"
+//[MChangeDriveDVD_ROM]
+"DVD-ROM"
+//[MChangeDriveDVD_RW]
+"DVD-RW"
+//[MChangeDriveDVD_RAM]
+"DVD-RAM"
+//[MChangeDriveBD_ROM]
+"BD-ROM"
+//[MChangeDriveBD_RW]
+"BD-RW"
+//[MChangeDriveHDDVD_ROM]
+"HDDVD-ROM"
+//[MChangeDriveHDDVD_RW]
+"HDDVD-RW"
+//[MChangeDriveRAM]
+"RAM lemez"
+//[MChangeDriveSUBST]
+"virtuális"
+// need translation:
+//[MChangeDriveVirtual]
+"virtual"
+//[MChangeDriveLabelAbsent]
+"nem elérhető"
+//[MChangeDriveCannotReadDisk]
+"Meghajtó lemeze nem olvasható"
+//[MChangeDriveCannotDisconnect]
+"Nem lehet leválni innen: {0}"
+//[MChangeDriveCannotDelSubst]
+"{0} virtuális meghajtó nem törölhető"
+// need translation:
+//[MChangeDriveCannotDetach]
+"Cannot detach virtual disk {0}"
+//[MChangeDriveOpenFiles]
+"Ha a nyitott fájlokat nem zárja be, az adatok elveszhetnek"
+
+// need translation:
+//[MChangeSUBSTDisconnectDriveTitle]
+"Virtuális meghajtó törlése"
+// need translation:
+//[MChangeSUBSTDisconnectDriveQuestion]
+"Törli {0} virtuális meghajtót?"
+// need translation:
+//[MChangeVHDDisconnectDriveTitle]
+"Virtual disk detaching"
+// need translation:
+//[MChangeVHDDisconnectDriveQuestion]
+"Detach virtual disk {0}?"
+
+//[MChangeHotPlugDisconnectDriveTitle]
+"Eszköz biztonságos eltávolítása"
+//[MChangeHotPlugDisconnectDriveQuestion]
+"Eltávolítja az eszközt?"
+//[MHotPlugDisks]
+"({0} meghajtó)"
+//[MChangeCouldNotEjectHotPlugMedia]
+"{0}: eszköz nem távolítható el"
+//[MChangeCouldNotEjectHotPlugMedia2]
+"Az eszköz nem távolítható el:"
+//[MChangeHotPlugNotify1]
+"Az eszköz:"
+//[MChangeHotPlugNotify2]
+"már biztonságosan eltávolítható"
+//[MHotPlugListTitle]
+"Hotplug eszközök"
+//[MHotPlugListBottom]
+"Szerkesztés: Del,Ctrl+R"
+
+//[MChangeDriveDisconnectTitle]
+"Hálózati meghajtó leválasztása"
+//[MChangeDriveDisconnectQuestion]
+"Le akar válni {0}: meghajtóról?"
+//[MChangeDriveDisconnectMapped]
+"{0}: meghajtó hozzárendelve:"
+//[MChangeDriveDisconnectReconnect]
+"&Bejelentkezésnél újracsatlakoztat"
+
+//[MChangeDriveAskDisconnect]
+"Mindenképpen leválasztja az eszközt?"
+//[MChangeWaitingLoadDisk]
+"Lemez betöltése..."
+//[MChangeCouldNotEjectMedia]
+"{0}: meghajtó lemeze nem oldható ki"
+// need translation:
+//[MChangeDriveConfigure]
+"Change Drive Menu Options"
+// need translation:
+//[MChangeDriveShowDiskType]
+"Show disk type"
+// need translation:
+//[MChangeDriveShowPath]
+"Show &network name / SUBST path / VHD name"
+// need translation:
+//[MChangeDriveShowLabel]
+"Show disk &label"
+// need translation:
+//[MChangeDriveShowLabelUseShell]
+"Use shell name"
+// need translation:
+//[MChangeDriveShowFileSystem]
+"Show &file system type"
+// need translation:
+//[MChangeDriveShowSize]
+"Show &size"
+// need translation:
+//[MChangeDriveShowSizeFloat]
+"Show size as a decimal fraction"
+// need translation:
+//[MChangeDriveShowRemovableDrive]
+"Show &removable drive parameters"
+// need translation:
+//[MChangeDriveShowPlugins]
+"Show &plugins"
+// need translation:
+//[MChangeDriveSortPluginsByHotkey]
+"Sort plugins by hotkey"
+// need translation:
+//[MChangeDriveShowCD]
+"Show &CD drive parameters"
+// need translation:
+//[MChangeDriveShowNetworkDrive]
+"Show ne&twork drive parameters"
+//[MChangeDriveMenuFooter]
+"Del,Shift+Del,F3,F4,F9"
+
+//[MSearchFileTitle]
+"Keresés"
+//[MCannotCreateListFile]
+"A listafájl nem hozható létre"
+//[MCannotCreateListTemp]
+"(a lista átmeneti fájl nem hozható létre)"
+
+//[MDragFiles]
+"{0} fájl"
+//[MDragMove]
+"{0} mozgatása"
+//[MDragCopy]
+"{0} másolása"
+
+//[MProcessListTitle]
+"Futó programok"
+//[MProcessListBottom]
+"Szerk.: Del,Ctrl+R,F2"
+//[MKillProcessTitle]
+"Programkilövés"
+//[MAskKillProcess]
+"Ki akarja lőni a kijelölt programot?"
+//[MKillProcessWarning]
+"A program minden mentetlen adata elvész"
+//[MKillProcessKill]
+"Kilő"
+//[MCannotKillProcess]
+"A programot nem lehet kilőni"
+//[MCannotKillProcessPerm]
+"Nincs joga a program kilövésére"
+
+//[MQuickViewTitle]
+"Gyorsnézet"
+//[MQuickViewFolder]
+"Mappa"
+//[MQuickViewJunction]
+"Csomópont"
+//[MQuickViewSymlink]
+"Szimlink"
+//[MQuickViewVolMount]
+"Kötet"
+//[MQuickViewDFS]
+"DFS"
+//[MQuickViewDFSR]
+"DFSR"
+//[MQuickViewHSM]
+"HSM"
+//[MQuickViewHSM2]
+"HSM2"
+//[MQuickViewSIS]
+"SIS"
+//[MQuickViewWIM]
+"WIM"
+//[MQuickViewCSV]
+"CSV"
+//[MQuickViewDEDUP]
+"DEDUP"
+//[MQuickViewNFS]
+"NFS"
+// need translation:
+//[MQuickViewPlaceholder]
+"Placeholder"
+// need translation:
+//[MQuickViewUnknownReparsePoint]
+"Unknown reparse point"
+//[MQuickViewNoData]
+"(adat nem elérhető)"
+//[MQuickViewFolders]
+"Mappák száma:"
+//[MQuickViewFiles]
+"Fájlok száma:"
+//[MQuickViewBytes]
+"Fájlok mérete:"
+// need translation:
+//[MQuickViewAllocated]
+"Allocated size:"
+//[MQuickViewCluster]
+"Klaszterméret:"
+//[MQuickViewSlack]
+"Meddő terület:"
+// need translation:
+//[MQuickViewMFTOverhead]
+"MFT overhead:"
+
+//[MSetAttrTitle]
+"Attribútumok"
+//[MSetAttrFor]
+"Attribútumok megváltoztatása"
+//[MSetAttrSelectedObjects]
+"a kijelölt objektumokon"
+//[MSetAttrHardLinks]
+"hardlink"
+//[MSetAttrJunction]
+"Сsomópont:"
+//[MSetAttrSymlink]
+"Szimlink:"
+//[MSetAttrVolMount]
+"Kötet:"
+// need translation:
+//[MSetAttrDfsTargets]
+"DFS Targets"
+//[MSetAttrUnknownJunction]
+"(adat nem elérhető)"
+//[MSetAttrRO]
+"&Csak olvasható"
+//[MSetAttrArchive]
+"&Archív"
+//[MSetAttrHidden]
+"&Rejtett"
+//[MSetAttrSystem]
+"Ren&dszer"
+//[MSetAttrCompressed]
+"&Tömörített"
+//[MSetAttrEncrypted]
+"Tit&kosított"
+//[MSetAttrNotIndexed]
+"Nem inde&xelt"
+//[MSetAttrSparse]
+"Ritk&ított"
+//[MSetAttrTemp]
+"&Átmeneti"
+//[MSetAttrOffline]
+"O&ffline"
+// need translation:
+//[MSetAttrReparsePoint]
+"Reparse point"
+//[MSetAttrVirtual]
+"&Virtuális"
+// need translation:
+//[MSetAttrIntegrityStream]
+"Integrity stream"
+// need translation:
+//[MSetAttrNoScrubData]
+"No scrub data"
+//[MSetAttrSubfolders]
+"Az almappákon is"
+//[MSetAttrOwner]
+"Tulajdonos:"
+// need translation:
+//[MSetAttrOwnerMultiple]
+"(multiple values)"
+// need translation:
+//[MSetAttrModification]
+"Last &write time:"
+//[MSetAttrCreation]
+"&Létrehozás dátuma/ideje:"
+//[MSetAttrLastAccess]
+"&Utolsó hozzáférés dátuma/ideje:"
+// need translation:
+//[MSetAttrChange]
+"Change time:"
+//[MSetAttrOriginal]
+"&Eredeti"
+//[MSetAttrCurrent]
+"Aktuál&is"
+//[MSetAttrBlank]
+"&Üres"
+//[MSetAttrSet]
+"Alkalmaz"
+
+// need translation:
+//[MSetAttrDateTitle1]
+"HH{0}NN{0}ÉÉÉÉÉ"
+// need translation:
+//[MSetAttrDateTitle2]
+"NN{0}HH{0}ÉÉÉÉÉ"
+// need translation:
+//[MSetAttrDateTitle3]
+"ÉÉÉÉÉ{0}HH{0}NN"
+// need translation:
+//[MSetAttrTimeTitle]
+"óó{0}pp{0}mm{1}ms"
+// need translation:
+//[MSetAttrSystemDialog]
+"System properties"
+
+//[MSetAttrSetting]
+"Attribútumok beállítása"
+//[MSetAttrCannotFor]
+"Az attribútumok nem állíthatók be:"
+//[MSetAttrCompressedCannotFor]
+"A TÖMÖRÍTETT attribútum nem állítható be:"
+//[MSetAttrEncryptedCannotFor]
+"A TITKOSÍTOTT attribútum nem állítható be:"
+//[MSetAttrSparseCannotFor]
+"A RITKÍTOTT attribútum nem állítható be:"
+//[MSetAttrTimeCannotFor]
+"A dátum nem állítható be:"
+// need translation:
+//[MSetAttrOwnerCannotFor]
+"Cannot set owner for"
+
+//[MSetColorPanel]
+"&Panel"
+//[MSetColorDialog]
+"Pár&beszédablak"
+//[MSetColorWarning]
+"&Figyelmeztetés"
+//[MSetColorMenu]
+"&Menü"
+//[MSetColorHMenu]
+"&Vízszintes menü"
+//[MSetColorKeyBar]
+"F&unkcióbill.sor"
+//[MSetColorCommandLine]
+"P&arancssor"
+//[MSetColorClock]
+"Ó&ra"
+//[MSetColorViewer]
+"&Nézőke"
+//[MSetColorEditor]
+"&Szerkesztő"
+//[MSetColorHelp]
+"Sú&gó"
+//[MSetDefaultColors]
+"Alapért. s&zínek"
+//[MSetBW]
+"Fekete-fe&hér mód"
+
+//[MSetColorPanelNormal]
+"Normál szöveg"
+//[MSetColorPanelSelected]
+"Kijelölt szöveg"
+//[MSetColorPanelHighlightedText]
+"Kiemelt szöveg"
+//[MSetColorPanelHighlightedInfo]
+"Kiemelt info"
+//[MSetColorPanelDragging]
+"Vonszolt szöveg"
+//[MSetColorPanelBox]
+"Keret"
+//[MSetColorPanelNormalCursor]
+"Normál kurzor"
+//[MSetColorPanelSelectedCursor]
+"Kijelölt kurzor"
+//[MSetColorPanelNormalTitle]
+"Normál név"
+//[MSetColorPanelSelectedTitle]
+"Kijelölt név"
+//[MSetColorPanelColumnTitle]
+"Oszlopnév"
+//[MSetColorPanelTotalInfo]
+"Összes info"
+//[MSetColorPanelSelectedInfo]
+"Kijelölt info"
+//[MSetColorPanelScrollbar]
+"Gördítősáv"
+//[MSetColorPanelScreensNumber]
+"Háttérképernyők száma"
+
+//[MSetColorDialogNormal]
+"Normál szöveg"
+//[MSetColorDialogHighlighted]
+"Kiemelt szöveg"
+//[MSetColorDialogDisabled]
+"Inaktív szöveg"
+//[MSetColorDialogBox]
+"Keret"
+//[MSetColorDialogBoxTitle]
+"Keret neve"
+//[MSetColorDialogHighlightedBoxTitle]
+"Kiemelt keretnév"
+//[MSetColorDialogTextInput]
+"Beírt szöveg"
+//[MSetColorDialogUnchangedTextInput]
+"Változatlan beírt szöveg"
+//[MSetColorDialogSelectedTextInput]
+"Beírt szöveg kijelölve"
+//[MSetColorDialogEditDisabled]
+"Inaktív beviteli sor"
+//[MSetColorDialogButtons]
+"Gombok"
+//[MSetColorDialogSelectedButtons]
+"Kijelölt gombok"
+//[MSetColorDialogHighlightedButtons]
+"Kiemelt gombok"
+//[MSetColorDialogSelectedHighlightedButtons]
+"Kijelölt kiemelt gombok"
+// need translation:
+//[MSetColorDialogDefaultButton]
+"Default button"
+// need translation:
+//[MSetColorDialogSelectedDefaultButton]
+"Selected default button"
+// need translation:
+//[MSetColorDialogHighlightedDefaultButton]
+"Highlighted default button"
+// need translation:
+//[MSetColorDialogSelectedHighlightedDefaultButton]
+"Selected highlighted default button"
+//[MSetColorDialogListBoxControl]
+"Listaablak"
+//[MSetColorDialogComboBoxControl]
+"Lenyíló szövegablak"
+
+//[MSetColorDialogListText]
+"Normál szöveg"
+//[MSetColorDialogListSelectedText]
+"Kijelölt szöveg"
+//[MSetColorDialogListHighLight]
+"Kiemelt szöveg"
+//[MSetColorDialogListSelectedHighLight]
+"Kijelölt kiemelt szöveg"
+//[MSetColorDialogListDisabled]
+"Inaktív elem"
+//[MSetColorDialogListBox]
+"Keret"
+//[MSetColorDialogListTitle]
+"Keret neve"
+//[MSetColorDialogListGrayed]
+"Szürke listaszöveg"
+//[MSetColorDialogSelectedListGrayed]
+"Kijelölt szürke listaszöveg"
+//[MSetColorDialogListScrollBar]
+"Gördítősáv"
+//[MSetColorDialogListArrows]
+"Hosszú sztring jelzők"
+//[MSetColorDialogListArrowsSelected]
+"Kijelölt hosszú sztring jelzők"
+//[MSetColorDialogListArrowsDisabled]
+"Inaktív hosszú sztring jelzők"
+
+//[MSetColorMenuNormal]
+"Normál szöveg"
+//[MSetColorMenuSelected]
+"Kijelölt szöveg"
+//[MSetColorMenuHighlighted]
+"Kiemelt szöveg"
+//[MSetColorMenuSelectedHighlighted]
+"Kijelölt kiemelt szöveg"
+//[MSetColorMenuDisabled]
+"Inaktív szöveg"
+//[MSetColorMenuGrayed]
+"Szürke szöveg"
+//[MSetColorMenuSelectedGrayed]
+"Kijelölt szürke szöveg"
+//[MSetColorMenuBox]
+"Keret"
+//[MSetColorMenuTitle]
+"Keret neve"
+//[MSetColorMenuScrollBar]
+"Gördítősáv"
+//[MSetColorMenuArrows]
+"Hosszú sztring jelzők"
+//[MSetColorMenuArrowsSelected]
+"Kijelölt hosszú sztring jelzők"
+//[MSetColorMenuArrowsDisabled]
+"Inaktív hosszú sztring jelzők"
+
+//[MSetColorHMenuNormal]
+"Normál szöveg"
+//[MSetColorHMenuSelected]
+"Kijelölt szöveg"
+//[MSetColorHMenuHighlighted]
+"Kiemelt szöveg"
+//[MSetColorHMenuSelectedHighlighted]
+"Kijelölt kiemelt szöveg"
+
+//[MSetColorKeyBarNumbers]
+"Funkció száma"
+//[MSetColorKeyBarNames]
+"Funkció neve"
+//[MSetColorKeyBarBackground]
+"Háttere"
+
+//[MSetColorCommandLineNormal]
+"Normál szöveg"
+//[MSetColorCommandLineSelected]
+"Beírt szöveg kijelölve"
+//[MSetColorCommandLinePrefix]
+"Előtag szövege"
+//[MSetColorCommandLineUserScreen]
+"Konzol háttere"
+
+//[MSetColorClockNormal]
+"Normál szöveg (panelek)"
+//[MSetColorClockNormalEditor]
+"Normál szöveg (szerkesztő)"
+//[MSetColorClockNormalViewer]
+"Normál szöveg (nézőke)"
+
+//[MSetColorViewerNormal]
+"Normál szöveg"
+//[MSetColorViewerSelected]
+"Kijelölt szöveg"
+//[MSetColorViewerStatus]
+"Állapotsor"
+//[MSetColorViewerArrows]
+"Képernyőgördítő nyilak"
+//[MSetColorViewerScrollbar]
+"Gördítősáv"
+
+//[MSetColorEditorNormal]
+"Normál szöveg"
+//[MSetColorEditorSelected]
+"Kijelölt szöveg"
+//[MSetColorEditorStatus]
+"Állapotsor"
+//[MSetColorEditorScrollbar]
+"Gördítősáv"
+
+//[MSetColorHelpNormal]
+"Normál szöveg"
+//[MSetColorHelpHighlighted]
+"Kiemelt szöveg"
+//[MSetColorHelpReference]
+"Hivatkozás"
+//[MSetColorHelpSelectedReference]
+"Kijelölt hivatkozás"
+//[MSetColorHelpBox]
+"Keret"
+//[MSetColorHelpBoxTitle]
+"Keret neve"
+//[MSetColorHelpScrollbar]
+"Gördítősáv"
+
+//[MSetColorGroupsTitle]
+"Színcsoportok"
+//[MSetColorItemsTitle]
+"A színcsoport elemei"
+
+//[MSetColorTitle]
+"Színek"
+//[MSetColorForeground]
+"&Előtér"
+//[MSetColorBackground]
+"&Háttér"
+
+// 3 characters max
+//[MSetColorForeRGB]
+"&RGB"
+
+// 3 characters max
+//[MSetColorBackRGB]
+"R&GB"
+//[MSetColorForeTransparent]
+"Átlá&tszó"
+//[MSetColorBackTransparent]
+"Átlát&szó"
+//[MSetColorSample]
+"Text Text Text Text Text Text Text"
+//[MSetColorSet]
+"A&lkalmaz"
+//[MSetColorCancel]
+"&Mégsem"
+
+//[MSetConfirmTitle]
+"Megerősítések"
+//[MSetConfirmCopy]
+"&Másolás"
+//[MSetConfirmMove]
+"Moz&gatás"
+//[MSetConfirmRO]
+"&Csak olv. fájlok felülírása/törlése"
+//[MSetConfirmDrag]
+"&Húzd és ejtsd"
+//[MSetConfirmDelete]
+"&Törlés"
+//[MSetConfirmDeleteFolders]
+"Nem &üres mappák törlése"
+//[MSetConfirmEsc]
+"Mű&velet megszakítása"
+//[MSetConfirmRemoveConnection]
+"Háló&zati meghajtó leválasztása"
+// need translation:
+//[MSetConfirmRemoveSUBST]
+"Virt&uális meghajtó törlése"
+// need translation:
+//[MSetConfirmDetachVHD]
+"Detach virtual disk"
+//[MSetConfirmRemoveHotPlug]
+"H&otPlug eszköz eltávolítása"
+//[MSetConfirmAllowReedit]
+"&Szerkesztett fájl újratöltése"
+//[MSetConfirmHistoryClear]
+"&Előzménylista törlése"
+//[MSetConfirmExit]
+"K&ilépés a FAR-ból"
+
+// need translation:
+//[MPluginsManagerSettingsTitle]
+"Plugins manager settings"
+// need translation:
+//[MPluginsManagerOEMPluginsSupport]
+"OEM plugins support"
+//[MPluginsManagerScanSymlinks]
+"Szimbolikus linkek &vizsgálata"
+//[MPluginsManagerOFP]
+"&Fájl feldolgozása"
+//[MPluginsManagerStdAssoc]
+"Szabvány társítás megjelenítése"
+//[MPluginsManagerEvenOne]
+"Akkor is, ha csak egy plugin van"
+//[MPluginsManagerSFL]
+"Keresés eredménye (SetFindList)"
+//[MPluginsManagerPF]
+"Előtag feldolgozása"
+//[MPluginConfirmationTitle]
+"Plugin választás"
+//[MMenuPluginStdAssociation]
+"Szabvány társítás"
+
+//[MFindFolderTitle]
+"Mappakeresés"
+
+// Find folder Tree KeyBar
+//[MFolderTreeF1]
+"Súgó"
+//[MFolderTreeF2]
+"FaFris"
+//[MFolderTreeF3]
+""
+//[MFolderTreeF4]
+""
+//[MFolderTreeF5]
+"Nagyít"
+//[MFolderTreeF6]
+""
+//[MFolderTreeF7]
+""
+//[MFolderTreeF8]
+""
+//[MFolderTreeF9]
+""
+//[MFolderTreeF10]
+"Kilép"
+//[MFolderTreeF11]
+""
+//[MFolderTreeF12]
+""
+//[MFolderTreeShiftF1]
+""
+//[MFolderTreeShiftF2]
+""
+//[MFolderTreeShiftF3]
+""
+//[MFolderTreeShiftF4]
+""
+//[MFolderTreeShiftF5]
+""
+//[MFolderTreeShiftF6]
+""
+//[MFolderTreeShiftF7]
+""
+//[MFolderTreeShiftF8]
+""
+//[MFolderTreeShiftF9]
+""
+//[MFolderTreeShiftF10]
+""
+//[MFolderTreeShiftF11]
+""
+//[MFolderTreeShiftF12]
+""
+//[MFolderTreeAltF1]
+""
+//[MFolderTreeAltF2]
+""
+//[MFolderTreeAltF3]
+""
+//[MFolderTreeAltF4]
+""
+//[MFolderTreeAltF5]
+""
+//[MFolderTreeAltF6]
+""
+//[MFolderTreeAltF7]
+""
+//[MFolderTreeAltF8]
+""
+//[MFolderTreeAltF9]
+"Video"
+//[MFolderTreeAltF10]
+""
+//[MFolderTreeAltF11]
+""
+//[MFolderTreeAltF12]
+""
+//[MFolderTreeCtrlF1]
+""
+//[MFolderTreeCtrlF2]
+""
+//[MFolderTreeCtrlF3]
+""
+//[MFolderTreeCtrlF4]
+""
+//[MFolderTreeCtrlF5]
+""
+//[MFolderTreeCtrlF6]
+""
+//[MFolderTreeCtrlF7]
+""
+//[MFolderTreeCtrlF8]
+""
+//[MFolderTreeCtrlF9]
+""
+//[MFolderTreeCtrlF10]
+""
+//[MFolderTreeCtrlF11]
+""
+//[MFolderTreeCtrlF12]
+""
+//[MFolderTreeCtrlShiftF1]
+""
+//[MFolderTreeCtrlShiftF2]
+""
+//[MFolderTreeCtrlShiftF3]
+""
+//[MFolderTreeCtrlShiftF4]
+""
+//[MFolderTreeCtrlShiftF5]
+""
+//[MFolderTreeCtrlShiftF6]
+""
+//[MFolderTreeCtrlShiftF7]
+""
+//[MFolderTreeCtrlShiftF8]
+""
+//[MFolderTreeCtrlShiftF9]
+""
+//[MFolderTreeCtrlShiftF10]
+""
+//[MFolderTreeCtrlShiftF11]
+""
+//[MFolderTreeCtrlShiftF12]
+""
+//[MFolderTreeCtrlAltF1]
+""
+//[MFolderTreeCtrlAltF2]
+""
+//[MFolderTreeCtrlAltF3]
+""
+//[MFolderTreeCtrlAltF4]
+""
+//[MFolderTreeCtrlAltF5]
+""
+//[MFolderTreeCtrlAltF6]
+""
+//[MFolderTreeCtrlAltF7]
+""
+//[MFolderTreeCtrlAltF8]
+""
+//[MFolderTreeCtrlAltF9]
+""
+//[MFolderTreeCtrlAltF10]
+""
+//[MFolderTreeCtrlAltF11]
+""
+//[MFolderTreeCtrlAltF12]
+""
+//[MFolderTreeAltShiftF1]
+""
+//[MFolderTreeAltShiftF2]
+""
+//[MFolderTreeAltShiftF3]
+""
+//[MFolderTreeAltShiftF4]
+""
+//[MFolderTreeAltShiftF5]
+""
+//[MFolderTreeAltShiftF6]
+""
+//[MFolderTreeAltShiftF7]
+""
+//[MFolderTreeAltShiftF8]
+""
+//[MFolderTreeAltShiftF9]
+""
+//[MFolderTreeAltShiftF10]
+""
+//[MFolderTreeAltShiftF11]
+""
+//[MFolderTreeAltShiftF12]
+""
+//[MFolderTreeCtrlAltShiftF1]
+""
+//[MFolderTreeCtrlAltShiftF2]
+""
+//[MFolderTreeCtrlAltShiftF3]
+""
+//[MFolderTreeCtrlAltShiftF4]
+""
+//[MFolderTreeCtrlAltShiftF5]
+""
+//[MFolderTreeCtrlAltShiftF6]
+""
+//[MFolderTreeCtrlAltShiftF7]
+""
+//[MFolderTreeCtrlAltShiftF8]
+""
+//[MFolderTreeCtrlAltShiftF9]
+""
+//[MFolderTreeCtrlAltShiftF10]
+""
+//[MFolderTreeCtrlAltShiftF11]
+""
+//[MFolderTreeCtrlAltShiftF12]
+""
+//[MTreeTitle]
+"Fa"
+//[MCannotSaveTree]
+"A mappák fastruktúrája nem menthető fájlba"
+//[MReadingTree]
+"Mappaszerkezet újraolvasása..."
+
+//[MUserMenuTitle]
+"Felhasználói menü szerkesztése"
+//[MChooseMenuType]
+"Felhasználói menü típusa:"
+//[MChooseMenuMain]
+"&Főmenü"
+//[MChooseMenuLocal]
+"&Helyi menü"
+//[MMainMenuTitle]
+"Főmenü"
+
+// <...menu (User)>
+// need translation:
+//[MMainMenuUser]
+"User"
+// need translation:
+//[MMainMenuGlobal]
+"Global"
+//[MLocalMenuTitle]
+"Helyi menü"
+//[MMainMenuBottomTitle]
+"Szerk.: Del,Ins,F4,Alt+F4"
+//[MAskDeleteMenuItem]
+"Biztosan törli a menüelemet?"
+//[MAskDeleteSubMenuItem]
+"Biztosan törli az almenüt?"
+//[MUserMenuInvalidInputLabel]
+"A felhasználói menü névformátuma érvénytelen"
+//[MUserMenuInvalidInputHotKey]
+"A gyorsbillentyű formátuma érvénytelen"
+
+//[MEditMenuTitle]
+"Parancs szerkesztése"
+//[MEditMenuHotKey]
+"&Gyorsbillentyű:"
+//[MEditMenuLabel]
+"&Név:"
+//[MEditMenuCommands]
+"&Parancsok:"
+
+//[MAskInsertMenuOrCommand]
+"Új parancs vagy új menü?"
+//[MMenuInsertCommand]
+"Parancs"
+//[MMenuInsertMenu]
+"Menü"
+
+//[MEditSubmenuTitle]
+"Almenü szerkesztése"
+//[MEditSubmenuHotKey]
+"&Gyorsbillentyű:"
+//[MEditSubmenuLabel]
+"&Név:"
+// need translation:
+//[MEditMenuConfirmation]
+"Save changes?"
+// need translation:
+//[MEditMenuError]
+"Cannot update menu"
+
+//[MViewerTitle]
+"Nézőke"
+//[MViewerCannotOpenFile]
+"A fájl nem nyitható meg"
+//[MViewerStatusCol]
+"Oszlop"
+
+//[MViewSearchTitle]
+"Keresés"
+//[MViewSearchFor]
+"&Keresés:"
+//[MViewSearchForText]
+"&Szöveg keresése"
+//[MViewSearchForHex]
+"&Hexa keresése"
+//[MViewSearchCase]
+"&Nagy/kisbetű érzékeny"
+//[MViewSearchWholeWords]
+"Csak e&gész szavak"
+//[MViewSearchReverse]
+"&Visszafelé keres"
+// need translation:
+//[MViewSearchRegexp]
+"Re&gular expressions"
+//[MViewSearchSearch]
+"Keres"
+//[MViewSearchCancel]
+"Mégsem"
+
+//[MViewSearchingFor]
+"Keresés:"
+//[MViewSearchingHex]
+"Bájtok keresése:"
+//[MViewSearchCannotFind]
+"Nem találtam a szöveget:"
+//[MViewSearchCannotFindHex]
+"Nem találtam a bájtokat:"
+// need translation:
+//[MViewSearchEod]
+"End of the document reached"
+//[MViewSearchFromBegin]
+"Folytassam a keresést a dokumentum elejétől?"
+// need translation:
+//[MViewSearchBod]
+"Begin of the document reached"
+//[MViewSearchFromEnd]
+"Folytassam a keresést a dokumentum végétől?"
+// need translation:
+//[MViewSearchCycle]
+"The Whole document scanned"
+// need translation:
+//[MViewSearchRepeat]
+"Repeat the search in the document?"
+
+//[MPrintTitle]
+"Nyomtatás"
+//[MPrintTo]
+"{0} nyomtatása:"
+//[MPrintFilesTo]
+"{0} fájl nyomtatása:"
+//[MPreparingForPrinting]
+"Fájlok előkészítése nyomtatáshoz"
+//[MCannotEnumeratePrinters]
+"Az elérhető nyomtatók listája nem állítható össze"
+//[MCannotOpenPrinter]
+"Nyomtató nem elérhető"
+//[MCannotPrint]
+"Nem nyomtatható"
+
+//[MDescribeFiles]
+"Fájlmegjegyzés"
+// need translation:
+//[MEnterDescription]
+"Írja be megjegyzését:"
+
+//[MReadingDiz]
+"Fájlmegjegyzések olvasása"
+//[MCannotUpdateDiz]
+"A fájlmegjegyzések nem frissíthetők"
+//[MCannotUpdateRODiz]
+"A megjegyzésfájl csak olvasható"
+
+//[MCfgDizTitle]
+"Fájl megjegyzésfájlok"
+//[MCfgDizListNames]
+"Megjegyzés&fájlok nevei, vesszővel elválasztva:"
+//[MCfgDizSetHidden]
+"Az új megjegyzésfájl ""&rejtett"" attribútumú legyen"
+//[MCfgDizROUpdate]
+"&Csak olvasható megjegyzésfájlok frissítése"
+//[MCfgDizStartPos]
+"Új megjegyzéseknél a szöveg &kezdete"
+//[MCfgDizNotUpdate]
+"N&e frissítse a megjegyzéseket"
+//[MCfgDizUpdateIfDisplayed]
+"Frissítsen, ha meg&jelenik"
+//[MCfgDizAlwaysUpdate]
+"&Mindig frissítsen"
+//[MCfgDizAnsiByDefault]
+"Fájlok eredeti megnyitása ANS&I kódlappal"
+// need translation:
+//[MCfgDizSaveInUTF]
+"Save in UTF8"
+
+//[MReadingTitleFiles]
+"Panelek frissítése"
+//[MReadingFiles]
+"{0} fájl olvasása"
+//[MOperationNotCompleted]
+"A művelet félbeszakadt"
+
+//[MEditPanelModes]
+"Panel módok szerkesztése"
+//[MEditPanelModesBottom]
+"Ins,Del,F4,Ctrl+Enter,Ctrl+Shift+Enter"
+
+//[MEditPanelModeName]
+"Neve"
+//[MEditPanelModeTypes]
+"Oszlop&típusok"
+//[MEditPanelModeWidths]
+"Oszlop&szélességek"
+//[MEditPanelModeStatusTypes]
+"Állapotsor oszloptíp&usok"
+//[MEditPanelModeStatusWidths]
+"Állapotsor &oszlopszélességek"
+//[MEditPanelModeFullscreen]
+"Tel&jes képernyős nézet"
+//[MEditPanelModeAlignExtensions]
+"Fájlkiterjesztések &igazítása"
+//[MEditPanelModeAlignFolderExtensions]
+"Mappakiterjesztések i&gazítása"
+//[MEditPanelModeFoldersUpperCase]
+"Mappák NAG&YBETŰVEL mutatva"
+//[MEditPanelModeFilesLowerCase]
+"Fájlok kis&betűvel mutatva"
+//[MEditPanelModeUpperToLowerCase]
+"NAGYBETŰS fájl&nevek kisbetűvel"
+
+//[MSetFolderInfoTitle]
+"Mappa megjegyzésfájlok"
+//[MSetFolderInfoNames]
+"Fájlnevek, vesszővel elválasztva (joker is használható)"
+
+//[MScreensTitle]
+"Képernyők"
+//[MScreensPanels]
+"Panelek"
+//[MScreensView]
+"Nézőke"
+//[MScreensEdit]
+"Szerkesztő"
+
+//[MAskApplyCommandTitle]
+"Parancs végrehajtása"
+//[MAskApplyCommand]
+"Írja be a kijelölt fájlok parancsát:"
+
+//[MPluginConfigTitle]
+"Plugin beállítások"
+//[MPluginCommandsMenuTitle]
+"Plugin parancsok"
+
+//[MPreparingList]
+"Fájllista elkészítése"
+
+//[MLangTitle]
+"A program nyelve"
+//[MHelpLangTitle]
+"A súgó nyelve"
+
+//[MDefineMacroTitle]
+"Makró gyorsbillentyű"
+//[MDefineMacro]
+"Nyomja le a billentyűt"
+//[MMacroReDefinedKey]
+""{0}" makróbillentyű foglalt"
+//[MMacroDeleteKey]
+""{0}" makróbillentyű törlődik"
+//[MMacroCommonReDefinedKey]
+""{0}" közös makróbill. foglalt"
+//[MMacroCommonDeleteKey]
+""{0}" közös makróbill. törlődik"
+//[MMacroSequence]
+"Szekvencia:"
+//[MMacroDescription]
+"Megjegyzés:"
+//[MMacroReDefinedKey2]
+"Újradefiniálja?"
+//[MMacroDeleteKey2]
+"Törli?"
+// need translation:
+//[MMacroEditKey]
+"Change"
+
+//[MMacroSettingsTitle]
+""{0}" makró beállításai"
+//[MMacroSettingsEnableOutput]
+"Képernyő&kimenet a makró futása közben"
+//[MMacroSettingsRunAfterStart]
+"Végrehajtás a FAR &indítása után"
+//[MMacroSettingsActivePanel]
+"&Aktív panel"
+//[MMacroSettingsPassivePanel]
+"Passzí&v panel"
+//[MMacroSettingsPluginPanel]
+"Ha &plugin panel"
+//[MMacroSettingsFolders]
+"Ha &mappa"
+//[MMacroSettingsSelectionPresent]
+"Ha van ki&jelölés"
+//[MMacroSettingsCommandLine]
+"Ha &üres a parancssor"
+//[MMacroSettingsSelectionBlockPresent]
+"Ha van kijelölt &blokk"
+// need translation:
+//[MMacroPluginLuamacroNotLoaded]
+"Plugin LuaMacro is not loaded"
+// need translation:
+//[MMacroRecordingIsDisabled]
+"Macro recording is disabled"
+
+//[MCannotSaveFile]
+"A fájl nem menthető"
+//[MTextSavedToTemp]
+"A szerkesztett szöveg elmentve:"
+
+//[MPluginHotKeyTitle]
+"Plugin gyorsbillentyű hozzárendelés"
+//[MPluginHotKey]
+"Nyomja le a billentyűt (betű vagy szám)"
+// need translation:
+//[MPluginInformation]
+"Plugin information"
+// need translation:
+//[MPluginModuleTitle]
+"&Title:"
+// need translation:
+//[MPluginDescription]
+"&Description:"
+// need translation:
+//[MPluginAuthor]
+"&Author:"
+// need translation:
+//[MPluginVersion]
+"&Version:"
+// need translation:
+//[MPluginModulePath]
+"&Module path:"
+// need translation:
+//[MPluginGUID]
+"Plugin &GUID:"
+// need translation:
+//[MPluginItemGUID]
+"Plugin &item GUID:"
+// need translation:
+//[MPluginPrefix]
+"Plugin &prefix:"
+// need translation:
+//[MPluginHotKeyBottom]
+"F4 - gyorsbillentyű hozzárendelés, F3 - information"
+
+//[MRightCtrl]
+"JobbCtrl"
+//[MExcTrappedException]
+"Kivétel történt"
+// need translation:
+//[MExcException]
+"Exception:"
+// need translation:
+//[MExcDetails]
+"Details:"
+// need translation:
+//[MExcAddress]
+"Address:"
+// need translation:
+//[MExcSource]
+"Source:"
+// need translation:
+//[MExcFunction]
+"Function:"
+// need translation:
+//[MExcModule]
+"Module:"
+// need translation:
+//[MExcTerminate]
+"Terminate Far"
+// need translation:
+//[MExcUnload]
+"Unload plugin"
+// need translation:
+//[MExcStack]
+"Stack"
+// need translation:
+//[MExcMinidump]
+"Minidump"
+
+//[MNetUserName]
+"Felhasználói név"
+//[MNetUserPassword]
+"Felhasználói jelszó"
+
+//[MReadFolderError]
+"A mappa tartalma nem olvasható"
+
+//[MPlgBadVers]
+"A pluginhez újabb FAR verzió kell"
+//[MPlgRequired]
+"A szükséges Far verzió: {0},"
+//[MPlgRequired2]
+"a jelenlegi Far verzió: {0}."
+// need translation:
+//[MPlgLoadPluginError]
+"Plugin betöltési hiba"
+
+//[MCheckBox2State]
+"?"
+
+//[MHelpTitle]
+"Súgó"
+//[MHelpActivatorURL]
+"A hivatkozás által indított program"
+//[MHelpActivatorFormat]
+"Paraméterei:"
+//[MHelpActivatorQ]
+"El akarja indítani?"
+//[MCannotOpenHelp]
+"A fájl nem nyitható meg"
+//[MHelpTopicNotFound]
+"A kívánt súgó témakör nem található:"
+
+//[MPluginsHelpTitle]
+"Pluginek súgói"
+//[MDocumentsHelpTitle]
+"Dokumentumok súgói"
+
+//[MHelpSearchTitle]
+"Keresés"
+//[MHelpSearchingFor]
+"&Keresés:"
+//[MHelpSearchCannotFind]
+"A szöveg nem található:"
+
+// Help KeyBar F1-12
+//[MHelpF1]
+"Súgó"
+//[MHelpF2]
+""
+//[MHelpF3]
+""
+//[MHelpF4]
+""
+//[MHelpF5]
+"Nagyít"
+//[MHelpF6]
+""
+//[MHelpF7]
+"Keres"
+//[MHelpF8]
+""
+//[MHelpF9]
+""
+//[MHelpF10]
+"Kilép"
+//[MHelpF11]
+""
+//[MHelpF12]
+""
+
+// Help KeyBar Shift+F1-12
+//[MHelpShiftF1]
+"Tartlm"
+//[MHelpShiftF2]
+"PlgSúg"
+//[MHelpShiftF3]
+"DokSúg"
+//[MHelpShiftF4]
+""
+//[MHelpShiftF5]
+""
+//[MHelpShiftF6]
+""
+//[MHelpShiftF7]
+"Tovább"
+//[MHelpShiftF8]
+""
+//[MHelpShiftF9]
+""
+//[MHelpShiftF10]
+""
+//[MHelpShiftF11]
+""
+//[MHelpShiftF12]
+""
+
+// Help KeyBar Alt+F1-12
+//[MHelpAltF1]
+"Vissza"
+//[MHelpAltF2]
+""
+//[MHelpAltF3]
+""
+//[MHelpAltF4]
+""
+//[MHelpAltF5]
+""
+//[MHelpAltF6]
+""
+//[MHelpAltF7]
+""
+//[MHelpAltF8]
+""
+//[MHelpAltF9]
+"Video"
+//[MHelpAltF10]
+""
+//[MHelpAltF11]
+""
+//[MHelpAltF12]
+""
+
+// Help KeyBar Ctrl+F1-12
+//[MHelpCtrlF1]
+""
+//[MHelpCtrlF2]
+""
+//[MHelpCtrlF3]
+""
+//[MHelpCtrlF4]
+""
+//[MHelpCtrlF5]
+""
+//[MHelpCtrlF6]
+""
+//[MHelpCtrlF7]
+""
+//[MHelpCtrlF8]
+""
+//[MHelpCtrlF9]
+""
+//[MHelpCtrlF10]
+""
+//[MHelpCtrlF11]
+""
+//[MHelpCtrlF12]
+""
+
+// Help KeyBar AltShiftF1-12
+//[MHelpAltShiftF1]
+""
+//[MHelpAltShiftF2]
+""
+//[MHelpAltShiftF3]
+""
+//[MHelpAltShiftF4]
+""
+//[MHelpAltShiftF5]
+""
+//[MHelpAltShiftF6]
+""
+//[MHelpAltShiftF7]
+""
+//[MHelpAltShiftF8]
+""
+//[MHelpAltShiftF9]
+""
+//[MHelpAltShiftF10]
+""
+//[MHelpAltShiftF11]
+""
+//[MHelpAltShiftF12]
+""
+
+// Help KeyBar CtrlShiftF1-12
+//[MHelpCtrlShiftF1]
+""
+//[MHelpCtrlShiftF2]
+""
+//[MHelpCtrlShiftF3]
+""
+//[MHelpCtrlShiftF4]
+""
+//[MHelpCtrlShiftF5]
+""
+//[MHelpCtrlShiftF6]
+""
+//[MHelpCtrlShiftF7]
+""
+//[MHelpCtrlShiftF8]
+""
+//[MHelpCtrlShiftF9]
+""
+//[MHelpCtrlShiftF10]
+""
+//[MHelpCtrlShiftF11]
+""
+//[MHelpCtrlShiftF12]
+""
+
+// Help KeyBar CtrlAltF1-12
+//[MHelpCtrlAltF1]
+""
+//[MHelpCtrlAltF2]
+""
+//[MHelpCtrlAltF3]
+""
+//[MHelpCtrlAltF4]
+""
+//[MHelpCtrlAltF5]
+""
+//[MHelpCtrlAltF6]
+""
+//[MHelpCtrlAltF7]
+""
+//[MHelpCtrlAltF8]
+""
+//[MHelpCtrlAltF9]
+""
+//[MHelpCtrlAltF10]
+""
+//[MHelpCtrlAltF11]
+""
+//[MHelpCtrlAltF12]
+""
+
+// Help KeyBar CtrlAltShiftF1-12
+//[MHelpCtrlAltShiftF1]
+""
+//[MHelpCtrlAltShiftF2]
+""
+//[MHelpCtrlAltShiftF3]
+""
+//[MHelpCtrlAltShiftF4]
+""
+//[MHelpCtrlAltShiftF5]
+""
+//[MHelpCtrlAltShiftF6]
+""
+//[MHelpCtrlAltShiftF7]
+""
+//[MHelpCtrlAltShiftF8]
+""
+//[MHelpCtrlAltShiftF9]
+""
+//[MHelpCtrlAltShiftF10]
+""
+//[MHelpCtrlAltShiftF11]
+""
+//[MHelpCtrlAltShiftF12]
+""
+
+// InfoPanel KeyBar F1-F12
+//[MInfoF1]
+"Súgó"
+//[MInfoF2]
+"SorTör"
+//[MInfoF3]
+"MjMnéz"
+//[MInfoF4]
+"MjSzrk"
+//[MInfoF5]
+""
+//[MInfoF6]
+""
+//[MInfoF7]
+"Keres"
+//[MInfoF8]
+"ANSI"
+//[MInfoF9]
+"KonfMn"
+//[MInfoF10]
+"Kilép"
+//[MInfoF11]
+"Plugin"
+//[MInfoF12]
+"Képrny"
+
+// InfoPanel KeyBar Shift+F1-F12
+//[MInfoShiftF1]
+""
+//[MInfoShiftF2]
+"SzóTör"
+//[MInfoShiftF3]
+""
+//[MInfoShiftF4]
+""
+//[MInfoShiftF5]
+""
+//[MInfoShiftF6]
+""
+//[MInfoShiftF7]
+"TovKer"
+//[MInfoShiftF8]
+"Kódlap"
+//[MInfoShiftF9]
+"Mentés"
+//[MInfoShiftF10]
+"UtsMnü"
+//[MInfoShiftF11]
+""
+//[MInfoShiftF12]
+""
+
+// InfoPanel KeyBar Alt+F1-F12
+//[MInfoAltF1]
+"Bal"
+//[MInfoAltF2]
+"Jobb"
+//[MInfoAltF3]
+""
+//[MInfoAltF4]
+""
+//[MInfoAltF5]
+""
+//[MInfoAltF6]
+""
+//[MInfoAltF7]
+"Keres"
+//[MInfoAltF8]
+"Ugrás"
+//[MInfoAltF9]
+"Video"
+//[MInfoAltF10]
+"MapKer"
+//[MInfoAltF11]
+"NézElő"
+//[MInfoAltF12]
+"MapElő"
+
+// InfoPanel KeyBar Ctrl+F1-F12
+//[MInfoCtrlF1]
+"Bal"
+//[MInfoCtrlF2]
+"Jobb"
+//[MInfoCtrlF3]
+""
+//[MInfoCtrlF4]
+""
+//[MInfoCtrlF5]
+""
+//[MInfoCtrlF6]
+""
+//[MInfoCtrlF7]
+""
+//[MInfoCtrlF8]
+""
+//[MInfoCtrlF9]
+""
+//[MInfoCtrlF10]
+""
+//[MInfoCtrlF11]
+""
+// need translation:
+//[MInfoCtrlF12]
+"Mode"
+
+// InfoPanel KeyBar AltShiftF1-12
+//[MInfoAltShiftF1]
+""
+//[MInfoAltShiftF2]
+""
+//[MInfoAltShiftF3]
+""
+//[MInfoAltShiftF4]
+""
+//[MInfoAltShiftF5]
+""
+//[MInfoAltShiftF6]
+""
+//[MInfoAltShiftF7]
+""
+//[MInfoAltShiftF8]
+""
+//[MInfoAltShiftF9]
+""
+//[MInfoAltShiftF10]
+""
+//[MInfoAltShiftF11]
+""
+//[MInfoAltShiftF12]
+""
+
+// InfoPanel KeyBar CtrlShiftF1-12
+//[MInfoCtrlShiftF1]
+""
+//[MInfoCtrlShiftF2]
+""
+//[MInfoCtrlShiftF3]
+""
+//[MInfoCtrlShiftF4]
+""
+//[MInfoCtrlShiftF5]
+""
+//[MInfoCtrlShiftF6]
+""
+//[MInfoCtrlShiftF7]
+""
+//[MInfoCtrlShiftF8]
+""
+//[MInfoCtrlShiftF9]
+""
+//[MInfoCtrlShiftF10]
+""
+//[MInfoCtrlShiftF11]
+""
+//[MInfoCtrlShiftF12]
+""
+
+// InfoPanel KeyBar CtrlAltF1-12
+//[MInfoCtrlAltF1]
+""
+//[MInfoCtrlAltF2]
+""
+//[MInfoCtrlAltF3]
+""
+//[MInfoCtrlAltF4]
+""
+//[MInfoCtrlAltF5]
+""
+//[MInfoCtrlAltF6]
+""
+//[MInfoCtrlAltF7]
+""
+//[MInfoCtrlAltF8]
+""
+//[MInfoCtrlAltF9]
+""
+//[MInfoCtrlAltF10]
+""
+//[MInfoCtrlAltF11]
+""
+//[MInfoCtrlAltF12]
+""
+
+// InfoPanel KeyBar CtrlAltShiftF1-12
+//[MInfoCtrlAltShiftF1]
+""
+//[MInfoCtrlAltShiftF2]
+""
+//[MInfoCtrlAltShiftF3]
+""
+//[MInfoCtrlAltShiftF4]
+""
+//[MInfoCtrlAltShiftF5]
+""
+//[MInfoCtrlAltShiftF6]
+""
+//[MInfoCtrlAltShiftF7]
+""
+//[MInfoCtrlAltShiftF8]
+""
+//[MInfoCtrlAltShiftF9]
+""
+//[MInfoCtrlAltShiftF10]
+""
+//[MInfoCtrlAltShiftF11]
+""
+//[MInfoCtrlAltShiftF12]
+""
+
+// QView KeyBar F1-F12
+//[MQViewF1]
+"Súgó"
+//[MQViewF2]
+"SorTör"
+//[MQViewF3]
+"Megnéz"
+//[MQViewF4]
+"Hexa"
+//[MQViewF5]
+""
+//[MQViewF6]
+""
+//[MQViewF7]
+"Keres"
+//[MQViewF8]
+"ANSI"
+//[MQViewF9]
+"KonfMn"
+//[MQViewF10]
+"Kilép"
+//[MQViewF11]
+"Plugin"
+//[MQViewF12]
+"Képrny"
+
+// QView KeyBar Shift+F1-F12
+//[MQViewShiftF1]
+""
+//[MQViewShiftF2]
+"SzóTör"
+//[MQViewShiftF3]
+""
+//[MQViewShiftF4]
+""
+//[MQViewShiftF5]
+""
+//[MQViewShiftF6]
+""
+//[MQViewShiftF7]
+"TovKer"
+//[MQViewShiftF8]
+"Kódlap"
+//[MQViewShiftF9]
+"Mentés"
+//[MQViewShiftF10]
+"UtsMnü"
+//[MQViewShiftF11]
+""
+//[MQViewShiftF12]
+""
+
+// QView KeyBar Alt+F1-F12
+//[MQViewAltF1]
+"Bal"
+//[MQViewAltF2]
+"Jobb"
+//[MQViewAltF3]
+""
+//[MQViewAltF4]
+""
+//[MQViewAltF5]
+""
+//[MQViewAltF6]
+""
+//[MQViewAltF7]
+"Keres"
+//[MQViewAltF8]
+"Ugrás"
+//[MQViewAltF9]
+"Video"
+//[MQViewAltF10]
+"MapKer"
+//[MQViewAltF11]
+"NézElő"
+//[MQViewAltF12]
+"MapElő"
+
+// QView KeyBar Ctrl+F1-F12
+//[MQViewCtrlF1]
+"Bal"
+//[MQViewCtrlF2]
+"Jobb"
+//[MQViewCtrlF3]
+""
+//[MQViewCtrlF4]
+""
+//[MQViewCtrlF5]
+""
+//[MQViewCtrlF6]
+""
+//[MQViewCtrlF7]
+""
+//[MQViewCtrlF8]
+""
+//[MQViewCtrlF9]
+""
+//[MQViewCtrlF10]
+""
+//[MQViewCtrlF11]
+""
+//[MQViewCtrlF12]
+""
+
+// QView KeyBar AltShiftF1-12
+//[MQViewAltShiftF1]
+""
+//[MQViewAltShiftF2]
+""
+//[MQViewAltShiftF3]
+""
+//[MQViewAltShiftF4]
+""
+//[MQViewAltShiftF5]
+""
+//[MQViewAltShiftF6]
+""
+//[MQViewAltShiftF7]
+""
+//[MQViewAltShiftF8]
+""
+//[MQViewAltShiftF9]
+""
+//[MQViewAltShiftF10]
+""
+//[MQViewAltShiftF11]
+""
+//[MQViewAltShiftF12]
+""
+
+// QView KeyBar CtrlShiftF1-12
+//[MQViewCtrlShiftF1]
+""
+//[MQViewCtrlShiftF2]
+""
+//[MQViewCtrlShiftF3]
+""
+//[MQViewCtrlShiftF4]
+""
+//[MQViewCtrlShiftF5]
+""
+//[MQViewCtrlShiftF6]
+""
+//[MQViewCtrlShiftF7]
+""
+//[MQViewCtrlShiftF8]
+""
+//[MQViewCtrlShiftF9]
+""
+//[MQViewCtrlShiftF10]
+""
+//[MQViewCtrlShiftF11]
+""
+//[MQViewCtrlShiftF12]
+""
+
+// QView KeyBar CtrlAltF1-12
+//[MQViewCtrlAltF1]
+""
+//[MQViewCtrlAltF2]
+""
+//[MQViewCtrlAltF3]
+""
+//[MQViewCtrlAltF4]
+""
+//[MQViewCtrlAltF5]
+""
+//[MQViewCtrlAltF6]
+""
+//[MQViewCtrlAltF7]
+""
+//[MQViewCtrlAltF8]
+""
+//[MQViewCtrlAltF9]
+""
+//[MQViewCtrlAltF10]
+""
+//[MQViewCtrlAltF11]
+""
+//[MQViewCtrlAltF12]
+""
+
+// QView KeyBar CtrlAltShiftF1-12
+//[MQViewCtrlAltShiftF1]
+""
+//[MQViewCtrlAltShiftF2]
+""
+//[MQViewCtrlAltShiftF3]
+""
+//[MQViewCtrlAltShiftF4]
+""
+//[MQViewCtrlAltShiftF5]
+""
+//[MQViewCtrlAltShiftF6]
+""
+//[MQViewCtrlAltShiftF7]
+""
+//[MQViewCtrlAltShiftF8]
+""
+//[MQViewCtrlAltShiftF9]
+""
+//[MQViewCtrlAltShiftF10]
+""
+//[MQViewCtrlAltShiftF11]
+""
+//[MQViewCtrlAltShiftF12]
+""
+
+// Tree KeyBar F1-F12
+//[MKBTreeF1]
+"Súgó"
+//[MKBTreeF2]
+"FelhMn"
+//[MKBTreeF3]
+""
+//[MKBTreeF4]
+"Attrib"
+//[MKBTreeF5]
+"Másol"
+//[MKBTreeF6]
+"ÁtnMoz"
+//[MKBTreeF7]
+"ÚjMapp"
+//[MKBTreeF8]
+"Törlés"
+//[MKBTreeF9]
+"KonfMn"
+//[MKBTreeF10]
+"Kilép"
+//[MKBTreeF11]
+"Plugin"
+//[MKBTreeF12]
+"Képrny"
+
+// Tree KeyBar Shift+F1-F12
+//[MKBTreeShiftF1]
+""
+//[MKBTreeShiftF2]
+""
+//[MKBTreeShiftF3]
+""
+//[MKBTreeShiftF4]
+""
+//[MKBTreeShiftF5]
+"Másol"
+//[MKBTreeShiftF6]
+"ÁtnMoz"
+//[MKBTreeShiftF7]
+""
+//[MKBTreeShiftF8]
+""
+//[MKBTreeShiftF9]
+"Mentés"
+//[MKBTreeShiftF10]
+"UtsMnü"
+//[MKBTreeShiftF11]
+"Csoprt"
+//[MKBTreeShiftF12]
+"KijFel"
+
+// Tree KeyBar Alt+F1-F12
+//[MKBTreeAltF1]
+"Bal"
+//[MKBTreeAltF2]
+"Jobb"
+//[MKBTreeAltF3]
+""
+//[MKBTreeAltF4]
+""
+//[MKBTreeAltF5]
+""
+//[MKBTreeAltF6]
+""
+//[MKBTreeAltF7]
+"Keres"
+//[MKBTreeAltF8]
+"ParElő"
+//[MKBTreeAltF9]
+"Video"
+//[MKBTreeAltF10]
+"MapKer"
+//[MKBTreeAltF11]
+"NézElő"
+//[MKBTreeAltF12]
+"MapElő"
+
+// Tree KeyBar Ctrl+F1-F12
+//[MKBTreeCtrlF1]
+"Bal"
+//[MKBTreeCtrlF2]
+"Jobb"
+//[MKBTreeCtrlF3]
+""
+//[MKBTreeCtrlF4]
+""
+//[MKBTreeCtrlF5]
+""
+//[MKBTreeCtrlF6]
+""
+//[MKBTreeCtrlF7]
+""
+//[MKBTreeCtrlF8]
+""
+//[MKBTreeCtrlF9]
+""
+//[MKBTreeCtrlF10]
+""
+//[MKBTreeCtrlF11]
+""
+//[MKBTreeCtrlF12]
+""
+
+// Tree KeyBar AltShiftF1-12
+//[MKBTreeAltShiftF1]
+""
+//[MKBTreeAltShiftF2]
+""
+//[MKBTreeAltShiftF3]
+""
+//[MKBTreeAltShiftF4]
+""
+//[MKBTreeAltShiftF5]
+""
+//[MKBTreeAltShiftF6]
+""
+//[MKBTreeAltShiftF7]
+""
+//[MKBTreeAltShiftF8]
+""
+//[MKBTreeAltShiftF9]
+""
+//[MKBTreeAltShiftF10]
+""
+//[MKBTreeAltShiftF11]
+""
+//[MKBTreeAltShiftF12]
+""
+
+// Tree KeyBar CtrlShiftF1-12
+//[MKBTreeCtrlShiftF1]
+""
+//[MKBTreeCtrlShiftF2]
+""
+//[MKBTreeCtrlShiftF3]
+""
+//[MKBTreeCtrlShiftF4]
+""
+//[MKBTreeCtrlShiftF5]
+""
+//[MKBTreeCtrlShiftF6]
+""
+//[MKBTreeCtrlShiftF7]
+""
+//[MKBTreeCtrlShiftF8]
+""
+//[MKBTreeCtrlShiftF9]
+""
+//[MKBTreeCtrlShiftF10]
+""
+//[MKBTreeCtrlShiftF11]
+""
+//[MKBTreeCtrlShiftF12]
+""
+
+// Tree KeyBar CtrlAltF1-12
+//[MKBTreeCtrlAltF1]
+""
+//[MKBTreeCtrlAltF2]
+""
+//[MKBTreeCtrlAltF3]
+""
+//[MKBTreeCtrlAltF4]
+""
+//[MKBTreeCtrlAltF5]
+""
+//[MKBTreeCtrlAltF6]
+""
+//[MKBTreeCtrlAltF7]
+""
+//[MKBTreeCtrlAltF8]
+""
+//[MKBTreeCtrlAltF9]
+""
+//[MKBTreeCtrlAltF10]
+""
+//[MKBTreeCtrlAltF11]
+""
+//[MKBTreeCtrlAltF12]
+""
+
+// Tree KeyBar CtrlAltShiftF1-12
+//[MKBTreeCtrlAltShiftF1]
+""
+//[MKBTreeCtrlAltShiftF2]
+""
+//[MKBTreeCtrlAltShiftF3]
+""
+//[MKBTreeCtrlAltShiftF4]
+""
+//[MKBTreeCtrlAltShiftF5]
+""
+//[MKBTreeCtrlAltShiftF6]
+""
+//[MKBTreeCtrlAltShiftF7]
+""
+//[MKBTreeCtrlAltShiftF8]
+""
+//[MKBTreeCtrlAltShiftF9]
+""
+//[MKBTreeCtrlAltShiftF10]
+""
+//[MKBTreeCtrlAltShiftF11]
+""
+//[MKBTreeCtrlAltShiftF12]
+""
+
+//[MCopyTimeInfo]
+"Eltelt: {0}    Maradt: {1}     {2}B/s"
+
+//[MKeyESCWasPressed]
+"A műveletet megszakította"
+//[MDoYouWantToCancel]
+"Valóban le akarja állítani?"
+//[MDoYouWantToContinue]
+"Folytatja?"
+
+//[MCheckingFileInPlugin]
+"A fájlt ez a plugin használja:"
+
+//[MDialogType]
+"Párbeszéd"
+//[MHelpType]
+"Súgó"
+//[MFolderTreeType]
+"MappaFa"
+//[MVMenuType]
+"Menü"
+
+//[MIncorrectMask]
+"A fájlmaszk hibás"
+
+//[MPanelBracketsForLongName]
+"{}"
+
+//[MComspecNotFound]
+"A %COMSPEC% környezeti változó nincs definiálva"
+
+//[MOpenPluginCannotOpenFile]
+"A fájl nem nyitható meg"
+
+//[MFileFilterTitle]
+"Felhasználói szűrő"
+//[MFileHilightTitle]
+"Fájlkiemelés"
+//[MFileFilterName]
+"Szűrő &neve:"
+//[MFileFilterMatchMask]
+"&Maszk:"
+//[MFileFilterSize]
+"M&éret:"
+//[MFileFilterSizeFromSign]
+">="
+//[MFileFilterSizeToSign]
+"<="
+// need translation:
+//[MFileHardLinksCount]
+"Has more than one hardlink"
+//[MFileFilterDate]
+"&Dátum/Idő:"
+// need translation:
+//[MFileFilterWrited]
+"&write"
+//[MFileFilterCreated]
+"&Létrehozás"
+//[MFileFilterOpened]
+"&Hozzáférés"
+// need translation:
+//[MFileFilterChanged]
+"c&hange"
+//[MFileFilterDateRelative]
+"Relat&ív"
+//[MFileFilterDateAfterSign]
+">="
+//[MFileFilterDateBeforeSign]
+"<="
+//[MFileFilterCurrent]
+"&Jelenlegi"
+//[MFileFilterBlank]
+"&Üres"
+//[MFileFilterAttr]
+"Attri&bútumok"
+//[MFileFilterAttrR]
+"&Csak olvasható"
+//[MFileFilterAttrA]
+"&Archív"
+//[MFileFilterAttrH]
+"&Rejtett"
+//[MFileFilterAttrS]
+"Re&ndszer"
+//[MFileFilterAttrC]
+"&Tömörített"
+//[MFileFilterAttrE]
+"T&itkosított"
+//[MFileFilterAttrD]
+"Map&pa"
+//[MFileFilterAttrNI]
+"Nem inde&xelt"
+//[MFileFilterAttrSparse]
+"Ritk&ított"
+//[MFileFilterAttrT]
+"Átm&eneti"
+// need translation:
+//[MFileFilterAttrReparse]
+"Reparse point"
+//[MFileFilterAttrOffline]
+"O&ffline"
+//[MFileFilterAttrVirtual]
+"&Virtuális"
+// need translation:
+//[MFileFilterAttrIntegrityStream]
+"Integrity stream"
+// need translation:
+//[MFileFilterAttrNoScrubData]
+"No scrub data"
+//[MFileFilterReset]
+"Reset"
+//[MFileFilterCancel]
+"Mégsem"
+//[MFileFilterMakeTransparent]
+"Legyen átlátszó"
+//[MBadFileSizeFormat]
+"A fájlméret mező rosszul van kitöltve"
+
+// need translation:
+//[MFarTitleAddonsAdmin]
+"Administrator"
+// need translation:
+//[MElevationRequired]
+"You need to provide administrator permission"
+// need translation:
+//[MElevationRequiredPrivileges]
+"Additional privileges required"
+// need translation:
+//[MElevationRequiredProcess]
+"to process this object:"
+// need translation:
+//[MElevationRequiredCreate]
+"to open this object:"
+// need translation:
+//[MElevationRequiredDelete]
+"to delete this object:"
+// need translation:
+//[MElevationRequiredCopy]
+"to copy this object:"
+// need translation:
+//[MElevationRequiredMove]
+"to move this object:"
+// need translation:
+//[MElevationRequiredGetAttributes]
+"to get attributes of this object:"
+// need translation:
+//[MElevationRequiredSetAttributes]
+"to set attributes of this object:"
+// need translation:
+//[MElevationRequiredHardLink]
+"to create this hard link:"
+// need translation:
+//[MElevationRequiredSymLink]
+"to create this symbolic link:"
+// need translation:
+//[MElevationRequiredRecycle]
+"to move this object to recycle bin:"
+// need translation:
+//[MElevationRequiredList]
+"to list this object:"
+// need translation:
+//[MElevationRequiredSetOwner]
+"to set owner of this object:"
+// need translation:
+//[MElevationRequiredOpen]
+"to open this object:"
+// need translation:
+//[MElevationRequiredEncryptFile]
+"to encrypt this object:"
+// need translation:
+//[MElevationRequiredDecryptFile]
+"to decrypt this object:"
+// need translation:
+//[MElevationDoForAll]
+"Do this for &all current objects"
+// need translation:
+//[MElevationDoNotAskAgainInTheCurrentSession]
+"Do not ask again in the current session"
+// need translation:
+//[MCompletionHistoryTitle]
+"History"
+// need translation:
+//[MCompletionEnvironmentTitle]
+"Environment"
+// need translation:
+//[MCompletionFilesTitle]
+"Files"
+// need translation:
+//[MObjectLockedReason]
+"Object is being {0} in:"
+// need translation:
+//[MObjectLockedReasonPlayed]
+"played"
+// need translation:
+//[MObjectLockedReasonEdited]
+"edited"
+// need translation:
+//[MObjectLockedReasonOpened]
+"opened"
+// need translation:
+//[MObjectLockedAndMore]
+"and {0} more processes."
+// need translation:
+//[MObjectLockedSwitchTo]
+"Switch to"
+// need translation:
+//[MObjectLockedClose]
+"Close file"
+// need translation:
+//[MObjectLockedReasonSessionMismatch]
+"One or more processes are running in another Terminal Services session."
+// need translation:
+//[MObjectLockedReasonCriticalProcess]
+"One or more processes are critical processes."
+// need translation:
+//[MObjectLockedReasonCriticalService]
+"One or more services are critical services."
+// need translation:
+//[MObjectLockedReasonDetectedSelf]
+"The file is opened by the current process."
+// need translation:
+//[MProblemDb]
+"Problem configuration DB"
+// need translation:
+//[MShowConfigFolders]
+"Show configuration folders"
+// need translation:
+//[MBadLanguageFile]
+"Incorrect language file"
+// need translation:
+//[MLanguageStringNotFound]
+"String {0} not found"
+// keys
+//[MKeyLaunchMediaSelect]
+""
+//[MKeyBrowserFavorites]
+""
+//[MKeyMediaPrevTrack]
+""
+//[MKeyMediaPlayPause]
+""
+//[MKeyMediaNextTrack]
+""
+//[MKeyBrowserRefresh]
+""
+//[MKeyBrowserForward]
+""
+//[MKeyBrowserSearch]
+""
+//[MKeyMswheelRight]
+""
+//[MKeyMswheelDown]
+""
+//[MKeyMswheelLeft]
+""
+//[MKeyBrowserStop]
+""
+//[MKeyBrowserHome]
+""
+//[MKeyBrowserBack]
+""
+//[MKeyVolumeMute]
+""
+//[MKeyVolumeDown]
+""
+//[MKeyScrolllock]
+""
+//[MKeyLaunchMail]
+""
+//[MKeyLaunchApp2]
+""
+//[MKeyLaunchApp1]
+""
+//[MKeyMswheelUp]
+""
+//[MKeyMediaStop]
+""
+//[MKeyBackslash]
+""
+//[MKeyMsm1click]
+""
+//[MKeyMsm2click]
+""
+//[MKeyMsm3click]
+""
+//[MKeyMslclick]
+""
+//[MKeyMsrclick]
+""
+//[MKeyVolumeUp]
+""
+//[MKeySubtract]
+"Gray -"
+//[MKeyNumenter]
+""
+//[MKeyMultiply]
+"Gray *"
+//[MKeyCapslock]
+""
+//[MKeyPrntscrn]
+""
+//[MKeyNumlock]
+""
+//[MKeyDecimal]
+""
+//[MKeyStandby]
+""
+//[MKeyDivide]
+""
+//[MKeyNumdel]
+""
+//[MKeySpace]
+""
+//[MKeyRight]
+""
+//[MKeyPause]
+""
+//[MKeyEnter]
+""
+//[MKeyClear]
+""
+//[MKeyBreak]
+""
+//[MKeyPgup]
+""
+//[MKeyPgdn]
+""
+//[MKeyLeft]
+""
+//[MKeyHome]
+""
+//[MKeyDown]
+""
+//[MKeyApps]
+""
+//[MKeyRwin]
+""
+//[MKeyNumpad9]
+""
+//[MKeyNumpad8]
+""
+//[MKeyNumpad7]
+""
+//[MKeyNumpad6]
+""
+//[MKeyNumpad5]
+""
+//[MKeyNumpad4]
+""
+//[MKeyNumpad3]
+""
+//[MKeyNumpad2]
+""
+//[MKeyNumpad1]
+""
+//[MKeyNumpad0]
+""
+//[MKeyLwin]
+""
+//[MKeyTab]
+""
+//[MKeyIns]
+""
+//[MKeyF10]
+""
+//[MKeyF11]
+""
+//[MKeyF12]
+""
+//[MKeyF13]
+""
+//[MKeyF14]
+""
+//[MKeyF15]
+""
+//[MKeyF16]
+""
+//[MKeyF17]
+""
+//[MKeyF18]
+""
+//[MKeyF19]
+""
+//[MKeyF20]
+""
+//[MKeyF21]
+""
+//[MKeyF22]
+""
+//[MKeyF23]
+""
+//[MKeyF24]
+""
+//[MKeyEsc]
+""
+//[MKeyEnd]
+""
+//[MKeyDel]
+""
+//[MKeyAdd]
+"Gray +"
+//[MKeyUp]
+""
+//[MKeyF9]
+""
+//[MKeyF8]
+""
+//[MKeyF7]
+""
+//[MKeyF6]
+""
+//[MKeyF5]
+""
+//[MKeyF4]
+""
+//[MKeyF3]
+""
+//[MKeyF2]
+""
+//[MKeyF1]
+""
+//[MKeyBs]
+""
+//[MKeyBackbracket]
+""
+//[MKeyQuote]
+""
+//[MKeyBracket]
+""
+//[MKeyColon]
+""
+//[MKeySemicolon]
+""
+//[MKeySlash]
+""
+//[MKeyDot]
+""
+//[MKeyComma]
+""
+//[MKeyRCtrl]
+""
+//[MKeyShift]
+""
+//[MKeyCtrl]
+""
+//[MKeyRAlt]
+""
+// keys end
+//[MKeyAlt]
+""
+
+//[MNewFileName]
+"?Új fájl?"

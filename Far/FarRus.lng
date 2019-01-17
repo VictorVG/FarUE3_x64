@@ -1,0 +1,5182 @@
+﻿.Language=Russian,Russian (Русский)
+
+//Version: 3.0 build 5354
+
+//[MYes]
+"Да"
+//[MNo]
+"Нет"
+//[MOk]
+"OK"
+
+//[MHYes]
+"&Да"
+//[MHNo]
+"&Нет"
+//[MHOk]
+"&OK"
+
+//[MCancel]
+"Отмена"
+//[MReset]
+"&Сбросить"
+//[MRetry]
+"Повторить"
+//[MSkip]
+"Пропустить"
+//[MAbort]
+"Прервать"
+//[MIgnore]
+"Игнорировать"
+//[MDelete]
+"Удалить"
+//[MSplit]
+"Разделить"
+
+//[MHCancel]
+"&Отмена"
+//[MHRetry]
+"&Повторить"
+//[MHSkip]
+"П&ропустить"
+//[MHSkipAll]
+"Пропустить &все"
+//[MHAbort]
+"Прер&вать"
+//[MHIgnore]
+"&Игнорировать"
+//[MHDelete]
+"&Удалить"
+//[MHRemove]
+"&Удалить"
+//[MHSplit]
+"Раз&делить"
+
+//[MWarning]
+"Предупреждение"
+//[MError]
+"Ошибка"
+
+//[MQuit]
+"Выход"
+//[MAskQuit]
+"Вы хотите завершить работу в FAR?"
+
+//functional keys - 6 characters max
+//[MF1]
+"Помощь"
+//[MF2]
+"ПользМ"
+//[MF3]
+"Просм"
+//[MF4]
+"Редакт"
+//[MF5]
+"Копир"
+//[MF6]
+"Перен"
+//[MF7]
+"Папка"
+//[MF8]
+"Удален"
+//[MF9]
+"КонфМн"
+//[MF10]
+"Выход"
+//[MF11]
+"Плагины"
+//[MF12]
+"Экраны"
+
+//[MShiftF1]
+"Добавл"
+//[MShiftF2]
+"Распак"
+//[MShiftF3]
+"АрхКом"
+//[MShiftF4]
+"Редак."
+//[MShiftF5]
+"Копир"
+//[MShiftF6]
+"Переим"
+//[MShiftF7]
+""
+//[MShiftF8]
+"Удален"
+//[MShiftF9]
+"Сохран"
+//[MShiftF10]
+"Послдн"
+//[MShiftF11]
+"Группы"
+//[MShiftF12]
+"Выбран"
+
+//[MAltF1]
+"Левая"
+//[MAltF2]
+"Правая"
+//[MAltF3]
+"Смотр."
+//[MAltF4]
+"Редак."
+//[MAltF5]
+"Печать"
+//[MAltF6]
+"Ссылка"
+//[MAltF7]
+"Искать"
+//[MAltF8]
+"Истор"
+//[MAltF9]
+"Видео"
+//[MAltF10]
+"Дерево"
+//[MAltF11]
+"ИстПр"
+//[MAltF12]
+"ИстПап"
+
+//[MCtrlF1]
+"Левая"
+//[MCtrlF2]
+"Правая"
+//[MCtrlF3]
+"Имя"
+//[MCtrlF4]
+"Расшир"
+//[MCtrlF5]
+"Запись"
+//[MCtrlF6]
+"Размер"
+//[MCtrlF7]
+"Несорт"
+//[MCtrlF8]
+"Создан"
+//[MCtrlF9]
+"Доступ"
+//[MCtrlF10]
+"Описан"
+//[MCtrlF11]
+"Владел"
+//[MCtrlF12]
+"Сорт"
+
+// Main AltShift
+//[MAltShiftF1]
+""
+//[MAltShiftF2]
+""
+//[MAltShiftF3]
+""
+//[MAltShiftF4]
+""
+//[MAltShiftF5]
+""
+//[MAltShiftF6]
+""
+//[MAltShiftF7]
+""
+//[MAltShiftF8]
+""
+//[MAltShiftF9]
+"КонфПл"
+//[MAltShiftF10]
+""
+//[MAltShiftF11]
+""
+//[MAltShiftF12]
+""
+
+//Main CtrlShift
+//[MCtrlShiftF1]
+""
+//[MCtrlShiftF2]
+""
+//[MCtrlShiftF3]
+"Просм"
+//[MCtrlShiftF4]
+"Редакт"
+//[MCtrlShiftF5]
+""
+//[MCtrlShiftF6]
+""
+//[MCtrlShiftF7]
+""
+//[MCtrlShiftF8]
+""
+//[MCtrlShiftF9]
+""
+//[MCtrlShiftF10]
+""
+//[MCtrlShiftF11]
+""
+//[MCtrlShiftF12]
+""
+
+// Main CtrlAlt
+//[MCtrlAltF1]
+""
+//[MCtrlAltF2]
+""
+//[MCtrlAltF3]
+""
+//[MCtrlAltF4]
+""
+//[MCtrlAltF5]
+""
+//[MCtrlAltF6]
+""
+//[MCtrlAltF7]
+""
+//[MCtrlAltF8]
+""
+//[MCtrlAltF9]
+""
+//[MCtrlAltF10]
+""
+//[MCtrlAltF11]
+""
+//[MCtrlAltF12]
+""
+
+// Main CtrlAltShift
+//[MCtrlAltShiftF1]
+""
+//[MCtrlAltShiftF2]
+""
+//[MCtrlAltShiftF3]
+""
+//[MCtrlAltShiftF4]
+""
+//[MCtrlAltShiftF5]
+""
+//[MCtrlAltShiftF6]
+""
+//[MCtrlAltShiftF7]
+""
+//[MCtrlAltShiftF8]
+""
+//[MCtrlAltShiftF9]
+""
+//[MCtrlAltShiftF10]
+""
+//[MCtrlAltShiftF11]
+""
+//End of functional keys
+//[MCtrlAltShiftF12]
+""
+
+//[MHistoryTitle]
+"История команд"
+//[MFolderHistoryTitle]
+"История папок"
+//[MViewHistoryTitle]
+"История просмотра и редактирования"
+//[MViewHistoryIsCreate]
+"Создать файл?"
+//[MHistoryView]
+"Просмотр"
+//[MHistoryEdit]
+"Редактор"
+//[MHistoryExt]
+"Внешний"
+
+//[MHistoryClear]
+"История будет полностью очищена. Продолжить?"
+//[MClear]
+"&Очистить"
+
+//[MConfigSystemTitle]
+"Системные параметры"
+//[MConfigRecycleBin]
+"Удалять в &Корзину"
+//[MConfigSystemCopy]
+"Использовать систе&мную функцию копирования"
+//[MConfigCopySharing]
+"Копировать открытые для &записи файлы"
+//[MConfigScanJunction]
+"Ск&анировать символические ссылки"
+//[MConfigSmartFolderMonitor]
+"Обновление панелей только если Far активен"
+//[MConfigSaveHistory]
+"Сохранять &историю команд"
+//[MConfigSaveFoldersHistory]
+"Сохра&нять историю папок"
+//[MConfigSaveViewHistory]
+"Сохранять историю п&росмотра и редактора"
+//[MConfigRegisteredTypes]
+"Использовать стандартные &типы файлов"
+//[MConfigUpdateEnvironment]
+"Автообновл&ение переменных окружения"
+//[MConfigElevation]
+"Запрос прав администратора:"
+//[MConfigElevationModify]
+"д&ля изменения"
+//[MConfigElevationRead]
+"для &чтения"
+//[MConfigElevationUsePrivileges]
+"исп&ользовать дополнительные привилегии"
+//[MConfigSortingCollation]
+"Сортировочное сравнение:"
+//[MConfigSortingOrdinal]
+"порядковое"
+//[MConfigSortingInvariant]
+"инвариантное"
+//[MConfigSortingLinguistic]
+"лингвистическое"
+//[MConfigSortingDigitsAsNumbers]
+"Трактовать цифры как числа"
+//[MConfigSortingCase]
+"&Учитывать регистр"
+//[MConfigAutoSave]
+"Автозапись кон&фигурации"
+
+//[MConfigTreeTitle]
+"Настройки дерева папок"
+//[MConfigTreeAutoChange]
+"&Автосмена папки"
+//[MConfigTreeLabelMinFolder]
+"&Минимальное количество папок:"
+//[MConfigTreeLabel1]
+"Хранить файл структуры папок для:"
+//[MConfigTreeLabelLocalDisk]
+"локальных дисков"
+//[MConfigTreeLabelNetDisk]
+"сетевых дисков"
+//[MConfigTreeLabelNetPath]
+"сетевых путей"
+//[MConfigTreeLabelRemovableDisk]
+"сменных дисков"
+//[MConfigTreeLabelCDDisk]
+"оптических дисков"
+//[MConfigTreeLabelExceptPath]
+"Не создавать файл для следующих дисков и путей:"
+//[MConfigTreeLabelSaveLocalPath]
+"Путь для локальных, сменных и оптических дисков:"
+//[MConfigTreeLabelSaveNetPath]
+"Путь для сетевых дисков и путей:"
+
+//[MConfigPanelTitle]
+"Настройки панели"
+//[MConfigHidden]
+"Показывать скр&ытые и системные файлы"
+//[MConfigHighlight]
+"&Раскраска файлов"
+//[MConfigSelectFolders]
+"Пометка &папок"
+//[MConfigRightClickSelect]
+"Правый клик помечает файлы"
+//[MConfigSortFolderExt]
+"Сортировать имена папок по рас&ширению"
+//[MConfigReverseSort]
+"Разрешить &обратную сортировку"
+//[MConfigAutoUpdateLimit]
+"Отключать автооб&новление панелей,"
+//[MConfigAutoUpdateLimit2]
+"если объектов больше"
+//[MConfigAutoUpdateRemoteDrive]
+"Автообновление с&етевых дисков"
+//[MConfigShowColumns]
+"Показывать &заголовки колонок"
+//[MConfigShowStatus]
+"Показывать &строку статуса"
+//[MConfigDetailedJunction]
+"Определять точки монтирования &диска"
+//[MConfigShowTotal]
+"Показывать су&ммарную информацию"
+//[MConfigShowFree]
+"Показывать с&вободное место"
+//[MConfigShowScrollbar]
+"Показывать по&лосу прокрутки"
+//[MConfigShowScreensNumber]
+"Показывать количество &фоновых экранов"
+//[MConfigShowSortMode]
+"Показывать букву режима сор&тировки"
+//[MConfigShowDotsInRoot]
+"Показывать \"..\" в корневых каталогах"
+
+//[MConfigInterfaceTitle]
+"Настройки интерфейса"
+//[MConfigClock]
+"&Часы в панелях"
+//[MConfigViewerEditorClock]
+"Ч&асы в редакторе и программе просмотра"
+//[MConfigMouse]
+"Мы&шь"
+//[MConfigKeyBar]
+"Показывать &линейку клавиш"
+//[MConfigMenuBar]
+"Всегда показывать &меню"
+//[MConfigSaver]
+"Экранная за&ставка"
+//[MConfigSaverMinutes]
+"минут"
+//[MConfigCopyTotal]
+"Показывать &общий индикатор копирования"
+//[MConfigCopyTimeRule]
+"Показывать информацию о времени &копирования"
+//[MConfigDeleteTotal]
+"Показывать общий индикатор &удаления"
+//[MConfigPgUpChangeDisk]
+"Использовать Ctrl+PgUp для в&ыбора диска"
+//[MConfigUseVirtualTerminalForRendering]
+"Использовать Virtual Terminal для рендеринга"
+//[MConfigClearType]
+"Перер&исовка с поддержкой ClearType (может быть медленной)"
+//[MConfigSetConsoleIcon]
+"Выставлять иконку консоли"
+//[MConfigSetAdminConsoleIcon]
+"Альтернативная для администратора"
+//[MConfigTitleAddons]
+"Дополнительная информация для &заголовка окна:"
+
+//[MConfigDlgSetsTitle]
+"Настройки диалогов"
+//[MConfigDialogsEditHistory]
+"&История в строках ввода диалогов"
+//[MConfigDialogsEditBlock]
+"&Постоянные блоки в строках ввода"
+//[MConfigDialogsDelRemovesBlocks]
+"Del удаляет б&локи в строках ввода"
+//[MConfigDialogsAutoComplete]
+"&Автозавершение в строках ввода"
+//[MConfigDialogsEULBsClear]
+"Backspace &удаляет неизмененный текст"
+//[MConfigDialogsMouseButton]
+"Клик мыши &вне диалога закрывает диалог"
+
+//[MConfigVMenuTitle]
+"Настройки меню"
+//[MConfigVMenuLBtnClick]
+"Клик левой кнопки мыши вне меню"
+//[MConfigVMenuRBtnClick]
+"Клик правой кнопки мыши вне меню"
+//[MConfigVMenuMBtnClick]
+"Клик средней кнопки мыши вне меню"
+//[MConfigVMenuClickCancel]
+"Закрыть с отменой"
+//[MConfigVMenuClickApply]
+"Выполнить текущий пункт"
+//[MConfigVMenuClickIgnore]
+"Ничего не делать"
+
+//[MConfigCmdlineTitle]
+"Настройки командной строки"
+//[MConfigCmdlineEditBlock]
+"&Постоянные блоки"
+//[MConfigCmdlineDelRemovesBlocks]
+"Del удаляет б&локи"
+//[MConfigCmdlineAutoComplete]
+"&Автозавершение"
+//[MConfigCmdlineUsePromptFormat]
+"Установить &формат командной строки"
+//[MConfigCmdlineUseHomeDir]
+"Использовать &домашний каталог"
+//[MConfigCmdlinePromptFormatAdmin]
+"Администратор"
+
+//[MConfigAutoCompleteTitle]
+"Настройка автозавершения"
+
+//[MConfigAutoCompleteShowList]
+"Показывать &список"
+
+//[MConfigAutoCompleteModalList]
+"&Модальный режим"
+
+//[MConfigAutoCompleteAutoAppend]
+"&Подставлять первый подходящий вариант"
+
+//[MConfigInfoPanelTitle]
+"Настройка информационной панели"
+//[MConfigInfoPanelCNTitle]
+"Форма&т вывода имени компьютера"
+//[MConfigInfoPanelCNPhysicalNetBIOS]
+"Физическое NetBIOS"
+//[MConfigInfoPanelCNPhysicalDnsHostname]
+"Физическое имя хоста DNS"
+//[MConfigInfoPanelCNPhysicalDnsDomain]
+"Физическое имя домена DNS"
+//[MConfigInfoPanelCNPhysicalDnsFullyQualified]
+"Физическое полное DNS имя"
+//[MConfigInfoPanelCNNetBIOS]
+"NetBIOS"
+//[MConfigInfoPanelCNDnsHostname]
+"Имя хоста DNS"
+//[MConfigInfoPanelCNDnsDomain]
+"Имя домена DNS"
+//[MConfigInfoPanelCNDnsFullyQualified]
+"Полное DNS имя"
+//[MConfigInfoPanelUNTitle]
+"Формат вывода имени &пользователя"
+//[MConfigInfoPanelUNFullyQualifiedDN]
+"Полностью определённое имя домена"
+//[MConfigInfoPanelUNSamCompatible]
+"Совместимое с Sam"
+//[MConfigInfoPanelUNDisplay]
+"Отображаемое имя"
+//[MConfigInfoPanelUNUniqueId]
+"Уникальный идентификатор"
+//[MConfigInfoPanelUNCanonical]
+"Каноническое имя"
+//[MConfigInfoPanelUNUserPrincipal]
+"Основное имя пользователя"
+//[MConfigInfoPanelUNServicePrincipal]
+"Сбъект-служба"
+//[MConfigInfoPanelUNDnsDomain]
+"Имя домена DNS"
+//[MConfigInfoPanelShowPowerStatus]
+"Показывать состояние п&итания"
+//[MConfigInfoPanelShowCDInfo]
+"Показывать параметры &компакт-дисков"
+
+//[MMenuInfoShowModeTitle]
+"Показать информацию"
+//[MMenuInfoShowModeDisk]
+"&Диск"
+//[MMenuInfoShowModeMemory]
+"&Память"
+//[MMenuInfoShowModeDirDiz]
+"&Описание папки"
+//[MMenuInfoShowModePluginDiz]
+"Пла&гиновая панель"
+//[MMenuInfoShowModePower]
+"Состояние п&итания"
+
+//[MViewConfigTitle]
+"Программа просмотра"
+//[MViewConfigExternalF3]
+"Запускать вне&шнюю программу просмотра по F3 вместо Alt+F3"
+//[MViewConfigExternalCommand]
+"&Команда просмотра:"
+//[MViewConfigInternal]
+"Встроенная программа просмотра"
+//[MViewConfigSavePos]
+"&Сохранять позицию файла"
+//[MViewConfigSaveShortPos]
+"Сохранять &закладки"
+//[MViewConfigSaveCodepage]
+"Сохранять ко&довую страницу файла"
+//[MViewConfigSaveWrapMode]
+"Сохранять &режим переноса"
+//[MViewConfigSaveViewMode]
+"Сохранять р&ежим просмотра"
+//[MViewConfigDetectDumpMode]
+"Автов&ыбор дамп-режима просмотра"
+//[MViewAutoDetectCodePage]
+"&Автоопределение кодовой страницы"
+//[MViewConfigTabSize]
+"Размер &табуляции"
+//[MViewConfigScrollbar]
+"Показывать &полосу прокрутки"
+//[MViewConfigArrows]
+"Показывать стре&лки сдвига"
+//[MViewConfigPersistentSelection]
+"Постоянное &выделение"
+//[MViewConfigDefaultCodePage]
+"Кодовая стран&ица по умолчанию:"
+//[MViewConfigMaxLineSize]
+"&Максимальная ширина строки"
+//[MViewConfigVisible0x00]
+"Показывать '\\&0'"
+//[MViewConfigEditAutofocus]
+"Авто-&фокус в диалоге поиска"
+
+//[MEditConfigTitle]
+"Редактор"
+//[MEditConfigEditorF4]
+"Запускать внешний редактор по F4 вместо Alt+F4"
+//[MEditConfigEditorCommand]
+"&Команда редактирования:"
+//[MEditConfigInternal]
+"Встроенный редактор"
+//[MEditConfigExpandTabsTitle]
+"Преобразовывать &табуляцию:"
+
+//[MEditConfigDoNotExpandTabs]
+"Не преобразовывать табуляцию"
+//[MEditConfigExpandTabs]
+"Преобразовывать новые символы табуляции в пробелы"
+//[MEditConfigConvertAllTabsToSpaces]
+"Преобразовывать все символы табуляции в пробелы"
+//[MEditConfigPersistentBlocks]
+"&Постоянные блоки"
+
+//[MEditConfigDelRemovesBlocks]
+"Del удаляет б&локи"
+//[MEditConfigAutoIndent]
+"Авто&отступ"
+//[MEditConfigSavePos]
+"&Сохранять позицию файла"
+//[MEditConfigSaveShortPos]
+"Сохранять &закладки"
+//[MEditCursorBeyondEnd]
+"Ку&рсор за пределами строки"
+//[MEditAutoDetectCodePage]
+"&Автоопределение кодовой страницы"
+//[MEditShareWrite]
+"Разрешить редактирование открытых для записи &файлов"
+//[MEditLockROFileModification]
+"Блокировать р&едактирование файлов с атрибутом R/O"
+//[MEditWarningBeforeOpenROFile]
+"Пре&дупреждать при открытии файлов с атрибутом R/O"
+//[MEditConfigTabSize]
+"Раз&мер табуляции"
+//[MEditConfigScrollbar]
+"Показ&ывать полосу прокрутки"
+//[MEditShowWhiteSpace]
+"Пробел&ьные символы"
+//[MEditConfigSelFound]
+"&Выделять найденное"
+//[MEditConfigCursorAtEnd]
+"Курсор в ко&нце"
+//[MEditConfigDefaultCodePage]
+"Кодовая стран&ица по умолчанию:"
+
+//[MSaveSetupTitle]
+"Конфигурация"
+//[MSaveSetupAsk1]
+"Вы хотите сохранить"
+//[MSaveSetupAsk2]
+"текущую конфигурацию?"
+//[MSaveSetup]
+"Сохранить"
+
+//[MCopyDlgTitle]
+"Копирование"
+//[MMoveDlgTitle]
+"Переименование/Перенос"
+//[MLinkDlgTitle]
+"Ссылка"
+//[MCopySecurity]
+"П&рава доступа:"
+//[MCopySecurityCopy]
+"Копироват&ь"
+//[MCopySecurityInherit]
+"Нас&ледовать"
+//[MCopySecurityLeave]
+"По умол&чанию"
+//[MCopyIfFileExist]
+"Уже су&ществующие файлы:"
+//[MCopyAsk]
+"&Запрос действия"
+//[MCopyAskRO]
+"Запрос подтверждения для &R/O файлов"
+//[MCopyOnlyNewerFiles]
+"Только &новые/обновлённые файлы"
+//[MLinkType]
+"&Тип ссылки:"
+//[MLinkTypeJunction]
+"&связь каталогов"
+//[MLinkTypeHardlink]
+"&жёсткая ссылка"
+//[MLinkTypeSymlink]
+"си&мволическая ссылка"
+//[MLinkTypeSymlinkFile]
+"символическая ссылка (&файл)"
+//[MLinkTypeSymlinkDirectory]
+"символическая ссылка (&папка)"
+//[MCopySymLinkContents]
+"Копировать содерж&имое символических ссылок"
+//[MCopyMultiActions]
+"Обр&абатывать несколько имён файлов"
+//[MCopyDlgCopy]
+"&Копировать"
+//[MCopyDlgTree]
+"F10-&Дерево"
+//[MCopyDlgCancel]
+"&Отменить"
+//[MCopyDlgRename]
+"&Переименовать"
+//[MCopyDlgLink]
+"&Создать ссылку"
+//[MCopyDlgTotal]
+"Всего"
+//[MCopyPrepareSecury]
+"Применение прав доступа..."
+//[MCopyUseFilter]
+"Исполь&зовать фильтр"
+//[MCopySetFilter]
+"&Фильтр"
+
+//[MCopyFile]
+"Копировать {0} {1}:"
+//[MMoveFile]
+"Переименовать или перенести {0} {1}:"
+//[MLinkFile]
+"Создать ссылку на {0} {1}:"
+//[MCopyFiles]
+"Копировать {0} элемент{1} {2}:"
+//[MMoveFiles]
+"Переименовать или перенести {0} элемент{1} {2}:"
+//[MLinkFiles]
+"Создать ссылки на {0} элемент{1} {2}:"
+//[MCMLTargetTO]
+"&в"
+//[MCMLTargetIN]
+"&в"
+//[MCMLItems0]
+""
+//[MCMLItemsA]
+"а"
+//[MCMLItemsS]
+"ов"
+
+//[MCopyIncorrectTargetList]
+"Указан некорректный список целей"
+
+//[MCopyCopyingTitle]
+"Копирование"
+//[MCopyMovingTitle]
+"Перенос"
+
+//[MCopyCannotFind]
+"Файл не найден"
+
+//[MCannotCopyFolderToItself1]
+"Нельзя копировать папку"
+//[MCannotCopyFolderToItself2]
+"в саму себя"
+
+//[MCopyCannotCreateFolder]
+"Ошибка создания папки"
+//[MCopyCannotChangeFolderAttr]
+"Невозможно установить атрибуты для папки"
+//[MCopyCannotRenameFolder]
+"Невозможно переименовать папку"
+//[MCopyIgnore]
+"&Игнорировать"
+//[MCopyIgnoreAll]
+"Игнорировать &все"
+//[MCopyRetry]
+"&Повторить"
+//[MCopySkip]
+"П&ропустить"
+//[MCopySkipAll]
+"&Пропустить все"
+//[MCopyCancel]
+"&Отменить"
+//[MCopyDecrypt]
+"Рас&шифровать"
+//[MCopyDecryptAll]
+"&Все"
+
+//[MCopyCannotCreateLink]
+"Ошибка создания ссылки"
+//[MCopyFolderNotEmpty]
+"Папка назначения должна быть пустой"
+//[MCopyCannotCreateJunctionToFile]
+"Невозможно создать связь. Файл уже существует:"
+
+//[MCopyCannotCreateVolMount]
+"Ошибка монтирования диска"
+//[MCopyMountVolFailed]
+"Ошибка при монтировании диска '{0}'"
+//[MCopyMountVolFailed2]
+"на '{0}'"
+//[MCopyMountName]
+"Disk_"
+
+//[MCannotCopyFileToItself1]
+"Нельзя копировать файл"
+//[MCannotCopyFileToItself2]
+"в самого себя"
+
+//[MCopyStream1]
+"Исходный файл содержит более одного потока данных,"
+//[MCopyStream2]
+"но вы не используете системную функцию копирования."
+//[MCopyStream3]
+"но том назначения не поддерживает этой возможности."
+//[MCopyStream4]
+"Часть сведений не будет сохранена."
+
+//[MCopyDirectoryOrFile]
+"Подразумевается имя папки или файла?"
+//[MCopyDirectoryOrFileDirectory]
+"Папка"
+//[MCopyDirectoryOrFileFile]
+"Файл"
+
+//[MCopyFileExist]
+"Файл уже существует"
+//[MCopySource]
+"&Новый"
+//[MCopyDest]
+"Су&ществующий"
+//[MCopyOverwrite]
+"В&место"
+//[MCopySkipOvr]
+"&Пропустить"
+//[MCopyAppend]
+"&Добавить"
+//[MCopyResume]
+"Возоб&новить"
+//[MCopyRename]
+"&Имя"
+//[MCopyCancelOvr]
+"&Отменить"
+//[MCopyRememberChoice]
+"&Запомнить выбор"
+//[MCopyRenameTitle]
+"Переименование"
+//[MCopyRenameText]
+"&Новое имя:"
+
+//[MCopyFileRO]
+"Файл имеет атрибут \"Только для чтения\""
+//[MCopyAskDelete]
+"Вы хотите удалить его?"
+//[MCopyDeleteRO]
+"&Удалить"
+//[MCopyDeleteAllRO]
+"&Все"
+//[MCopySkipRO]
+"&Пропустить"
+//[MCopySkipAllRO]
+"П&ропустить все"
+//[MCopyCancelRO]
+"&Отменить"
+
+//[MCannotCopy]
+"Ошибка копирования"
+//[MCannotMove]
+"Ошибка переноса"
+//[MCannotLink]
+"Ошибка создания ссылки"
+//[MCannotCopyTo]
+"в"
+//[MCopyEncryptWarn1]
+"Файл"
+//[MCopyEncryptWarn2]
+"нельзя скопировать или переместить, не потеряв его шифрование."
+//[MCopyEncryptWarn3]
+"Можно пропустить эту ошибку или отменить операцию."
+
+//[MCopyReadError]
+"Ошибка чтения данных из"
+//[MCopyWriteError]
+"Ошибка записи данных в"
+
+//[MCopyFilesTotalInfo]
+"Файлов:"
+//[MCopyBytesTotalInfo]
+"Байт:"
+//[MCopyMoving]
+"Перенос файла"
+//[MCopyCopying]
+"Копирование файла"
+//[MCopyTo]
+"в"
+
+//[MCopyErrorDiskFull]
+"Диск заполнен. Вставьте следующий"
+
+//[MDeleteTitle]
+"Удаление"
+//[MAskDeleteFolder]
+"Вы хотите удалить папку"
+//[MAskDeleteFile]
+"Вы хотите удалить файл"
+//[MAskDelete]
+"Вы хотите удалить"
+//[MAskDeleteRecycleFolder]
+"Вы хотите переместить в Корзину папку"
+//[MAskDeleteRecycleFile]
+"Вы хотите переместить в Корзину файл"
+//[MAskDeleteRecycle]
+"Вы хотите переместить в Корзину"
+//[MDeleteWipeTitle]
+"Уничтожение"
+//[MAskWipeFolder]
+"Вы хотите уничтожить папку"
+//[MAskWipeFile]
+"Вы хотите уничтожить файл"
+//[MAskWipe]
+"Вы хотите уничтожить"
+//[MDeleteLinkTitle]
+"Удаление ссылки"
+//[MAskDeleteLink]
+"является ссылкой на"
+//[MAskDeleteLinkFolder]
+"папку"
+//[MAskDeleteLinkFile]
+"файл"
+//[MAskDeleteItems]
+"{0} элемент{1}"
+//[MAskDeleteItems0]
+""
+//[MAskDeleteItemsA]
+"а"
+//[MAskDeleteItemsS]
+"ов"
+
+//[MDeleteFolderTitle]
+"Удаление папки"
+//[MWipeFolderTitle]
+"Уничтожение папки"
+//[MDeleteFilesTitle]
+"Удаление файлов"
+//[MWipeFilesTitle]
+"Уничтожение файлов"
+//[MDeleteFolderConfirm]
+"Данная папка будет удалена:"
+//[MWipeFolderConfirm]
+"Данная папка будет уничтожена:"
+//[MRecycleFolderConfirm]
+"Данная папка будет перемещена в корзину:"
+//[MRecycleFolderConfirmDeleteLink1]
+"Папка содержит символические ссылки."
+//[MRecycleFolderConfirmDeleteLink2]
+"Для предотвращения потери их содержимого при очистке корзины"
+//[MRecycleFolderConfirmDeleteLink3]
+"эти ссылки сейчас будут разорваны."
+//[MRecycleFolderConfirmDeleteLink4]
+"Впоследствии восстановить их будет невозможно."
+//[MDeleteWipe]
+"Уничтожить"
+//[MDeleteRecycle]
+"Переместить"
+//[MDeleteFileDelete]
+"&Удалить"
+//[MDeleteFileWipe]
+"&Уничтожить"
+//[MDeleteFileAll]
+"&Все"
+//[MDeleteFileSkip]
+"&Пропустить"
+//[MDeleteFileSkipAll]
+"П&ропустить все"
+//[MDeleteFileCancel]
+"&Отменить"
+
+//[MDeleteLinkDelete]
+"Удалить ссылку"
+
+//[MDeletingTitle]
+"Удаление"
+
+//[MDeleting]
+"Удаление файла или папки"
+//[MDeletingWiping]
+"Уничтожение файла или папки"
+
+//[MDeleteRO]
+"Файл имеет атрибут \"Только для чтения\""
+//[MAskDeleteRO]
+"Вы хотите удалить его?"
+//[MAskWipeRO]
+"Вы хотите уничтожить его?"
+
+//[MDeleteHardLink1]
+"Файл имеет несколько жёстких ссылок"
+//[MDeleteHardLink2]
+"Уничтожение файла приведёт к обнулению всех ссылающихся на него файлов."
+//[MDeleteHardLink3]
+"Уничтожать файл?"
+
+//[MCannotDeleteFile]
+"Ошибка удаления файла"
+//[MCannotDeleteFolder]
+"Ошибка удаления папки"
+//[MDeleteRetry]
+"&Повторить"
+//[MDeleteSkip]
+"П&ропустить"
+//[MDeleteSkipAll]
+"Пропустить &все"
+//[MDeleteCancel]
+"&Отменить"
+//[MCannotRecycleFile]
+"Не удалось переместить файл в Корзину"
+//[MCannotRecycleFolder]
+"Не удалось переместить папку в Корзину"
+
+//[MCannotGetSecurity]
+"Ошибка получения прав доступа к файлу"
+//[MCannotSetSecurity]
+"Ошибка установки прав доступа к файлу"
+
+//[MEditTitle]
+"Редактор"
+//[MAskReload]
+"уже загружен. Как открыть этот файл?"
+//[MCurrent]
+"&Текущий"
+//[MReload]
+"Пере&грузить"
+//[MNewOpen]
+"&Новая копия"
+//[MEditCannotOpen]
+"Ошибка открытия файла"
+//[MEditReading]
+"Чтение файла"
+//[MEditAskSave]
+"Файл был изменён. Сохранить?"
+//[MEditAskSaveExt]
+"Файл был изменён внешней программой. Сохранить?"
+//[MEditBtnSaveAs]
+"Сохр&анить как..."
+
+//[MEditRO]
+"имеет атрибут \"Только для чтения\""
+//[MEditExists]
+"уже существует"
+//[MEditOvr]
+"Вы хотите перезаписать его?"
+//[MEditSaving]
+"Сохранение файла"
+//[MEditStatusLine]
+"Стр"
+//[MEditStatusCol]
+"Кол"
+//[MEditStatusChar]
+"С"
+
+//[MEditRSH]
+"предназначен только для чтения"
+//[MEditFileGetSizeError]
+"Не удалось определить размер."
+//[MEditFileLong]
+"имеет размер {0},"
+//[MEditFileLong2]
+"что превышает заданное ограничение в {0}."
+//[MEditROOpen]
+"Вы хотите редактировать его?"
+
+//[MEditCanNotEditDirectory]
+"Невозможно редактировать папку"
+
+//[MEditSearchTitle]
+"Поиск"
+//[MEditSearchFor]
+"&Искать"
+//[MEditSearchPickWord]
+"&Слово"
+//[MEditSearchPickSelection]
+"&Выделение"
+//[MEditSearchCase]
+"&Учитывать регистр"
+//[MEditSearchWholeWords]
+"Только &целые слова"
+//[MEditSearchReverse]
+"Обратн&ый поиск"
+//[MEditSearchRegexp]
+"&Регулярные выражения"
+//[MEditSearchPreserveStyle]
+"&Сохранять стиль"
+//[MEditSearchSearch]
+"Искать"
+//[MEditSearchAll]
+"Вс&ё"
+//[MEditSearchCancel]
+"Отменить"
+
+//[MEditReplaceTitle]
+"Замена"
+//[MEditReplaceWith]
+"Заменить &на"
+//[MEditReplaceReplace]
+"&Замена"
+
+//[MEditSearchingFor]
+"Искать"
+//[MEditSearchStatistics]
+"Вхождений: {0}, строк: {1}"
+//[MEditFindAllMenuFooter]
+"F1, F5, Ctrl+Enter, Ctrl+Up/Down, Add"
+//[MEditNotFound]
+"Строка не найдена"
+
+//[MEditAskReplace]
+"Заменить"
+//[MEditAskReplaceWith]
+"на"
+//[MEditReplace]
+"&Заменить"
+//[MEditReplaceAll]
+"&Все"
+//[MEditSkip]
+"&Пропустить"
+//[MEditCancel]
+"&Отменить"
+//[MEditOpenCreateLabel]
+"&Открыть/создать файл:"
+//[MEditOpenAutoDetect]
+"Автоматическое определение"
+//[MDefaultCP]
+"По умолчанию"
+
+//[MGoTo]
+"Перейти"
+//[MGoToHex]
+"16-ричное &значение"
+
+//[MFolderShortcutsTitle]
+"Ссылки на папки"
+//[MFolderShortcutBottom]
+"Редактирование: Del,Ins,F4"
+//[MFolderShortcutBottomSub]
+"Редактирование: Del,Ins,F4"
+//[MShortcutNone]
+"<отсутствует>"
+//[MShortcutPlugin]
+"<плагин>"
+//[MFSShortcutName]
+"Название:"
+//[MFSShortcutPath]
+"Путь:"
+//[MFSShortcutPluginFile]
+"Файл:"
+//[MFSShortcutPluginData]
+"Данные:"
+//[MNeedNearPath]
+"Перейти в ближайшую доступную папку?"
+//[MSaveThisShortcut]
+"Запомнить эту ссылку?"
+
+//functional keys - 6 characters max, 12 keys, "OEM" is F8 dupe!
+//[MEditF1]
+"Помощь"
+//[MEditF2]
+"Сохран"
+//[MEditF3]
+""
+//[MEditF4]
+"Выход"
+//[MEditF5]
+""
+//[MEditF6]
+"Просм"
+//[MEditF7]
+"Поиск"
+//[MEditF8]
+"ANSI"
+//[MEditF9]
+""
+//[MEditF10]
+"Выход"
+//[MEditF11]
+"Плагины"
+//[MEditF12]
+"Экраны"
+
+//Editor: Shift
+//[MEditShiftF1]
+""
+//[MEditShiftF2]
+"Сохр.в"
+//[MEditShiftF3]
+""
+//[MEditShiftF4]
+"Редак."
+//[MEditShiftF5]
+""
+//[MEditShiftF6]
+""
+//[MEditShiftF7]
+"Дальше"
+//[MEditShiftF8]
+"КодСтр"
+//[MEditShiftF9]
+""
+//[MEditShiftF10]
+"СхрВых"
+//[MEditShiftF11]
+""
+//[MEditShiftF12]
+""
+
+//Editor: Alt
+//[MEditAltF1]
+""
+//[MEditAltF2]
+""
+//[MEditAltF3]
+""
+//[MEditAltF4]
+""
+//[MEditAltF5]
+""
+//[MEditAltF6]
+""
+//[MEditAltF7]
+"Назад"
+//[MEditAltF8]
+"Строка"
+//[MEditAltF9]
+"Видео"
+//[MEditAltF10]
+""
+//[MEditAltF11]
+"ИстПр"
+//[MEditAltF12]
+""
+
+//Editor: Ctrl
+//[MEditCtrlF1]
+""
+//[MEditCtrlF2]
+""
+//[MEditCtrlF3]
+""
+//[MEditCtrlF4]
+""
+//[MEditCtrlF5]
+""
+//[MEditCtrlF6]
+""
+//[MEditCtrlF7]
+"Замена"
+//[MEditCtrlF8]
+""
+//[MEditCtrlF9]
+""
+//[MEditCtrlF10]
+"Позиц"
+//[MEditCtrlF11]
+""
+//[MEditCtrlF12]
+""
+
+//Editor: AltShift
+//[MEditAltShiftF1]
+""
+//[MEditAltShiftF2]
+""
+//[MEditAltShiftF3]
+""
+//[MEditAltShiftF4]
+""
+//[MEditAltShiftF5]
+""
+//[MEditAltShiftF6]
+""
+//[MEditAltShiftF7]
+""
+//[MEditAltShiftF8]
+""
+//[MEditAltShiftF9]
+"Конфиг"
+//[MEditAltShiftF10]
+""
+//[MEditAltShiftF11]
+""
+//[MEditAltShiftF12]
+""
+
+//Editor: CtrlShift
+//[MEditCtrlShiftF1]
+""
+//[MEditCtrlShiftF2]
+""
+//[MEditCtrlShiftF3]
+""
+//[MEditCtrlShiftF4]
+""
+//[MEditCtrlShiftF5]
+""
+//[MEditCtrlShiftF6]
+""
+//[MEditCtrlShiftF7]
+""
+//[MEditCtrlShiftF8]
+""
+//[MEditCtrlShiftF9]
+""
+//[MEditCtrlShiftF10]
+""
+//[MEditCtrlShiftF11]
+""
+//[MEditCtrlShiftF12]
+""
+
+// Editor: CtrlAlt
+//[MEditCtrlAltF1]
+""
+//[MEditCtrlAltF2]
+""
+//[MEditCtrlAltF3]
+""
+//[MEditCtrlAltF4]
+""
+//[MEditCtrlAltF5]
+""
+//[MEditCtrlAltF6]
+""
+//[MEditCtrlAltF7]
+""
+//[MEditCtrlAltF8]
+""
+//[MEditCtrlAltF9]
+""
+//[MEditCtrlAltF10]
+""
+//[MEditCtrlAltF11]
+""
+//[MEditCtrlAltF12]
+""
+
+// Editor: CtrlAltShift
+//[MEditCtrlAltShiftF1]
+""
+//[MEditCtrlAltShiftF2]
+""
+//[MEditCtrlAltShiftF3]
+""
+//[MEditCtrlAltShiftF4]
+""
+//[MEditCtrlAltShiftF5]
+""
+//[MEditCtrlAltShiftF6]
+""
+//[MEditCtrlAltShiftF7]
+""
+//[MEditCtrlAltShiftF8]
+""
+//[MEditCtrlAltShiftF9]
+""
+//[MEditCtrlAltShiftF10]
+""
+//[MEditCtrlAltShiftF11]
+""
+//[MEditCtrlAltShiftF12]
+""
+// End of functional keys (Editor)
+// it's a F8 another text
+//[MEditF8DOS]
+"OEM"
+
+//Single Editor: functional keys - 6 characters max, 12 keys, "OEM" is F8 dupe!
+//[MSingleEditF1]
+"Помощь"
+//[MSingleEditF2]
+"Сохран"
+//[MSingleEditF3]
+""
+//[MSingleEditF4]
+"Выход"
+//[MSingleEditF5]
+""
+//[MSingleEditF6]
+"Просм"
+//[MSingleEditF7]
+"Поиск"
+//[MSingleEditF8]
+"ANSI"
+//[MSingleEditF9]
+""
+//[MSingleEditF10]
+"Выход"
+//[MSingleEditF11]
+"Плагины"
+//[MSingleEditF12]
+"Экраны"
+
+//Single Editor: Shift
+//[MSingleEditShiftF1]
+""
+//[MSingleEditShiftF2]
+"Сохр.в"
+//[MSingleEditShiftF3]
+""
+//[MSingleEditShiftF4]
+""
+//[MSingleEditShiftF5]
+""
+//[MSingleEditShiftF6]
+""
+//[MSingleEditShiftF7]
+"Дальше"
+//[MSingleEditShiftF8]
+"КодСтр"
+//[MSingleEditShiftF9]
+""
+//[MSingleEditShiftF10]
+"СхрВых"
+//[MSingleEditShiftF11]
+""
+//[MSingleEditShiftF12]
+""
+
+//Single Editor: Alt
+//[MSingleEditAltF1]
+""
+//[MSingleEditAltF2]
+""
+//[MSingleEditAltF3]
+""
+//[MSingleEditAltF4]
+""
+//[MSingleEditAltF5]
+""
+//[MSingleEditAltF6]
+""
+//[MSingleEditAltF7]
+""
+//[MSingleEditAltF8]
+"Строка"
+//[MSingleEditAltF9]
+"Видео"
+//[MSingleEditAltF10]
+""
+//[MSingleEditAltF11]
+"ИстПр"
+//[MSingleEditAltF12]
+""
+
+//Single Editor: Ctrl
+//[MSingleEditCtrlF1]
+""
+//[MSingleEditCtrlF2]
+""
+//[MSingleEditCtrlF3]
+""
+//[MSingleEditCtrlF4]
+""
+//[MSingleEditCtrlF5]
+""
+//[MSingleEditCtrlF6]
+""
+//[MSingleEditCtrlF7]
+"Замена"
+//[MSingleEditCtrlF8]
+""
+//[MSingleEditCtrlF9]
+""
+//[MSingleEditCtrlF10]
+""
+//[MSingleEditCtrlF11]
+""
+//[MSingleEditCtrlF12]
+""
+
+//Single Editor: AltShift
+//[MSingleEditAltShiftF1]
+""
+//[MSingleEditAltShiftF2]
+""
+//[MSingleEditAltShiftF3]
+""
+//[MSingleEditAltShiftF4]
+""
+//[MSingleEditAltShiftF5]
+""
+//[MSingleEditAltShiftF6]
+""
+//[MSingleEditAltShiftF7]
+""
+//[MSingleEditAltShiftF8]
+""
+//[MSingleEditAltShiftF9]
+"Конфиг"
+//[MSingleEditAltShiftF10]
+""
+//[MSingleEditAltShiftF11]
+""
+//[MSingleEditAltShiftF12]
+""
+
+//Single Editor: CtrlShift
+//[MSingleEditCtrlShiftF1]
+""
+//[MSingleEditCtrlShiftF2]
+""
+//[MSingleEditCtrlShiftF3]
+""
+//[MSingleEditCtrlShiftF4]
+""
+//[MSingleEditCtrlShiftF5]
+""
+//[MSingleEditCtrlShiftF6]
+""
+//[MSingleEditCtrlShiftF7]
+""
+//[MSingleEditCtrlShiftF8]
+""
+//[MSingleEditCtrlShiftF9]
+""
+//[MSingleEditCtrlShiftF10]
+""
+//[MSingleEditCtrlShiftF11]
+""
+//[MSingleEditCtrlShiftF12]
+""
+
+//Single Editor: CtrlAlt
+//[MSingleEditCtrlAltF1]
+""
+//[MSingleEditCtrlAltF2]
+""
+//[MSingleEditCtrlAltF3]
+""
+//[MSingleEditCtrlAltF4]
+""
+//[MSingleEditCtrlAltF5]
+""
+//[MSingleEditCtrlAltF6]
+""
+//[MSingleEditCtrlAltF7]
+""
+//[MSingleEditCtrlAltF8]
+""
+//[MSingleEditCtrlAltF9]
+""
+//[MSingleEditCtrlAltF10]
+""
+//[MSingleEditCtrlAltF11]
+""
+//[MSingleEditCtrlAltF12]
+""
+
+//Single Editor: CtrlAltShift
+//[MSingleEditCtrlAltShiftF1]
+""
+//[MSingleEditCtrlAltShiftF2]
+""
+//[MSingleEditCtrlAltShiftF3]
+""
+//[MSingleEditCtrlAltShiftF4]
+""
+//[MSingleEditCtrlAltShiftF5]
+""
+//[MSingleEditCtrlAltShiftF6]
+""
+//[MSingleEditCtrlAltShiftF7]
+""
+//[MSingleEditCtrlAltShiftF8]
+""
+//[MSingleEditCtrlAltShiftF9]
+""
+//[MSingleEditCtrlAltShiftF10]
+""
+//[MSingleEditCtrlAltShiftF11]
+""
+//[MSingleEditCtrlAltShiftF12]
+""
+// End of functional keys (Single Editor)
+// it's a F8 another text
+//[MSingleEditF8DOS]
+"OEM"
+
+//[MEditSaveAs]
+"Сохранить &файл как"
+//[MEditCodePage]
+"&Кодовая страница:"
+//[MEditAddSignature]
+"Добавить &сигнатуру (BOM)"
+//[MEditSaveAsFormatTitle]
+"Изменить перевод строки:"
+//[MEditSaveOriginal]
+"&исходный формат"
+//[MEditSaveDOS]
+"в форма&те DOS/Windows (CR LF)"
+//[MEditSaveUnix]
+"в формат&е UNIX (LF)"
+//[MEditSaveMac]
+"в фор&мате MAC (CR)"
+//[MEditCannotSave]
+"Ошибка сохранения файла"
+//[MEditSavedChangedNonFile]
+"Файл изменён, но файл или папка, в которой он находился,"
+//[MEditSavedChangedNonFile1]
+"Файл или папка, в которой он находился,"
+//[MEditSavedChangedNonFile2]
+"был перемещён или удалён. Сохранить?"
+//[MEditNewPath1]
+"Путь к редактируемому файлу не существует,"
+//[MEditNewPath2]
+"но будет создан при сохранении файла."
+//[MEditNewPath3]
+"Продолжать?"
+//[MEditNewPlugin1]
+"Имя редактируемого файла не может быть пустым"
+//[MEditorLoadCPWarn1]
+"Файл содержит символы, которые невозможно"
+//[MEditorLoadCPWarn2]
+"корректно прочитать, используя выбранную кодовую страницу."
+//[MEditorReloadCPWarnLost1]
+"Для смены кодовой страницы требуется перезагрузка файла."
+//[MEditorReloadCPWarnLost2]
+"Все несохранённые изменения будут потеряны."
+//[MEditorSaveCPWarn1]
+"Редактор содержит символы, которые невозможно"
+//[MEditorSaveCPWarn2]
+"корректно сохранить, используя выбранную кодовую страницу."
+//[MEditorSwitchCPWarn1]
+"Редактор содержит символы, которые невозможно"
+//[MEditorSwitchCPWarn2]
+"корректно преобразовать, используя выбранную кодовую страницу [{0}]"
+//[MEditorSwitchCPConfirm]
+"Продолжить?"
+//[MEditDataLostWarn]
+"Во время редактирования файла некоторые данные были утеряны."
+//[MEditorSaveNotRecommended]
+"Сохранять файл не рекомендуется."
+//[MEditorSave]
+"Сохранить"
+//[MEditorSaveCPWarnShow]
+"Показать"
+//[MEditorSwitchUnicodeCPDisabled]
+"Нельзя изменить юникодную кодовую страницу"
+//[MEditorTryReloadFile]
+"Можно перечитать файл, указав нужную кодовую страницу (ShiftF4)"
+//[MEditorSwitchToUnicodeCPDisabled]
+"Переключение на юникодную кодовую страницу {0} не поддерживается"
+//[MEditorCPNotSupported]
+"Кодовая страница {0} не поддерживается вашей системой"
+
+//[MColumnName]
+"Имя"
+//[MColumnExtension]
+"Расширение"
+//[MColumnSize]
+"Размер"
+//[MColumnAlocatedSize]
+"Выделено"
+//[MColumnDate]
+"Дата"
+//[MColumnTime]
+"Время"
+//[MColumnWrited]
+"Запись"
+//[MColumnCreated]
+"Создание"
+//[MColumnAccessed]
+"Доступ"
+//[MColumnChanged]
+"Изменение"
+//[MColumnAttr]
+"Атриб"
+//[MColumnDescription]
+"Описание"
+//[MColumnOwner]
+"Владелец"
+//[MColumnMumLinks]
+"КлС"
+//[MColumnNumStreams]
+"КлП"
+//[MColumnStreamsSize]
+"РазмПт"
+//[MColumnUnknown]
+"???"
+
+//[MListUp]
+"Вверх"
+//[MListFolder]
+"Папка"
+//[MListSymlink]
+"Ссылка"
+//[MListJunction]
+"Связь"
+//[MListVolMount]
+"Том"
+//[MListDFS]
+"DFS"
+//[MListDFSR]
+"DFSR"
+//[MListHSM]
+"HSM"
+//[MListHSM2]
+"HSM2"
+//[MListSIS]
+"SIS"
+//[MListWIM]
+"WIM"
+//[MListCSV]
+"CSV"
+//[MListDEDUP]
+"DEDUP"
+//[MListNFS]
+"NFS"
+//[MListPlaceholder]
+"Заполнитель"
+//[MListUnknownReparsePoint]
+"?Ссылка?"
+//[MListBrackets]
+"<>"
+//[MListBytes]
+"Б"
+//[MListKb]
+"К"
+//[MListMb]
+"М"
+//[MListGb]
+"Г"
+//[MListTb]
+"Т"
+//[MListPb]
+"П"
+//[MListEb]
+"Э"
+{3} replacement field can receive a sum of files & folders
+//[MListFileSize]
+"Байт: {0}, файлов: {1}, папок: {2}"
+//[MListFileSizeStatus]
+"{0} ({1}/{2}) {3} {4}"
+//[MListFreeSize]
+"{0} байт свободно"
+
+//[MDirInfoViewTitle]
+"Просмотр"
+//[MFileToEdit]
+"Редактировать файл:"
+
+//[MUnselectTitle]
+"Снять"
+//[MSelectTitle]
+"Пометить"
+//[MSelectFilter]
+"&Фильтр"
+
+//[MCompareTitle]
+"Сравнение"
+//[MCompareFilePanelsRequired1]
+"Для сравнения папок требуются"
+//[MCompareFilePanelsRequired2]
+"две файловые панели"
+//[MCompareSameFolders1]
+"Содержимое папок,"
+//[MCompareSameFolders2]
+"скорее всего, одинаково"
+
+//[MSelectAssocTitle]
+"Выберите ассоциацию"
+
+//[MAssocTitle]
+"Ассоциации для файлов"
+//[MAssocBottom]
+"Редактирование: Del,Ins,F4"
+//[MAskDelAssoc]
+"Вы хотите удалить ассоциацию для"
+
+//[MFileAssocTitle]
+"Редактирование ассоциаций файлов"
+//[MFileAssocMasks]
+"Одна или несколько &масок файлов:"
+//[MFileAssocDescr]
+"&Описание ассоциации:"
+//[MFileAssocExec]
+"Команда, &выполняемая по Enter:"
+//[MFileAssocAltExec]
+"Коман&да, выполняемая по Ctrl+PgDn:"
+//[MFileAssocView]
+"Команда &просмотра, выполняемая по F3:"
+//[MFileAssocAltView]
+"Команда просмотра, в&ыполняемая по Alt+F3:"
+//[MFileAssocEdit]
+"Команда &редактирования, выполняемая по F4:"
+//[MFileAssocAltEdit]
+"Команда редактировани&я, выполняемая по Alt+F4:"
+
+//Viewer: functional keys, 12 keys, except F2 - 2 keys, and F8 - 2 keys
+//[MViewF1]
+"Помощь"
+// this is another text for F2
+//[MViewF2]
+"Сверн"
+//[MViewF3]
+"Выход"
+//[MViewF4]
+"Код"
+//[MViewF5]
+""
+//[MViewF6]
+"Редакт"
+//[MViewF7]
+"Поиск"
+//[MViewF8]
+"ANSI"
+//[MViewF9]
+""
+//[MViewF10]
+"Выход"
+//[MViewF11]
+"Плагины"
+//[MViewF12]
+"Экраны"
+
+//Viewer: Shift
+//[MViewShiftF1]
+""
+//[MViewShiftF2]
+"Слова"
+//[MViewShiftF3]
+""
+//[MViewShiftF4]
+"Режим"
+//[MViewShiftF5]
+""
+//[MViewShiftF6]
+""
+//[MViewShiftF7]
+"Дальше"
+//[MViewShiftF8]
+"КодСтр"
+//[MViewShiftF9]
+""
+//[MViewShiftF10]
+""
+//[MViewShiftF11]
+""
+//[MViewShiftF12]
+""
+
+//Viewer: Alt
+//[MViewAltF1]
+""
+//[MViewAltF2]
+""
+//[MViewAltF3]
+""
+//[MViewAltF4]
+""
+//[MViewAltF5]
+""
+//[MViewAltF6]
+""
+//[MViewAltF7]
+"Назад"
+//[MViewAltF8]
+"Перейт"
+//[MViewAltF9]
+"Видео"
+//[MViewAltF10]
+""
+//[MViewAltF11]
+"ИстПр"
+//[MViewAltF12]
+""
+
+//Viewer: Ctrl
+//[MViewCtrlF1]
+""
+//[MViewCtrlF2]
+""
+//[MViewCtrlF3]
+""
+//[MViewCtrlF4]
+""
+//[MViewCtrlF5]
+""
+//[MViewCtrlF6]
+""
+//[MViewCtrlF7]
+""
+//[MViewCtrlF8]
+""
+//[MViewCtrlF9]
+""
+//[MViewCtrlF10]
+"Позиц"
+//[MViewCtrlF11]
+""
+//[MViewCtrlF12]
+""
+
+//Viewer: AltShift
+//[MViewAltShiftF1]
+""
+//[MViewAltShiftF2]
+""
+//[MViewAltShiftF3]
+""
+//[MViewAltShiftF4]
+""
+//[MViewAltShiftF5]
+""
+//[MViewAltShiftF6]
+""
+//[MViewAltShiftF7]
+""
+//[MViewAltShiftF8]
+""
+//[MViewAltShiftF9]
+"Конфиг"
+//[MViewAltShiftF10]
+""
+//[MViewAltShiftF11]
+""
+//[MViewAltShiftF12]
+""
+
+//Viewer: CtrlShift
+//[MViewCtrlShiftF1]
+""
+//[MViewCtrlShiftF2]
+""
+//[MViewCtrlShiftF3]
+""
+//[MViewCtrlShiftF4]
+""
+//[MViewCtrlShiftF5]
+""
+//[MViewCtrlShiftF6]
+""
+//[MViewCtrlShiftF7]
+""
+//[MViewCtrlShiftF8]
+""
+//[MViewCtrlShiftF9]
+""
+//[MViewCtrlShiftF10]
+""
+//[MViewCtrlShiftF11]
+""
+//[MViewCtrlShiftF12]
+""
+
+//Viewer: CtrlAlt
+//[MViewCtrlAltF1]
+""
+//[MViewCtrlAltF2]
+""
+//[MViewCtrlAltF3]
+""
+//[MViewCtrlAltF4]
+""
+//[MViewCtrlAltF5]
+""
+//[MViewCtrlAltF6]
+""
+//[MViewCtrlAltF7]
+""
+//[MViewCtrlAltF8]
+""
+//[MViewCtrlAltF9]
+""
+//[MViewCtrlAltF10]
+""
+//[MViewCtrlAltF11]
+""
+//[MViewCtrlAltF12]
+""
+
+//Viewer: CtrlAltShift
+//[MViewCtrlAltShiftF1]
+""
+//[MViewCtrlAltShiftF2]
+""
+//[MViewCtrlAltShiftF3]
+""
+//[MViewCtrlAltShiftF4]
+""
+//[MViewCtrlAltShiftF5]
+""
+//[MViewCtrlAltShiftF6]
+""
+//[MViewCtrlAltShiftF7]
+""
+//[MViewCtrlAltShiftF8]
+""
+//[MViewCtrlAltShiftF9]
+""
+//[MViewCtrlAltShiftF10]
+""
+//[MViewCtrlAltShiftF11]
+""
+//[MViewCtrlAltShiftF12]
+""
+//[MViewF2Unwrap]
+"Развер"
+// this is another text for F4
+//[MViewF4Text]
+"Текст"
+// this is another text for F4
+//[MViewF4Dump]
+"Дамп"
+// this is another text for F8
+// end of functional keys (Viewer)
+//[MViewF8DOS]
+"OEM"
+
+//Single Viewer: functional keys, 12 keys, except F2 - 2 keys, and F8 - 2 keys
+//[MSingleViewF1]
+"Помощь"
+//[MSingleViewF2]
+"Сверн"
+//[MSingleViewF3]
+"Выход"
+//[MSingleViewF4]
+"Код"
+//[MSingleViewF5]
+""
+//[MSingleViewF6]
+"Редакт"
+//[MSingleViewF7]
+"Поиск"
+//[MSingleViewF8]
+"ANSI"
+//[MSingleViewF9]
+""
+//[MSingleViewF10]
+"Выход"
+//[MSingleViewF11]
+"Плагины"
+//[MSingleViewF12]
+"Экраны"
+
+//Single Viewer: Shift
+//[MSingleViewShiftF1]
+""
+//[MSingleViewShiftF2]
+"Слова"
+//[MSingleViewShiftF3]
+""
+//[MSingleViewShiftF4]
+""
+//[MSingleViewShiftF5]
+""
+//[MSingleViewShiftF6]
+""
+//[MSingleViewShiftF7]
+"Дальше"
+//[MSingleViewShiftF8]
+"КодСтр"
+//[MSingleViewShiftF9]
+""
+//[MSingleViewShiftF10]
+""
+//[MSingleViewShiftF11]
+""
+//[MSingleViewShiftF12]
+""
+
+//Single Viewer: Alt
+//[MSingleViewAltF1]
+""
+//[MSingleViewAltF2]
+""
+//[MSingleViewAltF3]
+""
+//[MSingleViewAltF4]
+""
+//[MSingleViewAltF5]
+""
+//[MSingleViewAltF6]
+""
+//[MSingleViewAltF7]
+"Назад"
+//[MSingleViewAltF8]
+"Перейт"
+//[MSingleViewAltF9]
+"Видео"
+//[MSingleViewAltF10]
+""
+//[MSingleViewAltF11]
+"ИстПр"
+//[MSingleViewAltF12]
+""
+
+//Single Viewer: Ctrl
+//[MSingleViewCtrlF1]
+""
+//[MSingleViewCtrlF2]
+""
+//[MSingleViewCtrlF3]
+""
+//[MSingleViewCtrlF4]
+""
+//[MSingleViewCtrlF5]
+""
+//[MSingleViewCtrlF6]
+""
+//[MSingleViewCtrlF7]
+""
+//[MSingleViewCtrlF8]
+""
+//[MSingleViewCtrlF9]
+""
+//[MSingleViewCtrlF10]
+""
+//[MSingleViewCtrlF11]
+""
+//[MSingleViewCtrlF12]
+""
+
+//Single Viewer: AltShift
+//[MSingleViewAltShiftF1]
+""
+//[MSingleViewAltShiftF2]
+""
+//[MSingleViewAltShiftF3]
+""
+//[MSingleViewAltShiftF4]
+""
+//[MSingleViewAltShiftF5]
+""
+//[MSingleViewAltShiftF6]
+""
+//[MSingleViewAltShiftF7]
+""
+//[MSingleViewAltShiftF8]
+""
+//[MSingleViewAltShiftF9]
+"Конфиг"
+//[MSingleViewAltShiftF10]
+""
+//[MSingleViewAltShiftF11]
+""
+//[MSingleViewAltShiftF12]
+""
+
+//Single Viewer: CtrlShift
+//[MSingleViewCtrlShiftF1]
+""
+//[MSingleViewCtrlShiftF2]
+""
+//[MSingleViewCtrlShiftF3]
+""
+//[MSingleViewCtrlShiftF4]
+""
+//[MSingleViewCtrlShiftF5]
+""
+//[MSingleViewCtrlShiftF6]
+""
+//[MSingleViewCtrlShiftF7]
+""
+//[MSingleViewCtrlShiftF8]
+""
+//[MSingleViewCtrlShiftF9]
+""
+//[MSingleViewCtrlShiftF10]
+""
+//[MSingleViewCtrlShiftF11]
+""
+//[MSingleViewCtrlShiftF12]
+""
+
+//Single Viewer: CtrlAlt
+//[MSingleViewCtrlAltF1]
+""
+//[MSingleViewCtrlAltF2]
+""
+//[MSingleViewCtrlAltF3]
+""
+//[MSingleViewCtrlAltF4]
+""
+//[MSingleViewCtrlAltF5]
+""
+//[MSingleViewCtrlAltF6]
+""
+//[MSingleViewCtrlAltF7]
+""
+//[MSingleViewCtrlAltF8]
+""
+//[MSingleViewCtrlAltF9]
+""
+//[MSingleViewCtrlAltF10]
+""
+//[MSingleViewCtrlAltF11]
+""
+//[MSingleViewCtrlAltF12]
+""
+
+//Single Viewer: CtrlAltShift
+//[MSingleViewCtrlAltShiftF1]
+""
+//[MSingleViewCtrlAltShiftF2]
+""
+//[MSingleViewCtrlAltShiftF3]
+""
+//[MSingleViewCtrlAltShiftF4]
+""
+//[MSingleViewCtrlAltShiftF5]
+""
+//[MSingleViewCtrlAltShiftF6]
+""
+//[MSingleViewCtrlAltShiftF7]
+""
+//[MSingleViewCtrlAltShiftF8]
+""
+//[MSingleViewCtrlAltShiftF9]
+""
+//[MSingleViewCtrlAltShiftF10]
+""
+//[MSingleViewCtrlAltShiftF11]
+""
+//[MSingleViewCtrlAltShiftF12]
+""
+// this is another text for F2
+//[MSingleViewF2Unwrap]
+"Развер"
+// this is another text for F4
+//[MSingleViewF4Text]
+"Текст"
+// this is another text for F4
+// end of functional keys (Single Viewer)
+//[MSingleViewF8DOS]
+"OEM"
+//[MViewMode]
+"Режим просмотра"
+//[MInViewer]
+"просмотр"
+//[MInEditor]
+"редактирование"
+
+//[MFilterTitle]
+"Меню фильтров"
+//[MFilterBottom]
+"+,-,Пробел,I,X,BS,Shift+BS,Ins,Del,F4,F5,Ctrl+Up,Ctrl+Dn"
+//[MPanelFileType]
+"Файлы панели"
+//[MFolderFileType]
+"Папки"
+//[MCanEditCustomFilterOnly]
+"Только пользовательский фильтр можно редактировать"
+//[MAskDeleteFilter]
+"Вы хотите удалить фильтр"
+//[MCanDeleteCustomFilterOnly]
+"Только пользовательский фильтр может быть удалён"
+
+//[MFindFileTitle]
+"Поиск файла"
+//[MFindFileMasks]
+"Одна или несколько &масок файлов:"
+//[MFindFileText]
+"&Содержащих текст:"
+//[MFindFileHex]
+"&Содержащих 16-ричный код:"
+//[MFindFileCodePage]
+"Используя кодо&вую страницу:"
+//[MFindFileCodePageBottom]
+"Space, Ins"
+//[MFindFileCase]
+"&Учитывать регистр"
+//[MFindFileWholeWords]
+"Только &целые слова"
+//[MFindFileAllCodePages]
+"Все стандартные кодовые страницы"
+//[MFindFileSelectedCodePages]
+"Отмеченные кодовые страницы"
+//[MFindArchives]
+"Искать в а&рхивах"
+//[MFindFolders]
+"Искать п&апки"
+//[MFindSymLinks]
+"Искать в символи&ческих ссылках"
+//[MFindAlternateStreams]
+"Искать в альтернативных потоках"
+//[MSearchForHex]
+"Искать 16-ричн&ый код"
+//[MSearchNotContaining]
+"Не содержащих"
+//[MSearchWhere]
+"Выберите &область поиска:"
+//[MSearchAllDisks]
+"На всех несъёмных &дисках"
+//[MSearchAllButNetwork]
+"На всех &локальных дисках"
+//[MSearchInPATH]
+"В PATH-катало&гах"
+//[MSearchFromRootOfDrive]
+"С кор&ня диска"
+//[MSearchFromRootFolder]
+"С кор&невой папки"
+//[MSearchFromCurrent]
+"С &текущей папки"
+//[MSearchInCurrent]
+"Только в теку&щей папке"
+//[MSearchInSelected]
+"В &отмеченных папках"
+//[MFindUseFilter]
+"Исполь&зовать фильтр"
+//[MFindUsingFilter]
+"используя фильтр"
+//[MFindFileFind]
+"&Искать"
+//[MFindFileDrive]
+"Дис&к"
+//[MFindFileSetFilter]
+"&Фильтр"
+//[MFindFileAdvanced]
+"До&полнительно"
+//[MFindSearchingIn]
+"Поиск {0} в"
+//[MFindNewSearch]
+"&Новый поиск"
+//[MFindGoTo]
+"Пе&рейти"
+//[MFindView]
+"&Смотреть"
+//[MFindPanel]
+"Пане&ль"
+//[MFindStop]
+"С&топ"
+
+//[MFindDone]
+"Поиск закончен. Найдено файлов: {0}, папок: {1}"
+//[MFindCancel]
+"Отм&ена"
+
+//[MFindFound]
+"Файлов: {0}, папок: {1}"
+
+//[MFindFileAdvancedTitle]
+"Дополнительные параметры поиска"
+//[MFindFileSearchFirst]
+"Искать только в &первых:"
+//[MFindFileSearchOutputFormat]
+"&Формат вывода:"
+//[MFindAlternateModeTypes]
+"&Типы колонок"
+//[MFindAlternateModeWidths]
+"&Ширина колонок"
+
+//[MFoldTreeSearch]
+"Поиск:"
+
+//[MGetCodePageTitle]
+"Кодовые страницы"
+//[MGetCodePageSystem]
+"Системные"
+//[MGetCodePageUnicode]
+"Юникод"
+//[MGetCodePageFavorites]
+"Избранные"
+//[MGetCodePageOther]
+"Прочие"
+//[MGetCodePageBottomTitle]
+"Ctrl+H, Del, Ins, F4"
+//[MGetCodePageBottomShortTitle]
+"Ctrl+H, Del, F4"
+//[MGetCodePageEditCodePageName]
+"Переименование кодовой страницы"
+//[MGetCodePageResetCodePageName]
+"&Сбросить"
+
+//[MHighlightTitle]
+"Раскраска файлов"
+//[MHighlightBottom]
+"Ins,Del,F4,F5,Ctrl+Up,Ctrl+Down"
+//[MHighlightUpperSortGroup]
+"Верхняя группа сортировки"
+//[MHighlightLowerSortGroup]
+"Нижняя группа сортировки"
+//[MHighlightLastGroup]
+"Наименее приоритетная группа раскраски"
+//[MHighlightAskDel]
+"Вы хотите удалить раскраску для"
+//[MHighlightWarning]
+"Будут потеряны все Ваши настройки"
+//[MHighlightAskRestore]
+"Вы хотите восстановить раскраску файлов по умолчанию?"
+
+//[MHighlightEditTitle]
+"Редактирование раскраски файлов"
+//[MHighlightMarkChar]
+"Оп&циональный символ пометки,"
+//[MHighlightTransparentMarkChar]
+"прозра&чный"
+//[MHighlightColors]
+"Цвета файлов (\"чёрный на чёрном\" - цвет по умолчанию)"
+//[MHighlightFileName1]
+"&1. Обычное имя файла"
+//[MHighlightFileName2]
+"&3. Помеченное имя файла"
+//[MHighlightFileName3]
+"&5. Имя файла под курсором"
+//[MHighlightFileName4]
+"&7. Помеченное под курсором имя файла"
+//[MHighlightMarking1]
+"&2. Пометка"
+//[MHighlightMarking2]
+"&4. Пометка"
+//[MHighlightMarking3]
+"&6. Пометка"
+//[MHighlightMarking4]
+"&8. Пометка"
+//[MHighlightExample]
+"filename.ext"
+//[MHighlightContinueProcessing]
+"Продолжать &обработку"
+
+//[MInfoTitle]
+"Информация"
+//[MInfoCompName]
+"Имя компьютера"
+//[MInfoCompDescription]
+"Описание компьютера"
+//[MInfoUserName]
+"Имя пользователя"
+//[MInfoUserDescription]
+"Описание пользователя"
+//[MInfoUserAccessLevel]
+"Уровень доступа"
+//[MInfoUserAccessLevelGuest]
+"Гость"
+//[MInfoUserAccessLevelUser]
+"Пользователь"
+//[MInfoUserAccessLevelAdministrator]
+"Администратор"
+//[MInfoUserAccessLevelUnknown]
+"Неизвестно"
+//[MInfoDiskTitle]
+"Диск"
+//[MInfoRemovable]
+"Сменный"
+//[MInfoFixed]
+"Жёсткий"
+//[MInfoNetwork]
+"Сетевой"
+//[MInfoCDROM]
+"CD-ROM"
+//[MInfoCD_RW]
+"CD-RW"
+//[MInfoCD_RWDVD]
+"CD-RW/DVD"
+//[MInfoDVD_ROM]
+"DVD-ROM"
+//[MInfoDVD_RW]
+"DVD-RW"
+//[MInfoDVD_RAM]
+"DVD-RAM"
+//[MInfoRAM]
+"RAM"
+//[MInfoSUBST]
+"Subst"
+//[MInfoVirtual]
+"Виртуальный"
+//[MInfoUnknown]
+"Неизвестный"
+//[MInfoDisk]
+"диск"
+//[MInfoDiskTotal]
+"Общий размер"
+//[MInfoDiskFree]
+"Свободно"
+//[MInfoDiskLabel]
+"Метка тома"
+//[MInfoDiskNumber]
+"Серийный номер"
+//[MInfoMemory]
+"Память"
+//[MInfoMemoryLoad]
+"Используется"
+//[MInfoMemoryInstalled]
+"Установлено"
+//[MInfoMemoryTotal]
+"Всего доступно"
+//[MInfoMemoryFree]
+"Свободно"
+//[MInfoVirtualTotal]
+"Виртуальная (всего)"
+//[MInfoVirtualFree]
+"Виртуальная (свободно)"
+//[MInfoPageFileTotal]
+"Файл подкачки (всего)"
+//[MInfoPageFileFree]
+"Файл подкачки (свободно)"
+//[MInfoDescription]
+"Описание"
+//[MInfoDizAbsent]
+"Файл описания папки отсутствует"
+//[MInfoPlugin]
+"Плагин"
+//[MInfoPowerStatus]
+"Питание"
+//[MInfoPowerStatusAC]
+"Подключения к сети"
+//[MInfoPowerStatusACOffline]
+"Отсутствует"
+//[MInfoPowerStatusACOnline]
+"Подключено"
+//[MInfoPowerStatusACBackUp]
+"Резервный источник"
+//[MInfoPowerStatusACUnknown]
+"Не определено"
+//[MInfoPowerStatusBCLifePercent]
+"Заряд батареи"
+//[MInfoPowerStatusBCLifePercentUnknown]
+"Не определено"
+//[MInfoPowerStatusBC]
+"Статус заряда батареи"
+//[MInfoPowerStatusBCHigh]
+"Высокий"
+//[MInfoPowerStatusBCLow]
+"Низкий"
+//[MInfoPowerStatusBCCritical]
+"Критичный"
+//[MInfoPowerStatusBCCharging]
+"Зарядка"
+//[MInfoPowerStatusBCNoSysBat]
+"Батареи нет"
+//[MInfoPowerStatusBCUnknown]
+"Не определено"
+//[MInfoPowerStatusBCTimeRem]
+"Время до разряда"
+//[MInfoPowerStatusBCFullTimeRem]
+"Полное время работы"
+//[MInfoPowerStatusUnknown]
+"Не определено"
+//[MAccessDenied]
+"Доступ запрещён"
+
+//[MCannotExecute]
+"Ошибка выполнения"
+//[MCannotInvokeComspec]
+"Ошибка вызова командного интерпретатора"
+//[MCheckComspecVar]
+"Проверьте переменную окружения COMSPEC"
+//[MScanningFolder]
+"Просмотр папки"
+
+//[MMakeFolderTitle]
+"Создание папки"
+//[MCreateFolder]
+"Создать п&апку:"
+//[MMakeFolderLinkType]
+"Тип ссылки:"
+//[MMakeFolderLinkNone]
+"Нет"
+//[MMakeFolderLinkJunction]
+"связь каталогов"
+//[MMakeFolderLinkSymlink]
+"символическая ссылка"
+//[MMakeFolderLinkTarget]
+"Цель:"
+//[MMultiMakeDir]
+"Обрабатыват&ь несколько имён папок"
+//[MIncorrectDirList]
+"Неправильный список папок"
+//[MCannotCreateFolder]
+"Ошибка создания папки"
+
+//[MMenuBriefView]
+"&Краткий"
+//[MMenuMediumView]
+"&Средний"
+//[MMenuFullView]
+"&Полный"
+//[MMenuWideView]
+"&Широкий"
+//[MMenuDetailedView]
+"&Детальный"
+//[MMenuDizView]
+"&Описания"
+//[MMenuLongDizView]
+"Д&линные описания"
+//[MMenuOwnersView]
+"Вл&адельцы файлов"
+//[MMenuLinksView]
+"Ссылки файлов"
+//[MMenuAlternativeView]
+"Аль&тернативный полный"
+
+//[MMenuInfoPanel]
+"Панель ин&формации"
+//[MMenuTreePanel]
+"Де&рево папок"
+//[MMenuQuickView]
+"Быстры&й просмотр"
+//[MMenuSortModes]
+"Режим&ы сортировки"
+//[MMenuLongNames]
+"Показывать длинные &имена"
+//[MMenuTogglePanel]
+"Панель &Вкл/Выкл"
+//[MMenuReread]
+"П&еречитать"
+//[MMenuChangeDrive]
+"С&менить диск"
+
+//[MMenuView]
+"&Просмотр"
+//[MMenuEdit]
+"&Редактирование"
+//[MMenuCopy]
+"&Копирование"
+//[MMenuMove]
+"П&еренос"
+//[MMenuLink]
+"Ссы&лка"
+//[MMenuCreateFolder]
+"&Создание папки"
+//[MMenuDelete]
+"&Удаление"
+//[MMenuWipe]
+"Уни&чтожение"
+//[MMenuAdd]
+"&Архивировать"
+//[MMenuExtract]
+"Распако&вать"
+//[MMenuArchiveCommands]
+"Архивн&ые команды"
+//[MMenuAttributes]
+"А&трибуты файлов"
+//[MMenuApplyCommand]
+"Применить коман&ду"
+//[MMenuDescribe]
+"&Описание файлов"
+//[MMenuSelectGroup]
+"Пометить &группу"
+//[MMenuUnselectGroup]
+"С&нять пометку"
+//[MMenuInvertSelection]
+"&Инверсия пометки"
+//[MMenuRestoreSelection]
+"Восстановить по&метку"
+
+//[MMenuFindFile]
+"&Поиск файла"
+//[MMenuHistory]
+"&История команд"
+//[MMenuVideoMode]
+"Видео&режим"
+//[MMenuFindFolder]
+"Поис&к папки"
+//[MMenuViewHistory]
+"Ис&тория просмотра"
+//[MMenuFoldersHistory]
+"Ист&ория папок"
+//[MMenuSwapPanels]
+"По&менять панели"
+//[MMenuTogglePanels]
+"Панели &Вкл/Выкл"
+//[MMenuCompareFolders]
+"&Сравнение папок"
+//[MMenuUserMenu]
+"Меню пользовател&я"
+//[MMenuFileAssociations]
+"&Ассоциации файлов"
+//[MMenuFolderShortcuts]
+"Ссы&лки на папки"
+//[MMenuFilter]
+"&Фильтр панели файлов"
+//[MMenuPluginCommands]
+"Команды внешних мо&дулей"
+//[MMenuWindowsList]
+"Список экра&нов"
+//[MMenuProcessList]
+"Список &задач"
+//[MMenuHotPlugList]
+"Список Hotplug-&устройств"
+
+//[MMenuSystemSettings]
+"Систе&мные параметры"
+//[MMenuPanelSettings]
+"Настройки па&нели"
+//[MMenuTreeSettings]
+"Настройки д&ерева папок"
+//[MMenuInterface]
+"Настройки &интерфейса"
+//[MMenuLanguages]
+"&Языки"
+//[MMenuPluginsConfig]
+"Параметры плагино&в"
+//[MMenuPluginsManagerSettings]
+"Параметры менеджера плагинов"
+//[MMenuDialogSettings]
+"Настройки &диалогов"
+//[MMenuVMenuSettings]
+"Настройки меню"
+//[MMenuCmdlineSettings]
+"Настройки &командной строки"
+//[MMenuAutoCompleteSettings]
+"На&стройки автозавершения"
+//[MMenuInfoPanelSettings]
+"Нас&тройки информационной панели"
+//[MMenuMaskGroups]
+"Группы масок файлов"
+//[MMenuConfirmation]
+"&Подтверждения"
+//[MMenuFilePanelModes]
+"Режим&ы панели файлов"
+//[MMenuFileDescriptions]
+"&Описания файлов"
+//[MMenuFolderInfoFiles]
+"Файлы описания п&апок"
+//[MMenuViewer]
+"Настройки про&граммы просмотра"
+//[MMenuEditor]
+"Настройки &редактора"
+//[MMenuCodePages]
+"Кодов&ые страницы"
+//[MMenuColors]
+"&Цвета"
+//[MMenuFilesHighlighting]
+"Раскраска &файлов и группы сортировки"
+//[MMenuSaveSetup]
+"&Сохранить параметры"
+//[MMenuTogglePanelRight]
+"Панель &Вкл/Выкл"
+//[MMenuChangeDriveRight]
+"С&менить диск"
+
+//[MMenuLeftTitle]
+"&Левая"
+//[MMenuFilesTitle]
+"&Файлы"
+//[MMenuCommandsTitle]
+"&Команды"
+//[MMenuOptionsTitle]
+"Па&раметры"
+//[MMenuRightTitle]
+"&Правая"
+
+//[MMenuSortTitle]
+"Критерий сортировки"
+//[MMenuSortByName]
+"&Имя"
+//[MMenuSortByExt]
+"&Расширение"
+//[MMenuSortByWrite]
+"Время &записи"
+//[MMenuSortBySize]
+"Р&азмер"
+//[MMenuUnsorted]
+"&Не сортировать"
+//[MMenuSortByCreation]
+"Время &создания"
+//[MMenuSortByAccess]
+"Время &доступа"
+//[MMenuSortByChange]
+"Время из&менения"
+//[MMenuSortByDiz]
+"&Описания"
+//[MMenuSortByOwner]
+"&Владельцы файлов"
+//[MMenuSortByAllocatedSize]
+"Выделенный размер"
+//[MMenuSortByNumLinks]
+"Ко&личество ссылок"
+//[MMenuSortByNumStreams]
+"Количество &потоков"
+//[MMenuSortByStreamsSize]
+"Размер по&токов"
+//[MMenuSortByFullName]
+"&Полное имя"
+//[MMenuSortByCustomData]
+"Пользовательские данные"
+//[MMenuSortUseGroups]
+"Использовать &группы сортировки"
+//[MMenuSortSelectedFirst]
+"Помеченные &файлы вперёд"
+//[MMenuSortDirectoriesFirst]
+"&Каталоги вперёд"
+//[MMaskGroupBottom]
+"Редактирование: Ins, Del, F4, F7, Ctrl+R"
+//[MMaskGroupName]
+"&Имя:"
+//[MMaskGroupMasks]
+"Одна или несколько &масок файлов:"
+//[MMaskGroupAskDelete]
+"Вы хотите удалить"
+//[MMaskGroupRestore]
+"Вы хотите восстановить наборы масок по умолчанию?"
+//[MMaskGroupFindMask]
+"&Маска:"
+//[MMaskGroupTotal]
+"Всего: {0}"
+
+//[MChangeDriveTitle]
+"Диск"
+//[MChangeDriveRemovable]
+"сменный"
+//[MChangeDriveFixed]
+"жёсткий"
+//[MChangeDriveNetwork]
+"сетевой"
+//[MChangeDriveDisconnectedNetwork]
+"отключенный"
+//[MChangeDriveCDROM]
+"CD-ROM"
+//[MChangeDriveCD_RW]
+"CD-RW"
+//[MChangeDriveCD_RWDVD]
+"CD-RW/DVD"
+//[MChangeDriveDVD_ROM]
+"DVD-ROM"
+//[MChangeDriveDVD_RW]
+"DVD-RW"
+//[MChangeDriveDVD_RAM]
+"DVD-RAM"
+//[MChangeDriveBD_ROM]
+"BD-ROM"
+//[MChangeDriveBD_RW]
+"BD-RW"
+//[MChangeDriveHDDVD_ROM]
+"HDDVD-ROM"
+//[MChangeDriveHDDVD_RW]
+"HDDVD-RW"
+//[MChangeDriveRAM]
+"RAM диск"
+//[MChangeDriveSUBST]
+"SUBST"
+//[MChangeDriveVirtual]
+"виртуальный"
+//[MChangeDriveLabelAbsent]
+"недоступен"
+//[MChangeDriveCannotReadDisk]
+"Ошибка чтения диска в дисководе"
+//[MChangeDriveCannotDisconnect]
+"Не удаётся отсоединиться от {0}"
+//[MChangeDriveCannotDelSubst]
+"Не удаётся удалить SUBST-диск {0}"
+//[MChangeDriveCannotDetach]
+"Не удаётся отсоединить виртуальный диск {0}"
+//[MChangeDriveOpenFiles]
+"Если вы не закроете открытые файлы, данные могут быть утеряны"
+
+//[MChangeSUBSTDisconnectDriveTitle]
+"Отключение SUBST-диска"
+//[MChangeSUBSTDisconnectDriveQuestion]
+"Удалить SUBST-диск {0}?"
+//[MChangeVHDDisconnectDriveTitle]
+"Отсоединение виртуального диска"
+//[MChangeVHDDisconnectDriveQuestion]
+"Отсоединить виртуальный диск {0}?"
+
+//[MChangeHotPlugDisconnectDriveTitle]
+"Удаление устройства"
+//[MChangeHotPlugDisconnectDriveQuestion]
+"Вы хотите удалить устройство"
+//[MHotPlugDisks]
+"(диск(и): {0})"
+//[MChangeCouldNotEjectHotPlugMedia]
+"Невозможно удалить устройство для диска {0}:"
+//[MChangeCouldNotEjectHotPlugMedia2]
+"Невозможно удалить устройство:"
+//[MChangeHotPlugNotify1]
+"Теперь устройство"
+//[MChangeHotPlugNotify2]
+"может быть безопасно извлечено из компьютера"
+//[MHotPlugListTitle]
+"Hotplug-устройства"
+//[MHotPlugListBottom]
+"Редактирование: Del,Ctrl+R"
+
+//[MChangeDriveDisconnectTitle]
+"Отсоединение сетевого диска"
+//[MChangeDriveDisconnectQuestion]
+"Вы хотите удалить соединение с устройством {0}:?"
+//[MChangeDriveDisconnectMapped]
+"На устройство {0}: отображена папка:"
+//[MChangeDriveDisconnectReconnect]
+"&Восстанавливать при входе в систему"
+
+//[MChangeDriveAskDisconnect]
+"Вы хотите в любом случае отключиться от устройства?"
+//[MChangeWaitingLoadDisk]
+"Ожидание чтения диска..."
+//[MChangeCouldNotEjectMedia]
+"Невозможно извлечь диск из привода {0}:"
+//[MChangeDriveConfigure]
+"Настройка меню выбора диска"
+//[MChangeDriveShowDiskType]
+"Показывать &тип диска"
+//[MChangeDriveShowPath]
+"Показывать &сетевое имя / путь SUBST / имя VHD"
+//[MChangeDriveShowLabel]
+"Показывать &метку диска"
+//[MChangeDriveShowLabelUseShell]
+"Использовать имя оболочки"
+//[MChangeDriveShowFileSystem]
+"Показывать тип &файловой системы"
+//[MChangeDriveShowSize]
+"Показывать &размер"
+//[MChangeDriveShowSizeFloat]
+"Показывать ра&змер в виде десятичной дроби"
+//[MChangeDriveShowRemovableDrive]
+"Показывать параметры см&енных дисков"
+//[MChangeDriveShowPlugins]
+"Показывать &плагины"
+//[MChangeDriveSortPluginsByHotkey]
+"Сортировать плагины по горячей клавише"
+//[MChangeDriveShowCD]
+"Показывать параметры &компакт-дисков"
+//[MChangeDriveShowNetworkDrive]
+"Показывать параметры се&тевых дисков"
+//[MChangeDriveMenuFooter]
+"Del,Shift+Del,F3,F4,F9"
+
+//[MSearchFileTitle]
+"Поиск"
+//[MCannotCreateListFile]
+"Ошибка создания списка файлов"
+//[MCannotCreateListTemp]
+"(невозможно создать временный файл для списка)"
+
+//[MDragFiles]
+"{0} файлов"
+//[MDragMove]
+"Перенос {0}"
+//[MDragCopy]
+"Копирование {0}"
+
+//[MProcessListTitle]
+"Список задач"
+//[MProcessListBottom]
+"Редактирование: Del,Ctrl+R,F2"
+//[MKillProcessTitle]
+"Удаление задачи"
+//[MAskKillProcess]
+"Вы хотите удалить выбранную задачу?"
+//[MKillProcessWarning]
+"Вы потеряете всю несохраненную информацию этой программы"
+//[MKillProcessKill]
+"Удалить"
+//[MCannotKillProcess]
+"Указанную задачу удалить не удалось"
+//[MCannotKillProcessPerm]
+"Вы не имеет права удалить этот процесс."
+
+//[MQuickViewTitle]
+"Быстрый просмотр"
+//[MQuickViewFolder]
+"Папка"
+//[MQuickViewJunction]
+"Связь"
+//[MQuickViewSymlink]
+"Ссылка"
+//[MQuickViewVolMount]
+"Том"
+//[MQuickViewDFS]
+"DFS"
+//[MQuickViewDFSR]
+"DFSR"
+//[MQuickViewHSM]
+"HSM"
+//[MQuickViewHSM2]
+"HSM2"
+//[MQuickViewSIS]
+"SIS"
+//[MQuickViewWIM]
+"WIM"
+//[MQuickViewCSV]
+"CSV"
+//[MQuickViewDEDUP]
+"DEDUP"
+//[MQuickViewNFS]
+"NFS"
+//[MQuickViewPlaceholder]
+"Заполнитель"
+//[MQuickViewUnknownReparsePoint]
+"Неизвестная точка повторного анализа"
+//[MQuickViewNoData]
+"(нет данных)"
+//[MQuickViewFolders]
+"Папок:"
+//[MQuickViewFiles]
+"Файлов:"
+//[MQuickViewBytes]
+"Размер файлов:"
+//[MQuickViewAllocated]
+"Выделенный размер:"
+//[MQuickViewCluster]
+"Размер кластера:"
+//[MQuickViewSlack]
+"Остатки кластеров:"
+//[MQuickViewMFTOverhead]
+"Занято MFT:"
+
+//[MSetAttrTitle]
+"Атрибуты"
+//[MSetAttrFor]
+"Изменить файловые атрибуты"
+//[MSetAttrSelectedObjects]
+"выбранных объектов"
+//[MSetAttrHardLinks]
+"жёстких ссылок"
+//[MSetAttrJunction]
+"Связь:"
+//[MSetAttrSymlink]
+"Ссылка:"
+//[MSetAttrVolMount]
+"Том:"
+//[MSetAttrDfsTargets]
+"DFS цели"
+//[MSetAttrUnknownJunction]
+"(нет данных)"
+//[MSetAttrRO]
+"&Только для чтения"
+//[MSetAttrArchive]
+"&Архивный"
+//[MSetAttrHidden]
+"Скр&ытый"
+//[MSetAttrSystem]
+"С&истемный"
+//[MSetAttrCompressed]
+"С&жатый"
+//[MSetAttrEncrypted]
+"За&шифрованный"
+//[MSetAttrNotIndexed]
+"Неиндексируемый"
+//[MSetAttrSparse]
+"Разреженный"
+//[MSetAttrTemp]
+"Временный"
+//[MSetAttrOffline]
+"Автономный"
+//[MSetAttrReparsePoint]
+"Точка повторного анализа"
+//[MSetAttrVirtual]
+"Виртуальный"
+//[MSetAttrIntegrityStream]
+"Поток целостности"
+//[MSetAttrNoScrubData]
+"Нет данных очистки"
+//[MSetAttrSubfolders]
+"Обрабатывать &вложенные папки"
+//[MSetAttrOwner]
+"Владелец:"
+//[MSetAttrOwnerMultiple]
+"(несколько значений)"
+//[MSetAttrModification]
+"Время последней за&писи:"
+//[MSetAttrCreation]
+"Время со&здания:"
+//[MSetAttrLastAccess]
+"Время последнего &доступа:"
+//[MSetAttrChange]
+"Время из&менения:"
+//[MSetAttrOriginal]
+"Исход&ное"
+//[MSetAttrCurrent]
+"Те&кущее"
+//[MSetAttrBlank]
+"Сбр&ос"
+//[MSetAttrSet]
+"Установить"
+
+//[MSetAttrDateTitle1]
+"ММ{0}ДД{0}ГГГГГ"
+//[MSetAttrDateTitle2]
+"ДД{0}ММ{0}ГГГГГ"
+//[MSetAttrDateTitle3]
+"ГГГГГ{0}ММ{0}ДД"
+//[MSetAttrTimeTitle]
+"чч{0}мм{0}сс{1}мс"
+//[MSetAttrSystemDialog]
+"Системные &свойства"
+
+//[MSetAttrSetting]
+"Установка файловых атрибутов для"
+//[MSetAttrCannotFor]
+"Ошибка установки атрибутов для"
+//[MSetAttrCompressedCannotFor]
+"Не удалось установить атрибут СЖАТЫЙ для"
+//[MSetAttrEncryptedCannotFor]
+"Не удалось установить атрибут ЗАШИФРОВАННЫЙ для"
+//[MSetAttrSparseCannotFor]
+"Не удалось установить атрибут РАЗРЕЖЁННЫЙ для"
+//[MSetAttrTimeCannotFor]
+"Не удалось установить время файла для"
+//[MSetAttrOwnerCannotFor]
+"Не удалось установить владельца для"
+
+//[MSetColorPanel]
+"&Панель"
+//[MSetColorDialog]
+"&Диалог"
+//[MSetColorWarning]
+"Пр&едупреждение"
+//[MSetColorMenu]
+"&Меню"
+//[MSetColorHMenu]
+"&Горизонтальное меню"
+//[MSetColorKeyBar]
+"&Линейка клавиш"
+//[MSetColorCommandLine]
+"&Командная строка"
+//[MSetColorClock]
+"&Часы"
+//[MSetColorViewer]
+"Про&смотрщик"
+//[MSetColorEditor]
+"&Редактор"
+//[MSetColorHelp]
+"П&омощь"
+//[MSetDefaultColors]
+"&Установить стандартные цвета"
+//[MSetBW]
+"Чёрно-бел&ый режим"
+
+//[MSetColorPanelNormal]
+"Обычный текст"
+//[MSetColorPanelSelected]
+"Выбранный текст"
+//[MSetColorPanelHighlightedText]
+"Выделенный текст"
+//[MSetColorPanelHighlightedInfo]
+"Выделенная информация"
+//[MSetColorPanelDragging]
+"Перетаскиваемый текст"
+//[MSetColorPanelBox]
+"Рамка"
+//[MSetColorPanelNormalCursor]
+"Обычный курсор"
+//[MSetColorPanelSelectedCursor]
+"Выделенный курсор"
+//[MSetColorPanelNormalTitle]
+"Обычный заголовок"
+//[MSetColorPanelSelectedTitle]
+"Выделенный заголовок"
+//[MSetColorPanelColumnTitle]
+"Заголовок колонки"
+//[MSetColorPanelTotalInfo]
+"Количество файлов"
+//[MSetColorPanelSelectedInfo]
+"Количество выбранных файлов"
+//[MSetColorPanelScrollbar]
+"Полоса прокрутки"
+//[MSetColorPanelScreensNumber]
+"Количество фоновых экранов"
+
+//[MSetColorDialogNormal]
+"Обычный текст"
+//[MSetColorDialogHighlighted]
+"Выделенный текст"
+//[MSetColorDialogDisabled]
+"Блокированный текст"
+//[MSetColorDialogBox]
+"Рамка"
+//[MSetColorDialogBoxTitle]
+"Заголовок рамки"
+//[MSetColorDialogHighlightedBoxTitle]
+"Выделенный заголовок рамки"
+//[MSetColorDialogTextInput]
+"Ввод текста"
+//[MSetColorDialogUnchangedTextInput]
+"Неизмененный текст"
+//[MSetColorDialogSelectedTextInput]
+"Ввод выделенного текста"
+//[MSetColorDialogEditDisabled]
+"Блокированное поле ввода"
+//[MSetColorDialogButtons]
+"Кнопки"
+//[MSetColorDialogSelectedButtons]
+"Выбранные кнопки"
+//[MSetColorDialogHighlightedButtons]
+"Выделенные кнопки"
+//[MSetColorDialogSelectedHighlightedButtons]
+"Выбранные выделенные кнопки"
+//[MSetColorDialogDefaultButton]
+"Кнопка по умолчанию"
+//[MSetColorDialogSelectedDefaultButton]
+"Выбранная кнопка по умолчанию"
+//[MSetColorDialogHighlightedDefaultButton]
+"Выделенная кнопка по умолчанию"
+//[MSetColorDialogSelectedHighlightedDefaultButton]
+"Выбранная выделенная кнопка по умолчанию"
+//[MSetColorDialogListBoxControl]
+"Список"
+//[MSetColorDialogComboBoxControl]
+"Комбинированный список"
+
+//[MSetColorDialogListText]
+"Обычный текст"
+//[MSetColorDialogListSelectedText]
+"Выбранный текст"
+//[MSetColorDialogListHighLight]
+"Выделенный текст"
+//[MSetColorDialogListSelectedHighLight]
+"Выбранный выделенный текст"
+//[MSetColorDialogListDisabled]
+"Блокированный пункт"
+//[MSetColorDialogListBox]
+"Рамка"
+//[MSetColorDialogListTitle]
+"Заголовок"
+//[MSetColorDialogListGrayed]
+"Серый текст списка"
+//[MSetColorDialogSelectedListGrayed]
+"Выбранный серый текст списка"
+//[MSetColorDialogListScrollBar]
+"Полоса прокрутки"
+//[MSetColorDialogListArrows]
+"Индикаторы длинных строк"
+//[MSetColorDialogListArrowsSelected]
+"Выбранные индикаторы длинных строк"
+//[MSetColorDialogListArrowsDisabled]
+"Блокированные индикаторы длинных строк"
+
+//[MSetColorMenuNormal]
+"Обычный текст"
+//[MSetColorMenuSelected]
+"Выбранный текст"
+//[MSetColorMenuHighlighted]
+"Выделенный текст"
+//[MSetColorMenuSelectedHighlighted]
+"Выбранный выделенный текст"
+//[MSetColorMenuDisabled]
+"Недоступный пункт"
+//[MSetColorMenuGrayed]
+"Серый текст"
+//[MSetColorMenuSelectedGrayed]
+"Выбранный серый текст"
+//[MSetColorMenuBox]
+"Рамка"
+//[MSetColorMenuTitle]
+"Заголовок"
+//[MSetColorMenuScrollBar]
+"Полоса прокрутки"
+//[MSetColorMenuArrows]
+"Индикаторы длинных строк"
+//[MSetColorMenuArrowsSelected]
+"Выбранные индикаторы длинных строк"
+//[MSetColorMenuArrowsDisabled]
+"Блокированные индикаторы длинных строк"
+
+//[MSetColorHMenuNormal]
+"Обычный текст"
+//[MSetColorHMenuSelected]
+"Выбранный текст"
+//[MSetColorHMenuHighlighted]
+"Выделенный текст"
+//[MSetColorHMenuSelectedHighlighted]
+"Выбранный выделенный текст"
+
+//[MSetColorKeyBarNumbers]
+"Номера клавиш"
+//[MSetColorKeyBarNames]
+"Названия клавиш"
+//[MSetColorKeyBarBackground]
+"Фон"
+
+//[MSetColorCommandLineNormal]
+"Обычный текст"
+//[MSetColorCommandLineSelected]
+"Выделенный текст"
+//[MSetColorCommandLinePrefix]
+"Текст префикса"
+//[MSetColorCommandLineUserScreen]
+"Пользовательский экран"
+
+//[MSetColorClockNormal]
+"Обычный текст (панели)"
+//[MSetColorClockNormalEditor]
+"Обычный текст (редактор)"
+//[MSetColorClockNormalViewer]
+"Обычный текст (вьювер)"
+
+//[MSetColorViewerNormal]
+"Обычный текст"
+//[MSetColorViewerSelected]
+"Выбранный текст"
+//[MSetColorViewerStatus]
+"Статус"
+//[MSetColorViewerArrows]
+"Стрелки сдвига экрана"
+//[MSetColorViewerScrollbar]
+"Полоса прокрутки"
+
+//[MSetColorEditorNormal]
+"Обычный текст"
+//[MSetColorEditorSelected]
+"Выбранный текст"
+//[MSetColorEditorStatus]
+"Статус"
+//[MSetColorEditorScrollbar]
+"Полоса прокрутки"
+
+//[MSetColorHelpNormal]
+"Обычный текст"
+//[MSetColorHelpHighlighted]
+"Выделенный текст"
+//[MSetColorHelpReference]
+"Ссылка"
+//[MSetColorHelpSelectedReference]
+"Выбранная ссылка"
+//[MSetColorHelpBox]
+"Рамка"
+//[MSetColorHelpBoxTitle]
+"Заголовок рамки"
+//[MSetColorHelpScrollbar]
+"Полоса прокрутки"
+
+//[MSetColorGroupsTitle]
+"Цветовые группы"
+//[MSetColorItemsTitle]
+"Элементы группы"
+
+//[MSetColorTitle]
+"Цвет"
+//[MSetColorForeground]
+"&Текст"
+//[MSetColorBackground]
+"&Фон"
+
+// 3 characters max
+//[MSetColorForeRGB]
+"&RGB"
+
+// 3 characters max
+//[MSetColorBackRGB]
+"R&GB"
+//[MSetColorForeTransparent]
+"&Прозрачный"
+//[MSetColorBackTransparent]
+"П&розрачный"
+//[MSetColorSample]
+"Текст Текст Текст Текст Текст Текст"
+//[MSetColorSet]
+"Установить"
+//[MSetColorCancel]
+"Отменить"
+
+//[MSetConfirmTitle]
+"Подтверждения"
+//[MSetConfirmCopy]
+"Перезапись файлов при &копировании"
+//[MSetConfirmMove]
+"Перезапись файлов при &переносе"
+//[MSetConfirmRO]
+"Перезапись и удаление R/O &файлов"
+//[MSetConfirmDrag]
+"Пере&таскивание"
+//[MSetConfirmDelete]
+"&Удаление"
+//[MSetConfirmDeleteFolders]
+"У&даление непустых папок"
+//[MSetConfirmEsc]
+"Прерыва&ние операций"
+//[MSetConfirmRemoveConnection]
+"&Отсоединение сетевого диска"
+//[MSetConfirmRemoveSUBST]
+"Удаление SUBST-диска"
+//[MSetConfirmDetachVHD]
+"Отсоедиение виртуального диска"
+//[MSetConfirmRemoveHotPlug]
+"Отключение HotPlug-у&стройства"
+//[MSetConfirmAllowReedit]
+"Повто&рное открытие файла в редакторе"
+//[MSetConfirmHistoryClear]
+"Очистка списка &истории"
+//[MSetConfirmExit]
+"&Выход"
+
+//[MPluginsManagerSettingsTitle]
+"Параметры менеджера плагинов"
+//[MPluginsManagerOEMPluginsSupport]
+"&Поддержка OEM-плагинов"
+//[MPluginsManagerScanSymlinks]
+"&Сканировать символические ссылки"
+//[MPluginsManagerOFP]
+"Обработка &файла"
+//[MPluginsManagerStdAssoc]
+"Пункт вызова стандартной &ассоциации"
+//[MPluginsManagerEvenOne]
+"Даже если найден всего &один плагин"
+//[MPluginsManagerSFL]
+"&Результаты поиска (SetFindList)"
+//[MPluginsManagerPF]
+"Обрабо&тка префикса"
+//[MPluginConfirmationTitle]
+"Выбор плагина"
+//[MMenuPluginStdAssociation]
+"Стандартная ассоциация"
+
+//[MFindFolderTitle]
+"Поиск папки"
+
+// Find folder Tree KeyBar
+//[MFolderTreeF1]
+"Помощь"
+//[MFolderTreeF2]
+"Обновить"
+//[MFolderTreeF3]
+""
+//[MFolderTreeF4]
+""
+//[MFolderTreeF5]
+"Размер"
+//[MFolderTreeF6]
+""
+//[MFolderTreeF7]
+""
+//[MFolderTreeF8]
+""
+//[MFolderTreeF9]
+""
+//[MFolderTreeF10]
+"Выход"
+//[MFolderTreeF11]
+""
+//[MFolderTreeF12]
+""
+//[MFolderTreeShiftF1]
+""
+//[MFolderTreeShiftF2]
+""
+//[MFolderTreeShiftF3]
+""
+//[MFolderTreeShiftF4]
+""
+//[MFolderTreeShiftF5]
+""
+//[MFolderTreeShiftF6]
+""
+//[MFolderTreeShiftF7]
+""
+//[MFolderTreeShiftF8]
+""
+//[MFolderTreeShiftF9]
+""
+//[MFolderTreeShiftF10]
+""
+//[MFolderTreeShiftF11]
+""
+//[MFolderTreeShiftF12]
+""
+//[MFolderTreeAltF1]
+""
+//[MFolderTreeAltF2]
+""
+//[MFolderTreeAltF3]
+""
+//[MFolderTreeAltF4]
+""
+//[MFolderTreeAltF5]
+""
+//[MFolderTreeAltF6]
+""
+//[MFolderTreeAltF7]
+""
+//[MFolderTreeAltF8]
+""
+//[MFolderTreeAltF9]
+"Видео"
+//[MFolderTreeAltF10]
+""
+//[MFolderTreeAltF11]
+""
+//[MFolderTreeAltF12]
+""
+//[MFolderTreeCtrlF1]
+""
+//[MFolderTreeCtrlF2]
+""
+//[MFolderTreeCtrlF3]
+""
+//[MFolderTreeCtrlF4]
+""
+//[MFolderTreeCtrlF5]
+""
+//[MFolderTreeCtrlF6]
+""
+//[MFolderTreeCtrlF7]
+""
+//[MFolderTreeCtrlF8]
+""
+//[MFolderTreeCtrlF9]
+""
+//[MFolderTreeCtrlF10]
+""
+//[MFolderTreeCtrlF11]
+""
+//[MFolderTreeCtrlF12]
+""
+//[MFolderTreeCtrlShiftF1]
+""
+//[MFolderTreeCtrlShiftF2]
+""
+//[MFolderTreeCtrlShiftF3]
+""
+//[MFolderTreeCtrlShiftF4]
+""
+//[MFolderTreeCtrlShiftF5]
+""
+//[MFolderTreeCtrlShiftF6]
+""
+//[MFolderTreeCtrlShiftF7]
+""
+//[MFolderTreeCtrlShiftF8]
+""
+//[MFolderTreeCtrlShiftF9]
+""
+//[MFolderTreeCtrlShiftF10]
+""
+//[MFolderTreeCtrlShiftF11]
+""
+//[MFolderTreeCtrlShiftF12]
+""
+//[MFolderTreeCtrlAltF1]
+""
+//[MFolderTreeCtrlAltF2]
+""
+//[MFolderTreeCtrlAltF3]
+""
+//[MFolderTreeCtrlAltF4]
+""
+//[MFolderTreeCtrlAltF5]
+""
+//[MFolderTreeCtrlAltF6]
+""
+//[MFolderTreeCtrlAltF7]
+""
+//[MFolderTreeCtrlAltF8]
+""
+//[MFolderTreeCtrlAltF9]
+""
+//[MFolderTreeCtrlAltF10]
+""
+//[MFolderTreeCtrlAltF11]
+""
+//[MFolderTreeCtrlAltF12]
+""
+//[MFolderTreeAltShiftF1]
+""
+//[MFolderTreeAltShiftF2]
+""
+//[MFolderTreeAltShiftF3]
+""
+//[MFolderTreeAltShiftF4]
+""
+//[MFolderTreeAltShiftF5]
+""
+//[MFolderTreeAltShiftF6]
+""
+//[MFolderTreeAltShiftF7]
+""
+//[MFolderTreeAltShiftF8]
+""
+//[MFolderTreeAltShiftF9]
+""
+//[MFolderTreeAltShiftF10]
+""
+//[MFolderTreeAltShiftF11]
+""
+//[MFolderTreeAltShiftF12]
+""
+//[MFolderTreeCtrlAltShiftF1]
+""
+//[MFolderTreeCtrlAltShiftF2]
+""
+//[MFolderTreeCtrlAltShiftF3]
+""
+//[MFolderTreeCtrlAltShiftF4]
+""
+//[MFolderTreeCtrlAltShiftF5]
+""
+//[MFolderTreeCtrlAltShiftF6]
+""
+//[MFolderTreeCtrlAltShiftF7]
+""
+//[MFolderTreeCtrlAltShiftF8]
+""
+//[MFolderTreeCtrlAltShiftF9]
+""
+//[MFolderTreeCtrlAltShiftF10]
+""
+//[MFolderTreeCtrlAltShiftF11]
+""
+//[MFolderTreeCtrlAltShiftF12]
+""
+//[MTreeTitle]
+"Дерево"
+//[MCannotSaveTree]
+"Ошибка записи дерева папок в файл"
+//[MReadingTree]
+"Чтение дерева папок"
+
+//[MUserMenuTitle]
+"Пользовательское меню"
+//[MChooseMenuType]
+"Выберите тип пользовательского меню для редактирования"
+//[MChooseMenuMain]
+"&Главное"
+//[MChooseMenuLocal]
+"&Местное"
+//[MMainMenuTitle]
+"Главное меню"
+
+// <...menu (User)>
+//[MMainMenuUser]
+"Пользовательское"
+//[MMainMenuGlobal]
+"Глобальное"
+//[MLocalMenuTitle]
+"Местное меню"
+//[MMainMenuBottomTitle]
+"Редактирование: Del,Ins,F4,Alt+F4"
+//[MAskDeleteMenuItem]
+"Вы хотите удалить пункт меню"
+//[MAskDeleteSubMenuItem]
+"Вы хотите удалить вложенное меню"
+//[MUserMenuInvalidInputLabel]
+"Неправильный формат метки меню"
+//[MUserMenuInvalidInputHotKey]
+"Неправильный формат горячей клавиши"
+
+//[MEditMenuTitle]
+"Редактирование пользовательского меню"
+//[MEditMenuHotKey]
+"&Горячая клавиша:"
+//[MEditMenuLabel]
+"&Метка:"
+//[MEditMenuCommands]
+"&Команды:"
+
+//[MAskInsertMenuOrCommand]
+"Вы хотите вставить новую команду или новое меню?"
+//[MMenuInsertCommand]
+"Вставить команду"
+//[MMenuInsertMenu]
+"Вставить меню"
+
+//[MEditSubmenuTitle]
+"Редактирование метки вложенного меню"
+//[MEditSubmenuHotKey]
+"&Горячая клавиша:"
+//[MEditSubmenuLabel]
+"&Метка:"
+//[MEditMenuConfirmation]
+"Сохранить изменения?"
+//[MEditMenuError]
+"Не удалось обновить меню"
+
+//[MViewerTitle]
+"Просмотр"
+//[MViewerCannotOpenFile]
+"Ошибка открытия файла"
+//[MViewerStatusCol]
+"Кол"
+
+//[MViewSearchTitle]
+"Поиск"
+//[MViewSearchFor]
+"&Искать"
+//[MViewSearchForText]
+"Искать &текст"
+//[MViewSearchForHex]
+"Искать 16-ричный &код"
+//[MViewSearchCase]
+"&Учитывать регистр"
+//[MViewSearchWholeWords]
+"Только &целые слова"
+//[MViewSearchReverse]
+"Обратн&ый поиск"
+//[MViewSearchRegexp]
+"&Регулярные выражения"
+//[MViewSearchSearch]
+"Искать"
+//[MViewSearchCancel]
+"Отменить"
+
+//[MViewSearchingFor]
+"Поиск"
+//[MViewSearchingHex]
+"Поиск байтов"
+//[MViewSearchCannotFind]
+"Строка не найдена"
+//[MViewSearchCannotFindHex]
+"Байты не найдены"
+//[MViewSearchEod]
+"Достигнут конец документа"
+//[MViewSearchFromBegin]
+"Продолжить поиск с начала документа?"
+//[MViewSearchBod]
+"Достигнуто начало документа"
+//[MViewSearchFromEnd]
+"Продолжить поиск с конца документа?"
+//[MViewSearchCycle]
+"Просмотрен весь документ"
+//[MViewSearchRepeat]
+"Повторить поиск в документе?"
+
+//[MPrintTitle]
+"Печать"
+//[MPrintTo]
+"Печатать {0} на"
+//[MPrintFilesTo]
+"Печатать {0} файлов на"
+//[MPreparingForPrinting]
+"Подготовка файлов к печати"
+//[MCannotEnumeratePrinters]
+"Не удалось получить список доступных принтеров"
+//[MCannotOpenPrinter]
+"Не удалось открыть принтер"
+//[MCannotPrint]
+"Не удалось распечатать"
+
+//[MDescribeFiles]
+"Описание файла"
+//[MEnterDescription]
+"Введите описание для"
+
+//[MReadingDiz]
+"Чтение описаний файлов"
+//[MCannotUpdateDiz]
+"Не удалось обновить описания файлов"
+//[MCannotUpdateRODiz]
+"Файл описаний защищён от записи"
+
+//[MCfgDizTitle]
+"Описания файлов"
+//[MCfgDizListNames]
+"Имена &списков описаний, разделённые запятыми:"
+//[MCfgDizSetHidden]
+"Устанавливать &атрибут ""Скрытый"" на новые списки описаний"
+//[MCfgDizROUpdate]
+"Обновлять файл описаний с атрибутом ""Толь&ко для чтения"""
+//[MCfgDizStartPos]
+"&Позиция новых описаний в строке"
+//[MCfgDizNotUpdate]
+"&Не обновлять описания"
+//[MCfgDizUpdateIfDisplayed]
+"&Обновлять, если они выводятся на экран"
+//[MCfgDizAlwaysUpdate]
+"&Всегда обновлять"
+//[MCfgDizAnsiByDefault]
+"&Использовать кодовую страницу ANSI по умолчанию"
+//[MCfgDizSaveInUTF]
+"Сохранять в UTF8"
+
+//[MReadingTitleFiles]
+"Обновление панелей"
+//[MReadingFiles]
+"Чтение: {0} файлов"
+//[MOperationNotCompleted]
+"Операция не завершена"
+
+//[MEditPanelModes]
+"Режимы панели"
+//[MEditPanelModesBottom]
+"Ins,Del,F4,Ctrl+Enter,Ctrl+Shift+Enter"
+
+//[MEditPanelModeName]
+"Имя"
+//[MEditPanelModeTypes]
+"&Типы колонок"
+//[MEditPanelModeWidths]
+"&Ширина колонок"
+//[MEditPanelModeStatusTypes]
+"Типы колонок строки ст&атуса"
+//[MEditPanelModeStatusWidths]
+"Ширина колонок строки стат&уса"
+//[MEditPanelModeFullscreen]
+"&Полноэкранный режим"
+//[MEditPanelModeAlignExtensions]
+"&Выравнивать расширения файлов"
+//[MEditPanelModeAlignFolderExtensions]
+"Выравнивать расширения пап&ок"
+//[MEditPanelModeFoldersUpperCase]
+"Показывать папки &заглавными буквами"
+//[MEditPanelModeFilesLowerCase]
+"Показывать файлы ст&рочными буквами"
+//[MEditPanelModeUpperToLowerCase]
+"Показывать имена файлов из заглавных букв &строчными буквами"
+
+//[MSetFolderInfoTitle]
+"Файлы информации о папках"
+//[MSetFolderInfoNames]
+"Введите имена файлов, разделённые запятыми (допускаются маски)"
+
+//[MScreensTitle]
+"Экраны"
+//[MScreensPanels]
+"Панели"
+//[MScreensView]
+"Просмотр"
+//[MScreensEdit]
+"Редактор"
+
+//[MAskApplyCommandTitle]
+"Применить команду"
+//[MAskApplyCommand]
+"Введите команду для обработки выбранных файлов"
+
+//[MPluginConfigTitle]
+"Конфигурация плагинов"
+//[MPluginCommandsMenuTitle]
+"Команды плагинов"
+
+//[MPreparingList]
+"Создание списка файлов"
+
+//[MLangTitle]
+"Основной язык"
+//[MHelpLangTitle]
+"Язык помощи"
+
+//[MDefineMacroTitle]
+"Задание макрокоманды"
+//[MDefineMacro]
+"Нажмите желаемую клавишу"
+//[MMacroReDefinedKey]
+"Макроклавиша '{0}' уже определена."
+//[MMacroDeleteKey]
+"Макроклавиша '{0}' будет удалена."
+//[MMacroCommonReDefinedKey]
+"Общая макроклавиша '{0}' уже определена."
+//[MMacroCommonDeleteKey]
+"Общая макроклавиша '{0}' будет удалена."
+//[MMacroSequence]
+"Последовательность:"
+//[MMacroDescription]
+"Описание:"
+//[MMacroReDefinedKey2]
+"Переопределить?"
+//[MMacroDeleteKey2]
+"Удалить?"
+//[MMacroEditKey]
+"Изменить"
+
+//[MMacroSettingsTitle]
+"Параметры макрокоманды для '{0}'"
+//[MMacroSettingsEnableOutput]
+"Разрешить во время &выполнения вывод на экран"
+//[MMacroSettingsRunAfterStart]
+"В&ыполнять после запуска FAR"
+//[MMacroSettingsActivePanel]
+"&Активная панель"
+//[MMacroSettingsPassivePanel]
+"&Пассивная панель"
+//[MMacroSettingsPluginPanel]
+"На панели пла&гина"
+//[MMacroSettingsFolders]
+"Выполнять для папо&к"
+//[MMacroSettingsSelectionPresent]
+"&Отмечены файлы"
+//[MMacroSettingsCommandLine]
+"Пустая командная &строка"
+//[MMacroSettingsSelectionBlockPresent]
+"Отмечен б&лок"
+//[MMacroPluginLuamacroNotLoaded]
+"Плагин LuaMacro не загружен"
+//[MMacroRecordingIsDisabled]
+"Запись макросов запрещена"
+
+//[MCannotSaveFile]
+"Ошибка сохранения файла"
+//[MTextSavedToTemp]
+"Отредактированный текст записан в"
+
+//[MPluginHotKeyTitle]
+"Назначение горячей клавиши"
+//[MPluginHotKey]
+"Введите горячую клавишу (букву или цифру)"
+//[MPluginInformation]
+"Информация о плагине"
+//[MPluginModuleTitle]
+"&Название:"
+//[MPluginDescription]
+"&Описание:"
+//[MPluginAuthor]
+"&Автор:"
+//[MPluginVersion]
+"&Версия:"
+//[MPluginModulePath]
+"&Файл плагина:"
+//[MPluginGUID]
+"&GUID плагина:"
+//[MPluginItemGUID]
+"GU&ID пункта:"
+//[MPluginPrefix]
+"&Префикс плагина:"
+//[MPluginHotKeyBottom]
+"F4 - задать горячую клавишу, F3 - информация"
+
+//[MRightCtrl]
+"ПравыйCtrl"
+//[MExcTrappedException]
+"Исключительная ситуация"
+//[MExcException]
+"Исключение:"
+//[MExcDetails]
+"Подробности:"
+//[MExcAddress]
+"Адрес:"
+//[MExcSource]
+"Источник:"
+//[MExcFunction]
+"Функция:"
+//[MExcModule]
+"Модуль:"
+//[MExcTerminate]
+"Завершить Far"
+//[MExcUnload]
+"Выгрузить плагин"
+//[MExcStack]
+"Стек"
+//[MExcMinidump]
+"Минидамп"
+
+//[MNetUserName]
+"Имя пользователя"
+//[MNetUserPassword]
+"Пароль пользователя"
+
+//[MReadFolderError]
+"Не удаётся прочесть содержимое папки"
+
+//[MPlgBadVers]
+"Для работы этого плагина требуется более новая версия Far"
+//[MPlgRequired]
+"Требуемая версия Far - {0},"
+//[MPlgRequired2]
+"текущая версия Far - {0}."
+//[MPlgLoadPluginError]
+"Ошибка при загрузке плагина"
+
+//[MCheckBox2State]
+"?"
+
+//[MHelpTitle]
+"Помощь"
+//[MHelpActivatorURL]
+"Эта ссылка запускает внешнее приложение"
+//[MHelpActivatorFormat]
+"с параметром:"
+//[MHelpActivatorQ]
+"Желаете запустить?"
+//[MCannotOpenHelp]
+"Ошибка открытия файла"
+//[MHelpTopicNotFound]
+"Не найден запрошенный раздел помощи:"
+
+//[MPluginsHelpTitle]
+"Плагины"
+//[MDocumentsHelpTitle]
+"Документы"
+
+//[MHelpSearchTitle]
+"Поиск"
+//[MHelpSearchingFor]
+"&Искать"
+//[MHelpSearchCannotFind]
+"Строка не найдена"
+
+// Help KeyBar F1-12
+//[MHelpF1]
+"Помощь"
+//[MHelpF2]
+""
+//[MHelpF3]
+""
+//[MHelpF4]
+""
+//[MHelpF5]
+"Размер"
+//[MHelpF6]
+""
+//[MHelpF7]
+"Поиск"
+//[MHelpF8]
+""
+//[MHelpF9]
+""
+//[MHelpF10]
+"Выход"
+//[MHelpF11]
+""
+//[MHelpF12]
+""
+
+// Help KeyBar Shift+F1-12
+//[MHelpShiftF1]
+"Содерж"
+//[MHelpShiftF2]
+"Плагин"
+//[MHelpShiftF3]
+"Докум"
+//[MHelpShiftF4]
+""
+//[MHelpShiftF5]
+""
+//[MHelpShiftF6]
+""
+//[MHelpShiftF7]
+"Дальше"
+//[MHelpShiftF8]
+""
+//[MHelpShiftF9]
+""
+//[MHelpShiftF10]
+""
+//[MHelpShiftF11]
+""
+//[MHelpShiftF12]
+""
+
+// Help KeyBar Alt+F1-12
+//[MHelpAltF1]
+"Пред."
+//[MHelpAltF2]
+""
+//[MHelpAltF3]
+""
+//[MHelpAltF4]
+""
+//[MHelpAltF5]
+""
+//[MHelpAltF6]
+""
+//[MHelpAltF7]
+""
+//[MHelpAltF8]
+""
+//[MHelpAltF9]
+"Видео"
+//[MHelpAltF10]
+""
+//[MHelpAltF11]
+""
+//[MHelpAltF12]
+""
+
+// Help KeyBar Ctrl+F1-12
+//[MHelpCtrlF1]
+""
+//[MHelpCtrlF2]
+""
+//[MHelpCtrlF3]
+""
+//[MHelpCtrlF4]
+""
+//[MHelpCtrlF5]
+""
+//[MHelpCtrlF6]
+""
+//[MHelpCtrlF7]
+""
+//[MHelpCtrlF8]
+""
+//[MHelpCtrlF9]
+""
+//[MHelpCtrlF10]
+""
+//[MHelpCtrlF11]
+""
+//[MHelpCtrlF12]
+""
+
+// Help KeyBar AltShiftF1-12
+//[MHelpAltShiftF1]
+""
+//[MHelpAltShiftF2]
+""
+//[MHelpAltShiftF3]
+""
+//[MHelpAltShiftF4]
+""
+//[MHelpAltShiftF5]
+""
+//[MHelpAltShiftF6]
+""
+//[MHelpAltShiftF7]
+""
+//[MHelpAltShiftF8]
+""
+//[MHelpAltShiftF9]
+""
+//[MHelpAltShiftF10]
+""
+//[MHelpAltShiftF11]
+""
+//[MHelpAltShiftF12]
+""
+
+// Help KeyBar CtrlShiftF1-12
+//[MHelpCtrlShiftF1]
+""
+//[MHelpCtrlShiftF2]
+""
+//[MHelpCtrlShiftF3]
+""
+//[MHelpCtrlShiftF4]
+""
+//[MHelpCtrlShiftF5]
+""
+//[MHelpCtrlShiftF6]
+""
+//[MHelpCtrlShiftF7]
+""
+//[MHelpCtrlShiftF8]
+""
+//[MHelpCtrlShiftF9]
+""
+//[MHelpCtrlShiftF10]
+""
+//[MHelpCtrlShiftF11]
+""
+//[MHelpCtrlShiftF12]
+""
+
+// Help KeyBar CtrlAltF1-12
+//[MHelpCtrlAltF1]
+""
+//[MHelpCtrlAltF2]
+""
+//[MHelpCtrlAltF3]
+""
+//[MHelpCtrlAltF4]
+""
+//[MHelpCtrlAltF5]
+""
+//[MHelpCtrlAltF6]
+""
+//[MHelpCtrlAltF7]
+""
+//[MHelpCtrlAltF8]
+""
+//[MHelpCtrlAltF9]
+""
+//[MHelpCtrlAltF10]
+""
+//[MHelpCtrlAltF11]
+""
+//[MHelpCtrlAltF12]
+""
+
+// Help KeyBar CtrlAltShiftF1-12
+//[MHelpCtrlAltShiftF1]
+""
+//[MHelpCtrlAltShiftF2]
+""
+//[MHelpCtrlAltShiftF3]
+""
+//[MHelpCtrlAltShiftF4]
+""
+//[MHelpCtrlAltShiftF5]
+""
+//[MHelpCtrlAltShiftF6]
+""
+//[MHelpCtrlAltShiftF7]
+""
+//[MHelpCtrlAltShiftF8]
+""
+//[MHelpCtrlAltShiftF9]
+""
+//[MHelpCtrlAltShiftF10]
+""
+//[MHelpCtrlAltShiftF11]
+""
+//[MHelpCtrlAltShiftF12]
+""
+
+// InfoPanel KeyBar F1-F12
+//[MInfoF1]
+"Помощь"
+//[MInfoF2]
+"Сверн"
+//[MInfoF3]
+"СмОпис"
+//[MInfoF4]
+"РедОпи"
+//[MInfoF5]
+""
+//[MInfoF6]
+""
+//[MInfoF7]
+"Поиск"
+//[MInfoF8]
+"ANSI"
+//[MInfoF9]
+"КонфМн"
+//[MInfoF10]
+"Выход"
+//[MInfoF11]
+"Плагины"
+//[MInfoF12]
+"Экраны"
+
+// InfoPanel KeyBar Shift+F1-F12
+//[MInfoShiftF1]
+""
+//[MInfoShiftF2]
+"Слова"
+//[MInfoShiftF3]
+""
+//[MInfoShiftF4]
+""
+//[MInfoShiftF5]
+""
+//[MInfoShiftF6]
+""
+//[MInfoShiftF7]
+"Дальше"
+//[MInfoShiftF8]
+"КодСтр"
+//[MInfoShiftF9]
+"Сохран"
+//[MInfoShiftF10]
+"Послдн"
+//[MInfoShiftF11]
+""
+//[MInfoShiftF12]
+""
+
+// InfoPanel KeyBar Alt+F1-F12
+//[MInfoAltF1]
+"Левая"
+//[MInfoAltF2]
+"Правая"
+//[MInfoAltF3]
+""
+//[MInfoAltF4]
+""
+//[MInfoAltF5]
+""
+//[MInfoAltF6]
+""
+//[MInfoAltF7]
+"Искать"
+//[MInfoAltF8]
+"Строка"
+//[MInfoAltF9]
+"Видео"
+//[MInfoAltF10]
+"Дерево"
+//[MInfoAltF11]
+"ИстПр"
+//[MInfoAltF12]
+"ИстПап"
+
+// InfoPanel KeyBar Ctrl+F1-F12
+//[MInfoCtrlF1]
+"Левая"
+//[MInfoCtrlF2]
+"Правая"
+//[MInfoCtrlF3]
+""
+//[MInfoCtrlF4]
+""
+//[MInfoCtrlF5]
+""
+//[MInfoCtrlF6]
+""
+//[MInfoCtrlF7]
+""
+//[MInfoCtrlF8]
+""
+//[MInfoCtrlF9]
+""
+//[MInfoCtrlF10]
+""
+//[MInfoCtrlF11]
+""
+//[MInfoCtrlF12]
+"Режим"
+
+// InfoPanel KeyBar AltShiftF1-12
+//[MInfoAltShiftF1]
+""
+//[MInfoAltShiftF2]
+""
+//[MInfoAltShiftF3]
+""
+//[MInfoAltShiftF4]
+""
+//[MInfoAltShiftF5]
+""
+//[MInfoAltShiftF6]
+""
+//[MInfoAltShiftF7]
+""
+//[MInfoAltShiftF8]
+""
+//[MInfoAltShiftF9]
+""
+//[MInfoAltShiftF10]
+""
+//[MInfoAltShiftF11]
+""
+//[MInfoAltShiftF12]
+""
+
+// InfoPanel KeyBar CtrlShiftF1-12
+//[MInfoCtrlShiftF1]
+""
+//[MInfoCtrlShiftF2]
+""
+//[MInfoCtrlShiftF3]
+""
+//[MInfoCtrlShiftF4]
+""
+//[MInfoCtrlShiftF5]
+""
+//[MInfoCtrlShiftF6]
+""
+//[MInfoCtrlShiftF7]
+""
+//[MInfoCtrlShiftF8]
+""
+//[MInfoCtrlShiftF9]
+""
+//[MInfoCtrlShiftF10]
+""
+//[MInfoCtrlShiftF11]
+""
+//[MInfoCtrlShiftF12]
+""
+
+// InfoPanel KeyBar CtrlAltF1-12
+//[MInfoCtrlAltF1]
+""
+//[MInfoCtrlAltF2]
+""
+//[MInfoCtrlAltF3]
+""
+//[MInfoCtrlAltF4]
+""
+//[MInfoCtrlAltF5]
+""
+//[MInfoCtrlAltF6]
+""
+//[MInfoCtrlAltF7]
+""
+//[MInfoCtrlAltF8]
+""
+//[MInfoCtrlAltF9]
+""
+//[MInfoCtrlAltF10]
+""
+//[MInfoCtrlAltF11]
+""
+//[MInfoCtrlAltF12]
+""
+
+// InfoPanel KeyBar CtrlAltShiftF1-12
+//[MInfoCtrlAltShiftF1]
+""
+//[MInfoCtrlAltShiftF2]
+""
+//[MInfoCtrlAltShiftF3]
+""
+//[MInfoCtrlAltShiftF4]
+""
+//[MInfoCtrlAltShiftF5]
+""
+//[MInfoCtrlAltShiftF6]
+""
+//[MInfoCtrlAltShiftF7]
+""
+//[MInfoCtrlAltShiftF8]
+""
+//[MInfoCtrlAltShiftF9]
+""
+//[MInfoCtrlAltShiftF10]
+""
+//[MInfoCtrlAltShiftF11]
+""
+//[MInfoCtrlAltShiftF12]
+""
+
+// QView KeyBar F1-F12
+//[MQViewF1]
+"Помощь"
+//[MQViewF2]
+"Сверн"
+//[MQViewF3]
+"Просм"
+//[MQViewF4]
+"Код"
+//[MQViewF5]
+""
+//[MQViewF6]
+""
+//[MQViewF7]
+"Поиск"
+//[MQViewF8]
+"ANSI"
+//[MQViewF9]
+"КонфМн"
+//[MQViewF10]
+"Выход"
+//[MQViewF11]
+"Плагины"
+//[MQViewF12]
+"Экраны"
+
+// QView KeyBar Shift+F1-F12
+//[MQViewShiftF1]
+""
+//[MQViewShiftF2]
+"Слова"
+//[MQViewShiftF3]
+""
+//[MQViewShiftF4]
+""
+//[MQViewShiftF5]
+""
+//[MQViewShiftF6]
+""
+//[MQViewShiftF7]
+"Дальше"
+//[MQViewShiftF8]
+"КодСтр"
+//[MQViewShiftF9]
+"Сохран"
+//[MQViewShiftF10]
+"Послдн"
+//[MQViewShiftF11]
+""
+//[MQViewShiftF12]
+""
+
+// QView KeyBar Alt+F1-F12
+//[MQViewAltF1]
+"Левая"
+//[MQViewAltF2]
+"Правая"
+//[MQViewAltF3]
+""
+//[MQViewAltF4]
+""
+//[MQViewAltF5]
+""
+//[MQViewAltF6]
+""
+//[MQViewAltF7]
+"Искать"
+//[MQViewAltF8]
+"Строка"
+//[MQViewAltF9]
+"Видео"
+//[MQViewAltF10]
+"Дерево"
+//[MQViewAltF11]
+"ИстПр"
+//[MQViewAltF12]
+"ИстПап"
+
+// QView KeyBar Ctrl+F1-F12
+//[MQViewCtrlF1]
+"Левая"
+//[MQViewCtrlF2]
+"Правая"
+//[MQViewCtrlF3]
+""
+//[MQViewCtrlF4]
+""
+//[MQViewCtrlF5]
+""
+//[MQViewCtrlF6]
+""
+//[MQViewCtrlF7]
+""
+//[MQViewCtrlF8]
+""
+//[MQViewCtrlF9]
+""
+//[MQViewCtrlF10]
+""
+//[MQViewCtrlF11]
+""
+//[MQViewCtrlF12]
+""
+
+// QView KeyBar AltShiftF1-12
+//[MQViewAltShiftF1]
+""
+//[MQViewAltShiftF2]
+""
+//[MQViewAltShiftF3]
+""
+//[MQViewAltShiftF4]
+""
+//[MQViewAltShiftF5]
+""
+//[MQViewAltShiftF6]
+""
+//[MQViewAltShiftF7]
+""
+//[MQViewAltShiftF8]
+""
+//[MQViewAltShiftF9]
+""
+//[MQViewAltShiftF10]
+""
+//[MQViewAltShiftF11]
+""
+//[MQViewAltShiftF12]
+""
+
+// QView KeyBar CtrlShiftF1-12
+//[MQViewCtrlShiftF1]
+""
+//[MQViewCtrlShiftF2]
+""
+//[MQViewCtrlShiftF3]
+""
+//[MQViewCtrlShiftF4]
+""
+//[MQViewCtrlShiftF5]
+""
+//[MQViewCtrlShiftF6]
+""
+//[MQViewCtrlShiftF7]
+""
+//[MQViewCtrlShiftF8]
+""
+//[MQViewCtrlShiftF9]
+""
+//[MQViewCtrlShiftF10]
+""
+//[MQViewCtrlShiftF11]
+""
+//[MQViewCtrlShiftF12]
+""
+
+// QView KeyBar CtrlAltF1-12
+//[MQViewCtrlAltF1]
+""
+//[MQViewCtrlAltF2]
+""
+//[MQViewCtrlAltF3]
+""
+//[MQViewCtrlAltF4]
+""
+//[MQViewCtrlAltF5]
+""
+//[MQViewCtrlAltF6]
+""
+//[MQViewCtrlAltF7]
+""
+//[MQViewCtrlAltF8]
+""
+//[MQViewCtrlAltF9]
+""
+//[MQViewCtrlAltF10]
+""
+//[MQViewCtrlAltF11]
+""
+//[MQViewCtrlAltF12]
+""
+
+// QView KeyBar CtrlAltShiftF1-12
+//[MQViewCtrlAltShiftF1]
+""
+//[MQViewCtrlAltShiftF2]
+""
+//[MQViewCtrlAltShiftF3]
+""
+//[MQViewCtrlAltShiftF4]
+""
+//[MQViewCtrlAltShiftF5]
+""
+//[MQViewCtrlAltShiftF6]
+""
+//[MQViewCtrlAltShiftF7]
+""
+//[MQViewCtrlAltShiftF8]
+""
+//[MQViewCtrlAltShiftF9]
+""
+//[MQViewCtrlAltShiftF10]
+""
+//[MQViewCtrlAltShiftF11]
+""
+//[MQViewCtrlAltShiftF12]
+""
+
+// Tree KeyBar F1-F12
+//[MKBTreeF1]
+"Помощь"
+//[MKBTreeF2]
+"ПользМ"
+//[MKBTreeF3]
+""
+//[MKBTreeF4]
+"Атриб"
+//[MKBTreeF5]
+"Копир"
+//[MKBTreeF6]
+"Перен"
+//[MKBTreeF7]
+"Папка"
+//[MKBTreeF8]
+"Удален"
+//[MKBTreeF9]
+"КонфМн"
+//[MKBTreeF10]
+"Выход"
+//[MKBTreeF11]
+"Плагины"
+//[MKBTreeF12]
+"Экраны"
+
+// Tree KeyBar Shift+F1-F12
+//[MKBTreeShiftF1]
+""
+//[MKBTreeShiftF2]
+""
+//[MKBTreeShiftF3]
+""
+//[MKBTreeShiftF4]
+""
+//[MKBTreeShiftF5]
+"Копир"
+//[MKBTreeShiftF6]
+"Перен"
+//[MKBTreeShiftF7]
+""
+//[MKBTreeShiftF8]
+""
+//[MKBTreeShiftF9]
+"Сохран"
+//[MKBTreeShiftF10]
+"Послдн"
+//[MKBTreeShiftF11]
+"Группы"
+//[MKBTreeShiftF12]
+"Выбран"
+
+// Tree KeyBar Alt+F1-F12
+//[MKBTreeAltF1]
+"Левая"
+//[MKBTreeAltF2]
+"Правая"
+//[MKBTreeAltF3]
+""
+//[MKBTreeAltF4]
+""
+//[MKBTreeAltF5]
+""
+//[MKBTreeAltF6]
+""
+//[MKBTreeAltF7]
+"Искать"
+//[MKBTreeAltF8]
+"Истор"
+//[MKBTreeAltF9]
+"Видео"
+//[MKBTreeAltF10]
+"Дерево"
+//[MKBTreeAltF11]
+"ИстПр"
+//[MKBTreeAltF12]
+"ИстПап"
+
+// Tree KeyBar Ctrl+F1-F12
+//[MKBTreeCtrlF1]
+"Левая"
+//[MKBTreeCtrlF2]
+"Правая"
+//[MKBTreeCtrlF3]
+""
+//[MKBTreeCtrlF4]
+""
+//[MKBTreeCtrlF5]
+""
+//[MKBTreeCtrlF6]
+""
+//[MKBTreeCtrlF7]
+""
+//[MKBTreeCtrlF8]
+""
+//[MKBTreeCtrlF9]
+""
+//[MKBTreeCtrlF10]
+""
+//[MKBTreeCtrlF11]
+""
+//[MKBTreeCtrlF12]
+""
+
+// Tree KeyBar AltShiftF1-12
+//[MKBTreeAltShiftF1]
+""
+//[MKBTreeAltShiftF2]
+""
+//[MKBTreeAltShiftF3]
+""
+//[MKBTreeAltShiftF4]
+""
+//[MKBTreeAltShiftF5]
+""
+//[MKBTreeAltShiftF6]
+""
+//[MKBTreeAltShiftF7]
+""
+//[MKBTreeAltShiftF8]
+""
+//[MKBTreeAltShiftF9]
+""
+//[MKBTreeAltShiftF10]
+""
+//[MKBTreeAltShiftF11]
+""
+//[MKBTreeAltShiftF12]
+""
+
+// Tree KeyBar CtrlShiftF1-12
+//[MKBTreeCtrlShiftF1]
+""
+//[MKBTreeCtrlShiftF2]
+""
+//[MKBTreeCtrlShiftF3]
+""
+//[MKBTreeCtrlShiftF4]
+""
+//[MKBTreeCtrlShiftF5]
+""
+//[MKBTreeCtrlShiftF6]
+""
+//[MKBTreeCtrlShiftF7]
+""
+//[MKBTreeCtrlShiftF8]
+""
+//[MKBTreeCtrlShiftF9]
+""
+//[MKBTreeCtrlShiftF10]
+""
+//[MKBTreeCtrlShiftF11]
+""
+//[MKBTreeCtrlShiftF12]
+""
+
+// Tree KeyBar CtrlAltF1-12
+//[MKBTreeCtrlAltF1]
+""
+//[MKBTreeCtrlAltF2]
+""
+//[MKBTreeCtrlAltF3]
+""
+//[MKBTreeCtrlAltF4]
+""
+//[MKBTreeCtrlAltF5]
+""
+//[MKBTreeCtrlAltF6]
+""
+//[MKBTreeCtrlAltF7]
+""
+//[MKBTreeCtrlAltF8]
+""
+//[MKBTreeCtrlAltF9]
+""
+//[MKBTreeCtrlAltF10]
+""
+//[MKBTreeCtrlAltF11]
+""
+//[MKBTreeCtrlAltF12]
+""
+
+// Tree KeyBar CtrlAltShiftF1-12
+//[MKBTreeCtrlAltShiftF1]
+""
+//[MKBTreeCtrlAltShiftF2]
+""
+//[MKBTreeCtrlAltShiftF3]
+""
+//[MKBTreeCtrlAltShiftF4]
+""
+//[MKBTreeCtrlAltShiftF5]
+""
+//[MKBTreeCtrlAltShiftF6]
+""
+//[MKBTreeCtrlAltShiftF7]
+""
+//[MKBTreeCtrlAltShiftF8]
+""
+//[MKBTreeCtrlAltShiftF9]
+""
+//[MKBTreeCtrlAltShiftF10]
+""
+//[MKBTreeCtrlAltShiftF11]
+""
+//[MKBTreeCtrlAltShiftF12]
+""
+
+//[MCopyTimeInfo]
+"Время: {0}    Осталось: {1}    {2}Б/с"
+
+//[MKeyESCWasPressed]
+"Действие было прервано"
+//[MDoYouWantToCancel]
+"Вы действительно хотите отменить действие?"
+//[MDoYouWantToContinue]
+"Продолжить выполнение?"
+
+//[MCheckingFileInPlugin]
+"Файл проверяется в плагине"
+
+//[MDialogType]
+"Диалог"
+//[MHelpType]
+"Помощь"
+//[MFolderTreeType]
+"ПоискКаталогов"
+//[MVMenuType]
+"Меню"
+
+//[MIncorrectMask]
+"Некорректная маска файлов"
+
+//[MPanelBracketsForLongName]
+"{}"
+
+//[MComspecNotFound]
+"Переменная окружения %COMSPEC% не определена"
+
+//[MOpenPluginCannotOpenFile]
+"Ошибка открытия файла"
+
+//[MFileFilterTitle]
+"Фильтр"
+//[MFileHilightTitle]
+"Раскраска файлов"
+//[MFileFilterName]
+"Имя &фильтра:"
+//[MFileFilterMatchMask]
+"&Маска:"
+//[MFileFilterSize]
+"Разм&ер:"
+//[MFileFilterSizeFromSign]
+">="
+//[MFileFilterSizeToSign]
+"<="
+//[MFileHardLinksCount]
+"Болee одной жёсткой ссылки"
+//[MFileFilterDate]
+"&Дата/Время:"
+//[MFileFilterWrited]
+"&записи"
+//[MFileFilterCreated]
+"&создания"
+//[MFileFilterOpened]
+"&доступа"
+//[MFileFilterChanged]
+"&изменения"
+//[MFileFilterDateRelative]
+"Относительна&я"
+//[MFileFilterDateAfterSign]
+">="
+//[MFileFilterDateBeforeSign]
+"<="
+//[MFileFilterCurrent]
+"Теку&щая"
+//[MFileFilterBlank]
+"С&брос"
+//[MFileFilterAttr]
+"Атрибут&ы"
+//[MFileFilterAttrR]
+"&Только для чтения"
+//[MFileFilterAttrA]
+"&Архивный"
+//[MFileFilterAttrH]
+"&Скрытый"
+//[MFileFilterAttrS]
+"С&истемный"
+//[MFileFilterAttrC]
+"С&жатый"
+//[MFileFilterAttrE]
+"&Зашифрованный"
+//[MFileFilterAttrD]
+"&Каталог"
+//[MFileFilterAttrNI]
+"&Неиндексируемый"
+//[MFileFilterAttrSparse]
+"&Разрежённый"
+//[MFileFilterAttrT]
+"&Временный"
+//[MFileFilterAttrReparse]
+"Точка повторного анализа"
+//[MFileFilterAttrOffline]
+"Автономны&й"
+//[MFileFilterAttrVirtual]
+"Вирт&уальный"
+//[MFileFilterAttrIntegrityStream]
+"Поток целостности"
+//[MFileFilterAttrNoScrubData]
+"Нет данных очистки"
+//[MFileFilterReset]
+"Очистит&ь"
+//[MFileFilterCancel]
+"Отмена"
+//[MFileFilterMakeTransparent]
+"Выставить прозрачность"
+//[MBadFileSizeFormat]
+"Неправильно заполнено поле размера"
+
+//[MFarTitleAddonsAdmin]
+"Администратор"
+//[MElevationRequired]
+"Нужно обладать правами администратора"
+//[MElevationRequiredPrivileges]
+"Требуются дополнительные привилегии"
+//[MElevationRequiredProcess]
+"для обработки этого объекта:"
+//[MElevationRequiredCreate]
+"для открытия этого объекта:"
+//[MElevationRequiredDelete]
+"для удаления этого объекта:"
+//[MElevationRequiredCopy]
+"для копирования этого объекта:"
+//[MElevationRequiredMove]
+"для перемещения этого объекта:"
+//[MElevationRequiredGetAttributes]
+"для получения атрибутов этого объекта:"
+//[MElevationRequiredSetAttributes]
+"для установки атрибутов этого объекта:"
+//[MElevationRequiredHardLink]
+"для создания этой жёсткой ссылки:"
+//[MElevationRequiredSymLink]
+"для создания этой символической ссылки:"
+//[MElevationRequiredRecycle]
+"для перемещения этого объекта в корзину:"
+//[MElevationRequiredList]
+"для просмотра этого объекта:"
+//[MElevationRequiredSetOwner]
+"для установки владельца этого объекта:"
+//[MElevationRequiredOpen]
+"для открытия этого объекта:"
+//[MElevationRequiredEncryptFile]
+"для шифрования этого объекта:"
+//[MElevationRequiredDecryptFile]
+"для расшифрования этого объекта:"
+//[MElevationDoForAll]
+"Выполнить это действие для &всех текущих объектов"
+//[MElevationDoNotAskAgainInTheCurrentSession]
+"Больше не спрашивать в текущей сессии"
+//[MCompletionHistoryTitle]
+"История"
+//[MCompletionEnvironmentTitle]
+"Окружение"
+//[MCompletionFilesTitle]
+"Файлы"
+//[MObjectLockedReason]
+"Объект {0} в:"
+//[MObjectLockedReasonPlayed]
+"воспроизводится"
+//[MObjectLockedReasonEdited]
+"редактируется"
+//[MObjectLockedReasonOpened]
+"открыт"
+//[MObjectLockedAndMore]
+"и ещё {0} процессах"
+//[MObjectLockedSwitchTo]
+"Переключиться"
+//[MObjectLockedClose]
+"Закрыть файл"
+//[MObjectLockedReasonSessionMismatch]
+"Один или несколько процессов выполняются в другом сеансе служб терминалов."
+//[MObjectLockedReasonCriticalProcess]
+"Один или несколько процессов являются критическими процессами."
+//[MObjectLockedReasonCriticalService]
+"Одна или несколько служб являются критическими службами."
+//[MObjectLockedReasonDetectedSelf]
+"Файл открыт текущим процессом."
+//[MProblemDb]
+"Проблемы с БД настроек"
+//[MShowConfigFolders]
+"Показать каталоги настроек"
+//[MBadLanguageFile]
+"Некорректный языковой файл"
+//[MLanguageStringNotFound]
+"Строка {0} не найдена"
+// keys
+//[MKeyLaunchMediaSelect]
+""
+//[MKeyBrowserFavorites]
+""
+//[MKeyMediaPrevTrack]
+""
+//[MKeyMediaPlayPause]
+""
+//[MKeyMediaNextTrack]
+""
+//[MKeyBrowserRefresh]
+""
+//[MKeyBrowserForward]
+""
+//[MKeyBrowserSearch]
+""
+//[MKeyMswheelRight]
+""
+//[MKeyMswheelDown]
+""
+//[MKeyMswheelLeft]
+""
+//[MKeyBrowserStop]
+""
+//[MKeyBrowserHome]
+""
+//[MKeyBrowserBack]
+""
+//[MKeyVolumeMute]
+""
+//[MKeyVolumeDown]
+""
+//[MKeyScrolllock]
+""
+//[MKeyLaunchMail]
+""
+//[MKeyLaunchApp2]
+""
+//[MKeyLaunchApp1]
+""
+//[MKeyMswheelUp]
+""
+//[MKeyMediaStop]
+""
+//[MKeyBackslash]
+""
+//[MKeyMsm1click]
+""
+//[MKeyMsm2click]
+""
+//[MKeyMsm3click]
+""
+//[MKeyMslclick]
+""
+//[MKeyMsrclick]
+""
+//[MKeyVolumeUp]
+""
+//[MKeySubtract]
+"Gray -"
+//[MKeyNumenter]
+""
+//[MKeyMultiply]
+"Gray *"
+//[MKeyCapslock]
+""
+//[MKeyPrntscrn]
+""
+//[MKeyNumlock]
+""
+//[MKeyDecimal]
+""
+//[MKeyStandby]
+""
+//[MKeyDivide]
+""
+//[MKeyNumdel]
+""
+//[MKeySpace]
+""
+//[MKeyRight]
+""
+//[MKeyPause]
+""
+//[MKeyEnter]
+""
+//[MKeyClear]
+""
+//[MKeyBreak]
+""
+//[MKeyPgup]
+""
+//[MKeyPgdn]
+""
+//[MKeyLeft]
+""
+//[MKeyHome]
+""
+//[MKeyDown]
+""
+//[MKeyApps]
+""
+//[MKeyRwin]
+""
+//[MKeyNumpad9]
+""
+//[MKeyNumpad8]
+""
+//[MKeyNumpad7]
+""
+//[MKeyNumpad6]
+""
+//[MKeyNumpad5]
+""
+//[MKeyNumpad4]
+""
+//[MKeyNumpad3]
+""
+//[MKeyNumpad2]
+""
+//[MKeyNumpad1]
+""
+//[MKeyNumpad0]
+""
+//[MKeyLwin]
+""
+//[MKeyTab]
+""
+//[MKeyIns]
+""
+//[MKeyF10]
+""
+//[MKeyF11]
+""
+//[MKeyF12]
+""
+//[MKeyF13]
+""
+//[MKeyF14]
+""
+//[MKeyF15]
+""
+//[MKeyF16]
+""
+//[MKeyF17]
+""
+//[MKeyF18]
+""
+//[MKeyF19]
+""
+//[MKeyF20]
+""
+//[MKeyF21]
+""
+//[MKeyF22]
+""
+//[MKeyF23]
+""
+//[MKeyF24]
+""
+//[MKeyEsc]
+""
+//[MKeyEnd]
+""
+//[MKeyDel]
+""
+//[MKeyAdd]
+"Gray +"
+//[MKeyUp]
+""
+//[MKeyF9]
+""
+//[MKeyF8]
+""
+//[MKeyF7]
+""
+//[MKeyF6]
+""
+//[MKeyF5]
+""
+//[MKeyF4]
+""
+//[MKeyF3]
+""
+//[MKeyF2]
+""
+//[MKeyF1]
+""
+//[MKeyBs]
+""
+//[MKeyBackbracket]
+""
+//[MKeyQuote]
+""
+//[MKeyBracket]
+""
+//[MKeyColon]
+""
+//[MKeySemicolon]
+""
+//[MKeySlash]
+""
+//[MKeyDot]
+""
+//[MKeyComma]
+""
+//[MKeyRCtrl]
+""
+//[MKeyShift]
+""
+//[MKeyCtrl]
+""
+//[MKeyRAlt]
+""
+// keys end
+//[MKeyAlt]
+""
+
+//[MNewFileName]
+"?Новый файл?"
