@@ -8,7 +8,6 @@
 <!ENTITY catalog-console SYSTEM "hrd/catalog-console.xml">
 <!ENTITY catalog-rgb SYSTEM "hrd/catalog-rgb.xml">
 <!ENTITY catalog-text SYSTEM "hrd/catalog-text.xml">
-<!ENTITY catalog-user SYSTEM "hrd/catalog-user.xml">
 
 ]>
 
@@ -30,8 +29,6 @@
     &catalog-rgb;
 
     &catalog-text;
-
-    &catalog-user;
   </hrd-sets>
 
 </catalog>

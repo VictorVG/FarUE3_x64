@@ -230,13 +230,13 @@ $# Using a plugin in macros
            Plugin.Call("D2F36B62-A470-418D-83A3-ED7A3710E5B5",1)
 
          Or a string value:
-             "status" - work with the plug-in status.
-             Plugin.Call (Guid, "status")
-             If the second parameter is missing, it returns the status of the plugin activity.
-
-             Plugin.Call (Guid, "status", new_status)
-             If the second parameter is true/false, or it corresponds to an integer value, the plugin will be transferred to the specified status.
-             Return Value true/false indicates success of the command.
+           "status" - work with the plug-in status.
+             plugin.call (Guid, "status")
+             If the second parameter is missing, it returns the status of the plugin activity.
+            
+             plugin.call (Guid, "status", new_status)
+             If the second parameter is true/false, or it corresponds to an integer value, the plugin will be transferred to the specified status.
+             Return Value true/false indicates success of the command.
 
 @hrd
 $# Color style selection
