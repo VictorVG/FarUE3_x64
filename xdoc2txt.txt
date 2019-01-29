@@ -1,5 +1,7 @@
 xdoc2txt2 - Extract text from various binary documents such as PDF, WORD, EXCEL, Ichitaro
 
+URL: http://ebstudio.info/home/xdoc2txt.html
+
 Overview
 
 - Xdoc2txt extracts text elements from various binary documents such as PDF, WORD, EXCEL, Ichitaro
@@ -100,7 +102,7 @@ xdoc2txt.exe [options ..] <filename ...>
 -f Output the conversion result to a file. Output to standard output by default
 -p Display document properties (valid for MS Office, OpenOffice.org, Ichitaro)
 -r = Ruby conversion of HTML document
--r = 0 ruby â€‹â€‹deleted
+-r = 0 ruby deleted
 -r = 1 ()
 -r = 2 "" Aozora Bunko Format
 -o = other options
@@ -370,12 +372,12 @@ History
 2.00 Î² 2 2012/12/19 - Correct bug that end abnormally with some .odt
 - Corrected bug that terminates abnormally with length 0 doc
 2.00Î²1 2012/12/01 - Version resource added to xdoc2txt.exe (to distinguish it from 1.x series)
-2.00 Î 0 2012/11/26 - Fixed problem of freezing with some PDF
-2.00 Î 3 2012/11/17 - fixed problem that entity reference was not interpreted in Office 2007/2010 document
-2.00 Î 2 2012/11/15 - Add VC ++ sample, make the argument order of DLL version same as COM version.
-2.00Î.1 2012/11/14 - Added COM Dll version
+2.00 Î 0 2012/11/26 - Fixed problem of freezing with some PDF
+2.00 Î 3 2012/11/17 - fixed problem that entity reference was not interpreted in Office 2007/2010 document
+2.00 Î 2 2012/11/15 - Add VC ++ sample, make the argument order of DLL version same as COM version.
+2.00Î®1 2012/11/14 - Added COM Dll version
 
-2.00 Î 0 2012/11/13 - Perform internal Unicode. Changed the compiler from VC ++ 6.0 to VC ++ 2008.
+2.00 Î 0 2012/11/13 - Perform internal Unicode. Changed the compiler from VC ++ 6.0 to VC ++ 2008.
 - Added -u (UTF 16) and - 8 (UTF 8) as output options
 - Supports iFilter (-i option).
 Even if the extension xdoc2txt does not support natively,
