@@ -1,4 +1,5 @@
 Usage: curl [options...] <url>
+
      --abstract-unix-socket <path> Connect via abstract Unix domain socket
      --anyauth       Pick any authentication method
  -a, --append        Append to target file when uploading
@@ -64,6 +65,7 @@ Usage: curl [options...] <url>
  -H, --header <header/@file> Pass custom header(s) to server
  -h, --help          This help text
      --hostpubmd5 <md5> Acceptable MD5 hash of the host public key
+     --http0.9       Allow HTTP 0.9 responses
  -0, --http1.0       Use HTTP 1.0
      --http1.1       Use HTTP 1.1
      --http2         Use HTTP 2
@@ -181,7 +183,7 @@ Usage: curl [options...] <url>
  -y, --speed-time <seconds> Trigger 'speed-limit' abort after this time
      --ssl           Try SSL/TLS
      --ssl-allow-beast Allow security flaw to improve interop
-     --ssl-no-revoke Disable cert revocation checks (WinSSL)
+     --ssl-no-revoke Disable cert revocation checks (Schannel)
      --ssl-reqd      Require SSL/TLS
  -2, --sslv2         Use SSLv2
  -3, --sslv3         Use SSLv3
