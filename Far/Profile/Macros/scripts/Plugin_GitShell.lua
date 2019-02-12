@@ -1,4 +1,4 @@
--- VictorVG @ VikSoft.Ru, 1996 - 2018
+-- VictorVG @ VikSoft.Ru, 1996 - 2019
 --
 -- v1.0, Initial release
 -- 19.02.2018  02:01:28 +0300
@@ -8,6 +8,9 @@
 --
 -- v1.2, Add new macros for GitShell command, refactoring.
 -- 06.03.2018 06.03.2018 06:10:12 +0300
+--
+-- v1.3, BugFix, update copyright
+-- 12.02.2019 03:56:59 +0300
 
 local GSID  = "BE0B1498-4234-4BE1-B257-7653CAF4F091";
 local GSMID = "0B7813BD-DEC1-4866-B20E-F5C49FF4AFA0";
@@ -61,5 +64,5 @@ Macro{
   area="Shell";
   key="AltShiftL";
   description="GitShell current file history";
-  action=function() Far.DisableHistory(-1) Plugin.Command(GSID,'log'..APanel.Current) end;
+  action=function() Far.DisableHistory(-1) Plugin.Command(GSID,'log '..APanel.Current) end;
 }
