@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<farconfig version="3.0.5344">
+<farconfig version="3.0.5365">
 	<generalconfig>
 		<setting key="Cmdline" name="AutoComplete" type="qword" value="0000000000000001"/>
 		<setting key="Cmdline" name="DelRemovesBlocks" type="qword" value="0000000000000001"/>
@@ -481,7 +481,8 @@
 		<object name="WarnDialog.List.Title" background="FF000004" foreground="FF00000F" flags="fg4bit bg4bit"/>
 		<object name="WarnDialog.Text" background="FF000004" foreground="FF00000F" flags="fg4bit bg4bit"/>
 		<object name="WarnDialog.Text.Highlight" background="FF000004" foreground="FF00000E" flags="fg4bit bg4bit"/>
-	</colors><associations>
+	</colors>
+	<associations>
 		<filetype mask="*.pdf" description="Adobe PDF">
 			<command type="0" enabled="1" command="&quot;!=\!.!&quot;"/>
 			<command type="1" enabled="1" command="observe:&quot;!=\!.!&quot;"/>
@@ -1146,7 +1147,8 @@
 				</key>
 			</key>
 		</hierarchicalconfig>
-	</highlight><panelmodes>
+	</highlight>
+	<panelmodes>
 		<hierarchicalconfig>
 			<key name="0">
 				<value name="ColumnTitles" type="text" value="NM,SC,D"/>
@@ -1677,7 +1679,7 @@
 					<value name="asempty" type="qword" value="0000000000000000"/>
 					<value name="case" type="qword" value="0000000000000000"/>
 					<value name="comparation" type="qword" value="0000000000000001"/>
-					<value name="invert" type="qword" value="0000000000000001"/>
+					<value name="invert" type="qword" value="0000000000000000"/>
 					<value name="numeric" type="qword" value="0000000000000000"/>
 					<value name="selection" type="qword" value="0000000000000001"/>
 					<value name="whitespace" type="text" value=" "/>
@@ -2747,11 +2749,16 @@
 				<key name="C5508DDB-5175-4736-9A10-C8F6EED7B32F" description="MultiArc"/>
 			</hierarchicalconfig>
 		</plugin>
+		<plugin guid="C58ECBF9-8C61-486A-8B5F-C3B3060CAE8E">
+			<hierarchicalconfig>
+				<key name="C58ECBF9-8C61-486A-8B5F-C3B3060CAE8E" description="Json"/>
+			</hierarchicalconfig>
+		</plugin>
 		<plugin guid="CDF48DA0-0334-4169-8453-69048DD3B51C">
 			<hierarchicalconfig>
 				<key name="CDF48DA0-0334-4169-8453-69048DD3B51C" description="FarHints">
-					<value name="AutoKey" type="qword" value="0000000000000001"/>
-					<value name="AutoMouse" type="qword" value="0000000000000001"/>
+					<value name="AutoKey" type="qword" value="0000000000000000"/>
+					<value name="AutoMouse" type="qword" value="0000000000000000"/>
 					<value name="FarHintsInDialog" type="qword" value="0000000000000001"/>
 					<value name="HintInPanel" type="qword" value="0000000000000001"/>
 					<value name="IconOnThumbnail" type="qword" value="0000000000000001"/>
@@ -2797,8 +2804,12 @@
 					<value name="TrueMod" type="qword" value="0000000000000001"/>
 					<value name="UserHrcPath" type="text" value=""/>
 					<value name="UserHrdPath" type="text" value=""/>
-					<key name="HrcSettings"/>
-				</key>
+					<key name="HrcSettings">
+        				<key name="default">
+	 						<value name="backparse" type="text" value="60000"/>
+						</key>
+					</key>
+                  </key>
 			</hierarchicalconfig>
 		</plugin>
 		<plugin guid="D4BC5EA7-8229-4FFE-AAC1-5A4F51A0986A">
@@ -3099,6 +3110,11 @@
 					<value name="add_to_panel_menu" type="qword" value="0000000000000001"/>
 					<value name="cmd_prefix" type="text" value="FileUnlock"/>
 				</key>
+			</hierarchicalconfig>
+		</plugin>
+		<plugin guid="F9E265F9-B0FE-43B6-AA17-F5AA7830D86C">
+			<hierarchicalconfig>
+				<key name="F9E265F9-B0FE-43B6-AA17-F5AA7830D86C" description="Name editor"/>
 			</hierarchicalconfig>
 		</plugin>
 	</pluginsconfig>
