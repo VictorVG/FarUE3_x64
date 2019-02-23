@@ -1,6 +1,6 @@
 ﻿.Language=Russian,Russian (Русский)
 
-//Version: 3.0 build 5365
+//Version: 3.0 build 5368
 
 //[MYes]
 "Да"
@@ -1028,10 +1028,13 @@
 "Вы хотите перезаписать его?"
 //[MEditSaving]
 "Сохранение файла"
+// Up to 3 characters
 //[MEditStatusLine]
 "Стр"
+// Up to 3 characters
 //[MEditStatusCol]
 "Кол"
+// Up to 2 characters
 //[MEditStatusChar]
 "С"
 
@@ -3632,6 +3635,7 @@
 "Просмотр"
 //[MViewerCannotOpenFile]
 "Ошибка открытия файла"
+// Up to 3 characters
 //[MViewerStatusCol]
 "Кол"
 

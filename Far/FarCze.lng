@@ -1,6 +1,6 @@
 ﻿.Language=Czech,Czech (Čeština)
 
-//Version: 3.0 build 5365
+//Version: 3.0 build 5368
 
 //[MYes]
 "Ano"
@@ -1078,12 +1078,15 @@
 "Přejete si ho přepsat?"
 //[MEditSaving]
 "Ukládám soubor"
+// Up to 3 characters
 //[MEditStatusLine]
-"Řádek"
+"Řdk"
+// Up to 3 characters
 //[MEditStatusCol]
-"Sloupec"
+"Slp"
+// Up to 2 characters
 //[MEditStatusChar]
-"Znak"
+"Zn"
 
 //[MEditRSH]
 "je soubor určen pouze pro čtení"
@@ -3710,8 +3713,9 @@
 "Prohlížeč"
 //[MViewerCannotOpenFile]
 "Nelze otevřít soubor"
+// Up to 3 characters
 //[MViewerStatusCol]
-"Sloupec"
+"Slp"
 
 //[MViewSearchTitle]
 "Hledat"

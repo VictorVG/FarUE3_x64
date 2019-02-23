@@ -1,6 +1,6 @@
 ﻿.Language=Ukrainian,Ukrainian (Українська)
 
-//Version: 3.0 build 5365
+//Version: 3.0 build 5368
 
 //[MYes]
 "Так"
@@ -1028,12 +1028,15 @@
 "Ви бажаєте перезаписати його?"
 //[MEditSaving]
 "Збереження файлу"
+// Up to 3 characters
 //[MEditStatusLine]
-"Рядок"
+"Ряд"
+// Up to 3 characters
 //[MEditStatusCol]
-"Поз."
+"Кол"
+// Up to 2 characters
 //[MEditStatusChar]
-"З"
+"См"
 
 //[MEditRSH]
 "призначено лише для читання"
@@ -3632,8 +3635,9 @@
 "Перегляд"
 //[MViewerCannotOpenFile]
 "Помилка відкриття файлу"
+// Up to 3 characters
 //[MViewerStatusCol]
-"Кіл"
+"Кол"
 
 //[MViewSearchTitle]
 "Пошук"

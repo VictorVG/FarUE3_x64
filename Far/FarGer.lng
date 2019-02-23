@@ -1,6 +1,6 @@
 ﻿.Language=German,German (Deutsch)
 
-//Version: 3.0 build 5365
+//Version: 3.0 build 5368
 
 //[MYes]
 "Ja"
@@ -1047,14 +1047,17 @@
 "Wollen Sie die Datei überschreiben?"
 //[MEditSaving]
 "Speichere die Datei"
+// Up to 3 characters
 // need translation:
 //[MEditStatusLine]
-"Zeile"
+"Zei"
+// Up to 3 characters
 // need translation:
 //[MEditStatusCol]
-"Spal"
+"Spl"
+// Up to 2 characters
 //[MEditStatusChar]
-"Symbol"
+"Sm"
 
 //[MEditRSH]
 "ist eine schreibgeschützte Datei"
@@ -3709,8 +3712,10 @@
 "Betrachter"
 //[MViewerCannotOpenFile]
 "Kann Datei nicht öffnen"
+// Up to 3 characters
+// need translation:
 //[MViewerStatusCol]
-"Spalte"
+"Spl"
 
 //[MViewSearchTitle]
 "Durchsuchen"

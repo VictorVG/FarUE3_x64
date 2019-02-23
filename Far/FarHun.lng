@@ -1,6 +1,6 @@
 ﻿.Language=Hungarian,Hungarian (Magyar)
 
-//Version: 3.0 build 5365
+//Version: 3.0 build 5368
 
 //[MYes]
 "Igen"
@@ -1135,12 +1135,15 @@
 "Felül akarja írni?"
 //[MEditSaving]
 "Fájl mentése"
+// Up to 3 characters
 // need translation:
 //[MEditStatusLine]
 "Sor"
+// Up to 3 characters
 // need translation:
 //[MEditStatusCol]
-"Oszlop"
+"Osz"
+// Up to 2 characters
 // need translation:
 //[MEditStatusChar]
 "Ch"
@@ -3883,8 +3886,10 @@
 "Nézőke"
 //[MViewerCannotOpenFile]
 "A fájl nem nyitható meg"
+// Up to 3 characters
+// need translation:
 //[MViewerStatusCol]
-"Oszlop"
+"Osz"
 
 //[MViewSearchTitle]
 "Keresés"

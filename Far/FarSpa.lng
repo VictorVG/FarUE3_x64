@@ -1,6 +1,6 @@
 ﻿.Language=Spanish,Spanish (Español)
 
-//Version: 3.0 build 5365
+//Version: 3.0 build 5368
 
 //[MYes]
 "Si"
@@ -1031,10 +1031,13 @@
 "Desea sobrescribirlo?"
 //[MEditSaving]
 "Guardando el archivo"
+// Up to 3 characters
 //[MEditStatusLine]
-"Línea"
+"Lín"
+// Up to 3 characters
 //[MEditStatusCol]
 "Col"
+// Up to 2 characters
 //[MEditStatusChar]
 "Ch"
 
@@ -3640,6 +3643,7 @@
 "Visor"
 //[MViewerCannotOpenFile]
 "No se puede abrir el archivo"
+// Up to 3 characters
 //[MViewerStatusCol]
 "Col"
 
