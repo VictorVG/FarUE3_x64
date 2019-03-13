@@ -18,7 +18,6 @@
 
 //[MCancel]
 "Anuluj"
-// need translation:
 //[MReset]
 "&Reset"
 //[MRetry]
@@ -147,9 +146,8 @@
 "Nazwa"
 //[MCtrlF4]
 "Rozsz"
-// need translation:
 //[MCtrlF5]
-"Write"
+"Zapis"
 //[MCtrlF6]
 "Rozm"
 //[MCtrlF7]
@@ -274,9 +272,8 @@
 "Historia"
 //[MFolderHistoryTitle]
 "Historia katalogów"
-// need translation:
 //[MViewHistoryTitle]
-"Historia podglądu plików"
+"Historia podglądu i edycji plików"
 //[MViewHistoryIsCreate]
 "Utworzyć plik?"
 //[MHistoryView]
@@ -301,9 +298,8 @@
 "Kopiuj pliki otwarte do zap&isu"
 //[MConfigScanJunction]
 "Skanuj linki s&ymboliczne"
-// need translation:
 //[MConfigSmartFolderMonitor]
-"Update panels only when Far is active"
+"Aktualizuj panele tylko gdy okno Far jest aktywne"
 //[MConfigSaveHistory]
 "Zapisz historię &poleceń"
 //[MConfigSaveFoldersHistory]
@@ -312,76 +308,56 @@
 "Zapisz historię podglądu i &edycji"
 //[MConfigRegisteredTypes]
 "Użyj zare&jestrowanych typów Windows"
-// need translation:
 //[MConfigUpdateEnvironment]
-"Automatic update of environment variables"
-// need translation:
+"Automatyczna aktuzalizacja zmiennych systemowych"
 //[MConfigElevation]
-"request administrator rights:"
-// need translation:
+"wymagane uprawnienia administratora:"
 //[MConfigElevationModify]
-"for modification"
-// need translation:
+"do modyfikacji"
 //[MConfigElevationRead]
-"for read"
-// need translation:
+"do odczytu"
 //[MConfigElevationUsePrivileges]
-"use additional privileges"
-// need translation:
+"użyj dodatkowych uprawnień"
 //[MConfigSortingCollation]
-"Sorting collation:"
+"Sposoby sortowania:"
 // need translation:
 //[MConfigSortingOrdinal]
-"ordinal"
-// need translation:
+"porządkowe"
 //[MConfigSortingInvariant]
-"invariant"
-// need translation:
+"bez ustawień regionalnych"
 //[MConfigSortingLinguistic]
-"linguistic"
-// need translation:
+"językowo"
 //[MConfigSortingDigitsAsNumbers]
-"Treat digits as numbers"
+"Traktuj cyfry jak liczby"
 //[MConfigSortingCase]
 "&Uwzględnij wielkość liter"
 //[MConfigAutoSave]
 "Automatycznie &zapisuj ustawienia"
 
-// need translation:
 //[MConfigTreeTitle]
-"Tree settings"
+"Ustawienia drzewa"
 //[MConfigTreeAutoChange]
 "&Automatycznie zmieniaj katalog"
-// need translation:
 //[MConfigTreeLabelMinFolder]
-"&Minimum number of folders:"
-// need translation:
+"&Minimalna liczba folderów:"
 //[MConfigTreeLabel1]
-"Store a file with folder structure for:"
-// need translation:
+"Zapisz plik ze strukturą folderów dla:"
 //[MConfigTreeLabelLocalDisk]
-"local drives"
-// need translation:
+"dysków lokalnych"
 //[MConfigTreeLabelNetDisk]
-"network drives"
-// need translation:
+"dysków sieciowych"
 //[MConfigTreeLabelNetPath]
-"network paths"
-// need translation:
+"ścieżek sieciowych"
 //[MConfigTreeLabelRemovableDisk]
-"removable drives"
-// need translation:
+"dysków wyjmowalnych"
 //[MConfigTreeLabelCDDisk]
-"optical drives"
-// need translation:
+"napędów optycznych"
 //[MConfigTreeLabelExceptPath]
-"Don't create the file for following drives and paths:"
-// need translation:
+"Nie twórz plików dla poniższych dysków i ścieżek:"
 //[MConfigTreeLabelSaveLocalPath]
-"Path for local, removale and optical drives:"
-// need translation:
+"Ścieżka dla dysków lokalnych, wyjmowalnych i optycznych:"
 //[MConfigTreeLabelSaveNetPath]
-"Path for network drives and paths:"
+"Ścieżka dla dysków i ścieżek sieciowych:"
 
 //[MConfigPanelTitle]
 "Ustawienia panelu"
@@ -391,9 +367,8 @@
 "W&yróżniaj pliki"
 //[MConfigSelectFolders]
 "Zaznaczaj katalo&gi"
-// need translation:
 //[MConfigRightClickSelect]
-"Right click selects files"
+"Prawy klik zaznacza pliki"
 //[MConfigSortFolderExt]
 "Sortuj nazwy katalogów wg r&ozszerzeń"
 //[MConfigReverseSort]
@@ -408,9 +383,8 @@
 "Wyświetl tytuły &kolumn"
 //[MConfigShowStatus]
 "Wyświetl &linię statusu"
-// need translation:
 //[MConfigDetailedJunction]
-"Detect volume mount &points"
+"Wykrywaj &punkty montowania wolumenów"
 //[MConfigShowTotal]
 "Wyświetl &całkowitą informację o plikach"
 //[MConfigShowFree]
@@ -421,9 +395,8 @@
 "Wyświetl ilość &ekranów w tle"
 //[MConfigShowSortMode]
 "Wyświetl l&iterę trybu sortowania"
-// need translation:
 //[MConfigShowDotsInRoot]
-"Show \"..\" in root folders"
+"Pokaż \"..\" w głównych folderach"
 
 //[MConfigInterfaceTitle]
 "Ustawienia interfejsu"
@@ -445,26 +418,20 @@
 "Pokaż &całkowity postęp kopiowania"
 //[MConfigCopyTimeRule]
 "Pokaż informację o c&zasie kopiowania"
-// need translation:
 //[MConfigDeleteTotal]
-"Show total delete progress indicator"
+"Pokaż całkowity postęp &usuwania"
 //[MConfigPgUpChangeDisk]
 "Użyj Ctrl+Pg&Up do zmiany napędu"
-// need translation:
 //[MConfigUseVirtualTerminalForRendering]
-"Use Virtual Terminal for rendering"
-// need translation:
+"Użyj Terminalu Wirtualnego do renderowania"
 //[MConfigClearType]
-"ClearType-friendly redraw (can be slow)"
-// need translation:
+"Rysowanie zgodne z ClearType (może być wolniejsze)"
 //[MConfigSetConsoleIcon]
-"Set console icon"
-// need translation:
+"Ustaw ikonę konsoli"
 //[MConfigSetAdminConsoleIcon]
-"Alternate for Administrator"
-// need translation:
+"Inna dla Administratora"
 //[MConfigTitleAddons]
-"Far window title addons:"
+"Okno tytułowe Far:"
 
 //[MConfigDlgSetsTitle]
 "Ustawienia okien dialogowych"
@@ -481,146 +448,103 @@
 //[MConfigDialogsMouseButton]
 "&Kliknięcie myszy poza oknem zamyka je"
 
-// need translation:
 //[MConfigVMenuTitle]
-"Menu settings"
-// need translation:
+"Ustawienia menu"
 //[MConfigVMenuLBtnClick]
-"Left mouse click outside a menu"
-// need translation:
+"Kliknięcie lewym przyciskiem myszy poza menu"
 //[MConfigVMenuRBtnClick]
-"Right mouse click outside a menu"
-// need translation:
+"Kliknięcie prawym przyciskiem myszy poza menu"
 //[MConfigVMenuMBtnClick]
-"Middle mouse click outside a menu"
-// need translation:
+"Kliknięcie środkowym przyciskiem myszy poza menu"
 //[MConfigVMenuClickCancel]
-"Cancel menu"
-// need translation:
+"Anuluj menu"
 //[MConfigVMenuClickApply]
-"Execute selected item"
-// need translation:
+"Uruchom wybraną opcję"
 //[MConfigVMenuClickIgnore]
-"Do nothing"
+"Nic nie rób"
 
-// need translation:
 //[MConfigCmdlineTitle]
-"Command line settings"
-// need translation:
+"Ustawienia linii poleceń"
 //[MConfigCmdlineEditBlock]
-"Persistent blocks"
-// need translation:
+"&Trwałe bloki"
 //[MConfigCmdlineDelRemovesBlocks]
-"Del removes blocks"
-// need translation:
+"Usuwaj bloki klawiszem &Del"
 //[MConfigCmdlineAutoComplete]
-"AutoComplete"
+"&AutoUzupełnianie"
 //[MConfigCmdlineUsePromptFormat]
 "Wy&gląd znaku zachęty linii poleceń"
-// need translation:
 //[MConfigCmdlineUseHomeDir]
-"Use &home dir"
-// need translation:
+"&Użyj folderu domowego"
 //[MConfigCmdlinePromptFormatAdmin]
 "Administrator"
 
-// need translation:
 //[MConfigAutoCompleteTitle]
-"AutoComplete settings"
+"Ustawienie AutoUzupełniania"
 
-// need translation:
 //[MConfigAutoCompleteShowList]
-"&Show a list"
+"&Pokaż listę"
 
-// need translation:
 //[MConfigAutoCompleteModalList]
-"&Modal mode"
+"Tryb &modalny"
 
-// need translation:
 //[MConfigAutoCompleteAutoAppend]
-"&Append the first matched item"
+"&Dołącz piewrszy pasujący element"
 
-// need translation:
 //[MConfigInfoPanelTitle]
-"InfoPanel settings"
-// need translation:
+"Ustawienia panelu informacyjnego"
 //[MConfigInfoPanelCNTitle]
-"Computer &name format"
-// need translation:
+"Format nazwy &komputera"
 //[MConfigInfoPanelCNPhysicalNetBIOS]
-"Physical NetBIOS"
-// need translation:
+"Fizyczna nazwa z NetBIOS"
 //[MConfigInfoPanelCNPhysicalDnsHostname]
-"Physical DNS hostname"
-// need translation:
+"Fizyczna nazwa z DNS"
 //[MConfigInfoPanelCNPhysicalDnsDomain]
-"Physical DNS domain"
-// need translation:
+"Fizyczna domena z DNS"
 //[MConfigInfoPanelCNPhysicalDnsFullyQualified]
-"Physical DNS fully-qualified"
+"Fizyczny DNS (FQDN)"
 //[MConfigInfoPanelCNNetBIOS]
 "NetBIOS"
-// need translation:
 //[MConfigInfoPanelCNDnsHostname]
-"DNS hostname"
-// need translation:
+"Nazwa z DNS"
 //[MConfigInfoPanelCNDnsDomain]
-"DNS domain"
-// need translation:
+"Domena z DNS"
 //[MConfigInfoPanelCNDnsFullyQualified]
-"DNS fully-qualified"
-// need translation:
+"Wpis z DNS (FQDN)"
 //[MConfigInfoPanelUNTitle]
-"&User name format"
-// need translation:
+"Format nazwy &użytkownika"
 //[MConfigInfoPanelUNFullyQualifiedDN]
-"Fully Qualified Domain Name"
-// need translation:
+"Pełna nazwa domenowa (FQDN)"
 //[MConfigInfoPanelUNSamCompatible]
-"Sam Compatible"
-// need translation:
+"Zgodna z SAM"
 //[MConfigInfoPanelUNDisplay]
-"Display Name"
-// need translation:
+"Nazwa wyświetlana"
 //[MConfigInfoPanelUNUniqueId]
-"Unique Id"
-// need translation:
+"Unikalne ID"
 //[MConfigInfoPanelUNCanonical]
-"Canonical Name"
-// need translation:
+"Nazwa kanoniczna (z domeny)"
 //[MConfigInfoPanelUNUserPrincipal]
-"User Principial Name"
-// need translation:
+"Nazwa zalogowanego użytkownika (UPN)"
 //[MConfigInfoPanelUNServicePrincipal]
-"Service Principal"
-// need translation:
+"Główna usługa"
 //[MConfigInfoPanelUNDnsDomain]
-"DNS Domain"
-// need translation:
+"Domena DNS"
 //[MConfigInfoPanelShowPowerStatus]
-"Show &power status"
-// need translation:
+"Pokaż status &zasilania"
 //[MConfigInfoPanelShowCDInfo]
-"Show &CD drive parameters"
+"Pokaż parametry dysku &CD"
 
-// need translation:
 //[MMenuInfoShowModeTitle]
-"Show Info"
-// need translation:
+"Pokaż Info"
 //[MMenuInfoShowModeDisk]
-"&Disk"
-// need translation:
+"&Dysk"
 //[MMenuInfoShowModeMemory]
-"&Memory"
-// need translation:
+"&Pamięć"
 //[MMenuInfoShowModeDirDiz]
-"&Description"
-// need translation:
+"&Opis"
 //[MMenuInfoShowModePluginDiz]
-"Plu&gin panel"
-// need translation:
+"Panel &wtyczek"
 //[MMenuInfoShowModePower]
-"&Power status"
+"Status &zasilania"
 
 //[MViewConfigTitle]
 "Podgląd"
@@ -868,7 +792,7 @@
 //[MCopyCannotCreateVolMount]
 "Błąd montowania napędu"
 //[MCopyMountVolFailed]
-"Nie udało się zamontować woluminu '{0}'"
+"Nie udało się wać woluminu '{0}'"
 //[MCopyMountVolFailed2]
 "w '{0}' nie udało się"
 //[MCopyMountName]
@@ -3229,7 +3153,7 @@
 //[MSetAttrSymlink]
 "Link:"
 //[MSetAttrVolMount]
-"Punkt zamontowania:"
+"Wolumen:"
 // need translation:
 //[MSetAttrDfsTargets]
 "DFS Targets"
