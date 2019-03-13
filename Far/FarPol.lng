@@ -271,7 +271,7 @@
 //[MHistoryTitle]
 "Historia"
 //[MFolderHistoryTitle]
-"Historia katalogów"
+"Historia folderów"
 //[MViewHistoryTitle]
 "Historia podglądu i edycji plików"
 //[MViewHistoryIsCreate]
@@ -303,7 +303,7 @@
 //[MConfigSaveHistory]
 "Zapisz historię &poleceń"
 //[MConfigSaveFoldersHistory]
-"Zapisz historię &katalogów"
+"Zapisz historię &folderów"
 //[MConfigSaveViewHistory]
 "Zapisz historię podglądu i &edycji"
 //[MConfigRegisteredTypes]
@@ -337,7 +337,7 @@
 //[MConfigTreeTitle]
 "Ustawienia drzewa"
 //[MConfigTreeAutoChange]
-"&Automatycznie zmieniaj katalog"
+"&Automatycznie zmieniaj folder"
 //[MConfigTreeLabelMinFolder]
 "&Minimalna liczba folderów:"
 //[MConfigTreeLabel1]
@@ -370,7 +370,7 @@
 //[MConfigRightClickSelect]
 "Prawy klik zaznacza pliki"
 //[MConfigSortFolderExt]
-"Sortuj nazwy katalogów wg r&ozszerzeń"
+"Sortuj nazwy folderów wg r&ozszerzeń"
 //[MConfigReverseSort]
 "Włącz &możliwość odwrotnego sortowania"
 //[MConfigAutoUpdateLimit]
@@ -547,10 +547,10 @@
 "Status &zasilania"
 
 //[MViewConfigTitle]
-"Podgląd"
+"Ustawienia podglądu plików"
 // need translation:
 //[MViewConfigExternalF3]
-"Use external viewer for F3 instead of Alt+F3"
+"Użyj zewnętrznego podglądu pod klawiszem F3 zamiast Alt+F3"
 //[MViewConfigExternalCommand]
 "&Polecenie:"
 //[MViewConfigInternal]
@@ -559,20 +559,16 @@
 "&Zapamiętaj pozycję w pliku"
 //[MViewConfigSaveShortPos]
 "Zapisz z&akładki"
-// need translation:
 //[MViewConfigSaveCodepage]
-"Save file &code page"
-// need translation:
+"Zapisz &stronę kodową pliku"
 //[MViewConfigSaveWrapMode]
-"Save w&rap mode"
-// need translation:
+"Zapisz zawi&janie wierszy"
 //[MViewConfigSaveViewMode]
-"Save view mode"
-// need translation:
+"Zapisz t&ryb podglądu"
 //[MViewConfigDetectDumpMode]
-"Detect dump view mode"
+"Wykryj sposób podglądu"
 //[MViewAutoDetectCodePage]
-"Rozpozn&aj tablicę znaków"
+"Rozpozn&aj stronę kodową pliku"
 //[MViewConfigTabSize]
 "Rozmiar &tabulatora"
 //[MViewConfigScrollbar]
@@ -581,24 +577,19 @@
 "Pokaż strzał&ki przewijania"
 //[MViewConfigPersistentSelection]
 "T&rwałe zaznaczenie"
-// need translation:
 //[MViewConfigDefaultCodePage]
-"Default code page:"
-// need translation:
+"Domyślna strona kodowa:"
 //[MViewConfigMaxLineSize]
-"Maximum line width"
-// need translation:
+"Maksymalna szerokość linii"
 //[MViewConfigVisible0x00]
-"Visible '\\0'"
-// need translation:
+"Widoczne '\\0'"
 //[MViewConfigEditAutofocus]
-"Search dialog auto-focus"
+"Auto-focus okna szukania"
 
 //[MEditConfigTitle]
-"Edytor"
-// need translation:
+"Ustawienia edytora"
 //[MEditConfigEditorF4]
-"Use external editor for F4 instead of Alt+F4"
+"Użyj zewnętrznego edytora pod klawiszem F4 zamiast Alt+F4"
 //[MEditConfigEditorCommand]
 "&Polecenie:"
 //[MEditConfigInternal]
@@ -616,39 +607,35 @@
 "T&rwałe bloki"
 
 //[MEditConfigDelRemovesBlocks]
-"&Del usuwa bloki"
+"&DEL usuwa bloki"
 //[MEditConfigAutoIndent]
 "Automatyczne &wcięcia"
 //[MEditConfigSavePos]
 "&Zapamiętaj pozycję kursora w pliku"
 //[MEditConfigSaveShortPos]
-"Zapisz &zakładki"
+"Z&apisz zakładki"
 //[MEditCursorBeyondEnd]
 "&Kursor za końcem linii"
 //[MEditAutoDetectCodePage]
 "Rozpozn&aj tablicę znaków"
-// need translation:
 //[MEditShareWrite]
-"Allow editing files opened for &writing"
+"Z&ezwól na edycję plików otwartych do zapisu"
 //[MEditLockROFileModification]
-"Nie edytuj plików tylko do odczytu"
+"&Nie edytuj plików tylko do odczytu"
 //[MEditWarningBeforeOpenROFile]
 "&Ostrzeż przed otwieraniem plików tylko do odczytu"
 //[MEditConfigTabSize]
 "Rozmiar ta&bulatora"
 //[MEditConfigScrollbar]
 "Pokaż &pasek przewijania"
-// need translation:
 //[MEditShowWhiteSpace]
-"Show white space"
+"Pokaż &białe znaki"
 //[MEditConfigSelFound]
 "W&ybierz znalezione"
-// need translation:
 //[MEditConfigCursorAtEnd]
-"Cursor at the end"
-// need translation:
+"Kursor na końcu bloku"
 //[MEditConfigDefaultCodePage]
-"Default code page:"
+"Domyślna strona kodowa:"
 
 //[MSaveSetupTitle]
 "Zapisz ustawienia"
@@ -657,7 +644,7 @@
 //[MSaveSetupAsk2]
 "bieżące ustawienia?"
 //[MSaveSetup]
-"Zapisz"
+"&Zapisz"
 
 //[MCopyDlgTitle]
 "Kopiuj"
@@ -684,15 +671,15 @@
 //[MLinkType]
 "&Typ linku:"
 //[MLinkTypeJunction]
-"directory &junction"
+"&Link do folderu"
 //[MLinkTypeHardlink]
-"link &trwały"
+"Link &trwały"
 //[MLinkTypeSymlink]
-"link symboliczny"
+"Link symboliczny"
 //[MLinkTypeSymlinkFile]
-"link symboliczny (do &pliku)"
+"Link symboliczny (do &pliku)"
 //[MLinkTypeSymlinkDirectory]
-"link symboliczny (do &folderu)"
+"Link symboliczny (do &folderu)"
 //[MCopySymLinkContents]
 "&Kopiuj zawartość linków symbolicznych"
 //[MCopyMultiActions]
@@ -705,9 +692,8 @@
 "&Anuluj"
 //[MCopyDlgRename]
 "&Zmień nazwę"
-// need translation:
 //[MCopyDlgLink]
-"Create &link"
+"Utwórz &link"
 //[MCopyDlgTotal]
 "Razem"
 //[MCopyPrepareSecury]
@@ -721,27 +707,24 @@
 "Skopiuj {0} {1}:"
 //[MMoveFile]
 "Zmień nazwę lub przenieś {0} {1}:"
-// need translation:
 //[MLinkFile]
-"Create link to {0} {1}:"
+"Utwórz link do {0} {1}:"
 //[MCopyFiles]
-"Skopiuj {0} plików{1} {2}:"
+"Skopiuj {0} plik{1} {2}:"
 //[MMoveFiles]
-"Zmień nazwę lub przenieś {0} plików{1} {2}:"
-// need translation:
+"Zmień nazwę lub przenieś {0} plik{1} {2}:"
 //[MLinkFiles]
-"Create links to {0} item{1} {2}:"
+"Utwórz linki do {0} plik{1} {2}:"
 //[MCMLTargetTO]
 "d&o"
-// need translation:
 //[MCMLTargetIN]
-"&in"
+"&w"
 //[MCMLItems0]
 ""
 //[MCMLItemsA]
-"s"
+"i"
 //[MCMLItemsS]
-"s"
+"ów"
 
 //[MCopyIncorrectTargetList]
 "Błędna lista wynikowa"
@@ -755,16 +738,16 @@
 "Nie mogę odnaleźć pliku"
 
 //[MCannotCopyFolderToItself1]
-"Nie można skopiować katalogu"
+"Nie można skopiować folderu"
 //[MCannotCopyFolderToItself2]
 "do niego samego"
 
 //[MCopyCannotCreateFolder]
-"Nie udało się utworzyć katalogu"
+"Nie udało się utworzyć folderu"
 //[MCopyCannotChangeFolderAttr]
 "Nie udało się ustawić atrybutów folderu"
 //[MCopyCannotRenameFolder]
-"Nie udało się zmienić nazwy katalogu"
+"Nie udało się zmienić nazwy folderu"
 //[MCopyIgnore]
 "&Ignoruj"
 //[MCopyIgnoreAll]
@@ -792,11 +775,11 @@
 //[MCopyCannotCreateVolMount]
 "Błąd montowania napędu"
 //[MCopyMountVolFailed]
-"Nie udało się wać woluminu '{0}'"
+"Błąd montowania wolumenu '{0}'"
 //[MCopyMountVolFailed2]
-"w '{0}' nie udało się"
+"w '{0}'"
 //[MCopyMountName]
-"Disk_"
+"Dysk_"
 
 //[MCannotCopyFileToItself1]
 "Nie można skopiować pliku"
@@ -812,15 +795,12 @@
 //[MCopyStream4]
 "Nie wszystkie dane zostaną zachowane."
 
-// need translation:
 //[MCopyDirectoryOrFile]
-"Does it specify a folder name or file name?"
-// need translation:
+"Czy zawiera nazwę folderu lub pliku?"
 //[MCopyDirectoryOrFileDirectory]
 "Folder"
-// need translation:
 //[MCopyDirectoryOrFileFile]
-"File"
+"Plik"
 
 //[MCopyFileExist]
 "Plik już istnieje"
@@ -836,19 +816,16 @@
 "&Dołącz"
 //[MCopyResume]
 "Ponó&w"
-// need translation:
 //[MCopyRename]
-"R&ename"
+"Zmień &nazwę"
 //[MCopyCancelOvr]
 "&Anuluj"
 //[MCopyRememberChoice]
 "&Zapamiętaj ustawienia"
-// need translation:
 //[MCopyRenameTitle]
-"Rename"
-// need translation:
+"Zmień nazwę"
 //[MCopyRenameText]
-"&New name:"
+"&Nowa nazwa:"
 
 //[MCopyFileRO]
 "Ten plik jest tylko-do-odczytu"
@@ -883,19 +860,18 @@
 //[MCopyReadError]
 "Nie mogę odczytać danych z"
 //[MCopyWriteError]
-"Nie mogę zapisać danych do"
+"Nie mogę zapisać danych do:"
 
 //[MCopyFilesTotalInfo]
 "Plików:"
-// need translation:
 //[MCopyBytesTotalInfo]
-"Bytes:"
+"Bajtów:"
 //[MCopyMoving]
 "Przenoszę plik"
 //[MCopyCopying]
 "Kopiuję plik"
 //[MCopyTo]
-"do"
+"do:"
 
 //[MCopyErrorDiskFull]
 "Dysk pełny. Włóż następny"
@@ -903,13 +879,13 @@
 //[MDeleteTitle]
 "Usuń"
 //[MAskDeleteFolder]
-"Czy chcesz wymazać katalog"
+"Czy chcesz usunąć folder"
 //[MAskDeleteFile]
 "Czy chcesz usunąć plik"
 //[MAskDelete]
 "Czy chcesz usunąć"
 //[MAskDeleteRecycleFolder]
-"Czy chcesz przenieść katalog do Kosza"
+"Czy chcesz przenieść folder do Kosza"
 //[MAskDeleteRecycleFile]
 "Czy chcesz przenieść plik do Kosza"
 //[MAskDeleteRecycle]
@@ -917,7 +893,7 @@
 //[MDeleteWipeTitle]
 "Wymaż"
 //[MAskWipeFolder]
-"Czy chcesz wymazać katalog"
+"Czy chcesz wymazać folder"
 //[MAskWipeFile]
 "Czy chcesz wymazać plik"
 //[MAskWipe]
@@ -925,7 +901,7 @@
 //[MDeleteLinkTitle]
 "Usuń link"
 //[MAskDeleteLink]
-"jest linkiem do"
+"jest linkiem do:"
 //[MAskDeleteLinkFolder]
 "folder"
 //[MAskDeleteLinkFile]
@@ -951,32 +927,26 @@
 "Następujący folder zostanie usunięty:"
 //[MWipeFolderConfirm]
 "Następujący folder zostanie wymazany:"
-// need translation:
 //[MRecycleFolderConfirm]
-"The following folder will be moved to the Recycle Bin:"
-// need translation:
+"Następujący folder zostanie przeniesiony do Kosza:"
 //[MRecycleFolderConfirmDeleteLink1]
-"Folder contains symbolic links."
-// need translation:
+"Folder zawiera linki symboliczne."
 //[MRecycleFolderConfirmDeleteLink2]
-"To prevent the loss of their content when clearing Recyle Bin"
-// need translation:
+"Aby zapobiec utracie ich zawartości przy czyszczeniu Kosza"
 //[MRecycleFolderConfirmDeleteLink3]
-"those links will be broken now."
-// need translation:
+"linki zostaną teraz przerwane."
 //[MRecycleFolderConfirmDeleteLink4]
-"It would be impossible to restore them later."
+"Nie będzie można ich później przywrócić."
 //[MDeleteWipe]
 "Wymaż"
-// need translation:
 //[MDeleteRecycle]
-"Move"
+"Przenieś"
 //[MDeleteFileDelete]
 "&Usuń"
 //[MDeleteFileWipe]
 "&Wymaż"
 //[MDeleteFileAll]
-"&wszystkie"
+"&Wszystkie"
 //[MDeleteFileSkip]
 "&Omiń"
 //[MDeleteFileSkipAll]
@@ -991,9 +961,9 @@
 "Usuwam"
 
 //[MDeleting]
-"Usuwam plik/katalog"
+"Usuwam plik/folder"
 //[MDeletingWiping]
-"Wymazuję plik/katalog"
+"Wymazuję plik/folder"
 
 //[MDeleteRO]
 "Ten plik jest tylko do odczytu"
@@ -1012,7 +982,7 @@
 //[MCannotDeleteFile]
 "Nie mogę usunąć pliku"
 //[MCannotDeleteFolder]
-"Nie mogę usunąć katalogu"
+"Nie mogę usunąć folderu"
 //[MDeleteRetry]
 "&Ponów"
 //[MDeleteSkip]
@@ -1021,12 +991,10 @@
 "Pomiń &wszystkie"
 //[MDeleteCancel]
 "&Anuluj"
-// need translation:
 //[MCannotRecycleFile]
-"Cannot move file to the Recycle Bin"
-// need translation:
+"Nie mogę przenieść pliku do Kosza"
 //[MCannotRecycleFolder]
-"Cannot move folder to the Recycle Bin"
+"Nie mogę przenieść folderu do Kosza"
 
 //[MCannotGetSecurity]
 "Nie mogę pobrać praw dostępu dla"
@@ -1047,12 +1015,10 @@
 "Nie mogę otworzyć pliku"
 //[MEditReading]
 "Czytam plik"
-// need translation:
 //[MEditAskSave]
-"Plik został zmodyfikowany. Save?"
-// need translation:
+"Plik został zmodyfikowany. Zapisać?"
 //[MEditAskSaveExt]
-"Plik został zmieniony przez inny program. Save?"
+"Plik został zmieniony przez inny program. Zapisać?"
 //[MEditBtnSaveAs]
 "Zapisz &jako..."
 
@@ -1065,23 +1031,19 @@
 //[MEditSaving]
 "Zapisuję plik"
 // Up to 3 characters
-// need translation:
 //[MEditStatusLine]
-"lin"
+"Lin"
 // Up to 3 characters
-// need translation:
 //[MEditStatusCol]
 "Kol"
 // Up to 2 characters
-// need translation:
 //[MEditStatusChar]
-"Ch"
+"Zn"
 
 //[MEditRSH]
 "jest plikiem tylko do odczytu"
-// need translation:
 //[MEditFileGetSizeError]
-"File size could not be determined."
+"Nie mogę określić wielkości pliku."
 //[MEditFileLong]
 "ma wielkość {0},"
 //[MEditFileLong2]
@@ -1165,7 +1127,7 @@
 "&Szesnastkowo"
 
 //[MFolderShortcutsTitle]
-"Skróty katalogów"
+"Skróty folderów"
 //[MFolderShortcutBottom]
 "Edycja: Del,Ins,F4"
 //[MFolderShortcutBottomSub]
@@ -1812,11 +1774,11 @@
 //[MCompareTitle]
 "Porównaj"
 //[MCompareFilePanelsRequired1]
-"Aby porównać katalogi konieczne są"
+"Aby porównać foldery konieczne są"
 //[MCompareFilePanelsRequired2]
 "dwa zwykłe panele plików"
 //[MCompareSameFolders1]
-"Zawartość katalogów"
+"Zawartość folderów"
 //[MCompareSameFolders2]
 "wydaje się być identyczna"
 
@@ -2359,13 +2321,13 @@
 //[MSearchFromRootOfDrive]
 "Od &korzenia"
 //[MSearchFromRootFolder]
-"Od katalogu &głównego"
+"Od folderu &głównego"
 //[MSearchFromCurrent]
-"Od &bieżącego katalogu"
+"Od &bieżącego folderu"
 //[MSearchInCurrent]
-"&Tylko w bieżącym katalogu"
+"&Tylko w bieżącym folderze"
 //[MSearchInSelected]
-"W &zaznaczonych katalogach"
+"W &zaznaczonych folderach"
 //[MFindUseFilter]
 "&Filtruj"
 //[MFindUsingFilter]
@@ -2576,7 +2538,7 @@
 //[MInfoDescription]
 "Opis"
 //[MInfoDizAbsent]
-"Plik opisu katalogu nie istnieje"
+"Plik opisu folderu nie istnieje"
 //[MInfoPlugin]
 "Plugin"
 // need translation:
@@ -2645,12 +2607,12 @@
 //[MCheckComspecVar]
 "Check COMSPEC environment variable"
 //[MScanningFolder]
-"Przeszukuję katalog"
+"Przeszukuję folder"
 
 //[MMakeFolderTitle]
-"Utwórz katalog"
+"Utwórz folder"
 //[MCreateFolder]
-"Nazwa katalogu:"
+"Nazwa folderu:"
 //[MMakeFolderLinkType]
 "Typ linku:"
 // need translation:
@@ -2668,7 +2630,7 @@
 //[MIncorrectDirList]
 "Błędna lista folderów"
 //[MCannotCreateFolder]
-"Nie mogę utworzyć katalogu"
+"Nie mogę utworzyć folderu"
 
 //[MMenuBriefView]
 "&Skrótowy"
@@ -2720,7 +2682,7 @@
 //[MMenuLink]
 "Link"
 //[MMenuCreateFolder]
-"U&twórz katalog"
+"U&twórz folder"
 //[MMenuDelete]
 "&Usuń"
 //[MMenuWipe]
@@ -2757,19 +2719,19 @@
 //[MMenuViewHistory]
 "Historia &podglądu plików"
 //[MMenuFoldersHistory]
-"Historia &katalogów"
+"Historia &folderów"
 //[MMenuSwapPanels]
 "Z&amień panele"
 //[MMenuTogglePanels]
 "&Włącz/Wyłącz panele"
 //[MMenuCompareFolders]
-"Porówna&j katalogi"
+"Porówna&j foldery"
 //[MMenuUserMenu]
 "Edytuj &menu użytkownika"
 //[MMenuFileAssociations]
 "Prz&ypisania plików"
 //[MMenuFolderShortcuts]
-"&Skróty katalogów"
+"&Skróty folderów"
 //[MMenuFilter]
 "&Filtr panelu plików"
 //[MMenuPluginCommands]
@@ -2821,7 +2783,7 @@
 //[MMenuFileDescriptions]
 "Opis&y plików"
 //[MMenuFolderInfoFiles]
-"Pliki opisu &katalogu"
+"Pliki opisu &folderu"
 //[MMenuViewer]
 "Ustawienia pod&glądu"
 //[MMenuEditor]
@@ -3124,7 +3086,7 @@
 //[MQuickViewNoData]
 "(dane niedostępne)"
 //[MQuickViewFolders]
-"Katalogi:"
+"Foldery:"
 //[MQuickViewFiles]
 "Pliki:"
 //[MQuickViewBytes]
@@ -3192,7 +3154,7 @@
 //[MSetAttrNoScrubData]
 "No scrub data"
 //[MSetAttrSubfolders]
-"Przetwarzaj &podkatalogi"
+"Przetwarzaj &podfoldery"
 //[MSetAttrOwner]
 "Właściciel:"
 // need translation:
@@ -3522,7 +3484,7 @@
 //[MSetConfirmDelete]
 "&Usuwanie"
 //[MSetConfirmDeleteFolders]
-"Usuwanie &niepustych katalogów"
+"Usuwanie &niepustych folderów"
 //[MSetConfirmEsc]
 "&Przerwanie operacji"
 //[MSetConfirmRemoveConnection]
@@ -3771,9 +3733,9 @@
 //[MTreeTitle]
 "Drzewo"
 //[MCannotSaveTree]
-"Nie mogę zapisać drzewa katalogów do pliku"
+"Nie mogę zapisać drzewa folderów do pliku"
 //[MReadingTree]
-"Odczytuję drzewo katalogów"
+"Odczytuję drzewo folderów"
 
 //[MUserMenuTitle]
 "Menu użytkownika"
@@ -3970,14 +3932,14 @@
 //[MEditPanelModeAlignFolderExtensions]
 "Wyrównaj rozszerzenia &folderów"
 //[MEditPanelModeFoldersUpperCase]
-"Nazwy katalogów &WIELKIMI LITERAMI"
+"Nazwy folderów &WIELKIMI LITERAMI"
 //[MEditPanelModeFilesLowerCase]
 "&Nazwy plików małymi literami"
 //[MEditPanelModeUpperToLowerCase]
 "Wyświetl NAZWY_PLIKÓW &jako nazwy_plików"
 
 //[MSetFolderInfoTitle]
-"Pliki opisu katalogu"
+"Pliki opisu folderu"
 //[MSetFolderInfoNames]
 "Nazwy plików oddzielone przecinkami (znaki ? i * dopuszczalne)"
 
@@ -5101,7 +5063,7 @@
 //[MFileFilterAttrE]
 "&Zaszyfrowany"
 //[MFileFilterAttrD]
-"&Katalog"
+"&Folder"
 //[MFileFilterAttrNI]
 "Nie z&indeksowany"
 //[MFileFilterAttrSparse]
