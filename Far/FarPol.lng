@@ -1,6 +1,6 @@
 ﻿.Language=Polish,Polish (Polski)
 
-//Version: 3.0 build 5374
+//Version: 3.0 build 5375
 
 //[MYes]
 "Tak"
@@ -60,7 +60,7 @@
 //[MQuit]
 "Zakończ"
 //[MAskQuit]
-"Czy chcesz zakończyć pracę z FARem?"
+"Czy chcesz wyjść z FAR'a"
 
 //functional keys - 6 characters max
 //[MF1]
@@ -84,7 +84,7 @@
 //[MF10]
 "Koniec"
 //[MF11]
-"Plugin"
+"Wtyczki"
 //[MF12]
 "Ekran"
 
@@ -181,7 +181,7 @@
 //[MAltShiftF8]
 ""
 //[MAltShiftF9]
-"KonfPl"
+"KonfWt"
 //[MAltShiftF10]
 ""
 //[MAltShiftF11]
@@ -299,7 +299,7 @@
 //[MConfigScanJunction]
 "Skanuj linki s&ymboliczne"
 //[MConfigSmartFolderMonitor]
-"Aktualizuj panele tylko gdy okno Far jest aktywne"
+"&Aktualizuj panele tylko gdy FAR jest aktywny"
 //[MConfigSaveHistory]
 "Zapisz historię &poleceń"
 //[MConfigSaveFoldersHistory]
@@ -309,7 +309,7 @@
 //[MConfigRegisteredTypes]
 "Użyj zare&jestrowanych typów Windows"
 //[MConfigUpdateEnvironment]
-"Automatyczna aktuzalizacja zmiennych systemowych"
+"Automa&tyczna aktualizacja zmiennych systemowych"
 //[MConfigElevation]
 "wymagane uprawnienia administratora:"
 //[MConfigElevationModify]
@@ -320,17 +320,16 @@
 "użyj dodatkowych uprawnień"
 //[MConfigSortingCollation]
 "Sposoby sortowania:"
-// need translation:
 //[MConfigSortingOrdinal]
-"porządkowe"
+"porządkowo"
 //[MConfigSortingInvariant]
 "bez ustawień regionalnych"
 //[MConfigSortingLinguistic]
 "językowo"
 //[MConfigSortingDigitsAsNumbers]
-"Traktuj cyfry jak liczby"
+"Traktuj &cyfry jak liczby"
 //[MConfigSortingCase]
-"&Uwzględnij wielkość liter"
+"Uwzględnij wielkość &liter"
 //[MConfigAutoSave]
 "Automatycznie &zapisuj ustawienia"
 
@@ -368,7 +367,7 @@
 //[MConfigSelectFolders]
 "Zaznaczaj katalo&gi"
 //[MConfigRightClickSelect]
-"Prawy klik zaznacza pliki"
+"Pr&awy klik zaznacza pliki"
 //[MConfigSortFolderExt]
 "Sortuj nazwy folderów wg r&ozszerzeń"
 //[MConfigReverseSort]
@@ -378,7 +377,7 @@
 //[MConfigAutoUpdateLimit2]
 "jeśli zawierają więcej obiektów niż"
 //[MConfigAutoUpdateRemoteDrive]
-"Auto&odświeżanie dysków sieciowych"
+"Autoodświeżanie dysków &sieciowych"
 //[MConfigShowColumns]
 "Wyświetl tytuły &kolumn"
 //[MConfigShowStatus]
@@ -388,15 +387,15 @@
 //[MConfigShowTotal]
 "Wyświetl &całkowitą informację o plikach"
 //[MConfigShowFree]
-"Wyświetl ilość &wolnego miejsca"
+"Wyświetl &ilość wolnego miejsca"
 //[MConfigShowScrollbar]
 "Wyświetl &suwak"
 //[MConfigShowScreensNumber]
-"Wyświetl ilość &ekranów w tle"
+"Wyświetl &ilość ekranów w tle"
 //[MConfigShowSortMode]
-"Wyświetl l&iterę trybu sortowania"
+"Wyświetl li&terę trybu sortowania"
 //[MConfigShowDotsInRoot]
-"Pokaż \"..\" w głównych folderach"
+"Pokaż \"&..\" w głównych folderach"
 
 //[MConfigInterfaceTitle]
 "Ustawienia interfejsu"
@@ -417,21 +416,21 @@
 //[MConfigCopyTotal]
 "Pokaż &całkowity postęp kopiowania"
 //[MConfigCopyTimeRule]
-"Pokaż informację o c&zasie kopiowania"
+"Pokaż informację &o czasie kopiowania"
 //[MConfigDeleteTotal]
-"Pokaż całkowity postęp &usuwania"
+"Pok&aż całkowity postęp usuwania"
 //[MConfigPgUpChangeDisk]
 "Użyj Ctrl+Pg&Up do zmiany napędu"
 //[MConfigUseVirtualTerminalForRendering]
-"Użyj Terminalu Wirtualnego do renderowania"
+"Użyj &Terminalu Wirtualnego do renderowania"
 //[MConfigClearType]
-"Rysowanie zgodne z ClearType (może być wolniejsze)"
+"&Rysowanie zgodne z ClearType (może być wolniejsze)"
 //[MConfigSetConsoleIcon]
-"Ustaw ikonę konsoli"
+"Ustaw iko&nę konsoli"
 //[MConfigSetAdminConsoleIcon]
 "Inna dla Administratora"
 //[MConfigTitleAddons]
-"Okno tytułowe Far:"
+"Okno tytułowe &FAR:"
 
 //[MConfigDlgSetsTitle]
 "Ustawienia okien dialogowych"
@@ -440,11 +439,11 @@
 //[MConfigDialogsEditBlock]
 "&Trwałe bloki podczas edycji"
 //[MConfigDialogsDelRemovesBlocks]
-"&Del usuwa blok podczas edycji"
+"&DEL usuwa blok podczas edycji"
 //[MConfigDialogsAutoComplete]
 "&Autouzupełnianie podczas edycji"
 //[MConfigDialogsEULBsClear]
-"&Backspace usuwa nie zmieniony tekst"
+"&BACKSPACE usuwa nie zmieniony tekst"
 //[MConfigDialogsMouseButton]
 "&Kliknięcie myszy poza oknem zamyka je"
 
@@ -464,11 +463,11 @@
 "Nic nie rób"
 
 //[MConfigCmdlineTitle]
-"Ustawienia linii poleceń"
+"Ustawienia &linii poleceń"
 //[MConfigCmdlineEditBlock]
 "&Trwałe bloki"
 //[MConfigCmdlineDelRemovesBlocks]
-"Usuwaj bloki klawiszem &Del"
+"Usuwaj bloki klawiszem &DEL"
 //[MConfigCmdlineAutoComplete]
 "&AutoUzupełnianie"
 //[MConfigCmdlineUsePromptFormat]
@@ -1135,7 +1134,7 @@
 //[MShortcutNone]
 "<brak>"
 //[MShortcutPlugin]
-"<plugin>"
+"<wtyczka>"
 // need translation:
 //[MFSShortcutName]
 "Title:"
@@ -1174,7 +1173,7 @@
 //[MEditF10]
 "Koniec"
 //[MEditF11]
-"Plugin"
+"Wtyczki"
 //[MEditF12]
 "Ekran"
 
@@ -1386,7 +1385,7 @@
 //[MSingleEditF10]
 "Koniec"
 //[MSingleEditF11]
-"Plugin"
+"Wtyczki"
 //[MSingleEditF12]
 "Ekran"
 
@@ -1834,7 +1833,7 @@
 //[MViewF10]
 "Koniec"
 //[MViewF11]
-"Pluginy"
+"Wtyczki"
 //[MViewF12]
 "Ekran"
 
@@ -2056,7 +2055,7 @@
 //[MSingleViewF10]
 "Koniec"
 //[MSingleViewF11]
-"Pluginy"
+"Wtyczki"
 //[MSingleViewF12]
 "Ekran"
 
@@ -2459,9 +2458,8 @@
 // need translation:
 //[MInfoUserDescription]
 "User description"
-// need translation:
 //[MInfoUserAccessLevel]
-"Access level"
+"Poziom dostępu"
 // need translation:
 //[MInfoUserAccessLevelGuest]
 "Guest"
@@ -2540,61 +2538,48 @@
 //[MInfoDizAbsent]
 "Plik opisu folderu nie istnieje"
 //[MInfoPlugin]
-"Plugin"
+"Wtyczka"
 // need translation:
 //[MInfoPowerStatus]
 "Power Status"
-// need translation:
 //[MInfoPowerStatusAC]
-"AC power status"
-// need translation:
+"Zasilanie sieciowe"
 //[MInfoPowerStatusACOffline]
-"Offline"
-// need translation:
+"Wyłączone"
 //[MInfoPowerStatusACOnline]
-"Online"
+"Włączone"
 // need translation:
 //[MInfoPowerStatusACBackUp]
 "Backup power"
-// need translation:
 //[MInfoPowerStatusACUnknown]
-"Unknown"
+"Nieznany"
 // need translation:
 //[MInfoPowerStatusBCLifePercent]
 "Battery life percent"
-// need translation:
 //[MInfoPowerStatusBCLifePercentUnknown]
-"Unknown"
-// need translation:
+"Nieznany"
 //[MInfoPowerStatusBC]
-"Battery charge status"
-// need translation:
+"Stan ładowania baterii"
 //[MInfoPowerStatusBCHigh]
-"High"
-// need translation:
+"Wysoki"
 //[MInfoPowerStatusBCLow]
-"Low"
-// need translation:
+"Niski"
 //[MInfoPowerStatusBCCritical]
-"Critical"
-// need translation:
+"Krytyczny"
 //[MInfoPowerStatusBCCharging]
-"Charging"
-// need translation:
+"Ładowanie"
 //[MInfoPowerStatusBCNoSysBat]
-"No system battery"
-// need translation:
+"Brak baterii systemowej"
 //[MInfoPowerStatusBCUnknown]
-"Unknown"
+"Nieznany"
 // need translation:
 //[MInfoPowerStatusBCTimeRem]
 "Battery life time"
 // need translation:
 //[MInfoPowerStatusBCFullTimeRem]
 "Battery full time"
-// need translation:
 //[MInfoPowerStatusUnknown]
-"Unknown"
+"Nieznany"
 //[MAccessDenied]
 "Dostęp zabroniony"
 
@@ -2678,7 +2663,6 @@
 "&Kopiuj"
 //[MMenuMove]
 "&Zmień nazwę lub przenieś"
-// need translation:
 //[MMenuLink]
 "Link"
 //[MMenuCreateFolder]
@@ -2735,7 +2719,7 @@
 //[MMenuFilter]
 "&Filtr panelu plików"
 //[MMenuPluginCommands]
-"Pl&uginy"
+"W&tyczki"
 //[MMenuWindowsList]
 "L&ista ekranów"
 //[MMenuProcessList]
@@ -2753,46 +2737,40 @@
 //[MMenuInterface]
 "Ustawienia &interfejsu"
 //[MMenuLanguages]
-"&Język"
+"&Język programu"
 //[MMenuPluginsConfig]
-"Konfiguracja p&luginów"
-// need translation:
+"Konfiguracj&a wtyczek"
 //[MMenuPluginsManagerSettings]
-"Plugins manager settings"
+"Ustawienia ma&nagera wtyczek"
 //[MMenuDialogSettings]
-"Ustawienia okna &dialogowego"
-// need translation:
+"Ustawienia okien &dialogowego"
 //[MMenuVMenuSettings]
-"Menu settings"
+"Ustawienia &menu"
 // need translation:
 //[MMenuCmdlineSettings]
 "Command line settings"
-// need translation:
 //[MMenuAutoCompleteSettings]
-"AutoComplete settings"
-// need translation:
+"&Ustawienie AutoUzupełniania"
 //[MMenuInfoPanelSettings]
-"Inf&oPanel settings"
-// need translation:
+"Ustawienia panelu in&formacyjnego"
 //[MMenuMaskGroups]
-"Groups of file masks"
+"G&rupy masek plików"
 //[MMenuConfirmation]
 "P&otwierdzenia"
 //[MMenuFilePanelModes]
-"&Tryby wyświetlania panelu plików"
+"Try&by wyświetlania panelu plików"
 //[MMenuFileDescriptions]
 "Opis&y plików"
 //[MMenuFolderInfoFiles]
-"Pliki opisu &folderu"
+"Pliki opisu &folderów"
 //[MMenuViewer]
 "Ustawienia pod&glądu"
 //[MMenuEditor]
 "Ustawienia &edytora"
-// need translation:
 //[MMenuCodePages]
-"Strony kodowe"
+"S&trony kodowe"
 //[MMenuColors]
-"Kolo&ry"
+"&Kolory"
 //[MMenuFilesHighlighting]
 "&Wyróżnianie plików"
 //[MMenuSaveSetup]
@@ -2943,7 +2921,7 @@
 "Detach virtual disk {0}?"
 
 //[MChangeHotPlugDisconnectDriveTitle]
-"Odłączanie urządzenia"
+"Odłączanie urządzenie"
 //[MChangeHotPlugDisconnectDriveQuestion]
 "Czy odłączyć urządzenie"
 //[MHotPlugDisks]
@@ -3492,11 +3470,10 @@
 // need translation:
 //[MSetConfirmRemoveSUBST]
 "Odłączenie dysku &SUBST"
-// need translation:
 //[MSetConfirmDetachVHD]
-"Detach virtual disk"
+"Odłącz dysk wirtualny"
 //[MSetConfirmRemoveHotPlug]
-"Odłączanie urządzenia HotPlug"
+"Odłączanie urządzenia &HotPlug"
 //[MSetConfirmAllowReedit]
 "&Załaduj edytowany plik"
 //[MSetConfirmHistoryClear]
@@ -3504,17 +3481,14 @@
 //[MSetConfirmExit]
 "&Wyjście"
 
-// need translation:
 //[MPluginsManagerSettingsTitle]
-"Plugins manager settings"
-// need translation:
+"Ustawienia managera wtyczek"
 //[MPluginsManagerOEMPluginsSupport]
-"OEM plugins support"
+"Obsługa wtyczek w werji OEM"
 //[MPluginsManagerScanSymlinks]
 "Skanuj linki s&ymboliczne"
-// need translation:
 //[MPluginsManagerOFP]
-"&File processing"
+"Przetwarzanie pliku"
 // need translation:
 //[MPluginsManagerStdAssoc]
 "Show standard &association item"
@@ -3939,7 +3913,7 @@
 "Wyświetl NAZWY_PLIKÓW &jako nazwy_plików"
 
 //[MSetFolderInfoTitle]
-"Pliki opisu folderu"
+"Pliki opisu folderów"
 //[MSetFolderInfoNames]
 "Nazwy plików oddzielone przecinkami (znaki ? i * dopuszczalne)"
 
@@ -3958,9 +3932,9 @@
 "Wprowadź polecenie do przetworzenia wybranych plików"
 
 //[MPluginConfigTitle]
-"Konfiguracja pluginów"
+"Konfiguracja wtyczek"
 //[MPluginCommandsMenuTitle]
-"Dostępne pluginy"
+"Dostępne wtyczki"
 
 //[MPreparingList]
 "Przygotowuję listę plików"
@@ -4005,7 +3979,7 @@
 //[MMacroSettingsPassivePanel]
 "Panel &pasywny"
 //[MMacroSettingsPluginPanel]
-"Panel p&luginów"
+"Panel wtyczek"
 //[MMacroSettingsFolders]
 "Wykonaj dla &folderów"
 //[MMacroSettingsSelectionPresent]
@@ -4014,9 +3988,8 @@
 "Pusta &linia poleceń"
 //[MMacroSettingsSelectionBlockPresent]
 "Obecny &blok zaznaczenia"
-// need translation:
 //[MMacroPluginLuamacroNotLoaded]
-"Plugin LuaMacro is not loaded"
+"Wtyczka LuaMacro nie została wczytana"
 // need translation:
 //[MMacroRecordingIsDisabled]
 "Macro recording is disabled"
@@ -4027,39 +4000,30 @@
 "Edytowany tekst został zachowany w"
 
 //[MPluginHotKeyTitle]
-"Przypisz klawisz skrótu do pluginu"
+"Przypisz klawisz skrótu do wtyczki"
 //[MPluginHotKey]
 "Podaj klawisz skrótu (litera lub cyfra)"
-// need translation:
 //[MPluginInformation]
-"Plugin information"
-// need translation:
+"Informacje o wtyczce"
 //[MPluginModuleTitle]
-"&Title:"
-// need translation:
+"&Tytuł:"
 //[MPluginDescription]
-"&Description:"
-// need translation:
+"&Opis:"
 //[MPluginAuthor]
-"&Author:"
-// need translation:
+"&Autor:"
 //[MPluginVersion]
-"&Version:"
-// need translation:
+"&Wersja:"
 //[MPluginModulePath]
-"&Module path:"
-// need translation:
+"Ścieżka &modułu:"
 //[MPluginGUID]
-"Plugin &GUID:"
+"&GUID wtyczki:"
 // need translation:
 //[MPluginItemGUID]
 "Plugin &item GUID:"
-// need translation:
 //[MPluginPrefix]
-"Plugin &prefix:"
-// need translation:
+"&Przedrostek wtyczki:"
 //[MPluginHotKeyBottom]
-"F4 - ustaw klawisz skrótu, F3 - information"
+"F4 - ustaw klawisz skrótu, F3 - informacja"
 
 //[MRightCtrl]
 "PrawyCtrl"
@@ -4068,27 +4032,20 @@
 // need translation:
 //[MExcException]
 "Exception:"
-// need translation:
 //[MExcDetails]
-"Details:"
-// need translation:
+"Szczegóły:"
 //[MExcAddress]
-"Address:"
-// need translation:
+"Adres:"
 //[MExcSource]
-"Source:"
-// need translation:
+"Źródło:"
 //[MExcFunction]
-"Function:"
-// need translation:
+"Funkcja:"
 //[MExcModule]
-"Module:"
-// need translation:
+"Moduł:"
 //[MExcTerminate]
-"Terminate Far"
-// need translation:
+"Zamknięcie FAR"
 //[MExcUnload]
-"Unload plugin"
+"Wyłącz wtyczkę"
 // need translation:
 //[MExcStack]
 "Stack"
@@ -4105,14 +4062,13 @@
 "Nie udało się odczytać zawartości folderu"
 
 //[MPlgBadVers]
-"Do uruchomienia pluginu wymagana jest wyższa wersja FAR-a"
+"Do uruchomienia wtyczki wymagana jest wyższa wersja FAR-a"
 //[MPlgRequired]
-"Wymagana wersja Far-a to {0},"
+"Wymagana wersja FAR to {0},"
 //[MPlgRequired2]
-"bieżąca wersja Far-a: {0}."
-// need translation:
+"bieżąca wersja FAR: {0}."
 //[MPlgLoadPluginError]
-"Błąd ładowania modułu plugina"
+"Błąd ładowania modułu wtyczek"
 
 //[MCheckBox2State]
 "?"
@@ -4131,7 +4087,7 @@
 "Nie znaleziono tematu pomocy:"
 
 //[MPluginsHelpTitle]
-"Pomoc dla pluginów"
+"Pomoc dla wtyczek"
 //[MDocumentsHelpTitle]
 "Pomoc dla dokumentów"
 
@@ -4172,7 +4128,7 @@
 //[MHelpShiftF1]
 "Indeks"
 //[MHelpShiftF2]
-"Plugin"
+"Wtyczki"
 //[MHelpShiftF3]
 "Dokumenty"
 //[MHelpShiftF4]
@@ -5023,9 +4979,8 @@
 ">="
 //[MFileFilterSizeToSign]
 "<="
-// need translation:
 //[MFileHardLinksCount]
-"Has more than one hardlink"
+"Posiada więcej niż jeden twardy link"
 //[MFileFilterDate]
 "Da&ta/Czas:"
 // need translation:
@@ -5092,7 +5047,6 @@
 //[MBadFileSizeFormat]
 "Rozmiar pliku jest niepoprawny"
 
-// need translation:
 //[MFarTitleAddonsAdmin]
 "Administrator"
 // need translation:
@@ -5173,9 +5127,8 @@
 // need translation:
 //[MObjectLockedReasonOpened]
 "opened"
-// need translation:
 //[MObjectLockedAndMore]
-"and {0} more processes."
+"i {0} więcej procesów."
 // need translation:
 //[MObjectLockedSwitchTo]
 "Switch to"
@@ -5197,9 +5150,8 @@
 // need translation:
 //[MProblemDb]
 "Problem configuration DB"
-// need translation:
 //[MShowConfigFolders]
-"Show configuration folders"
+"Pokaż foldery konfiguracyjne"
 // need translation:
 //[MBadLanguageFile]
 "Incorrect language file"
