@@ -547,7 +547,6 @@
 
 //[MViewConfigTitle]
 "Ustawienia podglądu plików"
-// need translation:
 //[MViewConfigExternalF3]
 "Użyj zewnętrznego podglądu pod klawiszem F3 zamiast Alt+F3"
 //[MViewConfigExternalCommand]
@@ -1072,7 +1071,6 @@
 // need translation:
 //[MEditSearchRegexp]
 "Re&gular expressions"
-// need translation:
 //[MEditSearchPreserveStyle]
 "&Zachowaj styl"
 //[MEditSearchSearch]
@@ -1597,9 +1595,8 @@
 "Plik został zmieniony, ale plik lub folder zawierający"
 //[MEditSavedChangedNonFile1]
 "Plik lub folder zawierający"
-// need translation:
 //[MEditSavedChangedNonFile2]
-"ten plik został przeniesiony lub usunięty. Save?"
+"ten plik został przeniesiony lub usunięty. Zapisać?"
 //[MEditNewPath1]
 "Ścieżka do edytowanego pliku nie istnieje,"
 //[MEditNewPath2]
@@ -1665,9 +1662,8 @@
 "Extension"
 //[MColumnSize]
 "Rozmiar"
-// need translation:
 //[MColumnAlocatedSize]
-"Allocated"
+"Przydzielone"
 //[MColumnDate]
 "Data"
 //[MColumnTime]
@@ -2289,7 +2285,6 @@
 "&Uwzględnij wielkość liter"
 //[MFindFileWholeWords]
 "Tylko &całe słowa"
-// need translation:
 //[MFindFileAllCodePages]
 "Wszystkie zainstalowane"
 // need translation:
@@ -2527,21 +2522,18 @@
 "Całkowita wirtualna"
 //[MInfoVirtualFree]
 "Wolna wirtualna"
-// need translation:
 //[MInfoPageFileTotal]
-"Total paging file"
-// need translation:
+"Wielkość pliku stronicowania"
 //[MInfoPageFileFree]
-"Free paging file"
+"Wolne miejsce w pliku stronicowania"
 //[MInfoDescription]
 "Opis"
 //[MInfoDizAbsent]
 "Plik opisu folderu nie istnieje"
 //[MInfoPlugin]
 "Wtyczka"
-// need translation:
 //[MInfoPowerStatus]
-"Power Status"
+"Status zasilania"
 //[MInfoPowerStatusAC]
 "Zasilanie sieciowe"
 //[MInfoPowerStatusACOffline]
@@ -2553,9 +2545,8 @@
 "Backup power"
 //[MInfoPowerStatusACUnknown]
 "Nieznany"
-// need translation:
 //[MInfoPowerStatusBCLifePercent]
-"Battery life percent"
+"Procent naładowania baterii"
 //[MInfoPowerStatusBCLifePercentUnknown]
 "Nieznany"
 //[MInfoPowerStatusBC]
@@ -2815,9 +2806,8 @@
 "&opisu"
 //[MMenuSortByOwner]
 "&właściciela"
-// need translation:
 //[MMenuSortByAllocatedSize]
-"Allocated size"
+"Przydzielone miejsce"
 //[MMenuSortByNumLinks]
 "&liczby dowiązań"
 // need translation:
@@ -2907,10 +2897,8 @@
 //[MChangeDriveOpenFiles]
 "Jeśli nie zamkniesz otwartych plików, możesz utracić dane"
 
-// need translation:
 //[MChangeSUBSTDisconnectDriveTitle]
 "Odłączanie napędu wirtualnego"
-// need translation:
 //[MChangeSUBSTDisconnectDriveQuestion]
 "Odłączyć dysk SUBST {0}?"
 // need translation:
@@ -2957,33 +2945,28 @@
 // need translation:
 //[MChangeDriveConfigure]
 "Change Drive Menu Options"
-// need translation:
 //[MChangeDriveShowDiskType]
-"Show disk type"
-// need translation:
+"Pokaż typ dysku"
 //[MChangeDriveShowPath]
-"Show &network name / SUBST path / VHD name"
-// need translation:
+"Pokaż dyskie &sieciowe / ścieżki SUBST / nazwy VHD"
 //[MChangeDriveShowLabel]
-"Show disk &label"
+"Pokaż &etykietę dysku"
 // need translation:
 //[MChangeDriveShowLabelUseShell]
 "Use shell name"
 // need translation:
 //[MChangeDriveShowFileSystem]
 "Show &file system type"
-// need translation:
 //[MChangeDriveShowSize]
-"Show &size"
+"Pokaż &pojemność"
 // need translation:
 //[MChangeDriveShowSizeFloat]
 "Show size as a decimal fraction"
 // need translation:
 //[MChangeDriveShowRemovableDrive]
 "Show &removable drive parameters"
-// need translation:
 //[MChangeDriveShowPlugins]
-"Show &plugins"
+"Pokaż &wtyczki"
 // need translation:
 //[MChangeDriveSortPluginsByHotkey]
 "Sort plugins by hotkey"
@@ -3069,9 +3052,8 @@
 "Pliki:"
 //[MQuickViewBytes]
 "Rozmiar plików:"
-// need translation:
 //[MQuickViewAllocated]
-"Allocated size:"
+"Przydzielone miejsce:"
 //[MQuickViewCluster]
 "Rozmiar klastra:"
 //[MQuickViewSlack]
@@ -3138,16 +3120,14 @@
 // need translation:
 //[MSetAttrOwnerMultiple]
 "(multiple values)"
-// need translation:
 //[MSetAttrModification]
-"Last &write time:"
+"Ostatni czas &zapisu:"
 //[MSetAttrCreation]
 "Czas u&tworzenia:"
 //[MSetAttrLastAccess]
 "Czas ostatniego &dostępu:"
-// need translation:
 //[MSetAttrChange]
-"Change time:"
+"Zmień czas:"
 //[MSetAttrOriginal]
 "Wstaw &oryginalny"
 //[MSetAttrCurrent]
@@ -3157,21 +3137,16 @@
 //[MSetAttrSet]
 "Usta&w"
 
-// need translation:
 //[MSetAttrDateTitle1]
 "MM{0}DD{0}RRRRR"
-// need translation:
 //[MSetAttrDateTitle2]
 "DD{0}MM{0}RRRRR"
-// need translation:
 //[MSetAttrDateTitle3]
 "RRRRR{0}MM{0}DD"
-// need translation:
 //[MSetAttrTimeTitle]
 "gg{0}mm{0}ss{1}ms"
-// need translation:
 //[MSetAttrSystemDialog]
-"System properties"
+"Właściwości systemu"
 
 //[MSetAttrSetting]
 "Ustawiam atrybuty"
@@ -3186,9 +3161,8 @@
 "Cannot set attribute SPARSE for"
 //[MSetAttrTimeCannotFor]
 "Nie mogę ustawić czasu pliku dla"
-// need translation:
 //[MSetAttrOwnerCannotFor]
-"Cannot set owner for"
+"Nie mogę ustawić właściciela dla"
 
 //[MSetColorPanel]
 "&Panel"
@@ -3454,9 +3428,8 @@
 "&Kopiowanie"
 //[MSetConfirmMove]
 "&Przenoszenie"
-// need translation:
 //[MSetConfirmRO]
-"&Overwrite and delete R/O files"
+"&Nadpisz i usuń pliki R/O"
 //[MSetConfirmDrag]
 "P&rzeciąganie i upuszczanie"
 //[MSetConfirmDelete]
@@ -3467,7 +3440,6 @@
 "&Przerwanie operacji"
 //[MSetConfirmRemoveConnection]
 "Odłączenie dysku &sieciowego"
-// need translation:
 //[MSetConfirmRemoveSUBST]
 "Odłączenie dysku &SUBST"
 //[MSetConfirmDetachVHD]
@@ -3501,9 +3473,8 @@
 // need translation:
 //[MPluginsManagerPF]
 "&Prefix processing"
-// need translation:
 //[MPluginConfirmationTitle]
-"Plugin selection"
+"Wybór wtyczki"
 // need translation:
 //[MMenuPluginStdAssociation]
 "Standard association"
