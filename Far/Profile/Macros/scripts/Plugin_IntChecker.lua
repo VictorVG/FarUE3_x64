@@ -1,4 +1,4 @@
-﻿-- Integrity Checker by Ariman
+-- Integrity Checker by Ariman
 --
 -- Скрипт решает две задачи - вызов главного меню плагина и проверку хэшей
 -- с подавлением записи об этом в историю (без мусора оно как спокойнее).
@@ -45,6 +45,8 @@
 -- списке разделены ";". Это сделано для снижения риска ошибок, и справка по
 -- командам стала не нужна.
 -- 18.03.2019 02:40:23 +0300
+-- v1.4.1 - Исправим ошибку с пробелами в путях
+-- 18.03.2019 10:35:23 +0300
 
 local ICID="E186306E-3B0D-48C1-9668-ED7CF64C0E65";
 local ICMID="A22F9043-C94A-4037-845C-26ED67E843D1";
@@ -96,7 +98,7 @@ tp = mf.lcase( mf.prompt("Hash file format: B - BSD UNIX; G - GNU",nil,1,nil));
        end;
      end;
    end;
-   hash = Plugin.SyncCall(ICID,"gethash", algo, APanel.Path0.."\\"..APanel.Current);
+   hash = Plugin.SyncCall(ICID,"gethash", algo, "\""..APanel.Path0.."\\"..APanel.Current.."\"");
    if mod=="d" then far.Show(hash);
     elseif mod=="c" then mf.clip(5,1);
                if tp=="b" then prn=algo.." ("..APanel.Current..") = "..hash;
@@ -105,7 +107,7 @@ tp = mf.lcase( mf.prompt("Hash file format: B - BSD UNIX; G - GNU",nil,1,nil));
      mf.clip(1,prn);
      else
      cmd=CmdLine.Value;
-     pt=APanel.Path0.."\\"..mf.fsplit(APanel.Current,4).."."..ext;
+     pt="\""..APanel.Path0.."\\"..mf.fsplit(APanel.Current,4).."."..ext.."\"";
      Far.DisableHistory(-1)
          if tp=="b" then prn="@echo".." "..algo.." ("..APanel.Current..") = "..hash.." > "..pt;
              else prn="@echo".." "..hash.." *"..APanel.Current.." > "..pt;
