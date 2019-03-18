@@ -15,7 +15,7 @@
   ║  ···················C │ AltShiftF5                     │ Common_DBEdit.lua                          │ Редактор баз данных плагинов: импорт                                             ║
   ║  ···················C │ AltShiftR                      │ Common_ReloadMacros.lua                    │ Reload macros                                                                    ║
   ║  ···················C │ AltShiftUp AltShiftDown        │ Plugin_ConsoleControl-Macros.lua           │ Console Control: Change Windows Size                                             ║
-  ║                       │ fAltShitLeft AltShiftRight     │                                            │                                                                                  ║
+  ║                       │ AltShitLeft AltShiftRight      │                                            │                                                                                  ║
   ║  ···················C │ Ctrl/                          │ Common_KeyName.lua                         │ Получение названия клавиши. © SimSU                                              ║
   ║  ···················C │ CtrlAlt1 CtrlAlt0              │ Plugin_ConsoleControl-Macros.lua           │ Window size 80x25                                                                ║
   ║  ···················C │ CtrlAlt2 CtrlAlt0              │ Plugin_ConsoleControl-Macros.lua           │ Window size 80x50                                                                ║
@@ -86,6 +86,7 @@
   ║  S··················· │ AltF1                          │ Shell_RememberSelected.lua                 │ Изменить текущий диск в левой панели c сохранением выделения файлов. © SimSU     ║
   ║  S··················· │ AltF2                          │ Shell_RememberSelected.lua                 │ Изменить текущий диск в правой панели c сохранением выделения файлов. © SimSU    ║
   ║  S··················· │ AltF3                          │ View_XDOC.lua                              │ View XDOC's as plain text                                                        ║
+  ║  S··················· │ AltG                           │ Plugin_IntChecker.lua                      │ Integrity Checker: calc hash for the file under cursor                           ║
   ║  S··················· │ AltH                           │ Plugin_IntChecker.lua                      │ Integrity Checker: show menu                                                     ║
   ║  S··················· │ AltHome                        │ Shell_SelectingEx.lua                      │ Переход на первый помеченный файл. © SimSU                                       ║
   ║  S··················· │ AltM                           │ Shell_RememberSelected.lua                 │ Сохранение/востановление пометки файлов. © SimSU                                 ║
@@ -388,4 +389,4 @@
   ║  luacheck       │ Shell_LuaCheck.lua                         │ luacheck commandline                                                                                                    ║
   ║                                                                                                                                                                                        ║
   ╚════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
-  12.12.2018 05:52:50 +0300
+  18.03.2019 06:06:24 +0300
