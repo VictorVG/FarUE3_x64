@@ -47,6 +47,8 @@
 -- 18.03.2019 02:40:23 +0300
 -- v1.4.1 - Исправим ошибку с пробелами в путях
 -- 18.03.2019 10:35:23 +0300
+-- v1.4.2 - уточнение v1.4.1
+-- 18.03.2019 13:48:54 +0300
 
 local ICID="E186306E-3B0D-48C1-9668-ED7CF64C0E65";
 local ICMID="A22F9043-C94A-4037-845C-26ED67E843D1";
@@ -85,6 +87,7 @@ Macro{
   key="AltG";
   description="Integrity Checker: calc hash for the file under cursor";
   priority=50;
+  condition=function() return not APanel.Folder end;
   action=function()
   arg = mf.prompt("1:CRC32;2:MD5;3:SHA1;4:SHA-256;5:SHA-512;6:SHA3-512;7:Whirlpool",nil,1,nil);
   mod = mf.lcase(mf.prompt("Target: D - display; C - Windows ClipBoard; F - hash file",nil,1,nil));
@@ -98,7 +101,7 @@ tp = mf.lcase( mf.prompt("Hash file format: B - BSD UNIX; G - GNU",nil,1,nil));
        end;
      end;
    end;
-   hash = Plugin.SyncCall(ICID,"gethash", algo, "\""..APanel.Path0.."\\"..APanel.Current.."\"");
+   hash = Plugin.SyncCall(ICID,"gethash", algo, APanel.Path0.."\\"..APanel.Current);
    if mod=="d" then far.Show(hash);
     elseif mod=="c" then mf.clip(5,1);
                if tp=="b" then prn=algo.." ("..APanel.Current..") = "..hash;
