@@ -1,6 +1,6 @@
 ﻿.Language=Polish,Polish (Polski)
 
-//Version: 3.0 build 5377
+//Version: 3.0 build 5378
 
 //[MYes]
 "Tak"
@@ -1056,28 +1056,24 @@
 "Szukaj"
 //[MEditSearchFor]
 "&Znajdź"
-// need translation:
 //[MEditSearchPickWord]
-"Word"
-// need translation:
+"Słowo"
 //[MEditSearchPickSelection]
-"Selection"
+"Zaznaczenie"
 //[MEditSearchCase]
 "&Uwzględnij wielkość liter"
 //[MEditSearchWholeWords]
 "Tylko całe słowa"
 //[MEditSearchReverse]
 "Szukaj w &odwrotnym kierunku"
-// need translation:
 //[MEditSearchRegexp]
-"Re&gular expressions"
+"Wyrażenie &regularne"
 //[MEditSearchPreserveStyle]
 "&Zachowaj styl"
 //[MEditSearchSearch]
 "&Szukaj"
-// need translation:
 //[MEditSearchAll]
-"&All"
+"&Wszystko"
 //[MEditSearchCancel]
 "&Anuluj"
 
@@ -1090,9 +1086,8 @@
 
 //[MEditSearchingFor]
 "Szukam"
-// need translation:
 //[MEditSearchStatistics]
-"Occurrences: {0}, lines: {1}"
+"Wystąpień: {0}, linii: {1}"
 //[MEditFindAllMenuFooter]
 "F1, F5, Ctrl+Enter, Ctrl+Up/Down, Add"
 //[MEditNotFound]
@@ -1114,9 +1109,8 @@
 "&Otwórz/utwórz plik:"
 //[MEditOpenAutoDetect]
 "Wykryj automatycznie"
-// need translation:
 //[MDefaultCP]
-"Default"
+"Domyślna"
 
 //[MGoTo]
 "Idź do"
@@ -1133,15 +1127,12 @@
 "<brak>"
 //[MShortcutPlugin]
 "<wtyczka>"
-// need translation:
 //[MFSShortcutName]
-"Title:"
-// need translation:
+"Nazwa:"
 //[MFSShortcutPath]
-"Path:"
+"Ścieżka:"
 //[MFSShortcutPluginFile]
 "Plik:"
-// need translation:
 //[MFSShortcutPluginData]
 "Data:"
 //[MNeedNearPath]
@@ -1161,7 +1152,7 @@
 //[MEditF5]
 ""
 //[MEditF6]
-"Zobacz"
+"Podgląd"
 //[MEditF7]
 "Szukaj"
 //[MEditF8]
@@ -1191,7 +1182,7 @@
 //[MEditShiftF7]
 "Następ"
 //[MEditShiftF8]
-"Tabela"
+"StrKodowa"
 //[MEditShiftF9]
 ""
 //[MEditShiftF10]
@@ -1247,7 +1238,7 @@
 //[MEditCtrlF9]
 ""
 //[MEditCtrlF10]
-"GoFile"
+"IdźDoPliku"
 //[MEditCtrlF11]
 ""
 //[MEditCtrlF12]
@@ -1373,7 +1364,7 @@
 //[MSingleEditF5]
 ""
 //[MSingleEditF6]
-"Zobacz"
+"Podgląd"
 //[MSingleEditF7]
 "Szukaj"
 //[MSingleEditF8]
@@ -1403,7 +1394,7 @@
 //[MSingleEditShiftF7]
 "Następ"
 //[MSingleEditShiftF8]
-"Tabela"
+"StrKodowa"
 //[MSingleEditShiftF9]
 ""
 //[MSingleEditShiftF10]
@@ -1435,7 +1426,7 @@
 //[MSingleEditAltF10]
 ""
 //[MSingleEditAltF11]
-"ZobHs"
+"ZobHis"
 //[MSingleEditAltF12]
 ""
 
@@ -1584,11 +1575,11 @@
 //[MEditSaveOriginal]
 "&Nie zmieniaj"
 //[MEditSaveDOS]
-"Format &Dos/Windows (CR LF)"
+"Format &DOS/Windows (CR LF)"
 //[MEditSaveUnix]
-"Format &Unix (LF)"
+"Format &UNIX (LF)"
 //[MEditSaveMac]
-"Format &Mac (CR)"
+"Format &MAC (CR)"
 //[MEditCannotSave]
 "Nie mogę zapisać pliku"
 //[MEditSavedChangedNonFile]
@@ -1605,61 +1596,45 @@
 "Kontynuować?"
 //[MEditNewPlugin1]
 "Nazwa pliku do edycji nie może być pusta"
-// need translation:
 //[MEditorLoadCPWarn1]
-"File contains characters that cannot be"
-// need translation:
+"Plik zawiera znaki, które nie mogą być"
 //[MEditorLoadCPWarn2]
-"correctly read using selected code page."
-// need translation:
+"poprawnie odczytane w tej stronie kodowej."
 //[MEditorReloadCPWarnLost1]
-"File has to be reloaded to change code page."
-// need translation:
+"Plik zostanie przeładowany, aby zmienić stronę kodową."
 //[MEditorReloadCPWarnLost2]
-"All unsaved changes will be lost."
-// need translation:
+"Wszystkie niezapisane zmany zostaną utracone."
 //[MEditorSaveCPWarn1]
-"Editor contains characters that cannot be"
-// need translation:
+"Edytor zawiera znaki, które nie mogą być"
 //[MEditorSaveCPWarn2]
-"correctly saved using selected code page."
-// need translation:
+"poprawnie zapisane w wybranej stronie kodowej."
 //[MEditorSwitchCPWarn1]
-"Editor contains characters that cannot be"
-// need translation:
+"Edytor zawieta znaki, które nie mogą być"
 //[MEditorSwitchCPWarn2]
-"correctly translated using selected code page [{0}]"
-// need translation:
+"poprawnie przełumaczone w bieżącej stronie kodowej [{0}]"
 //[MEditorSwitchCPConfirm]
-"Continue?"
-// need translation:
+"Kontynuować?"
 //[MEditDataLostWarn]
-"During file editing some data were lost."
+"Podczas edycji pliku, część danych została utracona."
 //[MEditorSaveNotRecommended]
 "Odradzamy zapis pliku."
 //[MEditorSave]
 "Zapisz"
-// need translation:
 //[MEditorSaveCPWarnShow]
-"Show"
-// need translation:
+"Pokaż"
 //[MEditorSwitchUnicodeCPDisabled]
-"Unicode code page switch is not supported"
-// need translation:
+"Strona kodowa Unicode nie jest obsługiwana"
 //[MEditorTryReloadFile]
-"You can reload file using custom code page (ShiftF4)"
-// need translation:
+"Możesz przeładować plik, używając innej strony kodowej (ShiftF4)"
 //[MEditorSwitchToUnicodeCPDisabled]
-"Switch to unicode code page {0} is not supported"
-// need translation:
+"Przełączenie na stronę kodową Unicode {0} nie jest możliwe"
 //[MEditorCPNotSupported]
-"Code page {0} is not supported in your system"
+"Strona kodowa {0} nie jest obsługiwana przez Twój system"
 
 //[MColumnName]
 "Nazwa"
-// need translation:
 //[MColumnExtension]
-"Extension"
+"Rozszerzenie"
 //[MColumnSize]
 "Rozmiar"
 //[MColumnAlocatedSize]
@@ -1668,16 +1643,14 @@
 "Data"
 //[MColumnTime]
 "Czas"
-// need translation:
 //[MColumnWrited]
-"Write"
+"Zapis"
 //[MColumnCreated]
 "Utworzenie"
 //[MColumnAccessed]
 "Użycie"
-// need translation:
 //[MColumnChanged]
-"Change"
+"Zmiana"
 //[MColumnAttr]
 "Atrybuty"
 //[MColumnDescription]
@@ -1686,12 +1659,10 @@
 "Właściciel"
 //[MColumnMumLinks]
 "NmL"
-// need translation:
 //[MColumnNumStreams]
 "NmS"
-// need translation:
 //[MColumnStreamsSize]
-"StrmSz"
+"WlkStr"
 //[MColumnUnknown]
 "???"
 
@@ -1703,9 +1674,8 @@
 "LinkSym"
 //[MListJunction]
 "Dowiązania"
-// need translation:
 //[MListVolMount]
-"Volume"
+"Wolumen"
 //[MListDFS]
 "DFS"
 //[MListDFSR]
@@ -1724,9 +1694,8 @@
 "DEDUP"
 //[MListNFS]
 "NFS"
-// need translation:
 //[MListPlaceholder]
-"Placeholder"
+"Symbol zastępczy"
 //[MListUnknownReparsePoint]
 "?LinkSym?"
 //[MListBrackets]
@@ -1746,13 +1715,12 @@
 //[MListEb]
 "E"
 {3} replacement field can receive a sum of files & folders
-// need translation:
 //[MListFileSize]
-"Bytes: {0}, files: {1}, folders: {2}"
+"Bajtów: {0}, plików: {1}, folderów: {2}"
 //[MListFileSizeStatus]
 "{0} ({1}/{2}) {3} {4}"
 //[MListFreeSize]
-"{0} wolnych bajtów"
+"{0} bajtów wolnych"
 
 //[MDirInfoViewTitle]
 "Podgląd"
@@ -1790,7 +1758,7 @@
 //[MFileAssocTitle]
 "Edytuj przypisania pliku"
 //[MFileAssocMasks]
-"&Maska pliku lub kilka masek oddzielonych przecinkami:"
+"&Maski plików oddzielonych przecinkami:"
 //[MFileAssocDescr]
 "&Opis przypisania:"
 //[MFileAssocExec]
@@ -1840,9 +1808,8 @@
 "ZawińS"
 //[MViewShiftF3]
 ""
-// need translation:
 //[MViewShiftF4]
-"Mode"
+"Tryb"
 //[MViewShiftF5]
 ""
 //[MViewShiftF6]
@@ -1850,7 +1817,7 @@
 //[MViewShiftF7]
 "Następ"
 //[MViewShiftF8]
-"Tabela"
+"StrKod"
 //[MViewShiftF9]
 ""
 //[MViewShiftF10]
@@ -1906,7 +1873,7 @@
 //[MViewCtrlF9]
 ""
 //[MViewCtrlF10]
-"DoPlik"
+"IdźDoPlik"
 //[MViewCtrlF11]
 ""
 //[MViewCtrlF12]
@@ -2016,14 +1983,13 @@
 //[MViewCtrlAltShiftF12]
 ""
 //[MViewF2Unwrap]
-"Unwrap"
+"NieZawij"
 // this is another text for F4
 //[MViewF4Text]
 "Tekst"
 // this is another text for F4
-// need translation:
 //[MViewF4Dump]
-"Dump"
+"Źródło"
 // this is another text for F8
 // end of functional keys (Viewer)
 //[MViewF8DOS]
@@ -2071,7 +2037,7 @@
 //[MSingleViewShiftF7]
 "Nast."
 //[MSingleViewShiftF8]
-"Tabela"
+"StrKod"
 //[MSingleViewShiftF9]
 ""
 //[MSingleViewShiftF10]
@@ -2246,9 +2212,8 @@
 // end of functional keys (Single Viewer)
 //[MSingleViewF8DOS]
 "CP 1250"
-// need translation:
 //[MViewMode]
-"View mode"
+"Tryb widoku"
 //[MInViewer]
 "podgląd"
 //[MInEditor]
@@ -2272,7 +2237,7 @@
 //[MFindFileTitle]
 "Znajdź plik"
 //[MFindFileMasks]
-"&Maska pliku lub kilka masek oddzielonych przecinkami:"
+"&Maski plików oddzielone przecinkami:"
 //[MFindFileText]
 "Zawierający &tekst:"
 //[MFindFileHex]
@@ -2280,30 +2245,27 @@
 //[MFindFileCodePage]
 "Użyj tablicy znaków:"
 //[MFindFileCodePageBottom]
-"Space, Ins"
+"Spacja, Ins"
 //[MFindFileCase]
 "&Uwzględnij wielkość liter"
 //[MFindFileWholeWords]
 "Tylko &całe słowa"
 //[MFindFileAllCodePages]
 "Wszystkie zainstalowane"
-// need translation:
 //[MFindFileSelectedCodePages]
-"Selected code pages"
+"Wybrana strona kodowa"
 //[MFindArchives]
 "Szukaj w arc&hiwach"
 //[MFindFolders]
 "Szukaj &folderów"
 //[MFindSymLinks]
 "Szukaj w &linkach"
-// need translation:
 //[MFindAlternateStreams]
-"Search in alternate streams"
+"Szukaj w alternatywnych strumieniach"
 //[MSearchForHex]
 "Szukaj wartości &szesnastkowej"
-// need translation:
 //[MSearchNotContaining]
-"Not containing"
+"Nie zawierające"
 //[MSearchWhere]
 "Obszar wyszukiwania:"
 //[MSearchAllDisks]
@@ -2359,9 +2321,8 @@
 "Zaawansowane opcje wyszukiwania"
 //[MFindFileSearchFirst]
 "Szukaj wyłącznie w &pierwszych:"
-// need translation:
 //[MFindFileSearchOutputFormat]
-"&Output format:"
+"&Format wyjściowy:"
 //[MFindAlternateModeTypes]
 "&Typy kolumn"
 //[MFindAlternateModeWidths]
@@ -2372,26 +2333,20 @@
 
 //[MGetCodePageTitle]
 "Strony kodowe"
-// need translation:
 //[MGetCodePageSystem]
-"System"
-// need translation:
+"Systemowe"
 //[MGetCodePageUnicode]
 "Unicode"
-// need translation:
 //[MGetCodePageFavorites]
-"Favorites"
-// need translation:
+"Ulubione"
 //[MGetCodePageOther]
-"Other"
+"Pozostałe"
 //[MGetCodePageBottomTitle]
 "Ctrl+H, Del, Ins, F4"
 //[MGetCodePageBottomShortTitle]
 "Ctrl+H, Del, F4"
-// need translation:
 //[MGetCodePageEditCodePageName]
-"Rename the code page"
-// need translation:
+"Zmień nazwę strony kodowej"
 //[MGetCodePageResetCodePageName]
 "&Reset"
 
@@ -2445,28 +2400,22 @@
 "Informacja"
 //[MInfoCompName]
 "Nazwa komputera"
-// need translation:
 //[MInfoCompDescription]
-"Computer description"
+"Opis komputera"
 //[MInfoUserName]
 "Nazwa użytkownika"
-// need translation:
 //[MInfoUserDescription]
-"User description"
+"Opis użytkownika"
 //[MInfoUserAccessLevel]
 "Poziom dostępu"
-// need translation:
 //[MInfoUserAccessLevelGuest]
-"Guest"
-// need translation:
+"Gość"
 //[MInfoUserAccessLevelUser]
-"User"
-// need translation:
+"Użytkownik"
 //[MInfoUserAccessLevelAdministrator]
 "Administrator"
-// need translation:
 //[MInfoUserAccessLevelUnknown]
-"Unknown"
+"Nieznany"
 //[MInfoDiskTitle]
 "Dysk"
 //[MInfoRemovable]
@@ -2491,18 +2440,16 @@
 "RAM"
 //[MInfoSUBST]
 "Subst"
-// need translation:
 //[MInfoVirtual]
-"Virtual"
-// need translation:
+"Wirtualny"
 //[MInfoUnknown]
-"Unknown"
+"Nieznany"
 //[MInfoDisk]
 "dysk"
 //[MInfoDiskTotal]
 "Razem bajtów"
 //[MInfoDiskFree]
-"Wolnych bajtów"
+"Bajtów wolnych"
 //[MInfoDiskLabel]
 "Etykieta woluminu"
 //[MInfoDiskNumber]
@@ -2511,9 +2458,8 @@
 "Pamięć"
 //[MInfoMemoryLoad]
 "Użycie pamięci"
-// need translation:
 //[MInfoMemoryInstalled]
-"Installed memory"
+"Zainstalowana pamięć"
 //[MInfoMemoryTotal]
 "Całkowita pamięć"
 //[MInfoMemoryFree]
@@ -2745,7 +2691,7 @@
 //[MMenuInfoPanelSettings]
 "Ustawienia panelu in&formacyjnego"
 //[MMenuMaskGroups]
-"G&rupy masek plików"
+"Grupy masek plików"
 //[MMenuConfirmation]
 "P&otwierdzenia"
 //[MMenuFilePanelModes]
