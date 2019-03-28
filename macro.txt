@@ -110,6 +110,7 @@
   ║  S··················· │ CtrlAltF9                      │ Plugin_ConsoleControl-Macros.lua           │ Console Control: Maximize/Restore console buffer                                 ║
   ║  S··················· │ CtrlAltG                       │ Plugin_GitShell.lua                        │ GitShell menu                                                                    ║
   ║  S··················· │ CtrlAltPgUp                    │ Plugin_ConsoleControl-Macros.lua           │ Console Control: Topmost On/Off                                                  ║
+  ║  S··················· │ CtrlAltR                       │ Shell_GitCheckout.lua                      │ Git: Check file under cursor                                                     ║
   ║  S··················· │ CtrlBackSlash                  │ Shell_RememberSelected.lua                 │ Сменить папку на корневую c сохранением выделения файлов. © SimSU                ║
   ║  S··················· │ CtrlMsLClick                   │ Shell_SelectMouseExplorer.lua              │ Добавить/Убрать из выделенных файлов, аля Explorer. © SimSU                      ║
   ║  S··················· │ CtrlO CtrlU CtrlF1 CtrlF2 Esc  │ Plugin_Review.lua                          │ Review: QuickView Helper                                                         ║
@@ -389,4 +390,4 @@
   ║  luacheck       │ Shell_LuaCheck.lua                         │ luacheck commandline                                                                                                    ║
   ║                                                                                                                                                                                        ║
   ╚════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
-  18.03.2019 06:06:24 +0300
+  28.03.2019 08:14:54 +0300

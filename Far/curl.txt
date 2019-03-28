@@ -1,6 +1,7 @@
 Usage: curl [options...] <url>
 
      --abstract-unix-socket <path> Connect via abstract Unix domain socket
+     --alt-svc <file name> Enable alt-svc with this cache file
      --anyauth       Pick any authentication method
  -a, --append        Append to target file when uploading
      --basic         Use HTTP Basic Authentication
@@ -16,7 +17,7 @@ Usage: curl [options...] <url>
      --connect-timeout <seconds> Maximum time allowed for connection
      --connect-to <HOST1:PORT1:HOST2:PORT2> Connect to host
  -C, --continue-at <offset> Resumed transfer offset
- -b, --cookie <data> Send cookies from string/file
+ -b, --cookie <data|filename> Send cookies from string/file
  -c, --cookie-jar <filename> Write cookies to <filename> after operation
      --create-dirs   Create necessary local directory hierarchy
      --crlf          Convert LF to CRLF in upload
