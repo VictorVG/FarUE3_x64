@@ -1,4 +1,4 @@
-xdoc2txt2 - Extract text from various binary documents such as PDF, WORD, EXCEL, Ichitaro
+xdoc2txt - Extract text from various binary documents such as PDF, WORD, EXCEL, Ichitaro
 
 URL: http://ebstudio.info/home/xdoc2txt.html
 
@@ -194,7 +194,7 @@ Restriction on each file format
 
 Microsoft WORD 2007/2010
 
-- It corresponds to the extension .docx .docm.
+- It corresponds to the extension .docx .doc.
 
 Microsoft WORD
 
@@ -324,7 +324,7 @@ About using with mouse operation
 
 Example
 
-"C: \ Program Files \ kwic \ xdoc2txt.exe" -f
+"C:\Program Files\kwic\xdoc2txt.exe" -f
 
 (4) If you drag and drop the file you want to convert to the icon, you can create a file with extension .txt in the same directory.
 
@@ -332,6 +332,7 @@ Reference article: http://www.forest.impress.co.jp/article/2003/11/19/xdoc2txt.h
 
 History
 
+2.18 2019/4/8   - Fixed an issue where some PDFs created with Just PDF can not be extracted
 2.17 2018/10/15 - Fixed an issue where extra descriptors are displayed in RTF after RTF 1.9 (Word 2007)
                 - Ruby removal of docx
                 - Fixed an issue that ended abnormally with some PDF
@@ -479,10 +480,10 @@ However, it is necessary to download cryptlib.dll separately
 1.10 2004/03 / 13 - It corresponds to PDF created in "OpenOffice.org 1.1"
 1.09 2004/02/25 - Corresponds to PDF created with "ActiveReports 2.0J"
 - Bug fix abnormally terminated in specific PDF
-1.08 2004/01/28 - Result of calculation formula of EXCEL When full width "± × ÷" appears in the character string,
+1.08 2004/01/28 - Result of calculation formula of EXCEL When full width appears in the character string,
 Correct bug in garbled characters
 Removing extra newlines
-1.07 2004/01/26 Full-width "± x ÷" in half-width kana in Word, EXCEL, PowerPoint
+1.07 2004/01/26 Full-width in half-width kana in Word, EXCEL, PowerPoint
 It may be garbled, bug fixed
 - January 18, 2004 - Clearly state "copyright and use conditions".
 1.06 2003/11/09 - First row of RTF saved in Wordpad is not displayed bug fixed

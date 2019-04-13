@@ -1,4 +1,4 @@
-﻿-------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
 --           Работа мышкой с выделением в редакторе. © SimSU
 -------------------------------------------------------------------------------
 -- Умеет:
@@ -82,11 +82,7 @@ end
 
 local function MouseToText()
 -- Функция пересчёта экранных координат мышки в координаты текста.
-  local cd = editor.GetColor(nil,Line,0)
-  local d  = cd.StartPos<0 and 1-cd.StartPos or 0 --!!! Суперкостыль
-
-
-  local X0,Y0 = Editor.Pos(0,5)-d,Editor.Pos(0,4)
+  local X0,Y0 = Editor.Pos(0,5),Editor.Pos(0,4)
   local Yc= Mouse.Y==TitleBar-1 and Y0 or Mouse.Y>=Far.Height-1-KeyBar and Y0+Far.Height-1-TitleBar-KeyBar or Y0+Mouse.Y-TitleBar
   local Xc= Mouse.X==0 and X0 or Mouse.X>=Far.Width-1-ScrollBar and X0+Far.Width-1-ScrollBar or X0+Mouse.X
   return Xc,Yc,X0,Y0 -- Координаты курсора и координаты экрана.
