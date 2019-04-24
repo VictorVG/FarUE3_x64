@@ -52,6 +52,10 @@
 -- v1.4.3 - при непустой командной строке если курсор стоит на хэше спросим
 -- оператора что делать? Ok - выполним командную строку, Canсel - проверим хэш.
 -- 23.03.2019 22:41:07 +0300
+-- v1.4.4 - мелкий рефакторинг, вопрос к пользователю задаётся по русски,
+-- а чтобы LuaCheck не ругался на длинную строку в mf.msgbox вынесем сообщение
+-- в отдельный оператор local так, чтобы вывелась только одна строка
+-- 22.04.2019 17:53:12 +0300
 
 local ICID="E186306E-3B0D-48C1-9668-ED7CF64C0E65";
 local ICMID="A22F9043-C94A-4037-845C-26ED67E843D1";
@@ -59,6 +63,7 @@ local Mask="/.+\\.(md5|sfv|sha(1|3|256|512)|wrpl)/i";
 local arg,algo,cmd,ext,hash,mod,pt,prn,tp;
 local MsB=Mouse.Button;
 local MsF=Mouse.EventFlags;
+local Msg="Командая строка не пуста, но под курсором хэш файл. Что выполнить? Команду: Ok или Проверку: Cancel";
 
 Macro{
   id="C7BD288F-E03F-44F1-8E43-DC7BC7CBE4BA";
@@ -70,7 +75,7 @@ Macro{
   condition=function() return (mf.fmatch(APanel.Current,Mask)==1 and not (MsB==0x0001 and MsF==0x0001)) end;
   action=function()
   if not CmdLine.Empty then
- if mf.msgbox("Question","Cmdline not empty, but current is hash. Execute: Ok or Check: Cancel?",0x00020000) == 1
+ if mf.msgbox("Вопрос к пользователю:",Msg,0x00020000) == 1
         then
           Keys("Enter");
         else
