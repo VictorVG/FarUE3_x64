@@ -45,7 +45,7 @@
 
 @Contents
 $^#File and archive manager#
-$^#3.0 build 5400 x64#
+$^#3.0 build 5401 x64#
 $^#Copyright © 1996-2000 Eugene Roshal#
 $^#Copyright © 2000-2019 Far Group#
    ~Help file index~@Index@
@@ -2288,8 +2288,8 @@ $ #Special symbols#
     #!-!#      Short file name with extension
     #!+!#      Similar to !-! but if a long file name was lost
              after performing the command, Far will restore it
-    #!@@!#      Name of file with selected file names list
-    #!$!#      Name of file with selected short file names list
+    #!@@!#      Name of a file with a list of selected file names
+    #!$!#      Name of a file with a list of selected short file names
     #!&#       List of selected files
     #!&~~#      List of selected short file names
     #!:#       Current drive in the format "C:"

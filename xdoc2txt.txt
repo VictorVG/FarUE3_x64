@@ -11,31 +11,31 @@ Overview
 - It operates at high speed, so it is suitable for filter of various full text search engines.
 - The type of document is determined from the extension. It corresponds to the file with the following extension.
 
-.sxw OpenOffice.org Writer
-.sxc OpenOffice.org Calc
-.sxi OpenOffice.org Impress
-.sxd OpenOffice.org Draw
-.odt Open Document (text documemts)
-.ods Open Document (spreadsheet documemts)
-.odp Open Document (presentation documemts)
-.odg Open Document (drawing documemts)
-.docx / .docm WORD 2007/2010/2013
-. xlsx /. xlsm Excel 2007/2010/2013
-.pptx / .pptm PowerPoint 2007/2010/2013
-.doc WORD ver 5.0 / 95/97/2000 / Xp / 2003
-. xls Excel ver 5.0 / 95/97/2000 / Xp / 2003
-.ppt PowerPoint 97/2000 / Xp / 2003
-.rtf Rich Text
-.jaw / jtw Ichitaro ver5
-.jbw / juw Ichitaro ver6
-.jfw / jvw Ichitaro ver.7
-.jtd / jtt Ichitaro ver8 / 9/10/11/12
+.sxw - OpenOffice.org Writer
+.sxc - OpenOffice.org Calc
+.sxi - OpenOffice.org Impress
+.sxd - OpenOffice.org Draw
+.odt - Open Document (text documemts)
+.ods - Open Document (spreadsheet documemts)
+.odp - Open Document (presentation documemts)
+.odg - Open Document (drawing documemts)
+.docx / .docm - WORD 2007/2010/2013
+. xlsx /. xlsm - Excel 2007/2010/2013
+.pptx / .pptm - PowerPoint 2007/2010/2013
+.doc - WORD ver 5.0 / 95/97/2000 / Xp / 2003
+. xls - Excel ver 5.0 / 95/97/2000 / Xp / 2003
+.ppt - PowerPoint 97/2000 / Xp / 2003
+.rtf - Rich Text Format
+.jaw / jtw - Ichitaro ver5
+.jbw / juw - Ichitaro ver6
+.jfw / jvw - Ichitaro ver.7
+.jtd / jtt - Ichitaro ver8 / 9/10/11/12
 .oas / oa2 / oa3 OASYS / Win
-.bun Shinmatsu / pine 5 / pine 6
-. wj 2 / wj 3 / wk 3 / wk 4/123 Lotus 123
-.wri Windows 3.1 Write
-.pdf Adobe PDF
-.mht
+.bun - Shinmatsu / pine 5 / pine 6
+. wj2 / wj3 / wk3 / wk4 /123 - Lotus 123
+.wri - Windows 3.1 Write
+.pdf - Adobe PDF
+..mht / .mhtml - Web archive
 .html HTML
 .eml Mail export format of Outlook Express
 
@@ -118,11 +118,15 @@ xdoc2txt.exe [options ..] <filename ...>
 -z = # Maximum input file size (byte) Initial value is 256 MB
 -z = 512000000 Set the input file size limit to 512 MB
 -z = 0 Unlimited. Do not check file size.
+ -d <directory> Output destination directory specification <filename> File name of conversion source. Wildcard character (*?) Can be used.
+                 * If the file name contains a space, enclose it in "". The following options have been added from Ver2.19.
+
+
 
 <filename> The file name of the conversion source. Wildcard characters (*?) Are allowed.
 * When enclosing a file name including a space, enclose it with "".
 
-※ The following option has been abolished from Ver. 2.0.
+The following option has been abolished from Ver. 2.0.
 -n Ignore setting of access permission for PDF document (cryptlib.dll is required)
 -c PDF cache on (default is off)
 
@@ -332,6 +336,9 @@ Reference article: http://www.forest.impress.co.jp/article/2003/11/19/xdoc2txt.h
 
 History
 
+2.19 2019/5/3   - Fixed an issue that can not be extracted from .docx saved as Google document
+                - Extraction of mhtml saved with Chrome
+                - Add -d <output directory> option
 2.18 2019/4/8   - Fixed an issue where some PDFs created with Just PDF can not be extracted
 2.17 2018/10/15 - Fixed an issue where extra descriptors are displayed in RTF after RTF 1.9 (Word 2007)
                 - Ruby removal of docx
@@ -496,6 +503,6 @@ Correct bug that ends abnormally
 1.01 September 9, 2002 - Added -c option
 1.00 2002/07/08 - Text extraction part is separated from KWIC Finder and opened as a filter.
 
-Copyright (C) 2002-2014, hishida
+Copyright (C) 2002-2019, hishida
 http://ebstudio.info/
 hishida@bg.mbn.or.jp
