@@ -1,6 +1,6 @@
 ﻿.Language=Slovak,Slovak (Slovenčina)
 
-//Version: 3.0 build 5402
+//Version: 3.0 build 5403
 
 //[MYes]
 "Áno"
@@ -60,7 +60,7 @@
 //[MQuit]
 "Koniec"
 //[MAskQuit]
-"Chcete ukončiť FAR?"
+"Chcete ukončiť Far?"
 
 //functional keys - 6 characters max
 //[MF1]
@@ -299,7 +299,7 @@
 //[MConfigScanJunction]
 "Prehľadávať s&ymbolické odkazy"
 //[MConfigSmartFolderMonitor]
-"Aktualizovať panely, len ak je FAR aktívny"
+"Aktualizovať panely, len ak je Far aktívny"
 //[MConfigSaveHistory]
 "Ukladať históriu &príkazov"
 //[MConfigSaveFoldersHistory]
@@ -431,7 +431,7 @@
 //[MConfigSetAdminConsoleIcon]
 "Alternatívne pre správcu"
 //[MConfigTitleAddons]
-"Doplnky názvu okna &FAR:"
+"Doplnky názvu okna &Far:"
 
 //[MConfigDlgSetsTitle]
 "Nastavenia dialógov"
@@ -3828,7 +3828,7 @@
 //[MMacroSettingsEnableOutput]
 "Povoliť &výstup na obrazovku, kým sa vykonáva makro"
 //[MMacroSettingsRunAfterStart]
-"&Spustiť po spustení FARu"
+"&Spustiť po spustení Faru"
 //[MMacroSettingsActivePanel]
 "&Aktívny panel"
 //[MMacroSettingsPassivePanel]
@@ -3895,7 +3895,7 @@
 //[MExcModule]
 "Modul:"
 //[MExcTerminate]
-"Ukončiť FAR"
+"Ukončiť Far"
 //[MExcUnload]
 "Zatvoriť modul"
 //[MExcStack]
@@ -3912,11 +3912,11 @@
 "Nemôžem načítať obsah priečinka"
 
 //[MPlgBadVers]
-"Tento modul si vyžaduje vyššiu verziu FARu"
+"Tento modul si vyžaduje vyššiu verziu Faru"
 //[MPlgRequired]
-"Požadovaná verzia FARu je {0},"
+"Požadovaná verzia Faru je {0},"
 //[MPlgRequired2]
-"terajšia verzia FARu je {0}."
+"terajšia verzia Faru je {0}."
 //[MPlgLoadPluginError]
 "Chyba pri nahrávaní zásuvného modulu"
 

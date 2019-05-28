@@ -1,6 +1,6 @@
 ﻿.Language=Polish,Polish (Polski)
 
-//Version: 3.0 build 5402
+//Version: 3.0 build 5403
 
 //[MYes]
 "Tak"
@@ -60,7 +60,7 @@
 //[MQuit]
 "Zakończ"
 //[MAskQuit]
-"Czy chcesz wyjść z FAR'a"
+"Czy chcesz wyjść z Far'a"
 
 //functional keys - 6 characters max
 //[MF1]
@@ -299,7 +299,7 @@
 //[MConfigScanJunction]
 "Skanuj linki s&ymboliczne"
 //[MConfigSmartFolderMonitor]
-"&Aktualizuj panele tylko gdy FAR jest aktywny"
+"&Aktualizuj panele tylko gdy Far jest aktywny"
 //[MConfigSaveHistory]
 "Zapisz historię &poleceń"
 //[MConfigSaveFoldersHistory]
@@ -430,7 +430,7 @@
 //[MConfigSetAdminConsoleIcon]
 "Inna dla Administratora"
 //[MConfigTitleAddons]
-"Okno tytułowe &FAR:"
+"Okno tytułowe &Far:"
 
 //[MConfigDlgSetsTitle]
 "Ustawienia okien dialogowych"
@@ -3835,7 +3835,7 @@
 //[MMacroSettingsEnableOutput]
 "&Wyłącz zapis na ekran podczas wykonywania makra"
 //[MMacroSettingsRunAfterStart]
-"Wykonaj po &starcie FAR-a"
+"Wykonaj po &starcie Far-a"
 //[MMacroSettingsActivePanel]
 "Panel &aktywny"
 //[MMacroSettingsPassivePanel]
@@ -3905,7 +3905,7 @@
 //[MExcModule]
 "Moduł:"
 //[MExcTerminate]
-"Zamknięcie FAR"
+"Zamknięcie Far"
 //[MExcUnload]
 "Wyłącz wtyczkę"
 // need translation:
@@ -3924,11 +3924,11 @@
 "Nie udało się odczytać zawartości folderu"
 
 //[MPlgBadVers]
-"Do uruchomienia wtyczki wymagana jest wyższa wersja FAR-a"
+"Do uruchomienia wtyczki wymagana jest wyższa wersja Far-a"
 //[MPlgRequired]
-"Wymagana wersja FAR to {0},"
+"Wymagana wersja Far to {0},"
 //[MPlgRequired2]
-"bieżąca wersja FAR: {0}."
+"bieżąca wersja Far: {0}."
 //[MPlgLoadPluginError]
 "Błąd ładowania modułu wtyczek"
 

@@ -1,6 +1,6 @@
 ﻿.Language=Russian,Russian (Русский)
 
-//Version: 3.0 build 5402
+//Version: 3.0 build 5403
 
 //[MYes]
 "Да"
@@ -60,7 +60,7 @@
 //[MQuit]
 "Выход"
 //[MAskQuit]
-"Вы хотите завершить работу в FAR?"
+"Вы хотите завершить работу в Far?"
 
 //functional keys - 6 characters max
 //[MF1]
@@ -524,7 +524,7 @@
 //[MConfigInfoPanelUNUserPrincipal]
 "Основное имя пользователя"
 //[MConfigInfoPanelUNServicePrincipal]
-"Сбъект-служба"
+"Субъект-служба"
 //[MConfigInfoPanelUNDnsDomain]
 "Имя домена DNS"
 //[MConfigInfoPanelShowPowerStatus]
@@ -3824,7 +3824,7 @@
 //[MMacroSettingsEnableOutput]
 "Разрешить во время &выполнения вывод на экран"
 //[MMacroSettingsRunAfterStart]
-"В&ыполнять после запуска FAR"
+"В&ыполнять после запуска Far"
 //[MMacroSettingsActivePanel]
 "&Активная панель"
 //[MMacroSettingsPassivePanel]

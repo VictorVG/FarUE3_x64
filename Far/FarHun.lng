@@ -1,6 +1,6 @@
 ﻿.Language=Hungarian,Hungarian (Magyar)
 
-//Version: 3.0 build 5402
+//Version: 3.0 build 5403
 
 //[MYes]
 "Igen"
@@ -61,7 +61,7 @@
 //[MQuit]
 "Kilépés"
 //[MAskQuit]
-"Biztosan kilép a FAR-ból?"
+"Biztosan kilép a Far-ból?"
 
 //functional keys - 6 characters max
 //[MF1]
@@ -3594,7 +3594,7 @@
 //[MSetConfirmHistoryClear]
 "&Előzménylista törlése"
 //[MSetConfirmExit]
-"K&ilépés a FAR-ból"
+"K&ilépés a Far-ból"
 
 // need translation:
 //[MPluginsManagerSettingsTitle]
@@ -4084,7 +4084,7 @@
 //[MMacroSettingsEnableOutput]
 "Képernyő&kimenet a makró futása közben"
 //[MMacroSettingsRunAfterStart]
-"Végrehajtás a FAR &indítása után"
+"Végrehajtás a Far &indítása után"
 //[MMacroSettingsActivePanel]
 "&Aktív panel"
 //[MMacroSettingsPassivePanel]
@@ -4190,7 +4190,7 @@
 "A mappa tartalma nem olvasható"
 
 //[MPlgBadVers]
-"A pluginhez újabb FAR verzió kell"
+"A pluginhez újabb Far verzió kell"
 //[MPlgRequired]
 "A szükséges Far verzió: {0},"
 //[MPlgRequired2]

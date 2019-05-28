@@ -1,6 +1,6 @@
 ﻿.Language=Spanish,Spanish (Español)
 
-//Version: 3.0 build 5402
+//Version: 3.0 build 5403
 
 //[MYes]
 "Si"
@@ -60,7 +60,7 @@
 //[MQuit]
 "Salir"
 //[MAskQuit]
-"Desea salir de FAR?"
+"Desea salir de Far?"
 
 //functional keys - 6 characters max
 //[MF1]
@@ -431,7 +431,7 @@
 //[MConfigSetAdminConsoleIcon]
 "Alternar por Administrador"
 //[MConfigTitleAddons]
-"Título de ventana de FAR:"
+"Título de ventana de Far:"
 
 //[MConfigDlgSetsTitle]
 "Configuración de diálogo"
@@ -643,7 +643,7 @@
 //[MSaveSetupAsk1]
 "Desea guardar la configuración"
 //[MSaveSetupAsk2]
-"actual de FAR?"
+"actual de Far?"
 //[MSaveSetup]
 "Guardar"
 
@@ -3832,7 +3832,7 @@
 //[MMacroSettingsEnableOutput]
 "Permitir salida pantalla mientras se ejecut&an los macros"
 //[MMacroSettingsRunAfterStart]
-"Ejecutar luego de &iniciar FAR"
+"Ejecutar luego de &iniciar Far"
 //[MMacroSettingsActivePanel]
 "Panel &activo"
 //[MMacroSettingsPassivePanel]
@@ -3918,7 +3918,7 @@
 "No se puede leer contenidos de directorios"
 
 //[MPlgBadVers]
-"Este complemento requiere versión más actual de FAR"
+"Este complemento requiere versión más actual de Far"
 //[MPlgRequired]
 "Requiere la versión Far {0},"
 //[MPlgRequired2]

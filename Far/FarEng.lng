@@ -1,6 +1,6 @@
 ﻿.Language=English,English
 
-//Version: 3.0 build 5402
+//Version: 3.0 build 5403
 
 //[MYes]
 "Yes"
@@ -60,7 +60,7 @@
 //[MQuit]
 "Quit"
 //[MAskQuit]
-"Do you want to quit FAR?"
+"Do you want to quit Far?"
 
 //functional keys - 6 characters max
 //[MF1]
@@ -3824,7 +3824,7 @@
 //[MMacroSettingsEnableOutput]
 "Allo&w screen output while executing macro"
 //[MMacroSettingsRunAfterStart]
-"Execute after FAR &start"
+"Execute after Far &start"
 //[MMacroSettingsActivePanel]
 "&Active panel"
 //[MMacroSettingsPassivePanel]

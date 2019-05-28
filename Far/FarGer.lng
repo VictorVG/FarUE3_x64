@@ -1,6 +1,6 @@
 ﻿.Language=German,German (Deutsch)
 
-//Version: 3.0 build 5402
+//Version: 3.0 build 5403
 
 //[MYes]
 "Ja"
@@ -60,7 +60,7 @@
 //[MQuit]
 "Beenden"
 //[MAskQuit]
-"Wollen Sie FAR beenden?"
+"Wollen Sie Far beenden?"
 
 //functional keys - 6 characters max
 //[MF1]
@@ -3903,7 +3903,7 @@
 //[MMacroSettingsEnableOutput]
 "Bildschirmausgabe &während Makro abläuft"
 //[MMacroSettingsRunAfterStart]
-"Ausführen beim &Starten von FAR"
+"Ausführen beim &Starten von Far"
 //[MMacroSettingsActivePanel]
 "&Aktives Panel"
 //[MMacroSettingsPassivePanel]
@@ -3995,7 +3995,7 @@
 "Kann Ordnerinhalt nicht lesen"
 
 //[MPlgBadVers]
-"Das Plugin benötigt eine aktuellere Version von FAR"
+"Das Plugin benötigt eine aktuellere Version von Far"
 //[MPlgRequired]
 "Benötigte Far-Version ist {0},"
 //[MPlgRequired2]

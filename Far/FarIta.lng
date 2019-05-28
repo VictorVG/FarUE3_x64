@@ -1,6 +1,6 @@
 ﻿.Language=Italian,Italian (Italiano)
 
-//Version: 3.0 build 5402
+//Version: 3.0 build 5403
 
 //[MYes]
 "&Si"
@@ -60,7 +60,7 @@
 //[MQuit]
 "Uscita"
 //[MAskQuit]
-"Vuoi Uscire Da FAR?"
+"Vuoi Uscire Da Far?"
 
 //functional keys - 6 characters max
 //[MF1]
@@ -299,7 +299,7 @@
 //[MConfigScanJunction]
 "Controlla Lin&ks Simbolici"
 //[MConfigSmartFolderMonitor]
-"Aggiorna Pannelli Solo Se &FAR Attivo"
+"Aggiorna Pannelli Solo Se &Far Attivo"
 //[MConfigSaveHistory]
 "Salva La C&ronologia Dei Comandi"
 //[MConfigSaveFoldersHistory]
@@ -3825,7 +3825,7 @@
 //[MMacroSettingsEnableOutput]
 "&Abilita Schermo Quando Si Esegue Macro"
 //[MMacroSettingsRunAfterStart]
-"Esegui Ad &Avvio Di FAR"
+"Esegui Ad &Avvio Di Far"
 //[MMacroSettingsActivePanel]
 "Pannello &Attivo"
 //[MMacroSettingsPassivePanel]
@@ -3892,7 +3892,7 @@
 //[MExcModule]
 "Modulo:"
 //[MExcTerminate]
-"Termina FAR"
+"Termina Far"
 //[MExcUnload]
 "Scarica Plugin"
 //[MExcStack]
@@ -3909,9 +3909,9 @@
 "Non Posso Leggere Il Contenuto Della Cartella"
 
 //[MPlgBadVers]
-"Questo Plugin Richiede Una Versione Maggiore Di FAR"
+"Questo Plugin Richiede Una Versione Maggiore Di Far"
 //[MPlgRequired]
-"Richiesta La Versione {0} Di FAR"
+"Richiesta La Versione {0} Di Far"
 //[MPlgRequired2]
 "Versione Attuale: {0}"
 //[MPlgLoadPluginError]

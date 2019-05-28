@@ -1,6 +1,6 @@
 ﻿.Language=Czech,Czech (Čeština)
 
-//Version: 3.0 build 5402
+//Version: 3.0 build 5403
 
 //[MYes]
 "Ano"
@@ -60,7 +60,7 @@
 //[MQuit]
 "Konec"
 //[MAskQuit]
-"Chcete ukončit FAR?"
+"Chcete ukončit Far?"
 
 //functional keys - 6 characters max
 //[MF1]
@@ -3906,7 +3906,7 @@
 //[MMacroSettingsEnableOutput]
 "Povolit &výstup na obrazovku dokud se provádí makro"
 //[MMacroSettingsRunAfterStart]
-"&Spustit po spuštění FARu"
+"&Spustit po spuštění Faru"
 //[MMacroSettingsActivePanel]
 "&Aktivní panel"
 //[MMacroSettingsPassivePanel]
@@ -3996,11 +3996,11 @@
 "Nelze načíst obsah adresáře"
 
 //[MPlgBadVers]
-"Tento modul vyžaduje vyšší verzi FARu"
+"Tento modul vyžaduje vyšší verzi Faru"
 //[MPlgRequired]
 "Požadovaná verze Faru je {0},"
 //[MPlgRequired2]
-"nynější verze FARu je {0}."
+"nynější verze Faru je {0}."
 //[MPlgLoadPluginError]
 "Chyba při nahrávání modulu"
 
