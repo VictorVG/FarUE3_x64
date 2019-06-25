@@ -1,6 +1,6 @@
 ﻿.Language=German,German (Deutsch)
 
-//Version: 3.0 build 5405
+//Version: 3.0 build 5417
 
 //[MYes]
 "Ja"
@@ -95,7 +95,7 @@
 //[MShiftF3]
 "ArcBef"
 //[MShiftF4]
-"Erst.."
+"Erst…"
 //[MShiftF5]
 "Kopier"
 //[MShiftF6]
@@ -118,9 +118,9 @@
 //[MAltF2]
 "Rechts"
 //[MAltF3]
-"Betr.."
+"Betr…"
 //[MAltF4]
-"Bear.."
+"Bear…"
 //[MAltF5]
 "Druck"
 //[MAltF6]
@@ -708,7 +708,7 @@
 //[MCopyDlgTotal]
 "Gesamt"
 //[MCopyPrepareSecury]
-"Anwenden der Zugriffsrechte..."
+"Anwenden der Zugriffsrechte…"
 //[MCopyUseFilter]
 "Ben&utze Filter"
 //[MCopySetFilter]
@@ -1037,7 +1037,7 @@
 //[MEditAskSaveExt]
 "Die Datei wurde durch ein externes Programm verändert. Save?"
 //[MEditBtnSaveAs]
-"Speichern &als..."
+"Speichern &als…"
 
 //[MEditRO]
 "ist eine schreibgeschützte Datei"
@@ -1202,7 +1202,7 @@
 //[MEditShiftF3]
 ""
 //[MEditShiftF4]
-"Bear.."
+"Bear…"
 //[MEditShiftF5]
 ""
 //[MEditShiftF6]
@@ -2278,7 +2278,7 @@
 //[MFindFileText]
 "Enthält &Text:"
 //[MFindFileHex]
-"En&thält Hex (xx xx ...):"
+"En&thält Hex (xx xx …):"
 // need translation:
 //[MFindFileCodePage]
 "Zeichenta&belle verwenden:"
@@ -2917,9 +2917,9 @@
 //[MChangeDriveAskDisconnect]
 "Wollen Sie die Verbindung trotzdem trennen?"
 //[MChangeWaitingLoadDisk]
-"Warte auf Datenträger..."
+"Warte auf Datenträger…"
 //[MChangeCouldNotEjectMedia]
-"Konnte Medium in Laufwerk {0}: nicht auswerfen"
+"Konnte Medium in Laufwerk nicht auswerfen"
 //[MChangeDriveConfigure]
 "Einstellungen des Auswahlmenüs mit Laufwerken"
 //[MChangeDriveShowDiskType]
@@ -3078,6 +3078,12 @@
 "Integrität"
 //[MSetAttrNoScrubData]
 "Keine Datenbereinigung"
+// need translation:
+//[MSetAttrPinned]
+"Pinned"
+// need translation:
+//[MSetAttrUnpinned]
+"Unpinned"
 //[MSetAttrSubfolders]
 "Unterordner miteinbe&ziehen"
 //[MSetAttrOwner]
@@ -3723,7 +3729,7 @@
 //[MViewSearchForText]
 "Suchen nach &Text"
 //[MViewSearchForHex]
-"Suchen nach &Hex (xx xx ...)"
+"Suchen nach &Hex (xx xx …)"
 //[MViewSearchCase]
 "Gr&oß-/Kleinschreibung"
 //[MViewSearchWholeWords]
@@ -3783,8 +3789,6 @@
 "Lese Dateibeschreibungen"
 //[MCannotUpdateDiz]
 "Dateibeschreibungen konnten nicht aktualisiert werden."
-//[MCannotUpdateRODiz]
-"Die Beschreibungsdatei ist schreibgeschützt."
 
 //[MCfgDizTitle]
 "Dateibeschreibungen"
@@ -4906,7 +4910,7 @@
 //[MFileHilightTitle]
 "Farbmarkierungen"
 //[MFileFilterName]
-"Filter&name:"
+"&Name:"
 //[MFileFilterMatchMask]
 "&Maske:"
 //[MFileFilterSize]
@@ -4969,6 +4973,12 @@
 "Integrität"
 //[MFileFilterAttrNoScrubData]
 "Keine Datenbereinigung"
+// need translation:
+//[MFileFilterAttrPinned]
+"Pinned"
+// need translation:
+//[MFileFilterAttrUnpinned]
+"Unpinned"
 //[MFileFilterReset]
 "Rücksetzen"
 //[MFileFilterCancel]
@@ -4995,6 +5005,9 @@
 "um dieses Objekt zu kopieren:"
 //[MElevationRequiredMove]
 "um dieses Objekt zu verschieben:"
+// need translation:
+//[MElevationRequiredReplace]
+"um dieses Objekt zu ersetzen:"
 //[MElevationRequiredGetAttributes]
 "um Attribute dieses Objektes zu bekommen:"
 //[MElevationRequiredSetAttributes]

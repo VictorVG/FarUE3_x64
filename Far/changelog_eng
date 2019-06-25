@@ -3,6 +3,80 @@ This file is a translation of the main russian changelog and is provided by volu
 It might not always be as up to date as the main changelog.
 =======================================================================================
 
+drkns 23.06.2019 22:35:33 +0100 - build 5417
+
+1. Correction of 5416.
+
+drkns 21.06.2019 20:40:14 +0100 - build 5416
+
+1. Support FILE_ATTRIBUTE_PINNED and FILE_ATTRIBUTE_UNPINNED attributes.
+
+2. Move attributes in filters & highlight/sorting groups dialogs to a separate dialog - it's not possible to squeeze more into the main one.
+
+3. UI for names of highlight/sorting groups.
+
+4. Show no more than 3 checked and 3 unchecked attributes in filters & highlight/sorting groups menus for the same reason.
+
+5. Fix minor bugs in dialogs.
+
+6. Refactoring.
+
+drkns 19.06.2019 20:18:11 +0100 - build 5415
+
+1. And again.
+
+drkns 15.06.2019 09:27:46 +0100 - build 5414
+
+1. 5411 once more.
+
+drkns 14.06.2019 17:10:17 +0100 - build 5413
+
+1. Continuation of 5411:
+   - Take into account that the user can insidiously change the current directory after opening Editor.
+   - Save hardlinks directly to not break them.
+
+2. As it turned out, updating descriptions in ANSI plugins (e.g. Multiarc) never worked.
+
+drkns 13.06.2019 10:40:47 +0100 - build 5412
+
+1. Correction of 5409.
+
+drkns 13.06.2019 01:49:25 +0100 - build 5411
+
+1. Based on 0003712: Far crashes when saving a file and the file content is lost:
+   we indeed use not the safest possible way to save files.
+   Now in Editor (and also when saving descriptions and user menu) we write into a new file
+   and then replace the old one with it using ReplaceFileW.
+
+2. Since ReplaceFileW allows to create backups with truly indescribable ease, let's use it:
+   If Editor.CreateBackups is enabled in far:config - Editor will create .bak files when saving.
+
+drkns 08.06.2019 22:27:51 +0100 - build 5410
+
+1. Refactoring.
+
+drkns 07.06.2019 22:46:34 +0100 - build 5409
+
+1. Eject didn't work for some USB sticks.
+
+2. Refactoring.
+
+3. Removed the remnants of ACTL_EJECTMEDIA.
+
+4. Continuation of 5395: use "…" instead of "..." in lng & hlf as well.
+
+drkns 05.06.2019 15:50:39 +0100 - build 5408
+
+1. fmt allows checking format strings at compile time, let's use that.
+
+zg 04.06.2019 11:53:20 +0300 - build 5407
+
+1. 0003713: panel.GetPanelDirectory & panel.SetPanelDirectory inconsistency.
+
+drkns 01.06.2019 19:27:09 +0100 - build 5406
+
+1. Refactoring.
+
 drkns 31.05.2019 00:09:21 +0100 - build 5405
 
 1. Refactoring, Clang & GCC warnings.

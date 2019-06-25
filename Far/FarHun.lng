@@ -1,6 +1,6 @@
 ﻿.Language=Hungarian,Hungarian (Magyar)
 
-//Version: 3.0 build 5405
+//Version: 3.0 build 5417
 
 //[MYes]
 "Igen"
@@ -96,7 +96,7 @@
 //[MShiftF3]
 "TömPar"
 //[MShiftF4]
-"ÚjFájl"
+"ÚjFájl…"
 //[MShiftF5]
 "Másol"
 //[MShiftF6]
@@ -119,9 +119,9 @@
 //[MAltF2]
 "Jobb"
 //[MAltF3]
-"Néző.."
+"Néző…"
 //[MAltF4]
-"Szrk.."
+"Szrk…"
 //[MAltF5]
 "Nyomt"
 //[MAltF6]
@@ -784,7 +784,7 @@
 //[MCopyDlgTotal]
 "Összesen"
 //[MCopyPrepareSecury]
-"Hozzáférési jogok alkalmazása..."
+"Hozzáférési jogok alkalmazása…"
 //[MCopyUseFilter]
 "Szűrő&vel"
 //[MCopySetFilter]
@@ -1125,7 +1125,7 @@
 //[MEditAskSaveExt]
 "A fájlt egy külső program megváltoztatta. Save?"
 //[MEditBtnSaveAs]
-"Mentés más&ként..."
+"Mentés más&ként…"
 
 //[MEditRO]
 "csak olvasható fájl"
@@ -1290,11 +1290,11 @@
 //[MEditShiftF1]
 ""
 //[MEditShiftF2]
-"Ment.."
+"Ment…"
 //[MEditShiftF3]
 ""
 //[MEditShiftF4]
-"Szrk.."
+"Szrk…"
 //[MEditShiftF5]
 ""
 //[MEditShiftF6]
@@ -1502,7 +1502,7 @@
 //[MSingleEditShiftF1]
 ""
 //[MSingleEditShiftF2]
-"Ment.."
+"Ment…"
 //[MSingleEditShiftF3]
 ""
 //[MSingleEditShiftF4]
@@ -2709,7 +2709,7 @@
 //[MCheckComspecVar]
 "Check COMSPEC environment variable"
 //[MScanningFolder]
-"Mappák olvasása..."
+"Mappák olvasása"
 
 //[MMakeFolderTitle]
 "Új mappa létrehozása"
@@ -3072,9 +3072,9 @@
 //[MChangeDriveAskDisconnect]
 "Mindenképpen leválasztja az eszközt?"
 //[MChangeWaitingLoadDisk]
-"Lemez betöltése..."
+"Lemez betöltése…"
 //[MChangeCouldNotEjectMedia]
-"{0}: meghajtó lemeze nem oldható ki"
+"Meghajtó lemeze nem oldható ki"
 // need translation:
 //[MChangeDriveConfigure]
 "Change Drive Menu Options"
@@ -3251,6 +3251,12 @@
 // need translation:
 //[MSetAttrNoScrubData]
 "No scrub data"
+// need translation:
+//[MSetAttrPinned]
+"Pinned"
+// need translation:
+//[MSetAttrUnpinned]
+"Unpinned"
 //[MSetAttrSubfolders]
 "Az almappákon is"
 //[MSetAttrOwner]
@@ -3820,7 +3826,7 @@
 //[MCannotSaveTree]
 "A mappák fastruktúrája nem menthető fájlba"
 //[MReadingTree]
-"Mappaszerkezet újraolvasása..."
+"Mappaszerkezet újraolvasása"
 
 //[MUserMenuTitle]
 "Felhasználói menü szerkesztése"
@@ -3963,8 +3969,6 @@
 "Fájlmegjegyzések olvasása"
 //[MCannotUpdateDiz]
 "A fájlmegjegyzések nem frissíthetők"
-//[MCannotUpdateRODiz]
-"A megjegyzésfájl csak olvasható"
 
 //[MCfgDizTitle]
 "Fájl megjegyzésfájlok"
@@ -5099,7 +5103,7 @@
 //[MFileHilightTitle]
 "Fájlkiemelés"
 //[MFileFilterName]
-"Szűrő &neve:"
+"&Neve:"
 //[MFileFilterMatchMask]
 "&Maszk:"
 //[MFileFilterSize]
@@ -5168,6 +5172,12 @@
 // need translation:
 //[MFileFilterAttrNoScrubData]
 "No scrub data"
+// need translation:
+//[MFileFilterAttrPinned]
+"Pinned"
+// need translation:
+//[MFileFilterAttrUnpinned]
+"Unpinned"
 //[MFileFilterReset]
 "Reset"
 //[MFileFilterCancel]
@@ -5201,6 +5211,9 @@
 // need translation:
 //[MElevationRequiredMove]
 "to move this object:"
+// need translation:
+//[MElevationRequiredReplace]
+"to replace this object:"
 // need translation:
 //[MElevationRequiredGetAttributes]
 "to get attributes of this object:"

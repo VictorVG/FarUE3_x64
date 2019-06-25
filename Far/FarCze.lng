@@ -1,6 +1,6 @@
 ﻿.Language=Czech,Czech (Čeština)
 
-//Version: 3.0 build 5405
+//Version: 3.0 build 5417
 
 //[MYes]
 "Ano"
@@ -95,7 +95,7 @@
 //[MShiftF3]
 "ArcPří"
 //[MShiftF4]
-"Úpravy"
+"Úpravy…"
 //[MShiftF5]
 "Kopír."
 //[MShiftF6]
@@ -118,9 +118,9 @@
 //[MAltF2]
 "Pravý"
 //[MAltF3]
-"Zobr.."
+"Zobr…"
 //[MAltF4]
-"Uprav."
+"Uprav…"
 //[MAltF5]
 "Tisk"
 //[MAltF6]
@@ -737,7 +737,7 @@
 //[MCopyDlgTotal]
 "Celkem"
 //[MCopyPrepareSecury]
-"Nastavuji přístupová práva..."
+"Nastavuji přístupová práva…"
 //[MCopyUseFilter]
 "P&oužít filtr"
 //[MCopySetFilter]
@@ -1068,7 +1068,7 @@
 //[MEditAskSaveExt]
 "Soubor byl změněný externím programem. Uložit?"
 //[MEditBtnSaveAs]
-"Ulož&it jako..."
+"Ulož&it jako…"
 
 //[MEditRO]
 "je určen pouze pro čtení"
@@ -1229,7 +1229,7 @@
 //[MEditShiftF3]
 ""
 //[MEditShiftF4]
-"Edit.."
+"Edit…"
 //[MEditShiftF5]
 ""
 //[MEditShiftF6]
@@ -2930,9 +2930,9 @@
 //[MChangeDriveAskDisconnect]
 "Chcete i přesto zařízení odpojit?"
 //[MChangeWaitingLoadDisk]
-"Čekám na disk k připojení..."
+"Čekám na disk k připojení…"
 //[MChangeCouldNotEjectMedia]
-"Nelze vysunout médium v jednotce {0}:"
+"Nelze vysunout médium v jednotce"
 //[MChangeDriveConfigure]
 "Možnosti menu změny jednotky"
 //[MChangeDriveShowDiskType]
@@ -3096,6 +3096,12 @@
 // need translation:
 //[MSetAttrNoScrubData]
 "No scrub data"
+// need translation:
+//[MSetAttrPinned]
+"Pinned"
+// need translation:
+//[MSetAttrUnpinned]
+"Unpinned"
 //[MSetAttrSubfolders]
 "Zpracovat i po&dadresáře"
 //[MSetAttrOwner]
@@ -3787,8 +3793,6 @@
 "Načítám popisy souboru"
 //[MCannotUpdateDiz]
 "Nelze aktualizovat popisy souboru"
-//[MCannotUpdateRODiz]
-"Popisový soubor má atribut ""Jen pro čtení"""
 
 //[MCfgDizTitle]
 "Popisy souborů"
@@ -4904,7 +4908,7 @@
 //[MFileHilightTitle]
 "Zvýrazňování souborů"
 //[MFileFilterName]
-"Jmé&no filtru:"
+"Jmé&no:"
 //[MFileFilterMatchMask]
 "&Maska"
 //[MFileFilterSize]
@@ -4969,6 +4973,12 @@
 // need translation:
 //[MFileFilterAttrNoScrubData]
 "No scrub data"
+// need translation:
+//[MFileFilterAttrPinned]
+"Pinned"
+// need translation:
+//[MFileFilterAttrUnpinned]
+"Unpinned"
 //[MFileFilterReset]
 "Reset"
 //[MFileFilterCancel]
@@ -4994,6 +5004,9 @@
 "kopírování tohoto objektu:"
 //[MElevationRequiredMove]
 "přesunutí tohoto objektu:"
+// need translation:
+//[MElevationRequiredReplace]
+"nahrazení tohoto objektu:"
 //[MElevationRequiredGetAttributes]
 "získání atributů tohoto objektu:"
 //[MElevationRequiredSetAttributes]

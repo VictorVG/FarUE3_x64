@@ -1,6 +1,6 @@
 ﻿.Language=Ukrainian,Ukrainian (Українська)
 
-//Version: 3.0 build 5405
+//Version: 3.0 build 5417
 
 //[MYes]
 "Так"
@@ -95,7 +95,7 @@
 //[MShiftF3]
 "АрхКом"
 //[MShiftF4]
-"Редаг."
+"Редаг…"
 //[MShiftF5]
 "Копіюв"
 //[MShiftF6]
@@ -118,9 +118,9 @@
 //[MAltF2]
 "Права"
 //[MAltF3]
-"Перегл"
+"Перегл…"
 //[MAltF4]
-"Редаг."
+"Редаг…"
 //[MAltF5]
 "Друк"
 //[MAltF6]
@@ -695,7 +695,7 @@
 //[MCopyDlgTotal]
 "Усього"
 //[MCopyPrepareSecury]
-"Застосування прав доступу..."
+"Застосування прав доступу…"
 //[MCopyUseFilter]
 "Використовувати фільтр"
 //[MCopySetFilter]
@@ -1018,7 +1018,7 @@
 //[MEditAskSaveExt]
 "Файл було змінено зовнішньою програмою. Зберегти?"
 //[MEditBtnSaveAs]
-"Збер&егти як..."
+"Збер&егти як…"
 
 //[MEditRO]
 "має атрибут \"Лише для читання\""
@@ -1174,7 +1174,7 @@
 //[MEditShiftF3]
 ""
 //[MEditShiftF4]
-"Редаг."
+"Редаг…"
 //[MEditShiftF5]
 ""
 //[MEditShiftF6]
@@ -2863,9 +2863,9 @@
 //[MChangeDriveAskDisconnect]
 "Ви бажаєте в будь-якому разі відключитися від пристрою?"
 //[MChangeWaitingLoadDisk]
-"Очікування читання диска..."
+"Очікування читання диска…"
 //[MChangeCouldNotEjectMedia]
-"Неможливо витягти диск із приводу {0}:"
+"Неможливо витягти диск із приводу"
 //[MChangeDriveConfigure]
 "Налаштування меню вибору диска"
 //[MChangeDriveShowDiskType]
@@ -3021,6 +3021,10 @@
 "Потік цілісності"
 //[MSetAttrNoScrubData]
 "Нема даних очищення"
+//[MSetAttrPinned]
+"Закріплений"
+//[MSetAttrUnpinned]
+"Відкріплений"
 //[MSetAttrSubfolders]
 "Обробляти &вкладені папки"
 //[MSetAttrOwner]
@@ -3705,8 +3709,6 @@
 "Читання описів файлів"
 //[MCannotUpdateDiz]
 "Не вдалося оновити описи файлів"
-//[MCannotUpdateRODiz]
-"Файл описів захищено від запису"
 
 //[MCfgDizTitle]
 "Описи файлів"
@@ -4815,7 +4817,7 @@
 //[MFileHilightTitle]
 "Розмальовка файлів"
 //[MFileFilterName]
-"Ім'я &фільтра:"
+"Ім'&я:"
 //[MFileFilterMatchMask]
 "&Маска:"
 //[MFileFilterSize]
@@ -4878,6 +4880,10 @@
 "Потік цілісності"
 //[MFileFilterAttrNoScrubData]
 "Нема даних очищення"
+//[MFileFilterAttrPinned]
+"Закріплений"
+//[MFileFilterAttrUnpinned]
+"Відкріплений"
 //[MFileFilterReset]
 "Очистит&и"
 //[MFileFilterCancel]
@@ -4903,6 +4909,8 @@
 "для копіювання цього об'єкта:"
 //[MElevationRequiredMove]
 "для переміщення цього об'єкта:"
+//[MElevationRequiredReplace]
+"для заміщення цього об'єкта:"
 //[MElevationRequiredGetAttributes]
 "для отримання атрибутів цього об'єкта:"
 //[MElevationRequiredSetAttributes]

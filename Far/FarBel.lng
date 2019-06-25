@@ -1,6 +1,6 @@
 ﻿.Language=Belarusian,Belarusian (Беларуская)
 
-//Version: 3.0 build 5405
+//Version: 3.0 build 5417
 
 //[MYes]
 "Так"
@@ -95,7 +95,7 @@
 //[MShiftF3]
 "АрхКам"
 //[MShiftF4]
-"Меняць.."
+"Меняць…"
 //[MShiftF5]
 "Капіяваць"
 //[MShiftF6]
@@ -118,9 +118,9 @@
 //[MAltF2]
 "Правая"
 //[MAltF3]
-"Глядзець.."
+"Глядзець…"
 //[MAltF4]
-"Меняць.."
+"Меняць…"
 //[MAltF5]
 "Друкаваць"
 //[MAltF6]
@@ -395,7 +395,7 @@
 //[MConfigShowSortMode]
 "Адлюстроўваць літару стану пара&дкавання"
 //[MConfigShowDotsInRoot]
-"Адлюстроўваць '..' у каранёвым каталогу"
+"Адлюстроўваць \"..\" у каранёвым каталогу"
 
 //[MConfigInterfaceTitle]
 "Налады знешняга выгляду"
@@ -1174,7 +1174,7 @@
 //[MEditShiftF3]
 ""
 //[MEditShiftF4]
-"Мяняць.."
+"Мяняць…"
 //[MEditShiftF5]
 ""
 //[MEditShiftF6]
@@ -2865,7 +2865,7 @@
 //[MChangeWaitingLoadDisk]
 "Чаканне чытання дыску…"
 //[MChangeCouldNotEjectMedia]
-"Немагчыма выняць дыск з {0}:"
+"Немагчыма выняць дыск з прывада"
 //[MChangeDriveConfigure]
 "Налады меню змены дыску"
 //[MChangeDriveShowDiskType]
@@ -3021,6 +3021,12 @@
 "Струмень цэласнасці"
 //[MSetAttrNoScrubData]
 "Няма дадзеных ачысткі"
+// need translation:
+//[MSetAttrPinned]
+"Pinned"
+// need translation:
+//[MSetAttrUnpinned]
+"Unpinned"
 //[MSetAttrSubfolders]
 "Апрацоў&ваць укладзеныя каталогі"
 //[MSetAttrOwner]
@@ -3705,8 +3711,6 @@
 "Чытанне апісання файлаў"
 //[MCannotUpdateDiz]
 "Не атрымалася абнавіць апісанні файлаў"
-//[MCannotUpdateRODiz]
-"Файл апісання абаронены на запіс"
 
 //[MCfgDizTitle]
 "Апісанні файлаў"
@@ -4815,7 +4819,7 @@
 //[MFileHilightTitle]
 "Разфарбоўка файлаў"
 //[MFileFilterName]
-"Імя &фільтра:"
+"Ім&я:"
 //[MFileFilterMatchMask]
 "&Маска:"
 //[MFileFilterSize]
@@ -4878,6 +4882,12 @@
 "Струмень цэласнасці"
 //[MFileFilterAttrNoScrubData]
 "Няма дадзеных ачысткі"
+// need translation:
+//[MFileFilterAttrPinned]
+"Pinned"
+// need translation:
+//[MFileFilterAttrUnpinned]
+"Unpinned"
 //[MFileFilterReset]
 "Зкінуц&ь"
 //[MFileFilterCancel]
@@ -4903,6 +4913,9 @@
 "для капіявання гэтага аб'екту:"
 //[MElevationRequiredMove]
 "для пераносу гэтага аб'екту:"
+// need translation:
+//[MElevationRequiredReplace]
+"для замены гэтага аб'екту:"
 //[MElevationRequiredGetAttributes]
 "для атрымання атрыбутаў гэтага аб'екту:"
 //[MElevationRequiredSetAttributes]

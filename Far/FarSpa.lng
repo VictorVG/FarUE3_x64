@@ -1,6 +1,6 @@
 ﻿.Language=Spanish,Spanish (Español)
 
-//Version: 3.0 build 5405
+//Version: 3.0 build 5417
 
 //[MYes]
 "Si"
@@ -95,7 +95,7 @@
 //[MShiftF3]
 "CmdArc"
 //[MShiftF4]
-"Editar"
+"Editar…"
 //[MShiftF5]
 "Copiar"
 //[MShiftF6]
@@ -118,9 +118,9 @@
 //[MAltF2]
 "Drcha"
 //[MAltF3]
-"Ver..."
+"Ver…"
 //[MAltF4]
-"Edita."
+"Edita…"
 //[MAltF5]
 "Imprim"
 //[MAltF6]
@@ -698,7 +698,7 @@
 //[MCopyDlgTotal]
 "Total"
 //[MCopyPrepareSecury]
-"Aplicando derechos de acceso..."
+"Aplicando derechos de acceso…"
 //[MCopyUseFilter]
 "&Usar filtros"
 //[MCopySetFilter]
@@ -1021,7 +1021,7 @@
 //[MEditAskSaveExt]
 "El archivo ha sido cambiado por un programa externo. Desea guardarlo?"
 //[MEditBtnSaveAs]
-"Guardar como..."
+"Guardar como…"
 
 //[MEditRO]
 "es un archivo de sólo lectura"
@@ -1177,7 +1177,7 @@
 //[MEditShiftF3]
 ""
 //[MEditShiftF4]
-"Edita."
+"Edita…"
 //[MEditShiftF5]
 ""
 //[MEditShiftF6]
@@ -1211,7 +1211,7 @@
 //[MEditAltF7]
 "Previo"
 //[MEditAltF8]
-"Ir a.."
+"Ir a…"
 //[MEditAltF9]
 "Video"
 //[MEditAltF10]
@@ -1423,7 +1423,7 @@
 //[MSingleEditAltF7]
 ""
 //[MSingleEditAltF8]
-"Ir a.."
+"Ir a…"
 //[MSingleEditAltF9]
 "Video"
 //[MSingleEditAltF10]
@@ -1846,7 +1846,7 @@
 //[MViewAltF7]
 "Previo"
 //[MViewAltF8]
-"Ir a.."
+"Ir a…"
 //[MViewAltF9]
 "Video"
 //[MViewAltF10]
@@ -2066,7 +2066,7 @@
 //[MSingleViewAltF7]
 "Prev"
 //[MSingleViewAltF8]
-"Ir a.."
+"Ir a…"
 //[MSingleViewAltF9]
 "Video"
 //[MSingleViewAltF10]
@@ -2579,7 +2579,7 @@
 //[MMenuQuickView]
 "&Vista rápida"
 //[MMenuSortModes]
-"&Ordenar por..."
+"&Ordenar por"
 //[MMenuLongNames]
 "Ver &nombres largos"
 //[MMenuTogglePanel]
@@ -2869,9 +2869,9 @@
 //[MChangeDriveAskDisconnect]
 "Quiere desconectar el dispositivo de cualquier forma?"
 //[MChangeWaitingLoadDisk]
-"Esperando para montar el disco..."
+"Esperando para montar el disco…"
 //[MChangeCouldNotEjectMedia]
-"No se puede expulsar medio de la unidad {0}:"
+"No se puede expulsar medio de la unidad"
 //[MChangeDriveConfigure]
 "Cambiar opciones de menú de unidades"
 //[MChangeDriveShowDiskType]
@@ -3028,6 +3028,12 @@
 "Cadena de integridad"
 //[MSetAttrNoScrubData]
 "No hay datos depurados"
+// need translation:
+//[MSetAttrPinned]
+"Pinned"
+// need translation:
+//[MSetAttrUnpinned]
+"Unpinned"
 //[MSetAttrSubfolders]
 "Procesar sub&directorios"
 //[MSetAttrOwner]
@@ -3713,8 +3719,6 @@
 "Leyendo descripción de archivos"
 //[MCannotUpdateDiz]
 "No se puede actualizar descripción de archivos"
-//[MCannotUpdateRODiz]
-"El archivo descripción es de sólo-lectura"
 
 //[MCfgDizTitle]
 "Descripción de archivos"
@@ -4230,7 +4234,7 @@
 //[MInfoAltF7]
 "Buscar"
 //[MInfoAltF8]
-"Ir a.."
+"Ir a…"
 //[MInfoAltF9]
 "Video"
 //[MInfoAltF10]
@@ -4446,7 +4450,7 @@
 //[MQViewAltF11]
 "VerHis"
 //[MQViewAltF12]
-"HisDir"
+"HistFold"
 
 // QView KeyBar Ctrl+F1-F12
 //[MQViewCtrlF1]
@@ -4825,7 +4829,7 @@
 //[MFileHilightTitle]
 "Resaltado de archivos"
 //[MFileFilterName]
-"&Nombre filtro:"
+"&Nombre:"
 //[MFileFilterMatchMask]
 "&Máscara:"
 //[MFileFilterSize]
@@ -4888,6 +4892,12 @@
 "Cadena de integridad"
 //[MFileFilterAttrNoScrubData]
 "No hay datos depurados"
+// need translation:
+//[MFileFilterAttrPinned]
+"Pinned"
+// need translation:
+//[MFileFilterAttrUnpinned]
+"Unpinned"
 //[MFileFilterReset]
 "Reinicio"
 //[MFileFilterCancel]
@@ -4913,6 +4923,9 @@
 "para copiar este objeto:"
 //[MElevationRequiredMove]
 "para mover este objeto:"
+// need translation:
+//[MElevationRequiredReplace]
+"para reemplazar este objeto:"
 //[MElevationRequiredGetAttributes]
 "para obtener atributos de este objeto:"
 //[MElevationRequiredSetAttributes]

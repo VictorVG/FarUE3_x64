@@ -1,6 +1,6 @@
 ﻿.Language=Russian,Russian (Русский)
 
-//Version: 3.0 build 5405
+//Version: 3.0 build 5417
 
 //[MYes]
 "Да"
@@ -95,7 +95,7 @@
 //[MShiftF3]
 "АрхКом"
 //[MShiftF4]
-"Редак."
+"Редак…"
 //[MShiftF5]
 "Копир"
 //[MShiftF6]
@@ -118,9 +118,9 @@
 //[MAltF2]
 "Правая"
 //[MAltF3]
-"Смотр."
+"Смотр…"
 //[MAltF4]
-"Редак."
+"Редак…"
 //[MAltF5]
 "Печать"
 //[MAltF6]
@@ -695,7 +695,7 @@
 //[MCopyDlgTotal]
 "Всего"
 //[MCopyPrepareSecury]
-"Применение прав доступа..."
+"Применение прав доступа…"
 //[MCopyUseFilter]
 "Исполь&зовать фильтр"
 //[MCopySetFilter]
@@ -1018,7 +1018,7 @@
 //[MEditAskSaveExt]
 "Файл был изменён внешней программой. Сохранить?"
 //[MEditBtnSaveAs]
-"Сохр&анить как..."
+"Сохр&анить как…"
 
 //[MEditRO]
 "имеет атрибут \"Только для чтения\""
@@ -1174,7 +1174,7 @@
 //[MEditShiftF3]
 ""
 //[MEditShiftF4]
-"Редак."
+"Редак…"
 //[MEditShiftF5]
 ""
 //[MEditShiftF6]
@@ -2863,9 +2863,9 @@
 //[MChangeDriveAskDisconnect]
 "Вы хотите в любом случае отключиться от устройства?"
 //[MChangeWaitingLoadDisk]
-"Ожидание чтения диска..."
+"Ожидание чтения диска…"
 //[MChangeCouldNotEjectMedia]
-"Невозможно извлечь диск из привода {0}:"
+"Невозможно извлечь диск из привода"
 //[MChangeDriveConfigure]
 "Настройка меню выбора диска"
 //[MChangeDriveShowDiskType]
@@ -3021,6 +3021,10 @@
 "Поток целостности"
 //[MSetAttrNoScrubData]
 "Нет данных очистки"
+//[MSetAttrPinned]
+"Закреплённый"
+//[MSetAttrUnpinned]
+"Откреплённый"
 //[MSetAttrSubfolders]
 "Обрабатывать &вложенные папки"
 //[MSetAttrOwner]
@@ -3705,8 +3709,6 @@
 "Чтение описаний файлов"
 //[MCannotUpdateDiz]
 "Не удалось обновить описания файлов"
-//[MCannotUpdateRODiz]
-"Файл описаний защищён от записи"
 
 //[MCfgDizTitle]
 "Описания файлов"
@@ -4815,7 +4817,7 @@
 //[MFileHilightTitle]
 "Раскраска файлов"
 //[MFileFilterName]
-"Имя &фильтра:"
+"Им&я:"
 //[MFileFilterMatchMask]
 "&Маска:"
 //[MFileFilterSize]
@@ -4878,6 +4880,10 @@
 "Поток целостности"
 //[MFileFilterAttrNoScrubData]
 "Нет данных очистки"
+//[MFileFilterAttrPinned]
+"Закреплённый"
+//[MFileFilterAttrUnpinned]
+"Откреплённый"
 //[MFileFilterReset]
 "Очистит&ь"
 //[MFileFilterCancel]
@@ -4903,6 +4909,8 @@
 "для копирования этого объекта:"
 //[MElevationRequiredMove]
 "для перемещения этого объекта:"
+//[MElevationRequiredReplace]
+"для замещения этого объекта:"
 //[MElevationRequiredGetAttributes]
 "для получения атрибутов этого объекта:"
 //[MElevationRequiredSetAttributes]

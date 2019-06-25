@@ -1,6 +1,6 @@
 ﻿.Language=English,English
 
-//Version: 3.0 build 5405
+//Version: 3.0 build 5417
 
 //[MYes]
 "Yes"
@@ -95,7 +95,7 @@
 //[MShiftF3]
 "ArcCmd"
 //[MShiftF4]
-"Edit.."
+"Edit…"
 //[MShiftF5]
 "Copy"
 //[MShiftF6]
@@ -118,9 +118,9 @@
 //[MAltF2]
 "Right"
 //[MAltF3]
-"View.."
+"View…"
 //[MAltF4]
-"Edit.."
+"Edit…"
 //[MAltF5]
 "Print"
 //[MAltF6]
@@ -695,7 +695,7 @@
 //[MCopyDlgTotal]
 "Total"
 //[MCopyPrepareSecury]
-"Applying access rights..."
+"Applying access rights…"
 //[MCopyUseFilter]
 "&Use filter"
 //[MCopySetFilter]
@@ -1018,7 +1018,7 @@
 //[MEditAskSaveExt]
 "The file was changed by an external program. Save?"
 //[MEditBtnSaveAs]
-"Save &as..."
+"Save &as…"
 
 //[MEditRO]
 "is a read-only file"
@@ -1174,7 +1174,7 @@
 //[MEditShiftF3]
 ""
 //[MEditShiftF4]
-"Edit.."
+"Edit…"
 //[MEditShiftF5]
 ""
 //[MEditShiftF6]
@@ -2863,9 +2863,9 @@
 //[MChangeDriveAskDisconnect]
 "Do you want to disconnect the device anyway?"
 //[MChangeWaitingLoadDisk]
-"Waiting for disk to mount..."
+"Waiting for the disk to mount…"
 //[MChangeCouldNotEjectMedia]
-"Could not eject media from drive {0}:"
+"Could not eject media from drive"
 //[MChangeDriveConfigure]
 "Change Drive Menu Options"
 //[MChangeDriveShowDiskType]
@@ -3021,6 +3021,10 @@
 "Integrity stream"
 //[MSetAttrNoScrubData]
 "No scrub data"
+//[MSetAttrPinned]
+"Pinned"
+//[MSetAttrUnpinned]
+"Unpinned"
 //[MSetAttrSubfolders]
 "Process sub&folders"
 //[MSetAttrOwner]
@@ -3705,8 +3709,6 @@
 "Reading file descriptions"
 //[MCannotUpdateDiz]
 "Cannot update file descriptions"
-//[MCannotUpdateRODiz]
-"The description file is read only"
 
 //[MCfgDizTitle]
 "File descriptions"
@@ -4815,7 +4817,7 @@
 //[MFileHilightTitle]
 "Files highlighting"
 //[MFileFilterName]
-"Filter &name:"
+"&Name:"
 //[MFileFilterMatchMask]
 "&Mask:"
 //[MFileFilterSize]
@@ -4878,6 +4880,10 @@
 "Integrity stream"
 //[MFileFilterAttrNoScrubData]
 "No scrub data"
+//[MFileFilterAttrPinned]
+"Pinned"
+//[MFileFilterAttrUnpinned]
+"Unpinned"
 //[MFileFilterReset]
 "Reset"
 //[MFileFilterCancel]
@@ -4903,6 +4909,8 @@
 "to copy this object:"
 //[MElevationRequiredMove]
 "to move this object:"
+//[MElevationRequiredReplace]
+"to replace this object:"
 //[MElevationRequiredGetAttributes]
 "to get attributes of this object:"
 //[MElevationRequiredSetAttributes]

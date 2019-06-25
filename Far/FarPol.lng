@@ -1,6 +1,6 @@
 ﻿.Language=Polish,Polish (Polski)
 
-//Version: 3.0 build 5405
+//Version: 3.0 build 5417
 
 //[MYes]
 "Tak"
@@ -95,7 +95,7 @@
 //[MShiftF3]
 "Polec"
 //[MShiftF4]
-"Edytuj"
+"Edytuj…"
 //[MShiftF5]
 "Kopiuj"
 //[MShiftF6]
@@ -118,9 +118,9 @@
 //[MAltF2]
 "Prawy"
 //[MAltF3]
-"Podgląd"
+"Podgląd…"
 //[MAltF4]
-"Edytuj"
+"Edytuj…"
 //[MAltF5]
 "Drukuj"
 //[MAltF6]
@@ -695,7 +695,7 @@
 //[MCopyDlgTotal]
 "Razem"
 //[MCopyPrepareSecury]
-"Ustawianie praw dostępu..."
+"Ustawianie praw dostępu…"
 //[MCopyUseFilter]
 "&Użyj filtra"
 //[MCopySetFilter]
@@ -1018,7 +1018,7 @@
 //[MEditAskSaveExt]
 "Plik został zmieniony przez inny program. Zapisać?"
 //[MEditBtnSaveAs]
-"Zapisz &jako..."
+"Zapisz &jako…"
 
 //[MEditRO]
 "jest plikiem tylko do odczytu"
@@ -1174,7 +1174,7 @@
 //[MEditShiftF3]
 ""
 //[MEditShiftF4]
-"Edytuj"
+"Edytuj…"
 //[MEditShiftF5]
 ""
 //[MEditShiftF6]
@@ -2299,7 +2299,7 @@
 //[MFindSearchingIn]
 "Szukam {0} w"
 //[MFindNewSearch]
-"&Od nowa..."
+"&Od nowa"
 //[MFindGoTo]
 "&Idź do"
 //[MFindView]
@@ -2669,7 +2669,7 @@
 //[MMenuPanelSettings]
 "Ustawienia &panelu"
 //[MMenuTreeSettings]
-"Ustawienia drzewa"
+"Ustawienia d&rzewa"
 //[MMenuInterface]
 "Ustawienia &interfejsu"
 //[MMenuLanguages]
@@ -2683,13 +2683,13 @@
 //[MMenuVMenuSettings]
 "Ustawienia &menu"
 //[MMenuCmdlineSettings]
-"Ustawienia linii poleceń"
+"Ustawienia li&nii poleceń"
 //[MMenuAutoCompleteSettings]
 "&Ustawienie AutoUzupełniania"
 //[MMenuInfoPanelSettings]
 "Ustawienia panelu in&formacyjnego"
 //[MMenuMaskGroups]
-"Grupy masek plików"
+"Grupy masek p&lików"
 //[MMenuConfirmation]
 "P&otwierdzenia"
 //[MMenuFilePanelModes]
@@ -2727,7 +2727,7 @@
 "&Prawy"
 
 //[MMenuSortTitle]
-"Sortuj według..."
+"Sortuj według"
 //[MMenuSortByName]
 "&Nazwy"
 //[MMenuSortByExt]
@@ -2870,9 +2870,9 @@
 //[MChangeDriveAskDisconnect]
 "Czy chcesz mimo to odłączyć urządzenie?"
 //[MChangeWaitingLoadDisk]
-"Trwa montowanie dysku..."
+"Trwa montowanie dysku…"
 //[MChangeCouldNotEjectMedia]
-"Nie można wysunąć dysku z napędu {0}:"
+"Nie można wysunąć dysku z napędu"
 //[MChangeDriveConfigure]
 "Opcje menu zmiany dysku"
 //[MChangeDriveShowDiskType]
@@ -3030,6 +3030,12 @@
 // need translation:
 //[MSetAttrNoScrubData]
 "No scrub data"
+// need translation:
+//[MSetAttrPinned]
+"Pinned"
+// need translation:
+//[MSetAttrUnpinned]
+"Unpinned"
 //[MSetAttrSubfolders]
 "Przetwarzaj &podfoldery"
 //[MSetAttrOwner]
@@ -3715,8 +3721,6 @@
 "Odczytuję opisy plików"
 //[MCannotUpdateDiz]
 "Nie mogę aktualizować opisów plików"
-//[MCannotUpdateRODiz]
-"Opis jest plikiem tylko do odczytu"
 
 //[MCfgDizTitle]
 "Opisy plików"
@@ -3826,16 +3830,15 @@
 "Zdefiniować powtórnie?"
 //[MMacroDeleteKey2]
 "Usunąć?"
-// need translation:
 //[MMacroEditKey]
-"Change"
+"Zmienić?"
 
 //[MMacroSettingsTitle]
 "Ustawienia makra dla '{0}'"
 //[MMacroSettingsEnableOutput]
 "&Wyłącz zapis na ekran podczas wykonywania makra"
 //[MMacroSettingsRunAfterStart]
-"Wykonaj po &starcie Far-a"
+"Wykonaj po &starcie Far"
 //[MMacroSettingsActivePanel]
 "Panel &aktywny"
 //[MMacroSettingsPassivePanel]
@@ -3852,9 +3855,8 @@
 "Obecny &blok zaznaczenia"
 //[MMacroPluginLuamacroNotLoaded]
 "Wtyczka LuaMacro nie została wczytana"
-// need translation:
 //[MMacroRecordingIsDisabled]
-"Macro recording is disabled"
+"Nagrywanie makr jest wyłączone"
 
 //[MCannotSaveFile]
 "Nie mogę zapisać pliku"
@@ -3879,9 +3881,8 @@
 "Ścieżka &modułu:"
 //[MPluginGUID]
 "&GUID wtyczki:"
-// need translation:
 //[MPluginItemGUID]
-"Plugin &item GUID:"
+"G&UID menu wtyczki:"
 //[MPluginPrefix]
 "&Przedrostek wtyczki:"
 //[MPluginHotKeyBottom]
@@ -3891,9 +3892,8 @@
 "PrawyCtrl"
 //[MExcTrappedException]
 "Wystąpił wyjątek"
-// need translation:
 //[MExcException]
-"Exception:"
+"Wyjątek:"
 //[MExcDetails]
 "Szczegóły:"
 //[MExcAddress]
@@ -3908,10 +3908,8 @@
 "Zamknięcie Far"
 //[MExcUnload]
 "Wyłącz wtyczkę"
-// need translation:
 //[MExcStack]
-"Stack"
-// need translation:
+"Stos"
 //[MExcMinidump]
 "Minidump"
 
@@ -3924,7 +3922,7 @@
 "Nie udało się odczytać zawartości folderu"
 
 //[MPlgBadVers]
-"Do uruchomienia wtyczki wymagana jest wyższa wersja Far-a"
+"Do uruchomienia wtyczki wymagana jest wyższa wersja Far"
 //[MPlgRequired]
 "Wymagana wersja Far to {0},"
 //[MPlgRequired2]
@@ -4030,7 +4028,7 @@
 //[MHelpAltF8]
 ""
 //[MHelpAltF9]
-"Video"
+"Wideo"
 //[MHelpAltF10]
 ""
 //[MHelpAltF11]
@@ -4174,31 +4172,31 @@
 //[MInfoF2]
 "Zawiń"
 //[MInfoF3]
-"VieDiz"
+"PodglDiz"
 //[MInfoF4]
-"EdtDiz"
+"EdytDiz"
 //[MInfoF5]
 ""
 //[MInfoF6]
 ""
 //[MInfoF7]
-"Search"
+"Szukaj"
 //[MInfoF8]
 "ANSI"
 //[MInfoF9]
-"ConfMn"
+"MenuGł"
 //[MInfoF10]
 "Koniec"
 //[MInfoF11]
-"Plugin"
+"Wtyczki"
 //[MInfoF12]
-"Ekran"
+"Ekrany"
 
 // InfoPanel KeyBar Shift+F1-F12
 //[MInfoShiftF1]
 ""
 //[MInfoShiftF2]
-"ZawijS"
+"ZawijSł"
 //[MInfoShiftF3]
 ""
 //[MInfoShiftF4]
@@ -4214,7 +4212,7 @@
 //[MInfoShiftF9]
 "Zapisz"
 //[MInfoShiftF10]
-"Ostat."
+"OstMenu"
 //[MInfoShiftF11]
 ""
 //[MInfoShiftF12]
@@ -4238,13 +4236,13 @@
 //[MInfoAltF8]
 "IdźDo"
 //[MInfoAltF9]
-"Video"
+"Wideo"
 //[MInfoAltF10]
 "Drzewo"
 //[MInfoAltF11]
-"Historia"
+"HistPlik"
 //[MInfoAltF12]
-"FoldHs"
+"HistFold"
 
 // InfoPanel KeyBar Ctrl+F1-F12
 //[MInfoCtrlF1]
@@ -4269,9 +4267,8 @@
 ""
 //[MInfoCtrlF11]
 ""
-// need translation:
 //[MInfoCtrlF12]
-"Mode"
+"TrybInfo"
 
 // InfoPanel KeyBar AltShiftF1-12
 //[MInfoAltShiftF1]
@@ -4395,11 +4392,11 @@
 //[MQViewF8]
 "ANSI"
 //[MQViewF9]
-"ConfMn"
+"MenuKonf"
 //[MQViewF10]
 "Koniec"
 //[MQViewF11]
-"Plugin"
+"Wyczki"
 //[MQViewF12]
 "Ekran"
 
@@ -4407,7 +4404,7 @@
 //[MQViewShiftF1]
 ""
 //[MQViewShiftF2]
-"WWrap"
+"ZawińSł"
 //[MQViewShiftF3]
 ""
 //[MQViewShiftF4]
@@ -4447,11 +4444,11 @@
 //[MQViewAltF8]
 "IdźDo"
 //[MQViewAltF9]
-"Video"
+"Wideo"
 //[MQViewAltF10]
 "Drzewo"
 //[MQViewAltF11]
-"Historia"
+"HistPlik"
 //[MQViewAltF12]
 "FoldHs"
 
@@ -4589,7 +4586,7 @@
 //[MKBTreeF1]
 "Pomoc"
 //[MKBTreeF2]
-"UserMn"
+"MenuUżyt"
 //[MKBTreeF3]
 ""
 //[MKBTreeF4]
@@ -4597,19 +4594,19 @@
 //[MKBTreeF5]
 "Kopiuj"
 //[MKBTreeF6]
-"Zamień"
+"ZmNazwę"
 //[MKBTreeF7]
-"NowyFldr"
+"NowyFold"
 //[MKBTreeF8]
 "Usuń"
 //[MKBTreeF9]
-"KonfMenu"
+"MenuKonf"
 //[MKBTreeF10]
 "Koniec"
 //[MKBTreeF11]
-"Plugin"
+"Wtyczki"
 //[MKBTreeF12]
-"Ekran"
+"Ekrany"
 
 // Tree KeyBar Shift+F1-F12
 //[MKBTreeShiftF1]
@@ -4623,7 +4620,7 @@
 //[MKBTreeShiftF5]
 "Kopiuj"
 //[MKBTreeShiftF6]
-"Zamień"
+"ZmNazwę"
 //[MKBTreeShiftF7]
 ""
 //[MKBTreeShiftF8]
@@ -4655,13 +4652,13 @@
 //[MKBTreeAltF8]
 "Historia"
 //[MKBTreeAltF9]
-"Video"
+"Wideo"
 //[MKBTreeAltF10]
 "Drzewo"
 //[MKBTreeAltF11]
-"Historia"
+"HistPlik"
 //[MKBTreeAltF12]
-"FoldHs"
+"HistFold"
 
 // Tree KeyBar Ctrl+F1-F12
 //[MKBTreeCtrlF1]
@@ -4799,12 +4796,12 @@
 //[MKeyESCWasPressed]
 "Operacja została przerwana"
 //[MDoYouWantToCancel]
-"Czy naprawdę chcesz ją anulować?"
+"Czy naprawdę chcesz ją przerwać?"
 //[MDoYouWantToContinue]
 "Kontynuować?"
 
 //[MCheckingFileInPlugin]
-"Plugin sprawdza plik"
+"Wtyczka sprawdza plik"
 
 //[MDialogType]
 "Dialog"
@@ -4832,7 +4829,7 @@
 //[MFileHilightTitle]
 "Zaznaczanie plików"
 //[MFileFilterName]
-"Nazwa &filtra:"
+"Nazwa:"
 //[MFileFilterMatchMask]
 "&Maska:"
 //[MFileFilterSize]
@@ -4845,18 +4842,16 @@
 "Posiada więcej niż jeden twardy link"
 //[MFileFilterDate]
 "Da&ta/Czas:"
-// need translation:
 //[MFileFilterWrited]
-"&write"
+"&zapisu"
 //[MFileFilterCreated]
 "&utworzenia"
 //[MFileFilterOpened]
 "&dostępu"
-// need translation:
 //[MFileFilterChanged]
-"c&hange"
+"z&miany"
 //[MFileFilterDateRelative]
-"Relat&ive"
+"Relatywn&y"
 //[MFileFilterDateAfterSign]
 ">="
 //[MFileFilterDateBeforeSign]
@@ -4900,6 +4895,12 @@
 // need translation:
 //[MFileFilterAttrNoScrubData]
 "No scrub data"
+// need translation:
+//[MFileFilterAttrPinned]
+"Pinned"
+// need translation:
+//[MFileFilterAttrUnpinned]
+"Unpinned"
 //[MFileFilterReset]
 "Wy&czyść"
 //[MFileFilterCancel]
@@ -4932,6 +4933,9 @@
 // need translation:
 //[MElevationRequiredMove]
 "to move this object:"
+// need translation:
+//[MElevationRequiredReplace]
+"to replace this object:"
 // need translation:
 //[MElevationRequiredGetAttributes]
 "to get attributes of this object:"

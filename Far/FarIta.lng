@@ -1,6 +1,6 @@
 ﻿.Language=Italian,Italian (Italiano)
 
-//Version: 3.0 build 5405
+//Version: 3.0 build 5417
 
 //[MYes]
 "&Si"
@@ -95,7 +95,7 @@
 //[MShiftF3]
 "ArcCmd"
 //[MShiftF4]
-"Edita"
+"Edita…"
 //[MShiftF5]
 "Copia"
 //[MShiftF6]
@@ -118,9 +118,9 @@
 //[MAltF2]
 "Destra"
 //[MAltF3]
-"Vista"
+"Vista…"
 //[MAltF4]
-"Edita"
+"Edita…"
 //[MAltF5]
 "Stampa"
 //[MAltF6]
@@ -271,9 +271,9 @@
 //[MHistoryTitle]
 "Cronologia"
 //[MFolderHistoryTitle]
-"Cartella Visitate..."
+"Cartella Visitate"
 //[MViewHistoryTitle]
-"Files Già Visti..."
+"Files Già Visti"
 //[MViewHistoryIsCreate]
 "Crea File?"
 //[MHistoryView]
@@ -695,7 +695,7 @@
 //[MCopyDlgTotal]
 "Totale"
 //[MCopyPrepareSecury]
-"Impostazione Permessi..."
+"Impostazione Permessi…"
 //[MCopyUseFilter]
 "&Usa Filtro"
 //[MCopySetFilter]
@@ -728,9 +728,9 @@
 "Lista Destinazione Errata!"
 
 //[MCopyCopyingTitle]
-"Copia..."
+"Copia"
 //[MCopyMovingTitle]
-"Spostamento..."
+"Spostamento"
 
 //[MCopyCannotFind]
 "File Non Trovato"
@@ -956,7 +956,7 @@
 "Cancella Link"
 
 //[MDeletingTitle]
-"Eliminminazione..."
+"Eliminminazione"
 
 //[MDeleting]
 "Cancellazione Files O Cartelle"
@@ -1014,11 +1014,11 @@
 //[MEditReading]
 "Lettura Del File"
 //[MEditAskSave]
-"Documento Modificato ...Lo Salvo?"
+"Documento Modificato. Lo Salvo?"
 //[MEditAskSaveExt]
-"Documento Cambiato Da Un Programma Esterno ...Lo Salvo?"
+"Documento Cambiato Da Un Programma Esterno. Lo Salvo?"
 //[MEditBtnSaveAs]
-"Sal&va Come..."
+"Sal&va Come…"
 
 //[MEditRO]
 "File Di Sola Lettura"
@@ -1027,7 +1027,7 @@
 //[MEditOvr]
 "Vuoi Sovrascriverlo"
 //[MEditSaving]
-"Salvataggio In Corso..."
+"Salvataggio In Corso"
 // Up to 3 characters
 //[MEditStatusLine]
 "Lin"
@@ -1174,7 +1174,7 @@
 //[MEditShiftF3]
 ""
 //[MEditShiftF4]
-"Edita"
+"Edita…"
 //[MEditShiftF5]
 ""
 //[MEditShiftF6]
@@ -1587,7 +1587,7 @@
 //[MEditSavedChangedNonFile1]
 "Il File O La Cartella Contenente"
 //[MEditSavedChangedNonFile2]
-"Questo File Non Esiste Più! ...Lo Salvo?"
+"Questo File Non Esiste Più! Lo Salvo?"
 //[MEditNewPath1]
 "Il Percorso Del File Editato Non Esiste"
 //[MEditNewPath2]
@@ -2301,7 +2301,7 @@
 //[MFindNewSearch]
 "&Nuova Ricerca"
 //[MFindGoTo]
-"&Vai A..."
+"&Vai A"
 //[MFindView]
 "V&ista"
 //[MFindPanel]
@@ -2583,7 +2583,7 @@
 //[MMenuReread]
 "A&ggiorna Pannello"
 //[MMenuChangeDrive]
-"Cam&bia Unità..."
+"Cam&bia Unità"
 
 //[MMenuView]
 "&Visualizza"
@@ -2720,7 +2720,7 @@
 "&Destra ►"
 
 //[MMenuSortTitle]
-"► Ordina Per..."
+"► Ordina Per"
 //[MMenuSortByName]
 "Nome"
 //[MMenuSortByExt]
@@ -2856,16 +2856,16 @@
 //[MChangeDriveDisconnectQuestion]
 "Vuoi Disconnetterti Il Disco {0}:?"
 //[MChangeDriveDisconnectMapped]
-"Il Disco {0}: E' Mappato Su..."
+"Il Disco {0}: E' Mappato Su:"
 //[MChangeDriveDisconnectReconnect]
 "&Reconnetti Al Riavvio"
 
 //[MChangeDriveAskDisconnect]
 "Forzare La Rimozione Della Periferica?"
 //[MChangeWaitingLoadDisk]
-"In Attesa Della Rimozione..."
+"In Attesa Della Rimozione…"
 //[MChangeCouldNotEjectMedia]
-"Non Posso Espellere Il Volume {0}:"
+"Non Posso Espellere Il Volume"
 //[MChangeDriveConfigure]
 "Opzioni Per Il Cambio Unità"
 //[MChangeDriveShowDiskType]
@@ -3022,6 +3022,12 @@
 "Integrità Flusso"
 //[MSetAttrNoScrubData]
 "Nessun Dato Scrub"
+// need translation:
+//[MSetAttrPinned]
+"Pinned"
+// need translation:
+//[MSetAttrUnpinned]
+"Unpinned"
 //[MSetAttrSubfolders]
 "Elabora Sott&o Cartelle"
 //[MSetAttrOwner]
@@ -3706,8 +3712,6 @@
 "Lettura Delle Descrizioni"
 //[MCannotUpdateDiz]
 "Non Posso Aggiornare Le Descrizioni"
-//[MCannotUpdateRODiz]
-"File Delle Descrizioni Di Sola Lettura"
 
 //[MCfgDizTitle]
 "Descrizione File"
@@ -4816,7 +4820,7 @@
 //[MFileHilightTitle]
 "E&videnzia File:"
 //[MFileFilterName]
-"&Nome Filtro:"
+"&Nome:"
 //[MFileFilterMatchMask]
 "&Maschera Filtro"
 //[MFileFilterSize]
@@ -4879,6 +4883,12 @@
 "Integrità Flusso"
 //[MFileFilterAttrNoScrubData]
 "Dati Scrub Mancanti"
+// need translation:
+//[MFileFilterAttrPinned]
+"Pinned"
+// need translation:
+//[MFileFilterAttrUnpinned]
+"Unpinned"
 //[MFileFilterReset]
 "&Resetta"
 //[MFileFilterCancel]
@@ -4904,6 +4914,9 @@
 "Per Copiare Questo Oggetto:"
 //[MElevationRequiredMove]
 "Per Spostare Questo Oggetto:"
+// need translation:
+//[MElevationRequiredReplace]
+"Per Sostituire Questo Oggetto:"
 //[MElevationRequiredGetAttributes]
 "Per Leggere Gli Attributi Di Questo Oggetto:"
 //[MElevationRequiredSetAttributes]
