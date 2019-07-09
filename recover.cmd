@@ -16,7 +16,7 @@ cd /d .\PluginsData
 del /f/q *.db*
 cd ../../
 setlocal
-set k=/ro-
+set k=-ro-
 :for use Far on "Read Only" device just remove ":" on string :@set k=/ro
 :@set k=/ro
 if defined PROCESSOR_ARCHITEW6432 (set reg="%systemroot%\sysnative\reg.exe"
@@ -34,6 +34,6 @@ del /f/q %TEMP%\def.reg
 copy /b %TEMP%\4EBBEFC8-2084-4B7F-94C0-692CE136894D.db /b .\Far\Profile\PluginsData
 del /f/q %TEMP%\4EBBEFC8-2084-4B7F-94C0-692CE136894D.db
 cd ./Far
-far /import default.farconfig
+far -import default.farconfig
 cd ../
 start /i .\Far\Far.exe %k

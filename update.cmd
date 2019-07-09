@@ -19,7 +19,7 @@ if exist "Profile\Macros\scripts\Shell_DelTmp.lua" (del /s/q "Profile\Macros\scr
 if exist "Profile\PluginsData\FC97A376-00D9-4DE4-B2E1-BFDC3A8D8B0B.db" (del /s/q "Profile\PluginsData\FC97A376-00D9-4DE4-B2E1-BFDC3A8D8B0B.db" > nul)
 rem far /import default.farconfig
 rem The next string used only if needed fix some Far or plug-in's settings, is another not used and always mast be comment!
-if exist farfix.cnf (start /wait far "lua:mf.print('far /import farfix.cnf') Keys('Enter F10 Enter')" && del /f/q farfix.cnf > nul)
+if exist farfix.cnf (start /wait far "lua:mf.print('far -import farfix.cnf') Keys('Enter F10 Enter')" && del /f/q farfix.cnf > nul)
 if exist wg.cmd (del/f/q wg.cmd > nul)
 cd ../ > nul
 del /f/q update.cmd > nul

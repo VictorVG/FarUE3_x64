@@ -336,6 +336,7 @@ Reference article: http://www.forest.impress.co.jp/article/2003/11/19/xdoc2txt.h
 
 History
 
+2.19.1 2019/5/3 - Fixed the problem that some PDFs crashed in 64bit version
 2.19 2019/5/3   - Fixed an issue that can not be extracted from .docx saved as Google document
                 - Extraction of mhtml saved with Chrome
                 - Add -d <output directory> option
