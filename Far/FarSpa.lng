@@ -1,6 +1,6 @@
 ﻿.Language=Spanish,Spanish (Español)
 
-//Version: 3.0 build 5420
+//Version: 3.0 build 5423
 
 //[MYes]
 "Si"
@@ -329,7 +329,7 @@
 //[MConfigSortingDigitsAsNumbers]
 "Tratar dígitos como números"
 //[MConfigSortingCase]
-"Sensible min./ma&y."
+"Sensible minúsculas/ma&yúsculas"
 //[MConfigAutoSave]
 "Auto&guardar configuración"
 
@@ -421,9 +421,8 @@
 "Mostrar indicador de progreso de borrado total"
 //[MConfigPgUpChangeDisk]
 "Usar Ctrl+Pg&Up para cambiar unidad"
-// need translation:
 //[MConfigUseVirtualTerminalForRendering]
-"Use Virtual Terminal for rendering"
+"Usar Terminal Virtual para renderizado"
 //[MConfigClearType]
 "Limpiar rediseño (puede ser lento)"
 //[MConfigSetConsoleIcon]
@@ -3028,12 +3027,10 @@
 "Cadena de integridad"
 //[MSetAttrNoScrubData]
 "No hay datos depurados"
-// need translation:
 //[MSetAttrPinned]
-"Pinned"
-// need translation:
+"Anclado"
 //[MSetAttrUnpinned]
-"Unpinned"
+"Desanclado"
 //[MSetAttrSubfolders]
 "Procesar sub&directorios"
 //[MSetAttrOwner]
@@ -4450,7 +4447,7 @@
 //[MQViewAltF11]
 "VerHis"
 //[MQViewAltF12]
-"HistFold"
+"HistCarp"
 
 // QView KeyBar Ctrl+F1-F12
 //[MQViewCtrlF1]
@@ -4892,12 +4889,10 @@
 "Cadena de integridad"
 //[MFileFilterAttrNoScrubData]
 "No hay datos depurados"
-// need translation:
 //[MFileFilterAttrPinned]
-"Pinned"
-// need translation:
+"Anclado"
 //[MFileFilterAttrUnpinned]
-"Unpinned"
+"Desanclado"
 //[MFileFilterReset]
 "Reinicio"
 //[MFileFilterCancel]
