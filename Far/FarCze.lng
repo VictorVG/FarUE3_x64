@@ -1,6 +1,6 @@
 ﻿.Language=Czech,Czech (Čeština)
 
-//Version: 3.0 build 5423
+//Version: 3.0 build 5425
 
 //[MYes]
 "Ano"
@@ -270,6 +270,10 @@
 
 //[MHistoryTitle]
 "Historie"
+//[MHistoryInfoTitle]
+"Informace"
+//[MHistoryInfoFolder]
+"Adresář:"
 //[MFolderHistoryTitle]
 "Historie adresářů"
 //[MViewHistoryTitle]

@@ -1,6 +1,6 @@
 ﻿.Language=English,English
 
-//Version: 3.0 build 5423
+//Version: 3.0 build 5425
 
 //[MYes]
 "Yes"
@@ -270,6 +270,10 @@
 
 //[MHistoryTitle]
 "History"
+//[MHistoryInfoTitle]
+"Information"
+//[MHistoryInfoFolder]
+"Folder:"
 //[MFolderHistoryTitle]
 "Folders history"
 //[MViewHistoryTitle]

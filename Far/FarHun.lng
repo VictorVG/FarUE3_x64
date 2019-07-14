@@ -1,6 +1,6 @@
 ﻿.Language=Hungarian,Hungarian (Magyar)
 
-//Version: 3.0 build 5423
+//Version: 3.0 build 5425
 
 //[MYes]
 "Igen"
@@ -272,6 +272,10 @@
 
 //[MHistoryTitle]
 "Parancs előzmények"
+//[MHistoryInfoTitle]
+"Információk"
+//[MHistoryInfoFolder]
+"Mappa:"
 //[MFolderHistoryTitle]
 "Mappa előzmények"
 // need translation:

@@ -1,6 +1,6 @@
 ﻿.Language=Russian,Russian (Русский)
 
-//Version: 3.0 build 5423
+//Version: 3.0 build 5425
 
 //[MYes]
 "Да"
@@ -270,6 +270,10 @@
 
 //[MHistoryTitle]
 "История команд"
+//[MHistoryInfoTitle]
+"Информация"
+//[MHistoryInfoFolder]
+"Папка:"
 //[MFolderHistoryTitle]
 "История папок"
 //[MViewHistoryTitle]

@@ -1,6 +1,6 @@
 ﻿.Language=German,German (Deutsch)
 
-//Version: 3.0 build 5423
+//Version: 3.0 build 5425
 
 //[MYes]
 "Ja"
@@ -270,6 +270,10 @@
 
 //[MHistoryTitle]
 "Historie der letzten Befehle"
+//[MHistoryInfoTitle]
+"Informationen"
+//[MHistoryInfoFolder]
+"Verzeichnis:"
 //[MFolderHistoryTitle]
 "Zuletzt besuchte Ordner"
 //[MViewHistoryTitle]
