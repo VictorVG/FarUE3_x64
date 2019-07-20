@@ -1,6 +1,6 @@
 ﻿.Language=Hungarian,Hungarian (Magyar)
 
-//Version: 3.0 build 5425
+//Version: 3.0 build 5426
 
 //[MYes]
 "Igen"
@@ -839,8 +839,6 @@
 
 //[MCopyCannotCreateFolder]
 "A mappa nem hozható létre:"
-//[MCopyCannotChangeFolderAttr]
-"A mappa attribútumok beállítása sikertelen"
 //[MCopyCannotRenameFolder]
 "A mappa nem nevezhető át:"
 //[MCopyIgnore]
@@ -3266,9 +3264,6 @@
 //[MSetAttrOwner]
 "Tulajdonos:"
 // need translation:
-//[MSetAttrOwnerMultiple]
-"(multiple values)"
-// need translation:
 //[MSetAttrModification]
 "Last &write time:"
 //[MSetAttrCreation]
@@ -3318,6 +3313,9 @@
 // need translation:
 //[MSetAttrOwnerCannotFor]
 "Cannot set owner for"
+// need translation:
+//[MSetAttrReparsePointCannotFor]
+"Cannot remove reparse point for"
 
 //[MSetColorPanel]
 "&Panel"

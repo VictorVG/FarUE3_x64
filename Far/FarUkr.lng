@@ -1,6 +1,6 @@
 ﻿.Language=Ukrainian,Ukrainian (Українська)
 
-//Version: 3.0 build 5425
+//Version: 3.0 build 5426
 
 //[MYes]
 "Так"
@@ -746,8 +746,6 @@
 
 //[MCopyCannotCreateFolder]
 "Помилка створення папки"
-//[MCopyCannotChangeFolderAttr]
-"Неможливо встановити атрибути для папки"
 //[MCopyCannotRenameFolder]
 "Неможливо перейменувати папку"
 //[MCopyIgnore]
@@ -3033,8 +3031,6 @@
 "Обробляти &вкладені папки"
 //[MSetAttrOwner]
 "Власник:"
-//[MSetAttrOwnerMultiple]
-"(декілька значень)"
 //[MSetAttrModification]
 "Час останнього за&пису:"
 //[MSetAttrCreation]
@@ -3077,6 +3073,8 @@
 "Не вдалося встановити час файлу для"
 //[MSetAttrOwnerCannotFor]
 "Не вдалося встановити власника для"
+//[MSetAttrReparsePointCannotFor]
+"Не вдалося видалити точку повторного аналізу для"
 
 //[MSetColorPanel]
 "&Панель"

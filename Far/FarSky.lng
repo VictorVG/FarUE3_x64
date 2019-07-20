@@ -1,6 +1,6 @@
 ﻿.Language=Slovak,Slovak (Slovenčina)
 
-//Version: 3.0 build 5425
+//Version: 3.0 build 5426
 
 //[MYes]
 "Áno"
@@ -749,8 +749,6 @@
 
 //[MCopyCannotCreateFolder]
 "Nemôžem vytvoriť priečinok"
-//[MCopyCannotChangeFolderAttr]
-"Nepodarilo sa nastaviť atribúty priečinka"
 //[MCopyCannotRenameFolder]
 "Nemôžem premenovať priečinok"
 //[MCopyIgnore]
@@ -3039,8 +3037,6 @@
 "Spracovať aj po&dpriečinky"
 //[MSetAttrOwner]
 "Vlastník:"
-//[MSetAttrOwnerMultiple]
-"(viacero hodnôt)"
 //[MSetAttrModification]
 "Čas posle&dného zápisu:"
 //[MSetAttrCreation]
@@ -3083,6 +3079,9 @@
 "Nemôžem nastaviť čas súboru pre"
 //[MSetAttrOwnerCannotFor]
 "Nemôžem nastaviť vlastníka pre"
+// need translation:
+//[MSetAttrReparsePointCannotFor]
+"Cannot remove reparse point for"
 
 //[MSetColorPanel]
 "&Panel"

@@ -1,6 +1,6 @@
 ﻿.Language=Italian,Italian (Italiano)
 
-//Version: 3.0 build 5425
+//Version: 3.0 build 5426
 
 //[MYes]
 "&Si"
@@ -746,8 +746,6 @@
 
 //[MCopyCannotCreateFolder]
 "Non Posso Creare La Cartella"
-//[MCopyCannotChangeFolderAttr]
-"Impossibile Impostare Gli Attributi"
 //[MCopyCannotRenameFolder]
 "Non Posso Rinominare La Cartella"
 //[MCopyIgnore]
@@ -3036,8 +3034,6 @@
 "Elabora Sott&o Cartelle"
 //[MSetAttrOwner]
 "Proprietario:"
-//[MSetAttrOwnerMultiple]
-"(valori multipli)"
 //[MSetAttrModification]
 "Data &Modifica"
 //[MSetAttrCreation]
@@ -3080,6 +3076,9 @@
 "Non Posso Settare La Data/Ora Per"
 //[MSetAttrOwnerCannotFor]
 "Non Posso Settare Il Proprietario Per"
+// need translation:
+//[MSetAttrReparsePointCannotFor]
+"Cannot remove reparse point for"
 
 //[MSetColorPanel]
 "&Pannello"

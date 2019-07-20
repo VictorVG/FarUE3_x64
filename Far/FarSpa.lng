@@ -1,6 +1,6 @@
 ﻿.Language=Spanish,Spanish (Español)
 
-//Version: 3.0 build 5425
+//Version: 3.0 build 5426
 
 //[MYes]
 "Si"
@@ -748,8 +748,6 @@
 
 //[MCopyCannotCreateFolder]
 "No se puede crear el directorio"
-//[MCopyCannotChangeFolderAttr]
-"Error al poner atributos en directorio"
 //[MCopyCannotRenameFolder]
 "No se puede renombrar el directorio"
 //[MCopyIgnore]
@@ -3039,8 +3037,6 @@
 "Procesar sub&directorios"
 //[MSetAttrOwner]
 "Dueño:"
-//[MSetAttrOwnerMultiple]
-"(valores múltiples)"
 //[MSetAttrModification]
 "&Ultima hora escritura:"
 //[MSetAttrCreation]
@@ -3083,6 +3079,9 @@
 "No se puede poner hora de archivo para"
 //[MSetAttrOwnerCannotFor]
 "No se puede poner como dueño para"
+// need translation:
+//[MSetAttrReparsePointCannotFor]
+"Cannot remove reparse point for"
 
 //[MSetColorPanel]
 "&Panel"

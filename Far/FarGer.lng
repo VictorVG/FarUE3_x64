@@ -1,6 +1,6 @@
 ﻿.Language=German,German (Deutsch)
 
-//Version: 3.0 build 5425
+//Version: 3.0 build 5426
 
 //[MYes]
 "Ja"
@@ -760,8 +760,6 @@
 
 //[MCopyCannotCreateFolder]
 "Folgender Ordner kann nicht erstellt werden:"
-//[MCopyCannotChangeFolderAttr]
-"Fehler beim Setzen der Ordnerattribute"
 //[MCopyCannotRenameFolder]
 "Folgender Ordner kann nicht umbenannt werden:"
 //[MCopyIgnore]
@@ -3092,8 +3090,6 @@
 "Unterordner miteinbe&ziehen"
 //[MSetAttrOwner]
 "Besitzer:"
-//[MSetAttrOwnerMultiple]
-"(mehrere Bedeutungen)"
 //[MSetAttrModification]
 "Letzte &Schreibzeit:"
 //[MSetAttrCreation]
@@ -3141,6 +3137,9 @@
 "Konnte Dateidatum nicht setzen für"
 //[MSetAttrOwnerCannotFor]
 "Konnte Besitzer nicht setzen für"
+// need translation:
+//[MSetAttrReparsePointCannotFor]
+"Cannot remove reparse point for"
 
 //[MSetColorPanel]
 "&Panel"

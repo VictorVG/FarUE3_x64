@@ -1,6 +1,6 @@
 ﻿.Language=Czech,Czech (Čeština)
 
-//Version: 3.0 build 5425
+//Version: 3.0 build 5426
 
 //[MYes]
 "Ano"
@@ -788,8 +788,6 @@
 
 //[MCopyCannotCreateFolder]
 "Nelze vytvořit adresář"
-//[MCopyCannotChangeFolderAttr]
-"Nastavení atributů adresáře selhalo"
 //[MCopyCannotRenameFolder]
 "Nelze přejmenovat adresář"
 //[MCopyIgnore]
@@ -3110,8 +3108,6 @@
 "Zpracovat i po&dadresáře"
 //[MSetAttrOwner]
 "Vlastník:"
-//[MSetAttrOwnerMultiple]
-"(více hodnot)"
 //[MSetAttrModification]
 "Čas posle&dního zápisu:"
 //[MSetAttrCreation]
@@ -3154,6 +3150,9 @@
 "Nelze nastavit čas souboru pro"
 //[MSetAttrOwnerCannotFor]
 "Nelze nastavit vlastníka pro"
+// need translation:
+//[MSetAttrReparsePointCannotFor]
+"Cannot remove reparse point for"
 
 //[MSetColorPanel]
 "&Panel"

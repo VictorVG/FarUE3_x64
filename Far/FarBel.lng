@@ -1,6 +1,6 @@
 ﻿.Language=Belarusian,Belarusian (Беларуская)
 
-//Version: 3.0 build 5425
+//Version: 3.0 build 5426
 
 //[MYes]
 "Так"
@@ -746,8 +746,6 @@
 
 //[MCopyCannotCreateFolder]
 "Немагчыма стварыць каталог"
-//[MCopyCannotChangeFolderAttr]
-"Немагчыма надаць атрыбуты да каталогу"
 //[MCopyCannotRenameFolder]
 "Немагчыма пераназваць каталог"
 //[MCopyIgnore]
@@ -3035,8 +3033,6 @@
 "Апрацоў&ваць укладзеныя каталогі"
 //[MSetAttrOwner]
 "Уладальнік:"
-//[MSetAttrOwnerMultiple]
-"(некалькі значэнняў)"
 //[MSetAttrModification]
 "Час апошняга за&пісу:"
 //[MSetAttrCreation]
@@ -3079,6 +3075,9 @@
 "Немагчыма усталяваць час файла для"
 //[MSetAttrOwnerCannotFor]
 "Немагчыма усталяваць уладальника для"
+// need translation:
+//[MSetAttrReparsePointCannotFor]
+"Cannot remove reparse point for"
 
 //[MSetColorPanel]
 "&Панэль"

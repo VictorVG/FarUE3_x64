@@ -1,6 +1,6 @@
 ﻿.Language=Russian,Russian (Русский)
 
-//Version: 3.0 build 5425
+//Version: 3.0 build 5426
 
 //[MYes]
 "Да"
@@ -746,8 +746,6 @@
 
 //[MCopyCannotCreateFolder]
 "Ошибка создания папки"
-//[MCopyCannotChangeFolderAttr]
-"Невозможно установить атрибуты для папки"
 //[MCopyCannotRenameFolder]
 "Невозможно переименовать папку"
 //[MCopyIgnore]
@@ -3033,8 +3031,6 @@
 "Обрабатывать &вложенные папки"
 //[MSetAttrOwner]
 "Владелец:"
-//[MSetAttrOwnerMultiple]
-"(несколько значений)"
 //[MSetAttrModification]
 "Время последней за&писи:"
 //[MSetAttrCreation]
@@ -3077,6 +3073,8 @@
 "Не удалось установить время файла для"
 //[MSetAttrOwnerCannotFor]
 "Не удалось установить владельца для"
+//[MSetAttrReparsePointCannotFor]
+"Не удалось удалить точку повторного анализа для"
 
 //[MSetColorPanel]
 "&Панель"

@@ -1,6 +1,6 @@
 ﻿.Language=English,English
 
-//Version: 3.0 build 5425
+//Version: 3.0 build 5426
 
 //[MYes]
 "Yes"
@@ -746,8 +746,6 @@
 
 //[MCopyCannotCreateFolder]
 "Cannot create the folder"
-//[MCopyCannotChangeFolderAttr]
-"Failed to set folder attributes"
 //[MCopyCannotRenameFolder]
 "Cannot rename the folder"
 //[MCopyIgnore]
@@ -3033,8 +3031,6 @@
 "Process sub&folders"
 //[MSetAttrOwner]
 "Owner:"
-//[MSetAttrOwnerMultiple]
-"(multiple values)"
 //[MSetAttrModification]
 "Last &write time:"
 //[MSetAttrCreation]
@@ -3077,6 +3073,8 @@
 "Cannot set file time for"
 //[MSetAttrOwnerCannotFor]
 "Cannot set owner for"
+//[MSetAttrReparsePointCannotFor]
+"Cannot remove reparse point for"
 
 //[MSetColorPanel]
 "&Panel"

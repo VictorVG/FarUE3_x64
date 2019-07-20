@@ -1,6 +1,6 @@
 ﻿.Language=Polish,Polish (Polski)
 
-//Version: 3.0 build 5425
+//Version: 3.0 build 5426
 
 //[MYes]
 "Tak"
@@ -746,8 +746,6 @@
 
 //[MCopyCannotCreateFolder]
 "Nie udało się utworzyć folderu"
-//[MCopyCannotChangeFolderAttr]
-"Nie udało się ustawić atrybutów folderu"
 //[MCopyCannotRenameFolder]
 "Nie udało się zmienić nazwy folderu"
 //[MCopyIgnore]
@@ -3044,8 +3042,6 @@
 "Przetwarzaj &podfoldery"
 //[MSetAttrOwner]
 "Właścicie&l:"
-//[MSetAttrOwnerMultiple]
-"(wiele wartości)"
 //[MSetAttrModification]
 "Czas &zapisu:"
 //[MSetAttrCreation]
@@ -3088,6 +3084,9 @@
 "Nie mogę ustawić czasu pliku dla"
 //[MSetAttrOwnerCannotFor]
 "Nie mogę ustawić właściciela dla"
+// need translation:
+//[MSetAttrReparsePointCannotFor]
+"Cannot remove reparse point for"
 
 //[MSetColorPanel]
 "&Panel"
