@@ -1,8 +1,10 @@
 ﻿.Language=English,English
 "Cancel"
 "OK"
+"Defragment after compression"
 "Some files were not processed because of errors. See log for details."
 "Max. compression ratio (%):"
+"Min. number of days since last modification:"
 "Min. file size (MB):"
 "Compressing file..."
 "Projected compression ratio: %u%% - %u%%"
