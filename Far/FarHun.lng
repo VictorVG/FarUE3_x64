@@ -1,6 +1,6 @@
 ﻿.Language=Hungarian,Hungarian (Magyar)
 
-//Version: 3.0 build 5428
+//Version: 3.0 build 5433
 
 //[MYes]
 "Igen"
@@ -4186,6 +4186,9 @@
 // need translation:
 //[MExcMinidump]
 "Minidump"
+// need translation:
+//[MExcMinidumpSuccess]
+"Minidump saved to"
 
 //[MNetUserName]
 "Felhasználói név"

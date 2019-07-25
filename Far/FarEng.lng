@@ -1,6 +1,6 @@
 ﻿.Language=English,English
 
-//Version: 3.0 build 5428
+//Version: 3.0 build 5433
 
 //[MYes]
 "Yes"
@@ -3902,6 +3902,8 @@
 "Stack"
 //[MExcMinidump]
 "Minidump"
+//[MExcMinidumpSuccess]
+"Minidump saved to"
 
 //[MNetUserName]
 "User name"

@@ -1,6 +1,6 @@
 ﻿.Language=Italian,Italian (Italiano)
 
-//Version: 3.0 build 5428
+//Version: 3.0 build 5433
 
 //[MYes]
 "&Si"
@@ -3906,6 +3906,9 @@
 "Stack"
 //[MExcMinidump]
 "Minidump"
+// need translation:
+//[MExcMinidumpSuccess]
+"Minidump saved to"
 
 //[MNetUserName]
 "Nome Utente"

@@ -1,6 +1,6 @@
 ﻿.Language=Slovak,Slovak (Slovenčina)
 
-//Version: 3.0 build 5428
+//Version: 3.0 build 5433
 
 //[MYes]
 "Áno"
@@ -3909,6 +3909,9 @@
 "Halda"
 //[MExcMinidump]
 "Minivýpis"
+// need translation:
+//[MExcMinidumpSuccess]
+"Minidump saved to"
 
 //[MNetUserName]
 "Meno užívateľa"

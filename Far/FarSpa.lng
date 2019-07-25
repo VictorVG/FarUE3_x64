@@ -1,6 +1,6 @@
 ﻿.Language=Spanish,Spanish (Español)
 
-//Version: 3.0 build 5428
+//Version: 3.0 build 5433
 
 //[MYes]
 "Si"
@@ -3912,6 +3912,9 @@
 // need translation:
 //[MExcMinidump]
 "Minidump"
+// need translation:
+//[MExcMinidumpSuccess]
+"Minidump saved to"
 
 //[MNetUserName]
 "Nombre de usuario"

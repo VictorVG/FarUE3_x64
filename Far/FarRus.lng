@@ -1,6 +1,6 @@
 ﻿.Language=Russian,Russian (Русский)
 
-//Version: 3.0 build 5428
+//Version: 3.0 build 5433
 
 //[MYes]
 "Да"
@@ -3902,6 +3902,8 @@
 "Стек"
 //[MExcMinidump]
 "Минидамп"
+//[MExcMinidumpSuccess]
+"Минидамп сохранён в"
 
 //[MNetUserName]
 "Имя пользователя"

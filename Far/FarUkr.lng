@@ -1,6 +1,6 @@
 ﻿.Language=Ukrainian,Ukrainian (Українська)
 
-//Version: 3.0 build 5428
+//Version: 3.0 build 5433
 
 //[MYes]
 "Так"
@@ -3902,6 +3902,8 @@
 "Стек"
 //[MExcMinidump]
 "Мінідамп"
+//[MExcMinidumpSuccess]
+"Мінідамп збережено в"
 
 //[MNetUserName]
 "Ім'я користувача"

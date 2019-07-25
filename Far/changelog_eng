@@ -3,6 +3,40 @@ This file is a translation of the main russian changelog and is provided by volu
 It might not always be as up to date as the main changelog.
 =======================================================================================
 
+drkns 23.07.2019 19:23:43 +0100 - build 5433
+
+1. VK_DECIMAL is not always the same as '.'.
+
+drkns 23.07.2019 07:20:01 +0100 - build 5432
+
+1. Correction of 5429.
+
+drkns 22.07.2019 23:46:59 +0100 - build 5431
+
+1. Correction of 5429.
+
+2. Minor improvemnts in the leak detector.
+
+3. After creating a minidump show where exactly the file is saved (or not saved).
+
+4. Refactoring.
+
+zg 23.07.2019 01:28:35 +0300 - build 5430
+
+1. Correction of 5428.
+
+drkns 22.07.2019 21:20:03 +0100 - build 5429
+
+1. Plugin data leaks when searching on a plugin panel.
+
+2. Stack overflow in the search in some cases.
+
+3. Cancelling the search discards the rest of the queued messages now.
+
+zg 22.07.2019 05:02:32 +0300 - build 5428
+
+1. Don't redraw panels while searching.
+
 drkns 21.07.2019 17:27:47 +0100 - build 5427
 
 1. GitHub #161: Tabs in descript.ion.
