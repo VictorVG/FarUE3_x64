@@ -669,12 +669,12 @@
 "Link erstellen"
 //[MCopySecurity]
 "Zugriffsrecht&e:"
+//[MCopySecurityDefault]
+"A&utomat."
 //[MCopySecurityCopy]
 "Ko&pieren"
 //[MCopySecurityInherit]
 "Ve&rerben"
-//[MCopySecurityLeave]
-"A&utomat."
 //[MCopyIfFileExist]
 "&Dateien überschreiben:"
 //[MCopyAsk]

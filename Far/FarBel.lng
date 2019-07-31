@@ -656,12 +656,12 @@
 "Спасылак"
 //[MCopySecurity]
 "П&равы доступа:"
+//[MCopySecurityDefault]
+"Прадвызна&чана"
 //[MCopySecurityCopy]
 "Капіявац&ь"
 //[MCopySecurityInherit]
 "Спа&дкаваць"
-//[MCopySecurityLeave]
-"Прадвызна&чана"
 //[MCopyIfFileExist]
 "У&жо існуючыя файлы:"
 //[MCopyAsk]

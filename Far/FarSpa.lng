@@ -658,12 +658,12 @@
 "Enlace"
 //[MCopySecurity]
 "&Permisos de acceso:"
+//[MCopySecurityDefault]
+"Por defecto"
 //[MCopySecurityCopy]
 "Cop&iar"
 //[MCopySecurityInherit]
 "&Heredar"
-//[MCopySecurityLeave]
-"Por defecto"
 //[MCopyIfFileExist]
 "Archivos ya e&xistentes:"
 //[MCopyAsk]

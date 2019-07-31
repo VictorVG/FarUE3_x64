@@ -656,12 +656,12 @@
 "Посилання"
 //[MCopySecurity]
 "П&рава доступу:"
+//[MCopySecurityDefault]
+"За замов&чуванням"
 //[MCopySecurityCopy]
 "Копіюват&и"
 //[MCopySecurityInherit]
 "Нас&лідувати"
-//[MCopySecurityLeave]
-"За замов&чуванням"
 //[MCopyIfFileExist]
 "Уже на&явні файли:"
 //[MCopyAsk]

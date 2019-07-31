@@ -656,12 +656,12 @@
 "Crea Link"
 //[MCopySecurity]
 "&Diritti Di Accesso"
+//[MCopySecurityDefault]
+"Defaul&t"
 //[MCopySecurityCopy]
 "Co&pia"
 //[MCopySecurityInherit]
 "&Eredita"
-//[MCopySecurityLeave]
-"Defaul&t"
 //[MCopyIfFileExist]
 "Solo I &Nuovi"
 //[MCopyAsk]

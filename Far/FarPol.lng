@@ -656,12 +656,12 @@
 "Dowiąż"
 //[MCopySecurity]
 "&Prawa dostępu:"
+//[MCopySecurityDefault]
+"Do&myślne"
 //[MCopySecurityCopy]
 "Kopiu&j"
 //[MCopySecurityInherit]
 "&Dziedzicz"
-//[MCopySecurityLeave]
-"Do&myślne"
 //[MCopyIfFileExist]
 "Dla już &istniejących:"
 //[MCopyAsk]

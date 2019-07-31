@@ -698,12 +698,12 @@
 "Link"
 //[MCopySecurity]
 "&Přístupová práva:"
+//[MCopySecurityDefault]
+"Vých&ozí"
 //[MCopySecurityCopy]
 "&Kopírovat"
 //[MCopySecurityInherit]
 "&Zdědit"
-//[MCopySecurityLeave]
-"Vých&ozí"
 //[MCopyIfFileExist]
 "Již e&xistující soubory:"
 //[MCopyAsk]

@@ -659,12 +659,12 @@
 "Prepojenie"
 //[MCopySecurity]
 "&Prístupové práva:"
+//[MCopySecurityDefault]
+"Vých&odiskové"
 //[MCopySecurityCopy]
 "S&kopírovať"
 //[MCopySecurityInherit]
 "&Zdediť"
-//[MCopySecurityLeave]
-"Vých&odiskové"
 //[MCopyIfFileExist]
 "Už e&xistujúce súbory:"
 //[MCopyAsk]

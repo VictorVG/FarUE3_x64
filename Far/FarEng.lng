@@ -656,12 +656,12 @@
 "Link"
 //[MCopySecurity]
 "&Access rights:"
+//[MCopySecurityDefault]
+"Defau&lt"
 //[MCopySecurityCopy]
 "Co&py"
 //[MCopySecurityInherit]
 "&Inherit"
-//[MCopySecurityLeave]
-"Defau&lt"
 //[MCopyIfFileExist]
 "Already e&xisting files:"
 //[MCopyAsk]

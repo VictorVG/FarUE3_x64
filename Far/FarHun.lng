@@ -744,12 +744,12 @@
 "Link létrehozása"
 //[MCopySecurity]
 "Hozzáférési &jogok:"
+//[MCopySecurityDefault]
+"Ala&pért."
 //[MCopySecurityCopy]
 "Más&ol"
 //[MCopySecurityInherit]
 "Ö&rököl"
-//[MCopySecurityLeave]
-"Ala&pért."
 //[MCopyIfFileExist]
 "Már &létező fájloknál:"
 //[MCopyAsk]
