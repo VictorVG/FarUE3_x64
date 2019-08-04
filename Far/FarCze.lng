@@ -5002,8 +5002,6 @@
 "Další práva se vyžadují na"
 //[MElevationRequiredProcess]
 "zpracování tohoto objektu:"
-//[MElevationRequiredCreate]
-"otevření tohoto objektu:"
 //[MElevationRequiredDelete]
 "smazání tohoto objektu:"
 //[MElevationRequiredCopy]

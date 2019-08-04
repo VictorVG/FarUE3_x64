@@ -4916,8 +4916,6 @@
 "Privilegios adicionales requeridos"
 //[MElevationRequiredProcess]
 "para procesar este objeto:"
-//[MElevationRequiredCreate]
-"para abrir este objeto:"
 //[MElevationRequiredDelete]
 "para eliminar este objeto:"
 //[MElevationRequiredCopy]

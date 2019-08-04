@@ -4911,8 +4911,6 @@
 "Патрабуюцца дадатковыя прывілеі"
 //[MElevationRequiredProcess]
 "для апрацоўкі гэтага аб'екту:"
-//[MElevationRequiredCreate]
-"для адчынення гэтага аб'екту:"
 //[MElevationRequiredDelete]
 "для выдалення гэтага аб'екту:"
 //[MElevationRequiredCopy]

@@ -1,7 +1,7 @@
 -- Visual Compare files or folders for panels: Files, Branch, Temporary, Arclite, Netbox, Observer, TorrentView.
 -- v.1.7
 -- http://forum.ru-board.com/topic.cgi?forum=5&topic=49572&start=2080#6
--- закомментироваk диалог с путями сравнения пар файлов в строке 127
+-- закомментироваk диалог с путями сравнения пар файлов в строки 126 и 127
 -- VictorVG 31.07.2019 16:37:01 +0300
 
 local ffi = require("ffi")
@@ -104,7 +104,7 @@ action = function()
   end
   if CI then panel.SetSelection(nil,1,CI,false) end
   AP,PP = f(AP,AC),f(PP,PC)
-  local APlen = AP:len()-PP:len()
+  -- local APlen = AP:len()-PP:len()
   -- far.Message("1st: "..PP..(APlen>0 and string.rep(" ",APlen) or "").."\n2nd: "..AP..(APlen<0 and string.rep(" ",-APlen) or ""),VC)
   if AP==PP then far.Message("it's the same object\n\n1st: "..PP.."\n2nd: "..AP,VC)
   else

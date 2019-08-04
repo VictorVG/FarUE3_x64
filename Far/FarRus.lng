@@ -4905,8 +4905,6 @@
 "Требуются дополнительные привилегии"
 //[MElevationRequiredProcess]
 "для обработки этого объекта:"
-//[MElevationRequiredCreate]
-"для открытия этого объекта:"
 //[MElevationRequiredDelete]
 "для удаления этого объекта:"
 //[MElevationRequiredCopy]

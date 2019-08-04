@@ -5003,8 +5003,6 @@
 "Man benötigt zusätzliche Vorrechten"
 //[MElevationRequiredProcess]
 "um dieses Objekt zu bearbeiten:"
-//[MElevationRequiredCreate]
-"um dieses Objekt zu öffnen:"
 //[MElevationRequiredDelete]
 "um dieses Objekt zu löschen:"
 //[MElevationRequiredCopy]
