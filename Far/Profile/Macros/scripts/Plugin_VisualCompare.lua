@@ -1,8 +1,10 @@
 -- Visual Compare files or folders for panels: Files, Branch, Temporary, Arclite, Netbox, Observer, TorrentView.
--- v.1.7
+-- v.1.7.1
 -- http://forum.ru-board.com/topic.cgi?forum=5&topic=49572&start=2080#6
--- закомментироваk диалог с путями сравнения пар файлов в строки 126 и 127
--- VictorVG 31.07.2019 16:37:01 +0300
+-- Версия 1.7.1. изменения:
+-- закомментирован диалог с путями сравнения пар файлов в строках 109 и 110
+-- уточнена логика вывода сообщения если один или оба файла нулевой длины
+-- VictorVG 05.08.2019 04:58:28 +0300
 
 local ffi = require("ffi")
 
@@ -110,13 +112,13 @@ action = function()
   else
     local function checksz0(f)
       local res=false
-      if not win.GetFileInfo(f).FileAttributes:match("d") then
+      if not win.GetFileInfo(f).FileAttributes:find("d") then
         local fh=io.open(f,"rb")
         if fh then res=fh:read(1)==nil fh:close() end
       end
       return res and true or false
     end
-    if checksz0(AP) and checksz0(PP) then far.Message("Both files zero size",VC)
+    if checksz0(AP) or checksz0(PP) then far.Message("Comparison is pointless because one or both files of zero length",VC)
     else
       if APanel.Left
       then Plugin.Command(VisComp,'"'..AP..'" "'..PP..'"')
