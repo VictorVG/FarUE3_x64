@@ -47,7 +47,7 @@
 
 @Contents
 $^#Программа управления файлами и архивами#
-$^#3.0.0.5443 (Private) x64#
+$^#3.0.0.5445 (Private) x64#
 $^#Copyright © 1996-2000 Eugene Roshal#
 $^#Copyright © 2000-2019 Far Group#
  ~Индекс файла помощи~@Index@
@@ -308,6 +308,8 @@ $ #Клавиатурные команды#
  ~Мышь: поддержка колеса~@MsWheel@
 
  ~Команды управления меню~@MenuCmd@
+
+ ~Копирование текста с экрана~@Grabber@
 
  ~Общие команды~@MiscCmd@
 
@@ -734,10 +736,8 @@ $ #Ошибка: Ошибка выполнения#
 командой, исполняемой программой или пакетным файлом.
 
 
-@MiscCmd
-$ #Общие команды#
- #Копирование текста с экрана#
-
+@Grabber
+$ #Копирование текста с экрана#
  Копирование текста с экрана                                #Alt+Ins#
 
  Эта команда позволяет выбрать и поместить в Буфер Обмена любую область экрана.
@@ -757,6 +757,9 @@ $ #Общие команды#
  #Ctrl+Shift+Left# и #Ctrl+Shift+Right# - перемещение с выделением на 10 позиций по горизонтали,
  #Ctrl+Shift+Up# и #Ctrl+Shift+Down# - перемещение с выделением на 5 позиций по вертикали.
 
+
+@MiscCmd
+$ #Общие команды#
  #Клавиатурные Макрокоманды#
 
  Записать ~клавиатурную макрокоманду~@KeyMacro@                        #Ctrl+<.>#
@@ -2970,9 +2973,7 @@ ANSI) байты на каждой строке изображаются 16 дв
 кодировки UTF-8 байты изображаются так же, а символы отображаются
 в позициях ведущих байт UTF-8 последовательностей. Байты продолжения
 заполняются символом #›# (кодовая позиция U+203A). Для кодировки
-UTF-16(BE) восемь последовательных пар байт (кодовых единиц)
-изображаются восемью четырёхзначными шестнадцатеричными значениями,
-за которыми следует восемь символов. Например:
+UTF-16(BE) за шестнадцатеричными значениями следует восемь символов. Например:
 
  Кодовая страница 1252 (ANSI - Latin I)
 
@@ -2994,10 +2995,10 @@ UTF-16(BE) восемь последовательных пар байт (код
  Кодовая страница 1200 (UTF-16)
 
 @-
- \1b00000000A2: 043D 043E 0020 0444 │ 0430 043B 044C 0448  но фальш\-
- \1b00000000B2: 0438 0432 044B 0439 │ 0020 044D 043A 0437  ивый экз\-
- \1b00000000C2: 0435 043C 043F 043B │ 044F 0440 002C 0020  емпляр, \-
- \1b00000000D2: 0434 0430 002E 000D │ 000A                 да.♪◙   \-
+ \1b00000000A2: 3D 04 3E 04 20 00 44 04 │ 30 04 3B 04 4C 04 48 04  но фальш\-
+ \1b00000000B2: 38 04 32 04 4B 04 39 04 │ 20 00 4D 04 3A 04 37 04  ивый экз\-
+ \1b00000000C2: 35 04 3C 04 3F 04 3B 04 │ 4F 04 40 04 2C 00 20 00  емпляр, \-
+ \1b00000000D2: 34 04 30 04 2E 00 0D 00 │ 0A 00                    да.♪◙   \-
 @+
 
  Комбинация клавиш #Ctrl+Right# сдвигает все байты влево; первый байт
@@ -6522,207 +6523,208 @@ $ #far:config Panel.Tree.TurnOffCompletely#
 
 @Index
 $ #Индекс файла помощи#
-   ~Программа управления файлами и архивами~@Contents@
+ ~Программа управления файлами и архивами~@Contents@
 
-   ~Far: Лицензия~@License@
-   ~Far: как пользоваться помощью~@Help@
-   ~Far: параметры командной строки~@CmdLine@
-   ~Far: что это такое~@About@
+ ~Far: Лицензия~@License@
+ ~Far: как пользоваться помощью~@Help@
+ ~Far: параметры командной строки~@CmdLine@
+ ~Far: что это такое~@About@
 
-   ~far:config Codepages.NoAutoDetectCP~@Codepages.NoAutoDetectCP@
-   ~far:config Confirmations.EscTwiceToInterrupt~@Confirmations.EscTwiceToInterrupt@
-   ~far:config Dialog.CBoxMaxHeight~@Dialog.CBoxMaxHeight@
-   ~far:config Editor.AddUnicodeBOM~@Editor.AddUnicodeBOM@
-   ~far:config Editor.AllowEmptySpaceAfterEof~@Editor.AllowEmptySpaceAfterEof@
-   ~far:config Editor.BSLikeDel~@Editor.BSLikeDel@
-   ~far:config Editor.CharCodeBase~@Editor.CharCodeBase@
-   ~far:config Editor.F8CPs~@Editor.F8CPs@
-   ~far:config Editor.FileSizeLimit~@Editor.FileSizeLimit@
-   ~far:config Editor.KeepEditorEOL~@Editor.KeepEditorEOL@
-   ~far:config Editor.NewFileUnixEOL~@Editor.NewFileUnixEOL@
-   ~far:config Editor.ReadOnlyLock~@Editor.ReadOnlyLock@
-   ~far:config Editor.UndoDataSize~@Editor.UndoDataSize@
-   ~far:config Help.ActivateURL~@Help.ActivateURL@
-   ~far:config History.*~@History.Config@
-   ~far:config Interface.AltF9~@Interface.AltF9@
-   ~far:config Interface.CursorSizeX~@Interface.CursorSize@
-   ~far:config Interface.DelHighlightSelected~@Interface.DelHighlightSelected@
-   ~far:config Interface.FormatNumberSeparators~@Interface.FormatNumberSeparators@
-   ~far:config Interface.RedrawTimeout~@Interface.RedrawTimeout@
-   ~far:config Interface.ViewerTitleFormat, Interface.EditorTitleFormat~@TitleFormat@
-   ~far:config Macros.ShowPlayIndicator~@Macros.ShowPlayIndicator@
-   ~far:config Panel.CtrlAltShiftRule~@Panel.CtrlAltShiftRule@
-   ~far:config Panel.CtrlFRule~@Panel.CtrlFRule@
-   ~far:config Panel.RightClickRule~@Panel.RightClickRule@
-   ~far:config Panel.ShellRightLeftArrowsRule~@Panel.Layout.ScrollbarMenu@
-   ~far:config Panel.ShellRightLeftArrowsRule~@Panel.ShellRightLeftArrowsRule@
-   ~far:config Panel.ShortcutAlwaysChdir~@Panel.ShortcutAlwaysChdir@
-   ~far:config Panel.Tree.TurnOffCompletely~@Panel.Tree.TurnOffCompletely@
-   ~far:config Policies.ShowHiddenDrives~@Policies.ShowHiddenDrives@
-   ~far:config System.AllCtrlAltShiftRule~@System.AllCtrlAltShiftRule@
-   ~far:config System.CASRule~@System.CASRule@
-   ~far:config System.CmdHistoryRule~@System.CmdHistoryRule@
-   ~far:config System.ConsoleDetachKey~@System.ConsoleDetachKey@
-   ~far:config System.CopyBufferSize~@System.CopyBufferSize@
-   ~far:config System.CopySecurityOptions~@System.CopySecurityOptions@
-   ~far:config System.CopyTimeRule~@System.CopyTimeRule@
-   ~far:config System.ExcludeCmdHistory~@System.ExcludeCmdHistory@
-   ~far:config System.Executor.ComspecArguments~@System.Executor.ComspecArguments@
-   ~far:config System.Executor.ExcludeCmds~@System.Executor.ExcludeCmds@
-   ~far:config System.Executor.FullTitle~@System.Executor.FullTitle@
-   ~far:config System.Executor.RestoreCP~@System.Executor.RestoreCP@
-   ~far:config System.Executor.UseAppPath~@System.Executor.UseAppPath@
-   ~far:config System.Executor.UseHomeDir~@System.Executor.UseHomeDir@
-   ~far:config System.Executor.~~~@System.Executor.~@
-   ~far:config System.FlagPosixSemantics~@System.FlagPosixSemantics@
-   ~far:config System.MsWheelDelta* & System.MsHWheelDelta*~@System.MsWheelDelta@
-   ~far:config System.PluginMaxReadData~@System.PluginMaxReadData@
-   ~far:config System.QuotedName~@System.QuotedName@
-   ~far:config System.QuotedSymbols~@System.QuotedSymbols@
-   ~far:config System.SetAttrFolderRules~@System.SetAttrFolderRules@
-   ~far:config System.ShowCheckingFile~@System.ShowCheckingFile@
-   ~far:config System.SubstNameRule~@System.SubstNameRule@
-   ~far:config System.SubstPluginPrefix~@System.SubstPluginPrefix@
-   ~far:config System.WipeSymbol~@System.WipeSymbol@
-   ~far:config System.WordDiv~@System.WordDiv@
-   ~far:config Viewer.SearchWrapStop~@Viewer.SearchWrapStop@
-   ~far:config XLat.Flags~@XLat.Flags@
-   ~far:config XLat.Layouts~@XLat.Layouts@
-   ~far:config XLat.Tables~@XLat.Tables@
-   ~far:config XLat.WordDivForXlat~@XLat.WordDivForXlat@
+ ~far:config Codepages.NoAutoDetectCP~@Codepages.NoAutoDetectCP@
+ ~far:config Confirmations.EscTwiceToInterrupt~@Confirmations.EscTwiceToInterrupt@
+ ~far:config Dialog.CBoxMaxHeight~@Dialog.CBoxMaxHeight@
+ ~far:config Editor.AddUnicodeBOM~@Editor.AddUnicodeBOM@
+ ~far:config Editor.AllowEmptySpaceAfterEof~@Editor.AllowEmptySpaceAfterEof@
+ ~far:config Editor.BSLikeDel~@Editor.BSLikeDel@
+ ~far:config Editor.CharCodeBase~@Editor.CharCodeBase@
+ ~far:config Editor.F8CPs~@Editor.F8CPs@
+ ~far:config Editor.FileSizeLimit~@Editor.FileSizeLimit@
+ ~far:config Editor.KeepEditorEOL~@Editor.KeepEditorEOL@
+ ~far:config Editor.NewFileUnixEOL~@Editor.NewFileUnixEOL@
+ ~far:config Editor.ReadOnlyLock~@Editor.ReadOnlyLock@
+ ~far:config Editor.UndoDataSize~@Editor.UndoDataSize@
+ ~far:config Help.ActivateURL~@Help.ActivateURL@
+ ~far:config History.*~@History.Config@
+ ~far:config Interface.AltF9~@Interface.AltF9@
+ ~far:config Interface.CursorSizeX~@Interface.CursorSize@
+ ~far:config Interface.DelHighlightSelected~@Interface.DelHighlightSelected@
+ ~far:config Interface.FormatNumberSeparators~@Interface.FormatNumberSeparators@
+ ~far:config Interface.RedrawTimeout~@Interface.RedrawTimeout@
+ ~far:config Interface.ViewerTitleFormat, Interface.EditorTitleFormat~@TitleFormat@
+ ~far:config Macros.ShowPlayIndicator~@Macros.ShowPlayIndicator@
+ ~far:config Panel.CtrlAltShiftRule~@Panel.CtrlAltShiftRule@
+ ~far:config Panel.CtrlFRule~@Panel.CtrlFRule@
+ ~far:config Panel.RightClickRule~@Panel.RightClickRule@
+ ~far:config Panel.ShellRightLeftArrowsRule~@Panel.Layout.ScrollbarMenu@
+ ~far:config Panel.ShellRightLeftArrowsRule~@Panel.ShellRightLeftArrowsRule@
+ ~far:config Panel.ShortcutAlwaysChdir~@Panel.ShortcutAlwaysChdir@
+ ~far:config Panel.Tree.TurnOffCompletely~@Panel.Tree.TurnOffCompletely@
+ ~far:config Policies.ShowHiddenDrives~@Policies.ShowHiddenDrives@
+ ~far:config System.AllCtrlAltShiftRule~@System.AllCtrlAltShiftRule@
+ ~far:config System.CASRule~@System.CASRule@
+ ~far:config System.CmdHistoryRule~@System.CmdHistoryRule@
+ ~far:config System.ConsoleDetachKey~@System.ConsoleDetachKey@
+ ~far:config System.CopyBufferSize~@System.CopyBufferSize@
+ ~far:config System.CopySecurityOptions~@System.CopySecurityOptions@
+ ~far:config System.CopyTimeRule~@System.CopyTimeRule@
+ ~far:config System.ExcludeCmdHistory~@System.ExcludeCmdHistory@
+ ~far:config System.Executor.ComspecArguments~@System.Executor.ComspecArguments@
+ ~far:config System.Executor.ExcludeCmds~@System.Executor.ExcludeCmds@
+ ~far:config System.Executor.FullTitle~@System.Executor.FullTitle@
+ ~far:config System.Executor.RestoreCP~@System.Executor.RestoreCP@
+ ~far:config System.Executor.UseAppPath~@System.Executor.UseAppPath@
+ ~far:config System.Executor.UseHomeDir~@System.Executor.UseHomeDir@
+ ~far:config System.Executor.~~~@System.Executor.~@
+ ~far:config System.FlagPosixSemantics~@System.FlagPosixSemantics@
+ ~far:config System.MsWheelDelta* & System.MsHWheelDelta*~@System.MsWheelDelta@
+ ~far:config System.PluginMaxReadData~@System.PluginMaxReadData@
+ ~far:config System.QuotedName~@System.QuotedName@
+ ~far:config System.QuotedSymbols~@System.QuotedSymbols@
+ ~far:config System.SetAttrFolderRules~@System.SetAttrFolderRules@
+ ~far:config System.ShowCheckingFile~@System.ShowCheckingFile@
+ ~far:config System.SubstNameRule~@System.SubstNameRule@
+ ~far:config System.SubstPluginPrefix~@System.SubstPluginPrefix@
+ ~far:config System.WipeSymbol~@System.WipeSymbol@
+ ~far:config System.WordDiv~@System.WordDiv@
+ ~far:config Viewer.SearchWrapStop~@Viewer.SearchWrapStop@
+ ~far:config XLat.Flags~@XLat.Flags@
+ ~far:config XLat.Layouts~@XLat.Layouts@
+ ~far:config XLat.Tables~@XLat.Tables@
+ ~far:config XLat.WordDivForXlat~@XLat.WordDivForXlat@
 
-   ~Автоопределение кодовой страницы~@CodePageAuto@
-   ~Ассоциации файлов~@FileAssoc@
-   ~Быстрый поиск в панелях~@FastFind@
-   ~Группы масок файлов~@MaskGroupsSettings@
-   ~Группы сортировки~@SortGroups@
-   ~Дерево папок~@TreePanel@
-   ~Дополнительные параметры поиска~@FindFileAdvanced@
-   ~Жёсткие ссылки, связи папок, символические ссылки~@HardSymLink@
-   ~Запрос привилегий администратора~@ElevationDlg@
-   ~Информация о версиях~@FarAbout@
-   ~История команд~@History@
-   ~История просмотра и редактирования~@HistoryViews@
-   ~История смены папок~@HistoryFolders@
-   ~Клавиатурные команды~@KeyRef@
-   ~Командная строка~@CmdLineCmd@
-   ~Команды операционной системы~@OSCommands@
-   ~Команды плагинов~@PluginCommands@
-   ~Команды управления меню~@MenuCmd@
-   ~Команды управления панелями - сервисные команды~@FuncCmd@
-   ~Команды управления панелями~@PanelCmd@
-   ~Копирование, перенос, переименование и создание связей и ссылок~@CopyFiles@
-   ~Копирование: запрос действия~@CopyAskOverwrite@
-   ~Копирование: перетаскивание файлов~@DragAndDrop@
-   ~Копирование: правила~@CopyRule@
-   ~Макросы: Автодополнение в диалогах~@KeyMacroDialogAutoCompletionList@
-   ~Макросы: Автодополнение в панелях~@KeyMacroShellAutoCompletionList@
-   ~Макросы: Быстрый поиск в панелях~@KeyMacroSearchList@
-   ~Макросы: Главное меню~@KeyMacroMainMenuList@
-   ~Макросы: Диалоги~@KeyMacroDialogList@
-   ~Макросы: Информационная панель~@KeyMacroInfoList@
-   ~Макросы: Меню выбора дисков~@KeyMacroDisksList@
-   ~Макросы: Меню пользователя~@KeyMacroUserMenuList@
-   ~Макросы: Общие~@KeyMacroCommonList@
-   ~Макросы: Остальные области~@KeyMacroOtherList@
-   ~Макросы: Панели~@KeyMacroShellList@
-   ~Макросы: Панель быстрого просмотра~@KeyMacroQViewList@
-   ~Макросы: Панель папок~@KeyMacroTreeList@
-   ~Макросы: Поиск папки~@KeyMacroFindFolderList@
-   ~Макросы: Программа просмотра~@KeyMacroViewerList@
-   ~Макросы: Прочие меню~@KeyMacroMenuList@
-   ~Макросы: Редактор~@KeyMacroEditList@
-   ~Макросы: Список установленных макросов~@KeyMacroList@
-   ~Макросы: Файл помощи~@KeyMacroHelpList@
-   ~Макросы: запись и воспроизведение~@KeyMacroRecPlay@
-   ~Макросы: кнопки назначения~@KeyMacroAssign@
-   ~Макросы: области действия~@KeyMacroArea@
-   ~Макросы: параметры макрокоманды~@KeyMacroSetting@
-   ~Макросы: удаление макроса~@KeyMacroDelete@
-   ~Макросы~@KeyMacro@
-   ~Маски файлов~@FileMasks@
-   ~Менеджер плагинов~@PluginsManagerSettings@
-   ~Меню ~@Menus@
-   ~Меню выбора диска~@DriveDlg@
-   ~Меню выбора кодовой страницы~@CodePagesMenu@
-   ~Меню выбора плагина~@ChoosePluginMenu@
-   ~Меню команд~@CmdMenu@
-   ~Меню левой и правой панелей~@LeftRightMenu@
-   ~Меню параметров~@OptMenu@
-   ~Меню пользователя~@UserMenu@
-   ~Меню файлов~@FilesMenu@
-   ~Меню фильтров~@FiltersMenu@
-   ~Метасимволы~@MetaSymbols@
-   ~Мышь: поддержка колеса~@MsWheel@
-   ~Настройка автозавершения~@AutoCompleteSettings@
-   ~Настройка ассоциации файлов~@FileAssocModify@
-   ~Настройка диалогов~@DialogSettings@
-   ~Настройка интерфейса~@InterfSettings@
-   ~Настройка информационной панели~@InfoPanelSettings@
-   ~Настройка командной строки~@CmdlineSettings@
-   ~Настройка меню выбора диска~@ChangeDriveMode@
-   ~Настройка меню~@VMenuSettings@
-   ~Настройка панели~@PanelSettings@
-   ~Настройка программы просмотра~@ViewerSettings@
-   ~Настройка редактора~@EditorSettings@
-   ~Настройка режимов просмотра панели файлов~@PanelViewModes@
-   ~Настройки дерева папок~@TreeSettings@
-   ~Обзор возможностей плагинов~@PluginsReviews@
-   ~Общие команды~@MiscCmd@
-   ~Описания папок~@FolderDiz@
-   ~Описания файлов~@FileDiz@
-   ~Отсоединение сетевого диска~@DisconnectDrive@
-   ~Ошибка: Ошибка выполнения~@ErrCannotExecute@
-   ~Ошибка: копирование/перенос "в самого себя"~@ErrCopyItSelf@
-   ~Ошибка: плагин не загружен~@ErrLoadPlugin@
-   ~Панели~@Panels@
-   ~Панель быстрого просмотра~@QViewPanel@
-   ~Панель информации~@InfoPanel@
-   ~Панель файлов~@FilePanel@
-   ~Параметры плагинов~@PluginsConfig@
-   ~Переименование кодовой страницы~@EditCodePageNameDlg@
-   ~Переключение между экранами~@ScrSwitch@
-   ~Переменные среды~@FAREnv@
-   ~Поддержка плагинов~@Plugins@
-   ~Подтверждения~@ConfirmDlg@
-   ~Поиск папки~@FindFolder@
-   ~Поиск файла: клавиши управления~@FindFileResult@
-   ~Поиск файла~@FindFile@
-   ~Пометка файлов~@SelectFiles@
-   ~Предупреждение: Имя редактируемого файла не может быть пустым~@WarnEditorPluginName@
-   ~Предупреждение: Исходный файл содержит более одного потока данных~@WarnCopyStream@
-   ~Предупреждение: Потеря шифрования файла~@WarnCopyEncrypt@
-   ~Предупреждение: Путь к редактируемому файлу не существует~@WarnEditorPath@
-   ~Предупреждение: Файл был изменён внешней программой~@WarnEditorSavedEx@
-   ~Применить команду~@ApplyCmd@
-   ~Программа просмотра: изменить текущую позицию~@ViewerGotoPos@
-   ~Программа просмотра: клавиши управления~@Viewer@
-   ~Программа просмотра: поиск~@ViewerSearch@
-   ~Программа просмотра: режимы просмотра~@ViewerMode@
-   ~Раскраска файлов и группы сортировки: клавиши управления~@HighlightList@
-   ~Раскраска файлов и группы сортировки: редактирование~@HighlightEdit@
-   ~Раскраска файлов и группы сортировки~@Highlight@
-   ~Регулярные выражения для замены~@RegExpRepl@
-   ~Регулярные выражения для поиска~@RegExp@
-   ~Редактор конфигурации~@FarConfig@
-   ~Редактор: Меню результатов поиска всех вхождений~@FindAllMenu@
-   ~Редактор: Открыть/создать файл~@FileOpenCreate@
-   ~Редактор: Режим замены - Сохранять стиль~@PreserveStyle@
-   ~Редактор: перейти на указанную позицию~@EditorGotoPos@
-   ~Редактор: повторное открытие файла~@EditorReload@
-   ~Редактор: поиск и замена~@EditorSearch@
-   ~Редактор: сохранить файл как…~@FileSaveAs@
-   ~Редактор~@Editor@
-   ~Режимы отображения информационной панели~@InfoPanelShowMode@
-   ~Режимы сортировки~@PanelCmdSort@
-   ~Системные параметры~@SystemSettings@
-   ~Создание папки~@MakeFolder@
-   ~Специальные команды~@SpecCmd@
-   ~Список Hotplug-устройств~@HotPlugList@
-   ~Список задач~@TaskList@
-   ~Сравнение папок~@CompFolders@
-   ~Ссылки на папки~@FolderShortcuts@
-   ~Удаление и уничтожение файлов и папок~@DeleteFile@
-   ~Файловые атрибуты~@FileAttrDlg@
-   ~Фильтр~@Filter@
-   ~Формат командной строки~@CommandPrompt@
+ ~Автоопределение кодовой страницы~@CodePageAuto@
+ ~Ассоциации файлов~@FileAssoc@
+ ~Быстрый поиск в панелях~@FastFind@
+ ~Группы масок файлов~@MaskGroupsSettings@
+ ~Группы сортировки~@SortGroups@
+ ~Дерево папок~@TreePanel@
+ ~Дополнительные параметры поиска~@FindFileAdvanced@
+ ~Жёсткие ссылки, связи папок, символические ссылки~@HardSymLink@
+ ~Запрос привилегий администратора~@ElevationDlg@
+ ~Информация о версиях~@FarAbout@
+ ~История команд~@History@
+ ~История просмотра и редактирования~@HistoryViews@
+ ~История смены папок~@HistoryFolders@
+ ~Клавиатурные команды~@KeyRef@
+ ~Командная строка~@CmdLineCmd@
+ ~Команды операционной системы~@OSCommands@
+ ~Команды плагинов~@PluginCommands@
+ ~Команды управления меню~@MenuCmd@
+ ~Команды управления панелями - сервисные команды~@FuncCmd@
+ ~Команды управления панелями~@PanelCmd@
+ ~Копирование текста с экрана~@Grabber@
+ ~Копирование, перенос, переименование и создание связей и ссылок~@CopyFiles@
+ ~Копирование: запрос действия~@CopyAskOverwrite@
+ ~Копирование: перетаскивание файлов~@DragAndDrop@
+ ~Копирование: правила~@CopyRule@
+ ~Макросы: Автодополнение в диалогах~@KeyMacroDialogAutoCompletionList@
+ ~Макросы: Автодополнение в панелях~@KeyMacroShellAutoCompletionList@
+ ~Макросы: Быстрый поиск в панелях~@KeyMacroSearchList@
+ ~Макросы: Главное меню~@KeyMacroMainMenuList@
+ ~Макросы: Диалоги~@KeyMacroDialogList@
+ ~Макросы: Информационная панель~@KeyMacroInfoList@
+ ~Макросы: Меню выбора дисков~@KeyMacroDisksList@
+ ~Макросы: Меню пользователя~@KeyMacroUserMenuList@
+ ~Макросы: Общие~@KeyMacroCommonList@
+ ~Макросы: Остальные области~@KeyMacroOtherList@
+ ~Макросы: Панели~@KeyMacroShellList@
+ ~Макросы: Панель быстрого просмотра~@KeyMacroQViewList@
+ ~Макросы: Панель папок~@KeyMacroTreeList@
+ ~Макросы: Поиск папки~@KeyMacroFindFolderList@
+ ~Макросы: Программа просмотра~@KeyMacroViewerList@
+ ~Макросы: Прочие меню~@KeyMacroMenuList@
+ ~Макросы: Редактор~@KeyMacroEditList@
+ ~Макросы: Список установленных макросов~@KeyMacroList@
+ ~Макросы: Файл помощи~@KeyMacroHelpList@
+ ~Макросы: запись и воспроизведение~@KeyMacroRecPlay@
+ ~Макросы: кнопки назначения~@KeyMacroAssign@
+ ~Макросы: области действия~@KeyMacroArea@
+ ~Макросы: параметры макрокоманды~@KeyMacroSetting@
+ ~Макросы: удаление макроса~@KeyMacroDelete@
+ ~Макросы~@KeyMacro@
+ ~Маски файлов~@FileMasks@
+ ~Менеджер плагинов~@PluginsManagerSettings@
+ ~Меню ~@Menus@
+ ~Меню выбора диска~@DriveDlg@
+ ~Меню выбора кодовой страницы~@CodePagesMenu@
+ ~Меню выбора плагина~@ChoosePluginMenu@
+ ~Меню команд~@CmdMenu@
+ ~Меню левой и правой панелей~@LeftRightMenu@
+ ~Меню параметров~@OptMenu@
+ ~Меню пользователя~@UserMenu@
+ ~Меню файлов~@FilesMenu@
+ ~Меню фильтров~@FiltersMenu@
+ ~Метасимволы~@MetaSymbols@
+ ~Мышь: поддержка колеса~@MsWheel@
+ ~Настройка автозавершения~@AutoCompleteSettings@
+ ~Настройка ассоциации файлов~@FileAssocModify@
+ ~Настройка диалогов~@DialogSettings@
+ ~Настройка интерфейса~@InterfSettings@
+ ~Настройка информационной панели~@InfoPanelSettings@
+ ~Настройка командной строки~@CmdlineSettings@
+ ~Настройка меню выбора диска~@ChangeDriveMode@
+ ~Настройка меню~@VMenuSettings@
+ ~Настройка панели~@PanelSettings@
+ ~Настройка программы просмотра~@ViewerSettings@
+ ~Настройка редактора~@EditorSettings@
+ ~Настройка режимов просмотра панели файлов~@PanelViewModes@
+ ~Настройки дерева папок~@TreeSettings@
+ ~Обзор возможностей плагинов~@PluginsReviews@
+ ~Общие команды~@MiscCmd@
+ ~Описания папок~@FolderDiz@
+ ~Описания файлов~@FileDiz@
+ ~Отсоединение сетевого диска~@DisconnectDrive@
+ ~Ошибка: Ошибка выполнения~@ErrCannotExecute@
+ ~Ошибка: копирование/перенос "в самого себя"~@ErrCopyItSelf@
+ ~Ошибка: плагин не загружен~@ErrLoadPlugin@
+ ~Панели~@Panels@
+ ~Панель быстрого просмотра~@QViewPanel@
+ ~Панель информации~@InfoPanel@
+ ~Панель файлов~@FilePanel@
+ ~Параметры плагинов~@PluginsConfig@
+ ~Переименование кодовой страницы~@EditCodePageNameDlg@
+ ~Переключение между экранами~@ScrSwitch@
+ ~Переменные среды~@FAREnv@
+ ~Поддержка плагинов~@Plugins@
+ ~Подтверждения~@ConfirmDlg@
+ ~Поиск папки~@FindFolder@
+ ~Поиск файла: клавиши управления~@FindFileResult@
+ ~Поиск файла~@FindFile@
+ ~Пометка файлов~@SelectFiles@
+ ~Предупреждение: Имя редактируемого файла не может быть пустым~@WarnEditorPluginName@
+ ~Предупреждение: Исходный файл содержит более одного потока данных~@WarnCopyStream@
+ ~Предупреждение: Потеря шифрования файла~@WarnCopyEncrypt@
+ ~Предупреждение: Путь к редактируемому файлу не существует~@WarnEditorPath@
+ ~Предупреждение: Файл был изменён внешней программой~@WarnEditorSavedEx@
+ ~Применить команду~@ApplyCmd@
+ ~Программа просмотра: изменить текущую позицию~@ViewerGotoPos@
+ ~Программа просмотра: клавиши управления~@Viewer@
+ ~Программа просмотра: поиск~@ViewerSearch@
+ ~Программа просмотра: режимы просмотра~@ViewerMode@
+ ~Раскраска файлов и группы сортировки: клавиши управления~@HighlightList@
+ ~Раскраска файлов и группы сортировки: редактирование~@HighlightEdit@
+ ~Раскраска файлов и группы сортировки~@Highlight@
+ ~Регулярные выражения для замены~@RegExpRepl@
+ ~Регулярные выражения для поиска~@RegExp@
+ ~Редактор конфигурации~@FarConfig@
+ ~Редактор: Меню результатов поиска всех вхождений~@FindAllMenu@
+ ~Редактор: Открыть/создать файл~@FileOpenCreate@
+ ~Редактор: Режим замены - Сохранять стиль~@PreserveStyle@
+ ~Редактор: перейти на указанную позицию~@EditorGotoPos@
+ ~Редактор: повторное открытие файла~@EditorReload@
+ ~Редактор: поиск и замена~@EditorSearch@
+ ~Редактор: сохранить файл как…~@FileSaveAs@
+ ~Редактор~@Editor@
+ ~Режимы отображения информационной панели~@InfoPanelShowMode@
+ ~Режимы сортировки~@PanelCmdSort@
+ ~Системные параметры~@SystemSettings@
+ ~Создание папки~@MakeFolder@
+ ~Специальные команды~@SpecCmd@
+ ~Список Hotplug-устройств~@HotPlugList@
+ ~Список задач~@TaskList@
+ ~Сравнение папок~@CompFolders@
+ ~Ссылки на папки~@FolderShortcuts@
+ ~Удаление и уничтожение файлов и папок~@DeleteFile@
+ ~Файловые атрибуты~@FileAttrDlg@
+ ~Фильтр~@Filter@
+ ~Формат командной строки~@CommandPrompt@

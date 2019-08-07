@@ -47,7 +47,7 @@
 
 @Contents
 $^#File and archive manager#
-$^#3.0.0.5443 (Private) x64#
+$^#3.0.0.5445 (Private) x64#
 $^#Copyright © 1996-2000 Eugene Roshal#
 $^#Copyright © 2000-2019 Far Group#
  UWAGA: Plik pomocy w trakcie tłumaczenia
@@ -293,6 +293,8 @@ $ #Skróty klawiszowe#
  ~Mouse: wheel support~@MsWheel@
 
  ~Menu control commands~@MenuCmd@
+
+ ~Screen grabber~@Grabber@
 
  ~Common controls~@MiscCmd@
 
@@ -720,10 +722,8 @@ $ #Error: Cannot execute#
 external command, operable program or batch file.
 
 
-@MiscCmd
-$ #Common control commands#
- #Screen grabber#
-
+@Grabber
+$ #Screen grabber#
  Screen grabber                                             #Alt+Ins#
 
  Screen grabber allows to select and copy to the clipboard any screen area.
@@ -740,7 +740,10 @@ selected text to the clipboard, #Ctrl+<Gray +># appends it to the clipboard cont
  #Ctrl+U# - deselect block.
  #Ctrl+Shift+Left# and #Ctrl+Shift+Right# - extend or shrink selection by 10 characters left or right.
  #Ctrl+Shift+Up# and #Ctrl+Shift+Down# - extend or shrink selection by 5 lines up or down.
+ 
 
+@MiscCmd
+$ #Common control commands#
  #Keyboard macros#
 
  Record a ~keyboard macro~@KeyMacro@                                   #Ctrl+<.>#
@@ -2923,9 +2926,7 @@ characters. For UTF-8 encoding, the bytes are represented the same way,
 while the characters are displayed at the positions of the leading bytes
 of the UTF-8 sequences with the positions of continuation bytes being
 filled with the #›# symbols (code point U+203A). For UTF-16(BE)
-encodings, the eight consecutive pairs of bytes (code units) are
-represented by four-digits hex values followed by eight characters. For
-example:
+encodings the hex values are followed by eight characters. For example:
 
  Code page 1252 (ANSI - Latin I)
 
@@ -2947,10 +2948,10 @@ example:
  Code page 1200 (UTF-16)
 
 @-
- \1b00000000A2: 043D 043E 0020 0444 │ 0430 043B 044C 0448  но фальш\-
- \1b00000000B2: 0438 0432 044B 0439 │ 0020 044D 043A 0437  ивый экз\-
- \1b00000000C2: 0435 043C 043F 043B │ 044F 0440 002C 0020  емпляр, \-
- \1b00000000D2: 0434 0430 002E 000D │ 000A                 да.♪◙   \-
+ \1b00000000A2: 3D 04 3E 04 20 00 44 04 │ 30 04 3B 04 4C 04 48 04  но фальш\-
+ \1b00000000B2: 38 04 32 04 4B 04 39 04 │ 20 00 4D 04 3A 04 37 04  ивый экз\-
+ \1b00000000C2: 35 04 3C 04 3F 04 3B 04 │ 4F 04 40 04 2C 00 20 00  емпляр, \-
+ \1b00000000D2: 34 04 30 04 2E 00 0D 00 │ 0A 00                    да.♪◙   \-
 @+
 
  The #Ctrl+Right# key combination shifts all bytes to the left; the
@@ -6439,213 +6440,214 @@ during folder create / delete / rename operations.
 
 @Index
 $ #Index help file#
-   ~File and archive manager~@Contents@
+ ~File and archive manager~@Contents@
 
-   ~Apply command~@ApplyCmd@
-   ~Autodetect code pages~@CodePageAuto@
+ ~Apply command~@ApplyCmd@
+ ~Autodetect code pages~@CodePageAuto@
 
-   ~Change Drive Menu Options~@ChangeDriveMode@
-   ~Change drive~@DriveDlg@
-   ~Code pages menu~@CodePagesMenu@
-   ~Command line commands~@CmdLineCmd@
-   ~Command line prompt format~@CommandPrompt@
-   ~Common control commands~@MiscCmd@
-   ~Compare folders~@CompFolders@
-   ~Configuration editor~@FarConfig@
-   ~Confirmations~@ConfirmDlg@
-   ~Copying, moving, renaming and creating links~@CopyFiles@
-   ~Copying: confirmation dialog~@CopyAskOverwrite@
-   ~Copying: drag and drop files~@DragAndDrop@
-   ~Copying: rules~@CopyRule@
-   ~Customizing file panel view modes~@PanelViewModes@
+ ~Change Drive Menu Options~@ChangeDriveMode@
+ ~Change drive~@DriveDlg@
+ ~Code pages menu~@CodePagesMenu@
+ ~Command line commands~@CmdLineCmd@
+ ~Command line prompt format~@CommandPrompt@
+ ~Common control commands~@MiscCmd@
+ ~Compare folders~@CompFolders@
+ ~Configuration editor~@FarConfig@
+ ~Confirmations~@ConfirmDlg@
+ ~Copying, moving, renaming and creating links~@CopyFiles@
+ ~Copying: confirmation dialog~@CopyAskOverwrite@
+ ~Copying: drag and drop files~@DragAndDrop@
+ ~Copying: rules~@CopyRule@
+ ~Customizing file panel view modes~@PanelViewModes@
 
-   ~Deleting and wiping files and folders~@DeleteFile@
-   ~Disconnect network drive~@DisconnectDrive@
+ ~Deleting and wiping files and folders~@DeleteFile@
+ ~Disconnect network drive~@DisconnectDrive@
 
-   ~Editor: All matching entries menu~@FindAllMenu@
-   ~Editor: Open/Create file~@FileOpenCreate@
-   ~Editor: Replace mode - Preserve style~@PreserveStyle@
-   ~Editor: go to specified line and character~@EditorGotoPos@
-   ~Editor: reloading a file~@EditorReload@
-   ~Editor: save file as…~@FileSaveAs@
-   ~Editor: search/replace~@EditorSearch@
-   ~Editor~@Editor@
-   ~Environment variables~@FAREnv@
+ ~Editor: All matching entries menu~@FindAllMenu@
+ ~Editor: Open/Create file~@FileOpenCreate@
+ ~Editor: Replace mode - Preserve style~@PreserveStyle@
+ ~Editor: go to specified line and character~@EditorGotoPos@
+ ~Editor: reloading a file~@EditorReload@
+ ~Editor: save file as…~@FileSaveAs@
+ ~Editor: search/replace~@EditorSearch@
+ ~Editor~@Editor@
+ ~Environment variables~@FAREnv@
 
-   ~Far: Licencja (po angielsku)~@License@
-   ~Far: command line switches~@CmdLine@
-   ~Far: jak używać pomocy~@Help@
-   ~Far: o programie~@About@
-   ~Fast find in panels~@FastFind@
-   ~File associations ~@FileAssoc@
-   ~File associations: editing~@FileAssocModify@
-   ~File attributes dialog~@FileAttrDlg@
-   ~File descriptions~@FileDiz@
-   ~File masks~@FileMasks@
-   ~Files highlighting and sort groups: control keys~@HighlightList@
-   ~Files highlighting and sort groups: editing~@HighlightEdit@
-   ~Files highlighting and sort groups~@Highlight@
-   ~Filters menu~@FiltersMenu@
-   ~Filter~@Filter@
-   ~Find file advanced options~@FindFileAdvanced@
-   ~Find file: control keys~@FindFileResult@
-   ~Find file~@FindFile@
-   ~Find folder~@FindFolder@
-   ~Folder descriptions~@FolderDiz@
-   ~Folder shortcuts~@FolderShortcuts@
+ ~Far: Licencja (po angielsku)~@License@
+ ~Far: command line switches~@CmdLine@
+ ~Far: jak używać pomocy~@Help@
+ ~Far: o programie~@About@
+ ~Fast find in panels~@FastFind@
+ ~File associations ~@FileAssoc@
+ ~File associations: editing~@FileAssocModify@
+ ~File attributes dialog~@FileAttrDlg@
+ ~File descriptions~@FileDiz@
+ ~File masks~@FileMasks@
+ ~Files highlighting and sort groups: control keys~@HighlightList@
+ ~Files highlighting and sort groups: editing~@HighlightEdit@
+ ~Files highlighting and sort groups~@Highlight@
+ ~Filters menu~@FiltersMenu@
+ ~Filter~@Filter@
+ ~Find file advanced options~@FindFileAdvanced@
+ ~Find file: control keys~@FindFileResult@
+ ~Find file~@FindFile@
+ ~Find folder~@FindFolder@
+ ~Folder descriptions~@FolderDiz@
+ ~Folder shortcuts~@FolderShortcuts@
 
-   ~Groups of file masks~@MaskGroupsSettings@
+ ~Groups of file masks~@MaskGroupsSettings@
 
-   ~Hard and Symbolic link~@HardSymLink@
-   ~History ~@History@
-   ~History: file view and edit~@HistoryViews@
-   ~History: folders~@HistoryFolders@
-   ~Hotplug devices list~@HotPlugList@
+ ~Hard and Symbolic link~@HardSymLink@
+ ~History ~@History@
+ ~History: file view and edit~@HistoryViews@
+ ~History: folders~@HistoryFolders@
+ ~Hotplug devices list~@HotPlugList@
 
-   ~InfoPanel display modes~@InfoPanelShowMode@
-   ~InfoPanel settings~@InfoPanelSettings@
+ ~InfoPanel display modes~@InfoPanelShowMode@
+ ~InfoPanel settings~@InfoPanelSettings@
 
-   ~Macro command: areas of execution~@KeyMacroArea@
-   ~Macro command: deleting a macro command~@KeyMacroDelete@
-   ~Macro command: hotkeys~@KeyMacroAssign@
-   ~Macro command: recording and playing-back~@KeyMacroRecPlay@
-   ~Macro command: settings~@KeyMacroSetting@
-   ~Macro commands~@KeyMacro@
-   ~Macros: Autocompletion in dialogs~@KeyMacroDialogAutoCompletionList@
-   ~Macros: Autocompletion in panels~@KeyMacroShellAutoCompletionList@
-   ~Macros: Change Drive menu~@KeyMacroDisksList@
-   ~Macros: Common macros~@KeyMacroCommonList@
-   ~Macros: Dialogs~@KeyMacroDialogList@
-   ~Macros: Editor~@KeyMacroEditList@
-   ~Macros: Fast Find in panels~@KeyMacroSearchList@
-   ~Macros: File panels~@KeyMacroShellList@
-   ~Macros: Find Folder~@KeyMacroFindFolderList@
-   ~Macros: Help window~@KeyMacroHelpList@
-   ~Macros: Info Panel~@KeyMacroInfoList@
-   ~Macros: Main Menu~@KeyMacroMainMenuList@
-   ~Macros: Other areas~@KeyMacroOtherList@
-   ~Macros: Other menus~@KeyMacroMenuList@
-   ~Macros: Quick View panel~@KeyMacroQViewList@
-   ~Macros: The list of installed macros~@KeyMacroList@
-   ~Macros: Tree Panel~@KeyMacroTreeList@
-   ~Macros: User Menu~@KeyMacroUserMenuList@
-   ~Macros: Viewer~@KeyMacroViewerList@
-   ~Make folder~@MakeFolder@
-   ~Menu control commands~@MenuCmd@
-   ~Menu settings~@VMenuSettings@
-   ~Menus ~@Menus@
-   ~Menus: commands menu~@CmdMenu@
-   ~Menus: files menu~@FilesMenu@
-   ~Menus: left and right menus~@LeftRightMenu@
-   ~Menus: options menu~@OptMenu@
-   ~Mouse: wheel support~@MsWheel@
+ ~Macro command: areas of execution~@KeyMacroArea@
+ ~Macro command: deleting a macro command~@KeyMacroDelete@
+ ~Macro command: hotkeys~@KeyMacroAssign@
+ ~Macro command: recording and playing-back~@KeyMacroRecPlay@
+ ~Macro command: settings~@KeyMacroSetting@
+ ~Macro commands~@KeyMacro@
+ ~Macros: Autocompletion in dialogs~@KeyMacroDialogAutoCompletionList@
+ ~Macros: Autocompletion in panels~@KeyMacroShellAutoCompletionList@
+ ~Macros: Change Drive menu~@KeyMacroDisksList@
+ ~Macros: Common macros~@KeyMacroCommonList@
+ ~Macros: Dialogs~@KeyMacroDialogList@
+ ~Macros: Editor~@KeyMacroEditList@
+ ~Macros: Fast Find in panels~@KeyMacroSearchList@
+ ~Macros: File panels~@KeyMacroShellList@
+ ~Macros: Find Folder~@KeyMacroFindFolderList@
+ ~Macros: Help window~@KeyMacroHelpList@
+ ~Macros: Info Panel~@KeyMacroInfoList@
+ ~Macros: Main Menu~@KeyMacroMainMenuList@
+ ~Macros: Other areas~@KeyMacroOtherList@
+ ~Macros: Other menus~@KeyMacroMenuList@
+ ~Macros: Quick View panel~@KeyMacroQViewList@
+ ~Macros: The list of installed macros~@KeyMacroList@
+ ~Macros: Tree Panel~@KeyMacroTreeList@
+ ~Macros: User Menu~@KeyMacroUserMenuList@
+ ~Macros: Viewer~@KeyMacroViewerList@
+ ~Make folder~@MakeFolder@
+ ~Menu control commands~@MenuCmd@
+ ~Menu settings~@VMenuSettings@
+ ~Menus ~@Menus@
+ ~Menus: commands menu~@CmdMenu@
+ ~Menus: files menu~@FilesMenu@
+ ~Menus: left and right menus~@LeftRightMenu@
+ ~Menus: options menu~@OptMenu@
+ ~Mouse: wheel support~@MsWheel@
 
-   ~Operating system commands~@OSCommands@
-   ~Overview of plugin capabilities~@PluginsReviews@
+ ~Operating system commands~@OSCommands@
+ ~Overview of plugin capabilities~@PluginsReviews@
 
-   ~Panel control commands - service commands~@FuncCmd@
-   ~Panel control commands~@PanelCmd@
-   ~Panels ~@Panels@
-   ~Panels: file panel~@FilePanel@
-   ~Panels: info panel~@InfoPanel@
-   ~Panels: quick view panel~@QViewPanel@
-   ~Panels: tree panel~@TreePanel@
-   ~Plugin commands~@PluginCommands@
-   ~Plugin selection menu~@ChoosePluginMenu@
-   ~Plugins configuration~@PluginsConfig@
-   ~Plugins manager settings~@PluginsManagerSettings@
-   ~Plugins support~@Plugins@
+ ~Panel control commands - service commands~@FuncCmd@
+ ~Panel control commands~@PanelCmd@
+ ~Panels ~@Panels@
+ ~Panels: file panel~@FilePanel@
+ ~Panels: info panel~@InfoPanel@
+ ~Panels: quick view panel~@QViewPanel@
+ ~Panels: tree panel~@TreePanel@
+ ~Plugin commands~@PluginCommands@
+ ~Plugin selection menu~@ChoosePluginMenu@
+ ~Plugins configuration~@PluginsConfig@
+ ~Plugins manager settings~@PluginsManagerSettings@
+ ~Plugins support~@Plugins@
 
-   ~Regular expressions in replace~@RegExpRepl@
-   ~Regular expressions~@RegExp@
-   ~Rename code page~@EditCodePageNameDlg@
-   ~Request administrative rights~@ElevationDlg@
+ ~Regular expressions in replace~@RegExpRepl@
+ ~Regular expressions~@RegExp@
+ ~Rename code page~@EditCodePageNameDlg@
+ ~Request administrative rights~@ElevationDlg@
 
-   ~Screens switching~@ScrSwitch@
-   ~Selecting files~@SelectFiles@
-   ~Settings dialog: AutoComplete~@AutoCompleteSettings@
-   ~Settings dialog: command line~@CmdlineSettings@
-   ~Settings dialog: dialogs~@DialogSettings@
-   ~Settings dialog: editor~@EditorSettings@
-   ~Settings dialog: interface~@InterfSettings@
-   ~Settings dialog: panel~@PanelSettings@
-   ~Settings dialog: system~@SystemSettings@
-   ~Settings dialog: viewer~@ViewerSettings@
-   ~Skróty klawiszowe~@KeyRef@
-   ~Sort groups~@SortGroups@
-   ~Sort modes~@PanelCmdSort@
-   ~Special commands~@SpecCmd@
-   ~Special symbols~@MetaSymbols@
+ ~Screen grabber~@Grabber@
+ ~Screens switching~@ScrSwitch@
+ ~Selecting files~@SelectFiles@
+ ~Settings dialog: AutoComplete~@AutoCompleteSettings@
+ ~Settings dialog: command line~@CmdlineSettings@
+ ~Settings dialog: dialogs~@DialogSettings@
+ ~Settings dialog: editor~@EditorSettings@
+ ~Settings dialog: interface~@InterfSettings@
+ ~Settings dialog: panel~@PanelSettings@
+ ~Settings dialog: system~@SystemSettings@
+ ~Settings dialog: viewer~@ViewerSettings@
+ ~Skróty klawiszowe~@KeyRef@
+ ~Sort groups~@SortGroups@
+ ~Sort modes~@PanelCmdSort@
+ ~Special commands~@SpecCmd@
+ ~Special symbols~@MetaSymbols@
 
-   ~Task list~@TaskList@
-   ~Tree settings~@TreeSettings@
+ ~Task list~@TaskList@
+ ~Tree settings~@TreeSettings@
 
-   ~User menu~@UserMenu@
+ ~User menu~@UserMenu@
 
-   ~Version information~@FarAbout@
-   ~Viewer: control keys~@Viewer@
-   ~Viewer: go to specified position~@ViewerGotoPos@
-   ~Viewer: search~@ViewerSearch@
-   ~Viewer: view modes~@ViewerMode@
+ ~Version information~@FarAbout@
+ ~Viewer: control keys~@Viewer@
+ ~Viewer: go to specified position~@ViewerGotoPos@
+ ~Viewer: search~@ViewerSearch@
+ ~Viewer: view modes~@ViewerMode@
 
-   ~far:config Codepages.NoAutoDetectCP~@Codepages.NoAutoDetectCP@
-   ~far:config Confirmations.EscTwiceToInterrupt~@Confirmations.EscTwiceToInterrupt@
-   ~far:config Dialog.CBoxMaxHeight~@Dialog.CBoxMaxHeight@
-   ~far:config Editor.AddUnicodeBOM~@Editor.AddUnicodeBOM@
-   ~far:config Editor.AllowEmptySpaceAfterEof~@Editor.AllowEmptySpaceAfterEof@
-   ~far:config Editor.BSLikeDel~@Editor.BSLikeDel@
-   ~far:config Editor.CharCodeBase~@Editor.CharCodeBase@
-   ~far:config Editor.F8CPs~@Editor.F8CPs@
-   ~far:config Editor.FileSizeLimit~@Editor.FileSizeLimit@
-   ~far:config Editor.KeepEditorEOL~@Editor.KeepEditorEOL@
-   ~far:config Editor.NewFileUnixEOL~@Editor.NewFileUnixEOL@
-   ~far:config Editor.ReadOnlyLock~@Editor.ReadOnlyLock@
-   ~far:config Editor.UndoDataSize~@Editor.UndoDataSize@
-   ~far:config Help.ActivateURL~@Help.ActivateURL@
-   ~far:config History.*~@History.Config@
-   ~far:config Interface.AltF9~@Interface.AltF9@
-   ~far:config Interface.CursorSizeX~@Interface.CursorSize@
-   ~far:config Interface.DelHighlightSelected~@Interface.DelHighlightSelected@
-   ~far:config Interface.FormatNumberSeparators~@Interface.FormatNumberSeparators@
-   ~far:config Interface.RedrawTimeout~@Interface.RedrawTimeout@
-   ~far:config Interface.ViewerTitleFormat, Interface.EditorTitleFormat~@TitleFormat@
-   ~far:config Macros.ShowPlayIndicator~@Macros.ShowPlayIndicator@
-   ~far:config Panel.CtrlAltShiftRule~@Panel.CtrlAltShiftRule@
-   ~far:config Panel.CtrlFRule~@Panel.CtrlFRule@
-   ~far:config Panel.RightClickRule~@Panel.RightClickRule@
-   ~far:config Panel.ShellRightLeftArrowsRule~@Panel.Layout.ScrollbarMenu@
-   ~far:config Panel.ShellRightLeftArrowsRule~@Panel.ShellRightLeftArrowsRule@
-   ~far:config Panel.ShortcutAlwaysChdir~@Panel.ShortcutAlwaysChdir@
-   ~far:config Panel.Tree.TurnOffCompletely~@Panel.Tree.TurnOffCompletely@
-   ~far:config Policies.ShowHiddenDrives~@Policies.ShowHiddenDrives@
-   ~far:config System.AllCtrlAltShiftRule~@System.AllCtrlAltShiftRule@
-   ~far:config System.CASRule~@System.CASRule@
-   ~far:config System.CmdHistoryRule~@System.CmdHistoryRule@
-   ~far:config System.ConsoleDetachKey~@System.ConsoleDetachKey@
-   ~far:config System.CopyBufferSize~@System.CopyBufferSize@
-   ~far:config System.CopySecurityOptions~@System.CopySecurityOptions@
-   ~far:config System.CopyTimeRule~@System.CopyTimeRule@
-   ~far:config System.ExcludeCmdHistory~@System.ExcludeCmdHistory@
-   ~far:config System.Executor.ComspecArguments~@System.Executor.ComspecArguments@
-   ~far:config System.Executor.ExcludeCmds~@System.Executor.ExcludeCmds@
-   ~far:config System.Executor.FullTitle~@System.Executor.FullTitle@
-   ~far:config System.Executor.RestoreCP~@System.Executor.RestoreCP@
-   ~far:config System.Executor.UseAppPath~@System.Executor.UseAppPath@
-   ~far:config System.Executor.UseHomeDir~@System.Executor.UseHomeDir@
-   ~far:config System.Executor.~~~@System.Executor.~@
-   ~far:config System.FlagPosixSemantics~@System.FlagPosixSemantics@
-   ~far:config System.MsWheelDelta* & System.MsHWheelDelta*~@System.MsWheelDelta@
-   ~far:config System.PluginMaxReadData~@System.PluginMaxReadData@
-   ~far:config System.QuotedName~@System.QuotedName@
-   ~far:config System.QuotedSymbols~@System.QuotedSymbols@
-   ~far:config System.SetAttrFolderRules~@System.SetAttrFolderRules@
-   ~far:config System.ShowCheckingFile~@System.ShowCheckingFile@
-   ~far:config System.SubstNameRule~@System.SubstNameRule@
-   ~far:config System.SubstPluginPrefix~@System.SubstPluginPrefix@
-   ~far:config System.WipeSymbol~@System.WipeSymbol@
-   ~far:config System.WordDiv~@System.WordDiv@
-   ~far:config Viewer.SearchWrapStop~@Viewer.SearchWrapStop@
-   ~far:config XLat.Flags~@XLat.Flags@
-   ~far:config XLat.Layouts~@XLat.Layouts@
-   ~far:config XLat.Tables~@XLat.Tables@
-   ~far:config XLat.WordDivForXlat~@XLat.WordDivForXlat@
+ ~far:config Codepages.NoAutoDetectCP~@Codepages.NoAutoDetectCP@
+ ~far:config Confirmations.EscTwiceToInterrupt~@Confirmations.EscTwiceToInterrupt@
+ ~far:config Dialog.CBoxMaxHeight~@Dialog.CBoxMaxHeight@
+ ~far:config Editor.AddUnicodeBOM~@Editor.AddUnicodeBOM@
+ ~far:config Editor.AllowEmptySpaceAfterEof~@Editor.AllowEmptySpaceAfterEof@
+ ~far:config Editor.BSLikeDel~@Editor.BSLikeDel@
+ ~far:config Editor.CharCodeBase~@Editor.CharCodeBase@
+ ~far:config Editor.F8CPs~@Editor.F8CPs@
+ ~far:config Editor.FileSizeLimit~@Editor.FileSizeLimit@
+ ~far:config Editor.KeepEditorEOL~@Editor.KeepEditorEOL@
+ ~far:config Editor.NewFileUnixEOL~@Editor.NewFileUnixEOL@
+ ~far:config Editor.ReadOnlyLock~@Editor.ReadOnlyLock@
+ ~far:config Editor.UndoDataSize~@Editor.UndoDataSize@
+ ~far:config Help.ActivateURL~@Help.ActivateURL@
+ ~far:config History.*~@History.Config@
+ ~far:config Interface.AltF9~@Interface.AltF9@
+ ~far:config Interface.CursorSizeX~@Interface.CursorSize@
+ ~far:config Interface.DelHighlightSelected~@Interface.DelHighlightSelected@
+ ~far:config Interface.FormatNumberSeparators~@Interface.FormatNumberSeparators@
+ ~far:config Interface.RedrawTimeout~@Interface.RedrawTimeout@
+ ~far:config Interface.ViewerTitleFormat, Interface.EditorTitleFormat~@TitleFormat@
+ ~far:config Macros.ShowPlayIndicator~@Macros.ShowPlayIndicator@
+ ~far:config Panel.CtrlAltShiftRule~@Panel.CtrlAltShiftRule@
+ ~far:config Panel.CtrlFRule~@Panel.CtrlFRule@
+ ~far:config Panel.RightClickRule~@Panel.RightClickRule@
+ ~far:config Panel.ShellRightLeftArrowsRule~@Panel.Layout.ScrollbarMenu@
+ ~far:config Panel.ShellRightLeftArrowsRule~@Panel.ShellRightLeftArrowsRule@
+ ~far:config Panel.ShortcutAlwaysChdir~@Panel.ShortcutAlwaysChdir@
+ ~far:config Panel.Tree.TurnOffCompletely~@Panel.Tree.TurnOffCompletely@
+ ~far:config Policies.ShowHiddenDrives~@Policies.ShowHiddenDrives@
+ ~far:config System.AllCtrlAltShiftRule~@System.AllCtrlAltShiftRule@
+ ~far:config System.CASRule~@System.CASRule@
+ ~far:config System.CmdHistoryRule~@System.CmdHistoryRule@
+ ~far:config System.ConsoleDetachKey~@System.ConsoleDetachKey@
+ ~far:config System.CopyBufferSize~@System.CopyBufferSize@
+ ~far:config System.CopySecurityOptions~@System.CopySecurityOptions@
+ ~far:config System.CopyTimeRule~@System.CopyTimeRule@
+ ~far:config System.ExcludeCmdHistory~@System.ExcludeCmdHistory@
+ ~far:config System.Executor.ComspecArguments~@System.Executor.ComspecArguments@
+ ~far:config System.Executor.ExcludeCmds~@System.Executor.ExcludeCmds@
+ ~far:config System.Executor.FullTitle~@System.Executor.FullTitle@
+ ~far:config System.Executor.RestoreCP~@System.Executor.RestoreCP@
+ ~far:config System.Executor.UseAppPath~@System.Executor.UseAppPath@
+ ~far:config System.Executor.UseHomeDir~@System.Executor.UseHomeDir@
+ ~far:config System.Executor.~~~@System.Executor.~@
+ ~far:config System.FlagPosixSemantics~@System.FlagPosixSemantics@
+ ~far:config System.MsWheelDelta* & System.MsHWheelDelta*~@System.MsWheelDelta@
+ ~far:config System.PluginMaxReadData~@System.PluginMaxReadData@
+ ~far:config System.QuotedName~@System.QuotedName@
+ ~far:config System.QuotedSymbols~@System.QuotedSymbols@
+ ~far:config System.SetAttrFolderRules~@System.SetAttrFolderRules@
+ ~far:config System.ShowCheckingFile~@System.ShowCheckingFile@
+ ~far:config System.SubstNameRule~@System.SubstNameRule@
+ ~far:config System.SubstPluginPrefix~@System.SubstPluginPrefix@
+ ~far:config System.WipeSymbol~@System.WipeSymbol@
+ ~far:config System.WordDiv~@System.WordDiv@
+ ~far:config Viewer.SearchWrapStop~@Viewer.SearchWrapStop@
+ ~far:config XLat.Flags~@XLat.Flags@
+ ~far:config XLat.Layouts~@XLat.Layouts@
+ ~far:config XLat.Tables~@XLat.Tables@
+ ~far:config XLat.WordDivForXlat~@XLat.WordDivForXlat@

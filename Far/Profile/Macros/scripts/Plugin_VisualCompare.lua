@@ -1,13 +1,9 @@
 -- Visual Compare files or folders for panels: Files, Branch, Temporary, Arclite, Netbox, Observer, TorrentView.
--- v.1.7.1
--- http://forum.ru-board.com/topic.cgi?forum=5&topic=49572&start=2080#6
--- Версия 1.7.1. изменения:
--- закомментирован диалог с путями сравнения пар файлов в строках 109 и 110
--- уточнена логика вывода сообщения если один или оба файла нулевой длины
--- VictorVG 05.08.2019 04:58:28 +0300
-
+-- v.1.8
+-- http://forum.ru-board.com/topic.cgi?forum=5&topic=49572&start=2080#6 [?]
+ 
 local ffi = require("ffi")
-
+ 
 ffi.cdef([[
 typedef struct {
   void*          hwnd;
@@ -21,18 +17,18 @@ typedef struct {
 } SHFILEOPSTRUCTW;
 int SHFileOperationW(SHFILEOPSTRUCTW *);
 ]])
-
+ 
 local FO_DELETE          = 0x0003
 local FOF_SILENT         = 0x0004
 local FOF_NOCONFIRMATION = 0x0010
-
+ 
 local function utf16(str)
   local strw = win.Utf8ToUtf16(str)
   local result = ffi.new("wchar_t[?]", #strw/2+1)
   ffi.copy(result, strw)
   return result
 end
-
+ 
 local function remove(fname)
   local fileopw = ffi.new("SHFILEOPSTRUCTW")
   fileopw.wFunc = FO_DELETE
@@ -41,7 +37,7 @@ local function remove(fname)
   fileopw.fFlags = FOF_SILENT+FOF_NOCONFIRMATION
   return 0 == ffi.load("shell32").SHFileOperationW(fileopw)
 end
-
+ 
 local VisComp = "AF4DAB38-C00A-4653-900E-7A8230308010"
 local CopyDl1 = "42E4AEB1-A230-44F4-B33C-F195BB654931"
 local CopyDl2 = "FCEF11C4-5490-451D-8B4A-62FA03F52759"
@@ -49,7 +45,7 @@ local CopyDl3 = "2430BA2F-D52E-4129-9561-5E8B1C3BACDB"
 local ExtrDlg = "97877FD0-78E6-4169-B4FB-D76746249F4D"
 local TorrDlg = "00000000-0000-0000-546F-7272656E7400"
 local MArcDlg = "C5508DDB-5175-4736-9A10-C8F6EED7B32F"
-
+ 
 local function f(p,f) if f:match("^[A-Z]:") then p=f elseif p=="" then p="\\" elseif f~=".." then if p:sub(-1,-1)=="\\" then p=p..f else p=p.."\\"..f end end return p end
 local function e(p,f)
   local h=Far.DisableHistory(-1)
@@ -62,25 +58,25 @@ local function e(p,f)
   if Area.Dialog and Dlg.ItemType==4 and Dlg.Id==ExtrDlg then print(p) Keys("AltO Enter") end
   Far.DisableHistory(h)
 end
-
+ 
 local VC="Visual Compare"
 local msg=[[Selection wrong! - I don't know what to compare.
-
-File compare modes by priority order:
-1. At Active panel selected 2 files
+ 
+File compare modes by priority order:                                
+1. At Active panel selected 2 files                                  
 2. At Active panel selected 1 file and Passive panel selected 1 file
-3. At Active panel selected 1 file and 2nd under cursor
-4. At Active panel selected 0 files, will be used file under cursor
- a) At Passive panel (plugin) can be selected 1 file under cursor
- b) At Passive panel (file or branch) any number of files
-    can be selected, will be used file under cursor                 ]]
-
+3. At Active panel selected 1 file and 2nd under cursor              
+4. At Active panel selected 0 files, will be used file under cursor  
+   At Passive panel will be used selected file or file under cursor ]]
+ 
 Macro {
 description="VC: Визуальное сравнение файлов"; area="Shell"; key="CtrlAltC";
 condition = function()
-  if APanel.SelCount>2 and APanel.Plugin and (APanel.Format~="Branch") and (APanel.Prefix~="tmp") or APanel.SelCount==0 and PPanel.SelCount>1 and PPanel.Plugin and (PPanel.Format~="Branch") and (PPanel.Prefix~="tmp") or APanel.SelCount==0 and PPanel.SelCount==1 and (panel.GetCurrentPanelItem(nil,0).FileName~=panel.GetSelectedPanelItem(nil,0).FileName)
-  then far.Message(msg,VC)
-  else return true
+  if APanel.SelCount==2
+     or APanel.SelCount==1 and PPanel.SelCount<=1
+     or APanel.SelCount==0 and (not PPanel.Plugin or PPanel.Plugin and (PPanel.Format=="Branch" or PPanel.Prefix=="tmp" or PPanel.SelCount<=1))
+  then return true
+  else far.Message(msg,VC)
   end
 end;
 action = function()
@@ -91,9 +87,9 @@ action = function()
     --if not APanel.Left then AC,PC = PC,AC end
   elseif APanel.SelCount==1 and PPanel.SelCount==1 then PC,AC = panel.GetSelectedPanelItem(nil,0,1).FileName,panel.GetSelectedPanelItem(nil,1,1).FileName
   elseif APanel.SelCount==1 then S2,PC,AC = true,panel.GetSelectedPanelItem(nil,1,1).FileName,panel.GetCurrentPanelItem(nil,1).FileName
-    --Keys("Ins")
     CI=panel.GetPanelInfo(nil,1).CurrentItem
     panel.SetSelection(nil,1,CI,true)
+  elseif APanel.SelCount==0 and PPanel.SelCount==1 then PC=panel.GetSelectedPanelItem(nil,0,1).FileName
   end
   local eAP,ePP = AF=="arc" or APR=="ma" or ePF:match(APR or ""),PF=="arc" or PPR=="ma" or ePF:match(PPR or "")
   if S2 and eAP then
@@ -106,19 +102,22 @@ action = function()
   end
   if CI then panel.SetSelection(nil,1,CI,false) end
   AP,PP = f(AP,AC),f(PP,PC)
-  -- local APlen = AP:len()-PP:len()
-  -- far.Message("1st: "..PP..(APlen>0 and string.rep(" ",APlen) or "").."\n2nd: "..AP..(APlen<0 and string.rep(" ",-APlen) or ""),VC)
   if AP==PP then far.Message("it's the same object\n\n1st: "..PP.."\n2nd: "..AP,VC)
   else
-    local function checksz0(f)
-      local res=false
+    local function crash_protect(f)
+      local fffe,efbbbf,zero = "\255\254","\239\187\191",false
       if not win.GetFileInfo(f).FileAttributes:find("d") then
-        local fh=io.open(f,"rb")
-        if fh then res=fh:read(1)==nil fh:close() end
+        local h=io.open(f,"rb")
+        local s=h:read(4) or ""
+        local l=string.len(s)
+        if h then zero=(l==0 or l==3 and s==efbbbf or l==2 and s==fffe) h:close() end
       end
-      return res and true or false
+      return zero
     end
-    if checksz0(AP) or checksz0(PP) then far.Message("Comparison is pointless because one or both files of zero length",VC)
+    if crash_protect(AP) and crash_protect(PP)
+    then
+      local APlen = AP:len()-PP:len()
+      far.Message("Crash protect: prevent compare of zero size files!\n\n1st: "..PP..(APlen>0 and string.rep(" ",APlen) or "").."\n2nd: "..AP..(APlen<0 and string.rep(" ",-APlen) or ""),VC)
     else
       if APanel.Left
       then Plugin.Command(VisComp,'"'..AP..'" "'..PP..'"')

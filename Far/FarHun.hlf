@@ -47,7 +47,7 @@
 
 @Contents
 $^#Fájl- és archívumkezelő program#
-$^#3.0.0.5443 (Private) x64#
+$^#3.0.0.5445 (Private) x64#
 $^#Copyright © 1996-2000 Eugene Roshal#
 $^#Copyright © 2000-2019 Far Group#
 $^(help file last translated for build 882)
@@ -301,9 +301,11 @@ $ #Billentyűparancsok#
 
  ~Egér: görgő támogatása~@MsWheel@
 
- ~Egyebek~@MiscCmd@
+ ~Menu control commands~@MenuCmd@
 
- ~Common controls~@MiscCmd@
+ ~Képernyőgrabber~@Grabber@
+
+ ~Egyebek~@MiscCmd@
 
  ~Special commands~@SpecCmd@
 
@@ -740,11 +742,8 @@ $ #Hiba: nem végrehajtható#
  A program, amit megpróbáltunk futtatni, nem értelmezhető sem belső, sem
 külső parancsként, sem futtatható programként, sem batch fájlként.
 
-
-@MiscCmd
-$ #Panelvezérlő parancsok - egyebek#
- #Képernyőgrabber#
-
+@Grabber
+$ #Képernyőgrabber#
  Képernyőgrabber                                            #Alt+Ins#
 
  A képernyőgrabberrel bármelyik képernyőterület kijelölhető és a vágólapra másolható.
@@ -763,6 +762,9 @@ vágólap aktuális tartalmához.
  #Ctrl+Shift+Left# and #Ctrl+Shift+Right# - extend or shrink selection by 10 characters left or right.
  #Ctrl+Shift+Up# and #Ctrl+Shift+Down# - extend or shrink selection by 5 lines up or down.
 
+
+@MiscCmd
+$ #Panelvezérlő parancsok - egyebek#
  #Keyboard macros#
 
  ~Makró~@KeyMacro@ rögzítése                                           #Ctrl+<.>#
@@ -2997,9 +2999,7 @@ characters. For UTF-8 encoding, the bytes are represented the same way,
 while the characters are displayed at the positions of the leading bytes
 of the UTF-8 sequences with the positions of continuation bytes being
 filled with the #›# symbols (code point U+203A). For UTF-16(BE)
-encodings, the eight consecutive pairs of bytes (code units) are
-represented by four-digits hex values followed by eight characters. For
-example:
+encodings the hex values are followed by eight characters. For example:
 
  Code page 1252 (ANSI - Latin I)
 
@@ -3021,10 +3021,10 @@ example:
  Code page 1200 (UTF-16)
 
 @-
- \1b00000000A2: 043D 043E 0020 0444 │ 0430 043B 044C 0448  но фальш\-
- \1b00000000B2: 0438 0432 044B 0439 │ 0020 044D 043A 0437  ивый экз\-
- \1b00000000C2: 0435 043C 043F 043B │ 044F 0440 002C 0020  емпляр, \-
- \1b00000000D2: 0434 0430 002E 000D │ 000A                 да.♪◙   \-
+ \1b00000000A2: 3D 04 3E 04 20 00 44 04 │ 30 04 3B 04 4C 04 48 04  но фальш\-
+ \1b00000000B2: 38 04 32 04 4B 04 39 04 │ 20 00 4D 04 3A 04 37 04  ивый экз\-
+ \1b00000000C2: 35 04 3C 04 3F 04 3B 04 │ 4F 04 40 04 2C 00 20 00  емпляр, \-
+ \1b00000000D2: 34 04 30 04 2E 00 0D 00 │ 0A 00                    да.♪◙   \-
 @+
 
  The #Ctrl+Right# key combination shifts all bytes to the left; the
@@ -3918,7 +3918,7 @@ helyettesít, de a korábbi tabulátorokat nem konvertálja.
  #Minden tabulátorból#   A szöveg megnyitásakor automatikusan
  #szóközök#              minden tabulátort szóközzé alakít.
 
- #Maradó blokkok#          ^<wrap>Nem veszi le a blokkokról a kijelölést,
+ #Maradó blokkok#          ^<wrap>Nem veszi le a blokkokról a
 ha megmozdítjuk a kurzort.
 
  #A Del törli#             Ha van kijelölt blokk, a #Del# nem a
@@ -6520,222 +6520,223 @@ during folder create / delete / rename operations.
 
 @Index
 $ #A súgó betűrendes tartalomjegyzéke#
-   ~Fájl- és archívumkezelő program~@Contents@
+ ~Fájl- és archívumkezelő program~@Contents@
 
-   ~A parancssor parancsai~@CmdLineCmd@
-   ~A parancssori prompt formátuma~@CommandPrompt@
-   ~A pluginek képességeinek áttekintése~@PluginsReviews@
+ ~A parancssor parancsai~@CmdLineCmd@
+ ~A parancssori prompt formátuma~@CommandPrompt@
+ ~A pluginek képességeinek áttekintése~@PluginsReviews@
 
-   ~Beállítások: kezelőfelület beállítások~@InterfSettings@
-   ~Beállítások: nézőke beállítások~@ViewerSettings@
-   ~Beállítások: panel beállítások~@PanelSettings@
-   ~Beállítások: párbeszédablak beállítások~@DialogSettings@
-   ~Beállítások: rendszer beállítások~@SystemSettings@
-   ~Beállítások: szerkesztő beállítások~@EditorSettings@
-   ~Billentyűparancsok~@KeyRef@
+ ~Beállítások: kezelőfelület beállítások~@InterfSettings@
+ ~Beállítások: nézőke beállítások~@ViewerSettings@
+ ~Beállítások: panel beállítások~@PanelSettings@
+ ~Beállítások: párbeszédablak beállítások~@DialogSettings@
+ ~Beállítások: rendszer beállítások~@SystemSettings@
+ ~Beállítások: szerkesztő beállítások~@EditorSettings@
+ ~Billentyűparancsok~@KeyRef@
 
-   ~Change Drive Menu Options~@ChangeDriveMode@
-   ~Code pages menu~@CodePagesMenu@
-   ~Configuration editor~@FarConfig@
+ ~Change Drive Menu Options~@ChangeDriveMode@
+ ~Code pages menu~@CodePagesMenu@
+ ~Configuration editor~@FarConfig@
 
-   ~Editor: All matching entries menu~@FindAllMenu@
-   ~Editor: Replace mode - Preserve style~@PreserveStyle@
-   ~Editor: go to specified line and character~@EditorGotoPos@
-   ~Editor: search/replace~@EditorSearch@
-   ~Egér: görgő támogatása~@MsWheel@
-   ~Előzmények: mappa előzmények~@HistoryFolders@
-   ~Előzmények: megnézett és szerkesztett fájlok előzménye~@HistoryViews@
+ ~Editor: All matching entries menu~@FindAllMenu@
+ ~Editor: Replace mode - Preserve style~@PreserveStyle@
+ ~Editor: go to specified line and character~@EditorGotoPos@
+ ~Editor: search/replace~@EditorSearch@
+ ~Egér: görgő támogatása~@MsWheel@
+ ~Előzmények: mappa előzmények~@HistoryFolders@
+ ~Előzmények: megnézett és szerkesztett fájlok előzménye~@HistoryViews@
 
-   ~Far: License~@License@
-   ~Far: a Far parancssori kapcsolói~@CmdLine@
-   ~Far: a programról~@About@
-   ~Far: a súgó használata~@Help@
-   ~Fastruktúra beállítások~@TreeSettings@
-   ~Felhasználói menü~@UserMenu@
-   ~Figyelem: A fájlt egy külső program megváltoztatta~@WarnEditorSavedEx@
-   ~Figyelem: A szerkesztendő fájl célmappája még nem létezik…~@WarnEditorPath@
-   ~Figyelem: A szerkesztendő fájlnak nevet kell adni~@WarnEditorPluginName@
-   ~Figyelem: a titkosítás el fog veszni~@WarnCopyEncrypt@
-   ~Figyelem: több streamet tartalmazó fájl másolása vagy mozgatása~@WarnCopyStream@
-   ~Folder descriptions~@FolderDiz@
-   ~Futó programok~@TaskList@
-   ~Fájl attribútumok párbeszédablak~@FileAttrDlg@
-   ~Fájlkeresés haladó beállításai~@FindFileAdvanced@
-   ~Fájlkeresés: vezérlőgombok~@FindFileResult@
-   ~Fájlkeresés~@FindFile@
-   ~Fájlkiemelések, rendezési csoportok: szerkesztés~@HighlightEdit@
-   ~Fájlkiemelések, rendezési csoportok: vezérlőbillentyűk~@HighlightList@
-   ~Fájlkiemelések, rendezési csoportok~@Highlight@
-   ~Fájlmaszkok~@FileMasks@
-   ~Fájlmegjegyzések~@FileDiz@
-   ~Fájlok kijelölése~@SelectFiles@
-   ~Fájlok és mappák törlése és kisöprése~@DeleteFile@
-   ~Fájlpanel nézet módok testreszabása~@PanelViewModes@
-   ~Fájltársítások: szerkesztés~@FileAssocModify@
-   ~Fájltársítások~@FileAssoc@
+ ~Far: License~@License@
+ ~Far: a Far parancssori kapcsolói~@CmdLine@
+ ~Far: a programról~@About@
+ ~Far: a súgó használata~@Help@
+ ~Fastruktúra beállítások~@TreeSettings@
+ ~Felhasználói menü~@UserMenu@
+ ~Figyelem: A fájlt egy külső program megváltoztatta~@WarnEditorSavedEx@
+ ~Figyelem: A szerkesztendő fájl célmappája még nem létezik…~@WarnEditorPath@
+ ~Figyelem: A szerkesztendő fájlnak nevet kell adni~@WarnEditorPluginName@
+ ~Figyelem: a titkosítás el fog veszni~@WarnCopyEncrypt@
+ ~Figyelem: több streamet tartalmazó fájl másolása vagy mozgatása~@WarnCopyStream@
+ ~Folder descriptions~@FolderDiz@
+ ~Futó programok~@TaskList@
+ ~Fájl attribútumok párbeszédablak~@FileAttrDlg@
+ ~Fájlkeresés haladó beállításai~@FindFileAdvanced@
+ ~Fájlkeresés: vezérlőgombok~@FindFileResult@
+ ~Fájlkeresés~@FindFile@
+ ~Fájlkiemelések, rendezési csoportok: szerkesztés~@HighlightEdit@
+ ~Fájlkiemelések, rendezési csoportok: vezérlőbillentyűk~@HighlightList@
+ ~Fájlkiemelések, rendezési csoportok~@Highlight@
+ ~Fájlmaszkok~@FileMasks@
+ ~Fájlmegjegyzések~@FileDiz@
+ ~Fájlok kijelölése~@SelectFiles@
+ ~Fájlok és mappák törlése és kisöprése~@DeleteFile@
+ ~Fájlpanel nézet módok testreszabása~@PanelViewModes@
+ ~Fájltársítások: szerkesztés~@FileAssocModify@
+ ~Fájltársítások~@FileAssoc@
 
-   ~Groups of file masks~@MaskGroupsSettings@
-   ~Gyorskeresés a paneleken~@FastFind@
+ ~Groups of file masks~@MaskGroupsSettings@
+ ~Gyorskeresés a paneleken~@FastFind@
 
-   ~Hardlinkek és szimbolikus linkek~@HardSymLink@
-   ~Hiba: nem másolható vagy mozgatható önmagára~@ErrCopyItSelf@
-   ~Hiba: nem végrehajtható~@ErrCannotExecute@
-   ~Hiba: plugin betöltési hiba~@ErrLoadPlugin@
-   ~Hotplug eszközök~@HotPlugList@
-   ~Hálózati meghajtó leválasztása~@DisconnectDrive@
+ ~Hardlinkek és szimbolikus linkek~@HardSymLink@
+ ~Hiba: nem másolható vagy mozgatható önmagára~@ErrCopyItSelf@
+ ~Hiba: nem végrehajtható~@ErrCannotExecute@
+ ~Hiba: plugin betöltési hiba~@ErrLoadPlugin@
+ ~Hotplug eszközök~@HotPlugList@
+ ~Hálózati meghajtó leválasztása~@DisconnectDrive@
 
-   ~InfoPanel display modes~@InfoPanelShowMode@
-   ~InfoPanel settings~@InfoPanelSettings@
+ ~InfoPanel display modes~@InfoPanelShowMode@
+ ~InfoPanel settings~@InfoPanelSettings@
 
-   ~Képernyők váltása~@ScrSwitch@
-   ~Kódlapok automatikus felismerése~@CodePageAuto@
-   ~Környezeti változók~@FAREnv@
-   ~Különleges szimbólumok~@MetaSymbols@
+ ~Képernyőgrabber~@Grabber@
+ ~Képernyők váltása~@ScrSwitch@
+ ~Kódlapok automatikus felismerése~@CodePageAuto@
+ ~Környezeti változók~@FAREnv@
+ ~Különleges szimbólumok~@MetaSymbols@
 
-   ~Macros: Autocompletion in dialogs~@KeyMacroDialogAutoCompletionList@
-   ~Macros: Autocompletion in panels~@KeyMacroShellAutoCompletionList@
-   ~Macros: Change Drive menu~@KeyMacroDisksList@
-   ~Macros: Common macros~@KeyMacroCommonList@
-   ~Macros: Dialogs~@KeyMacroDialogList@
-   ~Macros: Fast Find in panels~@KeyMacroSearchList@
-   ~Macros: File panels~@KeyMacroShellList@
-   ~Macros: Find Folder~@KeyMacroFindFolderList@
-   ~Macros: Help window~@KeyMacroHelpList@
-   ~Macros: Info Panel~@KeyMacroInfoList@
-   ~Macros: Main Menu~@KeyMacroMainMenuList@
-   ~Macros: Other areas~@KeyMacroOtherList@
-   ~Macros: Other menus~@KeyMacroMenuList@
-   ~Macros: Quick View panel~@KeyMacroQViewList@
-   ~Macros: The list of installed macros~@KeyMacroList@
-   ~Macros: Tree Panel~@KeyMacroTreeList@
-   ~Macros: User Menu~@KeyMacroUserMenuList@
-   ~Makrók: a nézőke makrói~@KeyMacroViewerList@
-   ~Makrók: a szerkesztő makrói~@KeyMacroEditList@
-   ~Makrók: a végrehajtás hatóköre~@KeyMacroArea@
-   ~Makrók: beállítások~@KeyMacroSetting@
-   ~Makrók: gyorsbillentyűk~@KeyMacroAssign@
-   ~Makrók: makró törlése~@KeyMacroDelete@
-   ~Makrók: rögzítés és visszajátszás~@KeyMacroRecPlay@
-   ~Makrók~@KeyMacro@
-   ~Mappa gyorsbillentyűk~@FolderShortcuts@
-   ~Mappakeresés~@FindFolder@
-   ~Mappák összehasonlítása~@CompFolders@
-   ~Megerősítések~@ConfirmDlg@
-   ~Meghajtóváltás (Meghajtók menü)~@DriveDlg@
-   ~Menu control commands~@MenuCmd@
-   ~Menu settings~@VMenuSettings@
-   ~Menük: Bal és Jobb menü~@LeftRightMenu@
-   ~Menük: Beállítások menü~@OptMenu@
-   ~Menük: Fájlok menü~@FilesMenu@
-   ~Menük: Parancsok menü~@CmdMenu@
-   ~Menük~@Menus@
-   ~Másolás, mozgatás, átnevezés és linkek létrehozása~@CopyFiles@
-   ~Másolás: húzd és ejtsd művelet fájlokon~@DragAndDrop@
-   ~Másolás: megerősítés felülírás előtt~@CopyAskOverwrite@
-   ~Másolás: szabályok~@CopyRule@
+ ~Macros: Autocompletion in dialogs~@KeyMacroDialogAutoCompletionList@
+ ~Macros: Autocompletion in panels~@KeyMacroShellAutoCompletionList@
+ ~Macros: Change Drive menu~@KeyMacroDisksList@
+ ~Macros: Common macros~@KeyMacroCommonList@
+ ~Macros: Dialogs~@KeyMacroDialogList@
+ ~Macros: Fast Find in panels~@KeyMacroSearchList@
+ ~Macros: File panels~@KeyMacroShellList@
+ ~Macros: Find Folder~@KeyMacroFindFolderList@
+ ~Macros: Help window~@KeyMacroHelpList@
+ ~Macros: Info Panel~@KeyMacroInfoList@
+ ~Macros: Main Menu~@KeyMacroMainMenuList@
+ ~Macros: Other areas~@KeyMacroOtherList@
+ ~Macros: Other menus~@KeyMacroMenuList@
+ ~Macros: Quick View panel~@KeyMacroQViewList@
+ ~Macros: The list of installed macros~@KeyMacroList@
+ ~Macros: Tree Panel~@KeyMacroTreeList@
+ ~Macros: User Menu~@KeyMacroUserMenuList@
+ ~Makrók: a nézőke makrói~@KeyMacroViewerList@
+ ~Makrók: a szerkesztő makrói~@KeyMacroEditList@
+ ~Makrók: a végrehajtás hatóköre~@KeyMacroArea@
+ ~Makrók: beállítások~@KeyMacroSetting@
+ ~Makrók: gyorsbillentyűk~@KeyMacroAssign@
+ ~Makrók: makró törlése~@KeyMacroDelete@
+ ~Makrók: rögzítés és visszajátszás~@KeyMacroRecPlay@
+ ~Makrók~@KeyMacro@
+ ~Mappa gyorsbillentyűk~@FolderShortcuts@
+ ~Mappakeresés~@FindFolder@
+ ~Mappák összehasonlítása~@CompFolders@
+ ~Megerősítések~@ConfirmDlg@
+ ~Meghajtóváltás (Meghajtók menü)~@DriveDlg@
+ ~Menu control commands~@MenuCmd@
+ ~Menu settings~@VMenuSettings@
+ ~Menük: Bal és Jobb menü~@LeftRightMenu@
+ ~Menük: Beállítások menü~@OptMenu@
+ ~Menük: Fájlok menü~@FilesMenu@
+ ~Menük: Parancsok menü~@CmdMenu@
+ ~Menük~@Menus@
+ ~Másolás, mozgatás, átnevezés és linkek létrehozása~@CopyFiles@
+ ~Másolás: húzd és ejtsd művelet fájlokon~@DragAndDrop@
+ ~Másolás: megerősítés felülírás előtt~@CopyAskOverwrite@
+ ~Másolás: szabályok~@CopyRule@
 
-   ~Nézőke: keresés~@ViewerSearch@
-   ~Nézőke: vezérlőbillentyűk~@Viewer@
+ ~Nézőke: keresés~@ViewerSearch@
+ ~Nézőke: vezérlőbillentyűk~@Viewer@
 
-   ~Operációs rendszer parancsok~@OSCommands@
+ ~Operációs rendszer parancsok~@OSCommands@
 
-   ~Panelek: fastruktúra panel~@TreePanel@
-   ~Panelek: fájlpanel~@FilePanel@
-   ~Panelek: gyorsnézet panel~@QViewPanel@
-   ~Panelek: info panel~@InfoPanel@
-   ~Panelek~@Panels@
-   ~Panelvezérlő parancsok - egyebek~@MiscCmd@
-   ~Panelvezérlő parancsok - rendszerparancsok~@FuncCmd@
-   ~Panelvezérlő parancsok~@PanelCmd@
-   ~Parancs előzmények~@History@
-   ~Parancs végrehajtása~@ApplyCmd@
-   ~Plugin beállítások~@PluginsConfig@
-   ~Plugin commands~@PluginCommands@
-   ~Plugin selection menu~@ChoosePluginMenu@
-   ~Pluginek támogatása~@Plugins@
-   ~Plugins manager settings~@PluginsManagerSettings@
+ ~Panelek: fastruktúra panel~@TreePanel@
+ ~Panelek: fájlpanel~@FilePanel@
+ ~Panelek: gyorsnézet panel~@QViewPanel@
+ ~Panelek: info panel~@InfoPanel@
+ ~Panelek~@Panels@
+ ~Panelvezérlő parancsok - egyebek~@MiscCmd@
+ ~Panelvezérlő parancsok - rendszerparancsok~@FuncCmd@
+ ~Panelvezérlő parancsok~@PanelCmd@
+ ~Parancs előzmények~@History@
+ ~Parancs végrehajtása~@ApplyCmd@
+ ~Plugin beállítások~@PluginsConfig@
+ ~Plugin commands~@PluginCommands@
+ ~Plugin selection menu~@ChoosePluginMenu@
+ ~Pluginek támogatása~@Plugins@
+ ~Plugins manager settings~@PluginsManagerSettings@
 
-   ~Regular expressions in replace~@RegExpRepl@
-   ~Regular expressions~@RegExp@
-   ~Rename code page~@EditCodePageNameDlg@
-   ~Rendezési csoportok~@SortGroups@
-   ~Rendezési elv~@PanelCmdSort@
-   ~Request administrative rights~@ElevationDlg@
+ ~Regular expressions in replace~@RegExpRepl@
+ ~Regular expressions~@RegExp@
+ ~Rename code page~@EditCodePageNameDlg@
+ ~Rendezési csoportok~@SortGroups@
+ ~Rendezési elv~@PanelCmdSort@
+ ~Request administrative rights~@ElevationDlg@
 
-   ~Settings dialog: AutoComplete~@AutoCompleteSettings@
-   ~Settings dialog: command line~@CmdlineSettings@
-   ~Special commands~@SpecCmd@
-   ~Szerkesztő: fájl megnyitása/létrehozása~@FileOpenCreate@
-   ~Szerkesztő: fájl mentése másként~@FileSaveAs@
-   ~Szerkesztő: szerkesztett fájl újbóli betöltése~@EditorReload@
-   ~Szerkesztő~@Editor@
-   ~Szűrők menü~@FiltersMenu@
-   ~Szűrő~@Filter@
+ ~Settings dialog: AutoComplete~@AutoCompleteSettings@
+ ~Settings dialog: command line~@CmdlineSettings@
+ ~Special commands~@SpecCmd@
+ ~Szerkesztő: fájl megnyitása/létrehozása~@FileOpenCreate@
+ ~Szerkesztő: fájl mentése másként~@FileSaveAs@
+ ~Szerkesztő: szerkesztett fájl újbóli betöltése~@EditorReload@
+ ~Szerkesztő~@Editor@
+ ~Szűrők menü~@FiltersMenu@
+ ~Szűrő~@Filter@
 
-   ~Version information~@FarAbout@
-   ~Viewer: go to specified position~@ViewerGotoPos@
-   ~Viewer: view modes~@ViewerMode@
+ ~Version information~@FarAbout@
+ ~Viewer: go to specified position~@ViewerGotoPos@
+ ~Viewer: view modes~@ViewerMode@
 
-   ~far:config Codepages.NoAutoDetectCP~@Codepages.NoAutoDetectCP@
-   ~far:config Confirmations.EscTwiceToInterrupt~@Confirmations.EscTwiceToInterrupt@
-   ~far:config Dialog.CBoxMaxHeight~@Dialog.CBoxMaxHeight@
-   ~far:config Editor.AddUnicodeBOM~@Editor.AddUnicodeBOM@
-   ~far:config Editor.AllowEmptySpaceAfterEof~@Editor.AllowEmptySpaceAfterEof@
-   ~far:config Editor.BSLikeDel~@Editor.BSLikeDel@
-   ~far:config Editor.CharCodeBase~@Editor.CharCodeBase@
-   ~far:config Editor.F8CPs~@Editor.F8CPs@
-   ~far:config Editor.FileSizeLimit~@Editor.FileSizeLimit@
-   ~far:config Editor.KeepEditorEOL~@Editor.KeepEditorEOL@
-   ~far:config Editor.NewFileUnixEOL~@Editor.NewFileUnixEOL@
-   ~far:config Editor.ReadOnlyLock~@Editor.ReadOnlyLock@
-   ~far:config Editor.UndoDataSize~@Editor.UndoDataSize@
-   ~far:config Help.ActivateURL~@Help.ActivateURL@
-   ~far:config History.*~@History.Config@
-   ~far:config Interface.AltF9~@Interface.AltF9@
-   ~far:config Interface.CursorSizeX~@Interface.CursorSize@
-   ~far:config Interface.DelHighlightSelected~@Interface.DelHighlightSelected@
-   ~far:config Interface.FormatNumberSeparators~@Interface.FormatNumberSeparators@
-   ~far:config Interface.RedrawTimeout~@Interface.RedrawTimeout@
-   ~far:config Interface.ViewerTitleFormat, Interface.EditorTitleFormat~@TitleFormat@
-   ~far:config Macros.ShowPlayIndicator~@Macros.ShowPlayIndicator@
-   ~far:config Panel.CtrlAltShiftRule~@Panel.CtrlAltShiftRule@
-   ~far:config Panel.CtrlFRule~@Panel.CtrlFRule@
-   ~far:config Panel.RightClickRule~@Panel.RightClickRule@
-   ~far:config Panel.ShellRightLeftArrowsRule~@Panel.Layout.ScrollbarMenu@
-   ~far:config Panel.ShellRightLeftArrowsRule~@Panel.ShellRightLeftArrowsRule@
-   ~far:config Panel.ShortcutAlwaysChdir~@Panel.ShortcutAlwaysChdir@
-   ~far:config Panel.Tree.TurnOffCompletely~@Panel.Tree.TurnOffCompletely@
-   ~far:config Policies.ShowHiddenDrives~@Policies.ShowHiddenDrives@
-   ~far:config System.AllCtrlAltShiftRule~@System.AllCtrlAltShiftRule@
-   ~far:config System.CASRule~@System.CASRule@
-   ~far:config System.CmdHistoryRule~@System.CmdHistoryRule@
-   ~far:config System.ConsoleDetachKey~@System.ConsoleDetachKey@
-   ~far:config System.CopyBufferSize~@System.CopyBufferSize@
-   ~far:config System.CopySecurityOptions~@System.CopySecurityOptions@
-   ~far:config System.CopyTimeRule~@System.CopyTimeRule@
-   ~far:config System.ExcludeCmdHistory~@System.ExcludeCmdHistory@
-   ~far:config System.Executor.ComspecArguments~@System.Executor.ComspecArguments@
-   ~far:config System.Executor.ExcludeCmds~@System.Executor.ExcludeCmds@
-   ~far:config System.Executor.FullTitle~@System.Executor.FullTitle@
-   ~far:config System.Executor.RestoreCP~@System.Executor.RestoreCP@
-   ~far:config System.Executor.UseAppPath~@System.Executor.UseAppPath@
-   ~far:config System.Executor.UseHomeDir~@System.Executor.UseHomeDir@
-   ~far:config System.Executor.~~~@System.Executor.~@
-   ~far:config System.FlagPosixSemantics~@System.FlagPosixSemantics@
-   ~far:config System.MsWheelDelta* & System.MsHWheelDelta*~@System.MsWheelDelta@
-   ~far:config System.PluginMaxReadData~@System.PluginMaxReadData@
-   ~far:config System.QuotedName~@System.QuotedName@
-   ~far:config System.QuotedSymbols~@System.QuotedSymbols@
-   ~far:config System.SetAttrFolderRules~@System.SetAttrFolderRules@
-   ~far:config System.ShowCheckingFile~@System.ShowCheckingFile@
-   ~far:config System.SubstNameRule~@System.SubstNameRule@
-   ~far:config System.SubstPluginPrefix~@System.SubstPluginPrefix@
-   ~far:config System.WipeSymbol~@System.WipeSymbol@
-   ~far:config System.WordDiv~@System.WordDiv@
-   ~far:config Viewer.SearchWrapStop~@Viewer.SearchWrapStop@
-   ~far:config XLat.Flags~@XLat.Flags@
-   ~far:config XLat.Layouts~@XLat.Layouts@
-   ~far:config XLat.Tables~@XLat.Tables@
-   ~far:config XLat.WordDivForXlat~@XLat.WordDivForXlat@
+ ~far:config Codepages.NoAutoDetectCP~@Codepages.NoAutoDetectCP@
+ ~far:config Confirmations.EscTwiceToInterrupt~@Confirmations.EscTwiceToInterrupt@
+ ~far:config Dialog.CBoxMaxHeight~@Dialog.CBoxMaxHeight@
+ ~far:config Editor.AddUnicodeBOM~@Editor.AddUnicodeBOM@
+ ~far:config Editor.AllowEmptySpaceAfterEof~@Editor.AllowEmptySpaceAfterEof@
+ ~far:config Editor.BSLikeDel~@Editor.BSLikeDel@
+ ~far:config Editor.CharCodeBase~@Editor.CharCodeBase@
+ ~far:config Editor.F8CPs~@Editor.F8CPs@
+ ~far:config Editor.FileSizeLimit~@Editor.FileSizeLimit@
+ ~far:config Editor.KeepEditorEOL~@Editor.KeepEditorEOL@
+ ~far:config Editor.NewFileUnixEOL~@Editor.NewFileUnixEOL@
+ ~far:config Editor.ReadOnlyLock~@Editor.ReadOnlyLock@
+ ~far:config Editor.UndoDataSize~@Editor.UndoDataSize@
+ ~far:config Help.ActivateURL~@Help.ActivateURL@
+ ~far:config History.*~@History.Config@
+ ~far:config Interface.AltF9~@Interface.AltF9@
+ ~far:config Interface.CursorSizeX~@Interface.CursorSize@
+ ~far:config Interface.DelHighlightSelected~@Interface.DelHighlightSelected@
+ ~far:config Interface.FormatNumberSeparators~@Interface.FormatNumberSeparators@
+ ~far:config Interface.RedrawTimeout~@Interface.RedrawTimeout@
+ ~far:config Interface.ViewerTitleFormat, Interface.EditorTitleFormat~@TitleFormat@
+ ~far:config Macros.ShowPlayIndicator~@Macros.ShowPlayIndicator@
+ ~far:config Panel.CtrlAltShiftRule~@Panel.CtrlAltShiftRule@
+ ~far:config Panel.CtrlFRule~@Panel.CtrlFRule@
+ ~far:config Panel.RightClickRule~@Panel.RightClickRule@
+ ~far:config Panel.ShellRightLeftArrowsRule~@Panel.Layout.ScrollbarMenu@
+ ~far:config Panel.ShellRightLeftArrowsRule~@Panel.ShellRightLeftArrowsRule@
+ ~far:config Panel.ShortcutAlwaysChdir~@Panel.ShortcutAlwaysChdir@
+ ~far:config Panel.Tree.TurnOffCompletely~@Panel.Tree.TurnOffCompletely@
+ ~far:config Policies.ShowHiddenDrives~@Policies.ShowHiddenDrives@
+ ~far:config System.AllCtrlAltShiftRule~@System.AllCtrlAltShiftRule@
+ ~far:config System.CASRule~@System.CASRule@
+ ~far:config System.CmdHistoryRule~@System.CmdHistoryRule@
+ ~far:config System.ConsoleDetachKey~@System.ConsoleDetachKey@
+ ~far:config System.CopyBufferSize~@System.CopyBufferSize@
+ ~far:config System.CopySecurityOptions~@System.CopySecurityOptions@
+ ~far:config System.CopyTimeRule~@System.CopyTimeRule@
+ ~far:config System.ExcludeCmdHistory~@System.ExcludeCmdHistory@
+ ~far:config System.Executor.ComspecArguments~@System.Executor.ComspecArguments@
+ ~far:config System.Executor.ExcludeCmds~@System.Executor.ExcludeCmds@
+ ~far:config System.Executor.FullTitle~@System.Executor.FullTitle@
+ ~far:config System.Executor.RestoreCP~@System.Executor.RestoreCP@
+ ~far:config System.Executor.UseAppPath~@System.Executor.UseAppPath@
+ ~far:config System.Executor.UseHomeDir~@System.Executor.UseHomeDir@
+ ~far:config System.Executor.~~~@System.Executor.~@
+ ~far:config System.FlagPosixSemantics~@System.FlagPosixSemantics@
+ ~far:config System.MsWheelDelta* & System.MsHWheelDelta*~@System.MsWheelDelta@
+ ~far:config System.PluginMaxReadData~@System.PluginMaxReadData@
+ ~far:config System.QuotedName~@System.QuotedName@
+ ~far:config System.QuotedSymbols~@System.QuotedSymbols@
+ ~far:config System.SetAttrFolderRules~@System.SetAttrFolderRules@
+ ~far:config System.ShowCheckingFile~@System.ShowCheckingFile@
+ ~far:config System.SubstNameRule~@System.SubstNameRule@
+ ~far:config System.SubstPluginPrefix~@System.SubstPluginPrefix@
+ ~far:config System.WipeSymbol~@System.WipeSymbol@
+ ~far:config System.WordDiv~@System.WordDiv@
+ ~far:config Viewer.SearchWrapStop~@Viewer.SearchWrapStop@
+ ~far:config XLat.Flags~@XLat.Flags@
+ ~far:config XLat.Layouts~@XLat.Layouts@
+ ~far:config XLat.Tables~@XLat.Tables@
+ ~far:config XLat.WordDivForXlat~@XLat.WordDivForXlat@
 
-   ~Új mappa~@MakeFolder@
+ ~Új mappa~@MakeFolder@
