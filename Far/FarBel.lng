@@ -1675,29 +1675,9 @@
 //[MListSymlink]
 "Спасылак"
 //[MListJunction]
-"Сувязь"
+"Злучэнне"
 //[MListVolMount]
 "Дыск"
-//[MListDFS]
-"DFS"
-//[MListDFSR]
-"DFSR"
-//[MListHSM]
-"HSM"
-//[MListHSM2]
-"HSM2"
-//[MListSIS]
-"SIS"
-//[MListWIM]
-"WIM"
-//[MListCSV]
-"CSV"
-//[MListDEDUP]
-"DEDUP"
-//[MListNFS]
-"NFS"
-//[MListPlaceholder]
-"Запаўняльнік"
 //[MListUnknownReparsePoint]
 "?Спасылак?"
 //[MListBrackets]
@@ -2930,34 +2910,6 @@
 
 //[MQuickViewTitle]
 "Хуткі прагляд"
-//[MQuickViewFolder]
-"Каталог"
-//[MQuickViewJunction]
-"Сувязь"
-//[MQuickViewSymlink]
-"Спасылак"
-//[MQuickViewVolMount]
-"Дыск"
-//[MQuickViewDFS]
-"DFS"
-//[MQuickViewDFSR]
-"DFSR"
-//[MQuickViewHSM]
-"HSM"
-//[MQuickViewHSM2]
-"HSM2"
-//[MQuickViewSIS]
-"SIS"
-//[MQuickViewWIM]
-"WIM"
-//[MQuickViewCSV]
-"CSV"
-//[MQuickViewDEDUP]
-"DEDUP"
-//[MQuickViewNFS]
-"NFS"
-//[MQuickViewPlaceholder]
-"Сімвал-заменнік"
 //[MQuickViewUnknownReparsePoint]
 "Невядомая кропка паўторнага аналізу"
 //[MQuickViewNoData]
@@ -2993,7 +2945,7 @@
 "Дыск:"
 //[MSetAttrDfsTargets]
 "DFS мэты"
-//[MSetAttrUnknownJunction]
+//[MSetAttrUnknownReparsePoint]
 "(няма дадзеных)"
 //[MSetAttrRO]
 "&Толькі для чытання"

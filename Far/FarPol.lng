@@ -1678,26 +1678,6 @@
 "Dowiązania"
 //[MListVolMount]
 "Wolumen"
-//[MListDFS]
-"DFS"
-//[MListDFSR]
-"DFSR"
-//[MListHSM]
-"HSM"
-//[MListHSM2]
-"HSM2"
-//[MListSIS]
-"SIS"
-//[MListWIM]
-"WIM"
-//[MListCSV]
-"CSV"
-//[MListDEDUP]
-"DEDUP"
-//[MListNFS]
-"NFS"
-//[MListPlaceholder]
-"Symbol zastępczy"
 //[MListUnknownReparsePoint]
 "?LinkSym?"
 //[MListBrackets]
@@ -2937,34 +2917,6 @@
 
 //[MQuickViewTitle]
 "Szybki podgląd"
-//[MQuickViewFolder]
-"Folder"
-//[MQuickViewJunction]
-"Dowiązanie"
-//[MQuickViewSymlink]
-"Link"
-//[MQuickViewVolMount]
-"Napęd"
-//[MQuickViewDFS]
-"DFS"
-//[MQuickViewDFSR]
-"DFSR"
-//[MQuickViewHSM]
-"HSM"
-//[MQuickViewHSM2]
-"HSM2"
-//[MQuickViewSIS]
-"SIS"
-//[MQuickViewWIM]
-"WIM"
-//[MQuickViewCSV]
-"CSV"
-//[MQuickViewDEDUP]
-"DEDUP"
-//[MQuickViewNFS]
-"NFS"
-//[MQuickViewPlaceholder]
-"Symbol zastępczy"
 //[MQuickViewUnknownReparsePoint]
 "Nieznany punkt powiązania"
 //[MQuickViewNoData]
@@ -3000,7 +2952,7 @@
 "Wolumen:"
 //[MSetAttrDfsTargets]
 "Cel DFS"
-//[MSetAttrUnknownJunction]
+//[MSetAttrUnknownReparsePoint]
 "(dane niedostępne)"
 //[MSetAttrRO]
 "Tylko do &odczytu"

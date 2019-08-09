@@ -1816,30 +1816,8 @@
 "SzimLnk"
 //[MListJunction]
 "Csomópt"
-// need translation:
 //[MListVolMount]
-"Volume"
-//[MListDFS]
-"DFS"
-//[MListDFSR]
-"DFSR"
-//[MListHSM]
-"HSM"
-//[MListHSM2]
-"HSM2"
-//[MListSIS]
-"SIS"
-//[MListWIM]
-"WIM"
-//[MListCSV]
-"CSV"
-//[MListDEDUP]
-"DEDUP"
-//[MListNFS]
-"NFS"
-// need translation:
-//[MListPlaceholder]
-"Placeholder"
+"Kötet"
 //[MListUnknownReparsePoint]
 "?SzimLnk?"
 //[MListBrackets]
@@ -3152,35 +3130,6 @@
 
 //[MQuickViewTitle]
 "Gyorsnézet"
-//[MQuickViewFolder]
-"Mappa"
-//[MQuickViewJunction]
-"Csomópont"
-//[MQuickViewSymlink]
-"Szimlink"
-//[MQuickViewVolMount]
-"Kötet"
-//[MQuickViewDFS]
-"DFS"
-//[MQuickViewDFSR]
-"DFSR"
-//[MQuickViewHSM]
-"HSM"
-//[MQuickViewHSM2]
-"HSM2"
-//[MQuickViewSIS]
-"SIS"
-//[MQuickViewWIM]
-"WIM"
-//[MQuickViewCSV]
-"CSV"
-//[MQuickViewDEDUP]
-"DEDUP"
-//[MQuickViewNFS]
-"NFS"
-// need translation:
-//[MQuickViewPlaceholder]
-"Placeholder"
 // need translation:
 //[MQuickViewUnknownReparsePoint]
 "Unknown reparse point"
@@ -3220,7 +3169,7 @@
 // need translation:
 //[MSetAttrDfsTargets]
 "DFS Targets"
-//[MSetAttrUnknownJunction]
+//[MSetAttrUnknownReparsePoint]
 "(adat nem elérhető)"
 //[MSetAttrRO]
 "&Csak olvasható"

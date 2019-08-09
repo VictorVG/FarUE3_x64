@@ -1675,29 +1675,9 @@
 //[MListSymlink]
 "Посилання"
 //[MListJunction]
-"Зв'язок"
+"Cполучення"
 //[MListVolMount]
 "Том"
-//[MListDFS]
-"DFS"
-//[MListDFSR]
-"DFSR"
-//[MListHSM]
-"HSM"
-//[MListHSM2]
-"HSM2"
-//[MListSIS]
-"SIS"
-//[MListWIM]
-"WIM"
-//[MListCSV]
-"CSV"
-//[MListDEDUP]
-"DEDUP"
-//[MListNFS]
-"NFS"
-//[MListPlaceholder]
-"Покажчик місця заповнення"
 //[MListUnknownReparsePoint]
 "?Посилання?"
 //[MListBrackets]
@@ -2930,34 +2910,6 @@
 
 //[MQuickViewTitle]
 "Швидкий перегляд"
-//[MQuickViewFolder]
-"Папка"
-//[MQuickViewJunction]
-"З'єднання"
-//[MQuickViewSymlink]
-"Посилання"
-//[MQuickViewVolMount]
-"Том"
-//[MQuickViewDFS]
-"DFS"
-//[MQuickViewDFSR]
-"DFSR"
-//[MQuickViewHSM]
-"HSM"
-//[MQuickViewHSM2]
-"HSM2"
-//[MQuickViewSIS]
-"SIS"
-//[MQuickViewWIM]
-"WIM"
-//[MQuickViewCSV]
-"CSV"
-//[MQuickViewDEDUP]
-"DEDUP"
-//[MQuickViewNFS]
-"NFS"
-//[MQuickViewPlaceholder]
-"Покажчик місця заповнення"
 //[MQuickViewUnknownReparsePoint]
 "Невідома точка повторного аналізу"
 //[MQuickViewNoData]
@@ -2993,7 +2945,7 @@
 "Том:"
 //[MSetAttrDfsTargets]
 "DFS признач."
-//[MSetAttrUnknownJunction]
+//[MSetAttrUnknownReparsePoint]
 "(нема даних)"
 //[MSetAttrRO]
 "&Лише для читання"

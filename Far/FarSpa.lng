@@ -1673,33 +1673,13 @@
 //[MListUp]
 "UP-DIR"
 //[MListFolder]
-"SUB-DIR"
+"Directorio"
 //[MListSymlink]
-"EnlSimb"
+"EnlcSimb"
 //[MListJunction]
 "Empalme"
 //[MListVolMount]
 "Volumen"
-//[MListDFS]
-"DFS"
-//[MListDFSR]
-"DFSR"
-//[MListHSM]
-"HSM"
-//[MListHSM2]
-"HSM2"
-//[MListSIS]
-"SIS"
-//[MListWIM]
-"WIM"
-//[MListCSV]
-"CSV"
-//[MListDEDUP]
-"DEDUP"
-//[MListNFS]
-"NFS"
-//[MListPlaceholder]
-"Marcador de posición"
 //[MListUnknownReparsePoint]
 "?EnlSimb?"
 //[MListBrackets]
@@ -2936,34 +2916,6 @@
 
 //[MQuickViewTitle]
 "Vista rápida"
-//[MQuickViewFolder]
-"Directorio"
-//[MQuickViewJunction]
-"Empalme"
-//[MQuickViewSymlink]
-"EnlcSimb"
-//[MQuickViewVolMount]
-"Volumen"
-//[MQuickViewDFS]
-"DFS"
-//[MQuickViewDFSR]
-"DFSR"
-//[MQuickViewHSM]
-"HSM"
-//[MQuickViewHSM2]
-"HSM2"
-//[MQuickViewSIS]
-"SIS"
-//[MQuickViewWIM]
-"WIM"
-//[MQuickViewCSV]
-"CSV"
-//[MQuickViewDEDUP]
-"DEDUP"
-//[MQuickViewNFS]
-"NFS"
-//[MQuickViewPlaceholder]
-"Marcador de posición"
 //[MQuickViewUnknownReparsePoint]
 "Punto de análisis desconocido"
 //[MQuickViewNoData]
@@ -2999,7 +2951,7 @@
 "Volumen:"
 //[MSetAttrDfsTargets]
 "DFS Destinos"
-//[MSetAttrUnknownJunction]
+//[MSetAttrUnknownReparsePoint]
 "(datos no disponibles)"
 //[MSetAttrRO]
 "Sólo &lectura"

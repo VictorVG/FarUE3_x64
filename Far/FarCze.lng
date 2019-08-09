@@ -1730,32 +1730,11 @@
 //[MListFolder]
 "Adresář"
 //[MListSymlink]
-"Link"
+"Symlink"
 //[MListJunction]
 "Křížení"
 //[MListVolMount]
 "Svazek"
-//[MListDFS]
-"DFS"
-//[MListDFSR]
-"DFSR"
-//[MListHSM]
-"HSM"
-//[MListHSM2]
-"HSM2"
-//[MListSIS]
-"SIS"
-//[MListWIM]
-"WIM"
-//[MListCSV]
-"CSV"
-//[MListDEDUP]
-"DEDUP"
-//[MListNFS]
-"NFS"
-// need translation:
-//[MListPlaceholder]
-"Placeholder"
 //[MListUnknownReparsePoint]
 "?Link?"
 //[MListBrackets]
@@ -2999,35 +2978,6 @@
 
 //[MQuickViewTitle]
 "Rychlý náhled"
-//[MQuickViewFolder]
-"Adresář"
-//[MQuickViewJunction]
-"Křížení"
-//[MQuickViewSymlink]
-"Symbolický link"
-//[MQuickViewVolMount]
-"Svazek"
-//[MQuickViewDFS]
-"DFS"
-//[MQuickViewDFSR]
-"DFSR"
-//[MQuickViewHSM]
-"HSM"
-//[MQuickViewHSM2]
-"HSM2"
-//[MQuickViewSIS]
-"SIS"
-//[MQuickViewWIM]
-"WIM"
-//[MQuickViewCSV]
-"CSV"
-//[MQuickViewDEDUP]
-"DEDUP"
-//[MQuickViewNFS]
-"NFS"
-// need translation:
-//[MQuickViewPlaceholder]
-"Placeholder"
 // need translation:
 //[MQuickViewUnknownReparsePoint]
 "Unknown reparse point"
@@ -3066,7 +3016,7 @@
 // need translation:
 //[MSetAttrDfsTargets]
 "DFS Targets"
-//[MSetAttrUnknownJunction]
+//[MSetAttrUnknownReparsePoint]
 "(data nejsou k dispozici)"
 //[MSetAttrRO]
 "&Pouze pro čtení"

@@ -1678,26 +1678,6 @@
 "Связь"
 //[MListVolMount]
 "Том"
-//[MListDFS]
-"DFS"
-//[MListDFSR]
-"DFSR"
-//[MListHSM]
-"HSM"
-//[MListHSM2]
-"HSM2"
-//[MListSIS]
-"SIS"
-//[MListWIM]
-"WIM"
-//[MListCSV]
-"CSV"
-//[MListDEDUP]
-"DEDUP"
-//[MListNFS]
-"NFS"
-//[MListPlaceholder]
-"Заполнитель"
 //[MListUnknownReparsePoint]
 "?Ссылка?"
 //[MListBrackets]
@@ -2930,34 +2910,6 @@
 
 //[MQuickViewTitle]
 "Быстрый просмотр"
-//[MQuickViewFolder]
-"Папка"
-//[MQuickViewJunction]
-"Связь"
-//[MQuickViewSymlink]
-"Ссылка"
-//[MQuickViewVolMount]
-"Том"
-//[MQuickViewDFS]
-"DFS"
-//[MQuickViewDFSR]
-"DFSR"
-//[MQuickViewHSM]
-"HSM"
-//[MQuickViewHSM2]
-"HSM2"
-//[MQuickViewSIS]
-"SIS"
-//[MQuickViewWIM]
-"WIM"
-//[MQuickViewCSV]
-"CSV"
-//[MQuickViewDEDUP]
-"DEDUP"
-//[MQuickViewNFS]
-"NFS"
-//[MQuickViewPlaceholder]
-"Заполнитель"
 //[MQuickViewUnknownReparsePoint]
 "Неизвестная точка повторного анализа"
 //[MQuickViewNoData]
@@ -2993,7 +2945,7 @@
 "Том:"
 //[MSetAttrDfsTargets]
 "DFS цели"
-//[MSetAttrUnknownJunction]
+//[MSetAttrUnknownReparsePoint]
 "(нет данных)"
 //[MSetAttrRO]
 "&Только для чтения"

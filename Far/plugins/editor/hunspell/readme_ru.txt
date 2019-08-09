@@ -3,7 +3,7 @@
 
 Проверка орфографии во встроенном редакторе Far.
 
-Базируется на библиотеке hunspell (http://hunspell.sourceforge.net/).
+Базируется на библиотеке hunspell (http://hunspell.github.io/).
 В поставку входят следующие словари:
   - Английский;
   - Русский.
@@ -21,4 +21,4 @@
   ответственности за последствия использования данного плагина.
 
 Артём Сеничев (artemsen@gmail.com)
-              http://code.google.com/p/farplugs
+              https://sourceforge.net/projects/farplugs/

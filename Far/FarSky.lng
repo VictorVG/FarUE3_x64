@@ -1681,26 +1681,6 @@
 "Kríženie"
 //[MListVolMount]
 "Zväzok"
-//[MListDFS]
-"DFS"
-//[MListDFSR]
-"DFSR"
-//[MListHSM]
-"HSM"
-//[MListHSM2]
-"HSM2"
-//[MListSIS]
-"SIS"
-//[MListWIM]
-"WIM"
-//[MListCSV]
-"CSV"
-//[MListDEDUP]
-"DEDUP"
-//[MListNFS]
-"NFS"
-//[MListPlaceholder]
-"Zástupca"
 //[MListUnknownReparsePoint]
 "?Prepojenie?"
 //[MListBrackets]
@@ -2934,34 +2914,6 @@
 
 //[MQuickViewTitle]
 "Rýchle info"
-//[MQuickViewFolder]
-"Priečinok"
-//[MQuickViewJunction]
-"Kríženie"
-//[MQuickViewSymlink]
-"Symbolické prepojenie"
-//[MQuickViewVolMount]
-"Zväzok"
-//[MQuickViewDFS]
-"DFS"
-//[MQuickViewDFSR]
-"DFSR"
-//[MQuickViewHSM]
-"HSM"
-//[MQuickViewHSM2]
-"HSM2"
-//[MQuickViewSIS]
-"SIS"
-//[MQuickViewWIM]
-"WIM"
-//[MQuickViewCSV]
-"CSV"
-//[MQuickViewDEDUP]
-"DEDUP"
-//[MQuickViewNFS]
-"NFS"
-//[MQuickViewPlaceholder]
-"Zástupca"
 //[MQuickViewUnknownReparsePoint]
 "Neznáme rozšírené informácie (ReparsePoint)"
 //[MQuickViewNoData]
@@ -2997,7 +2949,7 @@
 "Zväzok:"
 //[MSetAttrDfsTargets]
 "DFS ciele"
-//[MSetAttrUnknownJunction]
+//[MSetAttrUnknownReparsePoint]
 "(dáta nie sú k dispozícii)"
 //[MSetAttrRO]
 "&Len na čítanie"

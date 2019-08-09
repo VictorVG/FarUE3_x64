@@ -1,0 +1,59 @@
+﻿.Language=Polish,Polish (Polski)
+
+"Edytor Hex (szesnastkowy)"
+
+"OK"
+"Anuluj"
+
+"Dodaj do panelu wtyczek"
+"Dodaj do wtyczek edytora"
+"Dodaj do wtyczek przeglądarki"
+"Przerostek:"
+"Zapisz pozycję pliku"
+"Przesuń kursor wewnątrz bajtu"
+"Użyj standadrowej wielkości kursora"
+"Pokaż separatory pomiędzy DWORD"
+" Ustawienia palety kolorów "
+"Adresy w pliku"
+"Dane uaktualnione"
+"Dane edytowane"
+
+"Pomoc"
+"Zapisz"
+"ZapiszJako"
+"TrybRO"
+"TrybRW"
+"Szukaj"
+"Poprz"
+"Nast"
+"IdźDo"
+"StrKod"
+"Konfig"
+"Wyjśce"
+
+"Zapisuję plik"
+"Plik"
+"Plik został zmieniony. Zapisać?"
+"Zapisz plik jako:"
+"Naprawdę chcesz anulować?"
+"Chcesz to zastąpić?"
+"już istnieje."
+"ma atrybut \"Tylko do odczytu\"."
+
+"Jest jest otwarty w trybie \"Tylko do odczytu\""
+"Przełączyć do trybu edycji?"
+
+"Idź do"
+"Przesunięcie Hex"
+"Procent"
+"Value out of range
+"Specify a value ranging from 0x0 up to 0x%llx"
+
+"Znajdź sekwencję"
+"Szukaj wstecz"
+"Sekwencja nie może być pusta"
+"Nie znalazłem sekwencji"
+
+"Błąd otwarcia pliku"
+"Błąd odczytu pliku"
+"Błąd zapisu pliku"

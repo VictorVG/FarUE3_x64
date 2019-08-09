@@ -1710,27 +1710,7 @@
 //[MListJunction]
 "Knoten"
 //[MListVolMount]
-"Datenräger"
-//[MListDFS]
-"DFS"
-//[MListDFSR]
-"DFSR"
-//[MListHSM]
-"HSM"
-//[MListHSM2]
-"HSM2"
-//[MListSIS]
-"SIS"
-//[MListWIM]
-"WIM"
-//[MListCSV]
-"CSV"
-//[MListDEDUP]
-"DEDUP"
-//[MListNFS]
-"NFS"
-//[MListPlaceholder]
-"Ordnerstelle"
+"Datenträger"
 //[MListUnknownReparsePoint]
 "?Symlink?"
 //[MListBrackets]
@@ -2986,34 +2966,6 @@
 
 //[MQuickViewTitle]
 "Schnellansicht"
-//[MQuickViewFolder]
-"Verzeichnis"
-//[MQuickViewJunction]
-"Knotenpunkt"
-//[MQuickViewSymlink]
-"Symlink"
-//[MQuickViewVolMount]
-"Datenträger"
-//[MQuickViewDFS]
-"DFS"
-//[MQuickViewDFSR]
-"DFSR"
-//[MQuickViewHSM]
-"HSM"
-//[MQuickViewHSM2]
-"HSM2"
-//[MQuickViewSIS]
-"SIS"
-//[MQuickViewWIM]
-"WIM"
-//[MQuickViewCSV]
-"CSV"
-//[MQuickViewDEDUP]
-"DEDUP"
-//[MQuickViewNFS]
-"NFS"
-//[MQuickViewPlaceholder]
-"Platzhalter"
 //[MQuickViewUnknownReparsePoint]
 "Unbekannter Analysepunkt"
 //[MQuickViewNoData]
@@ -3049,7 +3001,7 @@
 "Datenträger:"
 //[MSetAttrDfsTargets]
 "DFS Ziele"
-//[MSetAttrUnknownJunction]
+//[MSetAttrUnknownReparsePoint]
 "(nicht verfügbar)"
 //[MSetAttrRO]
 "Sch&reibschutz"

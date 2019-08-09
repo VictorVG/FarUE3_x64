@@ -1678,26 +1678,6 @@
 "Junction"
 //[MListVolMount]
 "Volume"
-//[MListDFS]
-"DFS"
-//[MListDFSR]
-"DFSR"
-//[MListHSM]
-"HSM"
-//[MListHSM2]
-"HSM2"
-//[MListSIS]
-"SIS"
-//[MListWIM]
-"WIM"
-//[MListCSV]
-"CSV"
-//[MListDEDUP]
-"DEDUP"
-//[MListNFS]
-"NFS"
-//[MListPlaceholder]
-"Placeholder"
 //[MListUnknownReparsePoint]
 "?Symlink?"
 //[MListBrackets]
@@ -2930,34 +2910,6 @@
 
 //[MQuickViewTitle]
 "Quick view"
-//[MQuickViewFolder]
-"Folder"
-//[MQuickViewJunction]
-"Junction"
-//[MQuickViewSymlink]
-"Symlink"
-//[MQuickViewVolMount]
-"Volume"
-//[MQuickViewDFS]
-"DFS"
-//[MQuickViewDFSR]
-"DFSR"
-//[MQuickViewHSM]
-"HSM"
-//[MQuickViewHSM2]
-"HSM2"
-//[MQuickViewSIS]
-"SIS"
-//[MQuickViewWIM]
-"WIM"
-//[MQuickViewCSV]
-"CSV"
-//[MQuickViewDEDUP]
-"DEDUP"
-//[MQuickViewNFS]
-"NFS"
-//[MQuickViewPlaceholder]
-"Placeholder"
 //[MQuickViewUnknownReparsePoint]
 "Unknown reparse point"
 //[MQuickViewNoData]
@@ -2993,7 +2945,7 @@
 "Volume:"
 //[MSetAttrDfsTargets]
 "DFS Targets"
-//[MSetAttrUnknownJunction]
+//[MSetAttrUnknownReparsePoint]
 "(data not available)"
 //[MSetAttrRO]
 "&Read only"

@@ -1671,33 +1671,13 @@
 //[MListUp]
 "↑Su↑"
 //[MListFolder]
-"Cartel"
+"Cartella"
 //[MListSymlink]
-"@Link>"
+"Simbolico"
 //[MListJunction]
 "Incrocio"
 //[MListVolMount]
 "Volume"
-//[MListDFS]
-"DFS"
-//[MListDFSR]
-"DFSR"
-//[MListHSM]
-"HSM"
-//[MListHSM2]
-"HSM2"
-//[MListSIS]
-"SIS"
-//[MListWIM]
-"WIM"
-//[MListCSV]
-"CSV"
-//[MListDEDUP]
-"DEDUP"
-//[MListNFS]
-"NFS"
-//[MListPlaceholder]
-"Segnaposto"
 //[MListUnknownReparsePoint]
 "?Symlink?"
 //[MListBrackets]
@@ -2931,34 +2911,6 @@
 
 //[MQuickViewTitle]
 "Vista Rapida"
-//[MQuickViewFolder]
-"Cartella"
-//[MQuickViewJunction]
-"Giunzione"
-//[MQuickViewSymlink]
-"Simbolico"
-//[MQuickViewVolMount]
-"Volume"
-//[MQuickViewDFS]
-"DFS"
-//[MQuickViewDFSR]
-"DFSR"
-//[MQuickViewHSM]
-"HSM"
-//[MQuickViewHSM2]
-"HSM2"
-//[MQuickViewSIS]
-"SIS"
-//[MQuickViewWIM]
-"WIM"
-//[MQuickViewCSV]
-"CSV"
-//[MQuickViewDEDUP]
-"DEDUP"
-//[MQuickViewNFS]
-"NFS"
-//[MQuickViewPlaceholder]
-"Segnaposto"
 //[MQuickViewUnknownReparsePoint]
 "Punto Reparse Ignoto"
 //[MQuickViewNoData]
@@ -2994,7 +2946,7 @@
 "Volume:"
 //[MSetAttrDfsTargets]
 "Destinazioni DFS"
-//[MSetAttrUnknownJunction]
+//[MSetAttrUnknownReparsePoint]
 "(dati sconosciuti)"
 //[MSetAttrRO]
 "&Sola-Lettura"
