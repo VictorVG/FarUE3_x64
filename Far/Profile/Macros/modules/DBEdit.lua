@@ -1,5 +1,5 @@
 ﻿local Info = Info or package.loaded.regscript or function(...) return ... end --luacheck: ignore 113/Info
-local nfo = Info {
+local nfo = Info {... or _filename,
   name        = "fake DBEdit";
   description = "Заглушка для модуля 'Импорт/экспорт/редактирование данных плагинов'";
   author      = "IgorZ";
