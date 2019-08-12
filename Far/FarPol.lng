@@ -787,9 +787,9 @@
 "do niego samego"
 
 //[MCopyStream1]
-"Plik źródłowy zawiera więcej niż jeden strumień danych."
+"Plik źródłowy zawiera więcej niż jeden strumień danych,"
 //[MCopyStream2]
-"ale ze względu na rezygnację z systemowej procedury kopiowania."
+"ale nie korzystasz z systemowej procedury kopiowania."
 //[MCopyStream3]
 "ale napęd docelowy nie obsługuje tej funkcji."
 //[MCopyStream4]
@@ -810,16 +810,10 @@
 "&Istniejący"
 //[MCopyOverwrite]
 "N&adpisz"
-//[MCopySkipOvr]
-"&Omiń"
 //[MCopyAppend]
 "&Dołącz"
-//[MCopyResume]
-"Ponó&w"
 //[MCopyRename]
 "Zmień &nazwę"
-//[MCopyCancelOvr]
-"&Anuluj"
 //[MCopyRememberChoice]
 "&Zapamiętaj ustawienia"
 //[MCopyRenameTitle]
@@ -835,12 +829,6 @@
 "&Usuń"
 //[MCopyDeleteAllRO]
 "&Wszystkie"
-//[MCopySkipRO]
-"&Omiń"
-//[MCopySkipAllRO]
-"O&miń wszystkie"
-//[MCopyCancelRO]
-"&Anuluj"
 
 //[MCannotCopy]
 "Nie mogę skopiować"
@@ -2740,8 +2728,6 @@
 "Wi&elkości strumieni"
 //[MMenuSortByFullName]
 "Pełnej nazw&y"
-//[MMenuSortByCustomData]
-"Własne ustawieni&a"
 //[MMenuSortUseGroups]
 "Użyj &grup sortowania"
 //[MMenuSortSelectedFirst]

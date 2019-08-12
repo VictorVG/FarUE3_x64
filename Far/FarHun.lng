@@ -906,16 +906,10 @@
 "Létező &verzió:"
 //[MCopyOverwrite]
 "&Felülír"
-//[MCopySkipOvr]
-"&Kihagy"
 //[MCopyAppend]
 "Hoz&záfűz"
-//[MCopyResume]
-"Fol&ytat"
 //[MCopyRename]
 "Á&tnevez"
-//[MCopyCancelOvr]
-"&Mégsem"
 //[MCopyRememberChoice]
 "Mind&ent a kiválasztott módon"
 //[MCopyRenameTitle]
@@ -931,12 +925,6 @@
 "&Törli"
 //[MCopyDeleteAllRO]
 "Min&det"
-//[MCopySkipRO]
-"&Kihagyja"
-//[MCopySkipAllRO]
-"Mind&et"
-//[MCopyCancelRO]
-"&Mégsem"
 
 //[MCannotCopy]
 "Nem másolható"
@@ -2931,9 +2919,6 @@
 // need translation:
 //[MMenuSortByFullName]
 "&Full name"
-// need translation:
-//[MMenuSortByCustomData]
-"Cus&tom data"
 //[MMenuSortUseGroups]
 "Rend. cs&oport haszn."
 //[MMenuSortSelectedFirst]

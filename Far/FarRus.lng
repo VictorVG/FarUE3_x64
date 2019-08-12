@@ -810,16 +810,10 @@
 "Су&ществующий"
 //[MCopyOverwrite]
 "В&место"
-//[MCopySkipOvr]
-"&Пропустить"
 //[MCopyAppend]
 "&Добавить"
-//[MCopyResume]
-"Возоб&новить"
 //[MCopyRename]
 "&Имя"
-//[MCopyCancelOvr]
-"&Отменить"
 //[MCopyRememberChoice]
 "&Запомнить выбор"
 //[MCopyRenameTitle]
@@ -835,12 +829,6 @@
 "&Удалить"
 //[MCopyDeleteAllRO]
 "&Все"
-//[MCopySkipRO]
-"&Пропустить"
-//[MCopySkipAllRO]
-"П&ропустить все"
-//[MCopyCancelRO]
-"&Отменить"
 
 //[MCannotCopy]
 "Ошибка копирования"
@@ -2733,8 +2721,6 @@
 "Размер по&токов"
 //[MMenuSortByFullName]
 "&Полное имя"
-//[MMenuSortByCustomData]
-"Пользовательские данные"
 //[MMenuSortUseGroups]
 "Использовать &группы сортировки"
 //[MMenuSortSelectedFirst]

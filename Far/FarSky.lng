@@ -790,9 +790,9 @@
 "sám na seba"
 
 //[MCopyStream1]
-"Zdrojový súbor obsahuje viac než jeden dátový prúd."
+"Zdrojový súbor obsahuje viac než jeden dátový prúd,"
 //[MCopyStream2]
-"lebo nepoužívate systémovú kopírovaciu rutinu."
+"ale nepoužívate systémovú kopírovaciu rutinu."
 //[MCopyStream3]
 "lebo cieľová jednotka nepodporuje túto funkciu."
 //[MCopyStream4]
@@ -813,16 +813,10 @@
 "E&xistujúci"
 //[MCopyOverwrite]
 "&Prepísať"
-//[MCopySkipOvr]
-"Pres&kočiť"
 //[MCopyAppend]
 "Pr&ipojiť"
-//[MCopyResume]
-"Pok&račovať"
 //[MCopyRename]
 "Pr&emenovať"
-//[MCopyCancelOvr]
-"&Zrušiť"
 //[MCopyRememberChoice]
 "Zapamä&tať si voľbu"
 //[MCopyRenameTitle]
@@ -838,12 +832,6 @@
 "Z&mazať"
 //[MCopyDeleteAllRO]
 "&Všetko"
-//[MCopySkipRO]
-"Pres&kočiť"
-//[MCopySkipAllRO]
-"Pr&eskočiť všetky"
-//[MCopyCancelRO]
-"&Storno"
 
 //[MCannotCopy]
 "Nemôžem kopírovať"
@@ -2736,8 +2724,6 @@
 "Veľkos&ti tokov"
 //[MMenuSortByFullName]
 "&Úplneho názvu"
-//[MMenuSortByCustomData]
-"U&žívateľských dát"
 //[MMenuSortUseGroups]
 "Skup&inového triedenia"
 //[MMenuSortSelectedFirst]

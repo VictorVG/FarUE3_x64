@@ -810,16 +810,10 @@
 "Існую&чы"
 //[MCopyOverwrite]
 "За&мест"
-//[MCopySkipOvr]
-"&Прапусціць"
 //[MCopyAppend]
 "&Дадаць"
-//[MCopyResume]
-"Працяг&нуць"
 //[MCopyRename]
 "Пер&аназваць"
-//[MCopyCancelOvr]
-"&Адмена"
 //[MCopyRememberChoice]
 "Памята&ць выбар"
 //[MCopyRenameTitle]
@@ -835,12 +829,6 @@
 "&Выдаліць"
 //[MCopyDeleteAllRO]
 "&Усе"
-//[MCopySkipRO]
-"&Прапусціць"
-//[MCopySkipAllRO]
-"П&рапусціць усе"
-//[MCopyCancelRO]
-"&Адмяніць"
 
 //[MCannotCopy]
 "Памылка капіявання"
@@ -2733,8 +2721,6 @@
 "Пасмер с&труменяў"
 //[MMenuSortByFullName]
 "&Поўнае імя"
-//[MMenuSortByCustomData]
-"Дадзеныя карыс&тальніка"
 //[MMenuSortUseGroups]
 "Ужываць &суполкі парадкавання"
 //[MMenuSortSelectedFirst]

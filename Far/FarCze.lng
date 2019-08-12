@@ -829,9 +829,9 @@
 "sám do sebe"
 
 //[MCopyStream1]
-"Zdrojový soubor obsahuje více než jeden datový proud."
+"Zdrojový soubor obsahuje více než jeden datový proud,"
 //[MCopyStream2]
-"protože nepoužíváte systémovou kopírovací rutinu."
+"ale nepoužíváte systémovou kopírovací rutinu."
 //[MCopyStream3]
 "protože cílový svazek nepodporuje tuto vlastnost."
 //[MCopyStream4]
@@ -852,16 +852,10 @@
 "E&xistující"
 //[MCopyOverwrite]
 "&Přepsat"
-//[MCopySkipOvr]
-"Přes&kočit"
 //[MCopyAppend]
 "Př&ipojit"
-//[MCopyResume]
-"Po&kračovat"
 //[MCopyRename]
 "Pr&ejmenovat"
-//[MCopyCancelOvr]
-"&Storno"
 //[MCopyRememberChoice]
 "Zapama&tovat volbu"
 //[MCopyRenameTitle]
@@ -877,12 +871,6 @@
 "S&mazat"
 //[MCopyDeleteAllRO]
 "&Vše"
-//[MCopySkipRO]
-"Přes&kočit"
-//[MCopySkipAllRO]
-"Př&eskočit vše"
-//[MCopyCancelRO]
-"&Storno"
 
 //[MCannotCopy]
 "Nelze kopírovat"
@@ -2796,8 +2784,6 @@
 "Velikos&ti toků"
 //[MMenuSortByFullName]
 "&Úplného názvu"
-//[MMenuSortByCustomData]
-"U&živatelských dat"
 //[MMenuSortUseGroups]
 "Řazení podle skup&in"
 //[MMenuSortSelectedFirst]

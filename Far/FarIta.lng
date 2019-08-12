@@ -787,11 +787,11 @@
 "Su Se Stesso"
 
 //[MCopyStream1]
-"Origine Contiene Più Di Un Data Stream."
+"Origine Contiene Più Di Un Data Stream,"
 //[MCopyStream2]
-"Ma Poichè Non Usate Le Procedure Di Copia Del Sistema"
+"Ma Non Stai Usando Una Procedure Di Copia Del Sistema."
 //[MCopyStream3]
-"Ma Il Disco Di Destinazione Non Supporta Queste Funzioni"
+"Ma Il Disco Di Destinazione Non Supporta Queste Funzioni."
 //[MCopyStream4]
 "Alcuni Dati Non Saranno Preservati Come Conseguenza"
 
@@ -810,16 +810,10 @@
 "&Esistente"
 //[MCopyOverwrite]
 "So&vrascrivi"
-//[MCopySkipOvr]
-"&Salta"
 //[MCopyAppend]
 "Acc&oda"
-//[MCopyResume]
-"&Riprendi"
 //[MCopyRename]
 "&Rinomina"
-//[MCopyCancelOvr]
-"&Annulla"
 //[MCopyRememberChoice]
 "Ricor&da Scelta"
 //[MCopyRenameTitle]
@@ -835,12 +829,6 @@
 "&Elimina"
 //[MCopyDeleteAllRO]
 "&Tutti"
-//[MCopySkipRO]
-"&Salta"
-//[MCopySkipAllRO]
-"Sa&lta Tutti"
-//[MCopyCancelRO]
-"&Annulla"
 
 //[MCannotCopy]
 "Non Posso Copiare"
@@ -2733,8 +2721,6 @@
 "Dimensione De&gli Streams"
 //[MMenuSortByFullName]
 "Nome &Completo"
-//[MMenuSortByCustomData]
-"Dati Definiti Dall'&Utente"
 //[MMenuSortUseGroups]
 "G&ruppi Ordinamento"
 //[MMenuSortSelectedFirst]

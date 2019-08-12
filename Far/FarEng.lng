@@ -787,13 +787,13 @@
 "onto itself"
 
 //[MCopyStream1]
-"The source file contains more than one data stream."
+"The source file contains more than one data stream,"
 //[MCopyStream2]
-"but since you do not use a system copy routine."
+"but you're not using the system copy routine."
 //[MCopyStream3]
 "but the destination volume does not support this feature."
 //[MCopyStream4]
-"Some data will not be preserved as a result."
+"Some data will not be preserved."
 
 //[MCopyDirectoryOrFile]
 "Does it specify a folder name or file name?"
@@ -810,16 +810,10 @@
 "E&xisting"
 //[MCopyOverwrite]
 "&Overwrite"
-//[MCopySkipOvr]
-"&Skip"
 //[MCopyAppend]
 "A&ppend"
-//[MCopyResume]
-"&Resume"
 //[MCopyRename]
 "R&ename"
-//[MCopyCancelOvr]
-"&Cancel"
 //[MCopyRememberChoice]
 "&Remember choice"
 //[MCopyRenameTitle]
@@ -835,12 +829,6 @@
 "&Delete"
 //[MCopyDeleteAllRO]
 "&All"
-//[MCopySkipRO]
-"&Skip"
-//[MCopySkipAllRO]
-"S&kip all"
-//[MCopyCancelRO]
-"&Cancel"
 
 //[MCannotCopy]
 "Cannot copy"
@@ -2733,8 +2721,6 @@
 "Si&ze of streams"
 //[MMenuSortByFullName]
 "&Full name"
-//[MMenuSortByCustomData]
-"Cus&tom data"
 //[MMenuSortUseGroups]
 "Use sort &groups"
 //[MMenuSortSelectedFirst]

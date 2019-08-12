@@ -789,9 +789,9 @@
 "en sí mismo"
 
 //[MCopyStream1]
-"El archivo origen contiene más de un flujo de datos."
+"El archivo origen contiene más de un flujo de datos,"
 //[MCopyStream2]
-"pero desde que usted no usa la rutina de copia del sistema."
+"pero no estás utilizando la rutina de copia del sistema."
 //[MCopyStream3]
 "pero el volumen de destino no soporta esta opción."
 //[MCopyStream4]
@@ -812,16 +812,10 @@
 "E&xistente"
 //[MCopyOverwrite]
 "&Sobrescribir"
-//[MCopySkipOvr]
-"Sa&ltar"
 //[MCopyAppend]
 "A&gregar"
-//[MCopyResume]
-"&Resumir"
 //[MCopyRename]
 "R&enombrar"
-//[MCopyCancelOvr]
-"&Cancelar"
 //[MCopyRememberChoice]
 "&Recordar elección"
 //[MCopyRenameTitle]
@@ -837,12 +831,6 @@
 "&Borrar"
 //[MCopyDeleteAllRO]
 "&Todos"
-//[MCopySkipRO]
-"Sa&ltar"
-//[MCopySkipAllRO]
-"Saltar to&dos"
-//[MCopyCancelRO]
-"&Cancelar"
 
 //[MCannotCopy]
 "No se puede copiar"
@@ -2736,8 +2724,6 @@
 "Tamaño de flujos"
 //[MMenuSortByFullName]
 "Nombre completo"
-//[MMenuSortByCustomData]
-"Datos opcionales"
 //[MMenuSortUseGroups]
 "Usar orden/&grupo"
 //[MMenuSortSelectedFirst]

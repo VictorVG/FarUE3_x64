@@ -801,7 +801,7 @@
 "Ziel und Quelle identisch."
 
 //[MCopyStream1]
-"Die Quelldatei enthält mehr als einen Datenstream"
+"Die Quelldatei enthält mehr als einen Datenstream,"
 //[MCopyStream2]
 "aber Sie verwenden derzeit nicht die systemeigene Kopierroutine."
 //[MCopyStream3]
@@ -824,17 +824,11 @@
 "Be&stehende Datei"
 //[MCopyOverwrite]
 "Über&schr."
-//[MCopySkipOvr]
-"Über&spr."
 //[MCopyAppend]
 "&Anhängen"
-//[MCopyResume]
-"&Weiter"
 // need translation:
 //[MCopyRename]
 "R&ename"
-//[MCopyCancelOvr]
-"Ab&bruch"
 //[MCopyRememberChoice]
 "Auswahl me&rken"
 // need translation:
@@ -852,12 +846,6 @@
 "&Löschen"
 //[MCopyDeleteAllRO]
 "&Alle Löschen"
-//[MCopySkipRO]
-"Über&springen"
-//[MCopySkipAllRO]
-"A&lle überspringen"
-//[MCopyCancelRO]
-"Ab&bruch"
 
 //[MCannotCopy]
 "Konnte nicht kopieren"
@@ -2784,8 +2772,6 @@
 "Si&ze of streams"
 //[MMenuSortByFullName]
 "&Voller Name"
-//[MMenuSortByCustomData]
-"Benützerdaten"
 //[MMenuSortUseGroups]
 "Sortier&gruppen verw."
 //[MMenuSortSelectedFirst]
