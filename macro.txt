@@ -67,6 +67,7 @@
   ║  S·····VE············ │ AltF11                                                           │ Plugin_LF_History.lua                      │ LuaFAR History: view/edit                      ║
   ║  S·····VE············ │ auto                                                             │ Common_ConsControl.lua                     │ Far console init full screen                   ║
   ║  S·····VE············ │ auto                                                             │ Common_ConsControl.lua                     │ Far console init window                        ║
+  ║  S·····V············· │ F3 Enter NumEnter MsM1Click                                      │ SV_Review.lua                              │ Review: Open graphics files                    ║
   ║  S······E············ │ Ctrl-                                                            │ Plugin_TextConv.lua                        │ Text file converter                            ║
   ║  S······E············ │ CtrlAltH                                                         │ Plugin_UCharMap.lua                        │ Unicode CharMap                                ║
   ║  S······E············ │ RAltL                                                            │ Plugin_lfsearch.lua                        │ LuaFAR Search                                  ║
@@ -103,7 +104,6 @@
   ║  S··················· │ AltPgUp                                                          │ Shell_Go-Up.lua                            │ Go up in the File System                       ║
   ║  S··················· │ AltS                                                             │ Shell_SelectingEx.lua                      │ Расширенная работа с пометкой файлов. © SimSU  ║
   ║  S··················· │ AltShiftB                                                        │ Shell_Branch.lua                           │ DirTree branch                                 ║
-  ║  S··················· │ AltShiftEnter                                                    │ Shell_SelBOM.lua                           │ BOM: Files select                              ║
   ║  S··················· │ AltShiftF6                                                       │ Shell_Symlink.lua                          │ Make symlink                                   ║
   ║  S··················· │ AltShiftG                                                        │ Shell_GitGC.lua                            │ Cleanup unnecessary files and optimize the     ║
   ║                       │                                                                  │                                            │ local repository                               ║
@@ -171,6 +171,7 @@
   ║  S··················· │ Enter NumEnter CtrlPgDn                                          │ Plugin_MultiArc.lua                        │ Open Rar use MultiArc                          ║
   ║  S··················· │ Enter NumEnter MsM1Click                                         │ Plugin_IntChecker.lua                      │ Integrity Checker: check integrity use         ║
   ║                       │                                                                  │                                            │ check summ                                     ║
+  ║  S··················· │ F3 CtrlPgDn                                                      │ SV_Review.lua                              │ Review: Open video files                       ║
   ║  S··················· │ LAltC                                                            │ Plugin_arclite.lua                         │ ArcLite: Main Menu                             ║
   ║  S··················· │ LAltLCtrlV                                                       │ Plugin_FileVer.lua                         │ File Version                                   ║
   ║  S··················· │ LAltR                                                            │ Plugin_FileCase.lua                        │ File Case                                      ║
@@ -451,4 +452,4 @@
   ║  luacheck       │ Shell_LuaCheck.lua                         │ luacheck commandline                                                                                                    ║
   ║                                                                                                                                                                                        ║
   ╚════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
-  10.08.2019 04:01:55 +0300
+  14.08.2019 07:07:35 +0300

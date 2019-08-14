@@ -1,12 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<farconfig version="3.0.5365">
-	<pluginsconfig>
-		<plugin guid="CDF48DA0-0334-4169-8453-69048DD3B51C">
-			<hierarchicalconfig>
-				<key name="CDF48DA0-0334-4169-8453-69048DD3B51C" description="FarHints">
-					<value name="AutoKey" type="qword" value="0000000000000000"/>
-					<value name="AutoMouse" type="qword" value="0000000000000000"/>
-				</key>
-			</hierarchicalconfig>
-		</plugin>
-	</pluginsconfig></farconfig>
+<farconfig version="3.0.5450">
+	<associations>
+		<filetype mask="*.pdf" description="Adobe PDF">
+			<command type="0" enabled="1" command="&quot;!=\!.!&quot;"/>
+			<command type="1" enabled="1" command="observe:&quot;!=\!.!&quot;"/>
+			<command type="2" enabled="1" command="view:&quot;!=\!.!&quot;"/>
+		</filetype>
+		<filetype mask="*.hlf" description="Far Help">
+			<command type="0" enabled="1" command="hlf:&quot;!=\!+!&quot; !?Go to topic ((Contents if empty)):?!"/>
+			<command type="3" enabled="1" command="hlf:&quot;!=\!+!&quot;"/>
+			<command type="4" enabled="1" command="edit:&quot;!=\!+!&quot;"/>
+		</filetype>
+		<filetype mask="*.lua" description="Lua script">
+			<command type="0" enabled="1" command="lua:@&quot;!=\!.!&quot;"/>
+		</filetype>
+		<filetype mask="*.moon" description="Moonscrip">
+			<command type="0" enabled="1" command="moon:@&quot;!=\!.!&quot;"/>
+		</filetype>
+		<filetype mask="Readme.[tw]xt,Descript.ion,File_Id.diz,[r]notes.[tw]xt,readme.md" description="Readme and descriptions">
+			<command type="0" enabled="1" command="view:&quot;!=\!+!&quot;"/>
+			<command type="2" enabled="1" command="View:&quot;!=\!+!&quot;"/>
+			<command type="3" enabled="1" command="&quot;!=\!+!&quot;"/>
+			<command type="4" enabled="1" command="edit:&quot;!=\!+!&quot;"/>
+			<command type="5" enabled="1" command="&quot;!=\!+!&quot;"/>
+		</filetype>
+		<filetype mask="*." description="Text UNIX">
+			<command type="0" enabled="1" command="view:&quot;!=\!.!&quot;"/>
+			<command type="1" enabled="1" command="view:&quot;!=\!.!&quot;"/>
+		</filetype>
+		<filetype mask="&lt;video&gt;" description="Video">
+			<command type="0" enabled="1" command="lua:Keys(&quot;ShiftEnter&quot;)"/>
+			<command type="1" enabled="1" command="@pic:!=\!.!"/>
+			<command type="2" enabled="0" command="@pic:!=\!.!"/>
+		</filetype>
+		<filetype mask="*.exe,*.?ll,*.ocx,*.bin,*.sys,*.prg,*.ax" description="Windows executable">
+			<command type="3" enabled="1" command="peanalyzer:&quot;!=\!+!&quot;"/>
+		</filetype>
+		<filetype mask="*.reg,*.key" description="Windows Registry">
+			<command type="0" enabled="1" command="&quot;!=\!+!&quot;"/>
+			<command type="2" enabled="1" command="view:&quot;!=\!+!&quot;"/>
+			<command type="4" enabled="1" command="edit:&quot;!=\!+!&quot;"/>
+			<command type="5" enabled="1" command="reg2:&quot;!=\!+!&quot;"/>
+		</filetype>
+	</associations>
+</farconfig>
