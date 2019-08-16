@@ -43,4 +43,79 @@
 			<command type="5" enabled="1" command="reg2:&quot;!=\!+!&quot;"/>
 		</filetype>
 	</associations>
+        <panelmodes>
+	   <hierarchicalconfig>
+		<key name="0">
+			<value name="ColumnTitles" type="text" value="NM,SC,D"/>
+			<value name="ColumnWidths" type="text" value="0,10,0"/>
+			<value name="Flags" type="qword" value="0000000000000000"/>
+			<value name="StatusColumnTitles" type="text" value="NR"/>
+			<value name="StatusColumnWidths" type="text" value="0"/>
+		</key>
+		<key name="1">
+			<value name="ColumnTitles" type="text" value="N,N,N"/>
+			<value name="ColumnWidths" type="text" value="0,0,0"/>
+			<value name="Flags" type="qword" value="0000000000000000"/>
+			<value name="StatusColumnTitles" type="text" value="NR,S,D,T"/>
+			<value name="StatusColumnWidths" type="text" value="0,6,0,5"/>
+		</key>
+		<key name="2">
+			<value name="ColumnTitles" type="text" value="N,N"/>
+			<value name="ColumnWidths" type="text" value="0,0"/>
+			<value name="Flags" type="qword" value="0000000000000000"/>
+			<value name="StatusColumnTitles" type="text" value="NR,S,D,T"/>
+			<value name="StatusColumnWidths" type="text" value="0,6,0,5"/>
+		</key>
+		<key name="3">
+			<value name="ColumnTitles" type="text" value="N,S,D,T,F,LN"/>
+			<value name="ColumnWidths" type="text" value="0,6,0,5,0,0"/>
+			<value name="Flags" type="qword" value="0000000000000000"/>
+			<value name="StatusColumnTitles" type="text" value="NR"/>
+			<value name="StatusColumnWidths" type="text" value="0"/>
+		</key>
+		<key name="4">
+			<value name="ColumnTitles" type="text" value="N,S,&lt;LINK&gt;,&lt;C0&gt;,&lt;BOM&gt;"/>
+			<value name="ColumnWidths" type="text" value="0,6,0,0,8"/>
+			<value name="Flags" type="qword" value="0000000000000000"/>
+			<value name="StatusColumnTitles" type="text" value="NR,S,D,T"/>
+			<value name="StatusColumnWidths" type="text" value="0,6,0,5"/>
+		</key>
+		<key name="5">
+			<value name="ColumnTitles" type="text" value="N,S,P,DM,DC,DA,A,&lt;LINK&gt;,&lt;C0&gt;"/>
+			<value name="ColumnWidths" type="text" value="0,6,6,14,14,14,0,0,0"/>
+			<value name="Flags" type="qword" value="0000000000000001"/>
+			<value name="StatusColumnTitles" type="text" value="NR"/>
+			<value name="StatusColumnWidths" type="text" value="0"/>
+		</key>
+		<key name="6">
+			<value name="ColumnTitles" type="text" value="N,Z"/>
+			<value name="ColumnWidths" type="text" value="40%,0"/>
+			<value name="Flags" type="qword" value="0000000000000000"/>
+			<value name="StatusColumnTitles" type="text" value="NR,S,D,T"/>
+			<value name="StatusColumnWidths" type="text" value="0,6,0,5"/>
+		</key>
+		<key name="7">
+			<value name="ColumnTitles" type="text" value="N,S,Z"/>
+			<value name="ColumnWidths" type="text" value="0,6,70%"/>
+			<value name="Flags" type="qword" value="0000000000000001"/>
+			<value name="StatusColumnTitles" type="text" value="NR"/>
+			<value name="StatusColumnWidths" type="text" value="0"/>
+		</key>
+		<key name="8">
+			<value name="ColumnTitles" type="text" value="N,S,O"/>
+			<value name="ColumnWidths" type="text" value="0,6,15"/>
+			<value name="Flags" type="qword" value="0000000000000000"/>
+			<value name="StatusColumnTitles" type="text" value="NR,S,D,T"/>
+			<value name="StatusColumnWidths" type="text" value="0,6,0,15"/>
+		</key>
+		<key name="9">
+			<value name="ColumnTitles" type="text" value="N,S,LN"/>
+			<value name="ColumnWidths" type="text" value="0,6,3"/>
+			<value name="Flags" type="qword" value="0000000000000000"/>
+			<value name="StatusColumnTitles" type="text" value="NR,S,D,T"/>
+			<value name="StatusColumnWidths" type="text" value="0,6,0,5"/>
+		</key>
+		<key name="CustomModes"/>
+	   </hierarchicalconfig>
+        </panelmodes>
 </farconfig>

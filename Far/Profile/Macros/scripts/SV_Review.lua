@@ -4,16 +4,19 @@
 -- VictorVG, 14.08.2019 01:07:44 +0300
 -- v1.1, Refactoring
 -- VictorVG, 14.08.2019 06:41:47 +0300
+-- 1.2, Add on/off flags (bulean): on=true , off=nil 
+-- VictorVG, 14.08.2019 16:43:23 +0300
 
 local RVId="0364224C-A21A-42ED-95FD-34189BA4B204"
 local MaskG,MaskV="/.+\\.(pcx|psd)/i","/.+\\.(3gp|avi|flv|m2t|mkv|mov|mp4|mp4v|mp4a|mpg|mpeg|mts|ts|wbem|wmv)/i"
+local FG,FV=nil,true
 
 Macro{
   id="12FA2EAA-E5B0-4F4B-8C02-E8B008490D47";
   area="Shell Viewer";
   key="F3 Enter NumEnter MsM1Click";
   description="Review: Open graphics files";
-  condition=function() return (Plugin.Exist(RVId) and mf.fmatch(APanel.Current,MaskG)==1) end;
+  condition=function() return (FG and Plugin.Exist(RVId) and mf.fmatch(APanel.Current,MaskG)==1) end;
   action=function()
   Far.DisableHistory(-1) Plugin.Command(RVId,APanel.Current);
 end;
@@ -25,7 +28,7 @@ Macro{
   key="F3 CtrlPgDn";
   description="Review: Open video files";
   priority=60;
-  condition=function() return (Plugin.Exist(RVId) and mf.fmatch(APanel.Current,MaskV)==1) end;
+  condition=function() return (FV and Plugin.Exist(RVId) and mf.fmatch(APanel.Current,MaskV)==1) end;
   action=function()
   Far.DisableHistory(-1) Plugin.Command(RVId,APanel.Current);
 end;

@@ -1,6 +1,10 @@
--- http://forum.ru-board.com/topic.cgi?forum=5&topic=49572&start=2280#12 [?]
--- v1.0
+-- http://forum.ru-board.com/topic.cgi?forum=5&topic=49572&start=2280#12
+-- v1.2
 local F = far.Flags
+local ffi = require'ffi'
+local NULL = ffi.cast("void*",0)
+local PANEL_ACTIVE = ffi.cast("HANDLE",-1)
+local pBL0,pBL1 = ffi.cast("BOOL*",0),ffi.cast("BOOL*",1)
 local ReportPath=win.GetEnv('TEMP')..'\\boom.txt'
 local boom,Report = {},false
 local function process(f,t)
@@ -20,6 +24,7 @@ local function process(f,t)
   end
   return res
 end
+
 local guid = win.Uuid("2180A62D-04B5-44D9-999E-3A3328D51B84")
 local edtFlags = F.DIF_HISTORY+F.DIF_USELASTHISTORY
 local Items = {
@@ -31,11 +36,12 @@ local Items = {
 --[[06]] {F.DI_CHECKBOX,  5,6, 25,0, 0, 0,0, 0, "&UTF-8"},
 --[[07]] {F.DI_CHECKBOX,  5,7, 12,0, 0, 0,0, 0, "&All"},
 --[[08]] {F.DI_CHECKBOX, 15,7, 25,0, 0, 0,0, 0, "&Report"},
---[[09]] {F.DI_EDIT,      5,8, 24,2, 0, "SelBOMReportPath",0, edtFlags,""},
+--[[09]] {F.DI_EDIT,      5,8, 24,2, 0, "SelBOM ReportPath",0, edtFlags,""},
 --[[10]] {F.DI_TEXT,     -1,9,  0,0, 0, 0,0, F.DIF_SEPARATOR,""},
 --[[11]] {F.DI_BUTTON,    0,10, 0,0, 0, 0,0, F.DIF_DEFAULTBUTTON+F.DIF_CENTERGROUP,"&Ok"},
 --[[12]] {F.DI_BUTTON,    0,10, 0,0, 0, 0,0, F.DIF_CENTERGROUP,"Ca&ncel"}
 }
+
 local GFocus,ChkBOX,tReportPath = 6,{false,false,false,false,true,false},ReportPath
 local function DlgProc(hDlg,Msg,Param1,Param2)
   if Msg==F.DN_INITDIALOG then
@@ -61,21 +67,26 @@ local function DlgProc(hDlg,Msg,Param1,Param2)
   end
   return true
 end
+
 Macro {
-description="SelBOM: Files select"; name="SelBOM"; area="Shell"; key="AltShiftEnter";
+description="BOM: Files select"; name="SelBOM"; area="Shell"; key="AltShiftEnter";
 action=function()
   if far.Dialog(guid,-1,-1,31,#Items+1,nil,Items,nil,DlgProc)==#Items-1 then
     --local s='' for i=1,#ChkBOX do s=s..(ChkBOX[i] and 1 or 0) end far.Message(s,'BOX')
+    local ttime=far.FarClock()
     ReportPath = tReportPath=='' and ReportPath or tReportPath
-    local itm0,itm1,head = {},{},{}
+    local head={}
     for i=2,6 do local s=Items[i][10]:gsub("&","") table.insert(head,s) end
     boom={} for i=1,#head do boom[i]={} end
-    local ttime=far.FarClock()
     local ItemsNumber=panel.GetPanelInfo(nil,1).ItemsNumber
+    local pc=ffi.cast("struct PluginStartupInfo*",far.CPluginStartupInfo()).PanelControl
+    pc(PANEL_ACTIVE,"FCTL_BEGINSELECTION",0,NULL)
     for Item=1,ItemsNumber do
       local GPItem=panel.GetPanelItem(nil,1,Item)
-      table.insert((GPItem.FileAttributes:find("d") or process(GPItem.FileName,ChkBOX)==0) and itm0 or itm1,Item)
+      pc(PANEL_ACTIVE,"FCTL_SETSELECTION",Item-1,(GPItem.FileAttributes:find("d") or process(GPItem.FileName,ChkBOX)==0) and pBL0 or pBL1)
     end
+    pc(PANEL_ACTIVE,"FCTL_ENDSELECTION",0,NULL)
+    pc(PANEL_ACTIVE,"FCTL_REDRAWPANEL",0,NULL)
     ttime = far.FarClock()-ttime
     if Report then
       local ans=1
@@ -83,9 +94,17 @@ action=function()
       if ans==1 then
         local h=io.open(ReportPath,'wb')
         if h then
+          local function _RootDir()
+            local ItemInfo=panel.GetPanelInfo(0)
+            local iItem, iTop=ItemInfo.CurrentItem, ItemInfo.TopPanelItem
+            Panel.SetPosIdx(0, 1)
+            local sRes=APanel.Path0
+            panel.RedrawPanel(nil, 1, {CurrentItem=iItem; TopPanelItem=iTop})
+            return sRes
+          end
           h:write('Scan:\t'..ItemsNumber..' objects\n')
           h:write('Time:\t'..ttime..' mcs\n')
-          h:write('Path:\t'..APanel.Path0..'\nFind:')
+          h:write('Path:\t'.._RootDir()..'\nFind:')
           local s=''
           for i=#head,1,-1 do s=s..(#boom[i]>0 and '\t'..head[i]..'  '..#boom[i] or '') end
           s=s=='' and '\t0 files' or s
@@ -101,9 +120,6 @@ action=function()
         h:close()
       end
     end
-    panel.SetSelection(nil,1,itm0,false)
-    panel.SetSelection(nil,1,itm1,true)
-    panel.RedrawPanel(nil,1)
   end
 end
 }
