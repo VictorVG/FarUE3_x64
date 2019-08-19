@@ -3193,6 +3193,15 @@
 // need translation:
 //[MSetAttrUnpinned]
 "Unpinned"
+// need translation:
+//[MSetAttrRecallOnOpen]
+"Recall on open"
+// need translation:
+//[MSetAttrRecallOnDataAccess]
+"Recall on data access"
+// need translation:
+//[MSetAttrStrictlySequential]
+"Strictly sequential"
 //[MSetAttrSubfolders]
 "Az almappákon is"
 //[MSetAttrOwner]
@@ -5117,6 +5126,15 @@
 // need translation:
 //[MFileFilterAttrUnpinned]
 "Unpinned"
+// need translation:
+//[MFileFilterAttrRecallOnOpen]
+"Recall on open"
+// need translation:
+//[MFileFilterAttrRecallOnDataAccess]
+"Recall on data access"
+// need translation:
+//[MFileFilterAttrStrictlySequential]
+"Strictly sequential"
 //[MFileFilterReset]
 "Reset"
 //[MFileFilterCancel]

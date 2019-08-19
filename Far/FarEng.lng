@@ -2965,6 +2965,12 @@
 "Pinned"
 //[MSetAttrUnpinned]
 "Unpinned"
+//[MSetAttrRecallOnOpen]
+"Recall on open"
+//[MSetAttrRecallOnDataAccess]
+"Recall on data access"
+//[MSetAttrStrictlySequential]
+"Strictly sequential"
 //[MSetAttrSubfolders]
 "Process sub&folders"
 //[MSetAttrOwner]
@@ -4826,6 +4832,12 @@
 "Pinned"
 //[MFileFilterAttrUnpinned]
 "Unpinned"
+//[MFileFilterAttrRecallOnOpen]
+"Recall on open"
+//[MFileFilterAttrRecallOnDataAccess]
+"Recall on data access"
+//[MFileFilterAttrStrictlySequential]
+"Strictly sequential"
 //[MFileFilterReset]
 "Reset"
 //[MFileFilterCancel]

@@ -2965,6 +2965,15 @@
 "Закріплений"
 //[MSetAttrUnpinned]
 "Відкріплений"
+// need translation:
+//[MSetAttrRecallOnOpen]
+"Recall on open"
+// need translation:
+//[MSetAttrRecallOnDataAccess]
+"Recall on data access"
+// need translation:
+//[MSetAttrStrictlySequential]
+"Strictly sequential"
 //[MSetAttrSubfolders]
 "Обробляти &вкладені папки"
 //[MSetAttrOwner]
@@ -4826,6 +4835,15 @@
 "Закріплений"
 //[MFileFilterAttrUnpinned]
 "Відкріплений"
+// need translation:
+//[MFileFilterAttrRecallOnOpen]
+"Recall on open"
+// need translation:
+//[MFileFilterAttrRecallOnDataAccess]
+"Recall on data access"
+// need translation:
+//[MFileFilterAttrStrictlySequential]
+"Strictly sequential"
 //[MFileFilterReset]
 "Очистит&и"
 //[MFileFilterCancel]

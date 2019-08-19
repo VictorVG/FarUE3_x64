@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<farconfig version="3.0.5450">
+<farconfig version="3.0.5451">
 	<associations>
 		<filetype mask="*.pdf" description="Adobe PDF">
 			<command type="0" enabled="1" command="&quot;!=\!.!&quot;"/>
@@ -43,79 +43,534 @@
 			<command type="5" enabled="1" command="reg2:&quot;!=\!+!&quot;"/>
 		</filetype>
 	</associations>
-        <panelmodes>
-	   <hierarchicalconfig>
-		<key name="0">
-			<value name="ColumnTitles" type="text" value="NM,SC,D"/>
-			<value name="ColumnWidths" type="text" value="0,10,0"/>
-			<value name="Flags" type="qword" value="0000000000000000"/>
-			<value name="StatusColumnTitles" type="text" value="NR"/>
-			<value name="StatusColumnWidths" type="text" value="0"/>
-		</key>
-		<key name="1">
-			<value name="ColumnTitles" type="text" value="N,N,N"/>
-			<value name="ColumnWidths" type="text" value="0,0,0"/>
-			<value name="Flags" type="qword" value="0000000000000000"/>
-			<value name="StatusColumnTitles" type="text" value="NR,S,D,T"/>
-			<value name="StatusColumnWidths" type="text" value="0,6,0,5"/>
-		</key>
-		<key name="2">
-			<value name="ColumnTitles" type="text" value="N,N"/>
-			<value name="ColumnWidths" type="text" value="0,0"/>
-			<value name="Flags" type="qword" value="0000000000000000"/>
-			<value name="StatusColumnTitles" type="text" value="NR,S,D,T"/>
-			<value name="StatusColumnWidths" type="text" value="0,6,0,5"/>
-		</key>
-		<key name="3">
-			<value name="ColumnTitles" type="text" value="N,S,D,T,F,LN"/>
-			<value name="ColumnWidths" type="text" value="0,6,0,5,0,0"/>
-			<value name="Flags" type="qword" value="0000000000000000"/>
-			<value name="StatusColumnTitles" type="text" value="NR"/>
-			<value name="StatusColumnWidths" type="text" value="0"/>
-		</key>
-		<key name="4">
-			<value name="ColumnTitles" type="text" value="N,S,&lt;LINK&gt;,&lt;C0&gt;,&lt;BOM&gt;"/>
-			<value name="ColumnWidths" type="text" value="0,6,0,0,8"/>
-			<value name="Flags" type="qword" value="0000000000000000"/>
-			<value name="StatusColumnTitles" type="text" value="NR,S,D,T"/>
-			<value name="StatusColumnWidths" type="text" value="0,6,0,5"/>
-		</key>
-		<key name="5">
-			<value name="ColumnTitles" type="text" value="N,S,P,DM,DC,DA,A,&lt;LINK&gt;,&lt;C0&gt;"/>
-			<value name="ColumnWidths" type="text" value="0,6,6,14,14,14,0,0,0"/>
-			<value name="Flags" type="qword" value="0000000000000001"/>
-			<value name="StatusColumnTitles" type="text" value="NR"/>
-			<value name="StatusColumnWidths" type="text" value="0"/>
-		</key>
-		<key name="6">
-			<value name="ColumnTitles" type="text" value="N,Z"/>
-			<value name="ColumnWidths" type="text" value="40%,0"/>
-			<value name="Flags" type="qword" value="0000000000000000"/>
-			<value name="StatusColumnTitles" type="text" value="NR,S,D,T"/>
-			<value name="StatusColumnWidths" type="text" value="0,6,0,5"/>
-		</key>
-		<key name="7">
-			<value name="ColumnTitles" type="text" value="N,S,Z"/>
-			<value name="ColumnWidths" type="text" value="0,6,70%"/>
-			<value name="Flags" type="qword" value="0000000000000001"/>
-			<value name="StatusColumnTitles" type="text" value="NR"/>
-			<value name="StatusColumnWidths" type="text" value="0"/>
-		</key>
-		<key name="8">
-			<value name="ColumnTitles" type="text" value="N,S,O"/>
-			<value name="ColumnWidths" type="text" value="0,6,15"/>
-			<value name="Flags" type="qword" value="0000000000000000"/>
-			<value name="StatusColumnTitles" type="text" value="NR,S,D,T"/>
-			<value name="StatusColumnWidths" type="text" value="0,6,0,15"/>
-		</key>
-		<key name="9">
-			<value name="ColumnTitles" type="text" value="N,S,LN"/>
-			<value name="ColumnWidths" type="text" value="0,6,3"/>
-			<value name="Flags" type="qword" value="0000000000000000"/>
-			<value name="StatusColumnTitles" type="text" value="NR,S,D,T"/>
-			<value name="StatusColumnWidths" type="text" value="0,6,0,5"/>
-		</key>
-		<key name="CustomModes"/>
-	   </hierarchicalconfig>
-        </panelmodes>
+	<highlight>
+		<hierarchicalconfig>
+			<key name="Highlight">
+				<key name="Group0">
+					<value name="AttrClear" type="qword" value="0000000000000000"/>
+					<value name="AttrSet" type="qword" value="0000000000000412"/>
+					<value name="ContinueProcessing" type="qword" value="0000000000000000"/>
+					<value name="CursorColor" type="color" background="00000003" foreground="FF00000C" flags="fg4bit bg4bit"/>
+					<value name="DateRelative" type="qword" value="0000000000000001"/>
+					<value name="DateTimeAfter" type="qword" value="0000000000000000"/>
+					<value name="DateTimeBefore" type="qword" value="0000000000000000"/>
+					<value name="DateType" type="qword" value="0000000000000000"/>
+					<value name="HardLinksAbove" type="qword" value="0000000000000000"/>
+					<value name="HardLinksBelow" type="qword" value="0000000000000000"/>
+					<value name="MarkChar" type="qword" value="000000000000002F"/>
+					<value name="MarkCharCursorColor" type="color" background="00000000" foreground="FF00000C" flags="fg4bit"/>
+					<value name="MarkCharNormalColor" type="color" background="00000000" foreground="FF00000C" flags="fg4bit"/>
+					<value name="MarkCharSelectedColor" type="color" background="00000000" foreground="FF00000C" flags="fg4bit"/>
+					<value name="MarkCharSelectedCursorColor" type="color" background="00000000" foreground="FF00000C" flags="fg4bit"/>
+					<value name="Mask" type="text" value="*.*|.."/>
+					<value name="NormalColor" type="color" background="00000001" foreground="FF000003" flags="fg4bit bg4bit"/>
+					<value name="SelectedColor" type="color" background="00000001" foreground="FF00000E" flags="fg4bit bg4bit"/>
+					<value name="SelectedCursorColor" type="color" background="00000003" foreground="FF00000E" flags="fg4bit bg4bit"/>
+					<value name="SizeAboveS" type="text" value=""/>
+					<value name="SizeBelowS" type="text" value=""/>
+					<value name="Title" type="text" value=""/>
+					<value name="UseAttr" type="qword" value="0000000000000001"/>
+					<value name="UseDate" type="qword" value="0000000000000000"/>
+					<value name="UseHardLinks" type="qword" value="0000000000000000"/>
+					<value name="UseMask" type="qword" value="0000000000000000"/>
+					<value name="UseSize" type="qword" value="0000000000000000"/>
+				</key>
+				<key name="Group1">
+					<value name="AttrClear" type="qword" value="0000000000000000"/>
+					<value name="AttrSet" type="qword" value="0000000000000012"/>
+					<value name="ContinueProcessing" type="qword" value="0000000000000000"/>
+					<value name="CursorColor" type="color" background="00000003" foreground="FF00000C" flags="fg4bit bg4bit"/>
+					<value name="DateRelative" type="qword" value="0000000000000001"/>
+					<value name="DateTimeAfter" type="qword" value="0000000000000000"/>
+					<value name="DateTimeBefore" type="qword" value="0000000000000000"/>
+					<value name="DateType" type="qword" value="0000000000000000"/>
+					<value name="HardLinksAbove" type="qword" value="0000000000000000"/>
+					<value name="HardLinksBelow" type="qword" value="0000000000000000"/>
+					<value name="MarkChar" type="qword" value="000000000000002F"/>
+					<value name="MarkCharCursorColor" type="color" background="00000000" foreground="FF00000F" flags="fg4bit"/>
+					<value name="MarkCharNormalColor" type="color" background="00000000" foreground="FF00000F" flags="fg4bit"/>
+					<value name="MarkCharSelectedColor" type="color" background="00000000" foreground="FF00000F" flags="fg4bit"/>
+					<value name="MarkCharSelectedCursorColor" type="color" background="00000000" foreground="FF00000F" flags="fg4bit"/>
+					<value name="Mask" type="text" value="*.*|.."/>
+					<value name="NormalColor" type="color" background="00000001" foreground="FF000003" flags="fg4bit bg4bit"/>
+					<value name="SelectedColor" type="color" background="00000001" foreground="FF00000E" flags="fg4bit bg4bit"/>
+					<value name="SelectedCursorColor" type="color" background="00000003" foreground="FF00000E" flags="fg4bit bg4bit"/>
+					<value name="SizeAboveS" type="text" value=""/>
+					<value name="SizeBelowS" type="text" value=""/>
+					<value name="Title" type="text" value=""/>
+					<value name="UseAttr" type="qword" value="0000000000000001"/>
+					<value name="UseDate" type="qword" value="0000000000000000"/>
+					<value name="UseHardLinks" type="qword" value="0000000000000000"/>
+					<value name="UseMask" type="qword" value="0000000000000000"/>
+					<value name="UseSize" type="qword" value="0000000000000000"/>
+				</key>
+				<key name="Group2">
+					<value name="AttrClear" type="qword" value="0000000000000000"/>
+					<value name="AttrSet" type="qword" value="0000000000000414"/>
+					<value name="ContinueProcessing" type="qword" value="0000000000000000"/>
+					<value name="CursorColor" type="color" background="00000003" foreground="FF00000C" flags="fg4bit bg4bit"/>
+					<value name="DateRelative" type="qword" value="0000000000000000"/>
+					<value name="DateTimeAfter" type="qword" value="0000000000000000"/>
+					<value name="DateTimeBefore" type="qword" value="0000000000000000"/>
+					<value name="DateType" type="qword" value="0000000000000000"/>
+					<value name="HardLinksAbove" type="qword" value="0000000000000000"/>
+					<value name="HardLinksBelow" type="qword" value="0000000000000000"/>
+					<value name="MarkChar" type="qword" value="000000000000002F"/>
+					<value name="MarkCharCursorColor" type="color" background="00000000" foreground="FF00000C" flags="fg4bit bg4bit"/>
+					<value name="MarkCharNormalColor" type="color" background="00000000" foreground="FF00000C" flags="fg4bit bg4bit"/>
+					<value name="MarkCharSelectedColor" type="color" background="00000000" foreground="FF00000C" flags="fg4bit bg4bit"/>
+					<value name="MarkCharSelectedCursorColor" type="color" background="00000000" foreground="FF00000C" flags="fg4bit bg4bit"/>
+					<value name="Mask" type="text" value="*.*|.."/>
+					<value name="NormalColor" type="color" background="00000001" foreground="FF000003" flags="fg4bit bg4bit"/>
+					<value name="SelectedColor" type="color" background="00000001" foreground="FF00000E" flags="fg4bit bg4bit"/>
+					<value name="SelectedCursorColor" type="color" background="00000003" foreground="FF00000E" flags="fg4bit bg4bit"/>
+					<value name="SizeAboveS" type="text" value=""/>
+					<value name="SizeBelowS" type="text" value=""/>
+					<value name="Title" type="text" value=""/>
+					<value name="UseAttr" type="qword" value="0000000000000001"/>
+					<value name="UseDate" type="qword" value="0000000000000000"/>
+					<value name="UseHardLinks" type="qword" value="0000000000000000"/>
+					<value name="UseMask" type="qword" value="0000000000000000"/>
+					<value name="UseSize" type="qword" value="0000000000000000"/>
+				</key>
+				<key name="Group3">
+					<value name="AttrClear" type="qword" value="0000000000000000"/>
+					<value name="AttrSet" type="qword" value="0000000000000014"/>
+					<value name="ContinueProcessing" type="qword" value="0000000000000000"/>
+					<value name="CursorColor" type="color" background="00000003" foreground="FF00000C" flags="fg4bit bg4bit"/>
+					<value name="DateRelative" type="qword" value="0000000000000000"/>
+					<value name="DateTimeAfter" type="qword" value="0000000000000000"/>
+					<value name="DateTimeBefore" type="qword" value="0000000000000000"/>
+					<value name="DateType" type="qword" value="0000000000000000"/>
+					<value name="HardLinksAbove" type="qword" value="0000000000000000"/>
+					<value name="HardLinksBelow" type="qword" value="0000000000000000"/>
+					<value name="MarkChar" type="qword" value="000000000000002F"/>
+					<value name="MarkCharCursorColor" type="color" background="00000000" foreground="FF00000F" flags="fg4bit bg4bit"/>
+					<value name="MarkCharNormalColor" type="color" background="00000000" foreground="FF00000F" flags="fg4bit bg4bit"/>
+					<value name="MarkCharSelectedColor" type="color" background="00000000" foreground="FF00000F" flags="fg4bit bg4bit"/>
+					<value name="MarkCharSelectedCursorColor" type="color" background="00000000" foreground="FF00000F" flags="fg4bit bg4bit"/>
+					<value name="Mask" type="text" value="*.*|.."/>
+					<value name="NormalColor" type="color" background="00000001" foreground="FF000003" flags="fg4bit bg4bit"/>
+					<value name="SelectedColor" type="color" background="00000001" foreground="FF00000E" flags="fg4bit bg4bit"/>
+					<value name="SelectedCursorColor" type="color" background="00000003" foreground="FF00000E" flags="fg4bit bg4bit"/>
+					<value name="SizeAboveS" type="text" value=""/>
+					<value name="SizeBelowS" type="text" value=""/>
+					<value name="Title" type="text" value=""/>
+					<value name="UseAttr" type="qword" value="0000000000000001"/>
+					<value name="UseDate" type="qword" value="0000000000000000"/>
+					<value name="UseHardLinks" type="qword" value="0000000000000000"/>
+					<value name="UseMask" type="qword" value="0000000000000000"/>
+					<value name="UseSize" type="qword" value="0000000000000000"/>
+				</key>
+				<key name="Group4">
+					<value name="AttrClear" type="qword" value="0000000000000000"/>
+					<value name="AttrSet" type="qword" value="0000000000000C10"/>
+					<value name="ContinueProcessing" type="qword" value="0000000000000000"/>
+					<value name="CursorColor" type="color" background="00000003" foreground="FF00000B" flags="fg4bit bg4bit"/>
+					<value name="DateRelative" type="qword" value="0000000000000000"/>
+					<value name="DateTimeAfter" type="qword" value="0000000000000000"/>
+					<value name="DateTimeBefore" type="qword" value="0000000000000000"/>
+					<value name="DateType" type="qword" value="0000000000000000"/>
+					<value name="HardLinksAbove" type="qword" value="0000000000000000"/>
+					<value name="HardLinksBelow" type="qword" value="0000000000000000"/>
+					<value name="MarkChar" type="qword" value="000000000000002F"/>
+					<value name="MarkCharCursorColor" type="color" background="00000000" foreground="FF00000C" flags="fg4bit bg4bit"/>
+					<value name="MarkCharNormalColor" type="color" background="00000000" foreground="FF00000C" flags="fg4bit bg4bit"/>
+					<value name="MarkCharSelectedColor" type="color" background="00000000" foreground="FF00000C" flags="fg4bit bg4bit"/>
+					<value name="MarkCharSelectedCursorColor" type="color" background="00000000" foreground="FF00000C" flags="fg4bit bg4bit"/>
+					<value name="Mask" type="text" value="*.*|.."/>
+					<value name="NormalColor" type="color" background="00000001" foreground="FF00000B" flags="fg4bit bg4bit"/>
+					<value name="SelectedColor" type="color" background="00000001" foreground="FF00000E" flags="fg4bit bg4bit"/>
+					<value name="SelectedCursorColor" type="color" background="00000003" foreground="FF00000E" flags="fg4bit bg4bit"/>
+					<value name="SizeAboveS" type="text" value=""/>
+					<value name="SizeBelowS" type="text" value=""/>
+					<value name="Title" type="text" value=""/>
+					<value name="UseAttr" type="qword" value="0000000000000001"/>
+					<value name="UseDate" type="qword" value="0000000000000000"/>
+					<value name="UseHardLinks" type="qword" value="0000000000000000"/>
+					<value name="UseMask" type="qword" value="0000000000000000"/>
+					<value name="UseSize" type="qword" value="0000000000000000"/>
+				</key>
+				<key name="Group5">
+					<value name="AttrClear" type="qword" value="0000000000000000"/>
+					<value name="AttrSet" type="qword" value="0000000000000010"/>
+					<value name="ContinueProcessing" type="qword" value="0000000000000001"/>
+					<value name="CursorColor" type="color" background="00000003" foreground="FF00000F" flags="fg4bit bg4bit"/>
+					<value name="DateRelative" type="qword" value="0000000000000000"/>
+					<value name="DateTimeAfter" type="qword" value="0000000000000000"/>
+					<value name="DateTimeBefore" type="qword" value="0000000000000000"/>
+					<value name="DateType" type="qword" value="0000000000000000"/>
+					<value name="HardLinksAbove" type="qword" value="0000000000000000"/>
+					<value name="HardLinksBelow" type="qword" value="0000000000000000"/>
+					<value name="MarkChar" type="qword" value="000000000000002F"/>
+					<value name="MarkCharCursorColor" type="color" background="00000000" foreground="FF000000" flags="fg4bit bg4bit"/>
+					<value name="MarkCharNormalColor" type="color" background="00000000" foreground="FF000000" flags="fg4bit bg4bit"/>
+					<value name="MarkCharSelectedColor" type="color" background="00000000" foreground="FF000000" flags="fg4bit bg4bit"/>
+					<value name="MarkCharSelectedCursorColor" type="color" background="00000000" foreground="FF000000" flags="fg4bit bg4bit"/>
+					<value name="Mask" type="text" value=".."/>
+					<value name="NormalColor" type="color" background="00000001" foreground="FF00000F" flags="fg4bit bg4bit"/>
+					<value name="SelectedColor" type="color" background="00000001" foreground="FF00000E" flags="fg4bit bg4bit"/>
+					<value name="SelectedCursorColor" type="color" background="00000003" foreground="FF00000E" flags="fg4bit bg4bit"/>
+					<value name="SizeAboveS" type="text" value=""/>
+					<value name="SizeBelowS" type="text" value=""/>
+					<value name="Title" type="text" value=""/>
+					<value name="UseAttr" type="qword" value="0000000000000001"/>
+					<value name="UseDate" type="qword" value="0000000000000000"/>
+					<value name="UseHardLinks" type="qword" value="0000000000000000"/>
+					<value name="UseMask" type="qword" value="0000000000000000"/>
+					<value name="UseSize" type="qword" value="0000000000000000"/>
+				</key>
+				<key name="Group6">
+					<value name="AttrClear" type="qword" value="0000000000000000"/>
+					<value name="AttrSet" type="qword" value="0000000000000400"/>
+					<value name="ContinueProcessing" type="qword" value="0000000000000000"/>
+					<value name="CursorColor" type="color" background="00000003" foreground="FF00000C" flags="fg4bit bg4bit"/>
+					<value name="DateRelative" type="qword" value="0000000000000001"/>
+					<value name="DateTimeAfter" type="qword" value="0000000000000000"/>
+					<value name="DateTimeBefore" type="qword" value="0000000000000000"/>
+					<value name="DateType" type="qword" value="0000000000000000"/>
+					<value name="HardLinksAbove" type="qword" value="0000000000000000"/>
+					<value name="HardLinksBelow" type="qword" value="0000000000000000"/>
+					<value name="MarkChar" type="qword" value="0000000000000021"/>
+					<value name="MarkCharCursorColor" type="color" background="00000000" foreground="FF00000C" flags="fg4bit"/>
+					<value name="MarkCharNormalColor" type="color" background="00000000" foreground="FF00000C" flags="fg4bit"/>
+					<value name="MarkCharSelectedColor" type="color" background="00000000" foreground="FF00000C" flags="fg4bit"/>
+					<value name="MarkCharSelectedCursorColor" type="color" background="00000000" foreground="FF00000C" flags="fg4bit"/>
+					<value name="Mask" type="text" value="*.*"/>
+					<value name="NormalColor" type="color" background="00000001" foreground="FF00000F" flags="fg4bit bg4bit"/>
+					<value name="SelectedColor" type="color" background="00000001" foreground="FF00000E" flags="fg4bit bg4bit"/>
+					<value name="SelectedCursorColor" type="color" background="00000003" foreground="FF00000E" flags="fg4bit bg4bit"/>
+					<value name="SizeAboveS" type="text" value=""/>
+					<value name="SizeBelowS" type="text" value=""/>
+					<value name="Title" type="text" value=""/>
+					<value name="UseAttr" type="qword" value="0000000000000001"/>
+					<value name="UseDate" type="qword" value="0000000000000000"/>
+					<value name="UseHardLinks" type="qword" value="0000000000000000"/>
+					<value name="UseMask" type="qword" value="0000000000000000"/>
+					<value name="UseSize" type="qword" value="0000000000000000"/>
+				</key>
+				<key name="Group7">
+					<value name="AttrClear" type="qword" value="0000000000000000"/>
+					<value name="AttrSet" type="qword" value="0000000000000002"/>
+					<value name="ContinueProcessing" type="qword" value="0000000000000000"/>
+					<value name="CursorColor" type="color" background="00000003" foreground="FF000007" flags="fg4bit bg4bit"/>
+					<value name="DateRelative" type="qword" value="0000000000000000"/>
+					<value name="DateTimeAfter" type="qword" value="0000000000000000"/>
+					<value name="DateTimeBefore" type="qword" value="0000000000000000"/>
+					<value name="DateType" type="qword" value="0000000000000000"/>
+					<value name="HardLinksAbove" type="qword" value="0000000000000000"/>
+					<value name="HardLinksBelow" type="qword" value="0000000000000000"/>
+					<value name="MarkChar" type="qword" value="0000000000000000"/>
+					<value name="MarkCharCursorColor" type="color" background="00000000" foreground="FF000000" flags="fg4bit bg4bit"/>
+					<value name="MarkCharNormalColor" type="color" background="00000000" foreground="FF000000" flags="fg4bit bg4bit"/>
+					<value name="MarkCharSelectedColor" type="color" background="00000000" foreground="FF000000" flags="fg4bit bg4bit"/>
+					<value name="MarkCharSelectedCursorColor" type="color" background="00000000" foreground="FF000000" flags="fg4bit bg4bit"/>
+					<value name="Mask" type="text" value="*.*"/>
+					<value name="NormalColor" type="color" background="00000001" foreground="FF000003" flags="fg4bit bg4bit"/>
+					<value name="SelectedColor" type="color" background="00000001" foreground="FF00000E" flags="fg4bit bg4bit"/>
+					<value name="SelectedCursorColor" type="color" background="00000003" foreground="FF00000E" flags="fg4bit bg4bit"/>
+					<value name="SizeAboveS" type="text" value=""/>
+					<value name="SizeBelowS" type="text" value=""/>
+					<value name="Title" type="text" value=""/>
+					<value name="UseAttr" type="qword" value="0000000000000001"/>
+					<value name="UseDate" type="qword" value="0000000000000000"/>
+					<value name="UseHardLinks" type="qword" value="0000000000000000"/>
+					<value name="UseMask" type="qword" value="0000000000000000"/>
+					<value name="UseSize" type="qword" value="0000000000000000"/>
+				</key>
+				<key name="Group8">
+					<value name="AttrClear" type="qword" value="0000000000000000"/>
+					<value name="AttrSet" type="qword" value="0000000000000004"/>
+					<value name="ContinueProcessing" type="qword" value="0000000000000000"/>
+					<value name="CursorColor" type="color" background="00000003" foreground="FF000008" flags="fg4bit bg4bit"/>
+					<value name="DateRelative" type="qword" value="0000000000000000"/>
+					<value name="DateTimeAfter" type="qword" value="0000000000000000"/>
+					<value name="DateTimeBefore" type="qword" value="0000000000000000"/>
+					<value name="DateType" type="qword" value="0000000000000000"/>
+					<value name="HardLinksAbove" type="qword" value="0000000000000000"/>
+					<value name="HardLinksBelow" type="qword" value="0000000000000000"/>
+					<value name="MarkChar" type="qword" value="0000000000000000"/>
+					<value name="MarkCharCursorColor" type="color" background="00000000" foreground="FF000000" flags="fg4bit bg4bit"/>
+					<value name="MarkCharNormalColor" type="color" background="00000000" foreground="FF000000" flags="fg4bit bg4bit"/>
+					<value name="MarkCharSelectedColor" type="color" background="00000000" foreground="FF000000" flags="fg4bit bg4bit"/>
+					<value name="MarkCharSelectedCursorColor" type="color" background="00000000" foreground="FF000000" flags="fg4bit bg4bit"/>
+					<value name="Mask" type="text" value="*.*"/>
+					<value name="NormalColor" type="color" background="00000001" foreground="FF000003" flags="fg4bit bg4bit"/>
+					<value name="SelectedColor" type="color" background="00000001" foreground="FF00000E" flags="fg4bit bg4bit"/>
+					<value name="SelectedCursorColor" type="color" background="00000003" foreground="FF00000E" flags="fg4bit bg4bit"/>
+					<value name="SizeAboveS" type="text" value=""/>
+					<value name="SizeBelowS" type="text" value=""/>
+					<value name="Title" type="text" value=""/>
+					<value name="UseAttr" type="qword" value="0000000000000001"/>
+					<value name="UseDate" type="qword" value="0000000000000000"/>
+					<value name="UseHardLinks" type="qword" value="0000000000000000"/>
+					<value name="UseMask" type="qword" value="0000000000000000"/>
+					<value name="UseSize" type="qword" value="0000000000000000"/>
+				</key>
+				<key name="Group9">
+					<value name="AttrClear" type="qword" value="0000000000000010"/>
+					<value name="AttrSet" type="qword" value="0000000000000000"/>
+					<value name="ContinueProcessing" type="qword" value="0000000000000001"/>
+					<value name="CursorColor" type="color" background="00000003" foreground="FF00000F" flags="fg4bit bg4bit"/>
+					<value name="DateRelative" type="qword" value="0000000000000000"/>
+					<value name="DateTimeAfter" type="qword" value="0000000000000000"/>
+					<value name="DateTimeBefore" type="qword" value="0000000000000000"/>
+					<value name="DateType" type="qword" value="0000000000000000"/>
+					<value name="HardLinksAbove" type="qword" value="0000000000000000"/>
+					<value name="HardLinksBelow" type="qword" value="0000000000000000"/>
+					<value name="MarkChar" type="qword" value="0000000000000000"/>
+					<value name="MarkCharCursorColor" type="color" background="00000000" foreground="FF000000" flags="fg4bit bg4bit"/>
+					<value name="MarkCharNormalColor" type="color" background="00000000" foreground="FF000000" flags="fg4bit bg4bit"/>
+					<value name="MarkCharSelectedColor" type="color" background="00000000" foreground="FF000000" flags="fg4bit bg4bit"/>
+					<value name="MarkCharSelectedCursorColor" type="color" background="00000000" foreground="FF000000" flags="fg4bit bg4bit"/>
+					<value name="Mask" type="text" value=".."/>
+					<value name="NormalColor" type="color" background="00000001" foreground="FF00000F" flags="fg4bit bg4bit"/>
+					<value name="SelectedColor" type="color" background="00000001" foreground="FF00000E" flags="fg4bit bg4bit"/>
+					<value name="SelectedCursorColor" type="color" background="00000003" foreground="FF00000E" flags="fg4bit bg4bit"/>
+					<value name="SizeAboveS" type="text" value=""/>
+					<value name="SizeBelowS" type="text" value=""/>
+					<value name="Title" type="text" value=""/>
+					<value name="UseAttr" type="qword" value="0000000000000001"/>
+					<value name="UseDate" type="qword" value="0000000000000000"/>
+					<value name="UseHardLinks" type="qword" value="0000000000000000"/>
+					<value name="UseMask" type="qword" value="0000000000000000"/>
+					<value name="UseSize" type="qword" value="0000000000000000"/>
+				</key>
+				<key name="LastGroup0">
+					<value name="AttrClear" type="qword" value="0000000000000000"/>
+					<value name="AttrSet" type="qword" value="0000000000000810"/>
+					<value name="ContinueProcessing" type="qword" value="0000000000000000"/>
+					<value name="CursorColor" type="color" background="00000003" foreground="FF00000B" flags="fg4bit bg4bit"/>
+					<value name="DateRelative" type="qword" value="0000000000000000"/>
+					<value name="DateTimeAfter" type="qword" value="0000000000000000"/>
+					<value name="DateTimeBefore" type="qword" value="0000000000000000"/>
+					<value name="DateType" type="qword" value="0000000000000000"/>
+					<value name="HardLinksAbove" type="qword" value="0000000000000000"/>
+					<value name="HardLinksBelow" type="qword" value="0000000000000000"/>
+					<value name="MarkChar" type="qword" value="000000000000002F"/>
+					<value name="MarkCharCursorColor" type="color" background="00000000" foreground="FF00000F" flags="fg4bit bg4bit"/>
+					<value name="MarkCharNormalColor" type="color" background="00000000" foreground="FF00000F" flags="fg4bit bg4bit"/>
+					<value name="MarkCharSelectedColor" type="color" background="00000000" foreground="FF00000F" flags="fg4bit bg4bit"/>
+					<value name="MarkCharSelectedCursorColor" type="color" background="00000000" foreground="FF00000F" flags="fg4bit bg4bit"/>
+					<value name="Mask" type="text" value="*.*|.."/>
+					<value name="NormalColor" type="color" background="00000001" foreground="FF00000B" flags="fg4bit bg4bit"/>
+					<value name="SelectedColor" type="color" background="00000001" foreground="FF00000E" flags="fg4bit bg4bit"/>
+					<value name="SelectedCursorColor" type="color" background="00000003" foreground="FF00000E" flags="fg4bit bg4bit"/>
+					<value name="SizeAboveS" type="text" value=""/>
+					<value name="SizeBelowS" type="text" value=""/>
+					<value name="Title" type="text" value=""/>
+					<value name="UseAttr" type="qword" value="0000000000000001"/>
+					<value name="UseDate" type="qword" value="0000000000000000"/>
+					<value name="UseHardLinks" type="qword" value="0000000000000000"/>
+					<value name="UseMask" type="qword" value="0000000000000000"/>
+					<value name="UseSize" type="qword" value="0000000000000000"/>
+				</key>
+				<key name="LastGroup1">
+					<value name="AttrClear" type="qword" value="0000000000000000"/>
+					<value name="AttrSet" type="qword" value="0000000000000800"/>
+					<value name="ContinueProcessing" type="qword" value="0000000000000000"/>
+					<value name="CursorColor" type="color" background="00000003" foreground="FF00000B" flags="fg4bit bg4bit"/>
+					<value name="DateRelative" type="qword" value="0000000000000000"/>
+					<value name="DateTimeAfter" type="qword" value="0000000000000000"/>
+					<value name="DateTimeBefore" type="qword" value="0000000000000000"/>
+					<value name="DateType" type="qword" value="0000000000000000"/>
+					<value name="HardLinksAbove" type="qword" value="0000000000000000"/>
+					<value name="HardLinksBelow" type="qword" value="0000000000000000"/>
+					<value name="MarkChar" type="qword" value="0000000000000000"/>
+					<value name="MarkCharCursorColor" type="color" background="00000000" foreground="FF000000" flags="fg4bit bg4bit"/>
+					<value name="MarkCharNormalColor" type="color" background="00000000" foreground="FF000000" flags="fg4bit bg4bit"/>
+					<value name="MarkCharSelectedColor" type="color" background="00000000" foreground="FF000000" flags="fg4bit bg4bit"/>
+					<value name="MarkCharSelectedCursorColor" type="color" background="00000000" foreground="FF000000" flags="fg4bit bg4bit"/>
+					<value name="Mask" type="text" value=".."/>
+					<value name="NormalColor" type="color" background="00000001" foreground="FF00000B" flags="fg4bit bg4bit"/>
+					<value name="SelectedColor" type="color" background="00000001" foreground="FF00000E" flags="fg4bit bg4bit"/>
+					<value name="SelectedCursorColor" type="color" background="00000003" foreground="FF00000E" flags="fg4bit bg4bit"/>
+					<value name="SizeAboveS" type="text" value=""/>
+					<value name="SizeBelowS" type="text" value=""/>
+					<value name="Title" type="text" value=""/>
+					<value name="UseAttr" type="qword" value="0000000000000001"/>
+					<value name="UseDate" type="qword" value="0000000000000000"/>
+					<value name="UseHardLinks" type="qword" value="0000000000000000"/>
+					<value name="UseMask" type="qword" value="0000000000000000"/>
+					<value name="UseSize" type="qword" value="0000000000000000"/>
+				</key>
+			</key>
+			<key name="SortGroups">
+				<key name="LowerGroup0">
+					<value name="AttrClear" type="qword" value="0000000000000010"/>
+					<value name="AttrSet" type="qword" value="0000000000000800"/>
+					<value name="ContinueProcessing" type="qword" value="0000000000000000"/>
+					<value name="CursorColor" type="color" background="00000003" foreground="FF00000B" flags="fg4bit bg4bit"/>
+					<value name="DateRelative" type="qword" value="0000000000000001"/>
+					<value name="DateTimeAfter" type="qword" value="0000000000000000"/>
+					<value name="DateTimeBefore" type="qword" value="0000000000000000"/>
+					<value name="DateType" type="qword" value="0000000000000000"/>
+					<value name="HardLinksAbove" type="qword" value="0000000000000000"/>
+					<value name="HardLinksBelow" type="qword" value="0000000000000000"/>
+					<value name="MarkChar" type="qword" value="0000000000000000"/>
+					<value name="MarkCharCursorColor" type="color" background="00000000" foreground="FF000000" flags=""/>
+					<value name="MarkCharNormalColor" type="color" background="00000000" foreground="FF000000" flags=""/>
+					<value name="MarkCharSelectedColor" type="color" background="00000000" foreground="FF000000" flags=""/>
+					<value name="MarkCharSelectedCursorColor" type="color" background="00000000" foreground="FF000000" flags=""/>
+					<value name="Mask" type="text" value="&lt;exec&gt;"/>
+					<value name="NormalColor" type="color" background="00000001" foreground="FF00000A" flags="fg4bit bg4bit"/>
+					<value name="SelectedColor" type="color" background="00000001" foreground="FF00000E" flags="fg4bit bg4bit"/>
+					<value name="SelectedCursorColor" type="color" background="00000003" foreground="FF000009" flags="fg4bit bg4bit"/>
+					<value name="SizeAboveS" type="text" value=""/>
+					<value name="SizeBelowS" type="text" value=""/>
+					<value name="Title" type="text" value=""/>
+					<value name="UseAttr" type="qword" value="0000000000000001"/>
+					<value name="UseDate" type="qword" value="0000000000000000"/>
+					<value name="UseHardLinks" type="qword" value="0000000000000000"/>
+					<value name="UseMask" type="qword" value="0000000000000001"/>
+					<value name="UseSize" type="qword" value="0000000000000000"/>
+				</key>
+				<key name="LowerGroup1">
+					<value name="AttrClear" type="qword" value="0000000000000010"/>
+					<value name="AttrSet" type="qword" value="0000000000000800"/>
+					<value name="ContinueProcessing" type="qword" value="0000000000000000"/>
+					<value name="CursorColor" type="color" background="00000003" foreground="FF00000B" flags="fg4bit bg4bit"/>
+					<value name="DateRelative" type="qword" value="0000000000000000"/>
+					<value name="DateTimeAfter" type="qword" value="0000000000000000"/>
+					<value name="DateTimeBefore" type="qword" value="0000000000000000"/>
+					<value name="DateType" type="qword" value="0000000000000000"/>
+					<value name="HardLinksAbove" type="qword" value="0000000000000000"/>
+					<value name="HardLinksBelow" type="qword" value="0000000000000000"/>
+					<value name="MarkChar" type="qword" value="0000000000000000"/>
+					<value name="MarkCharCursorColor" type="color" background="00000000" foreground="FF000000" flags="fg4bit bg4bit"/>
+					<value name="MarkCharNormalColor" type="color" background="00000000" foreground="FF000000" flags="fg4bit bg4bit"/>
+					<value name="MarkCharSelectedColor" type="color" background="00000000" foreground="FF000000" flags="fg4bit bg4bit"/>
+					<value name="MarkCharSelectedCursorColor" type="color" background="00000000" foreground="FF000000" flags="fg4bit bg4bit"/>
+					<value name="Mask" type="text" value="&lt;arc&gt;"/>
+					<value name="NormalColor" type="color" background="00000001" foreground="FF00000D" flags="fg4bit bg4bit"/>
+					<value name="SelectedColor" type="color" background="00000001" foreground="FF00000E" flags="fg4bit bg4bit"/>
+					<value name="SelectedCursorColor" type="color" background="00000003" foreground="FF000009" flags="fg4bit bg4bit"/>
+					<value name="SizeAboveS" type="text" value=""/>
+					<value name="SizeBelowS" type="text" value=""/>
+					<value name="Title" type="text" value=""/>
+					<value name="UseAttr" type="qword" value="0000000000000001"/>
+					<value name="UseDate" type="qword" value="0000000000000000"/>
+					<value name="UseHardLinks" type="qword" value="0000000000000000"/>
+					<value name="UseMask" type="qword" value="0000000000000001"/>
+					<value name="UseSize" type="qword" value="0000000000000000"/>
+				</key>
+				<key name="LowerGroup2">
+					<value name="AttrClear" type="qword" value="0000000000000010"/>
+					<value name="AttrSet" type="qword" value="0000000000000800"/>
+					<value name="ContinueProcessing" type="qword" value="0000000000000000"/>
+					<value name="CursorColor" type="color" background="00000003" foreground="FF00000B" flags="fg4bit bg4bit"/>
+					<value name="DateRelative" type="qword" value="0000000000000001"/>
+					<value name="DateTimeAfter" type="qword" value="0000000000000000"/>
+					<value name="DateTimeBefore" type="qword" value="0000000000000000"/>
+					<value name="DateType" type="qword" value="0000000000000000"/>
+					<value name="HardLinksAbove" type="qword" value="0000000000000000"/>
+					<value name="HardLinksBelow" type="qword" value="0000000000000000"/>
+					<value name="MarkChar" type="qword" value="0000000000000000"/>
+					<value name="MarkCharCursorColor" type="color" background="00000000" foreground="FF000000" flags=""/>
+					<value name="MarkCharNormalColor" type="color" background="00000000" foreground="FF000000" flags=""/>
+					<value name="MarkCharSelectedColor" type="color" background="00000000" foreground="FF000000" flags=""/>
+					<value name="MarkCharSelectedCursorColor" type="color" background="00000000" foreground="FF000000" flags=""/>
+					<value name="Mask" type="text" value="&lt;temp&gt;"/>
+					<value name="NormalColor" type="color" background="00000001" foreground="FF000006" flags="fg4bit bg4bit"/>
+					<value name="SelectedColor" type="color" background="00000001" foreground="FF00000E" flags="fg4bit bg4bit"/>
+					<value name="SelectedCursorColor" type="color" background="00000003" foreground="FF000009" flags="fg4bit bg4bit"/>
+					<value name="SizeAboveS" type="text" value=""/>
+					<value name="SizeBelowS" type="text" value=""/>
+					<value name="Title" type="text" value=""/>
+					<value name="UseAttr" type="qword" value="0000000000000001"/>
+					<value name="UseDate" type="qword" value="0000000000000000"/>
+					<value name="UseHardLinks" type="qword" value="0000000000000000"/>
+					<value name="UseMask" type="qword" value="0000000000000001"/>
+					<value name="UseSize" type="qword" value="0000000000000000"/>
+				</key>
+				<key name="UpperGroup0">
+					<value name="AttrClear" type="qword" value="0000000000000000"/>
+					<value name="AttrSet" type="qword" value="0000000000000000"/>
+					<value name="ContinueProcessing" type="qword" value="0000000000000001"/>
+					<value name="CursorColor" type="color" background="00000003" foreground="FF00000A" flags="fg4bit bg4bit"/>
+					<value name="DateRelative" type="qword" value="0000000000000000"/>
+					<value name="DateTimeAfter" type="qword" value="0000000000000000"/>
+					<value name="DateTimeBefore" type="qword" value="0000000000000000"/>
+					<value name="DateType" type="qword" value="0000000000000000"/>
+					<value name="HardLinksAbove" type="qword" value="0000000000000000"/>
+					<value name="HardLinksBelow" type="qword" value="0000000000000000"/>
+					<value name="MarkChar" type="qword" value="0000000000000000"/>
+					<value name="MarkCharCursorColor" type="color" background="00000000" foreground="FF000000" flags="fg4bit bg4bit"/>
+					<value name="MarkCharNormalColor" type="color" background="00000000" foreground="FF000000" flags="fg4bit bg4bit"/>
+					<value name="MarkCharSelectedColor" type="color" background="00000000" foreground="FF000000" flags="fg4bit bg4bit"/>
+					<value name="MarkCharSelectedCursorColor" type="color" background="00000000" foreground="FF000000" flags="fg4bit bg4bit"/>
+					<value name="Mask" type="text" value="&lt;exec&gt;"/>
+					<value name="NormalColor" type="color" background="00000001" foreground="FF00000A" flags="fg4bit bg4bit"/>
+					<value name="SelectedColor" type="color" background="00000001" foreground="FF00000E" flags="fg4bit bg4bit"/>
+					<value name="SelectedCursorColor" type="color" background="00000003" foreground="FF00000E" flags="fg4bit bg4bit"/>
+					<value name="SizeAboveS" type="text" value=""/>
+					<value name="SizeBelowS" type="text" value=""/>
+					<value name="Title" type="text" value=""/>
+					<value name="UseAttr" type="qword" value="0000000000000001"/>
+					<value name="UseDate" type="qword" value="0000000000000000"/>
+					<value name="UseHardLinks" type="qword" value="0000000000000000"/>
+					<value name="UseMask" type="qword" value="0000000000000001"/>
+					<value name="UseSize" type="qword" value="0000000000000000"/>
+				</key>
+				<key name="UpperGroup1">
+					<value name="AttrClear" type="qword" value="0000000000000000"/>
+					<value name="AttrSet" type="qword" value="0000000000000000"/>
+					<value name="ContinueProcessing" type="qword" value="0000000000000001"/>
+					<value name="CursorColor" type="color" background="00000003" foreground="FF00000D" flags="fg4bit bg4bit"/>
+					<value name="DateRelative" type="qword" value="0000000000000000"/>
+					<value name="DateTimeAfter" type="qword" value="0000000000000000"/>
+					<value name="DateTimeBefore" type="qword" value="0000000000000000"/>
+					<value name="DateType" type="qword" value="0000000000000000"/>
+					<value name="HardLinksAbove" type="qword" value="0000000000000000"/>
+					<value name="HardLinksBelow" type="qword" value="0000000000000000"/>
+					<value name="MarkChar" type="qword" value="0000000000000000"/>
+					<value name="MarkCharCursorColor" type="color" background="00000000" foreground="FF000000" flags="fg4bit bg4bit"/>
+					<value name="MarkCharNormalColor" type="color" background="00000000" foreground="FF000000" flags="fg4bit bg4bit"/>
+					<value name="MarkCharSelectedColor" type="color" background="00000000" foreground="FF000000" flags="fg4bit bg4bit"/>
+					<value name="MarkCharSelectedCursorColor" type="color" background="00000000" foreground="FF000000" flags="fg4bit bg4bit"/>
+					<value name="Mask" type="text" value="&lt;arc&gt;"/>
+					<value name="NormalColor" type="color" background="00000001" foreground="FF00000D" flags="fg4bit bg4bit"/>
+					<value name="SelectedColor" type="color" background="00000001" foreground="FF00000E" flags="fg4bit bg4bit"/>
+					<value name="SelectedCursorColor" type="color" background="00000003" foreground="FF00000E" flags="fg4bit bg4bit"/>
+					<value name="SizeAboveS" type="text" value=""/>
+					<value name="SizeBelowS" type="text" value=""/>
+					<value name="Title" type="text" value=""/>
+					<value name="UseAttr" type="qword" value="0000000000000001"/>
+					<value name="UseDate" type="qword" value="0000000000000000"/>
+					<value name="UseHardLinks" type="qword" value="0000000000000000"/>
+					<value name="UseMask" type="qword" value="0000000000000001"/>
+					<value name="UseSize" type="qword" value="0000000000000000"/>
+				</key>
+				<key name="UpperGroup2">
+					<value name="AttrClear" type="qword" value="0000000000000000"/>
+					<value name="AttrSet" type="qword" value="0000000000000000"/>
+					<value name="ContinueProcessing" type="qword" value="0000000000000001"/>
+					<value name="CursorColor" type="color" background="00000003" foreground="FF000006" flags="fg4bit bg4bit"/>
+					<value name="DateRelative" type="qword" value="0000000000000000"/>
+					<value name="DateTimeAfter" type="qword" value="0000000000000000"/>
+					<value name="DateTimeBefore" type="qword" value="0000000000000000"/>
+					<value name="DateType" type="qword" value="0000000000000000"/>
+					<value name="HardLinksAbove" type="qword" value="0000000000000000"/>
+					<value name="HardLinksBelow" type="qword" value="0000000000000000"/>
+					<value name="MarkChar" type="qword" value="0000000000000000"/>
+					<value name="MarkCharCursorColor" type="color" background="00000000" foreground="FF000000" flags="fg4bit bg4bit"/>
+					<value name="MarkCharNormalColor" type="color" background="00000000" foreground="FF000000" flags="fg4bit bg4bit"/>
+					<value name="MarkCharSelectedColor" type="color" background="00000000" foreground="FF000000" flags="fg4bit bg4bit"/>
+					<value name="MarkCharSelectedCursorColor" type="color" background="00000000" foreground="FF000000" flags="fg4bit bg4bit"/>
+					<value name="Mask" type="text" value="&lt;temp&gt;"/>
+					<value name="NormalColor" type="color" background="00000001" foreground="FF000006" flags="fg4bit bg4bit"/>
+					<value name="SelectedColor" type="color" background="00000001" foreground="FF00000E" flags="fg4bit bg4bit"/>
+					<value name="SelectedCursorColor" type="color" background="00000003" foreground="FF00000E" flags="fg4bit bg4bit"/>
+					<value name="SizeAboveS" type="text" value=""/>
+					<value name="SizeBelowS" type="text" value=""/>
+					<value name="Title" type="text" value=""/>
+					<value name="UseAttr" type="qword" value="0000000000000001"/>
+					<value name="UseDate" type="qword" value="0000000000000000"/>
+					<value name="UseHardLinks" type="qword" value="0000000000000000"/>
+					<value name="UseMask" type="qword" value="0000000000000001"/>
+					<value name="UseSize" type="qword" value="0000000000000000"/>
+				</key>
+			</key>
+		</hierarchicalconfig>
+	</highlight>
 </farconfig>
