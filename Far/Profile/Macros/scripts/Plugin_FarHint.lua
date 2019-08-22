@@ -6,17 +6,18 @@
 -- файлов и каталогов работает только после гашения хинта - конфликт.
 -- Рефакторинг с добавлением функций управления размером подсказки колесом мыши
 -- v1.1, Sun Sep 20 18:09:34 +0300 2015 /VictorVG/
-
+-- v1.2, 20.02.2019 07:59:56 +0300 запретим хинт в контекстном меню шелла
 -------------------------------------------------------------------------------
 local FHID = "CDF48DA0-0334-4169-8453-69048DD3B51C"
+
 if not Plugin.Exist(FHID) then return end
 
 ---- Настройки
 local function Settings()
 -- Начало файла Profile\SimSU\Plugin_FarHint.cfg
 return{
-  KeyShow="Alt"; --PriorShow=50;
-  KeyHide="Alt Esc"; PriorHide=51;
+  KeyShow="Alt"; PriorShow=51;
+  KeyHide="Alt Esc Apps MsRClick"; PriorHide=51;
   KeyIncrese="RAltUp"; PriorIncrese=51;
   KeyDecrese="RAltDown"; PriorDecrese=51;
   KeyMsIncrese="MsWheelUp"; PriorMsIncrese=51;
@@ -46,10 +47,10 @@ else--if far.lang=="English" then
 return{
    DescrShow = "FarHints: show hint (keyboard)";
    DescrHide = "FarHints: hide hint (keyboard)";
-   DescrIncrese = "FarHints: increse thumbnail (keyboard)";
-   DescrDecrese = "FarHints: decrese thumbnail (keyboard)";
-   DescrMsIncrese = "FarHints: increse thumbnail (mouse wheel)";
-   DescrMsIncrese = "FarHints: decrese thumbnail (mouse wheel)";
+   DescrIncrese = "FarHints: increase thumbnail (keyboard)";
+   DescrDecrese = "FarHints: decrees thumbnail (keyboard)";
+   DescrMsIncrese = "FarHints: increase thumbnail (mouse wheel)";
+   DescrMsDecrese = "FarHints: decrees thumbnail (mouse wheel)";
 
 }
 -- End of file Profile\SimSU\Plugin_FarHintEnglish.lng
@@ -110,7 +111,7 @@ Macro {area="Shell Tree"; key=S.KeyIncrese; priority=S.PriorIncrese; description
   action=SimSU.Plugin_FarHint.Increse;
 }
 Macro {area="Shell Tree"; key=S.KeyDecrese; priority=S.PriorDecrese; description=M.DescrDecrese;
-  condition=function() return win.GetEnv("FarHint")=="1" end;
+  condition=function() return win.GetEnv("FarHint")=="1"  end;
   action=SimSU.Plugin_FarHint.Decrese;
 }
 

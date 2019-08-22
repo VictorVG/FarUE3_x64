@@ -11,6 +11,7 @@ if exist "plugins\farhints\Plugins\Folders" (rd /s/q "plugins\farhints\Plugins\F
 if exist "plugins\intchecker\scripts\InChecker.GetFileHash.lua" (del /f/q "plugins\intchecker\scripts\InChecker.GetFileHash.lua" > nul)
 if exist "plugins\multiarc\Formats\targz.fmt" (del /s/q "plugins\multiarc\Formats\targz.fmt" > nul)
 if exist "plugins\sqlitedb" (rd /s/q "plugins\sqlitedb" > nul)
+if exist "Profile\Macros\modules\c0BOM.lua" (del /s/q "Profile\Macros\modules\c0BOM.lua" > nul)
 if exist "Profile\Macros\modules\LuaManager.lua" (del /s/q "Profile\Macros\modules\LuaManager.lua" > nul)
 if exist "Profile\Macros\scripts\Dialog_ToEditor.lua" (del /s/q "Profile\Macros\scripts\Dialog_ToEditor.lua" > nul)
 if exist "Profile\Macros\scripts\Editor_IntegrateMacro.lua" (del /s/q "Profile\Macros\scripts\Editor_IntegrateMacro.lua" > nul)

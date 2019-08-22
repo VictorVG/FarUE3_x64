@@ -573,4 +573,20 @@
 			</key>
 		</hierarchicalconfig>
 	</highlight>
+<pluginsconfig>
+	<plugin guid="9C3A61FC-F349-48E8-9B78-DAEBD821694B">
+		<hierarchicalconfig>
+			<key name="9C3A61FC-F349-48E8-9B78-DAEBD821694B" description="Audio player">
+				<value name="out_click_close" type="qword" value="0000000000000002"/>
+			</key></hierarchicalconfig>
+	</plugin>
+	<plugin guid="A74EC909-41F1-409B-9C4C-CA389BB93F45">
+		<hierarchicalconfig>
+			<key name="A74EC909-41F1-409B-9C4C-CA389BB93F45" description="[ESC]">
+				<value name="Options" type="qword" value="0000000000000007"/>
+			</key>
+		</hierarchicalconfig>
+	</plugin>
+
+   </pluginsconfig>
 </farconfig>
