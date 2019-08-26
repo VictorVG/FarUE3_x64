@@ -21,7 +21,7 @@ for _,v in ipairs(list) do -- переберём все
 end
 return res -- вернём результат
 end
--- 
+--
 local function PutElem(obj,key,elem) --[[запишем элемент или поддерево]]
 if elem.type==F.FST_SUBKEY then -- таблица?
   key = obj:CreateSubkey(key,elem.name) -- откроем/создадим раздел

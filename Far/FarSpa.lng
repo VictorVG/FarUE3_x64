@@ -2939,7 +2939,7 @@
 "DFS Destinos"
 //[MSetAttrUnknownReparsePoint]
 "(datos no disponibles)"
-//[MSetAttrRO]
+//[MSetAttrReadOnly]
 "Sólo &lectura"
 //[MSetAttrArchive]
 "&Archivo"
@@ -2955,7 +2955,7 @@
 "No &indexado"
 //[MSetAttrSparse]
 "Dis&perso"
-//[MSetAttrTemp]
+//[MSetAttrTemporary]
 "Temporal"
 //[MSetAttrOffline]
 "Desconectado"
@@ -2980,6 +2980,8 @@
 // need translation:
 //[MSetAttrStrictlySequential]
 "Strictly sequential"
+//[MSetAttrAdvanced]
+"Avan&zado"
 //[MSetAttrSubfolders]
 "Procesar sub&directorios"
 //[MSetAttrOwner]
@@ -3007,8 +3009,9 @@
 "DD{0}MM{0}AAAAA"
 //[MSetAttrDateTitle3]
 "AAAAA{0}MM{0}DD"
+// need translation:
 //[MSetAttrTimeTitle]
-"hh{0}mm{0}ss{1}ms"
+"hh{0}mm{0}ss{1}ms +tick"
 //[MSetAttrSystemDialog]
 "Propiedades del sistema"
 
@@ -4812,25 +4815,25 @@
 "En b&lanco"
 //[MFileFilterAttr]
 "Atri&butos"
-//[MFileFilterAttrR]
+//[MFileFilterAttrReadOnly]
 "Sólo &lectura"
-//[MFileFilterAttrA]
+//[MFileFilterAttrArcive]
 "&Archivo"
-//[MFileFilterAttrH]
+//[MFileFilterAttrHidden]
 "&Oculto"
-//[MFileFilterAttrS]
+//[MFileFilterAttrSystem]
 "&Sistema"
-//[MFileFilterAttrC]
+//[MFileFilterAttrCompressed]
 "&Comprimido"
-//[MFileFilterAttrE]
+//[MFileFilterAttrEncrypted]
 "C&ifrado"
-//[MFileFilterAttrD]
+//[MFileFilterAttrDirectory]
 "&Directorio"
-//[MFileFilterAttrNI]
+//[MFileFilterAttrNotIndexed]
 "No inde&xado"
 //[MFileFilterAttrSparse]
 "Dispers&o"
-//[MFileFilterAttrT]
+//[MFileFilterAttrTemporary]
 "Tem&poral"
 //[MFileFilterAttrReparse]
 "&Enlace simbólico"

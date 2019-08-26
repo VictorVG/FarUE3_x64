@@ -1,4 +1,4 @@
---http://forum.farmanager.com/viewtopic.php?f=60&t=8008
+﻿--http://forum.farmanager.com/viewtopic.php?f=60&t=8008
 --requires FAR 3 build >3784
 
 local function le_error()

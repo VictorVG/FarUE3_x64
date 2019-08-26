@@ -1,4 +1,4 @@
--- Recursive deletion of empty directories under the
+﻿-- Recursive deletion of empty directories under the
 -- cursor. The console utility DelEmptyFolder.exe is
 -- used. The name of the directory under the cursor
 -- is passed as the only parameter it takes. If run

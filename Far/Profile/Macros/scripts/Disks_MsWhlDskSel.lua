@@ -1,4 +1,4 @@
---[[
+﻿--[[
   This is hot-filx for Disks menu for restore panel item works
   using Mouse Wheel Click or Msouse Left Click on selected item.
   This Far.exe bug is found build's after 2798+, 4063+ ...

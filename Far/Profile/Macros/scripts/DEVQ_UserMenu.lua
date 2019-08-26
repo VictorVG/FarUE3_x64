@@ -1,4 +1,4 @@
--- Dialog/Editor/Viewer/Quick View show user menu v1.3 ©VictorVG
+﻿-- Dialog/Editor/Viewer/Quick View show user menu v1.3 ©VictorVG
 --
 -- Идеи и благодарности:
 --

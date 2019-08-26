@@ -1,4 +1,4 @@
--- http://forum.farmanager.com/viewtopic.php?f=15&p=144542#p144542
+﻿-- http://forum.farmanager.com/viewtopic.php?f=15&p=144542#p144542
 -- v1.1 Refactoring VictorVG
 -- v1.2 Refactoring and code clean, VictorVG, Fri Jun 23 12:51:30 +0300 2017
 -- v1.3 More refactoring, VictorVG, Sat Jul 08 03:29:00 +0300 2017

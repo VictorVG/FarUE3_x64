@@ -1,4 +1,4 @@
--- Always sort folder use alphabet order. (c) Alexey Samlyukov 21.082013 03:04
+﻿-- Always sort folder use alphabet order. (c) Alexey Samlyukov 21.082013 03:04
 -- Required Far 3.0 b3620 + LuaMacro b230 or newer.
 local ffi = require "ffi"
 local C = ffi.C

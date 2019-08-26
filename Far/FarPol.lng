@@ -2940,7 +2940,7 @@
 "Cel DFS"
 //[MSetAttrUnknownReparsePoint]
 "(dane niedostępne)"
-//[MSetAttrRO]
+//[MSetAttrReadOnly]
 "Tylko do &odczytu"
 //[MSetAttrArchive]
 "&Archiwalny"
@@ -2956,7 +2956,7 @@
 "Nie z&indeksowany"
 //[MSetAttrSparse]
 "Sparse"
-//[MSetAttrTemp]
+//[MSetAttrTemporary]
 "T&ymczasowy"
 //[MSetAttrOffline]
 "Offline"
@@ -2985,6 +2985,8 @@
 // need translation:
 //[MSetAttrStrictlySequential]
 "Strictly sequential"
+//[MSetAttrAdvanced]
+"&Zaawansowane"
 //[MSetAttrSubfolders]
 "Przetwarzaj &podfoldery"
 //[MSetAttrOwner]
@@ -3012,8 +3014,9 @@
 "DD{0}MM{0}RRRRR"
 //[MSetAttrDateTitle3]
 "RRRRR{0}MM{0}DD"
+// need translation:
 //[MSetAttrTimeTitle]
-"gg{0}mm{0}ss{1}ms"
+"gg{0}mm{0}ss{1}ms +tick"
 //[MSetAttrSystemDialog]
 "Właściwości systemu"
 
@@ -4815,25 +4818,25 @@
 "&Wyczyść"
 //[MFileFilterAttr]
 "&Atrybuty"
-//[MFileFilterAttrR]
+//[MFileFilterAttrReadOnly]
 "&Do odczytu"
-//[MFileFilterAttrA]
+//[MFileFilterAttrArcive]
 "&Archiwalny"
-//[MFileFilterAttrH]
+//[MFileFilterAttrHidden]
 "&Ukryty"
-//[MFileFilterAttrS]
+//[MFileFilterAttrSystem]
 "&Systemowy"
-//[MFileFilterAttrC]
+//[MFileFilterAttrCompressed]
 "S&kompresowany"
-//[MFileFilterAttrE]
+//[MFileFilterAttrEncrypted]
 "&Zaszyfrowany"
-//[MFileFilterAttrD]
+//[MFileFilterAttrDirectory]
 "&Folder"
-//[MFileFilterAttrNI]
+//[MFileFilterAttrNotIndexed]
 "Nie z&indeksowany"
 //[MFileFilterAttrSparse]
 "S&parse"
-//[MFileFilterAttrT]
+//[MFileFilterAttrTemporary]
 "&Tymczasowy"
 // need translation:
 //[MFileFilterAttrReparse]

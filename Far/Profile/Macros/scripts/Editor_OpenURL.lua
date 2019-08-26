@@ -1,4 +1,4 @@
--- Open URL (http://url.spec.whatwg.org) or UNC under cursor.
+﻿-- Open URL (http://url.spec.whatwg.org) or UNC under cursor.
 -- In rare case if last URL symbol is lost, add "#": https://www.google.com/search?q=hello!#
 
 -- Confirm launching the URL under cursor. Change it to false if you want no confirmations.

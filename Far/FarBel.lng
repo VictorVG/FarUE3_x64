@@ -2933,7 +2933,7 @@
 "DFS мэты"
 //[MSetAttrUnknownReparsePoint]
 "(няма дадзеных)"
-//[MSetAttrRO]
+//[MSetAttrReadOnly]
 "&Толькі для чытання"
 //[MSetAttrArchive]
 "З&апакаваны"
@@ -2949,7 +2949,7 @@
 "Неін&дэксаваны"
 //[MSetAttrSparse]
 "Разрэджаны"
-//[MSetAttrTemp]
+//[MSetAttrTemporary]
 "Часовы"
 //[MSetAttrOffline]
 "Аўтаномны"
@@ -2976,6 +2976,8 @@
 // need translation:
 //[MSetAttrStrictlySequential]
 "Strictly sequential"
+//[MSetAttrAdvanced]
+"Да&даткова"
 //[MSetAttrSubfolders]
 "Апрацоў&ваць укладзеныя каталогі"
 //[MSetAttrOwner]
@@ -3004,7 +3006,7 @@
 //[MSetAttrDateTitle3]
 "ГГГГГ{0}ММ{0}ДД"
 //[MSetAttrTimeTitle]
-"чч{0}мм{0}сс{1}мс"
+"чч{0}мм{0}сс{1}мс +такт"
 //[MSetAttrSystemDialog]
 "Сістэмныя ула&сцівасці"
 
@@ -4805,25 +4807,25 @@
 "Зкі&д"
 //[MFileFilterAttr]
 "Атр&ыбуты"
-//[MFileFilterAttrR]
+//[MFileFilterAttrReadOnly]
 "&Толькі для чытання"
-//[MFileFilterAttrA]
+//[MFileFilterAttrArcive]
 "З&апакаваны"
-//[MFileFilterAttrH]
+//[MFileFilterAttrHidden]
 "Зхаван&ы"
-//[MFileFilterAttrS]
+//[MFileFilterAttrSystem]
 "С&істэмны"
-//[MFileFilterAttrC]
+//[MFileFilterAttrCompressed]
 "З&ціснуты"
-//[MFileFilterAttrE]
+//[MFileFilterAttrEncrypted]
 "Та&йнапісны"
-//[MFileFilterAttrD]
+//[MFileFilterAttrDirectory]
 "&Каталог"
-//[MFileFilterAttrNI]
+//[MFileFilterAttrNotIndexed]
 "Неін&дэксаваны"
 //[MFileFilterAttrSparse]
 "Разрэджаны"
-//[MFileFilterAttrT]
+//[MFileFilterAttrTemporary]
 "&Часовы"
 //[MFileFilterAttrReparse]
 "Кропка паўторнага аналізу"

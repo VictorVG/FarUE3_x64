@@ -1,4 +1,4 @@
-
+﻿
 
 local dbkey = "named folders lua edition";
 local dbname = "entries";

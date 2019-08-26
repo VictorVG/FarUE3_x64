@@ -1,4 +1,4 @@
--- See http:// forum.farmanager.com/viewtopic.php?p=136132#p136132
+﻿-- See http:// forum.farmanager.com/viewtopic.php?p=136132#p136132
 -- We complete password copy function to the clipboard directly
 -- from under the asterisks (based on John Doe code and idea). /VictorVG/
 

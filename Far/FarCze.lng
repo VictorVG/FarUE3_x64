@@ -3004,7 +3004,7 @@
 "DFS Targets"
 //[MSetAttrUnknownReparsePoint]
 "(data nejsou k dispozici)"
-//[MSetAttrRO]
+//[MSetAttrReadOnly]
 "&Pouze pro čtení"
 //[MSetAttrArchive]
 "&Archivovat"
@@ -3020,7 +3020,7 @@
 "Neinde&xovaný"
 //[MSetAttrSparse]
 "Rozptýlený"
-//[MSetAttrTemp]
+//[MSetAttrTemporary]
 "Dočasný"
 //[MSetAttrOffline]
 "Offline"
@@ -3049,6 +3049,8 @@
 // need translation:
 //[MSetAttrStrictlySequential]
 "Strictly sequential"
+//[MSetAttrAdvanced]
+"Pokr&očilé"
 //[MSetAttrSubfolders]
 "Zpracovat i po&dadresáře"
 //[MSetAttrOwner]
@@ -3076,8 +3078,9 @@
 "DD{0}MM{0}RRRRR"
 //[MSetAttrDateTitle3]
 "RRRRR{0}MM{0}DD"
+// need translation:
 //[MSetAttrTimeTitle]
-"hh{0}mm{0}ss{1}ms"
+"hh{0}mm{0}ss{1}ms +tick"
 //[MSetAttrSystemDialog]
 "Vlastnosti systému"
 
@@ -4892,25 +4895,25 @@
 "Práz&dný"
 //[MFileFilterAttr]
 "Atri&buty"
-//[MFileFilterAttrR]
+//[MFileFilterAttrReadOnly]
 "Jen pro čt&ení"
-//[MFileFilterAttrA]
+//[MFileFilterAttrArcive]
 "Arc&hivovat"
-//[MFileFilterAttrH]
+//[MFileFilterAttrHidden]
 "Skry&tý"
-//[MFileFilterAttrS]
+//[MFileFilterAttrSystem]
 "Systémo&vý"
-//[MFileFilterAttrC]
+//[MFileFilterAttrCompressed]
 "Kompri&movaný"
-//[MFileFilterAttrE]
+//[MFileFilterAttrEncrypted]
 "Ši&frovaný"
-//[MFileFilterAttrD]
+//[MFileFilterAttrDirectory]
 "Adr&esář"
-//[MFileFilterAttrNI]
+//[MFileFilterAttrNotIndexed]
 "Neinde&xovaný"
 //[MFileFilterAttrSparse]
 "Říd&ký"
-//[MFileFilterAttrT]
+//[MFileFilterAttrTemporary]
 "Doča&sný"
 //[MFileFilterAttrReparse]
 "Reparse point"

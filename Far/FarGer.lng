@@ -2989,7 +2989,7 @@
 "DFS Ziele"
 //[MSetAttrUnknownReparsePoint]
 "(nicht verfügbar)"
-//[MSetAttrRO]
+//[MSetAttrReadOnly]
 "Sch&reibschutz"
 //[MSetAttrArchive]
 "&Archiv"
@@ -3006,7 +3006,7 @@
 // need translation:
 //[MSetAttrSparse]
 "Reserve"
-//[MSetAttrTemp]
+//[MSetAttrTemporary]
 "Temporär"
 //[MSetAttrOffline]
 "Offline"
@@ -3033,6 +3033,8 @@
 // need translation:
 //[MSetAttrStrictlySequential]
 "Strictly sequential"
+//[MSetAttrAdvanced]
+"Er&weitert"
 //[MSetAttrSubfolders]
 "Unterordner miteinbe&ziehen"
 //[MSetAttrOwner]
@@ -3065,7 +3067,7 @@
 "JJJJJ{0}MM{0}TT"
 // need translation:
 //[MSetAttrTimeTitle]
-"hh{0}mm{0}ss{1}ms"
+"hh{0}mm{0}ss{1}ms +tick"
 //[MSetAttrSystemDialog]
 "Systemeigenschaften"
 
@@ -4896,25 +4898,25 @@
 "&Leer"
 //[MFileFilterAttr]
 "Attri&bute"
-//[MFileFilterAttrR]
+//[MFileFilterAttrReadOnly]
 "Sch&reibschutz"
-//[MFileFilterAttrA]
+//[MFileFilterAttrArcive]
 "&Archiv"
-//[MFileFilterAttrH]
+//[MFileFilterAttrHidden]
 "&Versteckt"
-//[MFileFilterAttrS]
+//[MFileFilterAttrSystem]
 "&System"
-//[MFileFilterAttrC]
+//[MFileFilterAttrCompressed]
 "&Komprimiert"
-//[MFileFilterAttrE]
+//[MFileFilterAttrEncrypted]
 "V&erschlüsselt"
-//[MFileFilterAttrD]
+//[MFileFilterAttrDirectory]
 "Ver&zeichnis"
-//[MFileFilterAttrNI]
+//[MFileFilterAttrNotIndexed]
 "Nicht in&diziert"
 //[MFileFilterAttrSparse]
 "Reserve"
-//[MFileFilterAttrT]
+//[MFileFilterAttrTemporary]
 "Temporär"
 //[MFileFilterAttrReparse]
 "Analysepunkt"

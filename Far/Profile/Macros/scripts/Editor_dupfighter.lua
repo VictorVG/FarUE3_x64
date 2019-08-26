@@ -93,11 +93,11 @@ local function GetDups(info, keepempty, func, toboolean)
       uniqs[text] = nl
     end
   end
-  
+
   local nUniq,nDup = 0,0
   for _ in pairs(uniqs) do nUniq = nUniq+1 end
   for _ in pairs(dups) do nDup = nDup+1 end
-  
+
   table.sort(duplines, function(a,b) return math.abs(a) < math.abs(b) end)
   return duplines, nUniq, nDup, nSkipped
 end
@@ -127,7 +127,7 @@ local function HandleDups(info, op, removeFirst, keepempty, showstats, func, tob
   if showstats then
     local len1 = math.max(M.STAT_DUP:len(), M.STAT_UNIQ:len(), M.STAT_SKIP:len(), M.STAT_DEL:len(), M.STAT_CLEAR:len())
     local len2 = tostring(math.max(nDup, nUniq, nSkipped, nDel, nClear)):len()
-    local fmt = (("%%-%ds    %%%dd\n"):format(len1,len2)):rep(5):sub(1,-2)    
+    local fmt = (("%%-%ds    %%%dd\n"):format(len1,len2)):rep(5):sub(1,-2)
     local msg = fmt:format(M.STAT_DUP,nDup,M.STAT_UNIQ,nUniq,M.STAT_SKIP,nSkipped,M.STAT_DEL,nDel,M.STAT_CLEAR,nClear)
     far.Message(msg, M.STAT_TITLE)
   end

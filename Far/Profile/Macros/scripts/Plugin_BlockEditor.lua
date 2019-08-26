@@ -1,4 +1,4 @@
-
+﻿
 -- This is sample macro-file for MacroLib plugin for Far Manager 3.x
 -- You can download plugin here:
 -- http://code.google.com/p/far-plugins/wiki/MacroLib

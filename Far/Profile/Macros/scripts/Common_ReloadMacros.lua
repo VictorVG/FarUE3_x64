@@ -1,4 +1,4 @@
--- shmuz,  22:41 19-02-2015
+﻿-- shmuz,  22:41 19-02-2015
 -- http://forum.ru-board.com/topic.cgi?forum=5&topic=31718&start=6280#13
 -- изменения: для совместимости с установленными макросами FarUE3 изменён
 -- вызов скрипта с "CtrlShiftR" на "AltShiftR"

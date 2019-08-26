@@ -1,4 +1,4 @@
--- 2useven10, Tue 08 Nov, 2016 16:20
+﻿-- 2useven10, Tue 08 Nov, 2016 16:20
 -- http://forum.farmanager.com/viewtopic.php?p=141490#p141490
 
 local ffi = require("ffi")

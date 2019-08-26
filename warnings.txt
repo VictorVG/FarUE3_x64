@@ -6,9 +6,9 @@ Warning codes can be displayed in CLI output using "--codes" CLI option or
 "codes" config option. Errors also have codes starting with zero; unlike
 warnings, they can not be ignored.
 
-==== =================================================================
+==== =========================================================================
 Code Description
-==== =================================================================
+==== =========================================================================
 011  A syntax error.
 021  An invalid inline option.
 022  An unpaired inline push directive.
@@ -53,13 +53,16 @@ Code Description
 541  An empty "do" "end" block.
 542  An empty "if" branch.
 551  An empty statement.
+561  Cyclomatic complexity of a function is too high.
+571  A numeric for loop goes from #(expr) down to 1 or less without negative
+     step.
 611  A line consists of nothing but whitespace.
 612  A line contains trailing whitespace.
 613  Trailing whitespace in a string.
 614  Trailing whitespace in a comment.
 621  Inconsistent indentation ("SPACE" followed by "TAB").
 631  Line is too long.
-==== =================================================================
+==== =========================================================================
 
 Global variables (1xx)
 ----------------------
@@ -76,7 +79,7 @@ Read-only globals
 By default, most standard globals and fields are marked as read-only, so that
 setting them produces a warning. Custom read-only globals and fields can be
 added using "--read-globals" CLI option or "read_globals" config option, or
-using a custom set of globals. See "Custom sets of globals".
+using a custom set of globals. See "custom_stds"
 
 Globals and fields that are not read-only by default:
 
@@ -103,7 +106,7 @@ Modules
 
 Files can be marked as modules using "-m"/"--module" CLI option or "module"
 config option to simulate semantics of the deprecated "module"
-<http://www.lua.org/manual/5.1/manual.html#pdf-module> function. Globals
+ http://www.lua.org/manual/5.1/manual.html#pdf-module function. Globals
 implicitly defined inside a module are considired part of its interface, are
 not visible outside and are not reported as unused. Assignments to other
 globals are not allowed, even to defined ones.
@@ -164,8 +167,8 @@ Luacheck detects declarations of local variables shadowing previous
 declarations, unless the variable is named "_". If the previous declaration is
 in the same scope as the new one, it is called redefining.
 
-Note that it is not necessary to define a new local variable when overwriting
-an argument:
+Note that it is not necessary to define a new local variable when
+overwriting an argument:
 
    local function f(x)
       local x = x or "default" -- bad
@@ -214,6 +217,31 @@ In Lua 5.2+ semicolons are considered statements and can appear even when not
 following normal statements. Such semicolons produce Luacheck warnings as they
 are completely useless.
 
+Cyclomatic complexity
+
+If a limit is set using "--max-cyclomatic-complexity" CLI option or
+corresponding config or inline options, Luacheck warns about functions with
+too high cyclomatic complexity.
+
+Reversed numeric for loops
+
+Iterating a table in reverse using a numeric for loop going from "#t" to "1"
+requires a negative loop step. Luacheck warns about loops going from "#(some
+expression)" to "1" or a smaller constant when the loop step is not negative:
+
+   -- Warning for this loop:
+   -- numeric for loop goes from #(expr) down to 1 but loop step is not
+   -- negative
+
+   for i = #t, 1 do
+      print(t[i])
+   end
+
+   -- This loop is okay.
+   for i = #t, 1, -1 do
+      print(t[i])
+   end
+
 Formatting issues (6xx)
 -----------------------
 
@@ -251,9 +279,9 @@ are similar config and inline options.
 Additionally, separate limits can be set for three different type of lines:
 
 * "String" lines have their line ending inside a string, typically a long
-  string using "[[...]]" syntax.
+   string using "[[...]]" syntax.
 * "Comment" lines have their line ending inside a long comment ("--[[...]]"),
-  or end with a short comment using normal "--..." syntax.
+   or end with a short comment using normal "--..." syntax.
 * "Code" lines are all other lines.
 
 These types of lines are limited using CLI options named

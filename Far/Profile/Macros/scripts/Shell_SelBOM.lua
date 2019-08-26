@@ -1,4 +1,4 @@
--- http://forum.ru-board.com/topic.cgi?forum=5&topic=49572&start=2280#12
+﻿-- http://forum.ru-board.com/topic.cgi?forum=5&topic=49572&start=2280#12
 -- v1.2
 local F = far.Flags
 local ffi = require'ffi'

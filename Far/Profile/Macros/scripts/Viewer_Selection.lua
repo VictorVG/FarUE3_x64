@@ -1,4 +1,4 @@
--- John Doe » Tue 03 Feb, 2015 11:44
+﻿-- John Doe » Tue 03 Feb, 2015 11:44
 -- http://forum.farmanager.com/viewtopic.php?p=127776#p127776
 
 Macro { description="Selection in viewer";

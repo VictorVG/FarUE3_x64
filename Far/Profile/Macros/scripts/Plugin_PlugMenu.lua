@@ -1,4 +1,4 @@
--- По F11 вызываем PlugMenu, по ShiftF11 зовём стандартное меню плагинов Far.
+﻿-- По F11 вызываем PlugMenu, по ShiftF11 зовём стандартное меню плагинов Far.
 -- VictorVG @ VikSoft.Ru, v1.1, Thu Sep 25 00:00:16 +0300 2014
 
 local PMID="AB9578B3-3107-4E28-BB00-3C13D47382AC"

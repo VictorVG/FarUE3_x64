@@ -1,4 +1,4 @@
--- http://forum.farmanager.com/viewtopic.php?p=124193#p124193
+﻿-- http://forum.farmanager.com/viewtopic.php?p=124193#p124193
 -- mod of IgorZ's macro
 
 local GUImenu = true  -- показывать графическое / или текстовое меню

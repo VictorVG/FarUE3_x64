@@ -1,4 +1,4 @@
---
+﻿--
 -- Displays the commands (from the command history) that have been launched
 -- from the current directory.
 -- "Enter" executes the command again

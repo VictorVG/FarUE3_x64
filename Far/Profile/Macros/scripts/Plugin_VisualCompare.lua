@@ -1,9 +1,9 @@
--- Visual Compare files or folders for panels: Files, Branch, Temporary, Arclite, Netbox, Observer, TorrentView.
+﻿-- Visual Compare files or folders for panels: Files, Branch, Temporary, Arclite, Netbox, Observer, TorrentView.
 -- v.1.8
 -- http://forum.ru-board.com/topic.cgi?forum=5&topic=49572&start=2080#6 [?]
- 
+
 local ffi = require("ffi")
- 
+
 ffi.cdef([[
 typedef struct {
   void*          hwnd;
@@ -17,18 +17,18 @@ typedef struct {
 } SHFILEOPSTRUCTW;
 int SHFileOperationW(SHFILEOPSTRUCTW *);
 ]])
- 
+
 local FO_DELETE          = 0x0003
 local FOF_SILENT         = 0x0004
 local FOF_NOCONFIRMATION = 0x0010
- 
+
 local function utf16(str)
   local strw = win.Utf8ToUtf16(str)
   local result = ffi.new("wchar_t[?]", #strw/2+1)
   ffi.copy(result, strw)
   return result
 end
- 
+
 local function remove(fname)
   local fileopw = ffi.new("SHFILEOPSTRUCTW")
   fileopw.wFunc = FO_DELETE
@@ -37,7 +37,7 @@ local function remove(fname)
   fileopw.fFlags = FOF_SILENT+FOF_NOCONFIRMATION
   return 0 == ffi.load("shell32").SHFileOperationW(fileopw)
 end
- 
+
 local VisComp = "AF4DAB38-C00A-4653-900E-7A8230308010"
 local CopyDl1 = "42E4AEB1-A230-44F4-B33C-F195BB654931"
 local CopyDl2 = "FCEF11C4-5490-451D-8B4A-62FA03F52759"
@@ -45,7 +45,7 @@ local CopyDl3 = "2430BA2F-D52E-4129-9561-5E8B1C3BACDB"
 local ExtrDlg = "97877FD0-78E6-4169-B4FB-D76746249F4D"
 local TorrDlg = "00000000-0000-0000-546F-7272656E7400"
 local MArcDlg = "C5508DDB-5175-4736-9A10-C8F6EED7B32F"
- 
+
 local function f(p,f) if f:match("^[A-Z]:") then p=f elseif p=="" then p="\\" elseif f~=".." then if p:sub(-1,-1)=="\\" then p=p..f else p=p.."\\"..f end end return p end
 local function e(p,f)
   local h=Far.DisableHistory(-1)
@@ -58,17 +58,17 @@ local function e(p,f)
   if Area.Dialog and Dlg.ItemType==4 and Dlg.Id==ExtrDlg then print(p) Keys("AltO Enter") end
   Far.DisableHistory(h)
 end
- 
+
 local VC="Visual Compare"
 local msg=[[Selection wrong! - I don't know what to compare.
- 
-File compare modes by priority order:                                
-1. At Active panel selected 2 files                                  
+
+File compare modes by priority order:
+1. At Active panel selected 2 files
 2. At Active panel selected 1 file and Passive panel selected 1 file
-3. At Active panel selected 1 file and 2nd under cursor              
-4. At Active panel selected 0 files, will be used file under cursor  
+3. At Active panel selected 1 file and 2nd under cursor
+4. At Active panel selected 0 files, will be used file under cursor
    At Passive panel will be used selected file or file under cursor ]]
- 
+
 Macro {
 description="VC: Визуальное сравнение файлов"; area="Shell"; key="CtrlAltC";
 condition = function()

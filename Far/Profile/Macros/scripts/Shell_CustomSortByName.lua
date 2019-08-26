@@ -1,4 +1,4 @@
--- http://forum.ru-board.com/topic.cgi?forum=5&topic=49572&start=2240#16
+﻿-- http://forum.ru-board.com/topic.cgi?forum=5&topic=49572&start=2240#16
 -- v1.1
 
 if not (bit and jit) then return end

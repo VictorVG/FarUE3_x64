@@ -1,4 +1,4 @@
---[[
+﻿--[[
 
 Установка: StackTracePlus.lua положить в ./modules и в _macroinit.lua добавить строки:
 

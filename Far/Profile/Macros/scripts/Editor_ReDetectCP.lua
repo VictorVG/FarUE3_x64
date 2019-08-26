@@ -1,4 +1,4 @@
--- autor w17 redetct CP and reopen file
+﻿-- autor w17 redetct CP and reopen file
 
 Macro {
   area="Editor Shell"; key="ShiftF4"; description="Shift-F4 current";

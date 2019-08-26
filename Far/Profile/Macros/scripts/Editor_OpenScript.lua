@@ -1,4 +1,4 @@
-Event
+﻿Event
 {
   group="EditorEvent"; filemask="*.php,*.lua,*.moon";
   action=function(id,event,param)

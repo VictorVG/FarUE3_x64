@@ -1,4 +1,4 @@
---http://forum.farmanager.com/viewtopic.php?p=126474#p126474
+﻿--http://forum.farmanager.com/viewtopic.php?p=126474#p126474
 
 local function norm(name)
   name = mf.fsplit(name,0x4):match("%a.*")
@@ -35,4 +35,3 @@ Macro {
     panel.RedrawPanel(nil,1)
   end;
 }
-

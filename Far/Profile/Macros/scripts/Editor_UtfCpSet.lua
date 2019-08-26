@@ -1,4 +1,4 @@
--- shmuz, переключение UNICODE кодовой страницы редактора при обнаружении BOM
+﻿-- shmuz, переключение UNICODE кодовой страницы редактора при обнаружении BOM
 -- http://forum.ru-board.com/topic.cgi?forum=5&topic=48136&start=2440#3
 
 local F=far.Flags

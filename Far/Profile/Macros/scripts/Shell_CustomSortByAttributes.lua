@@ -1,5 +1,5 @@
 -- http://forum.ru-board.com/topic.cgi?forum=5&topic=49572&start=2240#16
--- v1.3
+-- v1.6
 
 if not (bit and jit) then return end
 
@@ -14,10 +14,11 @@ local Indicator = Indi1
 local Key = "CtrlShiftF3"
 --------------------------------------------------------------------------------
 
+local edtFlags = F.DIF_HISTORY+F.DIF_USELASTHISTORY
 local Items = {
---[[01]] {F.DI_DOUBLEBOX, 3,1, 64,16, 0, 0,0, 0, "Custom sort"},
+--[[01]] {F.DI_DOUBLEBOX, 3,1, 66,16, 0, 0,0, 0, "Custom sort"},
 --[[02]] {F.DI_TEXT,      5,2, 18,0, 0, 0,0, 0, "By attributes:"},
---[[03]] {F.DI_EDIT,      20,2, 36,0, 0, 0,0, 0, ""},
+--[[03]] {F.DI_EDIT,      20,2, 35,0, 0, "CustomSortByAttributes_Attributes",0, edtFlags, ""},
 --[[04]] {F.DI_BUTTON,    38,2, 50,0, 0, 0,0, 0, "[ From &file ]"},
 --[[05]] {F.DI_CHECKBOX,  5,3,  30,0, 0, 0,0, 0, "&Read only"},
 --[[06]] {F.DI_CHECKBOX,  5,4,  30,0, 0, 0,0, 0, "&Archive"},
@@ -35,8 +36,8 @@ local Items = {
 --[[18]] {F.DI_CHECKBOX,  38,6, 62,0, 0, 0,0, 0, "No scru&b data"},
 --[[19]] {F.DI_CHECKBOX,  38,7, 62,0, 0, 0,0, 0, "Pinne&d"},
 --[[20]] {F.DI_CHECKBOX,  38,8, 62,0, 0, 0,0, 0, "&Unpinned"},
---[[21]] {F.DI_CHECKBOX,  38,9, 62,0, 0, 0,0, 0, "Recall on open"},
---[[22]] {F.DI_CHECKBOX,  38,10,62,0, 0, 0,0, 0, "Recall on data access"},
+--[[21]] {F.DI_CHECKBOX,  38,9, 62,0, 0, 0,0, 0, "Recall on open &J"},
+--[[22]] {F.DI_CHECKBOX,  38,10,62,0, 0, 0,0, 0, "Recall on data access &K"},
 --[[23]] {F.DI_CHECKBOX,  38,11,62,0, 0, 0,0, 0, "Strictly se&quential"},
 --[[24]] {F.DI_CHECKBOX,  20,13,36,0, 0, 0,0, 0, "by selected &Z"},
 --[[25]] {F.DI_CHECKBOX,  5,15, 17,0, 0, 0,0, 0, "Report &W"},
@@ -45,7 +46,7 @@ local Items = {
 --[[28]] {F.DI_BUTTON,    0,15,  0,0, 0, 0,0, F.DIF_CENTERGROUP,"Ca&ncel"}
 }
 
-local AttributesSymbols="rahsceipyltvgbdu"
+local AttributesSymbols="rahsceipyltvgbdujkq"
 
 local AttributeValue = {
 --[[FILE_ATTRIBUTE_READONLY           ]] 0x00000001,
@@ -73,22 +74,30 @@ local AttributeValue = {
 --  FILE_ATTRIBUTE_DEVICE                0x00000040
 --  FILE_ATTRIBUTE_NORMAL                0x00000080
 
-local SAttributes,FAttributes,FAMasque,AttributesWeight,CompareMode,xReport,count,GFocus,ttime0,count0 = "",{},0x205FFF27,-1,false,false,0,2
+local SAttributes,FAttributes,FAMasque,AttributesWeight,CompareMode,xReport,count,GFocus,ttime0,count0 = "",{},0x205FFF27,0,true,false,0,2
 for i=1,#AttributeValue do FAttributes[i]=false end
+
+local function BySelected(l)
+  if l==AttributesWeight then l=(#AttributeValue+1)*#AttributeValue+1
+  else
+    local equal=bit.band(l,AttributesWeight)
+    local diff=bit.bxor(l,AttributesWeight)
+    local e,d = 0,0
+    for i=1,#AttributeValue do
+      if bit.band(equal,AttributeValue[i])>0 then e=e+1 end
+      if bit.band(diff,AttributeValue[i])>0 then d=d-1 end
+    end
+    l=(#AttributeValue+1)*e+d
+  end
+  return -l
+end
 
 local Compare = function(p1,p2)
   count = count+1
   local l1 = bit.band(tonumber(p1.FileAttributes),FAMasque)
   local l2 = bit.band(tonumber(p2.FileAttributes),FAMasque)
-  local q1,q2 = 0,0
-  if CompareMode then
-    if l1==AttributesWeight then q1=#AttributeValue+1 else for i=1,#AttributeValue do if bit.band(l1,AttributeValue[i])>0 then q1=q1+1 end end end
-    if l2==AttributesWeight then q2=#AttributeValue+1 else for i=1,#AttributeValue do if bit.band(l2,AttributeValue[i])>0 then q2=q2+1 end end end
-  else
-    q1=l1 --bit.band(l1,AttributesWeight)>0 and 1 or 0
-    q2=l2 --bit.band(l2,AttributesWeight)>0 and 1 or 0
-  end
-  return q1<q2 and -1 or (q1>q2 and 1 or 0)
+  if CompareMode then l1,l2 = BySelected(l1),BySelected(l2) end
+  return l1<l2 and -1 or (l1>l2 and 1 or 0)
 end
 
 local tFAttributes,tSAttributes,tCompareMode = {}
@@ -119,7 +128,9 @@ local function DlgProc(hDlg,Msg,Param1,Param2)
     else
       tSAttributes,text = tostring(text),""
       for i=1,#AttributesSymbols do
-        if tSAttributes:match(AttributesSymbols:sub(i,i)) then tFAttributes[i]=true text=text..AttributesSymbols:sub(i,i) else tFAttributes[i]=false end
+        local symbol=AttributesSymbols:sub(i,i)
+        local _,n = tSAttributes:gsub(symbol,symbol)
+        if n==1 then tFAttributes[i]=true text=text..symbol else tFAttributes[i]=false end
         hDlg:send(F.DM_SETCHECK,i+4,tFAttributes[i] and F.BSTATE_CHECKED or F.BSTATE_UNCHECKED)
       end
       tSAttributes = text
@@ -160,7 +171,7 @@ Macro {
   condition = function(key) return Area.Shell and key==Key or Area.Menu and Menu.Id==MenuGuid and Menu.Value:match(Description) and (key=="Enter" or key=="MsLClick") end;
   action = function()
     if Area.Menu then Keys("Esc") end
-    if far.Dialog(guid,-1,-1,68,18,nil,Items,nil,DlgProc)==#Items-1 then
+    if far.Dialog(guid,-1,-1,70,18,nil,Items,nil,DlgProc)==#Items-1 then
       SAttributes = tSAttributes
       local OldAttributesWeight = AttributesWeight
       AttributesWeight=0 for i=1,#AttributeValue do FAttributes[i]=tFAttributes[i] if FAttributes[i] then AttributesWeight=AttributesWeight+AttributeValue[i] end end

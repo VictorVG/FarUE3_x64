@@ -1,4 +1,4 @@
-Macro {
+﻿Macro {
   area="Shell"; key="Del NumDel"; flags="EmptyCommandLine"; description="Use Del to remove files"; action = function()
 Keys('F8')
   end;

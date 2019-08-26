@@ -1,4 +1,4 @@
--- Навигация по секциям списков
+﻿-- Навигация по секциям списков
 -- John Doe » Tue 10 Oct, 2017 07:01
 --http://forum.farmanager.com/viewtopic.php?f=15&t=9596
 --

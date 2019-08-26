@@ -1,4 +1,4 @@
--- started: 2015-11-23
+﻿-- started: 2015-11-23
 
 local F = far.Flags
 local VK = win.GetVirtualKeys()

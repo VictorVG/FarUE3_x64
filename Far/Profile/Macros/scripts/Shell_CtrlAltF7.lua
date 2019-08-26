@@ -1,4 +1,4 @@
-Macro {
+﻿Macro {
   area="Shell"; key="CtrlAltF7"; description="find files from file-list @W17";
   action = function()
     local find_list = ''

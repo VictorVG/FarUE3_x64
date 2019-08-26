@@ -1,4 +1,4 @@
---
+﻿--
 -- Console Control
 -- (c) Max Rusov
 -- http://code.google.com/p/far-plugins

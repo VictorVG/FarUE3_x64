@@ -1,4 +1,4 @@
--- http://forum.ru-board.com/topic.cgi?forum=5&topic=49572&start=2400#9
+﻿-- http://forum.ru-board.com/topic.cgi?forum=5&topic=49572&start=2400#9
 -- Кладём в Shell_c0BOM.lua ./Profile/Macros/scripts, перегружаем макросы или сам Far,
 -- F9 - File panel modes - добавляем в любой режим, либо создаём новый, взяв
 -- за основу какой-либо из уже имеющихся. Например для Wide:

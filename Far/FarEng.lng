@@ -2933,7 +2933,7 @@
 "DFS Targets"
 //[MSetAttrUnknownReparsePoint]
 "(data not available)"
-//[MSetAttrRO]
+//[MSetAttrReadOnly]
 "&Read only"
 //[MSetAttrArchive]
 "&Archive"
@@ -2949,7 +2949,7 @@
 "Not &indexed"
 //[MSetAttrSparse]
 "Sparse"
-//[MSetAttrTemp]
+//[MSetAttrTemporary]
 "Temporary"
 //[MSetAttrOffline]
 "Offline"
@@ -2971,6 +2971,8 @@
 "Recall on data access"
 //[MSetAttrStrictlySequential]
 "Strictly sequential"
+//[MSetAttrAdvanced]
+"Advance&d"
 //[MSetAttrSubfolders]
 "Process sub&folders"
 //[MSetAttrOwner]
@@ -2999,7 +3001,7 @@
 //[MSetAttrDateTitle3]
 "YYYYY{0}MM{0}DD"
 //[MSetAttrTimeTitle]
-"hh{0}mm{0}ss{1}ms"
+"hh{0}mm{0}ss{1}ms +tick"
 //[MSetAttrSystemDialog]
 "System &properties"
 
@@ -4798,25 +4800,25 @@
 "B&lank"
 //[MFileFilterAttr]
 "Attri&butes"
-//[MFileFilterAttrR]
+//[MFileFilterAttrReadOnly]
 "&Read only"
-//[MFileFilterAttrA]
+//[MFileFilterAttrArcive]
 "&Archive"
-//[MFileFilterAttrH]
+//[MFileFilterAttrHidden]
 "&Hidden"
-//[MFileFilterAttrS]
+//[MFileFilterAttrSystem]
 "&System"
-//[MFileFilterAttrC]
+//[MFileFilterAttrCompressed]
 "&Compressed"
-//[MFileFilterAttrE]
+//[MFileFilterAttrEncrypted]
 "&Encrypted"
-//[MFileFilterAttrD]
+//[MFileFilterAttrDirectory]
 "&Directory"
-//[MFileFilterAttrNI]
+//[MFileFilterAttrNotIndexed]
 "Not &indexed"
 //[MFileFilterAttrSparse]
 "S&parse"
-//[MFileFilterAttrT]
+//[MFileFilterAttrTemporary]
 "Temporar&y"
 //[MFileFilterAttrReparse]
 "Reparse point"

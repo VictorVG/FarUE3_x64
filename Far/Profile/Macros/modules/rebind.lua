@@ -1,4 +1,4 @@
-local Info = Info or package.loaded.regscript or function(...) return ... end --luacheck: ignore 113/Info
+﻿local Info = Info or package.loaded.regscript or function(...) return ... end --luacheck: ignore 113/Info
 local nfo = Info {
   name        = "module: rebind";
   description = "easy control of macro bindings etc";

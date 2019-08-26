@@ -1,4 +1,4 @@
--- Ver 3.1. VictorVG, обновлён Tue Dec 15 16:07:31 +0300 2015
+﻿-- Ver 3.1. VictorVG, обновлён Tue Dec 15 16:07:31 +0300 2015
 -- Ver 3.1.1, rename uid to id, VictorVG, Thu Aug 04 15:01:14 +0300 2016
 
 Macro{

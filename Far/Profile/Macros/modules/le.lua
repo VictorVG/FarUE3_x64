@@ -1,4 +1,4 @@
-﻿-- Lua Explorer „Advanced“,
+﻿-- Lua Explorer "Advanced",
 -- based on Lua Explorer by EGez
 -- modded by John Doe: http://forum.farmanager.com/viewtopic.php?f=60&t=7988
 -- release 2
@@ -85,10 +85,10 @@ end
 
 -- make menu item for far.Menu(...)
 local key_w = 30
-local item_fmt = ('%%-%s.%ss'):format(key_w,key_w)..'%s%-8s │%-25s'
+local item_fmt = ('%%-%s.%ss'):format(key_w,key_w)..'%s%-8s в”‚%-25s'
 local function makeItem(key, sval, vt)
 	local k = valfmt(key,'list')
-	local border = k:len()<=key_w and '│' or '…'
+	local border = k:len()<=key_w and 'в”‚' or 'вЂ¦'
 	--local a,b=pcall(format, k, border, vt, sval)
 
 	if true then
@@ -99,8 +99,8 @@ local function makeItem(key, sval, vt)
 		text    = item_fmt:format(k, border, vt, sval),
 		key     = key,
 		type    = vt,
-		checked = vt=='table' and '≡'
-		          or vt=='function' and '˜'
+		checked = vt=='table' and 'в‰Ў'
+		          or vt=='function' and 'Лњ'
 	}
 end
 

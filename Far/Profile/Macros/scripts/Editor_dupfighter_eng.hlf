@@ -23,7 +23,7 @@ after some conversion specified by the user).
    c) two lines begin with the same 20 character sequence.
 
  #The dialog#
- 
+
  ╔═══════════════════════ Duplicate Fighter ═══════════════════════╗
  ║                                                                 ║
  ║ (•) 1 Remove duplicates       [ ] Keep empty lines              ║
@@ -48,10 +48,10 @@ after some conversion specified by the user).
  #[x] Keep empty lines#
    If checked then empty lines are skipped (not considered duplicate). The lines consisting entirely
    of whitespace characters are also skipped.
- 
+
  #[x] Show statistics#
    If checked then some statistical data is shown after the work is done.
- 
+
  #[x] Use Expression#
    If unchecked then two lines are considered duplicate only when they are identical.
    If checked then the #Expression# edit box should contain a #Lua expression# that will be applied to each

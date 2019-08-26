@@ -1,4 +1,4 @@
---quick mod by JD
+﻿--quick mod by JD
 
 --[[ Go up in the file system by AltPgUp, version 2016.05.11.2
 See https://forum.farmanager.com/viewtopic.php?p=149195#p149195
@@ -33,14 +33,14 @@ TODO:
  1. Support jumping onto virtual plugin-FS items on the passive panel (the SameFolder plugin can).
  2. Support plugin panels using '/' as a separator, e.g. NetBox.
 ]]
- 
+
 local Options = {
   displayLastComponentOnly = true;
   displayDirsRootToCurrent = false;
 }
- 
+
 local GUID = win.Uuid('B301ACCB-36CB-4961-B353-05E8A5FC5CA6')
- 
+
 --{ Utilities
 local function mapped( tbl, func )  -- can be used as foreach if func mutates its arg
   local res = {}
@@ -49,17 +49,17 @@ local function mapped( tbl, func )  -- can be used as foreach if func mutates it
   end
   return res
 end
- 
+
 local function reverse( arr )
   for i = 1, #arr / 2 do
     arr[i], arr[#arr - i + 1] = arr[#arr - i + 1], arr[i]
   end
 end
- 
+
 local function concat( tbl, delim )
   return table.concat( mapped( tbl, tostring ), delim )
 end
- 
+
 -- Based on https://rosettacode.org/wiki/Non-decimal_radices/Convert#Lua
 local function num2base( n, base )
   local result = n == 0 and 0 or ''
@@ -74,7 +74,7 @@ local function num2base( n, base )
   return result
 end
 --}
- 
+
 local function appendPaths( items, path, plugin )
   while path ~= nil do
     local idx = #items
@@ -87,7 +87,7 @@ local function appendPaths( items, path, plugin )
     path = path:match('(.*)\\[^\\]+$')
   end
 end
- 
+
 local symbol = Options.displayDirsRootToCurrent and "└" or "┌"
 local function attachText( v )
   local path = v.path
@@ -102,7 +102,7 @@ local function attachText( v )
     v.text = '&' .. v.hotkey .. ' ' .. branch .. path
   end
 end
- 
+
 local function jumpOntoItem( item, panel )
   local dir, file = item.path:match('(.*)\\([^\\]+)$')
   dir = dir or item.path  -- for paths like 'D:'
@@ -127,7 +127,7 @@ local function jumpOntoItem( item, panel )
     Keys('F9 ' .. ( panel > 0 and 'Tab' or '' ) .. ' Down Up Enter')  -- opens the Drives menu
   end
 end
- 
+
 local function formAndExecMenu()
   local items = {}
   if APanel.Plugin then
@@ -154,7 +154,7 @@ local function formAndExecMenu()
     local _ = item and jumpOntoItem( item.text and item or items[idx], item.panel or 0 )
   end
 end
- 
+
 if not Macro then return formAndExecMenu() end --!!added by jd
 
 Macro {

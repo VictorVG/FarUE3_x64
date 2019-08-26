@@ -1,4 +1,4 @@
---[[ Maco Debug tools. Source - Far Encyclopedia, Macroapi Manual, Examples
+﻿--[[ Maco Debug tools. Source - Far Encyclopedia, Macroapi Manual, Examples
 
 Данный макрос сначала сохраняет содержимое редактора (если оно не было сохранено),
 затем исполняет редактируемый файл как Lua-скрипт.

@@ -1,4 +1,4 @@
--- This macro may pastes into your editor or dialog newly generated GUI
+﻿-- This macro may pastes into your editor or dialog newly generated GUI
 -- It adds two menu items to the F11 plugin menu
 --   Paste GUID: simple format
 --   Paste GUID: struct format

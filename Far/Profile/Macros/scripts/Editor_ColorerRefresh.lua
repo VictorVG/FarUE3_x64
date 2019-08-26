@@ -1,4 +1,4 @@
--- FarColorer: Refresh coloring
+﻿-- FarColorer: Refresh coloring
 -- v1.0 Init version
 -- VictorVG @ Vicsoft.Ru, 24.01.2019 04:29:36 +0300
 

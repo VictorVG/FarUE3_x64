@@ -1,4 +1,4 @@
--- author shmuz publish in to http://forum.ru-board.com/topic.cgi?forum=5&topic=31718&start=7660#14
+﻿-- author shmuz publish in to http://forum.ru-board.com/topic.cgi?forum=5&topic=31718&start=7660#14
 -- updated by Capushon in to http://forum.ru-board.com/topic.cgi?forum=5&topic=31718&start=7660#17
 -- v1.1, required Far3 b4423 or letter
 --

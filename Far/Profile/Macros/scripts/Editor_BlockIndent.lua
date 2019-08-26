@@ -1,4 +1,4 @@
---[[
+﻿--[[
     Block Indent for Far Manager
 	Version: 2.1
     Copyright (C) 2001 Alex Yaroslavsky

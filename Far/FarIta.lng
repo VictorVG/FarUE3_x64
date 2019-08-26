@@ -2934,7 +2934,7 @@
 "Destinazioni DFS"
 //[MSetAttrUnknownReparsePoint]
 "(dati sconosciuti)"
-//[MSetAttrRO]
+//[MSetAttrReadOnly]
 "&Sola-Lettura"
 //[MSetAttrArchive]
 "A&rchivio"
@@ -2950,7 +2950,7 @@
 "Non Id&dicizzato"
 //[MSetAttrSparse]
 "Sp&arso"
-//[MSetAttrTemp]
+//[MSetAttrTemporary]
 "&Temporaneo"
 //[MSetAttrOffline]
 "Non In &Linea"
@@ -2977,6 +2977,8 @@
 // need translation:
 //[MSetAttrStrictlySequential]
 "Strictly sequential"
+//[MSetAttrAdvanced]
+"A&vanzate"
 //[MSetAttrSubfolders]
 "Elabora Sott&o Cartelle"
 //[MSetAttrOwner]
@@ -3004,8 +3006,9 @@
 "DD{0}MM{0}YYYYY"
 //[MSetAttrDateTitle3]
 "YYYYY{0}MM{0}DD"
+// need translation:
 //[MSetAttrTimeTitle]
-"hh{0}mm{0}ss{1}ms"
+"hh{0}mm{0}ss{1}ms +tick"
 //[MSetAttrSystemDialog]
 "Proprietà di Sistema"
 
@@ -4806,25 +4809,25 @@
 "&Vuoto"
 //[MFileFilterAttr]
 "A&ttributi"
-//[MFileFilterAttrR]
+//[MFileFilterAttrReadOnly]
 "&Sola Lettura"
-//[MFileFilterAttrA]
+//[MFileFilterAttrArcive]
 "Arc&hivio"
-//[MFileFilterAttrH]
+//[MFileFilterAttrHidden]
 "&Nascosto"
-//[MFileFilterAttrS]
+//[MFileFilterAttrSystem]
 "S&istema"
-//[MFileFilterAttrC]
+//[MFileFilterAttrCompressed]
 "Co&mpresso"
-//[MFileFilterAttrE]
+//[MFileFilterAttrEncrypted]
 "C&riptato"
-//[MFileFilterAttrD]
+//[MFileFilterAttrDirectory]
 "Carte&lla"
-//[MFileFilterAttrNI]
+//[MFileFilterAttrNotIndexed]
 "Non &Indicizzato"
 //[MFileFilterAttrSparse]
 "&Sparso"
-//[MFileFilterAttrT]
+//[MFileFilterAttrTemporary]
 "&Temporaneo"
 //[MFileFilterAttrReparse]
 "P&unto Di Reparse"

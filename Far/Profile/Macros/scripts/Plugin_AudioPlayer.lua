@@ -1,4 +1,4 @@
--- HaRT, Sat 26 May, 2018 00:13
+﻿-- HaRT, Sat 26 May, 2018 00:13
 -- https://forum.farmanager.com/viewtopic.php?p=149864#p149864
 -- Fixed message box missing flags definition, small refactoring. /VictorVG/
 -- v1.01

@@ -1,4 +1,4 @@
-    local MEDIA_INFO_ID = "919C1FC6-A571-4642-99DF-BDACE840ED18"
+﻿    local MEDIA_INFO_ID = "919C1FC6-A571-4642-99DF-BDACE840ED18"
 
     local function image_media_info()
        if not APanel.Folder then

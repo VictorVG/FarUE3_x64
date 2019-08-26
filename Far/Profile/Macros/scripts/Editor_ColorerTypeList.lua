@@ -1,4 +1,4 @@
--- Colorer: call type list for selections needed.
+﻿-- Colorer: call type list for selections needed.
 -- VictorVG @ VikSoft.Ru Mon Oct 06 02:46:16 +0300 2014
 -- модифицирован под v1.2.1.8 Fri Jan 23 14:53:19 +0300 2015
 -- v1.2 Sun Mar 20 20:29:27 +0300 2016
