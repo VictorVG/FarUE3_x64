@@ -1,5 +1,5 @@
--- http://forum.ru-board.com/topic.cgi?forum=5&topic=49572&start=2240#16
--- v1.6
+﻿-- http://forum.ru-board.com/topic.cgi?forum=5&topic=49572&start=2240#16
+-- v1.8
 
 if not (bit and jit) then return end
 
@@ -16,34 +16,36 @@ local Key = "CtrlShiftF3"
 
 local edtFlags = F.DIF_HISTORY+F.DIF_USELASTHISTORY
 local Items = {
---[[01]] {F.DI_DOUBLEBOX, 3,1, 66,16, 0, 0,0, 0, "Custom sort"},
---[[02]] {F.DI_TEXT,      5,2, 18,0, 0, 0,0, 0, "By attributes:"},
---[[03]] {F.DI_EDIT,      20,2, 35,0, 0, "CustomSortByAttributes_Attributes",0, edtFlags, ""},
---[[04]] {F.DI_BUTTON,    38,2, 50,0, 0, 0,0, 0, "[ From &file ]"},
---[[05]] {F.DI_CHECKBOX,  5,3,  30,0, 0, 0,0, 0, "&Read only"},
---[[06]] {F.DI_CHECKBOX,  5,4,  30,0, 0, 0,0, 0, "&Archive"},
---[[07]] {F.DI_CHECKBOX,  5,5,  30,0, 0, 0,0, 0, "&Hidden"},
---[[08]] {F.DI_CHECKBOX,  5,6,  30,0, 0, 0,0, 0, "&System"},
---[[09]] {F.DI_CHECKBOX,  5,7,  30,0, 0, 0,0, 0, "&Compressed"},
---[[10]] {F.DI_CHECKBOX,  5,8,  30,0, 0, 0,0, 0, "&Encrypted"},
---[[11]] {F.DI_CHECKBOX,  5,9,  30,0, 0, 0,0, 0, "Not &indexed"},
---[[12]] {F.DI_CHECKBOX,  5,10, 30,0, 0, 0,0, 0, "S&parse"},
---[[13]] {F.DI_CHECKBOX,  5,11, 30,0, 0, 0,0, 0, "Temporar&y"},
---[[14]] {F.DI_CHECKBOX,  5,12, 30,0, 0, 0,0, 0, "Off&line"},
---[[15]] {F.DI_CHECKBOX,  38,3, 62,0, 0, 0,0, 0, "Reparse poin&t"},
---[[16]] {F.DI_CHECKBOX,  38,4, 62,0, 0, 0,0, 0, "&Virtual"},
---[[17]] {F.DI_CHECKBOX,  38,5, 62,0, 0, 0,0, 0, "Inte&grity stream"},
---[[18]] {F.DI_CHECKBOX,  38,6, 62,0, 0, 0,0, 0, "No scru&b data"},
---[[19]] {F.DI_CHECKBOX,  38,7, 62,0, 0, 0,0, 0, "Pinne&d"},
---[[20]] {F.DI_CHECKBOX,  38,8, 62,0, 0, 0,0, 0, "&Unpinned"},
---[[21]] {F.DI_CHECKBOX,  38,9, 62,0, 0, 0,0, 0, "Recall on open &J"},
---[[22]] {F.DI_CHECKBOX,  38,10,62,0, 0, 0,0, 0, "Recall on data access &K"},
---[[23]] {F.DI_CHECKBOX,  38,11,62,0, 0, 0,0, 0, "Strictly se&quential"},
---[[24]] {F.DI_CHECKBOX,  20,13,36,0, 0, 0,0, 0, "by selected &Z"},
---[[25]] {F.DI_CHECKBOX,  5,15, 17,0, 0, 0,0, 0, "Report &W"},
---[[26]] {F.DI_TEXT,     -1,14,  0,0, 0, 0,0, F.DIF_SEPARATOR,""},
---[[27]] {F.DI_BUTTON,    0,15,  0,0, 0, 0,0, F.DIF_DEFAULTBUTTON+F.DIF_CENTERGROUP,"&Ok"},
---[[28]] {F.DI_BUTTON,    0,15,  0,0, 0, 0,0, F.DIF_CENTERGROUP,"Ca&ncel"}
+--[[01]] {F.DI_DOUBLEBOX, 3,1, 66,18, 0, 0,0, 0, "Custom sort by Attributes"},
+--[[02]] {F.DI_TEXT,      5,2, 64,0, 0, 0,0, 0, "File:"},
+--[[03]] {F.DI_TEXT,      5,3, 18,0, 0, 0,0, 0, "Attributes:"},
+--[[04]] {F.DI_EDIT,      17,3, 35,0, 0, "CustomSortByAttributes_Attributes",0, edtFlags, ""},
+--[[05]] {F.DI_BUTTON,    38,3, 54,0, 0, 0,0, 0, "[ Get from &File ]"},
+--[[06]] {F.DI_TEXT,     -1,4,  0,0, 0, 0,0, F.DIF_SEPARATOR,""},
+--[[07]] {F.DI_CHECKBOX,  5,5,  30,0, 0, 0,0, 0, "&Read only"},
+--[[08]] {F.DI_CHECKBOX,  5,6,  30,0, 0, 0,0, 0, "&Archive"},
+--[[09]] {F.DI_CHECKBOX,  5,7,  30,0, 0, 0,0, 0, "&Hidden"},
+--[[10]] {F.DI_CHECKBOX,  5,8,  30,0, 0, 0,0, 0, "&System"},
+--[[11]] {F.DI_CHECKBOX,  5,9,  30,0, 0, 0,0, 0, "&Compressed"},
+--[[12]] {F.DI_CHECKBOX,  5,10,  30,0, 0, 0,0, 0, "&Encrypted"},
+--[[13]] {F.DI_CHECKBOX,  5,11,  30,0, 0, 0,0, 0, "Not &indexed"},
+--[[14]] {F.DI_CHECKBOX,  5,12, 30,0, 0, 0,0, 0, "S&parse"},
+--[[15]] {F.DI_CHECKBOX,  5,13, 30,0, 0, 0,0, 0, "Temporar&y"},
+--[[16]] {F.DI_CHECKBOX,  5,14, 30,0, 0, 0,0, 0, "Off&line"},
+--[[17]] {F.DI_CHECKBOX,  38,5, 62,0, 0, 0,0, 0, "Reparse poin&t"},
+--[[18]] {F.DI_CHECKBOX,  38,6, 62,0, 0, 0,0, 0, "&Virtual"},
+--[[19]] {F.DI_CHECKBOX,  38,7, 62,0, 0, 0,0, 0, "Inte&grity stream"},
+--[[20]] {F.DI_CHECKBOX,  38,8, 62,0, 0, 0,0, 0, "No scru&b data"},
+--[[21]] {F.DI_CHECKBOX,  38,9, 62,0, 0, 0,0, 0, "Pinne&d"},
+--[[22]] {F.DI_CHECKBOX,  38,10, 62,0, 0, 0,0, 0, "&Unpinned"},
+--[[23]] {F.DI_CHECKBOX,  38,11, 62,0, 0, 0,0, 0, "Recall on open &J"},
+--[[24]] {F.DI_CHECKBOX,  38,12,62,0, 0, 0,0, 0, "Recall on data access &K"},
+--[[25]] {F.DI_CHECKBOX,  38,13,62,0, 0, 0,0, 0, "Strictly se&quential"},
+--[[26]] {F.DI_CHECKBOX,  26,15,42,0, 0, 0,0, 0, "by selected &Z"},
+--[[27]] {F.DI_CHECKBOX,  5,17, 17,0, 0, 0,0, 0, "Report &W"},
+--[[28]] {F.DI_TEXT,     -1,16,  0,0, 0, 0,0, F.DIF_SEPARATOR,""},
+--[[29]] {F.DI_BUTTON,    0,17,  0,0, 0, 0,0, F.DIF_DEFAULTBUTTON+F.DIF_CENTERGROUP,"&Ok"},
+--[[30]] {F.DI_BUTTON,    0,17,  0,0, 0, 0,0, F.DIF_CENTERGROUP,"Ca&ncel"}
 }
 
 local AttributesSymbols="rahsceipyltvgbdujkq"
@@ -74,7 +76,7 @@ local AttributeValue = {
 --  FILE_ATTRIBUTE_DEVICE                0x00000040
 --  FILE_ATTRIBUTE_NORMAL                0x00000080
 
-local SAttributes,FAttributes,FAMasque,AttributesWeight,CompareMode,xReport,count,GFocus,ttime0,count0 = "",{},0x205FFF27,0,true,false,0,2
+local SAttributes,FAttributes,FAMasque,AttributesWeight,CompareMode,xReport,count,FName,GFocus,ttime0,count0 = "",{},0x205FFF27,0,true,false,0,"",5
 for i=1,#AttributeValue do FAttributes[i]=false end
 
 local function BySelected(l)
@@ -105,15 +107,16 @@ local tFAttributes,tSAttributes,tCompareMode = {}
 local function DlgProc(hDlg,Msg,Param1,Param2)
   if Msg==F.DN_INITDIALOG then
     tSAttributes,tCompareMode = SAttributes,CompareMode
+    hDlg:send(F.DM_SETTEXT,2,"File: "..(FName:len()<55 and FName or (FName:sub(1,27).."…"..FName:sub(-26,-1))))
     for i=1,#AttributeValue do tFAttributes[i]=FAttributes[i] end
-    hDlg:send(F.DM_SETTEXT,3,tostring(tSAttributes):gsub("^0",""))
-    hDlg:send(F.DM_SETCHECK,24,tCompareMode and F.BSTATE_CHECKED or F.BSTATE_UNCHECKED)
+    hDlg:send(F.DM_SETTEXT,4,tostring(tSAttributes):gsub("^0",""))
+    hDlg:send(F.DM_SETCHECK,26,tCompareMode and F.BSTATE_CHECKED or F.BSTATE_UNCHECKED)
     for i=1,#AttributeValue do
-      hDlg:send(F.DM_SETCHECK,i+4,tFAttributes[i] and F.BSTATE_CHECKED or F.BSTATE_UNCHECKED)
+      hDlg:send(F.DM_SETCHECK,i+6,tFAttributes[i] and F.BSTATE_CHECKED or F.BSTATE_UNCHECKED)
     end
     hDlg:send(F.DM_SETFOCUS,GFocus,0)
-  elseif Msg==F.DN_EDITCHANGE and Param1==3 then
-    local text = hDlg:send(F.DM_GETTEXT,3):lower()
+  elseif Msg==F.DN_EDITCHANGE and Param1==4 then
+    local text = hDlg:send(F.DM_GETTEXT,4):lower()
     if text:match("^%d") then text=text:gsub("%D","")
     elseif text:match("^["..AttributesSymbols.."]") then text=text:gsub("[^"..AttributesSymbols.."]","")
     else text=text:gsub("[^%d"..AttributesSymbols.."]","")
@@ -123,7 +126,7 @@ local function DlgProc(hDlg,Msg,Param1,Param2)
       tSAttributes = bit.band(tonumber(text) or 0,FAMasque)
       for i=1,#AttributeValue do
         tFAttributes[i] = bit.band(tSAttributes,AttributeValue[i])==AttributeValue[i] and true or false
-        hDlg:send(F.DM_SETCHECK,i+4,tFAttributes[i] and F.BSTATE_CHECKED or F.BSTATE_UNCHECKED)
+        hDlg:send(F.DM_SETCHECK,i+6,tFAttributes[i] and F.BSTATE_CHECKED or F.BSTATE_UNCHECKED)
       end
     else
       tSAttributes,text = tostring(text),""
@@ -131,30 +134,30 @@ local function DlgProc(hDlg,Msg,Param1,Param2)
         local symbol=AttributesSymbols:sub(i,i)
         local _,n = tSAttributes:gsub(symbol,symbol)
         if n==1 then tFAttributes[i]=true text=text..symbol else tFAttributes[i]=false end
-        hDlg:send(F.DM_SETCHECK,i+4,tFAttributes[i] and F.BSTATE_CHECKED or F.BSTATE_UNCHECKED)
+        hDlg:send(F.DM_SETCHECK,i+6,tFAttributes[i] and F.BSTATE_CHECKED or F.BSTATE_UNCHECKED)
       end
       tSAttributes = text
     end
-    hDlg:send(F.DM_SETTEXT,3,text)
-  elseif Msg==F.DN_BTNCLICK and Param1==4 then
-    tSAttributes = mf.fattr(APanel.Current) or tSAttributes
-    hDlg:send(F.DM_SETTEXT,3,tSAttributes)
+    hDlg:send(F.DM_SETTEXT,4,text)
+  elseif Msg==F.DN_BTNCLICK and Param1==5 then
+    tSAttributes = mf.fattr(FName) or tSAttributes
+    hDlg:send(F.DM_SETTEXT,4,tSAttributes)
     for i=1,#AttributeValue do
       tFAttributes[i] = bit.band(tSAttributes,AttributeValue[i])==AttributeValue[i] and true or false
-      hDlg:send(F.DM_SETCHECK,i+4,tFAttributes[i] and F.BSTATE_CHECKED or F.BSTATE_UNCHECKED)
+      hDlg:send(F.DM_SETCHECK,i+6,tFAttributes[i] and F.BSTATE_CHECKED or F.BSTATE_UNCHECKED)
     end
-  elseif Msg==F.DN_BTNCLICK and Param1==24 then
+  elseif Msg==F.DN_BTNCLICK and Param1==26 then
     tCompareMode = Param2~=0
-  elseif Msg==F.DN_BTNCLICK and Param1>4 and Param1<24 then
-    local i=Param1-4
+  elseif Msg==F.DN_BTNCLICK and Param1>6 and Param1<26 then
+    local i=Param1-6
     tFAttributes[i] = Param2~=0
     if tonumber(tSAttributes) then
       tSAttributes = tFAttributes[i] and bit.bor(tSAttributes,AttributeValue[i]) or bit.band(tSAttributes,bit.bnot(AttributeValue[i]))
     else
       tSAttributes = tFAttributes[i] and tSAttributes..AttributesSymbols:sub(i,i) or tSAttributes:gsub(AttributesSymbols:sub(i,i),"")
     end
-    hDlg:send(F.DM_SETTEXT,3,tSAttributes)
-  elseif Msg==F.DN_BTNCLICK and Param1==25 then   -- [x] Report
+    hDlg:send(F.DM_SETTEXT,4,tSAttributes)
+  elseif Msg==F.DN_BTNCLICK and Param1==27 then   -- [x] Report
     xReport = Param2~=0
   elseif Msg==F.DN_GOTFOCUS then
     if Param1>1 and Param1<#Items-2 then GFocus=Param1 end
@@ -170,8 +173,13 @@ Macro {
   description = Description; area = "Shell Menu"; key = Key.." Enter MsLClick";
   condition = function(key) return Area.Shell and key==Key or Area.Menu and Menu.Id==MenuGuid and Menu.Value:match(Description) and (key=="Enter" or key=="MsLClick") end;
   action = function()
+    local kbd
+    if _G.KbdLayout then kbd=_G.KbdLayout() end
+    if not kbd or type(kbd)~="number" then kbd=Far.KbdLayout() end
+    FName=APanel.Current
     if Area.Menu then Keys("Esc") end
-    if far.Dialog(guid,-1,-1,70,18,nil,Items,nil,DlgProc)==#Items-1 then
+    if kbd~=0x0409 then Far.KbdLayout(0x0409) end
+    if far.Dialog(guid,-1,-1,70,20,nil,Items,nil,DlgProc)==#Items-1 then
       SAttributes = tSAttributes
       local OldAttributesWeight = AttributesWeight
       AttributesWeight=0 for i=1,#AttributeValue do FAttributes[i]=tFAttributes[i] if FAttributes[i] then AttributesWeight=AttributesWeight+AttributeValue[i] end end
@@ -192,5 +200,6 @@ Macro {
         far.Message(report,"Report",nil,"l")
       end
     end
+    if kbd and type(kbd)=="number" and kbd~=0x0409 then Far.KbdLayout(kbd) end
   end;
 }

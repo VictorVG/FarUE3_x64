@@ -3003,7 +3003,6 @@
 "ДД{0}ММ{0}РРРРР"
 //[MSetAttrDateTitle3]
 "РРРРР{0}ММ{0}ДД"
-// need translation:
 //[MSetAttrTimeTitle]
 "гг{0}хх{0}сс{1}мс +такт"
 //[MSetAttrSystemDialog]
