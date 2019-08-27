@@ -3202,8 +3202,8 @@
 // need translation:
 //[MSetAttrStrictlySequential]
 "Strictly sequential"
-//[MSetAttrAdvanced]
-"Ha&ladó"
+//[MSetAttrMore]
+"Továbbiak"
 //[MSetAttrSubfolders]
 "Az almappákon is"
 //[MSetAttrOwner]
@@ -5089,6 +5089,8 @@
 "&Üres"
 //[MFileFilterAttr]
 "Attri&bútumok"
+//[MFileFilterAttrChoose]
+"&..."
 //[MFileFilterAttrReadOnly]
 "&Csak olvasható"
 //[MFileFilterAttrArcive]
@@ -5139,10 +5141,10 @@
 "Strictly sequential"
 //[MFileFilterReset]
 "Reset"
-//[MFileFilterCancel]
-"Mégsem"
 //[MFileFilterMakeTransparent]
 "Legyen átlátszó"
+//[MFileFilterCancel]
+"Mégsem"
 //[MBadFileSizeFormat]
 "A fájlméret mező rosszul van kitöltve"
 

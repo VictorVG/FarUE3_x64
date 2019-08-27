@@ -2974,8 +2974,8 @@
 // need translation:
 //[MSetAttrStrictlySequential]
 "Strictly sequential"
-//[MSetAttrAdvanced]
-"До&полнительно"
+//[MSetAttrMore]
+"Ещё"
 //[MSetAttrSubfolders]
 "Обрабатывать &вложенные папки"
 //[MSetAttrOwner]
@@ -4803,6 +4803,8 @@
 "С&брос"
 //[MFileFilterAttr]
 "Атрибут&ы"
+//[MFileFilterAttrChoose]
+"&..."
 //[MFileFilterAttrReadOnly]
 "&Только для чтения"
 //[MFileFilterAttrArcive]
@@ -4848,10 +4850,10 @@
 "Strictly sequential"
 //[MFileFilterReset]
 "Очистит&ь"
-//[MFileFilterCancel]
-"Отмена"
 //[MFileFilterMakeTransparent]
 "Выставить прозрачность"
+//[MFileFilterCancel]
+"Отмена"
 //[MBadFileSizeFormat]
 "Неправильно заполнено поле размера"
 

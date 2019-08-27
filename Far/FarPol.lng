@@ -2985,8 +2985,8 @@
 // need translation:
 //[MSetAttrStrictlySequential]
 "Strictly sequential"
-//[MSetAttrAdvanced]
-"&Zaawansowane"
+//[MSetAttrMore]
+"Więcej"
 //[MSetAttrSubfolders]
 "Przetwarzaj &podfoldery"
 //[MSetAttrOwner]
@@ -4818,6 +4818,8 @@
 "&Wyczyść"
 //[MFileFilterAttr]
 "&Atrybuty"
+//[MFileFilterAttrChoose]
+"&..."
 //[MFileFilterAttrReadOnly]
 "&Do odczytu"
 //[MFileFilterAttrArcive]
@@ -4868,10 +4870,10 @@
 "Strictly sequential"
 //[MFileFilterReset]
 "Wy&czyść"
-//[MFileFilterCancel]
-"&Anuluj"
 //[MFileFilterMakeTransparent]
 "Ustaw jako przezroczysty"
+//[MFileFilterCancel]
+"&Anuluj"
 //[MBadFileSizeFormat]
 "Rozmiar pliku jest niepoprawny"
 

@@ -2977,8 +2977,8 @@
 // need translation:
 //[MSetAttrStrictlySequential]
 "Strictly sequential"
-//[MSetAttrAdvanced]
-"A&vanzate"
+//[MSetAttrMore]
+"Altro"
 //[MSetAttrSubfolders]
 "Elabora Sott&o Cartelle"
 //[MSetAttrOwner]
@@ -4809,6 +4809,8 @@
 "&Vuoto"
 //[MFileFilterAttr]
 "A&ttributi"
+//[MFileFilterAttrChoose]
+"&..."
 //[MFileFilterAttrReadOnly]
 "&Sola Lettura"
 //[MFileFilterAttrArcive]
@@ -4856,10 +4858,10 @@
 "Strictly sequential"
 //[MFileFilterReset]
 "&Resetta"
-//[MFileFilterCancel]
-"&Annulla"
 //[MFileFilterMakeTransparent]
 "Traspar&ente"
+//[MFileFilterCancel]
+"&Annulla"
 //[MBadFileSizeFormat]
 "Dimensione File Non Corretta!"
 

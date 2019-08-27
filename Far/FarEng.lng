@@ -2924,7 +2924,7 @@
 //[MSetAttrHardLinks]
 "hard links"
 //[MSetAttrJunction]
-"Junction:"
+"&Junction:"
 //[MSetAttrSymlink]
 "Symlink:"
 //[MSetAttrVolMount]
@@ -2948,35 +2948,35 @@
 //[MSetAttrNotIndexed]
 "Not &indexed"
 //[MSetAttrSparse]
-"Sparse"
+"&Sparse"
 //[MSetAttrTemporary]
-"Temporary"
+"&Temporary"
 //[MSetAttrOffline]
-"Offline"
+"&Offline"
 //[MSetAttrReparsePoint]
-"Reparse point"
+"&Reparse point"
 //[MSetAttrVirtual]
-"Virtual"
+"&Virtual"
 //[MSetAttrIntegrityStream]
-"Integrity stream"
+"&Integrity stream"
 //[MSetAttrNoScrubData]
-"No scrub data"
+"&No scrub data"
 //[MSetAttrPinned]
-"Pinned"
+"&Pinned"
 //[MSetAttrUnpinned]
-"Unpinned"
+"&Unpinned"
 //[MSetAttrRecallOnOpen]
-"Recall on open"
+"R&ecall on open"
 //[MSetAttrRecallOnDataAccess]
-"Recall on data access"
+"Rec&all on data access"
 //[MSetAttrStrictlySequential]
-"Strictly sequential"
-//[MSetAttrAdvanced]
-"Advance&d"
+"Strictly se&quential"
+//[MSetAttrMore]
+"More"
 //[MSetAttrSubfolders]
 "Process sub&folders"
 //[MSetAttrOwner]
-"Owner:"
+"Owner&:"
 //[MSetAttrModification]
 "Last &write time:"
 //[MSetAttrCreation]
@@ -4777,9 +4777,9 @@
 //[MFileFilterSizeToSign]
 "<="
 //[MFileHardLinksCount]
-"Has more than one hardlink"
+"Has more than &one hardlink"
 //[MFileFilterDate]
-"Da&te/Time:"
+"Date&/Time:"
 //[MFileFilterWrited]
 "&write"
 //[MFileFilterCreated]
@@ -4800,6 +4800,8 @@
 "B&lank"
 //[MFileFilterAttr]
 "Attri&butes"
+//[MFileFilterAttrChoose]
+"&..."
 //[MFileFilterAttrReadOnly]
 "&Read only"
 //[MFileFilterAttrArcive]
@@ -4821,31 +4823,31 @@
 //[MFileFilterAttrTemporary]
 "Temporar&y"
 //[MFileFilterAttrReparse]
-"Reparse point"
+"Reparse poin&t"
 //[MFileFilterAttrOffline]
 "O&ffline"
 //[MFileFilterAttrVirtual]
 "&Virtual"
 //[MFileFilterAttrIntegrityStream]
-"Integrity stream"
+"Inte&grity stream"
 //[MFileFilterAttrNoScrubData]
-"No scrub data"
+"No scru&b data"
 //[MFileFilterAttrPinned]
-"Pinned"
+"Pi&nned"
 //[MFileFilterAttrUnpinned]
-"Unpinned"
+"&Unpinned"
 //[MFileFilterAttrRecallOnOpen]
-"Recall on open"
+"Recal&l on open"
 //[MFileFilterAttrRecallOnDataAccess]
-"Recall on data access"
+"Recall &on data access"
 //[MFileFilterAttrStrictlySequential]
-"Strictly sequential"
+"Strictly se&quential"
 //[MFileFilterReset]
-"Reset"
+"&Reset"
+//[MFileFilterMakeTransparent]
+"Make &transparent"
 //[MFileFilterCancel]
 "Cancel"
-//[MFileFilterMakeTransparent]
-"Make transparent"
 //[MBadFileSizeFormat]
 "File size field is incorrectly filled"
 

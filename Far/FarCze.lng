@@ -3049,8 +3049,8 @@
 // need translation:
 //[MSetAttrStrictlySequential]
 "Strictly sequential"
-//[MSetAttrAdvanced]
-"Pokr&očilé"
+//[MSetAttrMore]
+"Více"
 //[MSetAttrSubfolders]
 "Zpracovat i po&dadresáře"
 //[MSetAttrOwner]
@@ -4895,6 +4895,8 @@
 "Práz&dný"
 //[MFileFilterAttr]
 "Atri&buty"
+//[MFileFilterAttrChoose]
+"&..."
 //[MFileFilterAttrReadOnly]
 "Jen pro čt&ení"
 //[MFileFilterAttrArcive]
@@ -4944,10 +4946,10 @@
 "Strictly sequential"
 //[MFileFilterReset]
 "Reset"
-//[MFileFilterCancel]
-"Storno"
 //[MFileFilterMakeTransparent]
 "Zprůhlednit"
+//[MFileFilterCancel]
+"Storno"
 //[MBadFileSizeFormat]
 "Velikost souboru neobsahuje správnou hodnotu"
 

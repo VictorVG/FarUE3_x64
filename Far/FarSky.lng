@@ -2980,8 +2980,8 @@
 // need translation:
 //[MSetAttrStrictlySequential]
 "Strictly sequential"
-//[MSetAttrAdvanced]
-"Pokr&očilé"
+//[MSetAttrMore]
+"Viac"
 //[MSetAttrSubfolders]
 "Spracovať aj po&dpriečinky"
 //[MSetAttrOwner]
@@ -4812,6 +4812,8 @@
 "Práz&dny"
 //[MFileFilterAttr]
 "Atri&búty"
+//[MFileFilterAttrChoose]
+"&..."
 //[MFileFilterAttrReadOnly]
 "Len na čít&anie"
 //[MFileFilterAttrArcive]
@@ -4859,10 +4861,10 @@
 "Strictly sequential"
 //[MFileFilterReset]
 "Reset"
-//[MFileFilterCancel]
-"Storno"
 //[MFileFilterMakeTransparent]
 "Spriehľadniť"
+//[MFileFilterCancel]
+"Storno"
 //[MBadFileSizeFormat]
 "Veľkosť súboru neobsahuje správnu hodnotu"
 

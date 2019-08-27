@@ -2976,8 +2976,8 @@
 // need translation:
 //[MSetAttrStrictlySequential]
 "Strictly sequential"
-//[MSetAttrAdvanced]
-"Да&даткова"
+//[MSetAttrMore]
+"Больш"
 //[MSetAttrSubfolders]
 "Апрацоў&ваць укладзеныя каталогі"
 //[MSetAttrOwner]
@@ -4807,6 +4807,8 @@
 "Зкі&д"
 //[MFileFilterAttr]
 "Атр&ыбуты"
+//[MFileFilterAttrChoose]
+"&..."
 //[MFileFilterAttrReadOnly]
 "&Толькі для чытання"
 //[MFileFilterAttrArcive]
@@ -4854,10 +4856,10 @@
 "Strictly sequential"
 //[MFileFilterReset]
 "Зкінуц&ь"
-//[MFileFilterCancel]
-"Адмяніць"
 //[MFileFilterMakeTransparent]
 "Усталяваць празрыстасць"
+//[MFileFilterCancel]
+"Адмяніць"
 //[MBadFileSizeFormat]
 "Неправільна запоўнена радок памеру"
 

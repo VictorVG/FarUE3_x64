@@ -3033,8 +3033,8 @@
 // need translation:
 //[MSetAttrStrictlySequential]
 "Strictly sequential"
-//[MSetAttrAdvanced]
-"Er&weitert"
+//[MSetAttrMore]
+"Mehr"
 //[MSetAttrSubfolders]
 "Unterordner miteinbe&ziehen"
 //[MSetAttrOwner]
@@ -4898,6 +4898,8 @@
 "&Leer"
 //[MFileFilterAttr]
 "Attri&bute"
+//[MFileFilterAttrChoose]
+"&..."
 //[MFileFilterAttrReadOnly]
 "Sch&reibschutz"
 //[MFileFilterAttrArcive]
@@ -4945,10 +4947,10 @@
 "Strictly sequential"
 //[MFileFilterReset]
 "Rücksetzen"
-//[MFileFilterCancel]
-"Abbruch"
 //[MFileFilterMakeTransparent]
 "Transparent"
+//[MFileFilterCancel]
+"Abbruch"
 //[MBadFileSizeFormat]
 "Angabe der Dateigröße ist fehlerhaft"
 

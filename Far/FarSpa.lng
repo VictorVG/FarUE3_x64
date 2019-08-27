@@ -2980,8 +2980,8 @@
 // need translation:
 //[MSetAttrStrictlySequential]
 "Strictly sequential"
-//[MSetAttrAdvanced]
-"Avan&zado"
+//[MSetAttrMore]
+"Más"
 //[MSetAttrSubfolders]
 "Procesar sub&directorios"
 //[MSetAttrOwner]
@@ -4815,6 +4815,8 @@
 "En b&lanco"
 //[MFileFilterAttr]
 "Atri&butos"
+//[MFileFilterAttrChoose]
+"&..."
 //[MFileFilterAttrReadOnly]
 "Sólo &lectura"
 //[MFileFilterAttrArcive]
@@ -4860,10 +4862,10 @@
 "Strictly sequential"
 //[MFileFilterReset]
 "Reinicio"
-//[MFileFilterCancel]
-"Cancelar"
 //[MFileFilterMakeTransparent]
 "Hacer transparente"
+//[MFileFilterCancel]
+"Cancelar"
 //[MBadFileSizeFormat]
 "Campo de tamaño de archivo no está correctamente llenado"
 
