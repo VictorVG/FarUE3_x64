@@ -4775,8 +4775,10 @@
 "&Маска:"
 //[MFileFilterSize]
 "Розм&ір:"
+// up to 4 characters
 //[MFileFilterSizeFromSign]
 ">="
+// up to 4 characters
 //[MFileFilterSizeToSign]
 "<="
 //[MFileHardLinksCount]
@@ -4793,8 +4795,10 @@
 "&змінення"
 //[MFileFilterDateRelative]
 "Відносна"
+// up to 4 characters
 //[MFileFilterDateAfterSign]
 ">="
+// up to 4 characters
 //[MFileFilterDateBeforeSign]
 "<="
 //[MFileFilterCurrent]

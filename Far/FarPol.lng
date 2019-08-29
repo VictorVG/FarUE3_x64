@@ -4790,8 +4790,10 @@
 "&Maska:"
 //[MFileFilterSize]
 "Ro&zmiar:"
+// up to 4 characters
 //[MFileFilterSizeFromSign]
 ">="
+// up to 4 characters
 //[MFileFilterSizeToSign]
 "<="
 //[MFileHardLinksCount]
@@ -4808,8 +4810,10 @@
 "z&miany"
 //[MFileFilterDateRelative]
 "Relatywn&y"
+// up to 4 characters
 //[MFileFilterDateAfterSign]
 ">="
+// up to 4 characters
 //[MFileFilterDateBeforeSign]
 "<="
 //[MFileFilterCurrent]

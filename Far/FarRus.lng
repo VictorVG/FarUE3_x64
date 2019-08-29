@@ -4775,8 +4775,10 @@
 "&Маска:"
 //[MFileFilterSize]
 "Разм&ер:"
+// up to 4 characters
 //[MFileFilterSizeFromSign]
 ">="
+// up to 4 characters
 //[MFileFilterSizeToSign]
 "<="
 //[MFileHardLinksCount]
@@ -4793,8 +4795,10 @@
 "&изменения"
 //[MFileFilterDateRelative]
 "Относительна&я"
+// up to 4 characters
 //[MFileFilterDateAfterSign]
 ">="
+// up to 4 characters
 //[MFileFilterDateBeforeSign]
 "<="
 //[MFileFilterCurrent]

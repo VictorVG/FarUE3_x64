@@ -4781,8 +4781,10 @@
 "&Maschera Filtro"
 //[MFileFilterSize]
 "&Dimensione"
+// up to 4 characters
 //[MFileFilterSizeFromSign]
 "=&>"
+// up to 4 characters
 //[MFileFilterSizeToSign]
 "&<="
 //[MFileHardLinksCount]
@@ -4799,10 +4801,12 @@
 "&Modifica"
 //[MFileFilterDateRelative]
 "Relati&vo"
+// up to 4 characters
 //[MFileFilterDateAfterSign]
-"Do&po:"
+">="
+// up to 4 characters
 //[MFileFilterDateBeforeSign]
-"&Prima:"
+"<="
 //[MFileFilterCurrent]
 "C&orrente"
 //[MFileFilterBlank]

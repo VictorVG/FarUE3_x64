@@ -4867,8 +4867,10 @@
 "&Maska"
 //[MFileFilterSize]
 "Vel&ikost"
+// up to 4 characters
 //[MFileFilterSizeFromSign]
 ">="
+// up to 4 characters
 //[MFileFilterSizeToSign]
 "<="
 //[MFileHardLinksCount]
@@ -4885,8 +4887,10 @@
 "z&měny"
 //[MFileFilterDateRelative]
 "Relati&vní"
+// up to 4 characters
 //[MFileFilterDateAfterSign]
 ">="
+// up to 4 characters
 //[MFileFilterDateBeforeSign]
 "<="
 //[MFileFilterCurrent]

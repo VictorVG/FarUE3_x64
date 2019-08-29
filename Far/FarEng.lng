@@ -2972,7 +2972,7 @@
 //[MSetAttrStrictlySequential]
 "Strictly se&quential"
 //[MSetAttrMore]
-"More"
+"&More"
 //[MSetAttrSubfolders]
 "Process sub&folders"
 //[MSetAttrOwner]
@@ -4772,8 +4772,10 @@
 "&Mask:"
 //[MFileFilterSize]
 "Si&ze:"
+// up to 4 characters
 //[MFileFilterSizeFromSign]
 ">="
+// up to 4 characters
 //[MFileFilterSizeToSign]
 "<="
 //[MFileHardLinksCount]
@@ -4790,8 +4792,10 @@
 "c&hange"
 //[MFileFilterDateRelative]
 "Relat&ive"
+// up to 4 characters
 //[MFileFilterDateAfterSign]
 ">="
+// up to 4 characters
 //[MFileFilterDateBeforeSign]
 "<="
 //[MFileFilterCurrent]
