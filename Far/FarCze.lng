@@ -318,11 +318,11 @@
 //[MConfigElevation]
 "Vyžádat práva administrátora:"
 //[MConfigElevationModify]
-"na úpravy"
+"Na úpravy"
 //[MConfigElevationRead]
-"na čtení"
+"Na čtení"
 //[MConfigElevationUsePrivileges]
-"použít další privilegia"
+"Použít další privilegia"
 // need translation:
 //[MConfigSortingCollation]
 "Sorting collation:"
@@ -589,7 +589,7 @@
 //[MViewConfigTitle]
 "Prohlížeč"
 //[MViewConfigExternalF3]
-"Použít externí prohlížeč u F3 místo Alt+F3"
+"Použít externí prohlížeč u F&3 místo Alt+F3"
 //[MViewConfigExternalCommand]
 "&Příkaz prohlížeče:"
 //[MViewConfigInternal]
@@ -631,7 +631,7 @@
 //[MEditConfigTitle]
 "Editor"
 //[MEditConfigEditorF4]
-"Použít externí editor u F4 místo Alt+F4"
+"Použít externí editor u F&4 místo Alt+F4"
 //[MEditConfigEditorCommand]
 "&Příkaz editoru:"
 //[MEditConfigInternal]
@@ -3764,7 +3764,7 @@
 //[MCfgDizAnsiByDefault]
 "Používat výchozí kódovou stránku &WIN"
 //[MCfgDizSaveInUTF]
-"Uložit v UTF8"
+"Uložit v UTF-&8"
 
 //[MReadingTitleFiles]
 "Aktualizace panelů"
@@ -4869,10 +4869,10 @@
 "Vel&ikost"
 // up to 4 characters
 //[MFileFilterSizeFromSign]
-">="
+">&="
 // up to 4 characters
 //[MFileFilterSizeToSign]
-"<="
+"&<="
 //[MFileHardLinksCount]
 "Má více než jeden pevný link"
 //[MFileFilterDate]

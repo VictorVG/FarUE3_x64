@@ -317,11 +317,11 @@
 //[MConfigElevation]
 "Запрос прав администратора:"
 //[MConfigElevationModify]
-"д&ля изменения"
+"Д&ля изменения"
 //[MConfigElevationRead]
-"для &чтения"
+"Для &чтения"
 //[MConfigElevationUsePrivileges]
-"исп&ользовать дополнительные привилегии"
+"Исп&ользовать дополнительные привилегии"
 //[MConfigSortingCollation]
 "Сортировочное сравнение:"
 //[MConfigSortingOrdinal]
@@ -552,7 +552,7 @@
 //[MViewConfigTitle]
 "Программа просмотра"
 //[MViewConfigExternalF3]
-"Запускать вне&шнюю программу просмотра по F3 вместо Alt+F3"
+"Запускать внешнюю программу просмотра по F&3 вместо Alt+F3"
 //[MViewConfigExternalCommand]
 "&Команда просмотра:"
 //[MViewConfigInternal]
@@ -591,7 +591,7 @@
 //[MEditConfigTitle]
 "Редактор"
 //[MEditConfigEditorF4]
-"Запускать внешний редактор по F4 вместо Alt+F4"
+"Запускать внешний редактор по F&4 вместо Alt+F4"
 //[MEditConfigEditorCommand]
 "&Команда редактирования:"
 //[MEditConfigInternal]
@@ -3680,7 +3680,7 @@
 //[MCfgDizAnsiByDefault]
 "&Использовать кодовую страницу ANSI по умолчанию"
 //[MCfgDizSaveInUTF]
-"Сохранять в UTF8"
+"Сохранять в UTF-&8"
 
 //[MReadingTitleFiles]
 "Обновление панелей"
@@ -4777,10 +4777,10 @@
 "Разм&ер:"
 // up to 4 characters
 //[MFileFilterSizeFromSign]
-">="
+">&="
 // up to 4 characters
 //[MFileFilterSizeToSign]
-"<="
+"&<="
 //[MFileHardLinksCount]
 "Болee одной жёсткой ссылки"
 //[MFileFilterDate]

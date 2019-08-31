@@ -317,11 +317,11 @@
 //[MConfigElevation]
 "Anforderung von Administratorrechte:"
 //[MConfigElevationModify]
-"für Bearbeitung"
+"Für Bearbeitung"
 //[MConfigElevationRead]
-"für Lesen"
+"Für Lesen"
 //[MConfigElevationUsePrivileges]
-"für Nutzung zusätzlicher Vorrechten"
+"Für Nutzung zusätzlicher Vorrechten"
 // need translation:
 //[MConfigSortingCollation]
 "Sorting collation:"
@@ -560,7 +560,7 @@
 "Betrachter"
 // need translation:
 //[MViewConfigExternalF3]
-"Use external viewer for F3 instead of Alt+F3"
+"Use external viewer for F&3 instead of Alt+F3"
 //[MViewConfigExternalCommand]
 "Befehl für e&xternen Betracher:"
 //[MViewConfigInternal]
@@ -603,7 +603,7 @@
 "Editor"
 // need translation:
 //[MEditConfigEditorF4]
-"Use external editor for F4 instead of Alt+F4"
+"Use external editor for F&4 instead of Alt+F4"
 //[MEditConfigEditorCommand]
 "Befehl für e&xternen Editor:"
 //[MEditConfigInternal]
@@ -3762,7 +3762,7 @@
 //[MCfgDizAnsiByDefault]
 "Dateien standardmäßig mit Windows-Kod&ierung öffnen"
 //[MCfgDizSaveInUTF]
-"In UTF8 speichern"
+"In UTF-&8 speichern"
 
 //[MReadingTitleFiles]
 "Aktualisiere Panels"
@@ -4872,10 +4872,10 @@
 "G&röße:"
 // up to 4 characters
 //[MFileFilterSizeFromSign]
-">="
+">&="
 // up to 4 characters
 //[MFileFilterSizeToSign]
-"<="
+"&<="
 //[MFileHardLinksCount]
 "Mehr als ein harder Link"
 //[MFileFilterDate]

@@ -324,13 +324,13 @@
 "request administrator rights:"
 // need translation:
 //[MConfigElevationModify]
-"for modification"
+"For modification"
 // need translation:
 //[MConfigElevationRead]
-"for read"
+"For reading"
 // need translation:
 //[MConfigElevationUsePrivileges]
-"use additional privileges"
+"Use additional privileges"
 // need translation:
 //[MConfigSortingCollation]
 "Sorting collation:"
@@ -629,7 +629,7 @@
 //[MViewConfigTitle]
 "Nézőke"
 //[MViewConfigExternalF3]
-"Alt+F3 helyett F3 indítja a külső nézőkét"
+"Alt+F3 helyett F&3 indítja a külső nézőkét"
 //[MViewConfigExternalCommand]
 "Nézőke &parancs:"
 //[MViewConfigInternal]
@@ -676,7 +676,7 @@
 //[MEditConfigTitle]
 "Szerkesztő"
 //[MEditConfigEditorF4]
-"Alt+F4 helyett F4 indítja a külső szerkesztőt"
+"Alt+F4 helyett F&4 indítja a külső szerkesztőt"
 //[MEditConfigEditorCommand]
 "&Szerkesztő parancs:"
 //[MEditConfigInternal]
@@ -3937,7 +3937,7 @@
 "Fájlok eredeti megnyitása ANS&I kódlappal"
 // need translation:
 //[MCfgDizSaveInUTF]
-"Save in UTF8"
+"Save in UTF-&8"
 
 //[MReadingTitleFiles]
 "Panelek frissítése"
@@ -5060,10 +5060,10 @@
 "M&éret:"
 // up to 4 characters
 //[MFileFilterSizeFromSign]
-">="
+">&="
 // up to 4 characters
 //[MFileFilterSizeToSign]
-"<="
+"&<="
 // need translation:
 //[MFileHardLinksCount]
 "Has more than one hardlink"

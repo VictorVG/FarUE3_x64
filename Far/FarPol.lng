@@ -317,11 +317,11 @@
 //[MConfigElevation]
 "wymagane uprawnienia administratora:"
 //[MConfigElevationModify]
-"do modyfikacji"
+"Do modyfikacji"
 //[MConfigElevationRead]
-"do odczytu"
+"Do odczytu"
 //[MConfigElevationUsePrivileges]
-"użyj dodatkowych uprawnień"
+"Użyj dodatkowych uprawnień"
 //[MConfigSortingCollation]
 "Sposoby sortowania:"
 //[MConfigSortingOrdinal]
@@ -552,7 +552,7 @@
 //[MViewConfigTitle]
 "Ustawienia podglądu plików"
 //[MViewConfigExternalF3]
-"Użyj zewnętrznego podglądu pod klawiszem F3 zamiast Alt+F3"
+"Użyj zewnętrznego podglądu pod klawiszem F&3 zamiast Alt+F3"
 //[MViewConfigExternalCommand]
 "&Polecenie:"
 //[MViewConfigInternal]
@@ -591,7 +591,7 @@
 //[MEditConfigTitle]
 "Ustawienia edytora"
 //[MEditConfigEditorF4]
-"Użyj zewnętrznego edytora pod klawiszem F4 zamiast Alt+F4"
+"Użyj zewnętrznego edytora pod klawiszem F&4 zamiast Alt+F4"
 //[MEditConfigEditorCommand]
 "&Polecenie:"
 //[MEditConfigInternal]
@@ -3694,7 +3694,7 @@
 //[MCfgDizAnsiByDefault]
 "&Otwieraj pliki w kodowaniu Windows"
 //[MCfgDizSaveInUTF]
-"Zapisz w UTF8"
+"Zapisz w UTF-&8"
 
 //[MReadingTitleFiles]
 "Aktualizacja panelu"
@@ -4792,10 +4792,10 @@
 "Ro&zmiar:"
 // up to 4 characters
 //[MFileFilterSizeFromSign]
-">="
+">&="
 // up to 4 characters
 //[MFileFilterSizeToSign]
-"<="
+"&<="
 //[MFileHardLinksCount]
 "Posiada więcej niż jeden twardy link"
 //[MFileFilterDate]

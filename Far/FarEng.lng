@@ -303,7 +303,7 @@
 //[MConfigScanJunction]
 "Scan s&ymbolic links"
 //[MConfigSmartFolderMonitor]
-"Update panels only when Far is active"
+"&Update panels only when Far is active"
 //[MConfigSaveHistory]
 "Save commands &history"
 //[MConfigSaveFoldersHistory]
@@ -311,19 +311,19 @@
 //[MConfigSaveViewHistory]
 "Save &view and edit history"
 //[MConfigRegisteredTypes]
-"Use Windows &registered types"
+"Use Windows re&gistered types"
 //[MConfigUpdateEnvironment]
-"Automatic update of environment variables"
+"Automatic update of &environment variables"
 //[MConfigElevation]
 "Request administrator rights:"
 //[MConfigElevationModify]
-"for modification"
+"For &modification"
 //[MConfigElevationRead]
-"for read"
+"For &reading"
 //[MConfigElevationUsePrivileges]
-"use additional privileges"
+"Use additional &privileges"
 //[MConfigSortingCollation]
-"Sorting collation:"
+"Sorti&ng collation:"
 //[MConfigSortingOrdinal]
 "ordinal"
 //[MConfigSortingInvariant]
@@ -331,7 +331,7 @@
 //[MConfigSortingLinguistic]
 "linguistic"
 //[MConfigSortingDigitsAsNumbers]
-"Treat digits as numbers"
+"Treat digits &as numbers"
 //[MConfigSortingCase]
 "&Case sensitive"
 //[MConfigAutoSave]
@@ -371,7 +371,7 @@
 //[MConfigSelectFolders]
 "Select &folders"
 //[MConfigRightClickSelect]
-"Right click selects files"
+"Right clic&k selects files"
 //[MConfigSortFolderExt]
 "Sort folder names by e&xtension"
 //[MConfigReverseSort]
@@ -379,7 +379,7 @@
 //[MConfigAutoUpdateLimit]
 "&Disable automatic panel update"
 //[MConfigAutoUpdateLimit2]
-"if object count exceeds"
+"if ob&ject count exceeds"
 //[MConfigAutoUpdateRemoteDrive]
 "Network drives autor&efresh"
 //[MConfigShowColumns]
@@ -399,7 +399,7 @@
 //[MConfigShowSortMode]
 "Show sort &mode letter"
 //[MConfigShowDotsInRoot]
-"Show \"..\" in root folders"
+"Show \"&..\" in root folders"
 
 //[MConfigInterfaceTitle]
 "Interface settings"
@@ -416,7 +416,7 @@
 //[MConfigSaver]
 "&Screen saver"
 //[MConfigSaverMinutes]
-"minutes"
+"mi&nutes"
 //[MConfigCopyTotal]
 "Show &total copy progress indicator"
 //[MConfigCopyTimeRule]
@@ -426,13 +426,13 @@
 //[MConfigPgUpChangeDisk]
 "Use Ctrl+Pg&Up to change drive"
 //[MConfigUseVirtualTerminalForRendering]
-"Use Virtual Terminal for rendering"
+"Use &Virtual Terminal for rendering"
 //[MConfigClearType]
 "Cl&earType-friendly redraw (can be slow)"
 //[MConfigSetConsoleIcon]
-"Set console icon"
+"Set console &icon"
 //[MConfigSetAdminConsoleIcon]
-"Alternate for Administrator"
+"Alternate for &Administrator"
 //[MConfigTitleAddons]
 "Far &window title addons:"
 
@@ -454,11 +454,11 @@
 //[MConfigVMenuTitle]
 "Menu settings"
 //[MConfigVMenuLBtnClick]
-"Left mouse click outside a menu"
+"&Left mouse click outside a menu"
 //[MConfigVMenuRBtnClick]
-"Right mouse click outside a menu"
+"&Right mouse click outside a menu"
 //[MConfigVMenuMBtnClick]
-"Middle mouse click outside a menu"
+"&Middle mouse click outside a menu"
 //[MConfigVMenuClickCancel]
 "Cancel menu"
 //[MConfigVMenuClickApply]
@@ -552,7 +552,7 @@
 //[MViewConfigTitle]
 "Viewer"
 //[MViewConfigExternalF3]
-"Use e&xternal viewer for F3 instead of Alt+F3"
+"Use external viewer for F&3 instead of Alt+F3"
 //[MViewConfigExternalCommand]
 "&Viewer command:"
 //[MViewConfigInternal]
@@ -591,7 +591,7 @@
 //[MEditConfigTitle]
 "Editor"
 //[MEditConfigEditorF4]
-"Use external editor for F4 instead of Alt+F4"
+"Use external editor for F&4 instead of Alt+F4"
 //[MEditConfigEditorCommand]
 "&Editor command:"
 //[MEditConfigInternal]
@@ -720,7 +720,7 @@
 //[MCMLTargetTO]
 "t&o"
 //[MCMLTargetIN]
-"in"
+"&in"
 //[MCMLItems0]
 ""
 //[MCMLItemsA]
@@ -2231,11 +2231,11 @@
 //[MFindSymLinks]
 "Search in symbolic lin&ks"
 //[MFindAlternateStreams]
-"Search in alternate streams"
+"Search in a&lternate streams"
 //[MSearchForHex]
 "Search for &hex"
 //[MSearchNotContaining]
-"Not containing"
+"&Not containing"
 //[MSearchWhere]
 "Select search &area:"
 //[MSearchAllDisks]
@@ -2501,15 +2501,15 @@
 //[MCreateFolder]
 "Create the &folder:"
 //[MMakeFolderLinkType]
-"Link type:"
+"&Link type:"
 //[MMakeFolderLinkNone]
-"None"
+"&none"
 //[MMakeFolderLinkJunction]
-"directory junction"
+"directory &junction"
 //[MMakeFolderLinkSymlink]
-"symbolic link"
+"symbolic &link"
 //[MMakeFolderLinkTarget]
-"Target:"
+"&Target:"
 //[MMultiMakeDir]
 "Process &multiple names"
 //[MIncorrectDirList]
@@ -2640,7 +2640,7 @@
 //[MMenuPluginsConfig]
 "Pl&ugins configuration"
 //[MMenuPluginsManagerSettings]
-"Plugins manager settings"
+"Plugins manage&r settings"
 //[MMenuDialogSettings]
 "Di&alog settings"
 //[MMenuVMenuSettings]
@@ -2648,11 +2648,11 @@
 //[MMenuCmdlineSettings]
 "&Command line settings"
 //[MMenuAutoCompleteSettings]
-"AutoComplete settings"
+"Au&toComplete settings"
 //[MMenuInfoPanelSettings]
 "Inf&oPanel settings"
 //[MMenuMaskGroups]
-"Groups of file masks"
+"Groups of file mas&ks"
 //[MMenuConfirmation]
 "Co&nfirmations"
 //[MMenuFilePanelModes]
@@ -2843,19 +2843,19 @@
 //[MChangeDriveShowLabel]
 "Show disk &label"
 //[MChangeDriveShowLabelUseShell]
-"Use shell name"
+"Use shell na&me"
 //[MChangeDriveShowFileSystem]
 "Show &file system type"
 //[MChangeDriveShowSize]
 "Show &size"
 //[MChangeDriveShowSizeFloat]
-"Show size as a decimal fraction"
+"Show si&ze as a decimal fraction"
 //[MChangeDriveShowRemovableDrive]
 "Show &removable drive parameters"
 //[MChangeDriveShowPlugins]
 "Show &plugins"
 //[MChangeDriveSortPluginsByHotkey]
-"Sort plugins by hotkey"
+"Sort plugins by &hotkey"
 //[MChangeDriveShowCD]
 "Show &CD drive parameters"
 //[MChangeDriveShowNetworkDrive]
@@ -3293,7 +3293,7 @@
 //[MSetConfirmRemoveSUBST]
 "Delete &SUBST-disk"
 //[MSetConfirmDetachVHD]
-"Detach virtual disk"
+"Detach &virtual disk"
 //[MSetConfirmRemoveHotPlug]
 "Hot&Plug-device removal"
 //[MSetConfirmAllowReedit]
@@ -3677,7 +3677,7 @@
 //[MCfgDizAnsiByDefault]
 "Use ANS&I code page by default"
 //[MCfgDizSaveInUTF]
-"Save in UTF8"
+"Save in UTF-&8"
 
 //[MReadingTitleFiles]
 "Update of panels"
@@ -3759,15 +3759,15 @@
 //[MMacroCommonDeleteKey]
 "Common macro key '{0}' will be removed."
 //[MMacroSequence]
-"Sequence:"
+"Se&quence:"
 //[MMacroDescription]
-"Description:"
+"&Description:"
 //[MMacroReDefinedKey2]
 "Redefine?"
 //[MMacroDeleteKey2]
 "Delete?"
 //[MMacroEditKey]
-"Change"
+"Chan&ge"
 
 //[MMacroSettingsTitle]
 "Macro settings for '{0}'"
@@ -3841,13 +3841,13 @@
 //[MExcModule]
 "Module:"
 //[MExcTerminate]
-"Terminate Far"
+"&Terminate Far"
 //[MExcUnload]
-"Unload plugin"
+"&Unload plugin"
 //[MExcStack]
-"Stack"
+"&Stack"
 //[MExcMinidump]
-"Minidump"
+"&Minidump"
 //[MExcMinidumpSuccess]
 "Minidump saved to"
 
@@ -4774,12 +4774,12 @@
 "Si&ze:"
 // up to 4 characters
 //[MFileFilterSizeFromSign]
-">="
+">&="
 // up to 4 characters
 //[MFileFilterSizeToSign]
-"<="
+"&<="
 //[MFileHardLinksCount]
-"Has more than &one hardlink"
+"Has more than one hardlin&k"
 //[MFileFilterDate]
 "Date&/Time:"
 //[MFileFilterWrited]

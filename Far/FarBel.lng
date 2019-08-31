@@ -317,11 +317,11 @@
 //[MConfigElevation]
 "Запыт патрэб адміністратара:"
 //[MConfigElevationModify]
-"д&ля зменаў"
+"Д&ля зменаў"
 //[MConfigElevationRead]
-"для &чытання"
+"Для &чытання"
 //[MConfigElevationUsePrivileges]
-"ужываць дадатк&овыя прывілеі"
+"Ужываць дадатк&овыя прывілеі"
 //[MConfigSortingCollation]
 "Параўненне сартыроўкі:"
 //[MConfigSortingOrdinal]
@@ -552,7 +552,7 @@
 //[MViewConfigTitle]
 "Праграма прагляду"
 //[MViewConfigExternalF3]
-"Зне&шняя праграма прагляду па F3 замест Alt+F3"
+"Знешняя праграма прагляду па F&3 замест Alt+F3"
 //[MViewConfigExternalCommand]
 "&Каманда прагляду:"
 //[MViewConfigInternal]
@@ -591,7 +591,7 @@
 //[MEditConfigTitle]
 "Праграма змены"
 //[MEditConfigEditorF4]
-"Зне&шняя праграма змены па F4 замест Alt+F4"
+"Знешняя праграма змены па F&4 замест Alt+F4"
 //[MEditConfigEditorCommand]
 "&Каманда змены:"
 //[MEditConfigInternal]
@@ -3683,7 +3683,7 @@
 //[MCfgDizAnsiByDefault]
 "Уж&ыць прадвызначаную кадыроўку ANSI"
 //[MCfgDizSaveInUTF]
-"Захоўваць у UTF8"
+"Захоўваць у UTF-&8"
 
 //[MReadingTitleFiles]
 "Абнаўленне панэляў"
@@ -4781,10 +4781,10 @@
 "Пам&ер:"
 // up to 4 characters
 //[MFileFilterSizeFromSign]
-">="
+">&="
 // up to 4 characters
 //[MFileFilterSizeToSign]
-"<="
+"&<="
 //[MFileHardLinksCount]
 "Больш адной жорсткай спасылкі"
 //[MFileFilterDate]

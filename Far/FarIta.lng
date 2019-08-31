@@ -424,7 +424,7 @@
 //[MConfigDeleteTotal]
 "Mostra Indicatore Di Cancella&zione"
 //[MConfigPgUpChangeDisk]
-"Usa [CTRL-Pag&Su] Per Cambiare Unità"
+"Usa [CTRL+Pag&Su] Per Cambiare Unità"
 //[MConfigUseVirtualTerminalForRendering]
 "Usa Terminale Virtuale Per Il Rendering"
 //[MConfigClearType]
@@ -552,7 +552,7 @@
 //[MViewConfigTitle]
 "Impostazioni ► Visualizzatore"
 //[MViewConfigExternalF3]
-"Usa Visualizzatore Esterno [F3] Invece Di [Alt-F3]"
+"Usa Visualizzatore Esterno F&3 Invece Di Alt+F3"
 //[MViewConfigExternalCommand]
 "Linea Di &Comando:"
 //[MViewConfigInternal]
@@ -591,7 +591,7 @@
 //[MEditConfigTitle]
 "Impostazioni ► Editor"
 //[MEditConfigEditorF4]
-"Usa Editor Esterno Per F4 Invece Di Alt+F4"
+"Usa Editor Esterno Per F&4 Invece Di Alt+F4"
 //[MEditConfigEditorCommand]
 "Linea Di &Comando:"
 //[MEditConfigInternal]
@@ -1079,7 +1079,7 @@
 //[MEditSearchStatistics]
 "Occorrenze: {0}, Linee: {1}"
 //[MEditFindAllMenuFooter]
-"Aggiungi [F1] [F5] [CTRL-INVIO] [CTRL-Up/Down]"
+"Aggiungi [F1] [F5] [CTRL+INVIO] [CTRL+Up/Down]"
 //[MEditNotFound]
 "La Stringa Non Esiste"
 
@@ -1615,7 +1615,7 @@
 //[MEditorSwitchUnicodeCPDisabled]
 "Il Cambio Di Codifica Ad Unicode Non è Supportata"
 //[MEditorTryReloadFile]
-"Puoi Ricaricare Il File Usando Una Tabella Personale [SHIFT-F4]"
+"Puoi Ricaricare Il File Usando Una Tabella Personale [SHIFT+F4]"
 //[MEditorSwitchToUnicodeCPDisabled]
 "Il Cambio In Unicode {0} Non è Supportato"
 //[MEditorCPNotSupported]
@@ -1734,15 +1734,15 @@
 //[MFileAssocExec]
 "Comando E&segui        [INVIO]:"
 //[MFileAssocAltExec]
-"Comando E&segui   [CTRL-PGGIU]:"
+"Comando E&segui   [CTRL+PGGIU]:"
 //[MFileAssocView]
 "Comando &Visualizza       [F3]:"
 //[MFileAssocAltView]
-"Comando &Visualizza   [ALT-F3]:"
+"Comando &Visualizza   [ALT+F3]:"
 //[MFileAssocEdit]
 "Comando &Modifica         [F4]:"
 //[MFileAssocAltEdit]
-"Comando &Modifica     [ALT-F4]:"
+"Comando &Modifica     [Alt+F4]:"
 
 //Viewer: functional keys, 12 keys, except F2 - 2 keys, and F8 - 2 keys
 //[MViewF1]
@@ -2192,7 +2192,7 @@
 //[MFilterTitle]
 "Menu Filtri"
 //[MFilterBottom]
-"[+] [-] [Spazio] [I] [X] [BS] [INS] [DEL] [F4] [F5] [Ctrl-Su] [Ctrl-Giu]"
+"[+] [-] [Spazio] [I] [X] [BS] [INS] [DEL] [F4] [F5] [Ctrl+Su] [Ctrl+Giu]"
 //[MPanelFileType]
 "Pannello Filtri"
 //[MFolderFileType]
@@ -2312,9 +2312,9 @@
 //[MGetCodePageOther]
 "Altro"
 //[MGetCodePageBottomTitle]
-"[Ctrl-H] [Canc] [Ins] [F4]"
+"[Ctrl+H] [Canc] [Ins] [F4]"
 //[MGetCodePageBottomShortTitle]
-"[Ctrl-H] [Canc] [F4]"
+"[Ctrl+H] [Canc] [F4]"
 //[MGetCodePageEditCodePageName]
 "Modifica Nome Codepage"
 //[MGetCodePageResetCodePageName]
@@ -2323,7 +2323,7 @@
 //[MHighlightTitle]
 "Evidenzia File"
 //[MHighlightBottom]
-"[INS] [DEL] [F4] [F5] [Ctrl-Giu] [Ctrl-Su]"
+"[INS] [DEL] [F4] [F5] [Ctrl+Giu] [Ctrl+Su]"
 //[MHighlightUpperSortGroup]
 "Gruppo Ordinamento Superiore"
 //[MHighlightLowerSortGroup]
@@ -2724,11 +2724,11 @@
 //[MMenuSortUseGroups]
 "G&ruppi Ordinamento"
 //[MMenuSortSelectedFirst]
-"Prima I Selezionati [Shift-F1&2]"
+"Prima I Selezionati [Shift+F1&2]"
 //[MMenuSortDirectoriesFirst]
 "&Mostra Le Cartelle Per Prime"
 //[MMaskGroupBottom]
-"Edita: [INS] [DEL] [F4] [F7] [Ctrl-R]"
+"Edita: [INS] [DEL] [F4] [F7] [Ctrl+R]"
 //[MMaskGroupName]
 "&Nome:"
 //[MMaskGroupMasks]
@@ -2817,7 +2817,7 @@
 //[MHotPlugListTitle]
 "Lista Periferiche HotPlug"
 //[MHotPlugListBottom]
-"Edita: [Canc] [Ctrl-R]"
+"Edita: [Canc] [Ctrl+R]"
 
 //[MChangeDriveDisconnectTitle]
 "Rimozione Unità Di Rete"
@@ -2862,7 +2862,7 @@
 //[MChangeDriveShowNetworkDrive]
 "Mostra Parametri Re&te"
 //[MChangeDriveMenuFooter]
-"[Canc] [Shift-Canc] [F3] [F4] [F9]"
+"[Canc] [Shift+Canc] [F3] [F4] [F9]"
 
 //[MSearchFileTitle]
 "Ricerca"
@@ -2881,7 +2881,7 @@
 //[MProcessListTitle]
 "Lista Processi Attivi"
 //[MProcessListBottom]
-"Edita: [Canc] [Ctrl-R] [F2]"
+"Edita: [Canc] [Ctrl+R] [F2]"
 //[MKillProcessTitle]
 "Termina Il Processo"
 //[MAskKillProcess]
@@ -3554,7 +3554,7 @@
 //[MLocalMenuTitle]
 "Menu Locale"
 //[MMainMenuBottomTitle]
-"Edita: [DEL] [INS] [F4] [ALT-F4]"
+"Edita: [DEL] [INS] [F4] [ALT+F4]"
 //[MAskDeleteMenuItem]
 "Vuoi Cancellare Questa Voce"
 //[MAskDeleteSubMenuItem]
@@ -3685,7 +3685,7 @@
 //[MCfgDizAnsiByDefault]
 "AN&SI Per Default"
 //[MCfgDizSaveInUTF]
-"Salva In &UTF8"
+"Salva In UTF-&8"
 
 //[MReadingTitleFiles]
 "Aggiornamento Dei Pannelli"
@@ -4783,7 +4783,7 @@
 "&Dimensione"
 // up to 4 characters
 //[MFileFilterSizeFromSign]
-"=&>"
+">&="
 // up to 4 characters
 //[MFileFilterSizeToSign]
 "&<="
@@ -4803,10 +4803,10 @@
 "Relati&vo"
 // up to 4 characters
 //[MFileFilterDateAfterSign]
-">="
+"Do&po:"
 // up to 4 characters
 //[MFileFilterDateBeforeSign]
-"<="
+"&Prima:"
 //[MFileFilterCurrent]
 "C&orrente"
 //[MFileFilterBlank]

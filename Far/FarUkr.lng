@@ -317,9 +317,9 @@
 //[MConfigElevation]
 "Запит прав адміністратора:"
 //[MConfigElevationModify]
-"д&ля змінення"
+"Д&ля змінення"
 //[MConfigElevationRead]
-"для &читання"
+"Для &читання"
 //[MConfigElevationUsePrivileges]
 "Вик&ористовувати додаткові привілеї"
 //[MConfigSortingCollation]
@@ -552,7 +552,7 @@
 //[MViewConfigTitle]
 "Програма перегляду"
 //[MViewConfigExternalF3]
-"Запускати зовнішню програму перегляду по F3 замість Alt+F3"
+"Запускати зовнішню програму перегляду по F&3 замість Alt+F3"
 //[MViewConfigExternalCommand]
 "&Команда перегляду:"
 //[MViewConfigInternal]
@@ -591,7 +591,7 @@
 //[MEditConfigTitle]
 "Редактор"
 //[MEditConfigEditorF4]
-"Запускати зовнішній редактор по F4 замість Alt+F4"
+"Запускати зовнішній редактор по F&4 замість Alt+F4"
 //[MEditConfigEditorCommand]
 "&Команда редагування:"
 //[MEditConfigInternal]
@@ -3680,7 +3680,7 @@
 //[MCfgDizAnsiByDefault]
 "&Використовувати кодову сторінку ANSI за замовчуванням"
 //[MCfgDizSaveInUTF]
-"Зберігати в UTF8"
+"Зберігати в UTF-&8"
 
 //[MReadingTitleFiles]
 "Оновлення панелей"
@@ -4777,10 +4777,10 @@
 "Розм&ір:"
 // up to 4 characters
 //[MFileFilterSizeFromSign]
-">="
+">&="
 // up to 4 characters
 //[MFileFilterSizeToSign]
-"<="
+"&<="
 //[MFileHardLinksCount]
 "Понад одне жорстке посилання"
 //[MFileFilterDate]

@@ -317,11 +317,11 @@
 //[MConfigElevation]
 "Vyžiadať práva správcu:"
 //[MConfigElevationModify]
-"na úpravy"
+"Na úpravy"
 //[MConfigElevationRead]
-"na čítanie"
+"Na čítanie"
 //[MConfigElevationUsePrivileges]
-"použiť ďalšie privilégiá"
+"Použiť ďalšie privilégiá"
 //[MConfigSortingCollation]
 "Spôsob triedenia:"
 //[MConfigSortingOrdinal]
@@ -553,7 +553,7 @@
 //[MViewConfigTitle]
 "Zobrazovač"
 //[MViewConfigExternalF3]
-"Použiť externý zobrazovač pre F3 namiesto Alt+F3"
+"Použiť externý zobrazovač pre F&3 namiesto Alt+F3"
 //[MViewConfigExternalCommand]
 "&Príkaz zobrazovača:"
 //[MViewConfigInternal]
@@ -594,7 +594,7 @@
 //[MEditConfigTitle]
 "Editor"
 //[MEditConfigEditorF4]
-"Použiť externý editor pre F4 namiesto Alt+F4"
+"Použiť externý editor pre F&4 namiesto Alt+F4"
 //[MEditConfigEditorCommand]
 "&Príkaz editora:"
 //[MEditConfigInternal]
@@ -3688,7 +3688,7 @@
 //[MCfgDizAnsiByDefault]
 "Automaticky otvárať súbory v kódovaní &WIN"
 //[MCfgDizSaveInUTF]
-"Uložiť v UTF8"
+"Uložiť v UTF-&8"
 
 //[MReadingTitleFiles]
 "Aktualizácia panelov"
@@ -4786,10 +4786,10 @@
 "Ve&ľkosť"
 // up to 4 characters
 //[MFileFilterSizeFromSign]
-">="
+">&="
 // up to 4 characters
 //[MFileFilterSizeToSign]
-"<="
+"&<="
 //[MFileHardLinksCount]
 "Má viac než jedno pevné prepojenie"
 //[MFileFilterDate]

@@ -1,5 +1,5 @@
-﻿-- http://forum.ru-board.com/topic.cgi?forum=5&topic=49572&start=2240#16
--- v1.8
+﻿-- https://forum.ru-board.com/topic.cgi?forum=5&topic=49572&start=2240#16
+-- v1.9
 
 if not (bit and jit) then return end
 
@@ -87,9 +87,9 @@ local function BySelected(l)
     local e,d = 0,0
     for i=1,#AttributeValue do
       if bit.band(equal,AttributeValue[i])>0 then e=e+1 end
-      if bit.band(diff,AttributeValue[i])>0 then d=d-1 end
+      if bit.band(diff,AttributeValue[i])>0 then d=d+1 end
     end
-    l=(#AttributeValue+1)*e+d
+    l=(#AttributeValue+1)*e-d
   end
   return -l
 end
@@ -173,12 +173,11 @@ Macro {
   description = Description; area = "Shell Menu"; key = Key.." Enter MsLClick";
   condition = function(key) return Area.Shell and key==Key or Area.Menu and Menu.Id==MenuGuid and Menu.Value:match(Description) and (key=="Enter" or key=="MsLClick") end;
   action = function()
-    local kbd
-    if _G.KbdLayout then kbd=_G.KbdLayout() end
-    if not kbd or type(kbd)~="number" then kbd=Far.KbdLayout() end
+    local kbd=bit.band(Far.KbdLayout(),0xFFFF)
+    if kbd==0 and _G.KbdLayout then kbd=_G.KbdLayout() end
+    if not kbd or kbd and kbd~=0x0409 then Far.KbdLayout(0x0409) end
     FName=APanel.Current
     if Area.Menu then Keys("Esc") end
-    if kbd~=0x0409 then Far.KbdLayout(0x0409) end
     if far.Dialog(guid,-1,-1,70,20,nil,Items,nil,DlgProc)==#Items-1 then
       SAttributes = tSAttributes
       local OldAttributesWeight = AttributesWeight

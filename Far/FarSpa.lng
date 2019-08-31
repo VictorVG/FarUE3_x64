@@ -317,11 +317,11 @@
 //[MConfigElevation]
 "Requerir derechos de administrador:"
 //[MConfigElevationModify]
-"para modificación"
+"Para modificación"
 //[MConfigElevationRead]
-"para lectura"
+"Para lectura"
 //[MConfigElevationUsePrivileges]
-"usar privilegios adicionales"
+"Usar privilegios adicionales"
 //[MConfigSortingCollation]
 "Ordenamiento de colación:"
 //[MConfigSortingOrdinal]
@@ -552,7 +552,7 @@
 //[MViewConfigTitle]
 "Visor"
 //[MViewConfigExternalF3]
-"Usar visor externo con F3 en lugar de Alt+F3"
+"Usar visor externo con F&3 en lugar de Alt+F3"
 //[MViewConfigExternalCommand]
 "Comando &visor:"
 //[MViewConfigInternal]
@@ -593,7 +593,7 @@
 //[MEditConfigTitle]
 "Editor"
 //[MEditConfigEditorF4]
-"Usar editor externo con F4 en lugar de Alt+F4"
+"Usar editor externo con F&4 en lugar de Alt+F4"
 //[MEditConfigEditorCommand]
 "Comando &editor:"
 //[MEditConfigInternal]
@@ -3689,7 +3689,7 @@
 //[MCfgDizAnsiByDefault]
 "Usar página de códigos ANS&I por defecto"
 //[MCfgDizSaveInUTF]
-"Guardar en UTF8"
+"Guardar en UTF-&8"
 
 //[MReadingTitleFiles]
 "Actualización de paneles"
@@ -4789,10 +4789,10 @@
 "&Tamaño:"
 // up to 4 characters
 //[MFileFilterSizeFromSign]
-">="
+">&="
 // up to 4 characters
 //[MFileFilterSizeToSign]
-"<="
+"&<="
 //[MFileHardLinksCount]
 "Tiene mas de un enlace duro"
 //[MFileFilterDate]
