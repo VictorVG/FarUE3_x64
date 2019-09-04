@@ -680,6 +680,12 @@
 // need translation:
 //[MEditConfigDefaultCodePage]
 "Default code page:"
+// need translation:
+//[MConfigEditor]
+"Configuration editor"
+// need translation:
+//[MConfigEditorHelp]
+"Enter, F4, Shift+F4, Ctrl+H, Shift+F1"
 
 //[MSaveSetupTitle]
 "Uložit nastavení"
@@ -3847,8 +3853,6 @@
 "Klávesa pro běžné makro '{0}' bude odstraněna."
 //[MMacroSequence]
 "Posloupnost:"
-//[MMacroDescription]
-"Popis:"
 //[MMacroReDefinedKey2]
 "Předefinovat?"
 //[MMacroDeleteKey2]
@@ -3858,6 +3862,10 @@
 
 //[MMacroSettingsTitle]
 "Nastavení makra pro '{0}'"
+//[MMacroSettingsSequence]
+"Posloupnost:"
+//[MMacroSettingsDescription]
+"Popis:"
 //[MMacroSettingsEnableOutput]
 "Povolit &výstup na obrazovku dokud se provádí makro"
 //[MMacroSettingsRunAfterStart]

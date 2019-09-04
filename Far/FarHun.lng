@@ -726,6 +726,12 @@
 // need translation:
 //[MEditConfigDefaultCodePage]
 "Default code page:"
+// need translation:
+//[MConfigEditor]
+"Configuration editor"
+// need translation:
+//[MConfigEditorHelp]
+"Enter, F4, Shift+F4, Ctrl+H, Shift+F1"
 
 //[MSaveSetupTitle]
 "Beállítások mentése"
@@ -4020,8 +4026,6 @@
 ""{0}" közös makróbill. törlődik"
 //[MMacroSequence]
 "Szekvencia:"
-//[MMacroDescription]
-"Megjegyzés:"
 //[MMacroReDefinedKey2]
 "Újradefiniálja?"
 //[MMacroDeleteKey2]
@@ -4032,6 +4036,10 @@
 
 //[MMacroSettingsTitle]
 ""{0}" makró beállításai"
+//[MMacroSettingsSequence]
+"Szekvencia:"
+//[MMacroSettingsDescription]
+"Megjegyzés:"
 //[MMacroSettingsEnableOutput]
 "Képernyő&kimenet a makró futása közben"
 //[MMacroSettingsRunAfterStart]

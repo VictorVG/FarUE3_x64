@@ -640,6 +640,12 @@
 "Cursor al final"
 //[MEditConfigDefaultCodePage]
 "Página de códigos por defecto:"
+// need translation:
+//[MConfigEditor]
+"Configuration editor"
+// need translation:
+//[MConfigEditorHelp]
+"Enter, F4, Shift+F4, Ctrl+H, Shift+F1"
 
 //[MSaveSetupTitle]
 "Guardar configuración"
@@ -3772,8 +3778,6 @@
 "Tecla de macro '{0}' será removida."
 //[MMacroSequence]
 "Secuencia:"
-//[MMacroDescription]
-"Descripción:"
 //[MMacroReDefinedKey2]
 "Redefinir?"
 //[MMacroDeleteKey2]
@@ -3783,6 +3787,10 @@
 
 //[MMacroSettingsTitle]
 "Configurar macro para '{0}'"
+//[MMacroSettingsSequence]
+"Secuencia:"
+//[MMacroSettingsDescription]
+"Descripción:"
 //[MMacroSettingsEnableOutput]
 "Permitir salida pantalla mientras se ejecut&an los macros"
 //[MMacroSettingsRunAfterStart]

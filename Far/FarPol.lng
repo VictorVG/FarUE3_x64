@@ -638,6 +638,12 @@
 "Kursor na końcu bloku"
 //[MEditConfigDefaultCodePage]
 "Domyślna strona kodowa:"
+// need translation:
+//[MConfigEditor]
+"Configuration editor"
+// need translation:
+//[MConfigEditorHelp]
+"Enter, F4, Shift+F4, Ctrl+H, Shift+F1"
 
 //[MSaveSetupTitle]
 "Zapisz ustawienia"
@@ -3777,8 +3783,6 @@
 "Skrót '{0}' zostanie usunięty."
 //[MMacroSequence]
 "Sekwencja:"
-//[MMacroDescription]
-"Opis:"
 //[MMacroReDefinedKey2]
 "Zdefiniować powtórnie?"
 //[MMacroDeleteKey2]
@@ -3788,6 +3792,10 @@
 
 //[MMacroSettingsTitle]
 "Ustawienia makra dla '{0}'"
+//[MMacroSettingsSequence]
+"Sekwencja:"
+//[MMacroSettingsDescription]
+"Opis:"
 //[MMacroSettingsEnableOutput]
 "&Wyłącz zapis na ekran podczas wykonywania makra"
 //[MMacroSettingsRunAfterStart]

@@ -638,6 +638,10 @@
 "Курсор у кі&нці"
 //[MEditConfigDefaultCodePage]
 "Кодова сторін&ка за замовчуванням:"
+//[MConfigEditor]
+"Редактор конфігурації"
+//[MConfigEditorHelp]
+"Enter, F4, Shift+F4, Ctrl+H, Shift+F1"
 
 //[MSaveSetupTitle]
 "Конфігурація"
@@ -3763,8 +3767,6 @@
 "Загальну макроклавішу '{0}' буде видалено."
 //[MMacroSequence]
 "Послідовність:"
-//[MMacroDescription]
-"Опис:"
 //[MMacroReDefinedKey2]
 "Перевизначити?"
 //[MMacroDeleteKey2]
@@ -3774,6 +3776,10 @@
 
 //[MMacroSettingsTitle]
 "Параметри макрокоманди для '{0}'"
+//[MMacroSettingsSequence]
+"Послідовність:"
+//[MMacroSettingsDescription]
+"Опис:"
 //[MMacroSettingsEnableOutput]
 "Дозволити під час &виконання виведення на екран"
 //[MMacroSettingsRunAfterStart]

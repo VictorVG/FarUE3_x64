@@ -638,6 +638,10 @@
 "Cu&rsor at the end"
 //[MEditConfigDefaultCodePage]
 "Default code pa&ge:"
+//[MConfigEditor]
+"Configuration editor"
+//[MConfigEditorHelp]
+"Enter, F4, Shift+F4, Ctrl+H, Shift+F1"
 
 //[MSaveSetupTitle]
 "Save setup"
@@ -3759,9 +3763,7 @@
 //[MMacroCommonDeleteKey]
 "Common macro key '{0}' will be removed."
 //[MMacroSequence]
-"Se&quence:"
-//[MMacroDescription]
-"&Description:"
+"Sequence:"
 //[MMacroReDefinedKey2]
 "Redefine?"
 //[MMacroDeleteKey2]
@@ -3771,6 +3773,10 @@
 
 //[MMacroSettingsTitle]
 "Macro settings for '{0}'"
+//[MMacroSettingsSequence]
+"Se&quence:"
+//[MMacroSettingsDescription]
+"&Description:"
 //[MMacroSettingsEnableOutput]
 "Allo&w screen output while executing macro"
 //[MMacroSettingsRunAfterStart]

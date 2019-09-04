@@ -638,6 +638,12 @@
 "Cursore Alla &Fine"
 //[MEditConfigDefaultCodePage]
 "Codifica Caratteri Default:"
+// need translation:
+//[MConfigEditor]
+"Configuration editor"
+// need translation:
+//[MConfigEditorHelp]
+"Enter, F4, Shift+F4, Ctrl+H, Shift+F1"
 
 //[MSaveSetupTitle]
 "Salva Impostazioni"
@@ -3768,8 +3774,6 @@
 "Tasto Macro Comune '{0}' Sarà Rimossa"
 //[MMacroSequence]
 "Sequenza:"
-//[MMacroDescription]
-"Descrizione"
 //[MMacroReDefinedKey2]
 "Reimposta?"
 //[MMacroDeleteKey2]
@@ -3779,6 +3783,10 @@
 
 //[MMacroSettingsTitle]
 "Configurazione Macro Per '{0}'"
+//[MMacroSettingsSequence]
+"Sequenza:"
+//[MMacroSettingsDescription]
+"Descrizione"
 //[MMacroSettingsEnableOutput]
 "&Abilita Schermo Quando Si Esegue Macro"
 //[MMacroSettingsRunAfterStart]

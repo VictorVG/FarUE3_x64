@@ -641,6 +641,12 @@
 "Kurzor na konci"
 //[MEditConfigDefaultCodePage]
 "Predvolená tabuľka znakov:"
+// need translation:
+//[MConfigEditor]
+"Configuration editor"
+// need translation:
+//[MConfigEditorHelp]
+"Enter, F4, Shift+F4, Ctrl+H, Shift+F1"
 
 //[MSaveSetupTitle]
 "Uloženie nastavení"
@@ -3771,8 +3777,6 @@
 "Kláves pre bežné makro '{0}' bude odstránený."
 //[MMacroSequence]
 "Postupnosť:"
-//[MMacroDescription]
-"Popis:"
 //[MMacroReDefinedKey2]
 "Predefinovať?"
 //[MMacroDeleteKey2]
@@ -3782,6 +3786,10 @@
 
 //[MMacroSettingsTitle]
 "Nastavenia makra pre '{0}'"
+//[MMacroSettingsSequence]
+"Postupnosť:"
+//[MMacroSettingsDescription]
+"Popis:"
 //[MMacroSettingsEnableOutput]
 "Povoliť &výstup na obrazovku, kým sa vykonáva makro"
 //[MMacroSettingsRunAfterStart]

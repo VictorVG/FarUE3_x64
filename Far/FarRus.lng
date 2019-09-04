@@ -638,6 +638,10 @@
 "Курсор в ко&нце"
 //[MEditConfigDefaultCodePage]
 "Кодовая стран&ица по умолчанию:"
+//[MConfigEditor]
+"Редактор конфигурации"
+//[MConfigEditorHelp]
+"Enter, F4, Shift+F4, Ctrl+H, Shift+F1"
 
 //[MSaveSetupTitle]
 "Конфигурация"
@@ -3763,8 +3767,6 @@
 "Общая макроклавиша '{0}' будет удалена."
 //[MMacroSequence]
 "Последовательность:"
-//[MMacroDescription]
-"Описание:"
 //[MMacroReDefinedKey2]
 "Переопределить?"
 //[MMacroDeleteKey2]
@@ -3774,6 +3776,10 @@
 
 //[MMacroSettingsTitle]
 "Параметры макрокоманды для '{0}'"
+//[MMacroSettingsSequence]
+"Последовательность:"
+//[MMacroSettingsDescription]
+"Описание:"
 //[MMacroSettingsEnableOutput]
 "Разрешить во время &выполнения вывод на экран"
 //[MMacroSettingsRunAfterStart]

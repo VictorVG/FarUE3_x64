@@ -651,6 +651,12 @@
 "Pfeile am Ende"
 //[MEditConfigDefaultCodePage]
 "Codepage standardmäßig voreingestellt:"
+// need translation:
+//[MConfigEditor]
+"Configuration editor"
+// need translation:
+//[MConfigEditorHelp]
+"Enter, F4, Shift+F4, Ctrl+H, Shift+F1"
 
 //[MSaveSetupTitle]
 "Einstellungen speichern"
@@ -3845,8 +3851,6 @@
 "Gemeinsames Makro '{0}' wird entfernt und ersetzt:"
 //[MMacroSequence]
 "Sequenz:"
-//[MMacroDescription]
-"Beschreibung:"
 //[MMacroReDefinedKey2]
 "Neu definieren?"
 //[MMacroDeleteKey2]
@@ -3856,6 +3860,10 @@
 
 //[MMacroSettingsTitle]
 "Einstellungen für Makro '{0}'"
+//[MMacroSettingsSequence]
+"Sequenz:"
+//[MMacroSettingsDescription]
+"Beschreibung:"
 //[MMacroSettingsEnableOutput]
 "Bildschirmausgabe &während Makro abläuft"
 //[MMacroSettingsRunAfterStart]

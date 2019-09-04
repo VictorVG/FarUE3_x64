@@ -638,6 +638,10 @@
 "Курсор у ка&нцы"
 //[MEditConfigDefaultCodePage]
 "Прадвызначаная кад&ыроўка:"
+//[MConfigEditor]
+"Рэдактар налад"
+//[MConfigEditorHelp]
+"Enter, F4, Shift+F4, Ctrl+H, Shift+F1"
 
 //[MSaveSetupTitle]
 "Захаваць налады"
@@ -3766,8 +3770,6 @@
 "Агульная клавіша макрасу '{0}' будзы выдалена."
 //[MMacroSequence]
 "Паслядоўнасць:"
-//[MMacroDescription]
-"Апісанне:"
 //[MMacroReDefinedKey2]
 "Перавызначыць?"
 //[MMacroDeleteKey2]
@@ -3777,6 +3779,10 @@
 
 //[MMacroSettingsTitle]
 "Налады каманды макрасу для '{0}'"
+//[MMacroSettingsSequence]
+"Паслядоўнасць:"
+//[MMacroSettingsDescription]
+"Апісанне:"
 //[MMacroSettingsEnableOutput]
 "Дазволіць у час &выканання вываду на экран"
 //[MMacroSettingsRunAfterStart]
