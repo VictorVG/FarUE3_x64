@@ -4,7 +4,12 @@ if defined PROCESSOR_ARCHITEW6432 (set reg="%systemroot%\sysnative\reg.exe"
      ) else (
      set reg=reg)
 set prm=%1 %2 %3 %4
-if "%prm%"=="" (set prm=C:\ C:\)
+if not "%4"=="" (goto nxt)
+if not "%3"=="" (goto nxt)
+if not "%2"=="" (goto nxt)
+if not "%1"=="" (goto nxt)
+set prm=C:\ C:\
+:nxt
 echo REGEDIT4>"%TEMP%\def.reg"
 echo ; >>"%TEMP%\def.reg"
 echo [HKEY_CURRENT_USER\Software\Far Manager\Plugins\MultiArc]>>"%TEMP%\def.reg"

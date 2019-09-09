@@ -1,4 +1,4 @@
-﻿-------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
 -- Список завершения LuaMacro. © SimSU
 -------------------------------------------------------------------------------
 
@@ -116,14 +116,14 @@ local S=(loadfile(win.GetEnv("FARLOCALPROFILE").."\\SimSU\\Editor_MacroComplete.
 
 local SimSU=_G.SimSU or {}
 -------------------------------------------------------------------------------
-S.Addon   = S.Addon  ==nil and Settings().Addon   or S.Addon
+S.Addon   = S.Addon  ==nil and Settings().Addon   or S.Addon  
 S.Aliases = S.Aliases==nil and Settings().Aliases or S.Aliases
 
 local function GetLuaWord(String,Position)
   local str=String or Editor.Value; local pos= Position or Editor.CurPos
   local _,b,e,w
-  _,e = str:cfind("^[a-zA-Z_0-9]+",pos); e= e or pos-1
-  b,e,w=str:sub(1,e):cfind("([a-zA-Z_0-9]+)$")
+  _,e = str:find("^[a-zA-Z_0-9]+",pos); e= e or pos-1
+  b,e,w=str:sub(1,e):find("([a-zA-Z_0-9]+)$")
   return w,b,e
 end
 
@@ -142,6 +142,7 @@ local function Fields(Chain)
     Table=S.Aliases
     for i=#chain,2,-1 do if ItField(Table,chain[i]) then Table=Table[chain[i]] else return end end
   end
+  if type(Table)=="string" then Table={Table} end
   local Prop={}
   for k in pairs(Table) do
     local t=type(Table[k])

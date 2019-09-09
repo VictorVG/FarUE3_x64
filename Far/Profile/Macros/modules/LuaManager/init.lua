@@ -2086,7 +2086,7 @@ return(as<bs)
 end
 --
 local function ProcMod(_,fullname,bp,fmask,mask,modules,off) -- обработка найденных потенциальных модулей
-local mn,fn = fullname:sub(bp:len()+1):gsub(OffExt.."$",""):gsub("%.%a*$",""):gsub("\\","%."),fullname -- имя модуля
+local mn,fn = fullname:sub(bp:len()+1):gsub(OffExt.."$",""):gsub("%.%a*$",""):gsub("\\","."),fullname -- имя модуля
 if mask:find("?\\init",1,true) then -- модуль - каталог с init.lua внутри?
   mn,fn = mn:match("^(.*)%.init$"),fullname:gsub(OffExt.."$",""):match("^(.*)init%.%a*$") -- скорректируем имя модуля и полный путь
 else -- модуль - .lua-файл
@@ -2169,7 +2169,7 @@ repeat -- работаем, пока не надоест
   end -- for - перебор id
   if S.Show.O then -- показывать модули?
     for v in S.Filter.P:gmatch('"([^"]*)"') do -- переберём все возможные места расположения модулей
-      local path,fmask = far.ConvertPath(v):gsub("%?","%*"):match("^([^%*]*).-([^\\]*)$") -- путь и маска
+      local path,fmask = far.ConvertPath(v):gsub("?","*"):match("^([^%*]*).-([^\\]*)$") -- путь и маска
       far.RecursiveSearch(path,fmask,ProcMod,F.FRS_RECUR,path,ff,v,modules) -- переберём все кандидаты
       far.RecursiveSearch(path,fmask..OffExt,ProcMod,F.FRS_RECUR,path,ff,v,modules,OffExt) -- переберём все кандидаты
     end

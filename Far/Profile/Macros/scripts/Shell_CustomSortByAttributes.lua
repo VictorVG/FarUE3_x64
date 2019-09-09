@@ -1,5 +1,5 @@
 ﻿-- https://forum.ru-board.com/topic.cgi?forum=5&topic=49572&start=2240#16
--- v1.9
+-- v2.0
 
 if not (bit and jit) then return end
 
@@ -8,7 +8,7 @@ local guid = win.Uuid("A79390CE-5450-403A-8FAE-17EE3315CB38")
 local MenuGuid = "B8B6E1DA-4221-47D2-AB2E-9EC67D0DC1E3"
 -- Settings --------------------------------------------------------------------
 local ModeNumber = 109
-local Description = "Custom: by attributes"
+local Description = "Custom: by Attributes"
 local Indi1 = "aA"
 local Indicator = Indi1
 local Key = "CtrlShiftF3"
@@ -26,35 +26,37 @@ local Items = {
 --[[08]] {F.DI_CHECKBOX,  5,6,  30,0, 0, 0,0, 0, "&Archive"},
 --[[09]] {F.DI_CHECKBOX,  5,7,  30,0, 0, 0,0, 0, "&Hidden"},
 --[[10]] {F.DI_CHECKBOX,  5,8,  30,0, 0, 0,0, 0, "&System"},
---[[11]] {F.DI_CHECKBOX,  5,9,  30,0, 0, 0,0, 0, "&Compressed"},
---[[12]] {F.DI_CHECKBOX,  5,10,  30,0, 0, 0,0, 0, "&Encrypted"},
---[[13]] {F.DI_CHECKBOX,  5,11,  30,0, 0, 0,0, 0, "Not &indexed"},
---[[14]] {F.DI_CHECKBOX,  5,12, 30,0, 0, 0,0, 0, "S&parse"},
---[[15]] {F.DI_CHECKBOX,  5,13, 30,0, 0, 0,0, 0, "Temporar&y"},
---[[16]] {F.DI_CHECKBOX,  5,14, 30,0, 0, 0,0, 0, "Off&line"},
---[[17]] {F.DI_CHECKBOX,  38,5, 62,0, 0, 0,0, 0, "Reparse poin&t"},
---[[18]] {F.DI_CHECKBOX,  38,6, 62,0, 0, 0,0, 0, "&Virtual"},
---[[19]] {F.DI_CHECKBOX,  38,7, 62,0, 0, 0,0, 0, "Inte&grity stream"},
---[[20]] {F.DI_CHECKBOX,  38,8, 62,0, 0, 0,0, 0, "No scru&b data"},
---[[21]] {F.DI_CHECKBOX,  38,9, 62,0, 0, 0,0, 0, "Pinne&d"},
---[[22]] {F.DI_CHECKBOX,  38,10, 62,0, 0, 0,0, 0, "&Unpinned"},
---[[23]] {F.DI_CHECKBOX,  38,11, 62,0, 0, 0,0, 0, "Recall on open &J"},
---[[24]] {F.DI_CHECKBOX,  38,12,62,0, 0, 0,0, 0, "Recall on data access &K"},
---[[25]] {F.DI_CHECKBOX,  38,13,62,0, 0, 0,0, 0, "Strictly se&quential"},
---[[26]] {F.DI_CHECKBOX,  26,15,42,0, 0, 0,0, 0, "by selected &Z"},
---[[27]] {F.DI_CHECKBOX,  5,17, 17,0, 0, 0,0, 0, "Report &W"},
---[[28]] {F.DI_TEXT,     -1,16,  0,0, 0, 0,0, F.DIF_SEPARATOR,""},
---[[29]] {F.DI_BUTTON,    0,17,  0,0, 0, 0,0, F.DIF_DEFAULTBUTTON+F.DIF_CENTERGROUP,"&Ok"},
---[[30]] {F.DI_BUTTON,    0,17,  0,0, 0, 0,0, F.DIF_CENTERGROUP,"Ca&ncel"}
+--[[11]] {F.DI_CHECKBOX,  5,9,  30,0, 0, 0,0, 0, "&Directory"},
+--[[12]] {F.DI_CHECKBOX,  5,10, 30,0, 0, 0,0, 0, "&Compressed"},
+--[[13]] {F.DI_CHECKBOX,  5,11, 30,0, 0, 0,0, 0, "&Encrypted"},
+--[[14]] {F.DI_CHECKBOX,  5,12, 30,0, 0, 0,0, 0, "Not &indexed"},
+--[[15]] {F.DI_CHECKBOX,  5,13, 30,0, 0, 0,0, 0, "S&parse"},
+--[[16]] {F.DI_CHECKBOX,  5,14, 30,0, 0, 0,0, 0, "&Temporary"},
+--[[17]] {F.DI_CHECKBOX,  38,5, 62,0, 0, 0,0, 0, "Off&line"},
+--[[18]] {F.DI_CHECKBOX,  38,6, 62,0, 0, 0,0, 0, "Reparse point &X"},
+--[[19]] {F.DI_CHECKBOX,  38,7, 62,0, 0, 0,0, 0, "&Virtual"},
+--[[20]] {F.DI_CHECKBOX,  38,8, 62,0, 0, 0,0, 0, "Inte&grity stream"},
+--[[21]] {F.DI_CHECKBOX,  38,9, 62,0, 0, 0,0, 0, "No scru&b data"},
+--[[22]] {F.DI_CHECKBOX,  38,10,62,0, 0, 0,0, 0, "Pinned &Y"},
+--[[23]] {F.DI_CHECKBOX,  38,11,62,0, 0, 0,0, 0, "&Unpinned"},
+--[[24]] {F.DI_CHECKBOX,  38,12,62,0, 0, 0,0, 0, "Recall on open &J"},
+--[[25]] {F.DI_CHECKBOX,  38,13,62,0, 0, 0,0, 0, "Recall on data access &K"},
+--[[26]] {F.DI_CHECKBOX,  38,14,62,0, 0, 0,0, 0, "Strictly se&quential"},
+--[[27]] {F.DI_CHECKBOX,  20,15,36,0, 0, 0,0, 0, "by selected &Z"},
+--[[28]] {F.DI_CHECKBOX,  5,17, 17,0, 0, 0,0, 0, "Report &W"},
+--[[29]] {F.DI_TEXT,     -1,16,  0,0, 0, 0,0, F.DIF_SEPARATOR,""},
+--[[30]] {F.DI_BUTTON,    0,17,  0,0, 0, 0,0, F.DIF_DEFAULTBUTTON+F.DIF_CENTERGROUP,"&Ok"},
+--[[31]] {F.DI_BUTTON,    0,17,  0,0, 0, 0,0, F.DIF_CENTERGROUP,"Ca&ncel"}
 }
 
-local AttributesSymbols="rahsceipyltvgbdujkq"
+local AttributesSymbols="rahsdceipyltvgbxujkq"
 
 local AttributeValue = {
 --[[FILE_ATTRIBUTE_READONLY           ]] 0x00000001,
 --[[FILE_ATTRIBUTE_ARCHIVE            ]] 0x00000020,
 --[[FILE_ATTRIBUTE_HIDDEN             ]] 0x00000002,
 --[[FILE_ATTRIBUTE_SYSTEM             ]] 0x00000004,
+--[[FILE_ATTRIBUTE_DIRECTORY          ]] 0x00000010,
 --[[FILE_ATTRIBUTE_COMPRESSED         ]] 0x00000800,
 --[[FILE_ATTRIBUTE_ENCRYPTED          ]] 0x00004000,
 --[[FILE_ATTRIBUTE_NOT_CONTENT_INDEXED]] 0x00002000,
@@ -76,7 +78,7 @@ local AttributeValue = {
 --  FILE_ATTRIBUTE_DEVICE                0x00000040
 --  FILE_ATTRIBUTE_NORMAL                0x00000080
 
-local SAttributes,FAttributes,FAMasque,AttributesWeight,CompareMode,xReport,count,FName,GFocus,ttime0,count0 = "",{},0x205FFF27,0,true,false,0,"",5
+local SAttributes,FAttributes,FAMasque,AttributesWeight,CompareMode,xReport,count,FName,GFocus,ttime0,count0 = "",{},0x205FFF37,0,true,false,0,"",5
 for i=1,#AttributeValue do FAttributes[i]=false end
 
 local function BySelected(l)
@@ -110,7 +112,7 @@ local function DlgProc(hDlg,Msg,Param1,Param2)
     hDlg:send(F.DM_SETTEXT,2,"File: "..(FName:len()<55 and FName or (FName:sub(1,27).."…"..FName:sub(-26,-1))))
     for i=1,#AttributeValue do tFAttributes[i]=FAttributes[i] end
     hDlg:send(F.DM_SETTEXT,4,tostring(tSAttributes):gsub("^0",""))
-    hDlg:send(F.DM_SETCHECK,26,tCompareMode and F.BSTATE_CHECKED or F.BSTATE_UNCHECKED)
+    hDlg:send(F.DM_SETCHECK,27,tCompareMode and F.BSTATE_CHECKED or F.BSTATE_UNCHECKED)
     for i=1,#AttributeValue do
       hDlg:send(F.DM_SETCHECK,i+6,tFAttributes[i] and F.BSTATE_CHECKED or F.BSTATE_UNCHECKED)
     end
@@ -148,7 +150,7 @@ local function DlgProc(hDlg,Msg,Param1,Param2)
     end
   elseif Msg==F.DN_BTNCLICK and Param1==26 then
     tCompareMode = Param2~=0
-  elseif Msg==F.DN_BTNCLICK and Param1>6 and Param1<26 then
+  elseif Msg==F.DN_BTNCLICK and Param1>6 and Param1<27 then
     local i=Param1-6
     tFAttributes[i] = Param2~=0
     if tonumber(tSAttributes) then
@@ -157,7 +159,7 @@ local function DlgProc(hDlg,Msg,Param1,Param2)
       tSAttributes = tFAttributes[i] and tSAttributes..AttributesSymbols:sub(i,i) or tSAttributes:gsub(AttributesSymbols:sub(i,i),"")
     end
     hDlg:send(F.DM_SETTEXT,4,tSAttributes)
-  elseif Msg==F.DN_BTNCLICK and Param1==27 then   -- [x] Report
+  elseif Msg==F.DN_BTNCLICK and Param1==28 then   -- [x] Report
     xReport = Param2~=0
   elseif Msg==F.DN_GOTFOCUS then
     if Param1>1 and Param1<#Items-2 then GFocus=Param1 end

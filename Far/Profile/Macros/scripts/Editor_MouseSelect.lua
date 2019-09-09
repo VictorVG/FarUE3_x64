@@ -66,7 +66,7 @@ end --end
 local M=(loadfile(win.GetEnv("FARPROFILE").."\\SimSU\\Editor_MouseSelect"..far.lang..".lng") or Messages)()
 local S=(loadfile(win.GetEnv("FARLOCALPROFILE").."\\SimSU\\Editor_MouseSelect.cfg") or loadfile(win.GetEnv("FARPROFILE").."\\SimSU\\Editor_MouseSelect.cfg") or Settings)()
 
-local SimSU= SimSU or {}
+local SimSU= _G.SimSU or {}
 -------------------------------------------------------------------------------
 local TitleBar,KeyBar,ScrollBar
 S.Timing = S.Timing==nil and Settings().Timing or S.Timing
@@ -82,7 +82,7 @@ end
 
 local function MouseToText()
 -- Функция пересчёта экранных координат мышки в координаты текста.
-  local X0,Y0 = Editor.Pos(0,5),Editor.Pos(0,4)
+  local X0,Y0 = editor.GetInfo(nil).LeftPos,editor.GetInfo(nil).TopScreenLine
   local Yc= Mouse.Y==TitleBar-1 and Y0 or Mouse.Y>=Far.Height-1-KeyBar and Y0+Far.Height-1-TitleBar-KeyBar or Y0+Mouse.Y-TitleBar
   local Xc= Mouse.X==0 and X0 or Mouse.X>=Far.Width-1-ScrollBar and X0+Far.Width-1-ScrollBar or X0+Mouse.X
   return Xc,Yc,X0,Y0 -- Координаты курсора и координаты экрана.

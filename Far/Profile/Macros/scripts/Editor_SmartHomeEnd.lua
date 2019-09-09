@@ -52,13 +52,13 @@ local SimSU=_G.SimSU or {}
 
 local function Home()
   Editor.Pos(1,5,1); if Editor.Set(2,-1)==0 and band(Editor.State,0x30)~=0 then Editor.Sel(4) end
-  local First=(Editor.Value):cfind("%S")
+  local First=(Editor.Value):find("%S")
   Editor.Pos(1,2,Editor.RealPos~=First and First or 1)
 end
 
 local function End()
   if Editor.Set(2,-1)==0 and band(Editor.State,0x30)~=0 then Editor.Sel(4) end
-  local Last=(Editor.Value):cfind("%s+$")
+  local Last=(Editor.Value):find("%s+$")
   local Len=(Editor.Value):len()+1
   Editor.Pos(1,2,Editor.RealPos>Len and Len or Editor.RealPos~=Last and Last or Len)
 end
