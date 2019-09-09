@@ -1,4 +1,4 @@
--------------------------------------------------------------------------------
+﻿-------------------------------------------------------------------------------
 -- Список завершения LuaMacro. © SimSU
 -------------------------------------------------------------------------------
 
@@ -116,7 +116,7 @@ local S=(loadfile(win.GetEnv("FARLOCALPROFILE").."\\SimSU\\Editor_MacroComplete.
 
 local SimSU=_G.SimSU or {}
 -------------------------------------------------------------------------------
-S.Addon   = S.Addon  ==nil and Settings().Addon   or S.Addon  
+S.Addon   = S.Addon  ==nil and Settings().Addon   or S.Addon
 S.Aliases = S.Aliases==nil and Settings().Aliases or S.Aliases
 
 local function GetLuaWord(String,Position)
