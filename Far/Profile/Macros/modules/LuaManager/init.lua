@@ -2,7 +2,7 @@
 local nfo = Info {
   name          = "LuaManager";
   description   = "Менеджер Lua/Moon-скриптов для Fara";
-  version       = "5.0.3"; --в формате semver: http://semver.org/lang/ru/
+  version       = "5.0.4"; --в формате semver: http://semver.org/lang/ru/
   author        = "IgorZ";
   url           = "http://forum.farmanager.com/viewtopic.php?t=7936";
   id            = "180EE412-CBDE-40C7-9AE6-37FC64673CBD";
@@ -146,6 +146,9 @@ history         = [[
                     "Панели" в диалоге конфигурации. Ещё всякие мелочи.
 2018/11/06 v5.0.2 - Добавлен макрос вставки панельного плагина. Рефакторинг. Мелкие правки.
 2018/12/10 v5.0.3 - Добавлена фильтрация по фиктивному/отстутствующему key. Доработана поддержка несохранённых клавиатурных макросов.
+2019/09/11 v5.0.4 - Исправлена редкая ошибка, когда LuaManager по какой-то причине не мог правильно определить текст скрипта и зацикливался.
+                    Исправлена ошибка с обращением к Description при редактировании панельного модуля. Исправлена функция сохранения одного параметра.
+                    Исправлена ошибка с лишним "%" в новом значении в gsub.
 ]];
 }
 if not nfo then return nfo end
@@ -271,8 +274,8 @@ function SaveSettings() --[[сохранить настройки в БД]]
 if UsedProfile==F.PSL_LOCAL then win.CreateDir(LP.."\\PluginsData") end -- создадим папку для локальных настроек (если надо)
 local obj = far.CreateSettings(nil,UsedProfile) -- откроем ранее прочитанные или предпочтительные настройки
 local key = obj:CreateSubkey(obj:CreateSubkey(0,Author),ConfPart) -- откроем/создадим раздел
-local function S1(n,v) v = (v==nil)and S[n]or v;v = v==true and 1 or v==false and 0 or v;local t = type(v)=="string" and F.FST_STRING or F.FST_QWORD
-                       if obj:Get(key,n,t)~=v then obj:Set(key,n,t,v) end end
+local function S1(n,v) if v==nil then v=S[n] end; if v==nil then obj:Delete(key,n) return end; v = v==true and 1 or v==false and 0 or v
+                       local t = type(v)=="string" and F.FST_STRING or F.FST_QWORD; if obj:Get(key,n,t)~=v then obj:Set(key,n,t,v) end end
 S1("MaxKeyWidth") S1("MaxFileWidth") S1("MacroMaxDescWidth") S1("MacroSortingOrder",S.SO.M)
 S1("EventSortingOrder",S.SO.E) S1("ModuleSortingOrder",S.SO.O) S1("MISortingOrder",S.SO.I) S1("PrefixSortingOrder",S.SO.P)
 S1("PanelSortingOrder",S.SO.N) S1("KeyFilter",S.Filter.K) S1("AreaFilter",S.Filter.A) S1("GroupFilter",S.Filter.G)
@@ -326,7 +329,7 @@ if fmoon then l1 = MoonLine(file,l1)+1 end --!!!плохо определяет�
 repeat -- если Macro/Event и { на разных строках, то выходит ошибка, поэтому покрутим
   text = regex.gsub("--\n"..Read(file).."\n",fmoon and "/(.*?^(?!--).*?\n)/sm" or ".*?\n","",l1) -- достанем текст функции с остатком файла
   if text=="\n" then return {} end -- не смогли - уйдём, как будто и нет
-  if not fmoon then text = text:match((".-[\r\n]"):rep(l2-l1+1)) or "" end -- для lua достанем строки с текстом функции
+  if not fmoon then text = regex.match(text,(".*?[\r\n]"):rep(l2-l1+1)) or "" end -- для lua достанем строки с текстом функции
   fname = text:match(fmoon and "^[ \t]*([%a_%.][%w_%.]*)%s*=[^\r\n]*%->" or "function%s*([%a_%.][%w_%.]*)%s*%b()") -- выдернем имя функции
   if fmoon then -- .moon?
     prefix,fbody,text = text:match("^(%s*)"..(fname and "("..fname.."%s*=" or param.."%s*:%s*(").."[^\n]*%->[^\n]*\n)(.*)") -- отступ, начало, остаток
@@ -366,7 +369,7 @@ if item.FileName and win.GetFileAttr(item.FileName) then -- есть, откуд
       local id = v.t[Uid(item)] or v.t.uid or ("≈%s: %s"):format(item.FileName:match"[^\\]+$",v.t.description or 'nil') -- !!!функция-костыль!!!
       if item[Uid(item)]:upper()==id:upper() then res.sstarty = v.l res.src = v.t break end -- нашли? запомним номер первой строки - и всё
     end
-  elseif item.Info then -- PanelModule всегда имеет Info.Guid
+  elseif item.Info and item.Info.Guid then -- PanelModule всегда имеет Info.Guid
     for _, v in ipairs(tbl) do -- переберём всех кандидатов
       if item.Info.Guid==v.t.Info.Guid then res.sstarty = v.l res.src = v.t break end -- нашли? запомним номер первой строки
     end
@@ -393,6 +396,7 @@ if item.FileName and win.GetFileAttr(item.FileName) then -- есть, откуд
   end
   if not res.sstarty then return res end -- не нашли - так уйдём
   if res.smoon then res.sstarty = MoonLine(item.FileName,res.sstarty) end--!!!плохо определяется строка!!!
+  local savedy = res.sstarty
   repeat -- если Macro/Event и { на разных строках, то выходит ошибка, поэтому покрутим
     text = "\n"..Read(item.FileName):gsub(".-[\r\n]","",res.sstarty-1).."\n" -- получим весь файл, начиная с нужной строки
     if res.smoon then -- .moon?
@@ -404,8 +408,9 @@ if item.FileName and win.GetFileAttr(item.FileName) then -- есть, откуд
     end
     if res.sbody then break end -- нашли? Всё, идём дальше
     res.sstarty = res.sstarty-1 -- повторим всё заново, но на одну строку ближе к началу
+    if res.sstarty<1 then res.sstarty = savedy break end
   until false
-  res.spfx,res.sstartx = prefix,res.smoon and prefix:len()+1 or text:cfind(res.sbody,1,true)-1 -- запомним начало в строке
+  res.spfx,res.sstartx = prefix,res.sbody and (res.smoon and prefix:len()+1 or text:cfind(res.sbody,1,true)-1) or 1 -- запомним начало в строке
 end
 return res
 end
@@ -662,7 +667,7 @@ repeat
   if item.Info then -- PanelModule?
     strings[#strings+1] = {text=L.diShow.guid..win.Uuid(item.Info.Guid),item=win.Uuid(item.Info.Guid)}
     strings[#strings+1] = {text=L.diShow.Name..(item.Info.Title and item.Info.Title or L.Absent),item=item.Info.Title}
-    strings[#strings+1] = {text=L.diShow.Desc..(item.Info.description~="" and item.Info.description or L.Absent),item=item.Info.description}
+    strings[#strings+1] = {text=L.diShow.Desc..(item.Info.Description~="" and item.Info.Description or L.Absent),item=item.Info.Description}
     strings[#strings+1] = {text=L.diShow.Author..(item.Info.Author and item.Info.Author or L.Absent),item=item.Info.Author}
     strings[#strings+1] = {text=L.diShow.Version..(item.Info.Version and item.Info.Version or L.Absent),item=item.Info.Version}
     for _,f in ipairs(FuncNames) do if item[f] then ProcessFunction(item[f],f..":"..L.diShow.Space:sub(f:len()+2),D[f].body,strings) end end
@@ -1477,14 +1482,14 @@ end
 end
 -- начало кода функции
 if not (item.FileName and win.GetFileAttr(item.FileName)) then
-  return false,L.CommandLine.." "..item.description..". "..L.er.NoFile
+  return false,L.PanelModule.." "..item.descr..". "..L.er.NoFile
 end
 if new then D = {smoon = item.FileName:lower():match("%.moon$"),spfx = ""} -- новый префикс - сделаем заглушки
 else
   D = PrepareFiles(item) -- достанем всё
   if not D.sbody then -- префикс не найден?
-    if far.Message(L.CommandLine.." "..item.description..L.er.NotFound..".\n"..L.edEditPanelModule.."?",nfo.name,";OkCancel")==1 then
-      return OpenInEditor(item) else return false,L.PanelModule.." "..item.description..L.er.NotFound end
+    if far.Message(L.PanelModule.." "..item.descr..L.er.NotFound..".\n"..L.edEditPanelModule.."?",nfo.name,";OkCancel")==1 then
+      return OpenInEditor(item) else return false,L.PanelModule.." "..item.descr..L.er.NotFound end
   end
 end
 for i,fn in ipairs(FuncNames) do
@@ -2169,7 +2174,7 @@ repeat -- работаем, пока не надоест
   end -- for - перебор id
   if S.Show.O then -- показывать модули?
     for v in S.Filter.P:gmatch('"([^"]*)"') do -- переберём все возможные места расположения модулей
-      local path,fmask = far.ConvertPath(v):gsub("?","*"):match("^([^%*]*).-([^\\]*)$") -- путь и маска
+      local path,fmask = far.ConvertPath(v):gsub("%?","*"):match("^([^%*]*).-([^\\]*)$") -- путь и маска
       far.RecursiveSearch(path,fmask,ProcMod,F.FRS_RECUR,path,ff,v,modules) -- переберём все кандидаты
       far.RecursiveSearch(path,fmask..OffExt,ProcMod,F.FRS_RECUR,path,ff,v,modules,OffExt) -- переберём все кандидаты
     end
@@ -2512,7 +2517,7 @@ return setmetatable({ -- что возвращает модуль
   Config = Config;
   InsertScript = function(stype) if Area.Editor then return InsertScriptIntoEditor(stype) else ErrMess(L.Lang and L.er.NotEditor or L[1]) end end;
   EditScript = function(line) if Area.Editor then return EditScriptUnderCursor(line) else ErrMess(L.Lang and L.er.NotEditor or L[1]) end end;
-  InsUid = function() print(GenUid()) end;
+  InsUid = function() mf.print(GenUid()) end;
   Reload = Reload;
   __MData = function() return L,Guids,S.Key,LMBuild end;
 },{__index=idx;__call=function(self,...) return self.Main(...) end;})

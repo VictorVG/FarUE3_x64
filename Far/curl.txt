@@ -70,6 +70,7 @@ Usage: curl [options...] <url>
      --http1.1       Use HTTP 1.1
      --http2         Use HTTP 2
      --http2-prior-knowledge Use HTTP 2 without HTTP/1.1 Upgrade
+     --http3         Use HTTP v3
      --ignore-content-length Ignore the size of the remote resource
  -i, --include       Include protocol response headers in the output
  -k, --insecure      Allow insecure server connections when using SSL
@@ -111,6 +112,8 @@ Usage: curl [options...] <url>
      --ntlm-wb       Use HTTP NTLM authentication with winbind
      --oauth2-bearer <token> OAuth 2 Bearer Token
  -o, --output <file> Write to file instead of stdout
+ -Z, --parallel      Perform transfers in parallel
+     --parallel-max  Maximum concurrency for parallel transfers
      --pass <phrase> Pass phrase for the private key
      --path-as-is    Do not squash .. sequences in URL path
      --pinnedpubkey <hashes> FILE/HASHES Public key to verify peer against
@@ -167,6 +170,7 @@ Usage: curl [options...] <url>
      --retry-connrefused Retry on connection refused (use with --retry)
      --retry-delay <seconds> Wait time between retries
      --retry-max-time <seconds> Retry only within this period
+     --sasl-authzid <identity>  Use this identity to act as during SASL PLAIN authentication
      --sasl-ir       Enable initial response in SASL authentication
      --service-name <name> SPNEGO service name
  -S, --show-error    Show error even when -s is used
