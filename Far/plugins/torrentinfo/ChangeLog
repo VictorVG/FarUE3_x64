@@ -1,5 +1,9 @@
-TorrentInfo 3.9 24-09-2019
---------------------------
+TorrentInfo 3.9.1 27-09-2019
+----------------------------
+ * Magnet link generation patch -- https://sourceforge.net/p/farplugs/tickets/139/
+
+TorrentInfo 3.9.0 24-09-2019
+----------------------------
  * Memory leaks
 
 TorrentInfo 3.8 13-05-2013
