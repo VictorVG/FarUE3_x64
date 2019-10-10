@@ -1,4 +1,4 @@
--- Integrity Checker by Ariman
+﻿-- Integrity Checker by Ariman
 --
 -- Скрипт решает две задачи - вызов главного меню плагина и проверку хэшей
 -- с подавлением записи об этом в историю (без мусора оно как спокойнее).
@@ -57,55 +57,94 @@
 -- в отдельный оператор local так, чтобы вывелась только одна строка
 -- 22.04.2019 17:53:12 +0300
 -- v1.5.0 - рефакторинг, макрос Integrity Checker: calc hash for the file under
--- cursor переписан с использованием chashex(), реализован расчёт хешей для всех
--- или выбранных файлов в теущем каталоге;
+-- cursor переписано с использованием chashex(), реализован расчёт хешей для всех
+-- или выбранных файлов в текущем каталоге;
 -- 02.10.2019 08:58:55 +0300
+-- v1.6.0 - расчёт хэшей для указанного пользователем файла или дерева каталогов, рефакторинг;
+-- 07.10.2019 22:00:27 +0300
+-- v1.7.0 - считаем хэши для всех файлов в локальном каталоге и его подкаталогах, рефакторинг;
+-- 09.10.2019 19:01:24 +0300
 
 local ICId,ICMID="E186306E-3B0D-48C1-9668-ED7CF64C0E65","A22F9043-C94A-4037-845C-26ED67E843D1";
 local Mask="/.+\\.(md5|sfv|sha(1|3|256|512)|wrpl)/i";
 local MsB,MsF=Mouse.Button,Mouse.EventFlags;
 local Msg="Командая строка не пуста, но под курсором хэш файл. Что выполнить? Команду: Ok или Проверку: Cancel";
 local function chashex(hs,ft,md)
-local t,s,sv,i,j=mf.string(""),mf.string(""),APanel.CurPos,0,0;
+-- Функция не работает с виртуальными панелями плагинов!
+-- Возвращает посчитанный хэш или 0 при ошибке, или -1 если файл на
+-- виртуальной панели плагина;
 -- ft - формат 1 == BSD, 0 == GNU, по умолчанию GNU;
 -- hs - имя алгоритма;
--- md - режим счёта 0 - под курсором, 1 - выбранные или весь каталог;
+-- md - режим счёта:
+--    0 - файл под курсором,
+--    1 - выбранные файлы или весь каталог без учёта подкаталогов;
+--    2 - указанный файл,
+--    3 - указанный каталог и его подкаталоги;
+--    4 - локальный каталог и его подкаталоги;
+if APanel.Plugin then do return -1 end end;
+local s,sv,i,j=tostring(""),APanel.CurPos,0,0;
 local function ch(hn,pth)
- if APanel.Plugin then do return -1 end
-   else do return mf.string(Plugin.SyncCall(ICId,"gethash",""..hn.."",""..pth.."")) end end;
+-- pth - UNC путь к проверяемому файлу;
+-- hsh - имя алгоритма;
+local ICId="E186306E-3B0D-48C1-9668-ED7CF64C0E65";
+   return mf.string(Plugin.SyncCall(ICId,"gethash",""..hn.."",""..pth..""));
 end
+ if md == 4 then
+  local nr,hr,lr,drr,dlr=tostring(""),tostring(""),0,far.GetDirList(APanel.Path),{};
+   for i=1,#drr do
+    dlr[i]=drr[i].FileName
+     lr=mf.substr(dlr[i],#APanel.Path + 1)
+      hr=ch(hs,dlr[i])
+     if hr ~= "0" then if ft == 1 then s=s..hs.." ("..lr..") = "..hr.."\n" else s=s..hr.." *"..lr.."\n" end end;
+   end;
+ end;
+ if md == 3 then
+  local nm,hl=mf.prompt("Please, select folder","Path",5,nil),tostring("");
+   if mf.fexist(nm) == true then
+    local dr,dl=far.GetDirList(nm),{}
+      for i=1,#dr do
+       dl[i]=dr[i].FileName
+       hl=ch(hs,dl[i])
+       if hl ~= "0" then if ft == 1 then s=s..hs.." ("..dl[i]..") = "..hl.."\n" else s=s..hl.." *"..dl[i].."\n" end end;
+      end
+   end;
+ end;
+ if md == 2 then local nm=mf.prompt("Please, select file","File",5,nil);
+  if ft == 1 then s=hs.." ("..nm..") = "..ch(hs,nm) else s=ch(hs,nm).." *"..nm end;
+ end;
  if md == 1  then
   if APanel.Selected then
   j=APanel.SelCount;
    for i=1,j,1 do Panel.SetPosIdx(0,i,1);
     if not APanel.Folder then
-     if ft == 1 then s=hs.." ("..APanel.Current..") = "..ch(hs,APanel.Current)
-       else s=ch(hs,APanel.Current).." *"..APanel.Current end;
-     if i < j then t=t..s.."\n" else t=t..s end;
+     if ft == 1 then s=s..hs.." ("..APanel.Current..") = "..ch(hs,APanel.Current).."\n"
+       else s=s..ch(hs,APanel.Current).." *"..APanel.Current.."\n" end;
     end
    end
    Panel.SetPosIdx(0,sv);
    else
    Panel.SetPosIdx(0,1);
    i=APanel.ItemCount
-   if APanel.Root then i=i-1; j=2 else j=1 end;
+   if APanel.Root then Panel.SetPosIdx(0,2); i=i - 1; j=2; else j=1; end;
    for i=j,i,1 do Panel.SetPosIdx(0,i);
     if not APanel.Folder then
-     if ft == 1 then s=hs.." ("..APanel.Current..") = "..ch(hs,APanel.Current)
-       else s=ch(hs,APanel.Current).." *"..APanel.Current end;
-     if i < APanel.ItemCount then t=t..s.."\n" else t=t..s end;
+     if ft == 1 then s=s..hs.." ("..APanel.Current..") = "..ch(hs,APanel.Current).."\n"
+       else s=s..ch(hs,APanel.Current).." *"..APanel.Current.."\n" end;
     end;
    end;
    Panel.SetPosIdx(0,sv);
   end;
-  else
-   if not APanel.Root then if not APanel.Folder then
-    if ft == 1 then t=hs.." ("..APanel.Current..") = "..ch(hs,APanel.Current)
-        else t=ch(hs,APanel.Current).." *"..APanel.Current end;
-   end;
+ end;
+ if md == 0 then
+   if not APanel.Root then
+     if not APanel.Folder then
+      if ft == 1 then s=hs.." ("..APanel.Current..") = "..ch(hs,APanel.Current)
+        else s=ch(hs,APanel.Current).." *"..APanel.Current
+      end;
+     end;
    end;
   end;
-  return mf.trim(t);
+  return mf.trim(s);
 end;
 
 Macro{
@@ -152,8 +191,8 @@ Macro{
   local mod,tg,sem,hsum,hash,arg,hs,ext,md,ft="c","f",0,"hashlist","",2,"MD5","md5",0,0;
   arg = mf.lcase(mf.prompt("1:CRC32;2:MD5;3:SHA1;4:SHA-256;5:SHA-512;6:SHA3-512;7:Whirlpool",nil,1,nil));
   tg = mf.lcase(mf.prompt("Target: D - display; C - Windows clipboard; F - hash file",nil,1,nil))
-  mod = mf.lcase(mf.prompt("Calc for: A - all files; C - under cursor; S - selected files",nil,1,nil));
-  if mf.lcase(mf.prompt("Hash file format: B - BSD UNIX; G - GNU",nil,1,nil)) == "b" then ft=1; else ft=0; end;
+  mod = mf.lcase(mf.prompt("A - all; C - current; D - UNC dir; F - UNC file; R - dir; S - sel;",nil,1,nil));
+  if mf.lcase(mf.prompt("Format: B - BSD UNIX; G - GNU",nil,1,nil)) == "b" then ft=1; else ft=0; end;
    if arg == "1" then hs="CRC32"; ext=".sfv";
      elseif arg == "2" then hs="MD5"; ext=".md5";
       else
@@ -170,7 +209,8 @@ Macro{
               end;
            end;
         end;
-       if (mod == "a" or mod == "s") then md=1; else md=0; end;
+         if mod == "r" then md = 4; elseif mod == "d" then md = 3;
+           else if mod == "f" then md=2; elseif (mod == "a" or mod == "s") then md=1; else md=0; end end;
      if  tg=="d" then far.Show(chashex(hs,ft,md))
        elseif tg == "c" then
         sem=mf.clip(5,1);
@@ -180,10 +220,10 @@ Macro{
         if md == 0 then hsum=mf.fsplit(APanel.Current,4)..ext; else hsum=hsum..ext end;
           if Panel.FExist(hsum,0) >=1 then Keys("ShiftF8 Enter") end;
            hash=chashex(hs,ft,md);
-           local file = io.open(hsum,"wb")
-          file:write(hash);
-        file:flush();
-      file:close();
+           local sum = io.open(hsum,"wb")
+          sum:write(hash);
+        sum:flush();
+      sum:close();
     end;
 end;
 }

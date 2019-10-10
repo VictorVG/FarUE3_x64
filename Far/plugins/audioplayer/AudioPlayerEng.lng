@@ -3,6 +3,10 @@
 "AudioPlayer"
 
 "Output &device:"
+"&WASAPI Output device:"
+"&More..."
+"AS&IO driver:"
+
 "&Open by Enter key press"
 "&Add to the plugin menu"
 "Prefi&x:"
@@ -19,7 +23,15 @@
 "&Enter ="
 "&Pause/Play"
 "&Forward"
-"Play &moves"
+"Play mo&ves"
+
+"Disabled"
+"Default"
+"WASAPI Play URL"
+"ASIO Play URL"
+"ASIO Mirror mono"
+"Shift:"
+"Buf %u-%u/%u:"
 
 "OK"
 "Cancel"

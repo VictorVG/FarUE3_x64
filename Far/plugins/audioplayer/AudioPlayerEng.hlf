@@ -11,7 +11,7 @@ $ #AudioPlayer#
 	[~PlugRing~@https://plugring.farmanager.com/plugin.php?pid=881@]
 
 	~Player Control~@Player@
-	~Settings~@Config@
+	~Advanced Settings~@ConfigX@
 
 	The following file formats are supported: 
 		*.aac;*.ac3;*.aif;*.aiff;*.ape;
@@ -51,18 +51,20 @@ $ #Player dialog#
 	│1:01                   3:04                  -2:03│ 3
 	│Playback            MP3 44.1 2              Volume│ 4
 	│To the end              ↓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░░░░░░░░░│ 5
-	└ 19 ────────────────────────────────── |◄ || ►| ■ ┘ 6
+	└ 19 ───────────────────ASIO─────────── |◄ || ►| ■ ┘ 6
 
 	┌───────────────────── Title ──────────────────────┐ 1
 	│▓▓▓▓▓▓▓▓▓▓▓▓▓p▓r▓o░g░r░e░s░s░░b░a░r░░░░░░░░░░░░░░░│ 2
 	│played                total                   left│ 3
 	│                    parameters                    │ 4
 	│play mode               ↓▓▓▓▓▓▓▓▓v▓o▓l▓u░m░e░░░░░░│ 5
-	└ index ───────────────────────────────── Controls ┘ 6
+	└ index ──────────────OutMode──────────── Controls ┘ 6
 
 	Progress bar area can be used as network radio track subtitle.
 	Index - panel item position or playlist index/total.
+	OutMode - Output Audio Mode. It can be empty, WASAPI or ASIO (see also ~advanced settings~@ConfigX@).
 	Playback control buttons and their actions can be customized in ~settings~@Config@.
+	
 
 	#Close player         # - Esc, Click #■#, MEDIA_STOP, Out-of-dialog click (!settings)
 	#Background mode      # - Screen select menu (F12), Ctrl+Tab, Out-of-dialog click (!settings)
@@ -79,6 +81,7 @@ $ #Player dialog#
 	~Next playing track selection mode~@PlayMode@
 
 	~Settings~@Config@
+	~Advanced Settings~@ConfigX@
 	~Contents~@Contents@
 
 @PlayMode
@@ -99,6 +102,10 @@ $ #Plugin settings#
 	╔════════════════════════ AudioPlayer ═════════════════════════╗
 	║ Output device:                                               ║
 	║ #Default#                                                     ↓║
+	║ WASAPI Output device:                                        ║
+	║ #Disabled#                                                    ↓║
+	║ ASIO driver:                                                 ║
+	║ #Disabled#                                                    ↓║
 	╟──────────────────────────────────────────────────────────────╢
 	║ #[x]# Add to the plugin menu    #[x]# Open by Enter key press    ║
 	║ Prefix: #AudioPlayer:ap#        Skip exts #mp4#                  ║
@@ -111,13 +118,15 @@ $ #Plugin settings#
 	║ #[ ]# Double box          Actions # bb pp ff s·#                 ║
 	║ #[x]# Remove [Album]      Ignores #YOUR DONATION·#               ║
 	╟──────────────────────────────────────────────────────────────╢
-	║                { OK } #[ Default ]# #[ Cancel ]#                 ║
+	║          #{ OK }# #[ Default ]# #[ More... ]# [ Cancel ]#           ║
 	╚══════════════════════════════════════════════════════════════╝
 
 	Dialog above contains default settings
 
 	The following settings are available:
-	#Output device           # - output audio device selection
+	#Output device           # - output audio device selection (standard)
+	#WASAPI Output device    # - WASAPI output audio device selection or #disabled#
+	#ASIO Output driver      # - ASIO output driver or #disabled#
 	#Add to the plugin menu  # - add AudioPlayer to the plugin menu commands (F11)
 	#Open by Enter key press # - open supported files by Enter/Ctrl+PgDn press in panel
 	#Prefix                  # - command line plugin prefix(es) (colon-separated)
@@ -135,7 +144,36 @@ $ #Plugin settings#
 	#Actions                 # - playback control buttons' actions mask: 'b'ackward, 'f'orward, 'p'ause, 'h'ide, 's'top
 	#Ignores                 # - ignore subtitles with listed prefixes (| separated)
 	#[ Default ]             # - reset settings to default values
+	#[ More... ]             # - advanced settings
 	#[ Cancel ]              # - cancel all changes (reopen the Settings dialog if Shift is pressed)
 
+	Output device selection order:
+	1) ASIO if enabled available
+	2) WASAPI if enabled and available
+	3) Standard output device
+	Note: ASIO and WASAPI output can be disabled for URL play in ~advanced settings~@ConfigX@
+
+	~Player control~@Player@
+	~Contents~@Contents@
+
+@ConfigX
+$ #Plugin advanced settings#
+
+	╔═════════════════════════════ AudioPlayer+ ═════════════════════════════╗
+	║ [ ] WASAPI Play URL     [ ] ASIO Play URL      [x] ASIO Mirror mono    ║ -- for all drivers
+	╟────────────────────────────────────────────────────────────────────────╢
+	║*ASIO4ALL v2          Shift:HD Audio output 1   ↓ Buf 64-2048/512:0     ║ -- per driver
+	╟────────────────────────────────────────────────────────────────────────╢
+	║                     { OK } [ Default ] [ Cancel ]                      ║
+	╚════════════════════════════════════════════════════════════════════════╝
+
+	#WASAPI Play URL # - use WASAPI to play URL links
+	#ASIO Play URL   # - use ASIO to play URL links
+	#ASIO Mirror mono# - use 2 channels to play mono source
+
+	#Shift           # - set first output channel for each ASIO driver
+	#Buf             # - set buffer length in samples for each ASIO driver (format: Buf Min-Max/Preferred:value)
+
+	~Settings~@Config@
 	~Player control~@Player@
 	~Contents~@Contents@
