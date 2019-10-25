@@ -3938,6 +3938,12 @@
 // need translation:
 //[MExcModule]
 "Module:"
+// need translation:
+//[MExcFarVersion]
+"Version:"
+// need translation:
+//[MExcOSVersion]
+"OS:"
 //[MExcTerminate]
 "Far beenden"
 // need translation:

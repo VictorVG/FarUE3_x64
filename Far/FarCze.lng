@@ -302,9 +302,8 @@
 "Kopírovat soubory otevřené pro &zápis"
 //[MConfigScanJunction]
 "Prohledávat s&ymbolické linky"
-// need translation:
 //[MConfigSmartFolderMonitor]
-"Update panels only when Far is active"
+"Aktualizovat panely pouze pokud je Far aktivní"
 //[MConfigSaveHistory]
 "Ukládat historii &příkazů"
 //[MConfigSaveFoldersHistory]
@@ -323,21 +322,16 @@
 "Na čtení"
 //[MConfigElevationUsePrivileges]
 "Použít další privilegia"
-// need translation:
 //[MConfigSortingCollation]
-"Sorting collation:"
-// need translation:
+"Řazení:"
 //[MConfigSortingOrdinal]
 "ordinal"
-// need translation:
 //[MConfigSortingInvariant]
 "invariant"
-// need translation:
 //[MConfigSortingLinguistic]
-"linguistic"
-// need translation:
+"lingvistický"
 //[MConfigSortingDigitsAsNumbers]
-"Treat digits as numbers"
+"Pracovat s číslicemi jako s čísly"
 //[MConfigSortingCase]
 "&Rozlišovat velikost písmen"
 //[MConfigAutoSave]
@@ -349,33 +343,24 @@
 "&Automaticky měnit adresář"
 //[MConfigTreeLabelMinFolder]
 "&Minimální počet adresářů:"
-// need translation:
 //[MConfigTreeLabel1]
-"Store a file with folder structure for:"
-// need translation:
+"Uložit soubor se strukturou složek jako:"
 //[MConfigTreeLabelLocalDisk]
-"local drives"
-// need translation:
+"místní disky"
 //[MConfigTreeLabelNetDisk]
-"network drives"
-// need translation:
+"síťové disky"
 //[MConfigTreeLabelNetPath]
-"network paths"
-// need translation:
+"síťové cesty"
 //[MConfigTreeLabelRemovableDisk]
-"removable drives"
-// need translation:
+"vyměnitelné disky"
 //[MConfigTreeLabelCDDisk]
-"optical drives"
-// need translation:
+"optické disky"
 //[MConfigTreeLabelExceptPath]
-"Don't create the file for following drives and paths:"
-// need translation:
+"Nevytvářet soubor pro následující disky a cesty:"
 //[MConfigTreeLabelSaveLocalPath]
-"Path for local, removale and optical drives:"
-// need translation:
+"Cesta pro místní, vyměnitelné a optické disky:"
 //[MConfigTreeLabelSaveNetPath]
-"Path for network drives and paths:"
+"Cesta pro síťové disky a cesty:"
 
 //[MConfigPanelTitle]
 "Nastavení panelů"
@@ -385,9 +370,8 @@
 "Zvý&razňovat soubory"
 //[MConfigSelectFolders]
 "Vybírat a&dresáře"
-// need translation:
 //[MConfigRightClickSelect]
-"Right click selects files"
+"Klik pravým tlačítkem vybere soubory"
 //[MConfigSortFolderExt]
 "Řadit adresáře podle přípony"
 //[MConfigReverseSort]
@@ -402,9 +386,8 @@
 "Zobrazovat &nadpisy sloupců"
 //[MConfigShowStatus]
 "Zobrazovat sta&vový řádek"
-// need translation:
 //[MConfigDetailedJunction]
-"Detect volume mount &points"
+"Detekovat připojovací &body"
 //[MConfigShowTotal]
 "Zobrazovat &informace o velikosti souborů"
 //[MConfigShowFree]
@@ -447,12 +430,10 @@
 "Use Virtual Terminal for rendering"
 //[MConfigClearType]
 "Použít &ClearType (pomalejší)"
-// need translation:
 //[MConfigSetConsoleIcon]
-"Set console icon"
-// need translation:
+"Nastavit ikonu okna konzole"
 //[MConfigSetAdminConsoleIcon]
-"Alternate for Administrator"
+"Alternativní ikona pro správce"
 //[MConfigTitleAddons]
 "Far window title addons:"
 
@@ -515,57 +496,40 @@
 
 //[MConfigInfoPanelTitle]
 "Nastavení informačního panelu"
-// need translation:
 //[MConfigInfoPanelCNTitle]
-"Computer &name format"
-// need translation:
+"Formát &názvu počítače"
 //[MConfigInfoPanelCNPhysicalNetBIOS]
-"Physical NetBIOS"
-// need translation:
+"Fyzický NetBIOS"
 //[MConfigInfoPanelCNPhysicalDnsHostname]
-"Physical DNS hostname"
-// need translation:
+"Fyzický DNS název hostitele"
 //[MConfigInfoPanelCNPhysicalDnsDomain]
-"Physical DNS domain"
-// need translation:
+"Fyzická DNS doména"
 //[MConfigInfoPanelCNPhysicalDnsFullyQualified]
-"Physical DNS fully-qualified"
+"Fyzická DNS s celým názvem"
 //[MConfigInfoPanelCNNetBIOS]
 "NetBIOS"
-// need translation:
 //[MConfigInfoPanelCNDnsHostname]
-"DNS hostname"
-// need translation:
+"DNS název hostitele"
 //[MConfigInfoPanelCNDnsDomain]
-"DNS domain"
-// need translation:
+"DNS doména"
 //[MConfigInfoPanelCNDnsFullyQualified]
-"DNS fully-qualified"
-// need translation:
+"DNS s celým názvem"
 //[MConfigInfoPanelUNTitle]
 "&User name format"
-// need translation:
 //[MConfigInfoPanelUNFullyQualifiedDN]
-"Fully Qualified Domain Name"
-// need translation:
+"Plně kvalifikovaný doménový název"
 //[MConfigInfoPanelUNSamCompatible]
-"Sam Compatible"
-// need translation:
+"Sam kompatibilní"
 //[MConfigInfoPanelUNDisplay]
-"Display Name"
-// need translation:
+"Zobrazované jméno"
 //[MConfigInfoPanelUNUniqueId]
-"Unique Id"
-// need translation:
+"Unikátní Id"
 //[MConfigInfoPanelUNCanonical]
-"Canonical Name"
-// need translation:
+"Kanonický název"
 //[MConfigInfoPanelUNUserPrincipal]
 "User Principial Name"
-// need translation:
 //[MConfigInfoPanelUNServicePrincipal]
 "Service Principal"
-// need translation:
 //[MConfigInfoPanelUNDnsDomain]
 "DNS Domain"
 //[MConfigInfoPanelShowPowerStatus]
@@ -618,9 +582,8 @@
 "Zobrazovat šipky &posuvníku"
 //[MViewConfigPersistentSelection]
 "Trvalé &výběry"
-// need translation:
 //[MViewConfigDefaultCodePage]
-"Default code page:"
+"Výchozí stránka kódování:"
 //[MViewConfigMaxLineSize]
 "&Maximální šířka čáry"
 //[MViewConfigVisible0x00]
@@ -674,12 +637,10 @@
 "&Zobrazovat neviditelné znaky"
 //[MEditConfigSelFound]
 "Vy&ber nalezené"
-// need translation:
 //[MEditConfigCursorAtEnd]
-"Cursor at the end"
-// need translation:
+"Kurzor je na konci"
 //[MEditConfigDefaultCodePage]
-"Default code page:"
+"Výchozí stránka kódování:"
 // need translation:
 //[MConfigEditor]
 "Configuration editor"
@@ -900,9 +861,8 @@
 
 //[MCopyFilesTotalInfo]
 "Souborů:"
-// need translation:
 //[MCopyBytesTotalInfo]
-"Bytes:"
+"Bajtů:"
 //[MCopyMoving]
 "Přesunuji soubor"
 //[MCopyCopying]
@@ -964,21 +924,16 @@
 "Následující adresář bude smazán:"
 //[MWipeFolderConfirm]
 "Následující adresář bude vymazán:"
-// need translation:
 //[MRecycleFolderConfirm]
-"The following folder will be moved to the Recycle Bin:"
-// need translation:
+"Tato složka bude přesunuta do koše:"
 //[MRecycleFolderConfirmDeleteLink1]
-"Folder contains symbolic links."
-// need translation:
+"Složka obsahuje symbolické odkazy."
 //[MRecycleFolderConfirmDeleteLink2]
-"To prevent the loss of their content when clearing Recyle Bin"
-// need translation:
+"Chcete-li zabránit ztrátě obsahu při vyprázdnění koše"
 //[MRecycleFolderConfirmDeleteLink3]
 "those links will be broken now."
-// need translation:
 //[MRecycleFolderConfirmDeleteLink4]
-"It would be impossible to restore them later."
+"Nebude možné je později obnovit."
 //[MDeleteWipe]
 "Vymazat"
 //[MDeleteRecycle]
@@ -1033,12 +988,10 @@
 "Přeskočit &vše"
 //[MDeleteCancel]
 "&Storno"
-// need translation:
 //[MCannotRecycleFile]
-"Cannot move file to the Recycle Bin"
-// need translation:
+"Nemohu přesunout soubor do koše"
 //[MCannotRecycleFolder]
-"Cannot move folder to the Recycle Bin"
+"Nemohu přesunout složku do koše"
 
 //[MCannotGetSecurity]
 "Nelze získat přístupová práva pro"
@@ -1102,12 +1055,10 @@
 "Hledat"
 //[MEditSearchFor]
 "&Hledat"
-// need translation:
 //[MEditSearchPickWord]
-"Word"
-// need translation:
+"Slovo"
 //[MEditSearchPickSelection]
-"Selection"
+"Výběr"
 //[MEditSearchCase]
 "&Rozlišovat velikost písmen"
 //[MEditSearchWholeWords]
@@ -1116,7 +1067,6 @@
 "&Zpětné hledání"
 //[MEditSearchRegexp]
 "Re&gulární výrazy"
-// need translation:
 //[MEditSearchPreserveStyle]
 "&Zachovat styl"
 //[MEditSearchSearch]
@@ -1163,9 +1113,8 @@
 
 //[MGoTo]
 "Jdi na"
-// need translation:
 //[MGoToHex]
-"&Hex value"
+"&Hexadecimální hodnota"
 
 //[MFolderShortcutsTitle]
 "Adresářové zkratky"
@@ -1183,7 +1132,6 @@
 "Cesta:"
 //[MFSShortcutPluginFile]
 "Soubor:"
-// need translation:
 //[MFSShortcutPluginData]
 "Data:"
 //[MNeedNearPath]
@@ -1651,12 +1599,10 @@
 "Soubor obsahuje znaky, které se nedají"
 //[MEditorLoadCPWarn2]
 "správně přečíst se zvolenou kódovou stránkou."
-// need translation:
 //[MEditorReloadCPWarnLost1]
-"File has to be reloaded to change code page."
-// need translation:
+"Pro změnu kódové stránky musí být soubor znovu načten."
 //[MEditorReloadCPWarnLost2]
-"All unsaved changes will be lost."
+"Všechny neuložené změny budou ztraceny."
 //[MEditorSaveCPWarn1]
 "Editor obsahuje znaky, které se nedají"
 //[MEditorSaveCPWarn2]
@@ -1748,9 +1694,8 @@
 //[MListEb]
 "E"
 {3} replacement field can receive a sum of files & folders
-// need translation:
 //[MListFileSize]
-"Bytes: {0}, files: {1}, folders: {2}"
+"Bajty: {0}, soubory: {1}, složky: {2}"
 //[MListFileSizeStatus]
 "{0} ({1}/{2}) {3} {4}"
 //[MListFreeSize]
@@ -2284,26 +2229,22 @@
 "Roz&lišovat velikost písmen"
 //[MFindFileWholeWords]
 "&Celá slova"
-// need translation:
 //[MFindFileAllCodePages]
 "Všechny kódové stránky"
-// need translation:
 //[MFindFileSelectedCodePages]
-"Selected code pages"
+"Vybrané kódové stránky"
 //[MFindArchives]
 "Hledat v a&rchívech"
 //[MFindFolders]
 "Hledat a&dresáře"
 //[MFindSymLinks]
 "Hledat v s&ymbolických lincích"
-// need translation:
 //[MFindAlternateStreams]
-"Search in alternate streams"
+"Hledat v alternativních streamech"
 //[MSearchForHex]
 "Hledat &hex"
-// need translation:
 //[MSearchNotContaining]
-"Not containing"
+"Neobsahuje"
 //[MSearchWhere]
 "Zvolte oblast hledání:"
 //[MSearchAllDisks]
@@ -2383,7 +2324,6 @@
 "Ctrl+H, Del, Ins, F4"
 //[MGetCodePageBottomShortTitle]
 "Ctrl+H, Del, F4"
-// need translation:
 //[MGetCodePageEditCodePageName]
 "Upravit název kódové stránky"
 //[MGetCodePageResetCodePageName]
@@ -2855,18 +2795,15 @@
 "Nelze se odpojit od {0}"
 //[MChangeDriveCannotDelSubst]
 "Nelze smazat substnutý disk {0}"
-// need translation:
 //[MChangeDriveCannotDetach]
-"Cannot detach virtual disk {0}"
+"Nemohu odpojit virtuální disk {0}"
 //[MChangeDriveOpenFiles]
 "Pokud neuzavřete otevřené soubory, mohou být tato data ztracena"
 
-// need translation:
 //[MChangeSUBSTDisconnectDriveTitle]
 "Odpojování virtuálního zařízení"
-// need translation:
 //[MChangeSUBSTDisconnectDriveQuestion]
-"Odpojit SUBST-disk {0}?"
+"Odpojit virtuální disk {0}?"
 //[MChangeVHDDisconnectDriveTitle]
 "Odpojení virtuálního disku"
 //[MChangeVHDDisconnectDriveQuestion]
@@ -2921,9 +2858,8 @@
 "Zobrazit ty&p souborového systému"
 //[MChangeDriveShowSize]
 "Zobrazi&t velikost"
-// need translation:
 //[MChangeDriveShowSizeFloat]
-"Show size as a decimal fraction"
+"Zobrazit velikost jako desetinný zlomek"
 //[MChangeDriveShowRemovableDrive]
 "Zobrazit paramet&ry vyměnitelné jednotky"
 //[MChangeDriveShowPlugins]
@@ -2970,7 +2906,6 @@
 
 //[MQuickViewTitle]
 "Rychlý náhled"
-// need translation:
 //[MQuickViewUnknownReparsePoint]
 "Unknown reparse point"
 //[MQuickViewNoData]
@@ -2987,7 +2922,6 @@
 "Velikost svazku:"
 //[MQuickViewSlack]
 "Mrtvé místo:"
-// need translation:
 //[MQuickViewMFTOverhead]
 "MFT overhead:"
 
@@ -3005,9 +2939,8 @@
 "Link:"
 //[MSetAttrVolMount]
 "Svazek:"
-// need translation:
 //[MSetAttrDfsTargets]
-"DFS Targets"
+"DFS cíly"
 //[MSetAttrUnknownReparsePoint]
 "(data nejsou k dispozici)"
 //[MSetAttrReadOnly]
@@ -3034,10 +2967,8 @@
 "Reparse point"
 //[MSetAttrVirtual]
 "Virtuální"
-// need translation:
 //[MSetAttrIntegrityStream]
 "Integrity stream"
-// need translation:
 //[MSetAttrNoScrubData]
 "No scrub data"
 // need translation:
@@ -3376,9 +3307,8 @@
 "Pře&rušit operaci"
 //[MSetConfirmRemoveConnection]
 "Odpojení &síťové jednotky"
-// need translation:
 //[MSetConfirmRemoveSUBST]
-"Odpojení SUBST-d&isku"
+"Odpojení virtuálního d&isku"
 //[MSetConfirmDetachVHD]
 "Odpojení virtuálního disku"
 //[MSetConfirmRemoveHotPlug]
@@ -3665,12 +3595,10 @@
 "Klávesová &zkratka:"
 //[MEditSubmenuLabel]
 "&Popisek:"
-// need translation:
 //[MEditMenuConfirmation]
-"Save changes?"
-// need translation:
+"Uložit změny?"
 //[MEditMenuError]
-"Cannot update menu"
+"Nemohu aktualizovat menu"
 
 //[MViewerTitle]
 "Prohlížeč"
@@ -3709,22 +3637,18 @@
 "Nelze najít řetězec"
 //[MViewSearchCannotFindHex]
 "Nelze najít sekvenci bytů"
-// need translation:
 //[MViewSearchEod]
-"End of the document reached"
+"Dosažen konec souboru"
 //[MViewSearchFromBegin]
 "Pokračovat s hledáním od začátku dokumentu?"
-// need translation:
 //[MViewSearchBod]
-"Begin of the document reached"
+"Dosažen začátek souboru"
 //[MViewSearchFromEnd]
 "Pokračovat s hledáním od konce dokumentu?"
-// need translation:
 //[MViewSearchCycle]
-"The Whole document scanned"
-// need translation:
+"Celý soubor byl prohledán"
 //[MViewSearchRepeat]
-"Repeat the search in the document?"
+"Opakovat hledání v souboru?"
 
 //[MPrintTitle]
 "Tisk"
@@ -3884,12 +3808,10 @@
 "Prázdný pří&kazový řádek"
 //[MMacroSettingsSelectionBlockPresent]
 "Existující blok výběr&u"
-// need translation:
 //[MMacroPluginLuamacroNotLoaded]
-"Plugin LuaMacro is not loaded"
-// need translation:
+"Plugin LuaMacro není nahrán"
 //[MMacroRecordingIsDisabled]
-"Macro recording is disabled"
+"Nahrávání maker je vypnuto"
 
 //[MCannotSaveFile]
 "Nelze uložit soubor"
@@ -3927,26 +3849,27 @@
 "Vyskytla se výjimka"
 //[MExcException]
 "Výjimka:"
-// need translation:
 //[MExcDetails]
-"Details:"
+"Detaily:"
 //[MExcAddress]
 "Adresa:"
-// need translation:
 //[MExcSource]
-"Source:"
+"Zdroj:"
 //[MExcFunction]
 "Funkce:"
 //[MExcModule]
 "Modul:"
+//[MExcFarVersion]
+"Verze:"
+// need translation:
+//[MExcOSVersion]
+"OS:"
 //[MExcTerminate]
 "Ukončit Far"
 //[MExcUnload]
 "Ukončit modul"
-// need translation:
 //[MExcStack]
 "Stack"
-// need translation:
 //[MExcMinidump]
 "Minidump"
 // need translation:
@@ -4307,7 +4230,6 @@
 ""
 //[MInfoCtrlF11]
 ""
-// need translation:
 //[MInfoCtrlF12]
 "Mode"
 
@@ -4935,10 +4857,8 @@
 "O&ffline"
 //[MFileFilterAttrVirtual]
 "Virtuální"
-// need translation:
 //[MFileFilterAttrIntegrityStream]
 "Integrity stream"
-// need translation:
 //[MFileFilterAttrNoScrubData]
 "No scrub data"
 // need translation:
@@ -5008,9 +4928,8 @@
 "Neptat se znovu v aktuální relaci"
 //[MCompletionHistoryTitle]
 "Historie"
-// need translation:
 //[MCompletionEnvironmentTitle]
-"Environment"
+"Prostředí"
 //[MCompletionFilesTitle]
 "Soubory"
 //[MObjectLockedReason]
@@ -5021,35 +4940,28 @@
 "editován"
 //[MObjectLockedReasonOpened]
 "otevřený"
-// need translation:
 //[MObjectLockedAndMore]
-"and {0} more processes."
+"a {0} více procesů."
 //[MObjectLockedSwitchTo]
 "Přepnout na"
 //[MObjectLockedClose]
 "Zavřít soubor"
-// need translation:
 //[MObjectLockedReasonSessionMismatch]
-"One or more processes are running in another Terminal Services session."
-// need translation:
+"Jeden nebo více procesů běží v instanci terminálových služeb."
 //[MObjectLockedReasonCriticalProcess]
-"One or more processes are critical processes."
-// need translation:
+"Jeden nebo více procesů jsou kritické procesy."
 //[MObjectLockedReasonCriticalService]
-"One or more services are critical services."
-// need translation:
+"Jeden nebo více procesů jsou kritické služby."
 //[MObjectLockedReasonDetectedSelf]
-"The file is opened by the current process."
+"Soubor je otevřen tímto procesem."
 //[MProblemDb]
 "Problém s konfigurací DB"
 //[MShowConfigFolders]
 "Zobrazit konfigurační adresáře"
-// need translation:
 //[MBadLanguageFile]
-"Incorrect language file"
-// need translation:
+"Chybný jazykový soubor"
 //[MLanguageStringNotFound]
-"String {0} not found"
+"Řetězec {0} nebyl nalezen"
 // keys
 //[MKeyLaunchMediaSelect]
 ""

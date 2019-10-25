@@ -3859,6 +3859,11 @@
 "Funkcia:"
 //[MExcModule]
 "Modul:"
+//[MExcFarVersion]
+"Verzia:"
+// need translation:
+//[MExcOSVersion]
+"OS:"
 //[MExcTerminate]
 "Ukončiť Far"
 //[MExcUnload]

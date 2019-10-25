@@ -3846,6 +3846,10 @@
 "Function:"
 //[MExcModule]
 "Module:"
+//[MExcFarVersion]
+"Version:"
+//[MExcOSVersion]
+"OS:"
 //[MExcTerminate]
 "&Terminate Far"
 //[MExcUnload]

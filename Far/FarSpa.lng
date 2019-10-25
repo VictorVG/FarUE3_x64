@@ -3860,6 +3860,11 @@
 "Función:"
 //[MExcModule]
 "Módulo:"
+//[MExcFarVersion]
+"Versión:"
+// need translation:
+//[MExcOSVersion]
+"OS:"
 //[MExcTerminate]
 "Terminar Far"
 //[MExcUnload]

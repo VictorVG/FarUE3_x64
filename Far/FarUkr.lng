@@ -3849,6 +3849,10 @@
 "Функція:"
 //[MExcModule]
 "Модуль:"
+//[MExcFarVersion]
+"Версія:"
+//[MExcOSVersion]
+"ОС:"
 //[MExcTerminate]
 "Завершити Far"
 //[MExcUnload]

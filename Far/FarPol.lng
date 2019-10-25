@@ -638,10 +638,8 @@
 "Kursor na końcu bloku"
 //[MEditConfigDefaultCodePage]
 "Domyślna strona kodowa:"
-// need translation:
 //[MConfigEditor]
-"Configuration editor"
-// need translation:
+"Edytor konfiguracji"
 //[MConfigEditorHelp]
 "Enter, F4, Shift+F4, Ctrl+H, Shift+F1"
 
@@ -2462,9 +2460,8 @@
 "Wyłączone"
 //[MInfoPowerStatusACOnline]
 "Włączone"
-// need translation:
 //[MInfoPowerStatusACBackUp]
-"Backup power"
+"Zasilanie zapasowe"
 //[MInfoPowerStatusACUnknown]
 "Nieznany"
 //[MInfoPowerStatusBCLifePercent]
@@ -2513,16 +2510,14 @@
 "Nazwa folderu:"
 //[MMakeFolderLinkType]
 "Typ linku:"
-// need translation:
 //[MMakeFolderLinkNone]
-"None"
+"Brak"
 //[MMakeFolderLinkJunction]
 "directory junction"
 //[MMakeFolderLinkSymlink]
 "link symboliczny"
-// need translation:
 //[MMakeFolderLinkTarget]
-"Target:"
+"Cel:"
 //[MMultiMakeDir]
 "Przetwarzaj &wiele nazw"
 //[MIncorrectDirList]
@@ -2976,21 +2971,16 @@
 // need translation:
 //[MSetAttrNoScrubData]
 "No scrub data"
-// need translation:
 //[MSetAttrPinned]
-"Pinned"
-// need translation:
+"Przypięty"
 //[MSetAttrUnpinned]
-"Unpinned"
-// need translation:
+"Odpiety"
 //[MSetAttrRecallOnOpen]
-"Recall on open"
-// need translation:
+"Przywołaj na otwarcie"
 //[MSetAttrRecallOnDataAccess]
-"Recall on data access"
-// need translation:
+"Przywołaj na dostęp danych"
 //[MSetAttrStrictlySequential]
-"Strictly sequential"
+"Czysto sekwencyjny"
 //[MSetAttrMore]
 "Więcej"
 //[MSetAttrSubfolders]
@@ -3182,9 +3172,8 @@
 "Tekst nieaktywny"
 //[MSetColorMenuGrayed]
 "Nieaktywny tekst"
-// need translation:
 //[MSetColorMenuSelectedGrayed]
-"Selected grayed text"
+"Zaznaczony wyszarzony tekest"
 //[MSetColorMenuBox]
 "Ramka"
 //[MSetColorMenuTitle]
@@ -3865,6 +3854,10 @@
 "Funkcja:"
 //[MExcModule]
 "Moduł:"
+//[MExcFarVersion]
+"Wersja:"
+//[MExcOSVersion]
+"OS:"
 //[MExcTerminate]
 "Zamknięcie Far"
 //[MExcUnload]
@@ -3872,10 +3865,10 @@
 //[MExcStack]
 "Stos"
 //[MExcMinidump]
-"Minidump"
+"Minizrzut"
 // need translation:
 //[MExcMinidumpSuccess]
-"Minidump saved to"
+"Minizrzut zapisany do"
 
 //[MNetUserName]
 "Nazwa użytkownika"
@@ -4865,21 +4858,16 @@
 // need translation:
 //[MFileFilterAttrNoScrubData]
 "No scrub data"
-// need translation:
 //[MFileFilterAttrPinned]
-"Pinned"
-// need translation:
+"Przypięty"
 //[MFileFilterAttrUnpinned]
-"Unpinned"
-// need translation:
+"Odpięty"
 //[MFileFilterAttrRecallOnOpen]
-"Recall on open"
-// need translation:
+"Odtwórz przy otwarciu"
 //[MFileFilterAttrRecallOnDataAccess]
-"Recall on data access"
-// need translation:
+"Odtwórz przy dostępie danych"
 //[MFileFilterAttrStrictlySequential]
-"Strictly sequential"
+"Dokładnie sekwencyjnie"
 //[MFileFilterReset]
 "Wy&czyść"
 //[MFileFilterMakeTransparent]
@@ -4891,115 +4879,82 @@
 
 //[MFarTitleAddonsAdmin]
 "Administrator"
-// need translation:
 //[MElevationRequired]
-"You need to provide administrator permission"
-// need translation:
+"Musisz posiadać uprawnienia administratora"
 //[MElevationRequiredPrivileges]
-"Additional privileges required"
-// need translation:
+"Wymagane dodatkowe uprawnienia"
 //[MElevationRequiredProcess]
-"to process this object:"
-// need translation:
+"aby przetwarzać ten obiekt:"
 //[MElevationRequiredDelete]
-"to delete this object:"
-// need translation:
+"aby usunąć ten obiekt:"
 //[MElevationRequiredCopy]
-"to copy this object:"
-// need translation:
+"aby skopiować ten obiekt:"
 //[MElevationRequiredMove]
-"to move this object:"
-// need translation:
+"aby przenieść ten obiekt:"
 //[MElevationRequiredReplace]
-"to replace this object:"
-// need translation:
+"aby zastąpić ten obiekt"
 //[MElevationRequiredGetAttributes]
-"to get attributes of this object:"
-// need translation:
+"aby pobrać atrybuty tego obiektu:"
 //[MElevationRequiredSetAttributes]
-"to set attributes of this object:"
-// need translation:
+"aby ustawić atrybuty tego obiektu:"
 //[MElevationRequiredHardLink]
-"to create this hard link:"
-// need translation:
+"aby utworzyć twardy link:"
 //[MElevationRequiredSymLink]
-"to create this symbolic link:"
-// need translation:
+"aby utworzyć symboliczny link:"
 //[MElevationRequiredRecycle]
-"to move this object to recycle bin:"
-// need translation:
+"aby przenieść obiekt do kosza:"
 //[MElevationRequiredList]
-"to list this object:"
-// need translation:
+"aby wyświetlić ten obiekt:"
 //[MElevationRequiredSetOwner]
-"to set owner of this object:"
-// need translation:
+"aby ustawić właściciela tego obiektu:"
 //[MElevationRequiredOpen]
-"to open this object:"
-// need translation:
+"aby otworzyć ten obiekt:"
 //[MElevationRequiredEncryptFile]
-"to encrypt this object:"
-// need translation:
+"aby zaszyfrować ten obiekt:"
 //[MElevationRequiredDecryptFile]
-"to decrypt this object:"
+"aby odszyfrować ten obiekt:"
 // need translation:
 //[MElevationDoForAll]
 "Do this for &all current objects"
 // need translation:
 //[MElevationDoNotAskAgainInTheCurrentSession]
 "Do not ask again in the current session"
-// need translation:
 //[MCompletionHistoryTitle]
-"History"
-// need translation:
+"Historia"
 //[MCompletionEnvironmentTitle]
-"Environment"
-// need translation:
+"Środowisko"
 //[MCompletionFilesTitle]
-"Files"
-// need translation:
+"Pliki"
 //[MObjectLockedReason]
-"Object is being {0} in:"
-// need translation:
+"Obiekt będzie {0} w:"
 //[MObjectLockedReasonPlayed]
-"played"
-// need translation:
+"odtworzony"
 //[MObjectLockedReasonEdited]
-"edited"
-// need translation:
+"edytowany"
 //[MObjectLockedReasonOpened]
-"opened"
+"otwarty"
 //[MObjectLockedAndMore]
 "i {0} więcej procesów."
-// need translation:
 //[MObjectLockedSwitchTo]
-"Switch to"
-// need translation:
+"Przełącz do"
 //[MObjectLockedClose]
-"Close file"
-// need translation:
+"Zamknij plik"
 //[MObjectLockedReasonSessionMismatch]
-"One or more processes are running in another Terminal Services session."
-// need translation:
+"Jeden lub więcej procesów jest uruchomionych w innej Sesji Terminalowej."
 //[MObjectLockedReasonCriticalProcess]
-"One or more processes are critical processes."
-// need translation:
+"Jeden lub więce procesów są procesami krytycznymi."
 //[MObjectLockedReasonCriticalService]
-"One or more services are critical services."
-// need translation:
+"Jedna lub więcej usług są usługami krytycznymi."
 //[MObjectLockedReasonDetectedSelf]
-"The file is opened by the current process."
-// need translation:
+"Plik jest otwarty przez bieżący proces."
 //[MProblemDb]
-"Problem configuration DB"
+"Problem konfiguracji bazy"
 //[MShowConfigFolders]
 "Pokaż foldery konfiguracyjne"
-// need translation:
 //[MBadLanguageFile]
-"Incorrect language file"
-// need translation:
+"Niewłaściwy plik językowy"
 //[MLanguageStringNotFound]
-"String {0} not found"
+"Nie znaleziono łańcucha {0}"
 // keys
 //[MKeyLaunchMediaSelect]
 ""

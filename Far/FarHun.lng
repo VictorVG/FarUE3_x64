@@ -4128,6 +4128,12 @@
 //[MExcModule]
 "Module:"
 // need translation:
+//[MExcFarVersion]
+"Version:"
+// need translation:
+//[MExcOSVersion]
+"OS:"
+// need translation:
 //[MExcTerminate]
 "Terminate Far"
 // need translation:
