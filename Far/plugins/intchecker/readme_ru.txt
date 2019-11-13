@@ -1,5 +1,5 @@
 Плагин: Integrity Checker
-Версия: 2.7.3
+Версия: 2.8.0
 Автор: Ariman
 URL: https://github.com/lazyhamster/IntChecker
 

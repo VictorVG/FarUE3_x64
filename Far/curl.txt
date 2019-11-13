@@ -1,4 +1,5 @@
 Usage: curl [options...] <url>
+
      --abstract-unix-socket <path> Connect via abstract Unix domain socket
      --alt-svc <file name> Enable alt-svc with this cache file
      --anyauth       Pick any authentication method
@@ -106,6 +107,7 @@ Usage: curl [options...] <url>
  -N, --no-buffer     Disable buffering of the output stream
      --no-keepalive  Disable TCP keepalive on the connection
      --no-npn        Disable the NPN TLS extension
+     --no-progress-meter Do not show the progress meter
      --no-sessionid  Disable SSL session-ID reusing
      --noproxy <no-proxy-list> List of hosts which do not use proxy
      --ntlm          Use HTTP NTLM authentication

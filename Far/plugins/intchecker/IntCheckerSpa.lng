@@ -9,6 +9,7 @@
 "Validar Archivos (parámetros)"
 "&Comparar con Portapapeles"
 "*Run Benchmark"
+"*Verify Digital Signature"
 
 "Configuración"
 "Usar &prefijo"
@@ -72,6 +73,9 @@
 "*Select parameters"
 "*Benchmarking %s"
 "*Time:"
+"*Operation complete"
+"*File is not signed or signature is not recognized"
+"*File reading error"
 
 "Generar"
 "Algoritmo"

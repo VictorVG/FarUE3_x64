@@ -3,6 +3,63 @@ This file is a translation of the main russian changelog and is provided by volu
 It might not always be as up to date as the main changelog.
 =======================================================================================
 
+drkns 10.11.2019 16:42:35 +0000 - build 5508
+
+1. Correction of 5506.
+
+drkns 10.11.2019 10:18:04 +0000 - build 5507
+
+1. Continuation of 5506 for [x] Use system copy routine.
+
+drkns 09.11.2019 21:25:47 +0000 - build 5506
+
+1. File copying preserves creation and access times. Unconditionally for now. Shout if you need an option.
+
+2. Detach of virtual disks didn't work in some cases.
+
+3. Refactoring.
+
+shmuel 09.11.2019 15:06:08 +0200 - build 5505
+
+1. API-function Menu() - added flag FMENU_NODRAWSHADOW.
+
+shmuel 07.11.2019 12:15:11 +0200 - build 5504
+
+1. API-function Menu() - added flags for control of visibility and appearance of menu borders.
+
+MZK 04.11.2019 23:29:26 -0800
+
+1. Translated more far:config help pages into English; cleaning up eng/TechInfo.txt.
+
+shmuel 31.10.2019 19:29:22 +0200 - build 5503
+
+1. Refactoring.
+
+shmuel 30.10.2019 22:24:15 +0200 - build 5502
+
+1. M#3748: Panel.Item: return value when given incorrect parameters
+
+shmuel 30.10.2019 14:47:08 +0200 - build 5501
+
+1. Keyboard macros could not be deleted or edited after 5496.
+
+shmuel 28.10.2019 23:30:53 +0200 - build 5500
+
+1. Refactoring.
+
+shmuel 28.10.2019 20:59:35 +0200 - build 5499
+
+1. As this case is not mentioned in the docs MacroAddMacro::SequenceText is allowed
+   to be an empty string. An empty string is a valid script.
+
+drkns 26.10.2019 14:40:42 +0100 - build 5498
+
+1. Refactoring.
+
+drkns 25.10.2019 18:08:44 +0100 - build 5497
+
+1. Continuation of 1053.2 - apply the workaround to the initial INPUT_RECORD as well - it might fall into plugins' hands.
+
 drkns 24.10.2019 11:12:59 +0100 - build 5496
 
 1. Correction of 5495.

@@ -1,6 +1,6 @@
 ﻿.Language=Czech,Czech (Čeština)
 
-//Version: MAJOR.MINOR build BUILD
+//Version: 3.0.0.5508
 
 //[MYes]
 "Ano"
@@ -425,9 +425,8 @@
 "Zobrazit indikátor celkového průběhu ma&zání"
 //[MConfigPgUpChangeDisk]
 "Použít Ctrl+Pg&Up pro změnu jednotky"
-// need translation:
 //[MConfigUseVirtualTerminalForRendering]
-"Use Virtual Terminal for rendering"
+"Použít virtuální terminál pro vykreslování"
 //[MConfigClearType]
 "Použít &ClearType (pomalejší)"
 //[MConfigSetConsoleIcon]
@@ -566,12 +565,10 @@
 "Uložit &kódovou stránku u souboru"
 //[MViewConfigSaveWrapMode]
 "Uložit &režim zalomení"
-// need translation:
 //[MViewConfigSaveViewMode]
-"Save view mode"
-// need translation:
+"Uložit režim zobrazení"
 //[MViewConfigDetectDumpMode]
-"Detect dump view mode"
+"Detekovat režim zobrazení výpisu paměti"
 //[MViewAutoDetectCodePage]
 "&Automaticky detekovat kódovou stránku"
 //[MViewConfigTabSize]
@@ -641,10 +638,8 @@
 "Kurzor je na konci"
 //[MEditConfigDefaultCodePage]
 "Výchozí stránka kódování:"
-// need translation:
 //[MConfigEditor]
-"Configuration editor"
-// need translation:
+"Editor konfigurace"
 //[MConfigEditorHelp]
 "Enter, F4, Shift+F4, Ctrl+H, Shift+F1"
 
@@ -2851,9 +2846,8 @@
 "Zobrazit síťový &název / cestu SUBST / název VHD"
 //[MChangeDriveShowLabel]
 "Zobrazit název disku"
-// need translation:
 //[MChangeDriveShowLabelUseShell]
-"Use shell name"
+"Použít název shellu"
 //[MChangeDriveShowFileSystem]
 "Zobrazit ty&p souborového systému"
 //[MChangeDriveShowSize]
@@ -2971,21 +2965,16 @@
 "Integrity stream"
 //[MSetAttrNoScrubData]
 "No scrub data"
-// need translation:
 //[MSetAttrPinned]
-"Pinned"
-// need translation:
+"Připnuto"
 //[MSetAttrUnpinned]
-"Unpinned"
-// need translation:
+"Odepnuto"
 //[MSetAttrRecallOnOpen]
-"Recall on open"
-// need translation:
+"Zavolat při otevření"
 //[MSetAttrRecallOnDataAccess]
-"Recall on data access"
-// need translation:
+"Zavolat při přístupu k datům"
 //[MSetAttrStrictlySequential]
-"Strictly sequential"
+"Striktně sekvenční"
 //[MSetAttrMore]
 "Více"
 //[MSetAttrSubfolders]
@@ -3015,7 +3004,6 @@
 "DD{0}MM{0}RRRRR"
 //[MSetAttrDateTitle3]
 "RRRRR{0}MM{0}DD"
-// need translation:
 //[MSetAttrTimeTitle]
 "hh{0}mm{0}ss{1}ms +tick"
 //[MSetAttrSystemDialog]
@@ -3035,7 +3023,6 @@
 "Nelze nastavit čas souboru pro"
 //[MSetAttrOwnerCannotFor]
 "Nelze nastavit vlastníka pro"
-// need translation:
 //[MSetAttrReparsePointCannotFor]
 "Cannot remove reparse point for"
 
@@ -3872,9 +3859,8 @@
 "Stack"
 //[MExcMinidump]
 "Minidump"
-// need translation:
 //[MExcMinidumpSuccess]
-"Minidump saved to"
+"Výpis paměti byl uložen do"
 
 //[MNetUserName]
 "Jméno uživatele"
@@ -4861,21 +4847,16 @@
 "Integrity stream"
 //[MFileFilterAttrNoScrubData]
 "No scrub data"
-// need translation:
 //[MFileFilterAttrPinned]
-"Pinned"
-// need translation:
+"Připnuto"
 //[MFileFilterAttrUnpinned]
-"Unpinned"
-// need translation:
+"Odepnuto"
 //[MFileFilterAttrRecallOnOpen]
-"Recall on open"
-// need translation:
+"Zavolat při otevření"
 //[MFileFilterAttrRecallOnDataAccess]
-"Recall on data access"
-// need translation:
+"Zavolat při přístupu k datům"
 //[MFileFilterAttrStrictlySequential]
-"Strictly sequential"
+"Striktně sekvenční"
 //[MFileFilterReset]
 "Reset"
 //[MFileFilterMakeTransparent]
@@ -4899,7 +4880,6 @@
 "kopírování tohoto objektu:"
 //[MElevationRequiredMove]
 "přesunutí tohoto objektu:"
-// need translation:
 //[MElevationRequiredReplace]
 "nahrazení tohoto objektu:"
 //[MElevationRequiredGetAttributes]

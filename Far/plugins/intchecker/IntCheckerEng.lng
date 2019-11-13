@@ -9,6 +9,7 @@
 "Validate Files (params)"
 "Compare With &Clipboard"
 "Run Benchmark"
+"Verify Digital &Signature"
 
 "Configuration"
 "Use &prefix"
@@ -72,6 +73,9 @@
 "Select parameters"
 "Benchmarking %s"
 "Time:"
+"Operation complete"
+"File is not signed or signature is not recognized"
+"File reading error"
 
 "Generate"
 "Algorithm"

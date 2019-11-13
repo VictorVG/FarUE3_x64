@@ -1,4 +1,4 @@
-﻿local Made4FAR = "Intended to run in Far Manager environment"
+local Made4FAR = "Intended to run in Far Manager environment"
 
 local Info = Info or package.loaded.regscript or function(...) return ... end --luacheck: ignore 113/Info
 local nfo = Info { _filename or ...,

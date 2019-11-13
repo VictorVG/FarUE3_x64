@@ -1,6 +1,6 @@
 ﻿.Language=Polish,Polish (Polski)
 
-//Version: MAJOR.MINOR build BUILD
+//Version: 3.0.0.5508
 
 //[MYes]
 "Tak"
@@ -60,7 +60,7 @@
 //[MQuit]
 "Zakończ"
 //[MAskQuit]
-"Czy chcesz wyjść z Far'a"
+"Czy chcesz wyjść z Fara"
 
 //functional keys - 6 characters max
 //[MF1]
@@ -2482,12 +2482,10 @@
 "Brak baterii systemowej"
 //[MInfoPowerStatusBCUnknown]
 "Nieznany"
-// need translation:
 //[MInfoPowerStatusBCTimeRem]
-"Battery life time"
-// need translation:
+"Cza pracy na baterii"
 //[MInfoPowerStatusBCFullTimeRem]
-"Battery full time"
+"Całkowity czas baterii"
 //[MInfoPowerStatusUnknown]
 "Nieznany"
 //[MAccessDenied]
@@ -2495,12 +2493,10 @@
 
 //[MCannotExecute]
 "Nie mogę wykonać"
-// need translation:
 //[MCannotInvokeComspec]
-"Cannot invoke command interpreter"
-// need translation:
+"Nie mogę wywołać interpretera poleceń"
 //[MCheckComspecVar]
-"Check COMSPEC environment variable"
+"Sprawdź zmienną systemową COMSPEC"
 //[MScanningFolder]
 "Przeszukuję folder"
 
@@ -2961,9 +2957,8 @@
 "T&ymczasowy"
 //[MSetAttrOffline]
 "Offline"
-// need translation:
 //[MSetAttrReparsePoint]
-"Reparse point"
+"Punkt analizy"
 //[MSetAttrVirtual]
 "Wirtualny"
 //[MSetAttrIntegrityStream]
@@ -3010,9 +3005,8 @@
 "DD{0}MM{0}RRRRR"
 //[MSetAttrDateTitle3]
 "RRRRR{0}MM{0}DD"
-// need translation:
 //[MSetAttrTimeTitle]
-"gg{0}mm{0}ss{1}ms +tick"
+"gg{0}mm{0}ss{1}ms +takt"
 //[MSetAttrSystemDialog]
 "Właściwości systemu"
 
@@ -3030,9 +3024,8 @@
 "Nie mogę ustawić czasu pliku dla"
 //[MSetAttrOwnerCannotFor]
 "Nie mogę ustawić właściciela dla"
-// need translation:
 //[MSetAttrReparsePointCannotFor]
-"Cannot remove reparse point for"
+"Nie można usunąć punktu analizy dla"
 
 //[MSetColorPanel]
 "&Panel"
@@ -3866,7 +3859,6 @@
 "Stos"
 //[MExcMinidump]
 "Minizrzut"
-// need translation:
 //[MExcMinidumpSuccess]
 "Minizrzut zapisany do"
 
@@ -4845,16 +4837,14 @@
 "S&parse"
 //[MFileFilterAttrTemporary]
 "&Tymczasowy"
-// need translation:
 //[MFileFilterAttrReparse]
-"Reparse point"
+"Punkt analizy"
 //[MFileFilterAttrOffline]
 "O&ffline"
 //[MFileFilterAttrVirtual]
 "&Wirtualny"
-// need translation:
 //[MFileFilterAttrIntegrityStream]
-"Integrity stream"
+"Strumień integralności"
 // need translation:
 //[MFileFilterAttrNoScrubData]
 "No scrub data"
@@ -4913,12 +4903,10 @@
 "aby zaszyfrować ten obiekt:"
 //[MElevationRequiredDecryptFile]
 "aby odszyfrować ten obiekt:"
-// need translation:
 //[MElevationDoForAll]
-"Do this for &all current objects"
-// need translation:
+"Wykonaj dla &wszystkich obiektów"
 //[MElevationDoNotAskAgainInTheCurrentSession]
-"Do not ask again in the current session"
+"Nie pytaj ponownie dla tej sesji"
 //[MCompletionHistoryTitle]
 "Historia"
 //[MCompletionEnvironmentTitle]

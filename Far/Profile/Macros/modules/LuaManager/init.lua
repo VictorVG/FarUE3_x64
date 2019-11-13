@@ -2,7 +2,7 @@
 local nfo = Info {
   name          = "LuaManager";
   description   = "Менеджер Lua/Moon-скриптов для Fara";
-  version       = "5.0.4"; --в формате semver: http://semver.org/lang/ru/
+  version       = "5.0.5"; --в формате semver: http://semver.org/lang/ru/
   author        = "IgorZ";
   url           = "http://forum.farmanager.com/viewtopic.php?t=7936";
   id            = "180EE412-CBDE-40C7-9AE6-37FC64673CBD";
@@ -29,7 +29,7 @@ local nfo = Info {
       если текущая область - редактор с несохранённым файлом, то выбор действия:
       "save" - сохранить и перезагрузить, "ignore" - перезагрузить без сохранения, "cancel" - ничего не делать, иначе - спросить.
 ]];
-history         = [[
+  history       = [[
 2013/04/25 v1.0   - Первый релиз
 2013/04/25 v1.0.1 - Мелкие правки: убрал сообщение об отказе от редактирования, сделал компактный вывод областей макросов.
                     Пока в функции ShortArea оставил все три возможных варианта: по 2 буквы и 2 варианта по 1-й (2 закомментированы), на пробу.
@@ -149,7 +149,11 @@ history         = [[
 2019/09/11 v5.0.4 - Исправлена редкая ошибка, когда LuaManager по какой-то причине не мог правильно определить текст скрипта и зацикливался.
                     Исправлена ошибка с обращением к Description при редактировании панельного модуля. Исправлена функция сохранения одного параметра.
                     Исправлена ошибка с лишним "%" в новом значении в gsub.
+2019/11/08 v5.0.5 - Исправлена ошибка с :match со слишком большим количеством строк в шаблоне. Небольшой рефакторинг.
 ]];
+  options       = {
+    DefProfile = far.Flags.PSL_ROAMING--[[far.Flags.PSL_LOCAL--]] -- место хранения настроек по умолчанию: глобальные/локальные
+  }
 }
 if not nfo then return nfo end
 -- +
@@ -187,7 +191,7 @@ local Areas = {[0]="Other","Shell","Viewer","Editor","Dialog","Search","Disks","
 local AreasCount = #Areas+2 -- Areas[0] и Areas.common не считает
 local FH,GP,LP,MM = win.GetEnv("FARHOME"),win.GetEnv("FARPROFILE"),win.GetEnv("FARLOCALPROFILE"),[[\Macros\modules\]] -- профиля, путь к модулям
 local OffExt,DSB,NoKey,Noid,RBN,CNT,UP,LO = ".Switched_off","×","Ø","<no id>","≈","»","↑","↓" -- расширение отключения, разные признаки
-local Id = LMBuild>=579 and "index" or "id" -- в этой версии id переименован в index и добавлен id как uid
+local Id = LMBuild>=579 and "index" or "id" -- в этой версии id переименован в index и добавлен id как uid; Far 3.0.4744
 local FuncNames = {"Analyse","ClosePanel","Compare","DeleteFiles","GetFiles","GetFindData","GetOpenPanelInfo","MakeDirectory","Open",
                    "ProcessHostFile","ProcessPanelEvent","ProcessPanelInput","PutFiles","SetDirectory","SetFindList"}
 -- Шаблоны для диалогов редактирования
@@ -204,7 +208,7 @@ local Def = { -- Настройки по умолчанию
   InsertMacroKey="RCtrlF11",InsertEventKey="RCtrlF11",InsertMIKey="RCtrlF11",InsertPrefixKey="RCtrlF11",InsertPanelKey="RCtrlF11",
 }
 for _,a in pairs(Areas) do Def.AreaFilter = (Def.AreaFilter.." "..a):gsub("^ ","") end
-local DefProfile = F.PSL_ROAMING--[[F.PSL_LOCAL--]] -- место хранения настроек по умолчанию: глобальные/локальные
+local IsEV = regex.new("/(Editor|Viewer)/i") -- проверка области на редактор/просмотрщик
 -- доставалка префиксов, пунктов меню плагинов и редактора несохранённых клавиатурок
 local GetMenuItems,GetPrefixes,GetPanelModules,EditUnsavedMacro do
   local utils
@@ -216,7 +220,7 @@ end
 -- +
 --[[переменные]]
 -- -
-local S,L,LastFilter,UsedProfile -- конфигурация, языковые данные, последний применённый фильтр
+local S,L,LastFilter,UsedProfile -- конфигурация, языковые данные, последний применённый фильтр, используемый профиль
 -- +
 --[==[Подключаемые модули]==]
 -- -
@@ -249,13 +253,13 @@ L.PathItems = {type = "Module"} -- запишем куда надо все пу�
 for v in (package.path..";"..package.moonpath..";"..package.cpath..";"):gmatch("(.-);") do -- переберём все возможные места расположения
   L.PathItems[#L.PathItems+1] = {text = v} -- допишем очередное
 end
-local obj = far.CreateSettings(nil,DefProfile) -- откроем предпочтительные настройки
+UsedProfile = nfo.options.DefProfile -- запомним профиль
+local obj = far.CreateSettings(nil,UsedProfile) -- откроем предпочтительные настройки
 local key = obj:OpenSubkey(obj:OpenSubkey(0,Author) or 0,ConfPart) -- есть раздел?
-UsedProfile = DefProfile -- запомним профиль
 if not key then -- настроек нет?
-  obj:Free() obj = far.CreateSettings(nil,DefProfile==F.PSL_LOCAL and F.PSL_ROAMING or F.PSL_LOCAL) -- откроем другие настройки
+  obj:Free() obj = far.CreateSettings(nil,UsedProfile==F.PSL_LOCAL and F.PSL_ROAMING or F.PSL_LOCAL) -- откроем другие настройки
   key = obj:OpenSubkey(obj:OpenSubkey(0,Author) or 0,ConfPart) -- есть раздел? если нет, неважно, какой открыт, всё равно брать умолчания
-  if key then UsedProfile = DefProfile==F.PSL_LOCAL and F.PSL_ROAMING or F.PSL_LOCAL end -- из другого профиля открылись? запомним профиль
+  if key then UsedProfile = UsedProfile==F.PSL_LOCAL and F.PSL_ROAMING or F.PSL_LOCAL end -- из другого профиля открылись? запомним профиль
 end
 local function L1(n) return not ForceDef and obj:Get(key or -1,n,({string=F.FST_STRING,number=F.FST_QWORD})[type(Def[n])]) or Def[n] end
 S = { MaxKeyWidth = L1("MaxKeyWidth"),MaxFileWidth = L1("MaxFileWidth"),MaxDescWidth = L1("MacroMaxDescWidth"), -- считаем настройки
@@ -515,7 +519,7 @@ if Msg == F.DN_EDITCHANGE then -- изменение поля имени фай�
   hDlg:send(F.DM_SETTEXT,1,L.diCreate.Hdr..(win.GetFileAttr(hDlg:send(F.DM_GETTEXT,Param1)) and L.diCreate.ExistingFile or L.diCreate.NewFile))
 elseif Msg==F.DN_KILLFOCUS and Param1==2 then -- уход с имени файла?
   local nv = hDlg:send(F.DM_GETTEXT,Param1) -- новое значение
-  if not regex.match(nv,"\\.(lua|moon)$",1,"i") and nv~="" then hDlg:send(F.DM_SETTEXT,Param1,nv..".lua") end -- имя без расширения - добавим ".lua"
+  if not regex.find(nv,"/\\.(lua|moon)$/i") and nv~="" then hDlg:send(F.DM_SETTEXT,Param1,nv..".lua") end -- имя без расширения - добавим ".lua"
 elseif Msg==F.DN_CLOSE then -- закрываем диалог?
   hDlg:send(F.DM_SETFOCUS,Param1)
   if dfn and not hDlg:send(F.DM_GETTEXT,2):match("%S") then hDlg:send(F.DM_SETFOCUS,2) return ((Param1>3)and(Param1<9)) and 0 or 1 end
@@ -773,7 +777,7 @@ repeat
       DoIt(OpenMacroInDialog,L.diEditMacro,item) -- сделаем
     end
     break
-  elseif regex.match(res.BreakKey,"^(A|C)+F4$") then -- редактировать во встроенном редакторе?
+  elseif regex.find(res.BreakKey,[[^(A|C)\+F4$]]) then -- редактировать во встроенном редакторе?
     DoIt(OpenInEditor,L["edEdit"..GetType(item)],item,res.BreakKey=="C+F4") if res.BreakKey=="C+F4" then return "exit" else break end -- сделаем
   elseif res.BreakKey=="S+F4" or res.BreakKey=="CS+F4" then -- редактировать строку под курсором?
     if type(strings[pos].item)=="function" then -- для функций только
@@ -834,7 +838,7 @@ elseif Msg==F.DN_EDITCHANGE and Param1==6 then -- изменилось соде�
   local s = hDlg:send(F.DM_GETTEXT,Param1)
   item.descr = (s~="") and "'"..s.."'" or item[Id] and Id.."="..item[Id] or "NewMacro"
 elseif Msg==F.DN_EDITCHANGE and Param1==8 then -- изменилось содержимое поля ввода область?
-  local EV = regex.find(Param2[10],"(Editor|Viewer)",1,"i") -- область - редактора или просмотрщика?
+  local EV = IsEV:find(Param2[10]) -- область - редактора или просмотрщика?
   hDlg:send(F.DM_ENABLE,18,EV) -- для редактора и просмотрщика разрешим ввод маски файла
   if not EV then hDlg:send(F.DM_SETTEXT,18,"") end -- для остальных очистим маску файла
 elseif Msg==F.DN_BTNCLICK and Param1==9 then -- нажата кнопка выбор области из списка?
@@ -913,8 +917,7 @@ local Form = {-- диалог редактирования макроса
 --[[15]] {F.DI_TEXT,       23, 6, 0, 6,0,0,0,0, L.diEdit.SortPrio},
 --[[16]] {F.DI_FIXEDIT,    36, 6,38, 6,0,0,0,0,item.sortpriority or 50},
 --[[17]] {F.DI_TEXT,       40, 6, 0, 6,0,0,0,0,L.diEdit.Mask},
---[[18]] {F.DI_EDIT,       48, 6,74, 6,0,"MacroFileMask",0,F.DIF_HISTORY+
-  (regex.find(item.area,"(Editor|Viewer)",1,"i") and 0 or F.DIF_DISABLE),item.filemask or ""},
+--[[18]] {F.DI_EDIT,       48, 6,74, 6,0,"MacroFileMask",0,F.DIF_HISTORY+(IsEV:find(item.area) and 0 or F.DIF_DISABLE),item.filemask or ""},
 --[[19]] {F.DI_TEXT,       -1, 7, 0, 7,0,0,0,F.DIF_SEPARATOR,""},
 --[[20]] {F.DI_TEXT,        5, 7, 0, 7,0,0,0,0,L.diEdit.FlagsHdr},
 --[[21]] {F.DI_CHECKBOX,    5, 8, 0, 8,f01(0x1),0,0,0,L.diEdit.Flags.Output}, -- "EnableOutput"
@@ -1112,7 +1115,7 @@ elseif Msg == F.DN_EDITCHANGE and Param1==6 then -- изменение поля 
 elseif Msg == F.DN_EDITCHANGE and Param1==8 then -- изменение поля группа?
   Param2[10] = Param2[10]:match("(%w*):.*") -- обрежем комментарий
   far.SetDlgItem(hDlg,Param1,Param2) -- запишем обрезанное
-  local EV = regex.find(Param2[10],"(Editor|Viewer)",1,"i") -- группа - редактора или просмотрщика?
+  local EV = IsEV:find(Param2[10]) -- группа - редактора или просмотрщика?
   hDlg:send(F.DM_ENABLE,12,EV) -- для редактора и просмотрщика разрешим ввод маски файла
   if not EV then hDlg:send(F.DM_SETTEXT,12,"") end -- для остальных очистим маску файла
 elseif Msg==F.DN_KILLFOCUS and Param1==10 then -- уход с элемента изменение приоритета?
@@ -1171,8 +1174,7 @@ local Form = { -- диалог редактирования обработчик
 --[[09]] {F.DI_TEXT,        5, 5, 0, 5,0,0,0,0, L.diEdit.Prio},
 --[[10]] {F.DI_EDIT,       22, 5,25, 5,0,0,0,0,item.priority or 50},
 --[[11]] {F.DI_TEXT,       27, 5, 0, 5,0,0,0,0,L.diEdit.Mask},
---[[12]] {F.DI_EDIT,       41, 5,74, 5,0,"EventFileMask",0,F.DIF_HISTORY+
-  (regex.find(item.group,"(Editor|Viewer)",1,"i") and 0 or F.DIF_DISABLE),item.filemask or ""},
+--[[12]] {F.DI_EDIT,       41, 5,74, 5,0,"EventFileMask",0,F.DIF_HISTORY+(IsEV:find(item.group) and 0 or F.DIF_DISABLE),item.filemask or ""},
 --[[13]] {F.DI_TEXT,       -1, 6, 0, 6,0,0,0,F.DIF_SEPARATOR,""},
 --[[14]] {F.DI_TEXT,        5, 6, 0, 6,0,0,0,0,L.diEdit.Cond..L.diEdit.F4},
 --[[15]] cond
@@ -2153,9 +2155,9 @@ repeat -- работаем, пока не надоест
         for sk in me.key:gmatch("%S+") do infilter = infilter and not far.NameToInputRecord(sk:gsub("LCtrl","Ctrl"):gsub("LAlt","Alt")) end
       else -- с нормальными
         infilter = infilter and (S.Filter.K=="" or (me.key:match("^/.*/$") and regex.find(S.Filter.K,me.key,1,"i"))
-          or regex.find(me.key,"(^| )"..S.Filter.K.."($| )",1,"i")) -- отсеем клавиши
+          or regex.find(me.key,"/(^| )"..S.Filter.K.."($| )/i")) -- отсеем клавиши
       end
-      infilter = infilter and (S.Show.H or regex.find(" "..me.area.." ","( Common | "..Area.Current.." )",1,"i")) -- отсеем нетекущие?
+      infilter = infilter and (S.Show.H or regex.find(" "..me.area.." ","/( Common | "..Area.Current.." )/i")) -- отсеем нетекущие?
       if infilter then -- не отфильтрован?
         if me.code then keymacros[#keymacros+1] = me else macros[#macros+1] = me end -- запомним
         KeyW = math.max(KeyW,me.key:len()) -- вычислим максимальную ширину поля клавиши, имени файла и описания
@@ -2254,7 +2256,7 @@ repeat -- работаем, пока не надоест
         for i=1,s:len(),MDescW do if S.MaxDescWidth<0 and i>1 then D[#D] = D[#D]:sub(1,-2)..CNT break end D[#D+1] = s:sub(i,i+MDescW-1) end
       end
       m.desc2 = nil -- расширенное описание больше не нужно
-      local gr,ch,re = not regex.find(" "..m.area.." ","( Common | "..Area.Current.." )",1,"i"),m.disabled and DSB,m.rebinded and RBN or " "
+      local gr,ch,re = not regex.find(" "..m.area.." ","/( Common | "..Area.Current.." )/i"),m.disabled and DSB,m.rebinded and RBN or " "
       items[#items+1] = {from=m,grayed=gr,checked=ch,pos="M"..m[Id],text=frm:format(ShortArea(m.area),re,K[1],FN[1] or "",D[1] or "")}
       if oldpos==items[#items].pos then pos = #items end
       for j=2,math.max(#K,#FN,#D) do
@@ -2276,7 +2278,7 @@ repeat -- работаем, пока не надоест
         for i=1,s:len(),MDescW do if S.MaxDescWidth<0 and i>1 then D[#D] = D[#D]:sub(1,-2)..CNT break end D[#D+1] = s:sub(i,i+MDescW-1) end
       end
       m.desc2 = nil -- расширенное описание больше не нужно
-      local gr,ch,re = not regex.find(" "..m.area.." ","( Common | "..Area.Current.." )",1,"i"),m.disabled and DSB,m.rebinded and RBN or ""
+      local gr,ch,re = not regex.find(" "..m.area.." ","/( Common | "..Area.Current.." )/i"),m.disabled and DSB,m.rebinded and RBN or ""
       items[#items+1] = {from=m,grayed=gr,checked=ch,pos="M"..m[Id],text=frm:format(ShortArea(m.area),re,K[1],FN[1] or "",D[1] or "")}
       if oldpos==items[#items].pos then pos = #items end
       for j=2,math.max(#K,#FN,#D) do
@@ -2415,7 +2417,7 @@ repeat -- работаем, пока не надоест
       elseif item.area then -- макрос?
         DoIt(OpenMacroInDialog,L.diEditMacro,item) -- сделаем
       end
-    elseif regex.match(res.BreakKey,"^(A|C)\\+F4$") then -- редактировать во встроенном редакторе?
+    elseif regex.find(res.BreakKey,[[^(A|C)\+F4$]]) then -- редактировать во встроенном редакторе?
       DoIt(OpenInEditor,L["edEdit"..GetType(item)],item,res.BreakKey=="C+F4") if res.BreakKey=="C+F4" then break end -- сделаем
     elseif res.BreakKey=="INSERT" or res.BreakKey=="NUMPAD0" then -- добавить новый?
       DoIt(CreateNew,L.CreateNew,item) -- сделаем
@@ -2441,7 +2443,7 @@ repeat -- работаем, пока не надоест
       end
     elseif res.BreakKey=="F9" then -- настройка параметров?
       Config()
-    elseif regex.match(res.BreakKey,[[^S\+(M|E|O|I|P|N)$]]) then -- редактировать порядок сортировки?
+    elseif regex.find(res.BreakKey,[[^S\+(M|E|O|I|P|N)$]]) then -- редактировать порядок сортировки?
       local tL,C = {M=L.cbMacroSortVariants,E=L.cbEventSortVariants,O=L.cbModuleSortVariants,I=L.cbMISortVariants,P=L.cbPrefixSortVariants,
                     N=L.cbPMSortVariants},res.BreakKey:sub(3) S.SO[C] = SortingOrder(S.SO[C],tL[C])
     elseif res.BreakKey=="C+K" then -- редактировать фильтр клавиш?
@@ -2468,15 +2470,16 @@ repeat -- работаем, пока не надоест
     elseif res.BreakKey=="C+F" then -- показывать только из того же файла?
       S.Filter.F = item.FileName or "*" -- изменим маску файла
     elseif res.BreakKey=="CS+F" then -- показывать только из файлов по маске?
-      local M = far.InputBox(nil,"",L.InputFileMask,"LMFileMaskHistory",S.Filter.F,nil,nil,F.FIB_BUTTONS+F.FIB_ENABLEEMPTY+F.FIB_EXPANDENV)
-      if M=="" or M=="*.*" then M = "*" end -- приведём маску "все файлы" к стандартному виду
+      local M = S.Filter.F=="*" and "*.*" or S.Filter.F -- текущая маска
+      M = far.InputBox(nil,"",L.InputFileMask,"LMFileMaskHistory",M,nil,nil,F.FIB_BUTTONS+F.FIB_ENABLEEMPTY+F.FIB_EXPANDENV) -- введём новую
       if M then -- если ввели маску
+        if M=="" then M = "*.*" end -- приведём пустую маску к виду "все имена"
         if not M:match("[^\\]*$"):find(".",1,true) then M = M..".lua;"..M..".moon" end -- нет расширения? добавим стандартные
-        S.Filter.F = M -- запомним новую маску
+        S.Filter.F = M=="*.*" and "*" or M -- запомним новую маску (приведя маску "все имена" к удобному виду)
       end
     elseif res.BreakKey=="CA+F" then -- показывать из всех файлов?
       S.Filter.F = "*" -- сбросим маску файла
-    elseif regex.match(res.BreakKey,[[^A\+(M|K|E|O|I|P|N|H)$]]) then -- скрывать/показывать?
+    elseif regex.find(res.BreakKey,[[^A\+(M|K|E|O|I|P|N|H)$]]) then -- скрывать/показывать?
       local C = res.BreakKey:sub(3) S.Show[C] = not S.Show[C]
     elseif res.BreakKey=="A+F" then -- скрывать/показывать имена файлов?
       S.MaxFileWidth = S.MaxFileWidth==0 and 1000 or 0
@@ -2506,10 +2509,6 @@ end
 --
 if type(nfo)=="table" then nfo.execute = function() ManageMacrosEvents() end end
 --
-local function idx(self,key)
-return function(...) local fun = rawget(self,key) if fun then fun(...) else ErrMess(L.Lang and L.er.NotLMFun or L[1]) end end
-end
---
 LoadSettings()
 --
 return setmetatable({ -- что возвращает модуль
@@ -2520,4 +2519,4 @@ return setmetatable({ -- что возвращает модуль
   InsUid = function() mf.print(GenUid()) end;
   Reload = Reload;
   __MData = function() return L,Guids,S.Key,LMBuild end;
-},{__index=idx;__call=function(self,...) return self.Main(...) end;})
+},{__call=function(self,...) return self.Main(...) end;})

@@ -1,19 +1,21 @@
-﻿local Info = Info or package.loaded.regscript or function(...) return ... end --luacheck: ignore 113/Info
+local Info = Info or package.loaded.regscript or function(...) return ... end --luacheck: ignore 113/Info
 local nfo = Info { _filename or ...,
   name        = "Luacheck FAR scripts";
   description = "Using luacheck in FAR editor [tool for linting and static analysis of Lua code]";
-  version     = "1.4"; --http://semver.org/lang/ru/
+  version     = "1.4.2-far5498.lm712"; --http://semver.org/lang/ru/
   author      = "jd";
   url         = "http://forum.farmanager.com/viewtopic.php?f=15&t=9650";
   id          = "73924F99-3AE6-4B3E-9981-ABC0ECB199EC";
-  minfarversion = {3,0,0,4831,0}; --luamacro/luafar build 591 (BreakKeys)
+  minfarversion = {3,0,0,5106,0}; --luamacro/luafar build 634 (Panel.SetPath)
   require     = "luacheck v0.19 or newer: https://github.com/mpeterv/luacheck";
   --config
   --execute
+  --help
   files = "luacheck_far.ru.hlf;scriptscfg.Luacheck.ins;",--more
   options     = {
     --cfgpath=win.GetEnv"LOCALAPPDATA".."\\Luacheck\\",
     --cfgname=".luacheckrc",
+    --allow_G   = true, --undocumented
 
     macrokey  = "CtrlShiftF7",
     filemask  = "*.lua;*.moon;*.lua.cfg",
@@ -64,6 +66,14 @@ function nfo.execute() Check() end
 
 function nfo.config() Config() end
 
+local function showHelp(topic)
+  far.ShowHelp(_path,topic,F.FHELP_CUSTOMPATH)
+end
+local function HelpTopic(s)
+  return ("<%s>%s"):format(_path,s)
+end
+function nfo.help() showHelp() end
+
 local function MessagePopup(msg,title,flags,delay)
   local s = far.SaveScreen()
   far.Message(msg,title or "","",flags)
@@ -98,6 +108,7 @@ local function msgErrCfg(errmsg)
   far.Message("Error in config\n"..errmsg,nfo.name,nil,"w")
 end
 local mt = {__index=_G}
+local luacheck_builtin_standards
 local function loadCfgFile(def_file,path) --default file XOR path to local config must be specified
   local file = path and findLocalCfg(path)
   if not file then
@@ -107,8 +118,8 @@ local function loadCfgFile(def_file,path) --default file XOR path to local confi
     end
   end
   local f,err = loadfile(file)
-  if err then msgErrCfg(err); return end
-  local env = {}
+  if not f then msgErrCfg(err); return end
+  local env = {stds=luacheck_builtin_standards}
   local success,res = pcall(setfenv(f,setmetatable(env,mt)))
   if not success then msgErrCfg(res); return end
   if res~=nil then
@@ -118,36 +129,37 @@ local function loadCfgFile(def_file,path) --default file XOR path to local confi
       for k,v in pairs(res) do env[k] = v end
     end
   end
-  local options,err2 = validateCfg(setmetatable(env,nil))--l uacheck: no redefined
-  if err then
+  local options,err2 = validateCfg(setmetatable(env,nil))
+  if not options then
     mf.postmacro(msgErrCfg,file.."\n"..err2)
   else
     return options
   end
 end
 
-local function showHelp(topic)
-  far.ShowHelp(_path,topic,F.FHELP_CUSTOMPATH)
-end
-
-local macros = {}
-local function MacroAdd(area,flags,key,descr,f)
-  local id = far.MacroAdd(area or F.MACROAREA_EDITOR,flags or F.KMFLAGS_NONE,key,"--",descr or "luacheck temp",
-    function()
-      return f()
-    end
-  )
-  table.insert(macros,id)
-  return id
-end
 local _flags = {EF_ENABLE_F6=1} --http://bugs.farmanager.com/view.php?id=3043
 local function editCfg(filename)
-  local err,edited
-  MacroAdd(nil,nil,"F10","luacheck error config quit",function() err = false end) --or Event?
+  local function MacroAdd(area,flags,key,descr,f)
+    local id = far.MacroAdd(
+      area or F.MACROAREA_EDITOR,
+      flags or F.KMFLAGS_NONE,
+      key,
+      "--",
+      descr or "luacheck temp",
+      function()
+        return f()
+      end,
+      100
+    )
+    return id
+  end
   local function Label(Key,Text,LongText)
     local rec = far.NameToInputRecord(Key)
     return {VirtualKeyCode=rec.VirtualKeyCode,ControlKeyState=rec.ControlKeyState,Text=Text,LongText=LongText or Text}
   end
+
+  local err,edited
+  local tmp = MacroAdd(nil,nil,"F10","luacheck error config quit",function() err = false end) --or Event?
   local keybar = {Label("F1","HELP"),Label("F5","TEMPLATE"),Label("F10","QUIT"),}
   repeat
     mf.postmacro(function()
@@ -155,11 +167,12 @@ local function editCfg(filename)
       if ei then editor.SetKeyBar(ei.EditorID,keybar) end
     end)
     if F.EEC_MODIFIED==editor.Editor(filename,nil,nil,nil,nil,nil,_flags) or err then
+      --todo?? exit if msgErrCfg OK/Ignore
       if loadCfgFile(filename) then edited = true; break end --validate config
       err = true
     end
   until not err
-  for _,id in ipairs(macros) do far.MacroDelete(id) end
+  far.MacroDelete(tmp)
   return edited
 end
 
@@ -172,14 +185,11 @@ local function makeNewCfgItem(dir,name,notcurrent)
     text = default or exist and file or dir,
     checked = current and true or default and "*" or exist and "+",
     file = file,
-    dir=dir,
-    name=name,
+    dir = dir,
+    name = name,
     selected = current,
     default = default,
   }
-end
-local function HelpTopic(s)
-  return ("<%s>%s"):format(_path,s)
 end
 local props = {
   Title="Choose config location to edit:",
@@ -205,8 +215,7 @@ local function newCfg(path)
     return
   elseif item.BreakKey then
     local item = items[pos] --luacheck: no redefined
-    panel.SetPanelDirectory(nil,1,item.dir) --see mbrowser.lua/LocateFile
-    Panel.SetPath(0,item.dir,item.name) --http://bugs.farmanager.com/view.php?id=2406
+    Panel.SetPath(0,item.dir,item.name)  --alt: see mbrowser.lua/LocateFile
     local w = far.AdvControl(F.ACTL_GETWINDOWINFO)
     if w.Type==F.WTYPE_PANELS then
       return
@@ -320,6 +329,7 @@ function list:setPos(Pos)
 end
 function list:gotoWarning(pos,to_prev,force_top)
   --??TabToReal
+  if pos==0 then return end --https://forum.farmanager.com/viewtopic.php?p=146932#p146932
   local w = self.Items[pos]
   local line = to_prev and w.prev_line or w.line
   if not line then return end
@@ -354,41 +364,39 @@ function list:gotoWarning(pos,to_prev,force_top)
   end
   setEditorPos{CurLine=line,CurPos=column,TopScreenLine=TopScreenLine}
 end
-function list:Up(pos)   return pos-1>=1 and pos-1 or self.nItems end
-function list:Down(pos) return pos+1<=self.nItems and pos+1 or 1 end
-local function go(dir,pos,autopos)
-  local nextpos = list[dir](list,pos)
-  if autopos then list:gotoWarning(nextpos) end
-  return nextpos
+local _calcpos = {
+  Up  =function(pos,last) return pos-1>=1 and pos-1 or last end;
+  Down=function(pos,last) return pos+1<=last and pos+1 or 1 end;
+}
+function list:go(dir,pos,autopos)
+  local Items = self.Items
+  repeat
+    pos = _calcpos[dir](pos,self.nItems)
+    --far.Show(pos,Items[pos].hidden)
+  until not Items[pos].hidden
+  if autopos then self:gotoWarning(pos) end
+  return pos
 end
 
 local bKeys = expandBreakKeys {
-  {BreakKey="CtrlUp CtrlNum8 Ctrl8",action=function() scrollEditor(-1) end},
-  {BreakKey="CtrlDown CtrlNum2 Ctrl2",action=function() scrollEditor(1) end},
-  {BreakKey="CtrlEnter CtrlPgDn CtrlNum3 Ctrl3",action=function(pos) list:gotoWarning(pos) end},
-  {BreakKey="CtrlShiftEnter",   action=function(pos) list:gotoWarning(pos,nil,true) end},
+  --main
   {BreakKey="Enter",            action=function(pos)
     if list.Props.SelectIndex~=pos then list:gotoWarning(pos) end
     return "break"
   end},
   {BreakKey="Esc",              action=function() restorePos(); return "break" end},
+  {BreakKey="CtrlEnter CtrlPgDn CtrlNum3 Ctrl3",action=function(pos) list:gotoWarning(pos) end},
+  {BreakKey="CtrlShiftEnter",   action=function(pos) list:gotoWarning(pos,nil,true) end},
   {BreakKey="CtrlPgUp CtrlNum9 Ctrl9",action=function(pos) list:gotoWarning(pos,true) end},
+
+  --list pos
   {BreakKey="CtrlHome Num7 7",  action=function() list:setPos("Top") end},
   {BreakKey="CtrlEnd  Num1 1",  action=function() list:setPos("Bottom") end},
   {BreakKey="Num4 4",           action=function() list:setPos("Center") end},
   {BreakKey="F6 Divide",        action=function() list:setPos(O.CycleMode) end},
   {BreakKey="F5 Clear 5",       action=function() list:maximize() end},
-  {BreakKey="Add",              action=function() editor.AddSessionBookmark() end},
-  {BreakKey=[[CS+1 CS+2 CS+3 CS+4 CS+5 CS+6 CS+7 CS+8 CS+9 CS+0
-              C+1  C+2  C+3  C+4  C+5  C+6  C+7  C+8  C+9  C+0]],keys=true},
-  --{BreakKey="F1",               action=function() showHelp "Editor" end},
-  --http://bugs.farmanager.com/view.php?id=1301#c12736
-  {BreakKey="Up",               action=function(pos) return go("Up",pos,O.AutoPos) end},
-  {BreakKey="ShiftUp Num8 8",   action=function(pos) return go("Up",pos,not O.AutoPos) end},
-  {BreakKey="Down",             action=function(pos) return go("Down",pos,O.AutoPos) end},
-  {BreakKey="ShiftDown Num2 2", action=function(pos) return go("Down",pos,not O.AutoPos) end},
-  {BreakKey=O.debug and "F3",   action=function(pos) require"le"(list.Items[pos],"Event") end},
-  {BreakKey=O.debug and "ShiftF9",action=function() require"le"(O,"Options");list:calcProps() end},
+
+  --config
   {BreakKey="F9",               action=function()
     local path = editor.GetFileName():match(ptn_path)
     if editCfg(findLocalCfg(path) or cfgfile) then
@@ -407,6 +415,25 @@ local bKeys = expandBreakKeys {
       return "break"
     end
   end},
+
+  --editor pos / bookmarks (like @FindAllMenu)
+  {BreakKey="CtrlUp CtrlNum8 Ctrl8",action=function() scrollEditor(-1) end}, --??also CtrlLeft/CtrlRight
+
+  {BreakKey="CtrlDown CtrlNum2 Ctrl2",action=function() scrollEditor(1) end},
+  {BreakKey="Add",              action=function() editor.AddSessionBookmark() end},
+  {BreakKey=[[CS+1 CS+2 CS+3 CS+4 CS+5 CS+6 CS+7 CS+8 CS+9 CS+0
+              C+1  C+2  C+3  C+4  C+5  C+6  C+7  C+8  C+9  C+0]],keys=true},
+
+  --{BreakKey="F1",               action=function() showHelp "Editor" end},
+  --http://bugs.farmanager.com/view.php?id=1301#c12736
+  {BreakKey="Up",               action=function(pos) return list:go("Up",pos,O.AutoPos) end},
+  {BreakKey="ShiftUp Num8 8",   action=function(pos) return list:go("Up",pos,not O.AutoPos) end},
+  {BreakKey="Down",             action=function(pos) return list:go("Down",pos,O.AutoPos) end},
+  {BreakKey="ShiftDown Num2 2", action=function(pos) return list:go("Down",pos,not O.AutoPos) end},
+
+  --debug
+  {BreakKey=O.debug and "F3",   action=function(pos) require"le"(list.Items[pos],"Event") end},
+  {BreakKey=O.debug and "ShiftF9",action=function() require"le"(O,"Options");list:calcProps() end},
 }
 
 local moon_line do
@@ -485,18 +512,47 @@ local function loadLuacheck()
   end
   -- import far_standards
   --https://github.com/mpeterv/luacheck/issues/120
-  local builtin_standards = require "luacheck.builtin_standards"
-  if not builtin_standards.luafar then
+  luacheck_builtin_standards = require "luacheck.builtin_standards"
+  if not luacheck_builtin_standards.luafar then
     local ret = loadCfgFile(_path..files.far_stds)
     if ret and ret.stds then
       for k,v in pairs(ret.stds) do
-        builtin_standards[k] = v
+        luacheck_builtin_standards[k] = v
       end
     --else far.Message("Far standards not loaded",nfo.name,nil,"w")
     end
   end
   return true
 end
+
+local function filterWarn(w,rtype)
+  local remove --todo
+  --[[
+  if w.secondary then
+    w.checked = "²"--http://luacheck.readthedocs.io/en/stable/warnings.html#secondaryvaluesandvariables
+  end
+  --]]
+  if (w.no_line or w.no_prev_line) then
+    w.checked = "¬"
+  end
+  if rtype==1 then --todo cache,init
+    assert(w.name)
+    local var = _G[w.name]
+    if var and w.field then
+      for field in w.field:gmatch"[^.]+" do
+        var = var[field]
+        if not var then break end
+      end
+    end
+    if var then
+      w.checked = "?"
+      if O.allow_G then w.hidden = true end
+      --todo what if list gets empty
+    end
+  end
+  return not remove
+end
+
 local Props = {
   Bottom="Ctrl-Enter, Ctrl-Up/Down, F5, F6, [Ctrl]F9, F1";
   HelpTopic=HelpTopic"Editor",
@@ -505,7 +561,7 @@ local Props = {
 local function ProcessName(mask,file)
   return far.ProcessName(F.PN_CMPNAMELIST,mask,file,F.PN_SKIPPATH)
 end
---?? select item with position nearest to current editor cursor pos
+
 function Check()
   if not loadLuacheck() then return end
   local ei = editor.GetInfo()
@@ -568,42 +624,51 @@ function Check()
     elseif key=="F1" then
       showHelp()
     elseif key~="Esc" then
-      Keys(key)
+      mf.postmacro(Keys,key)
     end
   else -- proceed with warnings list
     local Items,pos,maxlen,err = {},nil,0
     for i,w in ipairs(report) do
-      if O.debug then
+      if O.debug then --?? always store w separately, but copy needed values to list item
         local r = {}
         for k,v in pairs(w) do r[k] = v end
         w.report = r
       end
       if isMoon then moon_form(moon_info,w) end
-      err = w.code:sub(1,1)=="0"
+      local rtype = tonumber(w.code:sub(1,1))
+      err = rtype==0
       w.text =  ("%4u:%-3u "):format(w.line,w.column)..
                 ("│ %s%s │ "):format(err and "E" or "W",w.code)..
                 luacheck.get_message(w)
       local len = w.text:len()
       maxlen = len>maxlen and len or maxlen
-      w.checked = err and "‼"
-               or (w.no_line or w.no_prev_line) and "¬"
-               or w.code:sub(1,1)=="1" and "!"
-               --http://luacheck.readthedocs.io/en/stable/warnings.html#secondaryvaluesandvariables
-               or w.secondary and "²"
-      if not pos and w.line==ei.CurLine and w.column==ei.CurPos then pos = i end
-      Items[i] = w
-      if O.debug then
-        if not w.end_column then mf.beep() end
-        if not w.report.end_column then w.error = "no end_column" end
-        if w.line>ei.TotalLines then w.error = "line > TotalLines" end
-        if w.error then w.checked ="?" end
+      w.checked = err and "‼" or rtype==1 and "!"
+      if err or filterWarn(w,rtype) then
+        --todo select item with position nearest to current editor cursor pos
+        if not pos and not w.hidden and
+           w.line==ei.CurLine and w.column==ei.CurPos then
+          pos = i
+        end
+        Items[#Items+1] = w
+        if O.debug then
+          if not w.end_column then mf.beep() end
+          if not w.report.end_column then w.error = "no end_column" end
+          if w.line>ei.TotalLines then w.error = "line > TotalLines" end
+          if w.error then w.checked ="?" end
+        end
       end
     end
     Items.maxlen = maxlen
     if err then mf.beep(); mf.postmacro(MessagePopup,"Errors found!",nfo.name,"w",300) end
     Props.Title = dlgTitle
     list:calcProps(Items,Props)
-    if O.AutoPos then list:gotoWarning(pos or 1) end
+    if not O.AutoPos then --luacheck: ignore 542
+      --nop
+    elseif pos then
+      list:gotoWarning(pos)
+    else
+      list:go("Down",0,true)
+    end
 
     repeat --todo use dialog instead of menu
       -- show list
@@ -614,7 +679,8 @@ function Check()
       if not item then
         break
       elseif item.keys then
-        Keys(item.BreakKey)
+        --bookmarks
+        Keys(item.BreakKey:gsub("^CS%+","CtrlShift"):gsub("^C%+","Ctrl"))
       elseif not item.action then
         list:gotoWarning(pos)
       else
@@ -683,15 +749,17 @@ MenuItem { description="luacheck: edit config";
 
 Macro { description="Help on .luacheckrc editing";
   area="Editor"; key="F1";
+  priority=60;
   filemask=files.cfg_name;files.cfg_sample;
   id="956F6E8E-502D-4DE1-A47D-BFDC3590F033";
   action=function()
-    showHelp"ConfigEdit"
+    showHelp"Edit.luacheckrc"
   end;
 }
 
 Macro { description="Insert .luacheckrc template";
   area="Editor"; key="F5";
+  priority=60;
   filemask=files.cfg_name;
   id="21878EEF-5AE5-4A08-B1B3-EDCDD2BD0AFD";
   action=function()
@@ -709,5 +777,3 @@ Macro { description="Insert .luacheckrc template";
     end
   end;
 }
-
---todo color highlighting
