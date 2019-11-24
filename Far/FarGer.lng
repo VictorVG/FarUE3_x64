@@ -1,6 +1,6 @@
 ﻿.Language=German,German (Deutsch)
 
-//Version: 3.0.0.5508
+//Version: 3.0.0.5512
 
 //[MYes]
 "Ja"
@@ -701,6 +701,9 @@
 "Symbolischer Link (&Datei)"
 //[MLinkTypeSymlinkDirectory]
 "Symbolischer Link (Or&dner)"
+// need translation:
+//[MCopyPreserveTimestamps]
+"Preserve timestamps"
 //[MCopySymLinkContents]
 "Inhalte von s&ymbolischen Links kopieren"
 //[MCopyMultiActions]
@@ -2922,6 +2925,9 @@
 "&CD Parameter anzeigen"
 //[MChangeDriveShowNetworkDrive]
 "Parameter der Netzlaufwerkes anzeigen"
+// need translation:
+//[MChangeDriveShowVirtualDisk]
+"Detect virtual disks"
 //[MChangeDriveMenuFooter]
 "Entf,Shift+Entf,F3,F4,F9"
 

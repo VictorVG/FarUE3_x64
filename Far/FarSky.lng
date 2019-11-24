@@ -1,6 +1,6 @@
 ﻿.Language=Slovak,Slovak (Slovenčina)
 
-//Version: 3.0.0.5508
+//Version: 3.0.0.5512
 
 //[MYes]
 "Áno"
@@ -691,6 +691,9 @@
 "symbolické prepoj. (&súbor)"
 //[MLinkTypeSymlinkDirectory]
 "symbolické prepoj. (prie&činok)"
+// need translation:
+//[MCopyPreserveTimestamps]
+"Preserve timestamps"
 //[MCopySymLinkContents]
 "Kopírovať obsah sym&bolic. prepoj."
 //[MCopyMultiActions]
@@ -2870,6 +2873,9 @@
 "Zobraziť parametre jednotky &CD"
 //[MChangeDriveShowNetworkDrive]
 "Zobraziť parametre sie&ťovej jednotky"
+// need translation:
+//[MChangeDriveShowVirtualDisk]
+"Detect virtual disks"
 //[MChangeDriveMenuFooter]
 "Del,Shift+Del,F3,F4,F9"
 

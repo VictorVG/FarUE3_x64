@@ -11,4 +11,5 @@
   ответственности за последствия использования данного плагина.
 
 Артём Сеничев (artemsen@gmail.com)
+Вдадимир Сургучев (vladimir.surguchev@gmail.com)
               https://sourceforge.net/projects/farplugs/

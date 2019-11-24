@@ -16,7 +16,7 @@
   CommentBegin and CommentEnd
     values defines stream comment chars (i.e. "/*" and "*/")
 
-  Usage: "%FARHOME%\Far.exe" /import Comment_FileTypes.farconfig
+  Usage: "%FARHOME%\Far.exe" -import Comment_FileTypes.farconfig
 -->
 <farconfig>
     <pluginsconfig>
@@ -26,15 +26,15 @@
                     <value name="CommentFromBegin" type="text" value="off" />
 
                     <key name=".bat">
-                        <value name="Comment" type="text" value="rem &#x0A;REM " />
+                        <value name="Comment" type="text" value="rem  " />
                         <value name="CommentSkipMenu" type="text" value="on" />
                     </key>
                     <key name=".btm">
-                        <value name="Comment" type="text" value="rem &#x0A;REM " />
+                        <value name="Comment" type="text" value="rem  " />
                         <value name="CommentSkipMenu" type="text" value="on" />
                     </key>
                     <key name=".cmd">
-                        <value name="Comment" type="text" value="rem &#x0A;REM " />
+                        <value name="Comment" type="text" value="rem  " />
                         <value name="CommentSkipMenu" type="text" value="on" />
                     </key>
 
@@ -52,73 +52,78 @@
                     </key>
 
                     <key name=".cpp">
-                        <value name="Comment" type="text" value="//" />
-                        <value name="CommentBegin" type="text" value="/*" />
-                        <value name="CommentEnd" type="text" value="*/" />
+                        <value name="Comment" type="text" value="// " />
+                        <value name="CommentBegin" type="text" value="/* " />
+                        <value name="CommentEnd" type="text" value=" */" />
                         <value name="CommentFromBegin" type="text" value="off" />
                     </key>
                     <key name=".def">
-                        <value name="Comment" type="text" value=";" />
+                        <value name="Comment" type="text" value="; " />
+                    </key>
+
+                    <key name=".iss">
+                        <value name="Comment" type="text" value="; " />
+                        <value name="CommentFromBegin" type="text" value="on" />
                     </key>
 
                     <key name=".ini">
-                        <value name="Comment" type="text" value=";" />
+                        <value name="Comment" type="text" value="; " />
                     </key>
                     <key name=".reg">
-                        <value name="Comment" type="text" value=";" />
+                        <value name="Comment" type="text" value="; " />
                     </key>
 
                     <key name=".php">
-                        <value name="Comment" type="text" value="//&#x0A;#" />
-                        <value name="CommentBegin" type="text" value="/*&#x0A;&lt;!--" />
-                        <value name="CommentEnd" type="text" value="*/&#x0A;--&gt;" />
+                        <value name="Comment" type="text" value="//&#x0A;# " />
+                        <value name="CommentBegin" type="text" value="/*&#x0A;&lt;!-- " />
+                        <value name="CommentEnd" type="text" value=" */&#x0A;--&gt;" />
                         <value name="CommentSkipMenu" type="text" value="off" />
                     </key>
 
                     <key name=".sql">
                         <value name="Comment" type="text" value="-- " />
-                        <value name="CommentBegin" type="text" value="/*" />
-                        <value name="CommentEnd" type="text" value="*/" />
+                        <value name="CommentBegin" type="text" value="/* " />
+                        <value name="CommentEnd" type="text" value=" */" />
                         <value name="CommentFromBegin" type="text" value="on" />
                     </key>
 
                     <key name=".htm">
                         <value name="Comment" type="text" value="" />
-                        <value name="CommentBegin" type="text" value="&lt;!--" />
-                        <value name="CommentEnd" type="text" value="--&gt;" />
+                        <value name="CommentBegin" type="text" value="&lt;!-- " />
+                        <value name="CommentEnd" type="text" value=" --&gt;" />
                     </key>
                     <key name=".html">
                         <value name="Comment" type="text" value="" />
-                        <value name="CommentBegin" type="text" value="&lt;!--" />
-                        <value name="CommentEnd" type="text" value="--&gt;" />
+                        <value name="CommentBegin" type="text" value="&lt;!-- " />
+                        <value name="CommentEnd" type="text" value=" --&gt;" />
                     </key>
                     <key name=".shtml">
                         <value name="Comment" type="text" value="" />
-                        <value name="CommentBegin" type="text" value="&lt;!--" />
-                        <value name="CommentEnd" type="text" value="--&gt;" />
+                        <value name="CommentBegin" type="text" value="&lt;!-- " />
+                        <value name="CommentEnd" type="text" value=" --&gt;" />
                     </key>
 
                     <key name=".xml">
                         <value name="Comment" type="text" value="" />
-                        <value name="CommentBegin" type="text" value="&lt;!--" />
-                        <value name="CommentEnd" type="text" value="--&gt;" />
+                        <value name="CommentBegin" type="text" value="&lt;!-- " />
+                        <value name="CommentEnd" type="text" value=" --&gt;" />
                     </key>
 
                     <key name=".farconfig">
                         <value name="Comment" type="text" value="" />
-                        <value name="CommentBegin" type="text" value="&lt;!--" />
-                        <value name="CommentEnd" type="text" value="--&gt;" />
+                        <value name="CommentBegin" type="text" value="&lt;!-- " />
+                        <value name="CommentEnd" type="text" value=" --&gt;" />
                     </key>
 
                     <key name=".wxs">
                         <value name="Comment" type="text" value="" />
-                        <value name="CommentBegin" type="text" value="&lt;!--" />
-                        <value name="CommentEnd" type="text" value="--&gt;" />
+                        <value name="CommentBegin" type="text" value="&lt;!-- " />
+                        <value name="CommentEnd" type="text" value=" --&gt;" />
                     </key>
                     <key name=".wxi">
                         <value name="Comment" type="text" value="" />
-                        <value name="CommentBegin" type="text" value="&lt;!--" />
-                        <value name="CommentEnd" type="text" value="--&gt;" />
+                        <value name="CommentBegin" type="text" value="&lt;!-- " />
+                        <value name="CommentEnd" type="text" value=" --&gt;" />
                     </key>
 
                     <key name=".txt">
@@ -133,9 +138,9 @@
 
                     <key name=".lua">
                         <value name="Comment" type="text" value="-- " />
-                        <value name="CommentBegin" type="text" value=" --[[ " />
-                        <value name="CommentEnd" type="text" value=" --]] " />
-                        <value name="CommentFromBegin" type="text" value="on" />
+                        <value name="CommentBegin" type="text" value="--[[ " />
+                        <value name="CommentEnd" type="text" value="--]] " />
+                        <value name="CommentFromBegin" type="text" value="off" />
                     </key>
 
                     <key name=".sh" description="">

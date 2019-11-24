@@ -1,6 +1,6 @@
 ﻿.Language=Ukrainian,Ukrainian (Українська)
 
-//Version: 3.0.0.5508
+//Version: 3.0.0.5512
 
 //[MYes]
 "Так"
@@ -686,6 +686,8 @@
 "символічне посилання (&файл)"
 //[MLinkTypeSymlinkDirectory]
 "символічне посилання (папка)"
+//[MCopyPreserveTimestamps]
+"Зберігати позначки часу"
 //[MCopySymLinkContents]
 "Копіювати вміст символічних посилань"
 //[MCopyMultiActions]
@@ -2864,6 +2866,8 @@
 "Показувати параметри &компакт-дисків"
 //[MChangeDriveShowNetworkDrive]
 "Показувати параметри мережевих дисків"
+//[MChangeDriveShowVirtualDisk]
+"Визначати віртуальні диски"
 //[MChangeDriveMenuFooter]
 "Del,Shift+Del,F3,F4,F9"
 

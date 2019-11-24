@@ -15,6 +15,7 @@
   ║  ···················C │ AltShiftF5                                                       │ Common_DBEdit.lua                          │ Редактор баз данных плагинов: импорт           ║
   ║  ···················C │ AltShiftR                                                        │ Common_ReloadMacros.lua                    │ Reload macros                                  ║
   ║  ···················C │ AltShiftUp AltShiftDown AltShiftLeft AltShiftRight               │ Plugin_ConsoleControl-Macros.lua           │ Console Control: Change Windows Size           ║
+  ║  ···················C │ Ctrl/                                                            │ Common_KeyName.lua                         │ Получение названия клавиши. © SimSU            ║
   ║  ···················C │ CtrlAlt1 CtrlAlt0                                                │ Plugin_ConsoleControl-Macros.lua           │ Window size 80x25                              ║
   ║  ···················C │ CtrlAlt2 CtrlAlt0                                                │ Plugin_ConsoleControl-Macros.lua           │ Window size 80x50                              ║
   ║  ···················C │ CtrlAlt3 CtrlAlt0                                                │ Plugin_ConsoleControl-Macros.lua           │ Window size 160x80                             ║
@@ -26,7 +27,6 @@
   ║  ···················C │ CtrlShiftV                                                       │ Common_ClipFix.lua                         │ вставка кривого юникода из буфера обмена       ║
   ║  ···················C │ F11                                                              │ Plugin_PlugMenu.lua                        │ Advanced plugin menu                           ║
   ║  ···················C │ LAltShiftM                                                       │ Common_PostMacro.lua                       │ Post macro                                     ║
-  ║  ···················C │ LCtrl/                                                           │ Common_KeyName.lua                         │ Получение названия клавиши. © SimSU            ║
   ║  ···················C │ none                                                             │ Common_UpdCnf.lua                          │ Update location IgorZ scripts in to            ║
   ║                       │                                                                  │                                            │ LuaMacro DB                                    ║
   ║  ···················C │ ShiftF11                                                         │ Plugin_PlugMenu.lua                        │ Standard plugin menu                           ║
@@ -67,7 +67,6 @@
   ║  S·····VE············ │ AltF11                                                           │ Plugin_LF_History.lua                      │ LuaFAR History: view/edit                      ║
   ║  S·····VE············ │ auto                                                             │ Common_ConsControl.lua                     │ Far console init full screen                   ║
   ║  S·····VE············ │ auto                                                             │ Common_ConsControl.lua                     │ Far console init window                        ║
-  ║  S·····V············· │ F3 Enter NumEnter MsM1Click                                      │ SV_Review.lua                              │ Review: Open graphics files                    ║
   ║  S······E············ │ Ctrl-                                                            │ Plugin_TextConv.lua                        │ Text file converter                            ║
   ║  S······E············ │ CtrlAltH                                                         │ Plugin_UCharMap.lua                        │ Unicode CharMap                                ║
   ║  S······E············ │ RAltL                                                            │ Plugin_lfsearch.lua                        │ LuaFAR Search                                  ║
@@ -79,6 +78,8 @@
   ║  S·······D··········· │ CtrlHome                                                         │ Plugin_Review.lua                          │ Review: Goto First Page                        ║
   ║  S·······D··········· │ CtrlPgDn CtrlMsWheelDown                                         │ Plugin_Review.lua                          │ Review: Goto Next Page                         ║
   ║  S·······D··········· │ CtrlPgUp CtrlMsWheelUp                                           │ Plugin_Review.lua                          │ Review: Goto Prev Page                         ║
+  ║  S········m·········· │ CtrlShiftF3 Enter MsLClick                                       │ Shell_CustomSortByAttributes.lua           │ Custom: by attributes                          ║
+  ║  S········m·········· │ CtrlShiftF3 Enter MsLClick                                       │ Shell_CustomSortByName.lua                 │ Custom: by name                                ║
   ║  S·········MU········ │ CtrlAltB                                                         │ Plugin_TrueBranch.lua                      │ Ветвь папки                                    ║
   ║  S··················· │ /RCtrl(Shift|RAlt)[^\/]/                                         │ Shell_BookmarkManager.lua                  │ Менеджер закладок: сохранить текущую папку     ║
   ║                       │                                                                  │                                            │ в закладках                                    ║
@@ -354,6 +355,7 @@
   ║  ········D··········· │ Enter Home End Up Down PgUp PgDn Left Right CtrlPgUp CtrlPgDn    │ Plugin_SizeManager.lua                     │ Size Manager: panel navigation                 ║
   ║  ········D··········· │ F CtrlF                                                          │ Plugin_Review.lua                          │ Review: Fullscreen mode On/Off                 ║
   ║  ········D··········· │ F1                                                               │ Plugin_AudioPlayer.lua                     │ AudioPlayer: key bindings help by F1           ║
+  ║  ········D··········· │ F1                                                               │ Shell_CustomSortByName.lua                 │ Custom: by name - Help                         ║
   ║  ········D··········· │ F3                                                               │ Dialog_DialogTools.lua                     │ DialogTools: Show password                     ║
   ║  ········D··········· │ F4                                                               │ Dialog_DialogTools.lua                     │ DialogTools: Edit                              ║
   ║  ········D··········· │ F7                                                               │ Dialog_DialogTools.lua                     │ DialogTools: Search                            ║
@@ -370,53 +372,74 @@
   ║                                                                                                                                                                                        ║
   ║  DialogEvent  │                    │ Editor_LuaCheck.lua                       │ luacheck menu handler                                                                                 ║
   ║  ViewerEvent  │                    │ Common_Picture.lua                        │ index=32                                                                                              ║
-  ║  EditorEvent  │                    │ Editor_Spell.lua                          │ index=115                                                                                             ║
-  ║  EditorEvent  │ *.php,*.lua,*.moon │ Editor_OpenScript.lua                     │ index=82                                                                                              ║
-  ║  EditorEvent  │                    │ Editor_UtfCpSet.lua                       │ index=124                                                                                             ║
+  ║  EditorEvent  │                    │ Editor_Spell.lua                          │ index=114                                                                                             ║
+  ║  EditorEvent  │ *.php,*.lua,*.moon │ Editor_OpenScript.lua                     │ index=81                                                                                              ║
+  ║  EditorEvent  │                    │ Editor_UtfCpSet.lua                       │ index=123                                                                                             ║
   ║  ConsoleInput │                    │ Common_CtrlAltMenuDisk.lua                │ CtrlAltMenuDisk: нажатие левой кнопки мыши на мини-панели                                             ║
-  ║  ExitFAR      │                    │ Editor_Spell.lua                          │ index=116                                                                                             ║
+  ║  ExitFAR      │                    │ Editor_Spell.lua                          │ index=115                                                                                             ║
   ║  ExitFAR      │                    │ Common_Picture.lua                        │ index=33                                                                                              ║
   ║  ExitFAR      │                    │ Common_CtrlAltMenuDisk.lua                │ CtrlAltMenuDisk: выключить таймер                                                                     ║
   ║                                                                                                                                                                                        ║
   ╟────────────────────────────────────────────────────────── Модули ──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╢
   ║                                                                                                                                                                                        ║
-  ║  ConsoleControl             │ ConsoleControl.lua                         │ .\Far\Profile\Macros\modules\?.lua                                                                          ║
-  ║  DBEdit                     │ DBEdit.lua                                 │ .\Far\Profile\Macros\modules\?.lua                                                                          ║
-  ║  StackTracePlus             │ StackTracePlus.lua                         │ .\Far\Profile\Macros\modules\?.lua                                                                          ║
-  ║  c0BOM                      │ c0BOM.lua                                  │ .\Far\Profile\Macros\modules\?.lua                                                                          ║
-  ║  le                         │ le.lua                                     │ .\Far\Profile\Macros\modules\?.lua                                                                          ║
-  ║  luacheck.analyze           │ analyze.lua                                │ .\Far\Profile\Macros\modules\?.lua                                                                          ║
-  ║  luacheck.argparse          │ argparse.lua                               │ .\Far\Profile\Macros\modules\?.lua                                                                          ║
-  ║  luacheck.builtin_standards │ builtin_standards.lua                      │ .\Far\Profile\Macros\modules\?.lua                                                                          ║
-  ║  luacheck.cache             │ cache.lua                                  │ .\Far\Profile\Macros\modules\?.lua                                                                          ║
-  ║  luacheck.check             │ check.lua                                  │ .\Far\Profile\Macros\modules\?.lua                                                                          ║
-  ║  luacheck.config            │ config.lua                                 │ .\Far\Profile\Macros\modules\?.lua                                                                          ║
-  ║  luacheck.core_utils        │ core_utils.lua                             │ .\Far\Profile\Macros\modules\?.lua                                                                          ║
-  ║  luacheck.detect_globals    │ detect_globals.lua                         │ .\Far\Profile\Macros\modules\?.lua                                                                          ║
-  ║  luacheck.expand_rockspec   │ expand_rockspec.lua                        │ .\Far\Profile\Macros\modules\?.lua                                                                          ║
-  ║  luacheck.filter            │ filter.lua                                 │ .\Far\Profile\Macros\modules\?.lua                                                                          ║
-  ║  luacheck.format            │ format.lua                                 │ .\Far\Profile\Macros\modules\?.lua                                                                          ║
-  ║  luacheck.fs                │ fs.lua                                     │ .\Far\Profile\Macros\modules\?.lua                                                                          ║
-  ║  luacheck.globbing          │ globbing.lua                               │ .\Far\Profile\Macros\modules\?.lua                                                                          ║
-  ║  luacheck.inline_options    │ inline_options.lua                         │ .\Far\Profile\Macros\modules\?.lua                                                                          ║
-  ║  luacheck.lexer             │ lexer.lua                                  │ .\Far\Profile\Macros\modules\?.lua                                                                          ║
-  ║  luacheck.lfs_fs            │ lfs_fs.lua                                 │ .\Far\Profile\Macros\modules\?.lua                                                                          ║
-  ║  luacheck.linearize         │ linearize.lua                              │ .\Far\Profile\Macros\modules\?.lua                                                                          ║
-  ║  luacheck.love_standard     │ love_standard.lua                          │ .\Far\Profile\Macros\modules\?.lua                                                                          ║
-  ║  luacheck.lua_fs            │ lua_fs.lua                                 │ .\Far\Profile\Macros\modules\?.lua                                                                          ║
-  ║  luacheck.main              │ main.lua                                   │ .\Far\Profile\Macros\modules\?.lua                                                                          ║
-  ║  luacheck.multithreading    │ multithreading.lua                         │ .\Far\Profile\Macros\modules\?.lua                                                                          ║
-  ║  luacheck.ngx_standard      │ ngx_standard.lua                           │ .\Far\Profile\Macros\modules\?.lua                                                                          ║
-  ║  luacheck.options           │ options.lua                                │ .\Far\Profile\Macros\modules\?.lua                                                                          ║
-  ║  luacheck.parser            │ parser.lua                                 │ .\Far\Profile\Macros\modules\?.lua                                                                          ║
-  ║  luacheck.reachability      │ reachability.lua                           │ .\Far\Profile\Macros\modules\?.lua                                                                          ║
-  ║  luacheck.standards         │ standards.lua                              │ .\Far\Profile\Macros\modules\?.lua                                                                          ║
-  ║  luacheck.utils             │ utils.lua                                  │ .\Far\Profile\Macros\modules\?.lua                                                                          ║
-  ║  luacheck.version           │ version.lua                                │ .\Far\Profile\Macros\modules\?.lua                                                                          ║
-  ║  luacheck.whitespace        │ whitespace.lua                             │ .\Far\Profile\Macros\modules\?.lua                                                                          ║
-  ║  rebind                     │ rebind.lua                                 │ .\Far\Profile\Macros\modules\?.lua                                                                          ║
-  ║  LuaManager                 │ init.lua                                   │ .\Far\Profile\Macros\modules\?\init.lua                                                                     ║
-  ║  luacheck                   │ init.lua                                   │ .\Far\Profile\Macros\modules\?\init.lua                                                                     ║
+  ║  ConsoleControl                                │ ConsoleControl.lua                         │ .\Far\Profile\Macros\modules\?.lua                                                       ║                                 ║
+  ║  DBEdit                                        │ DBEdit.lua                                 │ .\Far\Profile\Macros\modules\?.lua                                                       ║                                 ║
+  ║  FuncLib                                       │ FuncLib.lua                                │ .\Far\Profile\Macros\modules\?.lua                                                       ║                                 ║
+  ║  StackTracePlus                                │ StackTracePlus.lua                         │ .\Far\Profile\Macros\modules\?.lua                                                       ║                                 ║
+  ║  le                                            │ le.lua                                     │ .\Far\Profile\Macros\modules\?.lua                                                       ║                                 ║
+  ║  luacheck.builtin_standards.love               │ love.lua                                   │ .\Far\Profile\Macros\modules\?.lua                                                       ║                                 ║
+  ║  luacheck.builtin_standards.ngx                │ ngx.lua                                    │ .\Far\Profile\Macros\modules\?.lua                                                       ║                                 ║
+  ║  luacheck.cache                                │ cache.lua                                  │ .\Far\Profile\Macros\modules\?.lua                                                       ║                                 ║
+  ║  luacheck.check                                │ check.lua                                  │ .\Far\Profile\Macros\modules\?.lua                                                       ║                                 ║
+  ║  luacheck.check_state                          │ check_state.lua                            │ .\Far\Profile\Macros\modules\?.lua                                                       ║                                 ║
+  ║  luacheck.config                               │ config.lua                                 │ .\Far\Profile\Macros\modules\?.lua                                                       ║                                 ║
+  ║  luacheck.core_utils                           │ core_utils.lua                             │ .\Far\Profile\Macros\modules\?.lua                                                       ║                                 ║
+  ║  luacheck.decoder                              │ decoder.lua                                │ .\Far\Profile\Macros\modules\?.lua                                                       ║                                 ║
+  ║  luacheck.expand_rockspec                      │ expand_rockspec.lua                        │ .\Far\Profile\Macros\modules\?.lua                                                       ║                                 ║
+  ║  luacheck.filter                               │ filter.lua                                 │ .\Far\Profile\Macros\modules\?.lua                                                       ║                                 ║
+  ║  luacheck.format                               │ format.lua                                 │ .\Far\Profile\Macros\modules\?.lua                                                       ║                                 ║
+  ║  luacheck.fs                                   │ fs.lua                                     │ .\Far\Profile\Macros\modules\?.lua                                                       ║                                 ║
+  ║  luacheck.globbing                             │ globbing.lua                               │ .\Far\Profile\Macros\modules\?.lua                                                       ║                                 ║
+  ║  luacheck.lexer                                │ lexer.lua                                  │ .\Far\Profile\Macros\modules\?.lua                                                       ║                                 ║
+  ║  luacheck.main                                 │ main.lua                                   │ .\Far\Profile\Macros\modules\?.lua                                                       ║                                 ║
+  ║  luacheck.multithreading                       │ multithreading.lua                         │ .\Far\Profile\Macros\modules\?.lua                                                       ║                                 ║
+  ║  luacheck.options                              │ options.lua                                │ .\Far\Profile\Macros\modules\?.lua                                                       ║                                 ║
+  ║  luacheck.parser                               │ parser.lua                                 │ .\Far\Profile\Macros\modules\?.lua                                                       ║                                 ║
+  ║  luacheck.profiler                             │ profiler.lua                               │ .\Far\Profile\Macros\modules\?.lua                                                       ║                                 ║
+  ║  luacheck.runner                               │ runner.lua                                 │ .\Far\Profile\Macros\modules\?.lua                                                       ║                                 ║
+  ║  luacheck.serializer                           │ serializer.lua                             │ .\Far\Profile\Macros\modules\?.lua                                                       ║                                 ║
+  ║  luacheck.stages.detect_bad_whitespace         │ detect_bad_whitespace.lua                  │ .\Far\Profile\Macros\modules\?.lua                                                       ║                                 ║
+  ║  luacheck.stages.detect_cyclomatic_complexity  │ detect_cyclomatic_complexity.lua           │ .\Far\Profile\Macros\modules\?.lua                                                       ║                                 ║
+  ║  luacheck.stages.detect_empty_blocks           │ detect_empty_blocks.lua                    │ .\Far\Profile\Macros\modules\?.lua                                                       ║                                 ║
+  ║  luacheck.stages.detect_empty_statements       │ detect_empty_statements.lua                │ .\Far\Profile\Macros\modules\?.lua                                                       ║                                 ║
+  ║  luacheck.stages.detect_globals                │ detect_globals.lua                         │ .\Far\Profile\Macros\modules\?.lua                                                       ║                                 ║
+  ║  luacheck.stages.detect_reversed_fornum_loops  │ detect_reversed_fornum_loops.lua           │ .\Far\Profile\Macros\modules\?.lua                                                       ║                                 ║
+  ║  luacheck.stages.detect_unbalanced_assignments │ detect_unbalanced_assignments.lua          │ .\Far\Profile\Macros\modules\?.lua                                                       ║                                 ║
+  ║  luacheck.stages.detect_uninit_accesses        │ detect_uninit_accesses.lua                 │ .\Far\Profile\Macros\modules\?.lua                                                       ║                                 ║
+  ║  luacheck.stages.detect_unreachable_code       │ detect_unreachable_code.lua                │ .\Far\Profile\Macros\modules\?.lua                                                       ║                                 ║
+  ║  luacheck.stages.detect_unused_fields          │ detect_unused_fields.lua                   │ .\Far\Profile\Macros\modules\?.lua                                                       ║                                 ║
+  ║  luacheck.stages.detect_unused_locals          │ detect_unused_locals.lua                   │ .\Far\Profile\Macros\modules\?.lua                                                       ║                                 ║
+  ║  luacheck.stages.linearize                     │ linearize.lua                              │ .\Far\Profile\Macros\modules\?.lua                                                       ║                                 ║
+  ║  luacheck.stages.name_functions                │ name_functions.lua                         │ .\Far\Profile\Macros\modules\?.lua                                                       ║                                 ║
+  ║  luacheck.stages.parse                         │ parse.lua                                  │ .\Far\Profile\Macros\modules\?.lua                                                       ║                                 ║
+  ║  luacheck.stages.parse_inline_options          │ parse_inline_options.lua                   │ .\Far\Profile\Macros\modules\?.lua                                                       ║                                 ║
+  ║  luacheck.stages.resolve_locals                │ resolve_locals.lua                         │ .\Far\Profile\Macros\modules\?.lua                                                       ║                                 ║
+  ║  luacheck.stages.unwrap_parens                 │ unwrap_parens.lua                          │ .\Far\Profile\Macros\modules\?.lua                                                       ║                                 ║
+  ║  luacheck.standards                            │ standards.lua                              │ .\Far\Profile\Macros\modules\?.lua                                                       ║                                 ║
+  ║  luacheck.unicode                              │ unicode.lua                                │ .\Far\Profile\Macros\modules\?.lua                                                       ║                                 ║
+  ║  luacheck.unicode_printability_boundaries      │ unicode_printability_boundaries.lua        │ .\Far\Profile\Macros\modules\?.lua                                                       ║                                 ║
+  ║  luacheck.utils                                │ utils.lua                                  │ .\Far\Profile\Macros\modules\?.lua                                                       ║                                 ║
+  ║  luacheck.vendor.sha1.bit32_ops                │ bit32_ops.lua                              │ .\Far\Profile\Macros\modules\?.lua                                                       ║                                 ║
+  ║  luacheck.vendor.sha1.bit_ops                  │ bit_ops.lua                                │ .\Far\Profile\Macros\modules\?.lua                                                       ║                                 ║
+  ║  luacheck.vendor.sha1.common                   │ common.lua                                 │ .\Far\Profile\Macros\modules\?.lua                                                       ║                                 ║
+  ║  luacheck.vendor.sha1.lua53_ops                │ lua53_ops.lua                              │ .\Far\Profile\Macros\modules\?.lua                                                       ║                                 ║
+  ║  luacheck.vendor.sha1.pure_lua_ops             │ pure_lua_ops.lua                           │ .\Far\Profile\Macros\modules\?.lua                                                       ║                                 ║
+  ║  luacheck.version                              │ version.lua                                │ .\Far\Profile\Macros\modules\?.lua                                                       ║                                 ║
+  ║  LuaManager                                    │ init.lua                                   │ .\Far\Profile\Macros\modules\?\init.lua                                                  ║                                 ║
+  ║  luacheck                                      │ init.lua                                   │ .\Far\Profile\Macros\modules\?\init.lua                                                  ║                                 ║
+  ║  luacheck.builtin_standards                    │ init.lua                                   │ .\Far\Profile\Macros\modules\?\init.lua                                                  ║                                 ║
+  ║  luacheck.stages                               │ init.lua                                   │ .\Far\Profile\Macros\modules\?\init.lua                                                  ║                                 ║
+  ║  luacheck.vendor.sha1                          │ init.lua                                   │ .\Far\Profile\Macros\modules\?\init.lua                                                  ║                                 ║
   ║                                                                                                                                                                                        ║
   ╟────────────────────────────────────────────────────────── Пункты меню плагинов ────────────────────────────────────────────────────────────────────────────────────────────────────────╢
   ║                                                                                                                                                                                        ║
@@ -453,4 +476,4 @@
   ║  luacheck       │ Shell_LuaCheck.lua                         │ luacheck commandline                                                                                                    ║
   ║                                                                                                                                                                                        ║
   ╚════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
-  14.08.2019 19:38:18 +0300
+  23.11.2019 00:18:41 +0300

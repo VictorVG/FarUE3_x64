@@ -1,6 +1,6 @@
 ﻿.Language=Polish,Polish (Polski)
 
-//Version: 3.0.0.5508
+//Version: 3.0.0.5512
 
 //[MYes]
 "Tak"
@@ -369,7 +369,7 @@
 //[MConfigHighlight]
 "W&yróżniaj pliki"
 //[MConfigSelectFolders]
-"Zaznaczaj katalo&gi"
+"Zaznaczaj &foldery"
 //[MConfigRightClickSelect]
 "Pr&awy klik zaznacza pliki"
 //[MConfigSortFolderExt]
@@ -686,6 +686,8 @@
 "Link symboliczny (do &pliku)"
 //[MLinkTypeSymlinkDirectory]
 "Link symboliczny (do &folderu)"
+//[MCopyPreserveTimestamps]
+"Zachowaj oryginalny czas"
 //[MCopySymLinkContents]
 "&Kopiuj zawartość linków symbolicznych"
 //[MCopyMultiActions]
@@ -741,7 +743,7 @@
 "Przenoszenie"
 
 //[MCopyCannotFind]
-"Nie mogę odnaleźć pliku"
+"Nie odnaleziono pliku"
 
 //[MCannotCopyFolderToItself1]
 "Nie można skopiować folderu"
@@ -835,11 +837,11 @@
 "&Wszystkie"
 
 //[MCannotCopy]
-"Nie mogę skopiować"
+"Nie można skopiować"
 //[MCannotMove]
-"Nie mogę przenieść"
+"Nie można przenieść"
 //[MCannotLink]
-"Nie mogę dowiązać"
+"Nie można dowiązać"
 //[MCannotCopyTo]
 "do"
 //[MCopyEncryptWarn1]
@@ -850,9 +852,9 @@
 "Możesz zignorować błąd i kontynuować lub anulować operację."
 
 //[MCopyReadError]
-"Nie mogę odczytać danych z"
+"Nie można odczytać danych z"
 //[MCopyWriteError]
-"Nie mogę zapisać danych do:"
+"Nie można zapisać danych do:"
 
 //[MCopyFilesTotalInfo]
 "Plików:"
@@ -972,9 +974,9 @@
 "Czy wymazać plik?"
 
 //[MCannotDeleteFile]
-"Nie mogę usunąć pliku"
+"Nie można usunąć pliku"
 //[MCannotDeleteFolder]
-"Nie mogę usunąć folderu"
+"Nie można usunąć folderu"
 //[MDeleteRetry]
 "&Ponów"
 //[MDeleteSkip]
@@ -984,14 +986,14 @@
 //[MDeleteCancel]
 "&Anuluj"
 //[MCannotRecycleFile]
-"Nie mogę przenieść pliku do Kosza"
+"Nie można przenieść pliku do Kosza"
 //[MCannotRecycleFolder]
-"Nie mogę przenieść folderu do Kosza"
+"Nie można przenieść folderu do Kosza"
 
 //[MCannotGetSecurity]
-"Nie mogę pobrać praw dostępu dla"
+"Nie można pobrać praw dostępu dla"
 //[MCannotSetSecurity]
-"Nie mogę ustawić praw dostępu dla"
+"Nie można ustawić praw dostępu dla"
 
 //[MEditTitle]
 "Edytor"
@@ -1004,7 +1006,7 @@
 //[MNewOpen]
 "&Nowa instancja"
 //[MEditCannotOpen]
-"Nie mogę otworzyć pliku"
+"Nie można otworzyć pliku"
 //[MEditReading]
 "Czytam plik"
 //[MEditAskSave]
@@ -1035,7 +1037,7 @@
 //[MEditRSH]
 "jest plikiem tylko do odczytu"
 //[MEditFileGetSizeError]
-"Nie mogę określić wielkości pliku."
+"Nie można określić wielkości pliku."
 //[MEditFileLong]
 "ma wielkość {0},"
 //[MEditFileLong2]
@@ -1085,7 +1087,7 @@
 //[MEditFindAllMenuFooter]
 "F1, F5, Ctrl+Enter, Ctrl+Up/Down, Add"
 //[MEditNotFound]
-"Nie mogę odnaleźć ciągu"
+"Nie można odnaleźć ciągu"
 
 //[MEditAskReplace]
 "Zamienić"
@@ -1575,7 +1577,7 @@
 //[MEditSaveMac]
 "Format &MAC (CR)"
 //[MEditCannotSave]
-"Nie mogę zapisać pliku"
+"Nie można zapisać pliku"
 //[MEditSavedChangedNonFile]
 "Plik został zmieniony, ale plik lub folder zawierający"
 //[MEditSavedChangedNonFile1]
@@ -1603,9 +1605,9 @@
 //[MEditorSaveCPWarn2]
 "poprawnie zapisane w wybranej stronie kodowej."
 //[MEditorSwitchCPWarn1]
-"Edytor zawieta znaki, które nie mogą być"
+"Edytor zawiera znaki, które nie mogą być"
 //[MEditorSwitchCPWarn2]
-"poprawnie przełumaczone w bieżącej stronie kodowej [{0}]"
+"poprawnie przetłumaczone w bieżącej stronie kodowej [{0}]"
 //[MEditorSwitchCPConfirm]
 "Kontynuować?"
 //[MEditDataLostWarn]
@@ -2492,9 +2494,9 @@
 "Dostęp zabroniony"
 
 //[MCannotExecute]
-"Nie mogę wykonać"
+"Nie można wykonać"
 //[MCannotInvokeComspec]
-"Nie mogę wywołać interpretera poleceń"
+"Nie można wywołać interpretera poleceń"
 //[MCheckComspecVar]
 "Sprawdź zmienną systemową COMSPEC"
 //[MScanningFolder]
@@ -2509,7 +2511,7 @@
 //[MMakeFolderLinkNone]
 "Brak"
 //[MMakeFolderLinkJunction]
-"directory junction"
+"skrzyżowanie folderów"
 //[MMakeFolderLinkSymlink]
 "link symboliczny"
 //[MMakeFolderLinkTarget]
@@ -2519,7 +2521,7 @@
 //[MIncorrectDirList]
 "Błędna lista folderów"
 //[MCannotCreateFolder]
-"Nie mogę utworzyć folderu"
+"Nie można utworzyć folderu"
 
 //[MMenuBriefView]
 "&Skrótowy"
@@ -2603,7 +2605,7 @@
 //[MMenuVideoMode]
 "&Tryb wyświetlania"
 //[MMenuFindFolder]
-"Znajdź kata&log"
+"Znajdź &folder"
 //[MMenuViewHistory]
 "Historia &podglądu plików"
 //[MMenuFoldersHistory]
@@ -2785,13 +2787,13 @@
 //[MChangeDriveLabelAbsent]
 "niedostępny"
 //[MChangeDriveCannotReadDisk]
-"Nie mogę odczytać dysku w napędzie"
+"Nie można odczytać dysku w napędzie"
 //[MChangeDriveCannotDisconnect]
-"Nie mogę odłączyć się od {0}"
+"Nie można odłączyć się od {0}"
 //[MChangeDriveCannotDelSubst]
 "Nie można usunąć dysku SUBST {0}"
 //[MChangeDriveCannotDetach]
-"Nie mogę odłączyć dyski wirtualnego {0}"
+"Nie można odłączyć dyski wirtualnego {0}"
 //[MChangeDriveOpenFiles]
 "Jeśli nie zamkniesz otwartych plików, możesz utracić dane"
 
@@ -2864,13 +2866,16 @@
 "Pokaż parametry napędów &CD"
 //[MChangeDriveShowNetworkDrive]
 "Pokaż parametry &dysków sieciowych"
+// need translation:
+//[MChangeDriveShowVirtualDisk]
+"Detect virtual disks"
 //[MChangeDriveMenuFooter]
 "Del,Shift+Del,F3,F4,F9"
 
 //[MSearchFileTitle]
 "Szukaj"
 //[MCannotCreateListFile]
-"Nie mogę utworzyć listy plików"
+"Nie można utworzyć listy plików"
 //[MCannotCreateListTemp]
 "(nie można utworzyć pliku tymczasowego dla listy)"
 
@@ -2894,7 +2899,7 @@
 //[MKillProcessKill]
 "Zakończ"
 //[MCannotKillProcess]
-"Nie mogę zakończyć wybranego zadania"
+"Nie można zakończyć wybranego zadania"
 //[MCannotKillProcessPerm]
 "Nie masz wystarczających uprawnień do zakończenia procesu."
 
@@ -2952,7 +2957,7 @@
 //[MSetAttrNotIndexed]
 "Nie z&indeksowany"
 //[MSetAttrSparse]
-"Sparse"
+"Rzadki"
 //[MSetAttrTemporary]
 "T&ymczasowy"
 //[MSetAttrOffline]
@@ -2963,9 +2968,8 @@
 "Wirtualny"
 //[MSetAttrIntegrityStream]
 "Integralny strumień"
-// need translation:
 //[MSetAttrNoScrubData]
-"No scrub data"
+"Brak danych kontrolnych"
 //[MSetAttrPinned]
 "Przypięty"
 //[MSetAttrUnpinned]
@@ -3013,17 +3017,17 @@
 //[MSetAttrSetting]
 "Ustawiam atrybuty"
 //[MSetAttrCannotFor]
-"Nie mogę ustawić atrybutów dla"
+"Nie można ustawić atrybutów dla"
 //[MSetAttrCompressedCannotFor]
-"Nie mogę ustawić atrybutu SKOMPRESOWANY dla"
+"Nie można ustawić atrybutu SKOMPRESOWANY dla"
 //[MSetAttrEncryptedCannotFor]
-"Nie mogę ustawić atrybutu ZASZYFROWANY dla"
+"Nie można ustawić atrybutu ZASZYFROWANY dla"
 //[MSetAttrSparseCannotFor]
-"Nie mogę ustawić atrybutu SPARSE dla"
+"Nie można ustawić atrybutu SPARSE (RZADKI) dla"
 //[MSetAttrTimeCannotFor]
-"Nie mogę ustawić czasu pliku dla"
+"Nie można ustawić czasu pliku dla"
 //[MSetAttrOwnerCannotFor]
-"Nie mogę ustawić właściciela dla"
+"Nie można ustawić właściciela dla"
 //[MSetAttrReparsePointCannotFor]
 "Nie można usunąć punktu analizy dla"
 
@@ -3528,7 +3532,7 @@
 //[MTreeTitle]
 "Drzewo"
 //[MCannotSaveTree]
-"Nie mogę zapisać drzewa folderów do pliku"
+"Nie można zapisać drzewa folderów do pliku"
 //[MReadingTree]
 "Odczytuję drzewo folderów"
 
@@ -3586,12 +3590,12 @@
 //[MEditMenuConfirmation]
 "Zapisać zmiany?"
 //[MEditMenuError]
-"Nie mogę uaktualnić menu"
+"Nie można uaktualnić menu"
 
 //[MViewerTitle]
 "Podgląd"
 //[MViewerCannotOpenFile]
-"Nie mogę otworzyć pliku"
+"Nie można otworzyć pliku"
 // Up to 3 characters
 //[MViewerStatusCol]
 "Kol"
@@ -3622,9 +3626,9 @@
 //[MViewSearchingHex]
 "Szukam bajtów"
 //[MViewSearchCannotFind]
-"Nie mogę odnaleźć ciągu znaków"
+"Nie można odnaleźć ciągu znaków"
 //[MViewSearchCannotFindHex]
-"Nie mogę odnaleźć bajtów"
+"Nie można odnaleźć bajtów"
 //[MViewSearchEod]
 "Koniec dokumentu"
 //[MViewSearchFromBegin]
@@ -3647,11 +3651,11 @@
 //[MPreparingForPrinting]
 "Przygotowuję plik(i) do drukowania"
 //[MCannotEnumeratePrinters]
-"Nie mogę odczytać listy drukarek"
+"Nie można odczytać listy drukarek"
 //[MCannotOpenPrinter]
-"Nie mogę połączyć się z drukarką"
+"Nie można połączyć się z drukarką"
 //[MCannotPrint]
-"Nie mogę drukować"
+"Nie można drukować"
 
 //[MDescribeFiles]
 "Opisz plik"
@@ -3661,7 +3665,7 @@
 //[MReadingDiz]
 "Odczytuję opisy plików"
 //[MCannotUpdateDiz]
-"Nie mogę aktualizować opisów plików"
+"Nie można aktualizować opisów plików"
 
 //[MCfgDizTitle]
 "Opisy plików"
@@ -3802,7 +3806,7 @@
 "Nagrywanie makr jest wyłączone"
 
 //[MCannotSaveFile]
-"Nie mogę zapisać pliku"
+"Nie można zapisać pliku"
 //[MTextSavedToTemp]
 "Edytowany tekst został zachowany w"
 
@@ -3905,7 +3909,7 @@
 //[MHelpSearchingFor]
 "&Znajdź"
 //[MHelpSearchCannotFind]
-"Nie mogę odnaleźć ciągu znaków"
+"Nie można odnaleźć ciągu znaków"
 
 // Help KeyBar F1-12
 //[MHelpF1]

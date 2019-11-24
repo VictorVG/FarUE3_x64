@@ -1,6 +1,6 @@
 ﻿.Language=Spanish,Spanish (Español)
 
-//Version: 3.0.0.5508
+//Version: 3.0.0.5512
 
 //[MYes]
 "Si"
@@ -690,6 +690,9 @@
 "enlace simbólico (&archivo)"
 //[MLinkTypeSymlinkDirectory]
 "enlace simbólico (&directorio)"
+// need translation:
+//[MCopyPreserveTimestamps]
+"Preserve timestamps"
 //[MCopySymLinkContents]
 "Copiar contenidos de &enlaces simbólicos"
 //[MCopyMultiActions]
@@ -2872,6 +2875,9 @@
 "Mostrar parámetros unidad de &CD\DVD\BD"
 //[MChangeDriveShowNetworkDrive]
 "Mostrar parámetros unidades de red"
+// need translation:
+//[MChangeDriveShowVirtualDisk]
+"Detect virtual disks"
 //[MChangeDriveMenuFooter]
 "Del,Shift+Del,F3,F4,F9"
 

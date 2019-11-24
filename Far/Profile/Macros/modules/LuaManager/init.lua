@@ -2,7 +2,7 @@
 local nfo = Info {
   name          = "LuaManager";
   description   = "Менеджер Lua/Moon-скриптов для Fara";
-  version       = "5.0.5"; --в формате semver: http://semver.org/lang/ru/
+  version       = "5.0.6"; --в формате semver: http://semver.org/lang/ru/
   author        = "IgorZ";
   url           = "http://forum.farmanager.com/viewtopic.php?t=7936";
   id            = "180EE412-CBDE-40C7-9AE6-37FC64673CBD";
@@ -150,6 +150,7 @@ local nfo = Info {
                     Исправлена ошибка с обращением к Description при редактировании панельного модуля. Исправлена функция сохранения одного параметра.
                     Исправлена ошибка с лишним "%" в новом значении в gsub.
 2019/11/08 v5.0.5 - Исправлена ошибка с :match со слишком большим количеством строк в шаблоне. Небольшой рефакторинг.
+2019/11/22 v5.0.6 - Исправлена ошибка, возникающая после редактировании модуля вида ?\init.lua.
 ]];
   options       = {
     DefProfile = far.Flags.PSL_ROAMING--[[far.Flags.PSL_LOCAL--]] -- место хранения настроек по умолчанию: глобальные/локальные
@@ -1625,7 +1626,7 @@ if not (fn and win.GetFileAttr(fn)) then return false,(L[D.stype]).." "..(item.d
 local text1,err = Read(fn) -- получим всё старое содержимое файла
 if err then return false,err end -- ошибка при чтении? уйдём
 editor.Editor(fn,nil,nil,nil,nil,nil,fm,D.sstarty or 1,D.sstartx or 1) -- поредактируем
-local text2 = Read(item.FileName) -- получим всё новое содержимое файла
+local text2 = Read(item.realname or item.FileName) -- получим всё новое содержимое файла
 return text1==text2 or far.MacroLoadAll(),L.er["E"..D.stype] -- обновим в Farе, если содержимое файла изменилось
 end
 -- +

@@ -1,6 +1,6 @@
 ﻿.Language=Belarusian,Belarusian (Беларуская)
 
-//Version: 3.0.0.5508
+//Version: 3.0.0.5512
 
 //[MYes]
 "Так"
@@ -686,6 +686,8 @@
 "сімвалічны спасылак (&файл)"
 //[MLinkTypeSymlinkDirectory]
 "сімвалічны с&пасылак (каталог)"
+//[MCopyPreserveTimestamps]
+"Захаваць меткі часу"
 //[MCopySymLinkContents]
 "Капіяваць змест с&імвалічнай спасылкі"
 //[MCopyMultiActions]
@@ -2864,6 +2866,8 @@
 "Адлюстроўваць налады &кампакт-дыскаў"
 //[MChangeDriveShowNetworkDrive]
 "Адлюстроўваць налады се&ткавых дыскаў"
+//[MChangeDriveShowVirtualDisk]
+"Вызначаць віртуальныя дыскі"
 //[MChangeDriveMenuFooter]
 "Del,Shift+Del,F3,F4,F9"
 

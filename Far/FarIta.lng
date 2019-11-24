@@ -1,6 +1,6 @@
 ﻿.Language=Italian,Italian (Italiano)
 
-//Version: 3.0.0.5508
+//Version: 3.0.0.5512
 
 //[MYes]
 "&Si"
@@ -688,6 +688,9 @@
 "Link Simbolico (&File)"
 //[MLinkTypeSymlinkDirectory]
 "Link Simbolico (&Cartella)"
+// need translation:
+//[MCopyPreserveTimestamps]
+"Preserve timestamps"
 //[MCopySymLinkContents]
 "Copia Contenuti Dei Link &Simbolici"
 //[MCopyMultiActions]
@@ -2867,6 +2870,9 @@
 "Mostra Parametri &CD/DVD"
 //[MChangeDriveShowNetworkDrive]
 "Mostra Parametri Re&te"
+// need translation:
+//[MChangeDriveShowVirtualDisk]
+"Detect virtual disks"
 //[MChangeDriveMenuFooter]
 "[Canc] [Shift+Canc] [F3] [F4] [F9]"
 

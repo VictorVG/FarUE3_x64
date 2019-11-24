@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<farconfig version="3.0.5452">
+<farconfig version="3.0.5512">
 	<generalconfig>
 		<setting key="Cmdline" name="AutoComplete" type="qword" value="0000000000000001"/>
 		<setting key="Cmdline" name="DelRemovesBlocks" type="qword" value="0000000000000001"/>
@@ -100,7 +100,7 @@
 		<setting key="Interface" name="SetAdminIcon" type="qword" value="0000000000000001"/>
 		<setting key="Interface" name="SetIcon" type="qword" value="0000000000000001"/>
 		<setting key="Interface" name="ShiftsKeyRules" type="qword" value="0000000000000001"/>
-		<setting key="Interface" name="ShowDotsInRoot" type="qword" value="0000000000000000"/>
+		<setting key="Interface" name="ShowDotsInRoot" type="qword" value="0000000000000001"/>
 		<setting key="Interface" name="ShowMenuBar" type="qword" value="0000000000000000"/>
 		<setting key="Interface" name="TitleAddons" type="text" value="%Ver.%Build %Platform %Admin [PID %PID]"/>
 		<setting key="Interface" name="UseVk_oem_x" type="qword" value="0000000000000001"/>
@@ -215,12 +215,13 @@
 		<setting key="System" name="ConsoleDetachKey" type="text" value="CtrlShiftTab"/>
 		<setting key="System" name="CopyBufferSize" type="qword" value="0000000000008000"/>
 		<setting key="System" name="CopyOpened" type="qword" value="0000000000000001"/>
+		<setting key="System" name="CopyPreserveTimestamps" type="qword" value="0000000000000000"/>
 		<setting key="System" name="CopySecurityOptions" type="qword" value="0000000000000000"/>
 		<setting key="System" name="CopyTimeRule" type="qword" value="0000000000000003"/>
 		<setting key="System" name="DelThreadPriority" type="qword" value="0000000000000000"/>
 		<setting key="System" name="DeleteToRecycleBin" type="qword" value="0000000000000001"/>
 		<setting key="System" name="DriveDisconnectMode" type="qword" value="0000000000000001"/>
-		<setting key="System" name="DriveMenuMode" type="qword" value="00000000000002E7"/>
+		<setting key="System" name="DriveMenuMode" type="qword" value="00000000000012E7"/>
 		<setting key="System" name="ElevationMode" type="qword" value="FFFFFFFFFFFFFFFF"/>
 		<setting key="System" name="ExcludeCmdHistory" type="qword" value="0000000000000007"/>
 		<setting key="System" name="FileSearchMode" type="qword" value="0000000000000004"/>
@@ -526,7 +527,8 @@
 			<command type="4" enabled="1" command="edit:&quot;!=\!+!&quot;"/>
 			<command type="5" enabled="1" command="reg2:&quot;!=\!+!&quot;"/>
 		</filetype>
-	</associations><pluginhotkeys>
+	</associations>
+	<pluginhotkeys>
 		<plugin key="04D07C91-6FFE-481C-9E02-A070D3380883">
 			<hotkey menu="plugins" guid="0730559C-99FA-4748-86D4-012B71E72173" hotkey="b"/>
 		</plugin>
@@ -1205,7 +1207,8 @@
 					<value name="UseSize" type="qword" value="0000000000000000"/>
 				</key>
 			</key>
-		</hierarchicalconfig></highlight>
+		</hierarchicalconfig>
+	</highlight>
 	<panelmodes>
 		<hierarchicalconfig>
 			<key name="0">
@@ -1452,7 +1455,7 @@
 					<value name="FilesMask" type="text" value="*.*"/>
 					<value name="FullPath" type="qword" value="0000000000000002"/>
 					<value name="ScanFolders" type="qword" value="0000000000000000"/>
-					<value name="ScanMode" type="qword" value="0000000000000000"/>
+					<value name="ScanMode" type="qword" value="0000000000000001"/>
 					<value name="ScanSymlink" type="qword" value="0000000000000001"/>
 					<value name="WarnGetInfo" type="qword" value="0000000000000001"/>
 				</key>
@@ -1472,12 +1475,12 @@
 		<plugin guid="1D1BA1CB-3A05-4F4B-91B3-F8E71A55420E">
 			<hierarchicalconfig>
 				<key name="1D1BA1CB-3A05-4F4B-91B3-F8E71A55420E" description="NTFS File Information">
-					<value name="ContentOptionsCRC16" type="qword" value="0000000000000001"/>
-					<value name="ContentOptionsCRC32" type="qword" value="0000000000000001"/>
-					<value name="ContentOptionsED2K" type="qword" value="0000000000000001"/>
+					<value name="ContentOptionsCompression" type="qword" value="0000000000000001"/>
 					<value name="ContentOptionsMD5" type="qword" value="0000000000000001"/>
 					<value name="ContentOptionsSHA1" type="qword" value="0000000000000001"/>
 					<value name="ContentOptionsSHA256" type="qword" value="0000000000000001"/>
+					<value name="ContentOptionsSHA3-256" type="qword" value="0000000000000001"/>
+					<value name="FilePanelSortMode" type="qword" value="0000000000000002"/>
 				</key>
 			</hierarchicalconfig>
 		</plugin>
@@ -1660,7 +1663,6 @@
 							<value name="IgnoreCancelBeforeFinish" type="hex" value="DF,BC,9A,78,56,34,02,3F"/>
 							<value name="KeepUpToDateChangeDelay" type="qword" value="00000000000001F4"/>
 							<value name="MaxWatchDirectories" type="qword" value="00000000000001F4"/>
-							<value name="ParallelDurationThreshold" type="qword" value="000000000000000A"/>
 							<value name="PuttyPassword" type="qword" value="0000000000000000"/>
 							<value name="PuttyPath" type="text" value="%25PROGRAMFILES%25%5CPuTTY%5Cputty.exe"/>
 							<value name="PuttyRegistryStorageKey" type="text" value="Software%5CSimonTatham%5CPuTTY"/>
@@ -1712,7 +1714,6 @@
 									<value name="Queue" type="qword" value="0000000000000000"/>
 									<value name="QueueIndividually" type="qword" value="0000000000000000"/>
 									<value name="QueueNoConfirmation" type="qword" value="0000000000000001"/>
-									<value name="QueueQueueParallel" type="qword" value="0000000000000000"/>
 									<value name="RemoveBOM" type="qword" value="0000000000000000"/>
 									<value name="RemoveCtrlZ" type="qword" value="0000000000000000"/>
 									<value name="ReplaceInvalidChars" type="qword" value="0000000000000001"/>
@@ -1738,10 +1739,8 @@
 									<value name="EditorUploadSameOptions" type="qword" value="0000000000000001"/>
 									<value name="FullScreenDetailed" type="qword" value="0000000000000001"/>
 									<value name="HostNameInTitle" type="qword" value="0000000000000001"/>
-									<value name="PageantPath" type="text" value="&quot;C:%5CProgram%20Files%5CFar3%5CFar%5Cplugins%5Cnetbox%5Cputty%5Cpageant.exe&quot;"/>
 									<value name="PluginsMenu" type="qword" value="0000000000000001"/>
 									<value name="PluginsMenuCommands" type="qword" value="0000000000000001"/>
-									<value name="PuttygenPath" type="text" value="&quot;C:%5CProgram%20Files%5CFar3%5CFar%5Cplugins%5Cnetbox%5Cputty%5Cputtygen.exe&quot;"/>
 									<value name="QueueBeep" type="qword" value="0000000000000001"/>
 									<value name="SessionNameInTitle" type="qword" value="0000000000000001"/>
 									<value name="StatusColumnTypesDetailed" type="text" value="NR"/>
@@ -1760,8 +1759,6 @@
 							<value name="PermanentActionsLogFileName" type="text" value="%25TEMP%25%5C&amp;S.xml"/>
 							<value name="PermanentLogActions" type="qword" value="0000000000000000"/>
 							<value name="PermanentLogFileName" type="text" value="%25TEMP%25%5C&amp;S.log"/>
-							<value name="PermanentLogMaxCount" type="qword" value="0000000000000000"/>
-							<value name="PermanentLogMaxSize" type="qword" value="0000000000000000"/>
 							<value name="PermanentLogProtocol" type="qword" value="0000000000000000"/>
 							<value name="PermanentLogSensitive" type="qword" value="0000000000000000"/>
 							<value name="PermanentLogging" type="qword" value="0000000000000000"/>
@@ -1771,8 +1768,60 @@
 					<key name="Sessions">
 						<key name="Default%20Settings">
 							<value name="FSProtocol" type="text" value="SFTP%20(SCP)"/>
+							<value name="Version" type="text" value="2.4.4"/>
+						</key>
+						<key name="FreeBSD%20(FTP)">
+							<value name="CodePage" type="text" value=""/>
+							<value name="FSProtocol" type="text" value="FTP"/>
+							<value name="FtpAllowEmptyPassword" type="qword" value="0000000000000001"/>
+							<value name="HostName" type="text" value="ftp.freebsd.org"/>
+							<value name="KEX" type="text" value="ecdh,ecdh,ecdh,ecdh,ecdh,ecdh"/>
+							<value name="LookupUserGroups2" type="qword" value="0000000000000000"/>
+							<value name="Password" type="text" value="A35C7B5E4A4B1D323332253133292F3A282C723A2E39393E2F3872332E3B292F392E1C2F392E2A392E723F333196393BCC50"/>
+							<value name="PingType" type="qword" value="0000000000000002"/>
+							<value name="PortNumber" type="qword" value="0000000000000015"/>
+							<value name="RemoteDirectory" type="text" value="/pub/FreeBSD/"/>
+							<value name="SFTPMaxVersion" type="qword" value="0000000000000000"/>
+							<value name="Timeout" type="qword" value="000000000000005A"/>
+							<value name="UpdateDirectories" type="qword" value="0000000000000000"/>
+							<value name="UserName" type="text" value="Anonymous"/>
 							<value name="Version" type="text" value="2.4.5"/>
-						</key></key>
+						</key>
+						<key name="RARLabs%20(FTP)">
+							<value name="CodePage" type="text" value=""/>
+							<value name="FSProtocol" type="text" value="FTP"/>
+							<value name="FtpAllowEmptyPassword" type="qword" value="0000000000000001"/>
+							<value name="HostName" type="text" value="ftp.rarlabs.com"/>
+							<value name="KEX" type="text" value="ecdh,ecdh,ecdh,ecdh,ecdh,ecdh"/>
+							<value name="LookupUserGroups2" type="qword" value="0000000000000000"/>
+							<value name="Password" type="text" value="A35C7B56B144F32015486FD60E381D323332253133292F3A282C722E3D2E303D3E2F723F3331292F392E1C2F392E2A392E723F3331"/>
+							<value name="PingType" type="qword" value="0000000000000002"/>
+							<value name="PortNumber" type="qword" value="0000000000000015"/>
+							<value name="RemoteDirectory" type="text" value="/rar/"/>
+							<value name="SFTPMaxVersion" type="qword" value="0000000000000000"/>
+							<value name="TimeDifferenceAuto" type="qword" value="0000000000000000"/>
+							<value name="Timeout" type="qword" value="000000000000005A"/>
+							<value name="UpdateDirectories" type="qword" value="0000000000000000"/>
+							<value name="UserName" type="text" value="Anonymous"/>
+							<value name="Version" type="text" value="2.4.5"/>
+						</key>
+						<key name="gnu.org">
+							<value name="CodePage" type="text" value=""/>
+							<value name="FSProtocol" type="text" value="FTP"/>
+							<value name="FtpAllowEmptyPassword" type="qword" value="0000000000000001"/>
+							<value name="HostName" type="text" value="ftp.gnu.org"/>
+							<value name="KEX" type="text" value="ecdh,ecdh,ecdh,ecdh,ecdh,ecdh"/>
+							<value name="LookupUserGroups2" type="qword" value="0000000000000000"/>
+							<value name="Password" type="text" value="A35C7F5FC902561D323332253133292F3A282C723B322972332E3B292F392E1C2F392E2A392E723F333161C069B458228060"/>
+							<value name="PingType" type="qword" value="0000000000000002"/>
+							<value name="PortNumber" type="qword" value="0000000000000015"/>
+							<value name="RemoteDirectory" type="text" value="/pub/"/>
+							<value name="SFTPMaxVersion" type="qword" value="0000000000000000"/>
+							<value name="UpdateDirectories" type="qword" value="0000000000000000"/>
+							<value name="UserName" type="text" value="Anonymous"/>
+							<value name="Version" type="text" value="2.4.5"/>
+						</key>
+					</key>
 				</key>
 			</hierarchicalconfig>
 		</plugin>
@@ -1780,28 +1829,23 @@
 			<hierarchicalconfig>
 				<key name="4EBBEFC8-2084-4B7F-94C0-692CE136894D" description="LuaMacro">
 					<key name="Duplicate Fighter">
+						<value name="settings" type="hex"/>
 					</key>
 					<key name="IgorZ">
 						<key name="BookmarkManagerConfig">
-							<value name="ExtMask" type="qword" value="0000000000000001"/>
 							<value name="GoToMessDelay" type="qword" value="FFFFFFFFFFFFFFFF"/>
-							<value name="MenuForOne" type="qword" value="0000000000000001"/>
 							<value name="MessDelay" type="qword" value="FFFFFFFFFFFFFFFF"/>
 							<value name="SaveMessDelay" type="qword" value="0000000000000320"/>
-							<value name="SeqColor" type="qword" value="0000000000000000"/>
-							<value name="SeqLine" type="qword" value="0000000000000000"/>
-							<value name="ShowEnv" type="qword" value="0000000000000001"/>
 							<value name="UseEnv" type="qword" value="0000000000000001"/>
 							<value name="UseGlobal" type="qword" value="0000000000000001"/>
 							<value name="UseLocal" type="qword" value="0000000000000000"/>
 						</key>
+						<key name="BookmarkManagerData">
+						</key>
 						<key name="CASArrowsDiskSwitch">
 							<value name="ExcludeDrives" type="text" value=""/>
-							<value name="FixedPerm" type="qword" value="0000000000000000"/>
 							<value name="LowerCurDrive" type="qword" value="0000000000000001"/>
-							<value name="OutCol" type="text" value="1"/>
 							<value name="OutStr" type="qword" value="0000000000000000"/>
-							<value name="PermPanel" type="qword" value="0000000000000000"/>
 							<value name="SpDelim" type="qword" value="0000000000000000"/>
 							<value name="SwitchPanelsOn" type="qword" value="0000000000000000"/>
 							<value name="UseHidden" type="qword" value="0000000000000001"/>
@@ -1811,13 +1855,11 @@
 								<value name="Ctrl" type="text" value=""/>
 								<value name="L" type="text" value="RAlt"/>
 								<value name="Left" type="text" value="Left"/>
-								<value name="Left1" type="text" value="Left"/>
 								<value name="P" type="text" value=""/>
 								<value name="R" type="text" value="Alt"/>
 								<value name="RAlt" type="text" value="L"/>
 								<value name="RCtrl" type="text" value=""/>
 								<value name="Right" type="text" value="Right"/>
-								<value name="Right1" type="text" value="Right"/>
 								<value name="Shift" type="text" value="A"/>
 							</key>
 							<key name="Plugins">
@@ -1828,7 +1870,7 @@
 								<value name="5" type="text" value="65642111-aa69-4b84-b4b8-9249579ec4fa"/>
 								<value name="6" type="text" value="148fe5e0-7129-4269-b30f-a1a866dd009a"/>
 								<value name="=" type="text" value="06771932-e01f-4259-a7a5-a899dec06fc7"/>
-								<value name="PlugStr" type="text" value="352=10"/>
+								<value name="PlugStr" type="text" value="352=106"/>
 							</key>
 						</key>
 						<key name="LuaManager">
@@ -1839,19 +1881,16 @@
 							<value name="InsertEventKey" type="text" value="RCtrlF11"/>
 							<value name="InsertMIKey" type="text" value="RCtrlF11"/>
 							<value name="InsertMacroKey" type="text" value="RCtrlF11"/>
-							<value name="InsertPanelKey" type="text" value="RCtrlF11"/>
 							<value name="InsertPrefixKey" type="text" value="RCtrlF11"/>
 							<value name="InsertScriptKey" type="text" value="LCtrlF11"/>
 							<value name="InsertUidKey" type="text" value="RCtrlU"/>
 							<value name="KeyFilter" type="text" value=""/>
 							<value name="MISortingOrder" type="text" value="A"/>
-							<value name="MacroMaxDescWidth" type="qword" value="0000000000000000"/>
+							<value name="MacroMaxDescWidth" type="qword" value="00000000000003E8"/>
 							<value name="MacroSortingOrder" type="text" value="OCAKD"/>
 							<value name="ManagerKey" type="text" value="AltShiftF11"/>
-							<value name="MaxFileWidth" type="qword" value="0000000000000032"/>
-							<value name="MaxKeyWidth" type="qword" value="000000000000001E"/>
+							<value name="MaxKeyWidth" type="qword" value="00000000000003E8"/>
 							<value name="ModuleSortingOrder" type="text" value="TMN"/>
-							<value name="PanelSortingOrder" type="text" value="AT"/>
 							<value name="PrefixSortingOrder" type="text" value="P"/>
 							<value name="ReloadKey" type="text" value="CtrlF9"/>
 							<value name="ShowEvents" type="qword" value="0000000000000001"/>
@@ -1860,11 +1899,11 @@
 							<value name="ShowMenuItems" type="qword" value="0000000000000001"/>
 							<value name="ShowModules" type="qword" value="0000000000000001"/>
 							<value name="ShowNonActiveMacros" type="qword" value="0000000000000001"/>
-							<value name="ShowPanels" type="qword" value="0000000000000001"/>
 							<value name="ShowPrefixes" type="qword" value="0000000000000001"/>
 						</key>
 					</key>
 					<key name="LuaMacro">
+						<value name="MacroBrowser" type="hex"/>
 					</key>
 				</key>
 			</hierarchicalconfig>
@@ -1940,7 +1979,6 @@
 		<plugin guid="6F332978-08B8-4919-847A-EFBB6154C99A">
 			<hierarchicalconfig>
 				<key name="6F332978-08B8-4919-847A-EFBB6154C99A" description="LuaFAR for Editor">
-					<value name="alldata" type="hex" value="64,6F,20,6C,6F,63,61,6C,20,74,20,3D,20,7B,7D,3B,20,44,61,74,61,20,3D,20,74,0A,20,20,64,6F,20,6C,6F,63,61,6C,20,74,20,3D,20,7B,7D,3B,20,44,61,74,61,5B,22,50,6C,75,67,69,6E,53,65,74,74,69,6E,67,73,22,5D,20,3D,20,74,0A,20,20,65,6E,64,0A,65,6E,64,0A"/>
 				</key>
 			</hierarchicalconfig>
 		</plugin>
@@ -1984,6 +2022,17 @@
 				<key name="7BDEDB07-FBE5-4807-9356-6427CE1CB99D" description="Hash calculator">
 					<value name="add_to_panel_menu" type="qword" value="0000000000000001"/>
 					<value name="cmd_prefix" type="text" value="HashCalc"/>
+					<value name="use_crc32" type="qword" value="0000000000000001"/>
+					<value name="use_md2" type="qword" value="0000000000000000"/>
+					<value name="use_md4" type="qword" value="0000000000000000"/>
+					<value name="use_md5" type="qword" value="0000000000000001"/>
+					<value name="use_sha1" type="qword" value="0000000000000001"/>
+					<value name="use_sha256" type="qword" value="0000000000000001"/>
+					<value name="use_sha3-256" type="qword" value="0000000000000001"/>
+					<value name="use_sha3-384" type="qword" value="0000000000000001"/>
+					<value name="use_sha3-512" type="qword" value="0000000000000001"/>
+					<value name="use_sha384" type="qword" value="0000000000000001"/>
+					<value name="use_sha512" type="qword" value="0000000000000001"/>
 				</key>
 			</hierarchicalconfig>
 		</plugin>
@@ -2015,11 +2064,6 @@
 		<plugin guid="7E509EC9-41A3-44A3-B228-D6C94BE46AEE">
 			<hierarchicalconfig>
 				<key name="7E509EC9-41A3-44A3-B228-D6C94BE46AEE" description="Mine Sweeper"/>
-			</hierarchicalconfig>
-		</plugin>
-		<plugin guid="894EAABB-C57F-4549-95FC-4AC6F3102A36">
-			<hierarchicalconfig>
-				<key name="894EAABB-C57F-4549-95FC-4AC6F3102A36" description="calculator"/>
 			</hierarchicalconfig>
 		</plugin>
 		<plugin guid="8E11EA75-0303-4374-AC60-D1E38F865449">
@@ -2054,24 +2098,6 @@
 					<value name="save_file_pos" type="qword" value="0000000000000001"/>
 					<value name="show_dword_seps" type="qword" value="0000000000000001"/>
 					<value name="std_cursor_size" type="qword" value="0000000000000001"/>
-					<key name="history">
-						<value name="datetime00" type="qword" value="000000005CD97A69"/>
-						<value name="datetime01" type="qword" value="000000005D49DAE3"/>
-						<value name="datetime02" type="qword" value="000000005D49DF6C"/>
-						<value name="datetime03" type="qword" value="000000005BB2D1B3"/>
-						<value name="name00" type="text" value="F:\Tmp\7-Zip.7z"/>
-						<value name="name01" type="text" value="F:\Tmp\Warning1.txt"/>
-						<value name="name02" type="text" value="F:\Tmp\Warning2.txt"/>
-						<value name="name03" type="text" value="G:\dev\far3\20\far3lua_update.nsi"/>
-						<value name="offsc00" type="qword" value="0000000000000190"/>
-						<value name="offsc01" type="qword" value="0000000000000000"/>
-						<value name="offsc02" type="qword" value="0000000000000000"/>
-						<value name="offsc03" type="qword" value="0000000000002D6D"/>
-						<value name="offsv00" type="qword" value="0000000000000050"/>
-						<value name="offsv01" type="qword" value="0000000000000000"/>
-						<value name="offsv02" type="qword" value="0000000000000000"/>
-						<value name="offsv03" type="qword" value="0000000000002B70"/>
-					</key>
 				</key>
 			</hierarchicalconfig>
 		</plugin>
@@ -2138,6 +2164,7 @@
 		<plugin guid="9BF0E19D-B943-4E6D-B7B0-D71E3DAF446A">
 			<hierarchicalconfig>
 				<key name="9BF0E19D-B943-4E6D-B7B0-D71E3DAF446A" description="Portable Devices">
+					<key name="storages"/>
 				</key>
 			</hierarchicalconfig>
 		</plugin>
@@ -2146,6 +2173,8 @@
 				<key name="9C3A61FC-F349-48E8-9B78-DAEBD821694B" description="Audio player">
 					<value name="" type="qword" value="0000000000000000"/>
 					<value name="add_to_panel_menu" type="qword" value="0000000000000001"/>
+					<value name="asio_convert_12" type="qword" value="0000000000000001"/>
+					<value name="asio_play_url" type="qword" value="0000000000000000"/>
 					<value name="buttons_action" type="text" value=" bb pp ff s "/>
 					<value name="buttons_text" type="text" value=" |◄ || ►| ■ "/>
 					<value name="cmd_prefix" type="text" value="AudioPlayer"/>
@@ -2153,13 +2182,18 @@
 					<value name="enter_as_next" type="qword" value="0000000000000001"/>
 					<value name="excluded_exts" type="text" value="mp4"/>
 					<value name="ignored_subtitles" type="text" value="YOUR DONATION "/>
+					<value name="keep_pos" type="qword" value="0000000000000000"/>
 					<value name="move_step1" type="qword" value="000000000000C350"/>
 					<value name="move_step2" type="qword" value="00000000004C4B40"/>
 					<value name="out_click_close" type="qword" value="0000000000000002"/>
 					<value name="out_device" type="qword" value="FFFFFFFFFFFFFFFF"/>
+					<value name="out_device_asio" type="qword" value="FFFFFFFFFFFFFFFE"/>
+					<value name="out_device_wasapi" type="qword" value="FFFFFFFFFFFFFFFF"/>
+					<value name="play_mode" type="qword" value="0000000000000002"/>
 					<value name="remove_album" type="qword" value="0000000000000001"/>
 					<value name="use_analyze" type="qword" value="0000000000000001"/>
-					<value name="volume" type="qword" value="000000000000021C"/>
+					<value name="volume" type="qword" value="0000000000000257"/>
+					<value name="wasapi_play_url" type="qword" value="0000000000000001"/>
 				</key>
 			</hierarchicalconfig>
 		</plugin>
@@ -2183,6 +2217,7 @@
 		<plugin guid="9F9554B3-AD82-437A-8C2B-D84192B8E2FA">
 			<hierarchicalconfig>
 				<key name="9F9554B3-AD82-437A-8C2B-D84192B8E2FA" description="Hunspell">
+					<value name="custom_dict" type="text" value="VictorVG"/>
 				</key>
 			</hierarchicalconfig>
 		</plugin>
@@ -2230,6 +2265,9 @@
 		<plugin guid="A745761D-42B5-4E67-83DA-F07AF367AE86">
 			<hierarchicalconfig>
 				<key name="A745761D-42B5-4E67-83DA-F07AF367AE86" description="LuaFAR History">
+					<value name="commands" type="hex"/>
+					<value name="config" type="hex"/>
+					<value name="view" type="hex"/>
 				</key>
 			</hierarchicalconfig>
 		</plugin>
@@ -2328,7 +2366,7 @@
 						<key name="{1D1BA1CB-3A05-4F4B-91B3-F8E71A55420E}">
 							<value name="Hidden" type="qword" value="0000000000000000"/>
 							<value name="Hotkey" type="text" value="s"/>
-							<value name="LastAccess" type="qword" value="000000004F040AD6"/>
+							<value name="LastAccess" type="qword" value="000000004F6D1CBD"/>
 							<value name="NewName" type="text" value=""/>
 						</key>
 						<key name="{2099F3F1-A147-4D0F-BB82-60E472513BC0}">
@@ -2346,7 +2384,7 @@
 						<key name="{256C8EBC-F874-4905-AA51-EFDA1BB62800}">
 							<value name="Hidden" type="qword" value="0000000000000000"/>
 							<value name="Hotkey" type="text" value=""/>
-							<value name="LastAccess" type="qword" value="000000004F0624AB"/>
+							<value name="LastAccess" type="qword" value="000000004F68110E"/>
 							<value name="NewName" type="text" value=""/>
 						</key>
 						<key name="{2AE19EDB-6028-4983-A552-8F270EA19270}">
@@ -2383,13 +2421,13 @@
 						<key name="{42E4AEB1-A230-44F4-B33C-F195BB654931}">
 							<value name="Hidden" type="qword" value="0000000000000000"/>
 							<value name="Hotkey" type="text" value=""/>
-							<value name="LastAccess" type="qword" value="00000000484678CC"/>
+							<value name="LastAccess" type="qword" value="000000004F388E77"/>
 							<value name="NewName" type="text" value=""/>
 						</key>
 						<key name="{42E4AEB1-A230-44F4-B33C-F195BB654931}%1">
 							<value name="Hidden" type="qword" value="0000000000000000"/>
 							<value name="Hotkey" type="text" value="\"/>
-							<value name="LastAccess" type="qword" value="000000004EF24DCC"/>
+							<value name="LastAccess" type="qword" value="000000004F231560"/>
 							<value name="NewName" type="text" value=""/>
 						</key>
 						<key name="{4BFB9B87-CC29-493A-BEB8-557D63487917}">
@@ -2418,13 +2456,13 @@
 						<key name="{4EBBEFC8-2084-4B7F-94C0-692CE136894D}%3">
 							<value name="Hidden" type="qword" value="0000000000000000"/>
 							<value name="Hotkey" type="text" value=""/>
-							<value name="LastAccess" type="qword" value="000000004EFD0C14"/>
+							<value name="LastAccess" type="qword" value="000000004F3235BA"/>
 							<value name="NewName" type="text" value=""/>
 						</key>
 						<key name="{4EBBEFC8-2084-4B7F-94C0-692CE136894D}%4">
 							<value name="Hidden" type="qword" value="0000000000000000"/>
 							<value name="Hotkey" type="text" value=""/>
-							<value name="LastAccess" type="qword" value="000000004EF67455"/>
+							<value name="LastAccess" type="qword" value="000000004F28932B"/>
 							<value name="NewName" type="text" value=""/>
 						</key>
 						<key name="{4EBBEFC8-2084-4B7F-94C0-692CE136894D}%5">
@@ -2453,7 +2491,7 @@
 						<key name="{59223378-9DCD-45FC-97C9-AD0251A3C53F}">
 							<value name="Hidden" type="qword" value="0000000000000000"/>
 							<value name="Hotkey" type="text" value="h"/>
-							<value name="LastAccess" type="qword" value="000000004E832E83"/>
+							<value name="LastAccess" type="qword" value="000000004F768420"/>
 							<value name="NewName" type="text" value=""/>
 						</key>
 						<key name="{5A549318-20F3-409F-8CDD-C0D8A01888EB}">
@@ -2512,7 +2550,7 @@
 						<key name="{7BDEDB07-FBE5-4807-9356-6427CE1CB99D}">
 							<value name="Hidden" type="qword" value="0000000000000000"/>
 							<value name="Hotkey" type="text" value=""/>
-							<value name="LastAccess" type="qword" value="000000004C5CB1CD"/>
+							<value name="LastAccess" type="qword" value="000000004F749AB1"/>
 							<value name="NewName" type="text" value=""/>
 						</key>
 						<key name="{7DDE66C0-9C85-44DF-B592-31E615CB56D3}">
@@ -2583,7 +2621,7 @@
 						<key name="{9C3A61FC-F349-48E8-9B78-DAEBD821694B}">
 							<value name="Hidden" type="qword" value="0000000000000000"/>
 							<value name="Hotkey" type="text" value=""/>
-							<value name="LastAccess" type="qword" value="000000004CBA8100"/>
+							<value name="LastAccess" type="qword" value="000000004F68AD5B"/>
 							<value name="NewName" type="text" value=""/>
 						</key>
 						<key name="{9D4A59D9-AD2D-478C-8F66-7D233CBB788D}">
@@ -2624,7 +2662,7 @@
 						<key name="{A745761D-42B5-4E67-83DA-F07AF367AE86}">
 							<value name="Hidden" type="qword" value="0000000000000000"/>
 							<value name="Hotkey" type="text" value=""/>
-							<value name="LastAccess" type="qword" value="00000000486DB345"/>
+							<value name="LastAccess" type="qword" value="000000004F49990B"/>
 							<value name="NewName" type="text" value=""/>
 						</key>
 						<key name="{A74EC909-41F1-409B-9C4C-CA389BB93F45}">
@@ -2653,7 +2691,7 @@
 						<key name="{AE501DD6-AD57-4A26-A5DF-39ACC3A9DB99}">
 							<value name="Hidden" type="qword" value="0000000000000000"/>
 							<value name="Hotkey" type="text" value="/"/>
-							<value name="LastAccess" type="qword" value="000000004F0DA4EF"/>
+							<value name="LastAccess" type="qword" value="000000004F669E02"/>
 							<value name="NewName" type="text" value=""/>
 						</key>
 						<key name="{AF4DAB38-C00A-4653-900E-7A8230308010}">
@@ -2677,6 +2715,12 @@
 							<value name="Hidden" type="qword" value="0000000000000000"/>
 							<value name="Hotkey" type="text" value=""/>
 							<value name="LastAccess" type="qword" value="00000000451A922A"/>
+							<value name="NewName" type="text" value=""/>
+						</key>
+						<key name="{B38112EB-7D3A-446A-9836-11D68D5BB4DF}">
+							<value name="Hidden" type="qword" value="0000000000000000"/>
+							<value name="Hotkey" type="text" value=""/>
+							<value name="LastAccess" type="qword" value="000000004F4A8186"/>
 							<value name="NewName" type="text" value=""/>
 						</key>
 						<key name="{B66C436D-E657-419C-86D3-6834B9ACF3D2}">
@@ -2723,7 +2767,7 @@
 						<key name="{D2F36B62-A470-418D-83A3-ED7A3710E5B5}">
 							<value name="Hidden" type="qword" value="0000000000000000"/>
 							<value name="Hotkey" type="text" value="c"/>
-							<value name="LastAccess" type="qword" value="000000004E3828A1"/>
+							<value name="LastAccess" type="qword" value="000000004F29412E"/>
 							<value name="NewName" type="text" value=""/>
 						</key>
 						<key name="{D4BC5EA7-8229-4FFE-AAC1-5A4F51A0986A}">
@@ -2753,7 +2797,7 @@
 						<key name="{DD10A9C6-ECAC-4BFA-BB07-4A1E92744162}">
 							<value name="Hidden" type="qword" value="0000000000000000"/>
 							<value name="Hotkey" type="text" value="-"/>
-							<value name="LastAccess" type="qword" value="000000004F0E63B4"/>
+							<value name="LastAccess" type="qword" value="000000004F4D1C41"/>
 							<value name="NewName" type="text" value=""/>
 						</key>
 						<key name="{DEEC52C3-AC76-4AD3-A6EF-CAFC33BD4C05}">
@@ -2800,7 +2844,7 @@
 						<key name="{E80B8002-EED3-4563-9C78-2E3C3246F8D3}">
 							<value name="Hidden" type="qword" value="0000000000000000"/>
 							<value name="Hotkey" type="text" value="2"/>
-							<value name="LastAccess" type="qword" value="000000004F06B6C9"/>
+							<value name="LastAccess" type="qword" value="000000004F7396EE"/>
 							<value name="NewName" type="text" value=""/>
 						</key>
 						<key name="{EB39ECBE-B2FF-4696-95D1-EFA7D3B88679}">
@@ -2824,7 +2868,7 @@
 						<key name="{F1EBAFF4-A643-4046-9F0B-7D0A9A577299}">
 							<value name="Hidden" type="qword" value="0000000000000000"/>
 							<value name="Hotkey" type="text" value=""/>
-							<value name="LastAccess" type="qword" value="000000004EF19393"/>
+							<value name="LastAccess" type="qword" value="000000004F67A153"/>
 							<value name="NewName" type="text" value=""/>
 						</key>
 						<key name="{F250C12A-78E2-4ABC-A784-3FDD3156E415}">
@@ -2848,7 +2892,7 @@
 						<key name="{F6E77027-05BA-4ECF-A8D3-7D57B2D80C53}">
 							<value name="Hidden" type="qword" value="0000000000000000"/>
 							<value name="Hotkey" type="text" value="2"/>
-							<value name="LastAccess" type="qword" value="000000004F1090CE"/>
+							<value name="LastAccess" type="qword" value="000000004F721E73"/>
 							<value name="NewName" type="text" value=""/>
 						</key>
 						<key name="{F9AF80C3-54AC-4924-B607-FE05A3866A88}">
@@ -2936,11 +2980,6 @@
 				</key>
 			</hierarchicalconfig>
 		</plugin>
-		<plugin guid="B2EC2264-0F55-4B86-87F7-F1392B8FC5DC">
-			<hierarchicalconfig>
-				<key name="B2EC2264-0F55-4B86-87F7-F1392B8FC5DC" description="Dialog Tools"/>
-			</hierarchicalconfig>
-		</plugin>
 		<plugin guid="B66C436D-E657-419C-86D3-6834B9ACF3D2">
 			<hierarchicalconfig>
 				<key name="B66C436D-E657-419C-86D3-6834B9ACF3D2" description="Brackets">
@@ -2995,16 +3034,6 @@
 					<value name="ShowMessage" type="qword" value="0000000000000001"/>
 					<value name="TitleColor" type="qword" value="0000000000000000"/>
 				</key>
-			</hierarchicalconfig>
-		</plugin>
-		<plugin guid="C5508DDB-5175-4736-9A10-C8F6EED7B32F">
-			<hierarchicalconfig>
-				<key name="C5508DDB-5175-4736-9A10-C8F6EED7B32F" description="MultiArc"/>
-			</hierarchicalconfig>
-		</plugin>
-		<plugin guid="C58ECBF9-8C61-486A-8B5F-C3B3060CAE8E">
-			<hierarchicalconfig>
-				<key name="C58ECBF9-8C61-486A-8B5F-C3B3060CAE8E" description="Json"/>
 			</hierarchicalconfig>
 		</plugin>
 		<plugin guid="CDF48DA0-0334-4169-8453-69048DD3B51C">
@@ -3068,16 +3097,153 @@
 		<plugin guid="D4BC5EA7-8229-4FFE-AAC1-5A4F51A0986A">
 			<hierarchicalconfig>
 				<key name="D4BC5EA7-8229-4FFE-AAC1-5A4F51A0986A" description="Polygon">
+					<value name="root" type="hex"/>
 					<key name="files"/>
 				</key>
 			</hierarchicalconfig>
 		</plugin>
-		<plugin guid="D82D6847-0C7B-4BF4-9A31-B0B929707854">
-			<hierarchicalconfig>
-				<key name="D82D6847-0C7B-4BF4-9A31-B0B929707854" description="MBlockEditor"/>
-			</hierarchicalconfig>
-		</plugin>
-		<plugin guid="D888455B-4E68-43F8-8D54-9A96913974B2">
+	<plugin guid="D82D6847-0C7B-4BF4-9A31-B0B929707854">
+		<hierarchicalconfig>
+			<key name="D82D6847-0C7B-4BF4-9A31-B0B929707854" description="MBlockEditor">
+				<value name="CommentFromBegin" type="text" value="off"/>
+				<key name=".bat">
+					<value name="Comment" type="text" value="rem "/>
+					<value name="CommentFromBegin" type="text" value="on"/>
+					<value name="CommentSkipMenu" type="text" value="on"/>
+				</key>
+				<key name=".btm">
+					<value name="Comment" type="text" value="rem "/>
+					<value name="CommentFromBegin" type="text" value="on"/>
+					<value name="CommentSkipMenu" type="text" value="on"/>
+				</key>
+				<key name=".cmd">
+					<value name="Comment" type="text" value="rem "/>
+					<value name="CommentFromBegin" type="text" value="on"/>
+					<value name="CommentSkipMenu" type="text" value="on"/>
+				</key>
+				<key name=".cpp">
+					<value name="Comment" type="text" value="// "/>
+					<value name="CommentBegin" type="text" value="/* "/>
+					<value name="CommentEnd" type="text" value=" */"/>
+					<value name="CommentFromBegin" type="text" value="off"/>
+				</key>
+				<key name=".def">
+					<value name="Comment" type="text" value="; "/>
+					<value name="CommentFromBegin" type="text" value="off"/>
+					<value name="CommentSkipMenu" type="text" value="on"/>
+				</key>
+				<key name=".farconfig">
+					<value name="Comment" type="text" value=""/>
+					<value name="CommentBegin" type="text" value="&lt;!-- "/>
+					<value name="CommentEnd" type="text" value=" --&gt;"/>
+				</key>
+				<key name=".htm">
+					<value name="Comment" type="text" value=""/>
+					<value name="CommentBegin" type="text" value="&lt;!-- "/>
+					<value name="CommentEnd" type="text" value=" --&gt;"/>
+					<value name="CommentFromBegin" type="text" value="off"/>
+					<value name="CommentSkipMenu" type="text" value="off"/>
+				</key>
+				<key name=".html">
+					<value name="Comment" type="text" value=""/>
+					<value name="CommentBegin" type="text" value="&lt;!-- "/>
+					<value name="CommentEnd" type="text" value=" --&gt;"/>
+					<value name="CommentFromBegin" type="text" value="off"/>
+					<value name="CommentSkipMenu" type="text" value="off"/>
+				</key>
+				<key name=".ini">
+					<value name="Comment" type="text" value="; "/>
+					<value name="CommentFromBegin" type="text" value="on"/>
+					<value name="CommentSkipMenu" type="text" value="on"/>
+				</key>
+				<key name=".iss">
+					<value name="Comment" type="text" value="; "/>
+					<value name="CommentFromBegin" type="text" value="on"/>
+					<value name="CommentSkipMenu" type="text" value="on"/>
+				</key>
+				<key name=".lua">
+					<value name="Comment" type="text" value="-- "/>
+					<value name="CommentBegin" type="text" value="--[[ "/>
+					<value name="CommentEnd" type="text" value="--]] "/>
+					<value name="CommentFromBegin" type="text" value="off"/>
+					<value name="CommentSkipMenu" type="text" value="off"/>
+				</key>
+				<key name=".nsh">
+					<value name="Comment" type="text" value="; "/>
+					<value name="CommentBegin" type="text" value="/* "/>
+					<value name="CommentEnd" type="text" value=" */"/>
+					<value name="CommentFromBegin" type="text" value="off"/>
+					<value name="CommentSkipMenu" type="text" value="off"/>
+				</key>
+				<key name=".nsi">
+					<value name="Comment" type="text" value="; "/>
+					<value name="CommentBegin" type="text" value="/* "/>
+					<value name="CommentEnd" type="text" value=" */"/>
+					<value name="CommentFromBegin" type="text" value="off"/>
+					<value name="CommentSkipMenu" type="text" value="off"/>
+				</key>
+				<key name=".php">
+					<value name="Comment" type="text" value="//# "/>
+					<value name="CommentBegin" type="text" value="/* &lt;!-- "/>
+					<value name="CommentEnd" type="text" value=" */ --&gt;"/>
+					<value name="CommentSkipMenu" type="text" value="off"/>
+				</key>
+				<key name=".ps1">
+					<value name="Comment" type="text" value="# "/>
+					<value name="CommentBegin" type="text" value="&lt;#"/>
+					<value name="CommentEnd" type="text" value="#&gt;"/>
+					<value name="CommentFromBegin" type="text" value="off"/>
+					<value name="CommentSkipMenu" type="text" value="off"/>
+				</key>
+				<key name=".reg">
+					<value name="Comment" type="text" value="; "/>
+					<value name="CommentFromBegin" type="text" value="on"/>
+					<value name="CommentSkipMenu" type="text" value="on"/>
+				</key>
+				<key name=".sh">
+					<value name="Comment" type="text" value="#"/>
+					<value name="CommentFromBegin" type="text" value="on"/>
+					<value name="CommentSkipMenu" type="text" value="on"/>
+				</key>
+				<key name=".shtml">
+					<value name="Comment" type="text" value=""/>
+					<value name="CommentBegin" type="text" value="&lt;!-- "/>
+					<value name="CommentEnd" type="text" value=" --&gt;"/>
+					<value name="CommentFromBegin" type="text" value="off"/>
+					<value name="CommentSkipMenu" type="text" value="off"/>
+				</key>
+				<key name=".sql">
+					<value name="Comment" type="text" value="-- "/>
+					<value name="CommentBegin" type="text" value="/* "/>
+					<value name="CommentEnd" type="text" value=" */"/>
+					<value name="CommentFromBegin" type="text" value="on"/>
+				</key>
+				<key name=".txt">
+					<value name="Comment" type="text" value="&gt;&gt; "/>
+					<value name="CommentFromBegin" type="text" value="off"/>
+					<value name="CommentSkipMenu" type="text" value="off"/>
+				</key>
+				<key name=".wxi">
+					<value name="Comment" type="text" value=""/>
+					<value name="CommentBegin" type="text" value="&lt;!-- "/>
+					<value name="CommentEnd" type="text" value=" --&gt;"/>
+				</key>
+				<key name=".wxs">
+					<value name="Comment" type="text" value=""/>
+					<value name="CommentBegin" type="text" value="&lt;!-- "/>
+					<value name="CommentEnd" type="text" value=" --&gt;"/>
+				</key>
+				<key name=".xml">
+					<value name="Comment" type="text" value=""/>
+					<value name="CommentBegin" type="text" value="&lt;!-- "/>
+					<value name="CommentEnd" type="text" value=" --&gt;"/>
+					<value name="CommentFromBegin" type="text" value="off"/>
+					<value name="CommentSkipMenu" type="text" value="off"/>
+				</key>
+			 </key>
+		  </hierarchicalconfig>
+	   </plugin>
+       	<plugin guid="D888455B-4E68-43F8-8D54-9A96913974B2">
 			<hierarchicalconfig>
 				<key name="D888455B-4E68-43F8-8D54-9A96913974B2" description="NT Events">
 					<value name="AddToDisksMenu" type="qword" value="0000000000000001"/>
@@ -3109,7 +3275,7 @@
 					<value name="codepage" type="qword" value="0000000000000000"/>
 					<value name="del_blend" type="qword" value="0000000000000001"/>
 					<value name="del_last_empty" type="qword" value="0000000000000001"/>
-					<value name="dst_codepage" type="qword" value="00000000000004E3"/>
+					<value name="dst_codepage" type="qword" value="000000000000FDE9"/>
 					<value name="dst_cp" type="qword" value="00000000000004E3"/>
 					<value name="eol_marker" type="qword" value="0000000000000000"/>
 					<value name="eoltype" type="qword" value="0000000000000000"/>
@@ -3121,8 +3287,8 @@
 					<value name="rpl_space2tab_n" type="qword" value="0000000000000004"/>
 					<value name="rpl_specal_chars" type="qword" value="0000000000000001"/>
 					<value name="save_bak" type="qword" value="0000000000000000"/>
-					<value name="set_bom" type="qword" value="0000000000000000"/>
-					<value name="src_codepage" type="qword" value="00000000000004B0"/>
+					<value name="set_bom" type="qword" value="0000000000000001"/>
+					<value name="src_codepage" type="qword" value="000000000000FDE8"/>
 					<value name="trim_eol_spaces" type="qword" value="0000000000000001"/>
 					<value name="trim_line" type="qword" value="0000000000000001"/>
 				</key>
@@ -3370,4 +3536,5 @@
 				<key name="F9E265F9-B0FE-43B6-AA17-F5AA7830D86C" description="Name editor"/>
 			</hierarchicalconfig>
 		</plugin>
-	</pluginsconfig></farconfig>
+	</pluginsconfig>
+</farconfig>

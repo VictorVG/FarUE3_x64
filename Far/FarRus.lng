@@ -1,6 +1,6 @@
 ﻿.Language=Russian,Russian (Русский)
 
-//Version: 3.0.0.5508
+//Version: 3.0.0.5512
 
 //[MYes]
 "Да"
@@ -686,6 +686,8 @@
 "символическая ссылка (&файл)"
 //[MLinkTypeSymlinkDirectory]
 "символическая ссылка (&папка)"
+//[MCopyPreserveTimestamps]
+"Сохрянять метки времени"
 //[MCopySymLinkContents]
 "Копировать содерж&имое символических ссылок"
 //[MCopyMultiActions]
@@ -2864,6 +2866,8 @@
 "Показывать параметры &компакт-дисков"
 //[MChangeDriveShowNetworkDrive]
 "Показывать параметры се&тевых дисков"
+//[MChangeDriveShowVirtualDisk]
+"Определять виртуальные диски"
 //[MChangeDriveMenuFooter]
 "Del,Shift+Del,F3,F4,F9"
 
