@@ -1,6 +1,6 @@
 ﻿.Language=Italian,Italian (Italiano)
 
-//Version: 3.0.0.5512
+//Version: 3.0.0.5518
 
 //[MYes]
 "&Si"
@@ -3020,7 +3020,7 @@
 "YYYYY{0}MM{0}DD"
 // need translation:
 //[MSetAttrTimeTitle]
-"hh{0}mm{0}ss{1}ms +tick"
+"hh{0}mm{0}ss{1}tick"
 //[MSetAttrSystemDialog]
 "Proprietà di Sistema"
 

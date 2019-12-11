@@ -1,6 +1,6 @@
 ﻿.Language=English,English
 
-//Version: 3.0.0.5512
+//Version: 3.0.0.5518
 
 //[MYes]
 "Yes"
@@ -3009,7 +3009,7 @@
 //[MSetAttrDateTitle3]
 "YYYYY{0}MM{0}DD"
 //[MSetAttrTimeTitle]
-"hh{0}mm{0}ss{1}ms +tick"
+"hh{0}mm{0}ss{1}tick"
 //[MSetAttrSystemDialog]
 "System &properties"
 

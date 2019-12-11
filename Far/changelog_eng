@@ -3,6 +3,43 @@ This file is a translation of the main russian changelog and is provided by volu
 It might not always be as up to date as the main changelog.
 =======================================================================================
 
+drkns 04.12.2019 18:28:22 +0000 - build 5518
+
+1. Removed UI time separation to milliseconds and ticks, now it's just ticks.
+
+2. Refactoring.
+
+drkns 04.12.2019 17:44:18 +0000 - build 5517
+
+1. And once more.
+
+drkns 04.12.2019 09:13:12 +0000 - build 5516
+
+1. Correction of 5514.
+
+drkns 03.12.2019 08:04:01 +0000 - build 5515
+
+1. Correction of 5514.
+
+drkns 02.12.2019 23:24:22 +0000 - build 5514
+
+1. Wild things in autofilters:
+   - the extensions list was read from the FS instead of the panel, causing slowness in network folders
+   - with a lucky stars arrangement it was posible to get untoggleable filters.
+   A lot of changes, strange things could happen.
+
+2. Wild things in ampersand shortcuts handling: keys didn't work sometimes, menu scrolling was incorrect, copypaste and so on.
+   A lot of changes, strange things could happen.
+
+3. More tolerant loading of filters, highlight, panel modes - not until the first failure, but as much as possible.
+   A lot of changes, strange things could happen.
+
+drkns 26.11.2019 21:09:23 +0000 - build 5513
+
+1. Copying files from panels to clipboard reassigned to Ctrl+Shift+C. Ctrl+C goes into the command line as before.
+
+2. Added cutting files from panels to clipboard via Ctrl+Shift+X.
+
 drkns 21.11.2019 20:56:02 +0000 - build 5512
 
 1. M#0003470: Option "[ ] Detect virtual disks" for Disks menu.
@@ -718,7 +755,7 @@ drkns 17.04.2019 22:23:24 +0100 - build 5386
 
 1. Build process:
    - bootstrap directory moved to IntDir (some generated files contain platfrom-specific data).
-   - simplidied the format of vbuild.m4 - now there is only a number.
+   - simplified the format of vbuild.m4 - now there is only a number.
 
 drkns 16.04.2019 08:17:59 +0100 - build 5385
 

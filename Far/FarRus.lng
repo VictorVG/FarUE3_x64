@@ -1,6 +1,6 @@
 ﻿.Language=Russian,Russian (Русский)
 
-//Version: 3.0.0.5512
+//Version: 3.0.0.5518
 
 //[MYes]
 "Да"
@@ -687,7 +687,7 @@
 //[MLinkTypeSymlinkDirectory]
 "символическая ссылка (&папка)"
 //[MCopyPreserveTimestamps]
-"Сохрянять метки времени"
+"Сохранять метки времени"
 //[MCopySymLinkContents]
 "Копировать содерж&имое символических ссылок"
 //[MCopyMultiActions]
@@ -3012,7 +3012,7 @@
 //[MSetAttrDateTitle3]
 "ГГГГГ{0}ММ{0}ДД"
 //[MSetAttrTimeTitle]
-"чч{0}мм{0}сс{1}мс +такт"
+"чч{0}мм{0}сс{1}такт"
 //[MSetAttrSystemDialog]
 "Системные &свойства"
 

@@ -1,6 +1,6 @@
 ﻿.Language=Ukrainian,Ukrainian (Українська)
 
-//Version: 3.0.0.5512
+//Version: 3.0.0.5518
 
 //[MYes]
 "Так"
@@ -3012,7 +3012,7 @@
 //[MSetAttrDateTitle3]
 "РРРРР{0}ММ{0}ДД"
 //[MSetAttrTimeTitle]
-"гг{0}хх{0}сс{1}мс +такт"
+"гг{0}хх{0}сс{1}такт"
 //[MSetAttrSystemDialog]
 "Системні вла&стивості"
 

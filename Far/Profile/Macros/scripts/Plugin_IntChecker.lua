@@ -1,82 +1,81 @@
-﻿--[[ Integrity Checker by Ariman
+-- Integrity Checker by Ariman
 
-Этот сервисный скрипт решает задачи не решаемые плагином - например создание
-файлов хэшей для произвольных UNC объектов в данный момент находящихся вне
-текущей активной панели Far, например сетевых файлов и каталогов с учётом
-структуры дерева каталогов от выбранной точки отсчёта, рекурсивного счёта
-хэшей для случаев вида на активной панели выделены файлы и каталоги. Посчитать
-для них хэши с учётом вложенных каталогов, остальное игнорировать." при разных
-способах указания задачи - либо считать на текушей панели, либо ввести UNC путь
-и считать в его пределах, хотя на панели есть выделенные объекты за пределами
-UNC пути, диагностика некоторых ошибок, коррекция ошибочного переключения
-клавиатуры и ввода неправильных команд, вывод хэшей в формате BSD UNIX, а не
-только GNU, запись файлов хэшей по UNC пути в родительский каталог объекта...
+-- Этот сервисный скрипт решает задачи не решаемые плагином - например создание
+-- файлов хэшей для произвольных UNC объектов в данный момент находящихся вне
+-- текущей активной панели Far, например сетевых файлов и каталогов с учётом
+-- структуры дерева каталогов от выбранной точки отсчёта, рекурсивного счёта
+-- хэшей для случаев вида на активной панели выделены файлы и каталоги. Посчитать
+-- для них хэши с учётом вложенных каталогов, остальное игнорировать." при разных
+-- способах указания задачи - либо считать на текушей панели, либо ввести UNC путь
+-- и считать в его пределах, хотя на панели есть выделенные объекты за пределами
+-- UNC пути, диагностика некоторых ошибок, коррекция ошибочного переключения
+-- клавиатуры и ввода неправильных команд, вывод хэшей в формате BSD UNIX, а не
+-- только GNU, запись файлов хэшей по UNC пути в родительский каталог объекта...
 
-Макросы скрипта специально назначены на Alt-H/Alt-G чтобы не перекрывался
-функционал хоткея  Ctrl-H - 'Убрать/показать файлы с атрибутом "Скрытый" и
-"Системный"' Far-а (см. Справку Far-а: "Клавиатурные команды" - "Команды
-управления панелями" раздел "Команды файловой панели") и не конфликтовали с
-другими встроенными командами Far-а.
+-- Макросы скрипта специально назначены на Alt-H/Alt-G чтобы не перекрывался
+-- функционал хоткея  Ctrl-H - 'Убрать/показать файлы с атрибутом "Скрытый" и
+-- "Системный"' Far-а (см. Справку Far-а: "Клавиатурные команды" - "Команды
+-- управления панелями" раздел "Команды файловой панели") и не конфликтовали с
+-- другими встроенными командами Far-а.
 
-P.S.
+-- P.S.
 
-GUI диалога нет, и в обозримом будущем его добавление не планируется.
+-- GUI диалога нет, и в обозримом будущем его добавление не планируется.
 
-VictorVG @ VikSoft.Ru/
+-- VictorVG @ VikSoft.Ru/
 
-v1.0 - initial version
-Wds Jan 15 02:16:30 +0300 2014
-v1.1 - refactoring
-Mon Jun 15 06:32:20 +0300 2015
-v1.1.1 - refactoring
-Tue Jun 16 23:25:04 +0300 2015
-v1.2 - рефакторинг
-Mon Jun 22 05:40:42 +0300 2015
-v1.2.1 - рефакторинг
-Thu Aug 04 15:09:30 +0300 2016
-v1.2.2 - добавлена поддержка SHA3-512
-07.11.2017 17:09:21 +0300
-v1.3 - рефакторинг и срабатывание макроса на MsLClick по Double Click
-17.11.2017 16:12:57 +0300
-v1.3.1 - рефакторинг
-17.11.2017 20:53:52 +0300
-v1.4 - добавлен новый макрос на Alt-G - "Integrity Checker: calc hash for
-the file under cursor" умеющий выводить хэш на экран, в буфер обмена ОС или
-в хэш файл с именем файла и расширением зависящим от алгоритма в форматах
-BSD UNIX или GNU Linux. Макрос написан в виде пошагового мастера с выводом
-подсказок в заголовке диалога ввода. Одно символьные хоткеи команд мастера
-указаны перед ":" или "-", например 1:CRC32,  G - GNU. Доступные команды в
-списке разделены ";". Это сделано для снижения риска ошибок, и справка по
-командам стала не нужна.
-18.03.2019 02:40:23 +0300
-v1.4.1 - Исправим ошибку с пробелами в путях
-18.03.2019 10:35:23 +0300
-v1.4.2 - уточнение v1.4.1
-18.03.2019 13:48:54 +0300
-v1.4.3 - при не пустой командной строке если курсор стоит на хэше спросим
-оператора что делать? Ok - выполним командную строку, Canсel - проверим хэш.
-23.03.2019 22:41:07 +0300
-v1.4.4 - мелкий рефакторинг, вопрос к пользователю задаётся по русски,
-а чтобы LuaCheck не ругался на длинную строку в mf.msgbox вынесем сообщение
-в отдельный оператор local так, чтобы вывелась только одна строка
-22.04.2019 17:53:12 +0300
-v1.5.0 - рефакторинг, макрос Integrity Checker: calc hash for the file under
-cursor переписано с использованием chashex(), реализован расчёт хешей для всех
-или выбранных файлов в текущем каталоге;
-02.10.2019 08:58:55 +0300
-v1.6.0 - расчёт хэшей для указанного пользователем файла или дерева каталогов, рефакторинг;
-07.10.2019 22:00:27 +0300
-v1.7.0 - считаем хэши для всех файлов в локальном каталоге и его подкаталогах, рефакторинг;
-09.10.2019 19:01:24 +0300
-v1.8.0 - автовыбора режима счёта "папка/файл" для UNC пути с коррекцией ошибок ввода и
-проверкой их существования, хэши сохраняются в обрабатываемый UNC каталог, рефакторинг.
-13.10.2019 00:02:14 +0300
-v1.8.1 - возвращаемый хэш всегда строка, все сообщения на английском, по умолчанию Target
-всегда экран, рефакторинг;
-13.10.2019 16:58:01 +0300
-v1.9 - вместо chashex() используем chex(), расширенная диагностика и исправление ошибок оператора.
-12.11.2019 22:57:42 +0300
---]]
+-- v1.0 - initial version
+-- Wds Jan 15 02:16:30 +0300 2014
+-- v1.1 - refactoring
+-- Mon Jun 15 06:32:20 +0300 2015
+-- v1.1.1 - refactoring
+-- Tue Jun 16 23:25:04 +0300 2015
+-- v1.2 - рефакторинг
+-- Mon Jun 22 05:40:42 +0300 2015
+-- v1.2.1 - рефакторинг
+-- Thu Aug 04 15:09:30 +0300 2016
+-- v1.2.2 - добавлена поддержка SHA3-512
+-- 07.11.2017 17:09:21 +0300
+-- v1.3 - рефакторинг и срабатывание макроса на MsLClick по Double Click
+-- 17.11.2017 16:12:57 +0300
+-- v1.3.1 - рефакторинг
+-- 17.11.2017 20:53:52 +0300
+-- v1.4 - добавлен новый макрос на Alt-G - "Integrity Checker: calc hash for
+-- the file under cursor" умеющий выводить хэш на экран, в буфер обмена ОС или
+-- в хэш файл с именем файла и расширением зависящим от алгоритма в форматах
+-- BSD UNIX или GNU Linux. Макрос написан в виде пошагового мастера с выводом
+-- подсказок в заголовке диалога ввода. Одно символьные хоткеи команд мастера
+-- указаны перед ":" или "-", например 1:CRC32,  G - GNU. Доступные команды в
+-- списке разделены ";". Это сделано для снижения риска ошибок, и справка по
+-- командам стала не нужна.
+-- 18.03.2019 02:40:23 +0300
+-- v1.4.1 - Исправим ошибку с пробелами в путях
+-- 18.03.2019 10:35:23 +0300
+-- v1.4.2 - уточнение v1.4.1
+-- 18.03.2019 13:48:54 +0300
+-- v1.4.3 - при не пустой командной строке если курсор стоит на хэше спросим
+-- оператора что делать? Ok - выполним командную строку, Canсel - проверим хэш.
+-- 23.03.2019 22:41:07 +0300
+-- v1.4.4 - мелкий рефакторинг, вопрос к пользователю задаётся по русски,
+-- а чтобы LuaCheck не ругался на длинную строку в mf.msgbox вынесем сообщение
+-- в отдельный оператор local так, чтобы вывелась только одна строка
+-- 22.04.2019 17:53:12 +0300
+-- v1.5.0 - рефакторинг, макрос Integrity Checker: calc hash for the file under
+-- cursor переписано с использованием chashex(), реализован расчёт хешей для всех
+-- или выбранных файлов в текущем каталоге;
+-- 02.10.2019 08:58:55 +0300
+-- v1.6.0 - расчёт хэшей для указанного пользователем файла или дерева каталогов, рефакторинг;
+-- 07.10.2019 22:00:27 +0300
+-- v1.7.0 - считаем хэши для всех файлов в локальном каталоге и его подкаталогах, рефакторинг;
+-- 09.10.2019 19:01:24 +0300
+-- v1.8.0 - автовыбора режима счёта "папка/файл" для UNC пути с коррекцией ошибок ввода и
+-- проверкой их существования, хэши сохраняются в обрабатываемый UNC каталог, рефакторинг.
+-- 13.10.2019 00:02:14 +0300
+-- v1.8.1 - возвращаемый хэш всегда строка, все сообщения на английском, по умолчанию Target
+-- всегда экран, рефакторинг;
+-- 13.10.2019 16:58:01 +0300
+-- v1.9 - вместо chashex() используем chex(), расширенная диагностика и исправление ошибок оператора.
+-- 12.11.2019 22:57:42 +0300
 
 local ICId,ICMID = "E186306E-3B0D-48C1-9668-ED7CF64C0E65","A22F9043-C94A-4037-845C-26ED67E843D1";
 local Mask = "/.+\\.(md5|sfv|sha(1|3|256|512)|wrpl)/i";
@@ -84,39 +83,37 @@ local MsB,MsF = Mouse.Button,Mouse.EventFlags;
 local Msg = "The command line is not empty, but a hash file is under the cursor.\nWhat to do? Command: Ok or Verification: Cancel";
 local function chex(hn,pth,ft,r)
 
---[[
-The function for calculating file checksums with support full or relative
-UNC paths specified relative to the current panel directory, controlled
-recursive processing of directories, partial correction of input errors
-for UNC paths and checking the availability of the target object (the user
-may not have access rights to it).
+-- The function for calculating file checksums with support full or relative
+-- UNC paths specified relative to the current panel directory, controlled
+-- recursive processing of directories, partial correction of input errors
+-- for UNC paths and checking the availability of the target object (the user
+-- may not have access rights to it).
 
-User can break calculation if pressed ESC key then returned ErrCode = 4.
+-- User can break calculation if pressed ESC key then returned ErrCode = 4.
 
-Input parameters:
+-- Input parameters:
 
-hn  - is hash algorithm name, string
-pth - target UNC path, string
-ft  - output record format code, false - GNU (default), true - BSD, boolean;
-r   - recursion flag true - enable, false - disable (default), boolean;
+-- hn  - is hash algorithm name, string
+-- pth - target UNC path, string
+-- ft  - output record format code, false - GNU (default), true - BSD, boolean;
+-- r   - recursion flag true - enable, false - disable (default), boolean;
 
-Returned table included fields by order:
+-- Returned table included fields by order:
 
-ErrCode    - Error code, integer, value is:
-              0 - Success, no errors, HashSumm is valid;
-              1 - Empty folder, recursion is disabled or no files found, HashSumm
-                  is empty and ObjPath is UNC path;
-              2 - Target not exist, HashSumm is invalid and ObjPath is UNC path;
-              3 - File Access Denied, FileErrCnt greater 0, HashSumm exclude this files;
-              4 - User press break hotkey, FileSucCnt is valid, DirCnt is wrong,
-                  HashSumm last string is "Cancel";
-HashSumm   - calculated hash sum, string, substring separator is "\n";
-ObjPath    - UNC path to object, string;
-DirCnt     - scaned directories count, integer;
-FileAllCnt - files all count, integer;
-FileSucCnt - files success count, integer;
-FileErrCnt - files error count, integer;
---]]
+-- ErrCode    - Error code, integer, value is:
+--               0 - Success, no errors, HashSumm is valid;
+--               1 - Empty folder, recursion is disabled or no files found, HashSumm
+--                   is empty and ObjPath is UNC path;
+--               2 - Target not exist, HashSumm is invalid and ObjPath is UNC path;
+--               3 - File Access Denied, FileErrCnt greater 0, HashSumm exclude this files;
+--               4 - User press break hotkey, FileSucCnt is valid, DirCnt is wrong,
+--                   HashSumm last string is "Cancel";
+-- HashSumm   - calculated hash sum, string, substring separator is "\n";
+-- ObjPath    - UNC path to object, string;
+-- DirCnt     - scaned directories count, integer;
+-- FileAllCnt - files all count, integer;
+-- FileSucCnt - files success count, integer;
+-- FileErrCnt - files error count, integer;
 
    local r0,sum0,s0,f0,d0,p,pnt,dc,ec,err,fc,fa,ft0 = false,"","","","","","",0,0,0,0,0,false;
    r = tostring(r)

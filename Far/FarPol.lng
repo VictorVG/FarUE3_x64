@@ -1,6 +1,6 @@
 ﻿.Language=Polish,Polish (Polski)
 
-//Version: 3.0.0.5512
+//Version: 3.0.0.5518
 
 //[MYes]
 "Tak"
@@ -3010,7 +3010,7 @@
 //[MSetAttrDateTitle3]
 "RRRRR{0}MM{0}DD"
 //[MSetAttrTimeTitle]
-"gg{0}mm{0}ss{1}ms +takt"
+"gg{0}mm{0}ss{1}takt"
 //[MSetAttrSystemDialog]
 "Właściwości systemu"
 

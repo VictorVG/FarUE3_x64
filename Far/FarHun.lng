@@ -1,6 +1,6 @@
 ﻿.Language=Hungarian,Hungarian (Magyar)
 
-//Version: 3.0.0.5512
+//Version: 3.0.0.5518
 
 //[MYes]
 "Igen"
@@ -3250,7 +3250,7 @@
 "ÉÉÉÉÉ{0}HH{0}NN"
 // need translation:
 //[MSetAttrTimeTitle]
-"óó{0}pp{0}mm{1}ms +tick"
+"óó{0}pp{0}mm{1}tick"
 // need translation:
 //[MSetAttrSystemDialog]
 "System properties"

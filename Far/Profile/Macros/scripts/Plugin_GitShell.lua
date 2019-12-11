@@ -1,16 +1,15 @@
-﻿-- VictorVG @ VikSoft.Ru, 1996 - 2019
+-- VictorVG @ VikSoft.Ru, 1996 - 2019
 --
 -- v1.0, Initial release
 -- 19.02.2018  02:01:28 +0300
---
 -- v1.1, Refactoring, add macro for delete branch
 -- 26.02.2018 21:01:45 +0300
---
 -- v1.2, Add new macros for GitShell command, refactoring.
 -- 06.03.2018 06.03.2018 06:10:12 +0300
---
 -- v1.3, BugFix, update copyright
 -- 12.02.2019 03:56:59 +0300
+-- v1.3.1, Update for b5513 - hotkey CtrlShiftC to AltShiftC
+-- 27.11.2019 13:15:10 +0300
 
 local GSID  = "BE0B1498-4234-4BE1-B257-7653CAF4F091";
 local GSMID = "0B7813BD-DEC1-4866-B20E-F5C49FF4AFA0";
@@ -46,7 +45,7 @@ Macro{
 Macro{
   id="43EDB414-789E-4760-823E-19638DDA52D9";
   area="Shell";
-  key="CtrlShiftC";
+  key="AltShiftC";
   description="GitShell commit tools";
   action=function() Far.DisableHistory(-1) Plugin.Command(GSID,'commit') end;
 }

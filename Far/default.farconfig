@@ -100,7 +100,7 @@
 		<setting key="Interface" name="SetAdminIcon" type="qword" value="0000000000000001"/>
 		<setting key="Interface" name="SetIcon" type="qword" value="0000000000000001"/>
 		<setting key="Interface" name="ShiftsKeyRules" type="qword" value="0000000000000001"/>
-		<setting key="Interface" name="ShowDotsInRoot" type="qword" value="0000000000000001"/>
+		<setting key="Interface" name="ShowDotsInRoot" type="qword" value="0000000000000000"/>
 		<setting key="Interface" name="ShowMenuBar" type="qword" value="0000000000000000"/>
 		<setting key="Interface" name="TitleAddons" type="text" value="%Ver.%Build %Platform %Admin [PID %PID]"/>
 		<setting key="Interface" name="UseVk_oem_x" type="qword" value="0000000000000001"/>
