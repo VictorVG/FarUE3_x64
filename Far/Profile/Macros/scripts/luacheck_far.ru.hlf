@@ -4,7 +4,7 @@
 .Options CtrlStartPosChar=^
 @Contents=Luacheck
 
-v1.4.2
+v1.4.3
 
 
 @Luacheck
@@ -167,8 +167,8 @@ v1.4.2
  #Примечание#
 
  Если #lua# отдельно в системе не установлен, то проще всего будет положить в папку #%FARHOME%#
-файл #luajit.exe#, который можно скачать c svn:
-[~https://sourceforge.net/p/farmanager/code/HEAD/tree/trunk/plugins/luamacro/luasdk/~@https://sourceforge.net/p/farmanager/code/HEAD/tree/trunk/plugins/luamacro/luasdk/@] 
+файл #luajit.exe#, который можно скачать из официального репозитория:
+[~https://github.com/FarGroup/FarManager/tree/master/plugins/luamacro/luasdk~@https://github.com/FarGroup/FarManager/tree/master/plugins/luamacro/luasdk@] 
 
 
  Важно: #lflua.exe#/#lfjit.exe#, которые выкладывались на форуме, НЕ ПОДОЙДУТ

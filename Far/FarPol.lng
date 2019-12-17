@@ -1,6 +1,6 @@
 ﻿.Language=Polish,Polish (Polski)
 
-//Version: 3.0.0.5518
+//Version: 3.0.0.5528
 
 //[MYes]
 "Tak"
@@ -677,11 +677,11 @@
 //[MLinkType]
 "&Typ linku:"
 //[MLinkTypeJunction]
-"&Link do folderu"
+"Link &do folderu"
 //[MLinkTypeHardlink]
 "Link &trwały"
 //[MLinkTypeSymlink]
-"Link symboliczny"
+"Link &symboliczny"
 //[MLinkTypeSymlinkFile]
 "Link symboliczny (do &pliku)"
 //[MLinkTypeSymlinkDirectory]
@@ -722,11 +722,11 @@
 //[MMoveFiles]
 "Zmień nazwę lub przenieś {0} plik{1} {2}:"
 //[MLinkFiles]
-"Utwórz linki do {0} plik{1} {2}:"
+"&Utwórz linki do {0} plik{1} {2}:"
 //[MCMLTargetTO]
-"d&o"
+"do"
 //[MCMLTargetIN]
-"&w"
+"w"
 //[MCMLItems0]
 ""
 //[MCMLItemsA]
@@ -2866,9 +2866,8 @@
 "Pokaż parametry napędów &CD"
 //[MChangeDriveShowNetworkDrive]
 "Pokaż parametry &dysków sieciowych"
-// need translation:
 //[MChangeDriveShowVirtualDisk]
-"Detect virtual disks"
+"Wykrywaj dyski wrtualne"
 //[MChangeDriveMenuFooter]
 "Del,Shift+Del,F3,F4,F9"
 
@@ -3003,14 +3002,14 @@
 //[MSetAttrSet]
 "Usta&w"
 
-//[MSetAttrDateTitle1]
+//[MSetAttrDateTitleMDY]
 "MM{0}DD{0}RRRRR"
-//[MSetAttrDateTitle2]
+//[MSetAttrDateTitleDMY]
 "DD{0}MM{0}RRRRR"
-//[MSetAttrDateTitle3]
+//[MSetAttrDateTitleYMD]
 "RRRRR{0}MM{0}DD"
 //[MSetAttrTimeTitle]
-"gg{0}mm{0}ss{1}takt"
+"gg{0}mm{0}ss"
 //[MSetAttrSystemDialog]
 "Właściwości systemu"
 
@@ -4849,9 +4848,8 @@
 "&Wirtualny"
 //[MFileFilterAttrIntegrityStream]
 "Strumień integralności"
-// need translation:
 //[MFileFilterAttrNoScrubData]
-"No scrub data"
+"Brak danych kontrolnych"
 //[MFileFilterAttrPinned]
 "Przypięty"
 //[MFileFilterAttrUnpinned]

@@ -1,6 +1,6 @@
 ﻿.Language=Hungarian,Hungarian (Magyar)
 
-//Version: 3.0.0.5518
+//Version: 3.0.0.5528
 
 //[MYes]
 "Igen"
@@ -3240,17 +3240,17 @@
 "Alkalmaz"
 
 // need translation:
-//[MSetAttrDateTitle1]
+//[MSetAttrDateTitleMDY]
 "HH{0}NN{0}ÉÉÉÉÉ"
 // need translation:
-//[MSetAttrDateTitle2]
+//[MSetAttrDateTitleDMY]
 "NN{0}HH{0}ÉÉÉÉÉ"
 // need translation:
-//[MSetAttrDateTitle3]
+//[MSetAttrDateTitleYMD]
 "ÉÉÉÉÉ{0}HH{0}NN"
 // need translation:
 //[MSetAttrTimeTitle]
-"óó{0}pp{0}mm{1}tick"
+"óó{0}pp{0}mm"
 // need translation:
 //[MSetAttrSystemDialog]
 "System properties"

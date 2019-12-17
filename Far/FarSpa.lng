@@ -1,6 +1,6 @@
 ﻿.Language=Spanish,Spanish (Español)
 
-//Version: 3.0.0.5518
+//Version: 3.0.0.5528
 
 //[MYes]
 "Si"
@@ -3015,15 +3015,15 @@
 //[MSetAttrSet]
 "Poner"
 
-//[MSetAttrDateTitle1]
+//[MSetAttrDateTitleMDY]
 "MM{0}DD{0}AAAAA"
-//[MSetAttrDateTitle2]
+//[MSetAttrDateTitleDMY]
 "DD{0}MM{0}AAAAA"
-//[MSetAttrDateTitle3]
+//[MSetAttrDateTitleYMD]
 "AAAAA{0}MM{0}DD"
 // need translation:
 //[MSetAttrTimeTitle]
-"hh{0}mm{0}ss{1}tick"
+"hh{0}mm{0}ss"
 //[MSetAttrSystemDialog]
 "Propiedades del sistema"
 

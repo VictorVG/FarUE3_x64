@@ -1,6 +1,6 @@
 ﻿.Language=German,German (Deutsch)
 
-//Version: 3.0.0.5518
+//Version: 3.0.0.5528
 
 //[MYes]
 "Ja"
@@ -3069,17 +3069,17 @@
 "Setzen"
 
 // need translation:
-//[MSetAttrDateTitle1]
+//[MSetAttrDateTitleMDY]
 "MM{0}TT{0}JJJJJ"
 // need translation:
-//[MSetAttrDateTitle2]
+//[MSetAttrDateTitleDMY]
 "TT{0}MM{0}JJJJJ"
 // need translation:
-//[MSetAttrDateTitle3]
+//[MSetAttrDateTitleYMD]
 "JJJJJ{0}MM{0}TT"
 // need translation:
 //[MSetAttrTimeTitle]
-"hh{0}mm{0}ss{1}tick"
+"hh{0}mm{0}ss"
 //[MSetAttrSystemDialog]
 "Systemeigenschaften"
 

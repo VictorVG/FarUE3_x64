@@ -2,7 +2,7 @@ local Info = Info or package.loaded.regscript or function(...) return ... end --
 local nfo = Info { _filename or ...,
   name        = "Luacheck FAR scripts";
   description = "Using luacheck in FAR editor [tool for linting and static analysis of Lua code]";
-  version     = "1.4.2-far5498.lm712"; --http://semver.org/lang/ru/
+  version     = "1.4.3-far5505.lm712"; --http://semver.org/lang/ru/
   author      = "jd";
   url         = "http://forum.farmanager.com/viewtopic.php?f=15&t=9650";
   id          = "73924F99-3AE6-4B3E-9981-ABC0ECB199EC";
@@ -525,7 +525,7 @@ local function loadLuacheck()
   return true
 end
 
-local function filterWarn(w,rtype)
+local function filterWarn(w)
   local remove --todo
   --[[
   if w.secondary then
@@ -535,13 +535,14 @@ local function filterWarn(w,rtype)
   if (w.no_line or w.no_prev_line) then
     w.checked = "¬"
   end
-  if rtype==1 then --todo cache,init
+  if w.code:sub(1,2)=="11" then --todo cache,init
     assert(w.name)
     local var = _G[w.name]
     if var and w.field then
       for field in w.field:gmatch"[^.]+" do
-        var = var[field]
+        var = type(var)=="table" and var
         if not var then break end
+        var = var[field]
       end
     end
     if var then
@@ -635,15 +636,15 @@ function Check()
         w.report = r
       end
       if isMoon then moon_form(moon_info,w) end
-      local rtype = tonumber(w.code:sub(1,1))
-      err = rtype==0
+      local rtype = w.code:sub(1,1)
+      w.checked = ({['0']="‼",['1']="!"})[rtype]
+      err = rtype=="0"
       w.text =  ("%4u:%-3u "):format(w.line,w.column)..
                 ("│ %s%s │ "):format(err and "E" or "W",w.code)..
                 luacheck.get_message(w)
       local len = w.text:len()
       maxlen = len>maxlen and len or maxlen
-      w.checked = err and "‼" or rtype==1 and "!"
-      if err or filterWarn(w,rtype) then
+      if err or filterWarn(w) then
         --todo select item with position nearest to current editor cursor pos
         if not pos and not w.hidden and
            w.line==ei.CurLine and w.column==ei.CurPos then

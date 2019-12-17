@@ -2,7 +2,7 @@
 local nfo = Info {_filename or ...,
   name          = "Bookmark manager";
   description   = "Менеджер закладок на папки для Fara";
-  version       = "3.0.2"; --http://semver.org/lang/ru/
+  version       = "3.0.3"; --http://semver.org/lang/ru/
   author        = "IgorZ";
   url           = "http://forum.farmanager.com/viewtopic.php?t=8465";
   id            = "F93842EB-FFD3-481A-8AA8-2E7DCEBDF2B1";
@@ -78,20 +78,21 @@ history         = [[
                     Отдельная настройка для показа переменных окружения в меню. Рефакторинг.
 2018/07/27 v3.0.1 - Исправление ошибки с переходом в сетевую папку. Исправление справки. Рефакторинг.
 2018/11/26 v3.0.2 - При вызове скрипта как функции без параметров ошибка не выдаётся. Исправлена ошибка при переходе в плагин.
+2019/12/09 v3.0.3 - Исправлена ошибка при нажатии клавиш в режиме активной фильтрации. Предпочтительное место хранения закладок теперь настраивается.
+                    Доработан вызов action-функций с учётом введённых в build 717 параметров для condition/action. Рефакторинг.
 ]];
+  options       = { DefProfile = far.Flags.PSL_ROAMING--[[far.Flags.PSL_LOCAL--]] } -- место хранения настроек по умолчанию: глобальные/локальные
 }
 if not nfo then return end
 -- +
 --[[константы]]
 -- -
 local F,Author,KeysPart,ConfPart = far.Flags,"IgorZ","BookmarkManagerData","BookmarkManagerConfig"
-local ToCtrl = { -- таблица замены символов на те, которые вводятся с Ctrl
-["~"]="`",["!"]="1",["@"]="2",["#"]="3",["№"]="3",["$"]="4",["%"]="5",["^"]="6",["&"]="7",["*"]="8",["("]="9",
-[")"]="0",["_"]="-",["+"]="=",["{"]="[",["}"]="]",[":"]=";",['"']="'",["<"]=",",[">"]=".",["?"]="/",
-["Ё"]="`",["Й"]="Q",["Ц"]="W",["У"]="E",["К"]="R",["Е"]="T",["Н"]="Y",["Г"]="U",["Ш"]="I",["Щ"]="O",["З"]="P",
-["Х"]="[",["Ъ"]="]",["Ф"]="A",["Ы"]="S",["В"]="D",["А"]="F",["П"]="G",["Р"]="H",["О"]="J",["Л"]="K",["Д"]="L",
-["Ж"]=";",["Э"]="'",["Я"]="Z",["Ч"]="X",["С"]="C",["М"]="V",["И"]="B",["Т"]="N",["Ь"]="M",["Б"]=",",["Ю"]=".",
-[" "]="",["|"]="",["\\"]="",
+local ToCtrl = { [" "]="",["|"]="",["\\"]="", -- таблица замены символов на те, которые вводятся с Ctrl
+  ["~"]="`",["!"]="1",["@"]="2",["#"]="3",["№"]="3",["$"]="4",["%"]="5",["^"]="6",["&"]="7",["*"]="8",["("]="9",[")"]="0",["_"]="-",["+"]="=",
+  ["{"]="[",["}"]="]",[":"]=";",['"']="'",["<"]=",",[">"]=".",["?"]="/",["Ё"]="`",["Й"]="Q",["Ц"]="W",["У"]="E",["К"]="R",["Е"]="T",["Н"]="Y",
+  ["Г"]="U",["Ш"]="I",["Щ"]="O",["З"]="P",["Х"]="[",["Ъ"]="]",["Ф"]="A",["Ы"]="S",["В"]="D",["А"]="F",["П"]="G",["Р"]="H",["О"]="J",["Л"]="K",
+  ["Д"]="L",["Ж"]=";",["Э"]="'",["Я"]="Z",["Ч"]="X",["С"]="C",["М"]="V",["И"]="B",["Т"]="N",["Ь"]="M",["Б"]=",",["Ю"]=".",
 }
 local Guids = {
   LuaMacro = win.Uuid("4EBBEFC8-2084-4B7F-94C0-692CE136894D"); -- guid LuaMacro
@@ -104,12 +105,13 @@ local Guids = {
   diEdit      = win.Uuid("6BDD26FF-1D69-492C-A023-94B9AFF58F0F"),
   Config      = win.Uuid("CF79A927-A0B9-4B13-9DEB-A39E2DAA7CC6"),
 }
-local PathName = debug.getinfo(function()end).source:match("^@?([^@].*)%.lua$") -- путь к модулю
+local PathName = debug.getinfo(function()end).source:match("^@?([^@].*)%.[^%.\\]+$") -- путь и имя без расширения
 local LMBuild = far.GetPluginInformation(far.FindPlugin(F.PFM_GUID,Guids.LuaMacro)).GInfo.Version[4] -- запомним версию LuaMacro
 local PanelColor = far.AdvControl(F.ACTL_GETCOLOR,far.Colors.COL_PANELBOX) -- цвет панели
 local Def = { -- настройки по умолчанию
   UseLocal = 1, -- использовать локальные закладки
   UseGlobal = 1, -- использовать глобальные закладки
+  DefBMProfile = F.PSL_LOCAL, -- место хранения закладок по умолчанию
   UseEnv = 1, -- использовать переменные окружения
   ShowEnv = 1, -- показывать переменные окружения в меню
   ExtMask = 1, -- использовать "слабые совпадения" (дополнять имя папки '*')
@@ -119,10 +121,6 @@ local Def = { -- настройки по умолчанию
   GoToMessDelay = 1000, -- длительность показа сообщения о смене папки
   SaveMessDelay = 500, -- длительность показа сообщения о сохранении закладки
 }
---local DefProfile = F.PSL_LOCAL -- место хранения настроек по умолчанию: локальные
-local DefProfile = F.PSL_ROAMING -- место хранения настроек по умолчанию: глобальные
-local DefBMProfile = F.PSL_LOCAL -- место хранения закладок по умолчанию: локальные
---local DefBMProfile = F.PSL_ROAMING -- место хранения закладок по умолчанию: глобальные
 local OneProfile = win.GetEnv("FARLOCALPROFILE")==win.GetEnv("FARPROFILE") -- локальные и глобальные настройки в одном профиле
 -- +
 --[[переменные]]
@@ -135,34 +133,33 @@ local L,S,InProcess,UsedProfile -- язык, настройки, признак 
 local LoadSettings,SaveSettings,InputSeq,GoToFolder,GiveBack,BM2str,BM2tbl,NiceFolder,ReadBM,WriteBM,DelBM,ShowHelp,ErrMess
 --
 function LoadSettings(ForceDef) --[[загрузить настройки из БД]]
---
-local obj = far.CreateSettings(nil,DefProfile) -- откроем предпочтительные настройки
+UsedProfile = nfo.options.DefProfile -- запомним профиль
+local obj = far.CreateSettings(nil,UsedProfile) -- откроем предпочтительные настройки
 local key = obj:OpenSubkey(obj:OpenSubkey(0,Author) or 0,ConfPart) -- есть раздел?
-UsedProfile = DefProfile -- запомним профиль
 if not key then -- настроек нет?
-  obj:Free() obj = far.CreateSettings(nil,DefProfile==F.PSL_LOCAL and F.PSL_ROAMING or F.PSL_LOCAL) -- откроем другие настройки
+  obj:Free() obj = far.CreateSettings(nil,UsedProfile==F.PSL_LOCAL and F.PSL_ROAMING or F.PSL_LOCAL) -- откроем другие настройки
   key = obj:OpenSubkey(obj:OpenSubkey(0,Author) or 0,ConfPart) -- есть раздел?
-  if key then UsedProfile = DefProfile==F.PSL_LOCAL and F.PSL_ROAMING or F.PSL_LOCAL end -- из другого профиля открылись? запомним профиль
+  if key then UsedProfile = UsedProfile==F.PSL_LOCAL and F.PSL_ROAMING or F.PSL_LOCAL end -- из другого профиля открылись? запомним профиль
 end
 local function L1(n) return not ForceDef and obj:Get(key or -1,n,type(Def[n])=="string" and F.FST_STRING or F.FST_QWORD) or Def[n] end
-S = { UseLocal = L1("UseLocal")~=0 and F.PSL_LOCAL,UseGlobal = L1("UseGlobal")~=0 and F.PSL_ROAMING,UseEnv = L1("UseEnv")~=0,
-      ShowEnv = L1("ShowEnv")~=0,ExtMask = L1("ExtMask")~=0,MenuForOne = L1("MenuForOne")~=0,
+S = { UseLocal = L1("UseLocal")~=0 and F.PSL_LOCAL,UseGlobal = L1("UseGlobal")~=0 and F.PSL_ROAMING,DefBMProfile = L1("DefBMProfile"),
+      UseEnv = L1("UseEnv")~=0,ShowEnv = L1("ShowEnv")~=0,ExtMask = L1("ExtMask")~=0,MenuForOne = L1("MenuForOne")~=0,
       SeqColor = L1("SeqColor"),SeqLine = L1("SeqLine"),GoToMessDelay = L1("GoToMessDelay"),SaveMessDelay = L1("SaveMessDelay")}
 obj:Free() -- приберёмся
 if S.UseLocal and S.UseGlobal and OneProfile then S.UseLocal = nil end
-local FL,dummy = Far.GetConfig("Language.Main"):sub(1,3),function() return {"Cannot find languages files"} end -- язык, пустая функция
-if not L or L.Lang~=FL then L = (loadfile(PathName..FL..".lng") or loadfile(PathName.."Eng.lng") or dummy)(LMBuild) end -- обновим, если язык другой
+local FL,dummy = Far.GetConfig("Language.Main"):sub(1,3),function() return {"Cannot find language files"} end -- язык, пустая функция
+L = L and L.Lang==FL and L or (loadfile(PathName..FL..".lng") or loadfile(PathName.."Eng.lng") or dummy)(LMBuild) -- обновим, если язык другой
+
 end -- LoadSettings
 --
 function SaveSettings() --[[сохранить настройки в БД]]
---
 if UsedProfile==F.PSL_LOCAL then win.CreateDir(win.GetEnv("FARLOCALPROFILE").."\\PluginsData") end -- создадим папку для локальных настроек, если надо
 local obj = far.CreateSettings(nil,UsedProfile) -- откроем ранее прочитанные или предпочтительные настройки
 local key = obj:CreateSubkey(obj:CreateSubkey(0,Author),ConfPart) -- откроем/создадим раздел
-local function S1(n,v) v = (v==nil)and S[n]or v;v = v==true and 1 or v==false and 0 or v;local t = type(v)=="string" and F.FST_STRING or F.FST_QWORD
-                       if obj:Get(key,n,t)~=v then obj:Set(key,n,t,v) end end
-S1("UseLocal",not not S.UseLocal) S1("UseGlobal",not not S.UseGlobal) S1("UseEnv") S1("ShowEnv") S1("ExtMask") S1("MenuForOne")
-S1("SeqColor") S1("SeqLine") S1("GoToMessDelay") S1("SaveMessDelay")
+local function S1(n,v) if v==nil then v=S[n] end; if v==nil then obj:Delete(key,n) else local w,t = v==true and 1 or v or 0,
+                       type(v)=="string" and F.FST_STRING or F.FST_QWORD; if obj:Get(key,n,t)~=w then obj:Set(key,n,t,w) end end end
+S1("UseLocal",not not S.UseLocal) S1("UseGlobal",not not S.UseGlobal) S1("DefBMProfile") S1("UseEnv") S1("ShowEnv")
+S1("ExtMask") S1("MenuForOne") S1("SeqColor") S1("SeqLine") S1("GoToMessDelay") S1("SaveMessDelay")
 obj:Free() -- приберёмся
 end -- SaveSettings
 --
@@ -352,11 +349,11 @@ function ErrMess(msg,ttl) far.Message(msg,ttl or nfo.name,";Ok","wl") end --[[в
 -- +
 --[==[Основные функции]==]
 -- -
-local BMSaveFolder,BMGoToFolder,BMEdit,Config,BMMenu,QSMenu,CLProc
+local BMSave,BMGoTo,BMEdit,Config,BMMenu,QSMenu,CLProc
 -- +
 --[=[Сохранить текущую папку в указанной закладке]=]
 -- -
-function BMSaveFolder(sq,fld,dst)
+function BMSave(sq,fld,dst)
 local seq,mod,folder -- папка, последовательность символов для закладки, нажатые модификаторы, очередная клавиша
 if sq then seq = sq else seq,mod = InputSeq() end -- имя задано? будем использовать его. если не задано - введём
 if fld then -- папка задана?
@@ -370,7 +367,7 @@ else -- если не задана...
     folder[2] = {Panel="<P>",Cmd="",Plugin=PluginByID(t.PluginId),File=t.File,Folder=t.Name,Param=t.Param}
   end
 end
-local dest = dst or (S.UseLocal and S.UseGlobal and DefBMProfile or S.UseLocal or S.UseGlobal) -- профиль
+local dest = dst or (S.UseLocal and S.UseGlobal and S.DefBMProfile or S.UseLocal or S.UseGlobal) -- профиль
 local of = ReadBM(seq,dest) -- старое значение для закладки, если есть
 if of then -- такая закладка уже есть, менять?
   if far.Message(L.ReplaceBM:format(dest==F.PSL_LOCAL and L.BMLocal or L.BMGlobal,seq,NiceFolder(of),NiceFolder(folder)),L.SaveHdr,";YesNo")==1 then
@@ -385,23 +382,23 @@ if not of then -- старой нет, сохраняем
     far.RestoreScreen(h) -- восстановим экран
   end
 end
-end -- BMSaveFolder
+end -- BMSave
 -- +
 --[=[Перейти на закладку]=]
 -- -
-function BMGoToFolder(sq,pref,trail)
+function BMGoTo(sq,pref,trail)
 local seq,folder,fl,fg,fe,err -- последовательность символов для закладки, очередная клавиша, папка, папки, ошибка
 if sq then seq = sq else seq = InputSeq() end -- имя задано? будем использовать его. если не задано - введём
 if S.UseLocal then fl,err = ReadBM(seq,F.PSL_LOCAL) end -- локальная закладка с этим именем
 if S.UseGlobal then fg,err = ReadBM(seq,F.PSL_ROAMING) end -- глобальная закладка с этим именем
 if S.UseEnv then fe = win.GetEnv(seq) fe = fe and {{Panel="",Cmd="",Plugin="",File="",Folder=fe,Param=""}} end -- и переменная окружения
-folder = fl and fg and DefBMProfile==S.UseLocal and fl or fg or fl -- выберем правильный каталог
+folder = fl and fg and S.DefBMProfile==S.UseLocal and fl or fg or fl -- выберем правильный каталог
 folder = folder or fe -- если нет закладки, используем переменную окружения
 if folder then GoToFolder(folder,S.GoToMessDelay,trail) -- есть такая закладка? - перейдём
 elseif seq:match("^%d$") or (not err and not BMMenu(seq,trail)) then -- нет такой закладки и нет подходящих по шаблону
   if pref then ErrMess(L.BadBM:format("",sq),L.Hdr) else GiveBack("RCtrl",seq) end -- выведем сообщение об ошибке или вернём клавиши обратно
 end
-end -- BMGoToFolder
+end -- BMGoTo
 -- +
 --[=[Редактировать закладку в диалоге]=]
 -- -
@@ -458,19 +455,21 @@ function Config()
 local TmpColor,ov = S.SeqColor
 --
 local function cDlgProc (hDlg,Msg,Param1,Param2) -- обработка событий диалога
-if Msg==F.DN_BTNCLICK and Param1==4 then -- переключение работы со скрытыми панелями?
+if Msg==F.DN_HOTKEY and Param1==4 then -- Предпочтительное место хранения закладок?
+  far.SendDlgMessage(hDlg,"DM_SETCHECK",far.SendDlgMessage(hDlg,"DM_GETCHECK",5)==F.BSTATE_CHECKED and 6 or 5,F.BSTATE_CHECKED)
+elseif Msg==F.DN_BTNCLICK and Param1==7 then -- переключение работы со скрытыми панелями?
   hDlg:send(F.DM_SHOWITEM,Param1+1,Param2) -- установим видимость зависимого чекбокса
-elseif Msg==F.DN_BTNCLICK and Param1==8 then -- нажали кнопку выбора цвета подсказки?
+elseif Msg==F.DN_BTNCLICK and Param1==11 then -- нажали кнопку выбора цвета подсказки?
   TmpColor = math.fmod(far.ColorDialog(TmpColor) or TmpColor,0x100) -- выберем новый или сохраним старый
-elseif Msg==F.DN_GOTFOCUS and (Param1==11 or Param1==13 or Param1==15) then -- вошли в di_edit?
+elseif Msg==F.DN_GOTFOCUS and (Param1==14 or Param1==16 or Param1==18) then -- вошли в di_edit?
   ov = far.SendDlgMessage(hDlg,"DM_GETTEXT",Param1) -- запомним старое значение
-elseif Msg==F.DN_KILLFOCUS and (Param1==11 or Param1==13 or Param1==15) then -- покидаем di_edit?
+elseif Msg==F.DN_KILLFOCUS and (Param1==14 or Param1==16 or Param1==18) then -- покидаем di_edit?
   local nv = tonumber(far.SendDlgMessage(hDlg,"DM_GETTEXT",Param1)) -- новое значение
   if not nv then far.SendDlgMessage(hDlg,"DM_SETTEXT",Param1,ov) end -- не число - откатим
-elseif Msg==F.DN_CONTROLINPUT and (Param2.VirtualKeyCode==0x70 and band(Param2.ControlKeyState,0x1f)==0) then -- F1
+elseif (Msg==F.DN_CONTROLINPUT and (Param2.VirtualKeyCode==0x70 and band(Param2.ControlKeyState,0x1f)==0))or(Msg==F.DN_BTNCLICK and Param1==23) then
   ShowHelp("Config")
 elseif Msg==F.DN_CONTROLINPUT and (Param2.VirtualKeyCode==0x0d and band(Param2.ControlKeyState,0x1f)==0x10) then -- ShiftEnter
-  far.SendDlgMessage(hDlg,"DM_CLOSE",18) -- закроем диалог
+  far.SendDlgMessage(hDlg,"DM_CLOSE",21) -- закроем диалог
 elseif Msg==F.DN_CLOSE then
   far.SendDlgMessage(hDlg,"DM_SETFOCUS",2) -- переключимся на чекбокс
 end
@@ -479,35 +478,39 @@ if TmpColor~=0 then far.Text() far.Text(rect.Left+45,rect.Top+8,TmpColor,L.diCon
 end
 --
 local Items = { -- диалог настройки конфигурации
---[[01]] {F.DI_DOUBLEBOX,   3, 1,59,14,0,0,0,0,L.Hdr},
+--[[01]] {F.DI_DOUBLEBOX,   3, 1,74,15,0,0,0,0,L.Hdr},
 --[[02]] OneProfile
      and {F.DI_TEXT,        5, 2, 0, 2,0,0,0,0,""}
       or {F.DI_CHECKBOX,    5, 2, 0, 2,S.UseLocal and 1 or 0,0,0,0,L.diConf.LocalBM},
 --[[03]] {F.DI_CHECKBOX,    5, 3, 0, 3,S.UseGlobal and 1 or 0,0,0,0,OneProfile and L.diConf.AllBM or L.diConf.GlobalBM},
---[[04]] {F.DI_CHECKBOX,    5, 4, 0, 4,S.UseEnv and 1 or 0,0,0,0,L.diConf.EnvBM},
---[[05]] {F.DI_CHECKBOX,    9, 5, 0, 5,S.ShowEnv and 1 or 0,0,0,S.UseEnv and 0 or F.DIF_HIDDEN,L.diConf.ShowEnv},
---[[06]] {F.DI_CHECKBOX,    5, 6, 0, 6,S.ExtMask and 1 or 0,0,0,0,L.diConf.ExtMask},
---[[07]] {F.DI_CHECKBOX,    5, 7, 0, 7,S.MenuForOne and 1 or 0,0,0,0,L.diConf.MenuForOne},
---[[08]] {F.DI_BUTTON,      7, 8, 0, 8,0,0,0,F.DIF_BTNNOCLOSE,L.diConf.SeqColor},
---[[09]] {F.DI_TEXT,       45, 8, 0, 9,0,0,0,0,L.diConf.NoHint},
---[[10]] {F.DI_TEXT,        5, 9, 0, 9,0,0,0,0,L.diConf.SeqLine},
---[[11]] {F.DI_EDIT,       52, 9,57, 9,0,0,0,0,S.SeqLine},
---[[12]] {F.DI_TEXT,        5,10, 0,10,0,0,0,0,L.diConf.GoToDelay},
---[[13]] {F.DI_EDIT,       52,10,57,10,0,0,0,0,S.GoToMessDelay},
---[[14]] {F.DI_TEXT,        5,11, 0,11,0,0,0,0,L.diConf.SaveDelay},
---[[15]] {F.DI_EDIT,       52,11,57,11,0,0,0,0,S.SaveMessDelay},
---[[16]] {F.DI_TEXT,       -1,12, 0,12,0,0,0,F.DIF_SEPARATOR,""},
---[[17]] {F.DI_BUTTON,      0,13, 0,13,0,0,0,F.DIF_DEFAULTBUTTON+F.DIF_CENTERGROUP,L.Save},
---[[18]] {F.DI_BUTTON,      0,13, 0,13,0,0,0,F.DIF_CENTERGROUP,L.NoSave},
---[[19]] {F.DI_BUTTON,      0,13, 0,13,0,0,0,F.DIF_CENTERGROUP,L.Cancel},
+--[[04]] {F.DI_TEXT,        5, 4, 0, 4,0,0,0,0,L.diConf.DefBMProfile},
+--[[05]] {F.DI_RADIOBUTTON,45, 4, 0, 4,S.DefBMProfile==F.PSL_LOCAL and 1 or 0,0,0,0,L.diConf.UseLocal},
+--[[06]] {F.DI_RADIOBUTTON,59, 4, 0, 4,S.DefBMProfile==F.PSL_ROAMING and 1 or 0,0,0,0,L.diConf.UseGlobal},
+--[[07]] {F.DI_CHECKBOX,    5, 5, 0, 4,S.UseEnv and 1 or 0,0,0,0,L.diConf.EnvBM},
+--[[08]] {F.DI_CHECKBOX,    9, 6, 0, 6,S.ShowEnv and 1 or 0,0,0,S.UseEnv and 0 or F.DIF_HIDDEN,L.diConf.ShowEnv},
+--[[09]] {F.DI_CHECKBOX,    5, 7, 0, 7,S.ExtMask and 1 or 0,0,0,0,L.diConf.ExtMask},
+--[[10]] {F.DI_CHECKBOX,    5, 8, 0, 8,S.MenuForOne and 1 or 0,0,0,0,L.diConf.MenuForOne},
+--[[11]] {F.DI_BUTTON,      7, 9, 0, 9,0,0,0,F.DIF_BTNNOCLOSE,L.diConf.SeqColor},
+--[[12]] {F.DI_TEXT,       45,10, 0,10,0,0,0,0,L.diConf.NoHint},
+--[[13]] {F.DI_TEXT,        5,10, 0,10,0,0,0,0,L.diConf.SeqLine},
+--[[14]] {F.DI_EDIT,       52,10,57,10,0,0,0,0,S.SeqLine},
+--[[15]] {F.DI_TEXT,        5,11, 0,11,0,0,0,0,L.diConf.GoToDelay},
+--[[16]] {F.DI_EDIT,       52,11,57,11,0,0,0,0,S.GoToMessDelay},
+--[[17]] {F.DI_TEXT,        5,12, 0,12,0,0,0,0,L.diConf.SaveDelay},
+--[[18]] {F.DI_EDIT,       52,12,57,12,0,0,0,0,S.SaveMessDelay},
+--[[19]] {F.DI_TEXT,       -1,13, 0,13,0,0,0,F.DIF_SEPARATOR,""},
+--[[20]] {F.DI_BUTTON,      0,14, 0,14,0,0,0,F.DIF_DEFAULTBUTTON+F.DIF_CENTERGROUP,L.Save},
+--[[21]] {F.DI_BUTTON,      0,14, 0,14,0,0,0,F.DIF_CENTERGROUP,L.NoSave},
+--[[22]] {F.DI_BUTTON,      0,14, 0,14,0,0,0,F.DIF_CENTERGROUP,L.Cancel},
+--[[23]] {F.DI_BUTTON,      0,14, 0,14,0,0,0,F.DIF_CENTERGROUP+F.DIF_BTNNOCLOSE,L.BHelp},
 }
 -- начало кода функции
-local res = far.Dialog(Guids.Config,-1,-1,63,16,nil,Items,nil,cDlgProc) -- вызовем диалог
-if res~=17 and res~=18 then return end -- не "ОК" - уйдём
-S = { UseLocal = Items[2][6]~=0 and F.PSL_LOCAL,UseGlobal = Items[3][6]~=0 and F.PSL_ROAMING, -- новые значения
-      UseEnv = Items[4][6]~=0,ShowEnv = Items[5][6]~=0,ExtMask = Items[6][6]~=0,MenuForOne = Items[7][6]~=0,
-      SeqColor = TmpColor,SeqLine = tonumber(Items[11][10]),GoToMessDelay = tonumber(Items[13][10]),SaveMessDelay = tonumber(Items[15][10])}
-if res==17 then SaveSettings() end -- сохраним в БД, если надо
+local res = far.Dialog(Guids.Config,-1,-1,78,17,nil,Items,nil,cDlgProc) -- вызовем диалог
+if res~=20 and res~=21 then return end -- не "ОК" - уйдём
+S = { UseLocal = Items[2][6]~=0 and F.PSL_LOCAL,UseGlobal = Items[3][6]~=0 and F.PSL_ROAMING,UseEnv = Items[4][6]~=0, -- новые значения
+      DefBMProfile = Items[6][6]==1 and F.PSL_LOCAL or F.PSL_ROAMING,ShowEnv = Items[8][6]~=0,ExtMask = Items[9][6]~=0,MenuForOne = Items[10][6]~=0,
+      SeqColor = TmpColor,SeqLine = tonumber(Items[14][10]),GoToMessDelay = tonumber(Items[16][10]),SaveMessDelay = tonumber(Items[18][10])}
+if res==20 then SaveSettings() end -- сохраним в БД, если надо
 end -- Config
 --
 if type(nfo)=="table" then nfo.config = Config end
@@ -585,7 +588,7 @@ repeat -- начало главного цикла
     BMEdit(items[pos].bm,items[pos].folder,items[pos].lg,res.BreakKey=="F4") -- отредактируем
   elseif res.BreakKey=="INSERT" or res.BreakKey=="NUMPAD0" then -- добавить новый?
     if S.UseLocal or S.UseGlobal then -- есть куда?
-      BMEdit(nil,{},S.UseLocal==DefBMProfile and S.UseLocal or S.UseGlobal or S.UseLocal) -- добавим
+      BMEdit(nil,{},S.UseLocal==S.DefBMProfile and S.UseLocal or S.UseGlobal or S.UseLocal) -- добавим
     else
       ErrMess(L.NoLG,L.Hdr) -- всё выключено!
     end
@@ -609,7 +612,7 @@ if type(nfo)=="table" then nfo.execute = function() BMMenu() end end
 -- -
 function QSMenu()
 local seq,key = "",(akey(1,1):gsub("^RCtrl","")) -- последовательность символов для закладки,нажатая клавиша
-local bkeys = {Enter=1,F1=1,F4=1,F5=1,F9=1,Ins=1,Num0=1,Del=1,NumDel=1,Esc=0} -- эти клавиши принимает главное меню (кроме Esc)
+local bkeys = {Enter=1,NumEnter=1,CtrlPgDn=1,CtrlNum3=1,ShiftEnter=1,ShiftNumEnter=1,ShiftF4=1,F1=1,F4=1,F5=1,F9=1,Ins=1,Num0=1,Del=1,NumDel=1,Esc=0}
 repeat -- Обработаем очередное нажатие
   if key=="Home" then
     Menu.Select(seq,1,0) -- перейдём на первый подходящий пункт меню
@@ -634,19 +637,19 @@ end -- QSMenu
 -- -
 function CLProc(pref,line)
 LoadSettings()
-local p13,p4,bm,folder,trail = (pref or ""):sub(1,3),(pref or ""):sub(4),(line or ""):match("^(%S*)%s*(.*)$") -- функция, профиль, закладка, папка/и
+local p13,lg,bm,folder,trail = (pref or ""):sub(1,3),(pref or ""):sub(4),(line or ""):match("^(%S*)%s*(.*)$") -- функция, профиль, закладка, папка/и
 if pref=="bm" then bm,trail = (line or ""):match("^([^\\]*)(.-)$") end -- для перехода формат и содержание строки другие
-local lg = p4=="l" and F.PSL_LOCAL or p4=="g" and F.PSL_ROAMING or S.UseLocal and S.UseGlobal and DefBMProfile or S.UseLocal or S.UseGlobal -- профиль
+lg = lg=="l" and F.PSL_LOCAL or lg=="g" and F.PSL_ROAMING or S.UseLocal and S.UseGlobal and S.DefBMProfile or S.UseLocal or S.UseGlobal -- профиль
 if not lg and p13~="bm" then return end -- если профиль не задан явно, все закладки отключены, и это не переход, выйдем
 bm = bm:upper():gsub(".",ToCtrl) -- преобразуем закладку к виду, вводимому с Ctrl
 if p13=="bm" then -- переход?
-  BMGoToFolder(bm,pref,trail) -- перейдём
+  BMGoTo(bm,pref,trail) -- перейдём
 elseif p13=="bma" then -- добавление?
   if folder=="" then -- папка не указана?
     ErrMess((L.BadBM1..L.BadBMValue):format(lg==F.PSL_LOCAL and L.BMLocal or L.BMGlobal,bm),L.Hdr) -- выведем сообщение об ошибке
   else
     local tfolder = BM2tbl(folder,bm,lg) -- преобразуем в таблицу и получим список некорректных элементов
-    if #tfolder>0 then BMSaveFolder(bm,tfolder,lg) -- добавим (если есть что)
+    if #tfolder>0 then BMSave(bm,tfolder,lg) -- добавим (если есть что)
     else ErrMess((L.BadBM1..L.BadBMZFmt):format(lg==F.PSL_LOCAL and L.BMLocal or L.BMGlobal,bm),L.Hdr) end
   end
 elseif p13=="bme" then -- изменение?
@@ -663,17 +666,17 @@ if Macro then
 -- -
   Macro{
     area="Shell"; key="/RCtrl(Shift|RAlt)[^\\/]/"; description=L.SaveDesc; [(LMBuild<579 and "u" or "").."id"]=Guids.SaveMacro;
-    condition = function() LoadSettings() return not InProcess and (S.UseLocal or S.UseGlobal) and 55 end; action=BMSaveFolder;
+    condition = function() LoadSettings() return not InProcess and (S.UseLocal or S.UseGlobal) and 55 end; action=function() BMSave() end;
   }
   --
   Macro{
     area="Shell"; key="/RCtrl[^\\/]/"; description=L.GoToDesc; [(LMBuild<579 and "u" or "").."id"]=Guids.GoToMacro;
-    condition = function() LoadSettings() return not InProcess and (S.UseLocal or S.UseGlobal or S.UseEnv) and 55 end; action=BMGoToFolder;
+    condition = function() LoadSettings() return not InProcess and (S.UseLocal or S.UseGlobal or S.UseEnv) and 55 end; action=function() BMGoTo() end;
   }
   --
   Macro{
     area="Shell"; key="RCtrl/"; description=L.MenuDesc; [(LMBuild<579 and "u" or "").."id"]=Guids.MenuMacro;
-    condition = function() return not InProcess end; action=BMMenu;
+    condition = function() return not InProcess end; action=function() BMMenu() end;
   }
   Macro{
     area="Menu"; key="/(RCtrl)?[^\\/]/"; description=L.QSMenuDesc; [(LMBuild<579 and "u" or "").."id"]=Guids.QSMenuMacro;

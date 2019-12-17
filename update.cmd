@@ -8,7 +8,7 @@ cd /d "%~dp0Far" > nul
 far -clearcache
 if exist "plugins\dnd\drgndrop_x86*.hook" (del /f/q "plugins\dnd\drgndrop_x86*.hook" > nul)
 if exist "plugins\dnd\holder_x86*.dnd"  (del /f/q "plugins\dnd\holder_x86*.dnd" > nul)
-if exist "plugins\farhints\Plugins\Folders" (rd /s/q "plugins\farhints\Plugins\Folders" > nul)
+if exist "plugins\farhints" (rd /s/q "plugins\farhints" > nul)
 if exist "plugins\multiarc\Formats\targz.fmt" (del /f/q "plugins\multiarc\Formats\targz.fmt" > nul)
 if exist "plugins\sqlitedb" (rd /s/q "plugins\sqlitedb" > nul)
 if exist "Profile\Macros\modules\c0BOM.lua" (del /f/q "Profile\Macros\modules\c0BOM.lua" > nul)
@@ -24,14 +24,16 @@ if exist "Profile\Macros\modules\luacheck\lua_fs.lua" (del /f/q "Profile\Macros\
 if exist "Profile\Macros\modules\luacheck\ngx_standard.lua" (del /f/q "Profile\Macros\modules\luacheck\ngx_standard.lua" > nul)
 if exist "Profile\Macros\modules\luacheck\reachability.lua" (del /f/q "Profile\Macros\modules\luacheck\reachability.lua" > nul)
 if exist "Profile\Macros\modules\luacheck\whitespace.lua" (del /f/q "Profile\Macros\modules\luacheck\whitespace.lua" > nul)
-if exist "Profile\Macros\modules\rebind.lua" (del /f/q "Profile\Macros\modules\rebind.lua" > nul)
 if exist "Profile\Macros\modules\LuaManager.lua" (del /f/q "Profile\Macros\modules\LuaManager.lua" > nul)
+if exist "Profile\Macros\modules\rebind.lua" (del /f/q "Profile\Macros\modules\rebind.lua" > nul)
 if exist "Profile\Macros\scripts\bindings" (del /f/q "Profile\Macros\scripts\bindings" > nul)
 if exist "Profile\Macros\scripts\Dialog_ToEditor.lua" (del /f/q "Profile\Macros\scripts\Dialog_ToEditor.lua" > nul)
 if exist "Profile\Macros\scripts\Editor_IntegrateMacro.lua" (del /f/q "Profile\Macros\scripts\Editor_IntegrateMacro.lua" > nul)
 if exist "Profile\Macros\scripts\Editor_LuaMacroComplit.lua" (del /f/q "Profile\Macros\scripts\Editor_LuaMacroComplit.lua" > nul)
+if exist "Profile\Macros\scripts\Plugin_FarHint.lua" (del /f/q "Profile\Macros\Plugin_FarHint.lua" > nul)
 if exist "Profile\Macros\scripts\Shell_DeepTarball.lua" (del /f/q "Profile\Macros\scripts\Shell_DeepTarball.lua" > nul)
 if exist "Profile\Macros\scripts\Shell_DelTmp.lua" (del /f/q "Profile\Macros\scripts\Shell_DelTmp.lua" > nul)
+if exist "Profile\PluginsData\CDF48DA0-0334-4169-8453-69048DD3B51C.db" (del /f/q "Profile\PluginsData\CDF48DA0-0334-4169-8453-69048DD3B51C.db" > nul)
 if exist "Profile\PluginsData\FC97A376-00D9-4DE4-B2E1-BFDC3A8D8B0B.db" (del /f/q "Profile\PluginsData\FC97A376-00D9-4DE4-B2E1-BFDC3A8D8B0B.db" > nul)
 far -import default.farconfig
 rem The next string used only if needed fix some Far or plug-in's settings, is another not used and always mast be comment!

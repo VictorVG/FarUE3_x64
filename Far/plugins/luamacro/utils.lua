@@ -340,14 +340,14 @@ local ExpandKey do -- измеренное время исполнения на ключе "CtrlAltShiftF12" = ?
 end
 
 local function AddRegularMacro (srctable, FileName)
-  local macro = {}
-  if type(srctable)=="table" and type(srctable.area)=="string" then
-    macro.area = srctable.area
-    macro.key = type(srctable.key)=="string" and srctable.key or "none"
-    if not macro.key:find("%S") then macro.key = "none" end
-  else
+  if not (type(srctable)=="table" and type(srctable.area)=="string") then
     return
   end
+
+  local macro = {}
+  macro.area = srctable.area
+  macro.key = type(srctable.key)=="string" and srctable.key or "none"
+  if not macro.key:find("%S") then macro.key = "none" end
 
   local keyregex, ok = macro.key:match("^/(.+)/$"), nil
   if keyregex then
@@ -430,6 +430,8 @@ local function AddRegularMacro (srctable, FileName)
       macro.language = srctable.language
     end
 
+    macro.data = {}
+    for k,v in pairs(srctable) do macro.data[k]=v; end
     macro.index = #LoadedMacros+1
     LoadedMacros[macro.index] = macro
     return macro
@@ -1054,7 +1056,7 @@ local function GetMacro (argMode, argKey, argUseCommon, argCheckOnly)
   local nummacros = 0
   for m,p in pairs(Collector) do
     if m.condition then
-      local pr = m.condition(argKey) -- unprotected call
+      local pr = m.condition(argKey, m.data) -- unprotected call
       if pr then
         if type(pr)=="number" then
           CInfo[p] = pr>100 and 100 or pr<0 and 0 or pr
@@ -1188,7 +1190,7 @@ local function RunStartMacro()
         if not m.disabled and m.flags and band(m.flags,0x8)~=0 and not m.autostartdone then
           m.autostartdone=true
           if MacroCallFar(MCODE_F_CHECKALL, mode, m.flags) then
-            if not m.condition or m.condition() then
+            if not m.condition or m.condition(nil, m.data) then
               Shared.keymacro.PostNewMacro(m, m.flags, nil, true)
             end
           end
