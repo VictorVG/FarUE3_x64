@@ -2,7 +2,7 @@
 .PluginContents=NTFS File Information
 
 @Contents
-$^#NTFS File Information 5.5.6#
+$^#NTFS File Information 5.5.8#
 
 This plugin provides various information about files on NTFS file system. Features:
 
@@ -32,7 +32,7 @@ This plugin provides various information about files on NTFS file system. Featur
 8. Compress files using NTFS compression.
 
 @metadata
-$^#NTFS File Information 5.5.6#
+$^#NTFS File Information 5.5.8#
 $ #File information#
     Displays NTFS file attribute (file component) table.
 
@@ -61,7 +61,7 @@ Summary is shown for directories and multiple files:
     #Non-Resident Total# - non-resident attributes totals.
 
 @file_panel_mode
-$^#NTFS File Information 5.5.6#
+$^#NTFS File Information 5.5.8#
 $ #File panel mode#
 ~Customizing file panel view modes~@:PanelViewModes@
 
@@ -86,7 +86,7 @@ into USN journal thus cache can contain incorrect information after using such u
     #Cache directory# - directory to store cache files in. Environment variables are expanded.
 
 @plugin_menu
-$^#NTFS File Information 5.5.6#
+$^#NTFS File Information 5.5.8#
 $ #Plugin menu#
 
     #Flat mode# - enables simultaneous display of all files found in current directory and its subdirectories.
@@ -94,7 +94,7 @@ $ #Plugin menu#
 from MFT instead of using traditional directory listing methods.
 
 @compress_files
-$^#NTFS File Information 5.5.6#
+$^#NTFS File Information 5.5.8#
 $ #Compress files#
 
 Compress files using NTFS compression. Files are selected using specified criteria:
