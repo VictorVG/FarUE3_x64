@@ -3,6 +3,130 @@ This file is a translation of the main russian changelog and is provided by volu
 It might not always be as up to date as the main changelog.
 =======================================================================================
 
+drkns 11.03.2020 18:14:35 +0000 - build 5570
+
+1. A bit of magic to make the wow64 hook work in VS2019.
+
+2. Refactoring.
+
+zg 10.03.2020 00:35:41 +0200 - build 5569
+
+1. crash in SettingsControl if the setting name is nullptr.
+
+drkns 07.03.2020 22:21:15 +0000 - build 5568
+
+1. Refactoring.
+
+2. More tests.
+
+3. Continuation of 5567.
+
+MZK 07.03.2020 12:45:31 -0800
+
+1. Revised @System.CopySecurityOptions help page, both English and Russian.
+
+drkns 07.03.2020 18:03:21 +0000 - build 5567
+
+1. Forum: opening large files in editor is too slow after 5527.
+
+drkns 02.03.2020 22:55:22 +0000 - build 5566
+
+1. Correction of 5564.
+
+drkns 02.03.2020 19:36:15 +0000 - build 5565
+
+1. gh-221: Help for MkTemp is out of date or something is broken
+
+drkns 01.03.2020 21:34:45 +0000 - build 5564
+
+1. Refactoring.
+
+drkns 24.02.2020 20:56:50 +0000 - build 5563
+
+1. Refactoring.
+
+2. Clang warnings.
+
+zg 24.02.2020 14:44:36 +0200 - build 5562
+
+1. correction of 5561.
+
+zg 18.02.2020 19:59:14 +0200 - build 5561
+
+1. crash in FCTL_GETUSERSCREEN.
+
+drkns 17.02.2020 18:09:59 +0000 - build 5560
+
+1. Forum: User Menu and panels flickering.
+
+drkns 17.02.2020 01:36:09 +0000 - build 5559
+
+1. Correction of 5558.4.
+
+drkns 15.02.2020 20:30:40 +0000 - build 5558
+
+1. Remove thread priority overriding.
+
+2. Remove XLat tables from the code, there's default.farconfig for that.
+
+3. Buffer overflow on pasting into an edit field win an input mask.
+
+4. Other refactoring.
+
+drkns 09.02.2020 10:28:30 +0000 - build 5557
+
+1. Apply 5556.1 to plugin panels as well (#0003675).
+
+drkns 09.02.2020 00:11:22 +0000 - build 5556
+
+1. Correction of 5514 - already filtered out extensions were unavailable in autofilters.
+
+2. Corrections of disks and filters menu rendering for some corner cases.
+
+drkns 07.02.2020 21:55:55 +0000 - build 5555
+
+1. New versions of fmt and Catch2.
+
+drkns 07.02.2020 21:43:51 +0000 - build 5554
+
+1. Refactoring.
+
+2. More tests.
+
+3. Potential leaks in RestoreScreen & FreeScreen.
+
+4. Please note that any new fields in API structures should be added at the end only.
+
+shmuel 07.02.2020 21:48:51 +0200 - build 5553
+
+1. Function FreeScreen added to the plugins API.
+
+drkns 02.02.2020 23:59:59 +0000 - build 5552
+
+1. Refactoring.
+
+zg 03.02.2020 00:46:01 +0200 - build 5551
+
+1. correction of 5542.
+
+svs 29.01.2020 12:51:16 +0300 - build 5550
+
+1. SQLite 3.31.1
+
+drkns 25.01.2020 22:32:20 +0000 - build 5549
+
+1. Possible rubbish in time field when creating a new filter.
+
+2. A few minor changes.
+
+svs 23.01.2020 16:42:03 +0300 - build 5548
+
+1. SQLite 3.31.0
+
+zg 21.01.2020 23:24:24 +0200 - build 5547
+
+1. correction of 5542.
+
 drkns 18.01.2020 00:59:59 +0000 - build 5546
 
 1. Refactoring.

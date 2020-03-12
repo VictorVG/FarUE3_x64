@@ -10,6 +10,12 @@ Planned:
 	+ Command to "lock" read-only file before replacing
 	+ Search / Replace in dialogs
 
+Version 8.70 (26.02.2020)
+    ! Only Far3 continues to be supported
+    * Editor Repeat replaces selection
+    * Added named parameters for file last write time
+    * Fixed crash on exit form newer versions of Far3
+
 Version 8.67 (04.11.2016)
 	- Fixed case sensitivity of Select Files operation
 	- Fixed some mask handling errors

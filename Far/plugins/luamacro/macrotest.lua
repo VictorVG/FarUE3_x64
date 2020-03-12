@@ -919,7 +919,6 @@ local function test_Far_GetConfig()
     "System.CopyTimeRule", "integer",
     "System.CopySecurityOptions", "integer",
     "System.DeleteToRecycleBin", "boolean",
-    "System.DelThreadPriority", "integer",
     "System.DriveDisconnectMode", "boolean",
     "System.DriveMenuMode", "integer",
     "System.ElevationMode", "integer",
@@ -1629,10 +1628,19 @@ local function test_clipboard()
 end
 
 local function test_far_FarClock()
+  -- check time difference
   local temp = far.FarClock()
-  mf.sleep(50)
-  temp = far.FarClock() - temp
-  assert(temp > 40000 and temp < 70000)
+  win.Sleep(500)
+  temp = (far.FarClock() - temp) / 1000
+  assert(temp > 480 and temp < 550, temp)
+  -- check granularity
+  local OK = false
+  temp = far.FarClock() % 10
+  for k=1,10 do
+    win.Sleep(20)
+    if temp ~= far.FarClock() % 10 then OK=true; break; end
+  end
+  assert(OK)
 end
 
 local function test_FarStandardFunctions()

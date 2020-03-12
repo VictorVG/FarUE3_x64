@@ -1,4 +1,65 @@
-﻿shmuel 20.01.2020 18:03:08 +0200 - build 724
+shmuel 04.03.2020 16:14:42 +0200 - build 736
+
+1. LuaFAR: win.CreateDir() preserves trailing spaces.
+
+shmuel 03.03.2020 13:29:18 +0200 - build 735
+
+1. LuaFAR: fix win.XX functions dependent on FileTimeResolution broken since build 704
+   (they were broken only when luafar3.dll was used outside Far Manager).
+
+shmuel 02.03.2020 19:10:27 +0200 - build 734
+
+1. LuaFAR: added function far.GetLuafarVersion.
+   luafar3.dll and luamacro.dll will share the same version within any given Far Manager build.
+
+shmuel 01.03.2020 22:01:50 +0200 - build 733
+
+1. LuaFAR: more 730.1 (win.FileTimeToSystemTime).
+
+shmuel 17.02.2020 08:06:24 +0200 - build 732
+
+1. LuaFAR: allow 64-bit range for floating point arguments where 64-bit integers expected
+           (was: 53 bits allowed).
+
+2. LuaFAR (generic plugin): fix a nasty pointer arithmetics bug in SetStartupInfoW().
+
+shmuel 15.02.2020 19:31:22 +0200 - build 731
+
+1. Fix build 730.1.
+
+shmuel 15.02.2020 18:50:58 +0200 - build 730
+
+LuaFAR:
+
+1. bit64-library functions (and some other functions, e.g. win.SetFileTimes)
+   accept string parameters if they are convertible to 64-bit integers.
+
+2. Added 'tonumber' method to bit64-userdata.
+
+3. A fix in win.FileTimeToLocalFileTime function.
+
+shmuel 15.02.2020 08:50:10 +0200 - build 729
+
+1. LuaFAR: added functions win.GetFileTimes and win.SetFileTimes.
+
+shmuel 08.02.2020 18:14:28 +0200 - build 728
+
+1. LuaFAR: fix far.Message() - when the 3-rd argument was ";Yes;No"
+           the function immediately returned 1 with no dialog shown.
+
+shmuel 07.02.2020 21:52:13 +0200 - build 727
+
+1. LuaFAR: add function far.FreeScreen.
+
+shmuel 02.02.2020 21:14:03 +0200 - build 726
+
+1. Macro Browser: Ctrl+R reloads macrofiles and updates the browser menu.
+
+shmuel 26.01.2020 20:48:33 +0200 - build 725
+
+1. LuaFAR: extend struct LuafarAPI with 3 bit64_XX() functions.
+
+shmuel 20.01.2020 18:03:08 +0200 - build 724
 
 1. LuaFAR: refactoring.
 

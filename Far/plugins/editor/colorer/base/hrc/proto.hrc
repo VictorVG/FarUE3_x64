@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding='Windows-1251'?>
+<?xml version="1.0" encoding='UTF-8'?>
 <!DOCTYPE hrc PUBLIC
   "-//Cail Lomecb//DTD Colorer HRC take5//EN"
   "http://colorer.sf.net/2003/hrc.dtd"
@@ -354,7 +354,7 @@
   </prototype>
   <prototype name="svg" group="inet" description="SVG 1.0" targetNamespace="http://www.w3.org/2000/svg">
     <location link="jar:common.jar!inet/gen/svg.hrc"/>
-    <filename>/\.svg/ix</filename>
+    <filename>/\.svg$/ix</filename>
   </prototype>
   <prototype name="coldfusion" group="inet" description="ColdFusion">
     <location link="jar:common.jar!inet/coldfusion.hrc"/>

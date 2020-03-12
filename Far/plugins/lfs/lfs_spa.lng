@@ -167,6 +167,8 @@
 "Borrar este preajuste?"
 "Renombrar Preajuste"
 "Un preajuste con el nombre destinado ya existe y será reemplazado.\nQuiere sobrescribirlo?"
+// need translation:
+"The current preset has been saved"
 "Reemplazado Multi-línea"
 "Modo &Multi-línea"
 "Reemplazar"

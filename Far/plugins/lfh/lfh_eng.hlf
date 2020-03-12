@@ -3,7 +3,7 @@
 .Options CtrlColorChar=\
 
 @Contents
-$ #LuaFAR History (version 3.10.5) - Help Contents -#
+$ #LuaFAR History (version 3.10.8) - Help Contents -#
  #LuaFAR History# is a plugin for displaying histories of commands,
 folders, and viewed/edited files.
 
@@ -39,6 +39,7 @@ title. There are 4 switchable filtering methods available:
    #Alt-F8#             Switch to Commands history.
    #Alt-F11#            Switch to View/Edit history.
    #Alt-F12#            Switch to Folders history.
+   #Ins#                Check the item (it protects from deleting by Ctrl-Del or Ctrl-F8)
 
  \3BCommands history\-
    #Enter#              Execute.

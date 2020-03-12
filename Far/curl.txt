@@ -95,6 +95,7 @@ Usage: curl [options...] <url>
      --mail-auth <address> Originator address of the original email
      --mail-from <address> Mail from this address
      --mail-rcpt <address> Mail to this address
+     --mail-rcpt-allowfails Allow RCPT TO command to fail for some recipients
  -M, --manual        Display the full manual
      --max-filesize <bytes> Maximum file size to download
      --max-redirs <num> Maximum number of redirects allowed
