@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<farconfig version="3.0.5512">
+<farconfig version="3.0.5570">
 	<generalconfig>
 		<setting key="Cmdline" name="AutoComplete" type="qword" value="0000000000000001"/>
 		<setting key="Cmdline" name="DelRemovesBlocks" type="qword" value="0000000000000001"/>
@@ -122,7 +122,7 @@
 		<setting key="Layout" name="FullscreenHelp" type="qword" value="0000000000000000"/>
 		<setting key="Layout" name="LeftHeightDecrement" type="qword" value="0000000000000000"/>
 		<setting key="Layout" name="RightHeightDecrement" type="qword" value="0000000000000000"/>
-		<setting key="Layout" name="WidthDecrement" type="qword" value="0000000000000000"/>
+		<setting key="Layout" name="WidthDecrement" type="qword" value="0000000000000003"/>
 		<setting key="Macros" name="CONVFMT" type="text" value="%.6g"/>
 		<setting key="Macros" name="DateFormat" type="text" value="%a %b %d %H:%M:%S %z %Y"/>
 		<setting key="Macros" name="KeyRecordCtrlDot" type="text" value="Ctrl."/>
@@ -1455,7 +1455,7 @@
 					<value name="FilesMask" type="text" value="*.*"/>
 					<value name="FullPath" type="qword" value="0000000000000002"/>
 					<value name="ScanFolders" type="qword" value="0000000000000000"/>
-					<value name="ScanMode" type="qword" value="0000000000000001"/>
+					<value name="ScanMode" type="qword" value="0000000000000000"/>
 					<value name="ScanSymlink" type="qword" value="0000000000000001"/>
 					<value name="WarnGetInfo" type="qword" value="0000000000000001"/>
 				</key>
@@ -1580,6 +1580,20 @@
 				</key>
 			</hierarchicalconfig>
 		</plugin>
+		<plugin guid="23C16506-38EE-48D1-9874-CD1736408867">
+			<hierarchicalconfig>
+				<key name="23C16506-38EE-48D1-9874-CD1736408867" description="LUA Format Block">
+					<key name="lfblock.data">
+						<value name="align" type="qword" value="0000000000000001"/>
+						<value name="first" type="qword" value="0000000000000004"/>
+						<value name="insertline" type="qword" value="0000000000000001"/>
+						<value name="left" type="qword" value="0000000000000001"/>
+						<value name="paragraph" type="qword" value="0000000000000003"/>
+						<value name="right" type="qword" value="000000000000004E"/>
+					</key>
+				</key>
+			</hierarchicalconfig>
+		</plugin>
 		<plugin guid="257CF2CF-5025-4442-8FAC-239F56C21FC0">
 			<hierarchicalconfig>
 				<key name="257CF2CF-5025-4442-8FAC-239F56C21FC0" description="RegEditor">
@@ -1663,6 +1677,7 @@
 							<value name="IgnoreCancelBeforeFinish" type="hex" value="DF,BC,9A,78,56,34,02,3F"/>
 							<value name="KeepUpToDateChangeDelay" type="qword" value="00000000000001F4"/>
 							<value name="MaxWatchDirectories" type="qword" value="00000000000001F4"/>
+							<value name="ParallelDurationThreshold" type="qword" value="000000000000000A"/>
 							<value name="PuttyPassword" type="qword" value="0000000000000000"/>
 							<value name="PuttyPath" type="text" value="%25PROGRAMFILES%25%5CPuTTY%5Cputty.exe"/>
 							<value name="PuttyRegistryStorageKey" type="text" value="Software%5CSimonTatham%5CPuTTY"/>
@@ -1714,6 +1729,7 @@
 									<value name="Queue" type="qword" value="0000000000000000"/>
 									<value name="QueueIndividually" type="qword" value="0000000000000000"/>
 									<value name="QueueNoConfirmation" type="qword" value="0000000000000001"/>
+									<value name="QueueQueueParallel" type="qword" value="0000000000000000"/>
 									<value name="RemoveBOM" type="qword" value="0000000000000000"/>
 									<value name="RemoveCtrlZ" type="qword" value="0000000000000000"/>
 									<value name="ReplaceInvalidChars" type="qword" value="0000000000000001"/>
@@ -1725,8 +1741,8 @@
 								<key name="Far">
 									<value name="ApplyCommandCommand" type="text" value=""/>
 									<value name="ApplyCommandParams" type="qword" value="0000000000000000"/>
-									<value name="ColumnTypesDetailed" type="text" value="N,S,DM,O,G,R"/>
-									<value name="ColumnWidthsDetailed" type="text" value="0,8,14,0,0,9"/>
+									<value name="ColumnTypesDetailed" type="text" value="N,S,DM,O,G,R,L"/>
+									<value name="ColumnWidthsDetailed" type="text" value="0,8,14,0,0,9,0"/>
 									<value name="CommandPrefixes" type="text" value="netbox,ftp,scp,sftp,ftps,http,https,webdav"/>
 									<value name="ConfirmOverwritingOverride" type="qword" value="0000000000000000"/>
 									<value name="ConfirmSynchronizedBrowsing" type="qword" value="0000000000000001"/>
@@ -1739,8 +1755,10 @@
 									<value name="EditorUploadSameOptions" type="qword" value="0000000000000001"/>
 									<value name="FullScreenDetailed" type="qword" value="0000000000000001"/>
 									<value name="HostNameInTitle" type="qword" value="0000000000000001"/>
+									<value name="PageantPath" type="text" value="G:%5Cdev%5Cfar3%5C26%5CFar%5Cplugins%5Cnetbox%5Cputty%5Cpageant.exe"/>
 									<value name="PluginsMenu" type="qword" value="0000000000000001"/>
 									<value name="PluginsMenuCommands" type="qword" value="0000000000000001"/>
+									<value name="PuttygenPath" type="text" value="G:%5Cdev%5Cfar3%5C26%5CFar%5Cplugins%5Cnetbox%5Cputty%5Cputtygen.exe"/>
 									<value name="QueueBeep" type="qword" value="0000000000000001"/>
 									<value name="SessionNameInTitle" type="qword" value="0000000000000001"/>
 									<value name="StatusColumnTypesDetailed" type="text" value="NR"/>
@@ -1759,6 +1777,8 @@
 							<value name="PermanentActionsLogFileName" type="text" value="%25TEMP%25%5C&amp;S.xml"/>
 							<value name="PermanentLogActions" type="qword" value="0000000000000000"/>
 							<value name="PermanentLogFileName" type="text" value="%25TEMP%25%5C&amp;S.log"/>
+							<value name="PermanentLogMaxCount" type="qword" value="0000000000000000"/>
+							<value name="PermanentLogMaxSize" type="qword" value="0000000000000000"/>
 							<value name="PermanentLogProtocol" type="qword" value="0000000000000000"/>
 							<value name="PermanentLogSensitive" type="qword" value="0000000000000000"/>
 							<value name="PermanentLogging" type="qword" value="0000000000000000"/>
@@ -1768,7 +1788,7 @@
 					<key name="Sessions">
 						<key name="Default%20Settings">
 							<value name="FSProtocol" type="text" value="SFTP%20(SCP)"/>
-							<value name="Version" type="text" value="2.4.4"/>
+							<value name="Version" type="text" value="2.4.5"/>
 						</key>
 						<key name="FreeBSD%20(FTP)">
 							<value name="CodePage" type="text" value=""/>
@@ -1821,8 +1841,7 @@
 							<value name="UserName" type="text" value="Anonymous"/>
 							<value name="Version" type="text" value="2.4.5"/>
 						</key>
-					</key>
-				</key>
+					</key></key>
 			</hierarchicalconfig>
 		</plugin>
 		<plugin guid="4EBBEFC8-2084-4B7F-94C0-692CE136894D">
@@ -1839,8 +1858,6 @@
 							<value name="UseEnv" type="qword" value="0000000000000001"/>
 							<value name="UseGlobal" type="qword" value="0000000000000001"/>
 							<value name="UseLocal" type="qword" value="0000000000000000"/>
-						</key>
-						<key name="BookmarkManagerData">
 						</key>
 						<key name="CASArrowsDiskSwitch">
 							<value name="ExcludeDrives" type="text" value=""/>
@@ -1903,7 +1920,6 @@
 						</key>
 					</key>
 					<key name="LuaMacro">
-						<value name="MacroBrowser" type="hex"/>
 					</key>
 				</key>
 			</hierarchicalconfig>
@@ -1977,10 +1993,6 @@
 			</hierarchicalconfig>
 		</plugin>
 		<plugin guid="6F332978-08B8-4919-847A-EFBB6154C99A">
-			<hierarchicalconfig>
-				<key name="6F332978-08B8-4919-847A-EFBB6154C99A" description="LuaFAR for Editor">
-				</key>
-			</hierarchicalconfig>
 		</plugin>
 		<plugin guid="742910F1-02ED-4542-851F-DEE37C2E13B2">
 			<hierarchicalconfig>
@@ -2264,11 +2276,7 @@
 		</plugin>
 		<plugin guid="A745761D-42B5-4E67-83DA-F07AF367AE86">
 			<hierarchicalconfig>
-				<key name="A745761D-42B5-4E67-83DA-F07AF367AE86" description="LuaFAR History">
-					<value name="commands" type="hex"/>
-					<value name="config" type="hex"/>
-					<value name="view" type="hex"/>
-				</key>
+				<key name="A745761D-42B5-4E67-83DA-F07AF367AE86" description="LuaFAR History"/>
 			</hierarchicalconfig>
 		</plugin>
 		<plugin guid="A74EC909-41F1-409B-9C4C-CA389BB93F45">
@@ -2366,7 +2374,7 @@
 						<key name="{1D1BA1CB-3A05-4F4B-91B3-F8E71A55420E}">
 							<value name="Hidden" type="qword" value="0000000000000000"/>
 							<value name="Hotkey" type="text" value="s"/>
-							<value name="LastAccess" type="qword" value="000000004F6D1CBD"/>
+							<value name="LastAccess" type="qword" value="0000000050699643"/>
 							<value name="NewName" type="text" value=""/>
 						</key>
 						<key name="{2099F3F1-A147-4D0F-BB82-60E472513BC0}">
@@ -2378,7 +2386,7 @@
 						<key name="{23C16506-38EE-48D1-9874-CD1736408867}">
 							<value name="Hidden" type="qword" value="0000000000000000"/>
 							<value name="Hotkey" type="text" value=""/>
-							<value name="LastAccess" type="qword" value="0000000048B313AD"/>
+							<value name="LastAccess" type="qword" value="00000000506C5E4D"/>
 							<value name="NewName" type="text" value=""/>
 						</key>
 						<key name="{256C8EBC-F874-4905-AA51-EFDA1BB62800}">
@@ -2438,7 +2446,7 @@
 						<key name="{4EBBEFC8-2084-4B7F-94C0-692CE136894D}">
 							<value name="Hidden" type="qword" value="0000000000000000"/>
 							<value name="Hotkey" type="text" value=""/>
-							<value name="LastAccess" type="qword" value="000000004ED97B58"/>
+							<value name="LastAccess" type="qword" value="0000000050689F47"/>
 							<value name="NewName" type="text" value=""/>
 						</key>
 						<key name="{4EBBEFC8-2084-4B7F-94C0-692CE136894D}%1">
@@ -2456,7 +2464,7 @@
 						<key name="{4EBBEFC8-2084-4B7F-94C0-692CE136894D}%3">
 							<value name="Hidden" type="qword" value="0000000000000000"/>
 							<value name="Hotkey" type="text" value=""/>
-							<value name="LastAccess" type="qword" value="000000004F3235BA"/>
+							<value name="LastAccess" type="qword" value="00000000506A2190"/>
 							<value name="NewName" type="text" value=""/>
 						</key>
 						<key name="{4EBBEFC8-2084-4B7F-94C0-692CE136894D}%4">
@@ -2474,7 +2482,13 @@
 						<key name="{4EBBEFC8-2084-4B7F-94C0-692CE136894D}%6">
 							<value name="Hidden" type="qword" value="0000000000000000"/>
 							<value name="Hotkey" type="text" value=""/>
-							<value name="LastAccess" type="qword" value="000000004E8BB028"/>
+							<value name="LastAccess" type="qword" value="000000005068AF6E"/>
+							<value name="NewName" type="text" value=""/>
+						</key>
+						<key name="{4EBBEFC8-2084-4B7F-94C0-692CE136894D}%7">
+							<value name="Hidden" type="qword" value="0000000000000000"/>
+							<value name="Hotkey" type="text" value=""/>
+							<value name="LastAccess" type="qword" value="000000005068AF67"/>
 							<value name="NewName" type="text" value=""/>
 						</key>
 						<key name="{4F6BDE22-3F56-496B-B1DD-7991199D2043}">
@@ -2691,7 +2705,7 @@
 						<key name="{AE501DD6-AD57-4A26-A5DF-39ACC3A9DB99}">
 							<value name="Hidden" type="qword" value="0000000000000000"/>
 							<value name="Hotkey" type="text" value="/"/>
-							<value name="LastAccess" type="qword" value="000000004F669E02"/>
+							<value name="LastAccess" type="qword" value="000000005069974B"/>
 							<value name="NewName" type="text" value=""/>
 						</key>
 						<key name="{AF4DAB38-C00A-4653-900E-7A8230308010}">
@@ -2892,7 +2906,7 @@
 						<key name="{F6E77027-05BA-4ECF-A8D3-7D57B2D80C53}">
 							<value name="Hidden" type="qword" value="0000000000000000"/>
 							<value name="Hotkey" type="text" value="2"/>
-							<value name="LastAccess" type="qword" value="000000004F721E73"/>
+							<value name="LastAccess" type="qword" value="00000000506C5E41"/>
 							<value name="NewName" type="text" value=""/>
 						</key>
 						<key name="{F9AF80C3-54AC-4924-B607-FE05A3866A88}">
@@ -3036,26 +3050,6 @@
 				</key>
 			</hierarchicalconfig>
 		</plugin>
-		<plugin guid="CDF48DA0-0334-4169-8453-69048DD3B51C">
-			<hierarchicalconfig>
-				<key name="CDF48DA0-0334-4169-8453-69048DD3B51C" description="FarHints">
-					<value name="AutoKey" type="qword" value="0000000000000000"/>
-					<value name="AutoMouse" type="qword" value="0000000000000000"/>
-					<value name="FarHintsInDialog" type="qword" value="0000000000000001"/>
-					<value name="HintInPanel" type="qword" value="0000000000000001"/>
-					<value name="IconOnThumbnail" type="qword" value="0000000000000001"/>
-					<value name="MaxFolderThumbnailSize" type="qword" value="0000000000000100"/>
-					<value name="MaxThumbnailSize" type="qword" value="0000000000000080"/>
-					<value name="ShowIcon" type="qword" value="0000000000000001"/>
-					<value name="UseThumbnail" type="qword" value="0000000000000001"/>
-					<key name="Plugins">
-						<key name="Image">
-							<value name="MaxSize" type="qword" value="0000000000000080"/>
-						</key>
-					</key>
-				</key>
-			</hierarchicalconfig>
-		</plugin>
 		<plugin guid="D0704272-AEFA-40DF-9141-DFCB4C9E6125">
 			<hierarchicalconfig>
 				<key name="D0704272-AEFA-40DF-9141-DFCB4C9E6125" description="ImpEx">
@@ -3102,148 +3096,148 @@
 				</key>
 			</hierarchicalconfig>
 		</plugin>
-	<plugin guid="D82D6847-0C7B-4BF4-9A31-B0B929707854">
-		<hierarchicalconfig>
-			<key name="D82D6847-0C7B-4BF4-9A31-B0B929707854" description="MBlockEditor">
-				<value name="CommentFromBegin" type="text" value="off"/>
-				<key name=".bat">
-					<value name="Comment" type="text" value="rem "/>
-					<value name="CommentFromBegin" type="text" value="on"/>
-					<value name="CommentSkipMenu" type="text" value="on"/>
-				</key>
-				<key name=".btm">
-					<value name="Comment" type="text" value="rem "/>
-					<value name="CommentFromBegin" type="text" value="on"/>
-					<value name="CommentSkipMenu" type="text" value="on"/>
-				</key>
-				<key name=".cmd">
-					<value name="Comment" type="text" value="rem "/>
-					<value name="CommentFromBegin" type="text" value="on"/>
-					<value name="CommentSkipMenu" type="text" value="on"/>
-				</key>
-				<key name=".cpp">
-					<value name="Comment" type="text" value="// "/>
-					<value name="CommentBegin" type="text" value="/* "/>
-					<value name="CommentEnd" type="text" value=" */"/>
+		<plugin guid="D82D6847-0C7B-4BF4-9A31-B0B929707854">
+			<hierarchicalconfig>
+				<key name="D82D6847-0C7B-4BF4-9A31-B0B929707854" description="MBlockEditor">
 					<value name="CommentFromBegin" type="text" value="off"/>
+					<key name=".bat">
+						<value name="Comment" type="text" value="rem "/>
+						<value name="CommentFromBegin" type="text" value="on"/>
+						<value name="CommentSkipMenu" type="text" value="on"/>
+					</key>
+					<key name=".btm">
+						<value name="Comment" type="text" value="rem "/>
+						<value name="CommentFromBegin" type="text" value="on"/>
+						<value name="CommentSkipMenu" type="text" value="on"/>
+					</key>
+					<key name=".cmd">
+						<value name="Comment" type="text" value="rem "/>
+						<value name="CommentFromBegin" type="text" value="on"/>
+						<value name="CommentSkipMenu" type="text" value="on"/>
+					</key>
+					<key name=".cpp">
+						<value name="Comment" type="text" value="// "/>
+						<value name="CommentBegin" type="text" value="/* "/>
+						<value name="CommentEnd" type="text" value=" */"/>
+						<value name="CommentFromBegin" type="text" value="off"/>
+					</key>
+					<key name=".def">
+						<value name="Comment" type="text" value="; "/>
+						<value name="CommentFromBegin" type="text" value="off"/>
+						<value name="CommentSkipMenu" type="text" value="on"/>
+					</key>
+					<key name=".farconfig">
+						<value name="Comment" type="text" value=""/>
+						<value name="CommentBegin" type="text" value="&lt;!-- "/>
+						<value name="CommentEnd" type="text" value=" --&gt;"/>
+					</key>
+					<key name=".htm">
+						<value name="Comment" type="text" value=""/>
+						<value name="CommentBegin" type="text" value="&lt;!-- "/>
+						<value name="CommentEnd" type="text" value=" --&gt;"/>
+						<value name="CommentFromBegin" type="text" value="off"/>
+						<value name="CommentSkipMenu" type="text" value="off"/>
+					</key>
+					<key name=".html">
+						<value name="Comment" type="text" value=""/>
+						<value name="CommentBegin" type="text" value="&lt;!-- "/>
+						<value name="CommentEnd" type="text" value=" --&gt;"/>
+						<value name="CommentFromBegin" type="text" value="off"/>
+						<value name="CommentSkipMenu" type="text" value="off"/>
+					</key>
+					<key name=".ini">
+						<value name="Comment" type="text" value="; "/>
+						<value name="CommentFromBegin" type="text" value="on"/>
+						<value name="CommentSkipMenu" type="text" value="on"/>
+					</key>
+					<key name=".iss">
+						<value name="Comment" type="text" value="; "/>
+						<value name="CommentFromBegin" type="text" value="on"/>
+						<value name="CommentSkipMenu" type="text" value="on"/>
+					</key>
+					<key name=".lua">
+						<value name="Comment" type="text" value="-- "/>
+						<value name="CommentBegin" type="text" value="--[[ "/>
+						<value name="CommentEnd" type="text" value="--]] "/>
+						<value name="CommentFromBegin" type="text" value="off"/>
+						<value name="CommentSkipMenu" type="text" value="off"/>
+					</key>
+					<key name=".nsh">
+						<value name="Comment" type="text" value="; "/>
+						<value name="CommentBegin" type="text" value="/* "/>
+						<value name="CommentEnd" type="text" value=" */"/>
+						<value name="CommentFromBegin" type="text" value="off"/>
+						<value name="CommentSkipMenu" type="text" value="off"/>
+					</key>
+					<key name=".nsi">
+						<value name="Comment" type="text" value="; "/>
+						<value name="CommentBegin" type="text" value="/* "/>
+						<value name="CommentEnd" type="text" value=" */"/>
+						<value name="CommentFromBegin" type="text" value="off"/>
+						<value name="CommentSkipMenu" type="text" value="off"/>
+					</key>
+					<key name=".php">
+						<value name="Comment" type="text" value="//# "/>
+						<value name="CommentBegin" type="text" value="/* &lt;!-- "/>
+						<value name="CommentEnd" type="text" value=" */ --&gt;"/>
+						<value name="CommentSkipMenu" type="text" value="off"/>
+					</key>
+					<key name=".ps1">
+						<value name="Comment" type="text" value="# "/>
+						<value name="CommentBegin" type="text" value="&lt;#"/>
+						<value name="CommentEnd" type="text" value="#&gt;"/>
+						<value name="CommentFromBegin" type="text" value="off"/>
+						<value name="CommentSkipMenu" type="text" value="off"/>
+					</key>
+					<key name=".reg">
+						<value name="Comment" type="text" value="; "/>
+						<value name="CommentFromBegin" type="text" value="on"/>
+						<value name="CommentSkipMenu" type="text" value="on"/>
+					</key>
+					<key name=".sh">
+						<value name="Comment" type="text" value="#"/>
+						<value name="CommentFromBegin" type="text" value="on"/>
+						<value name="CommentSkipMenu" type="text" value="on"/>
+					</key>
+					<key name=".shtml">
+						<value name="Comment" type="text" value=""/>
+						<value name="CommentBegin" type="text" value="&lt;!-- "/>
+						<value name="CommentEnd" type="text" value=" --&gt;"/>
+						<value name="CommentFromBegin" type="text" value="off"/>
+						<value name="CommentSkipMenu" type="text" value="off"/>
+					</key>
+					<key name=".sql">
+						<value name="Comment" type="text" value="-- "/>
+						<value name="CommentBegin" type="text" value="/* "/>
+						<value name="CommentEnd" type="text" value=" */"/>
+						<value name="CommentFromBegin" type="text" value="on"/>
+					</key>
+					<key name=".txt">
+						<value name="Comment" type="text" value="&gt;&gt; "/>
+						<value name="CommentFromBegin" type="text" value="off"/>
+						<value name="CommentSkipMenu" type="text" value="off"/>
+					</key>
+					<key name=".wxi">
+						<value name="Comment" type="text" value=""/>
+						<value name="CommentBegin" type="text" value="&lt;!-- "/>
+						<value name="CommentEnd" type="text" value=" --&gt;"/>
+					</key>
+					<key name=".wxs">
+						<value name="Comment" type="text" value=""/>
+						<value name="CommentBegin" type="text" value="&lt;!-- "/>
+						<value name="CommentEnd" type="text" value=" --&gt;"/>
+					</key>
+					<key name=".xml">
+						<value name="Comment" type="text" value=""/>
+						<value name="CommentBegin" type="text" value="&lt;!-- "/>
+						<value name="CommentEnd" type="text" value=" --&gt;"/>
+						<value name="CommentFromBegin" type="text" value="off"/>
+						<value name="CommentSkipMenu" type="text" value="off"/>
+					</key>
 				</key>
-				<key name=".def">
-					<value name="Comment" type="text" value="; "/>
-					<value name="CommentFromBegin" type="text" value="off"/>
-					<value name="CommentSkipMenu" type="text" value="on"/>
-				</key>
-				<key name=".farconfig">
-					<value name="Comment" type="text" value=""/>
-					<value name="CommentBegin" type="text" value="&lt;!-- "/>
-					<value name="CommentEnd" type="text" value=" --&gt;"/>
-				</key>
-				<key name=".htm">
-					<value name="Comment" type="text" value=""/>
-					<value name="CommentBegin" type="text" value="&lt;!-- "/>
-					<value name="CommentEnd" type="text" value=" --&gt;"/>
-					<value name="CommentFromBegin" type="text" value="off"/>
-					<value name="CommentSkipMenu" type="text" value="off"/>
-				</key>
-				<key name=".html">
-					<value name="Comment" type="text" value=""/>
-					<value name="CommentBegin" type="text" value="&lt;!-- "/>
-					<value name="CommentEnd" type="text" value=" --&gt;"/>
-					<value name="CommentFromBegin" type="text" value="off"/>
-					<value name="CommentSkipMenu" type="text" value="off"/>
-				</key>
-				<key name=".ini">
-					<value name="Comment" type="text" value="; "/>
-					<value name="CommentFromBegin" type="text" value="on"/>
-					<value name="CommentSkipMenu" type="text" value="on"/>
-				</key>
-				<key name=".iss">
-					<value name="Comment" type="text" value="; "/>
-					<value name="CommentFromBegin" type="text" value="on"/>
-					<value name="CommentSkipMenu" type="text" value="on"/>
-				</key>
-				<key name=".lua">
-					<value name="Comment" type="text" value="-- "/>
-					<value name="CommentBegin" type="text" value="--[[ "/>
-					<value name="CommentEnd" type="text" value="--]] "/>
-					<value name="CommentFromBegin" type="text" value="off"/>
-					<value name="CommentSkipMenu" type="text" value="off"/>
-				</key>
-				<key name=".nsh">
-					<value name="Comment" type="text" value="; "/>
-					<value name="CommentBegin" type="text" value="/* "/>
-					<value name="CommentEnd" type="text" value=" */"/>
-					<value name="CommentFromBegin" type="text" value="off"/>
-					<value name="CommentSkipMenu" type="text" value="off"/>
-				</key>
-				<key name=".nsi">
-					<value name="Comment" type="text" value="; "/>
-					<value name="CommentBegin" type="text" value="/* "/>
-					<value name="CommentEnd" type="text" value=" */"/>
-					<value name="CommentFromBegin" type="text" value="off"/>
-					<value name="CommentSkipMenu" type="text" value="off"/>
-				</key>
-				<key name=".php">
-					<value name="Comment" type="text" value="//# "/>
-					<value name="CommentBegin" type="text" value="/* &lt;!-- "/>
-					<value name="CommentEnd" type="text" value=" */ --&gt;"/>
-					<value name="CommentSkipMenu" type="text" value="off"/>
-				</key>
-				<key name=".ps1">
-					<value name="Comment" type="text" value="# "/>
-					<value name="CommentBegin" type="text" value="&lt;#"/>
-					<value name="CommentEnd" type="text" value="#&gt;"/>
-					<value name="CommentFromBegin" type="text" value="off"/>
-					<value name="CommentSkipMenu" type="text" value="off"/>
-				</key>
-				<key name=".reg">
-					<value name="Comment" type="text" value="; "/>
-					<value name="CommentFromBegin" type="text" value="on"/>
-					<value name="CommentSkipMenu" type="text" value="on"/>
-				</key>
-				<key name=".sh">
-					<value name="Comment" type="text" value="#"/>
-					<value name="CommentFromBegin" type="text" value="on"/>
-					<value name="CommentSkipMenu" type="text" value="on"/>
-				</key>
-				<key name=".shtml">
-					<value name="Comment" type="text" value=""/>
-					<value name="CommentBegin" type="text" value="&lt;!-- "/>
-					<value name="CommentEnd" type="text" value=" --&gt;"/>
-					<value name="CommentFromBegin" type="text" value="off"/>
-					<value name="CommentSkipMenu" type="text" value="off"/>
-				</key>
-				<key name=".sql">
-					<value name="Comment" type="text" value="-- "/>
-					<value name="CommentBegin" type="text" value="/* "/>
-					<value name="CommentEnd" type="text" value=" */"/>
-					<value name="CommentFromBegin" type="text" value="on"/>
-				</key>
-				<key name=".txt">
-					<value name="Comment" type="text" value="&gt;&gt; "/>
-					<value name="CommentFromBegin" type="text" value="off"/>
-					<value name="CommentSkipMenu" type="text" value="off"/>
-				</key>
-				<key name=".wxi">
-					<value name="Comment" type="text" value=""/>
-					<value name="CommentBegin" type="text" value="&lt;!-- "/>
-					<value name="CommentEnd" type="text" value=" --&gt;"/>
-				</key>
-				<key name=".wxs">
-					<value name="Comment" type="text" value=""/>
-					<value name="CommentBegin" type="text" value="&lt;!-- "/>
-					<value name="CommentEnd" type="text" value=" --&gt;"/>
-				</key>
-				<key name=".xml">
-					<value name="Comment" type="text" value=""/>
-					<value name="CommentBegin" type="text" value="&lt;!-- "/>
-					<value name="CommentEnd" type="text" value=" --&gt;"/>
-					<value name="CommentFromBegin" type="text" value="off"/>
-					<value name="CommentSkipMenu" type="text" value="off"/>
-				</key>
-			 </key>
-		  </hierarchicalconfig>
-	   </plugin>
-       	<plugin guid="D888455B-4E68-43F8-8D54-9A96913974B2">
+			</hierarchicalconfig>
+		</plugin>
+		<plugin guid="D888455B-4E68-43F8-8D54-9A96913974B2">
 			<hierarchicalconfig>
 				<key name="D888455B-4E68-43F8-8D54-9A96913974B2" description="NT Events">
 					<value name="AddToDisksMenu" type="qword" value="0000000000000001"/>
