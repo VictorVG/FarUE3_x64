@@ -1,6 +1,6 @@
 ﻿-- Visual Compare files or folders for panels: Files, Branch, Temporary, Arclite, Netbox, Observer, TorrentView.
 -- v.1.8
--- http://forum.ru-board.com/topic.cgi?forum=5&topic=49572&start=2080#6 [?]
+-- https://forum.ru-board.com/topic.cgi?forum=5&topic=49572&start=2080#6
 
 local ffi = require("ffi")
 
@@ -117,7 +117,7 @@ action = function()
     if crash_protect(AP) and crash_protect(PP)
     then
       local APlen = AP:len()-PP:len()
-      far.Message("Crash protect: prevent compare of zero size files!\n\n1st: "..PP..(APlen>0 and string.rep(" ",APlen) or "").."\n2nd: "..AP..(APlen<0 and string.rep(" ",-APlen) or ""),VC)
+      far.Message("Crash protect!\n\n1st: "..PP..(APlen>0 and string.rep(" ",APlen) or "").."\n2nd: "..AP..(APlen<0 and string.rep(" ",-APlen) or ""),VC)
     else
       if APanel.Left
       then Plugin.Command(VisComp,'"'..AP..'" "'..PP..'"')
