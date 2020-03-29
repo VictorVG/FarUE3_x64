@@ -1,3 +1,7 @@
+TorrentInfo 3.9.2 29-03-2020
+----------------------------
+ + ≈сли текст не UTF-8, используем кодировку из настроек "def_cp" (умолчание=CP_ACP, в интерфейсе нет)
+
 TorrentInfo 3.9.1 27-09-2019
 ----------------------------
  * Magnet link generation patch -- https://sourceforge.net/p/farplugs/tickets/139/
