@@ -64,5 +64,5 @@ SimSU.Shell_Description=Shell_Description; _G.SimSU=SimSU
 
 Macro {id="d05bd0dc-b0ef-47a1-86d3-b7a995f3f21e";
   area="Shell"; key=S.Key; priority=S.Prior; sortpriority=S.Sort; description=M.Descr; flags="NoPluginPanels";
-  action=SimSU.Shell_Description;
+  action=function() return Shell_Description() end;
 }

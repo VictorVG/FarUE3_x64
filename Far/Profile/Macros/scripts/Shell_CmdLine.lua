@@ -101,17 +101,17 @@ SimSU.Shell_CmdLine=Shell_CmdLine; _G.SimSU=SimSU
 
 Macro {id="a36290a5-3f43-4e4f-831e-b8ed917dc295";
   area="Shell Info QView Tree"; key=S.KeyHome;      priority=S.PriorHome;      sortpriority=S.SortHome;      description=M.DescrHome;      flags="NotEmptyCommandLine";
-  action=Home;
+  action=function() return Home() end;
 }
 Macro {id="50ef7206-187e-47ec-93bb-c34ef8fe617c";
   area="Shell Info QView Tree"; key=S.KeyEnd;       priority=S.PriorEnd;       sortpriority=S.SortEnd;       description=M.DescrEnd;       flags="NotEmptyCommandLine";
-  action=End;
+  action=function() return End() end;
 }
 Macro {id="0a75f866-4c10-463d-8ff4-4d158a55b4cc";
   area="Shell Info QView Tree"; key=S.KeyShiftHome; priority=S.PriorShiftHome; sortpriority=S.SortShiftHome; description=M.DescrShiftHome; flags="NotEmptyCommandLine";
-  action=ShiftHome;
+  action=function() return ShiftHome() end;
 }
 Macro {id="04cce125-359f-4ebc-87f5-c6ca204124d7";
   area="Shell Info QView Tree"; key=S.KeyShiftEnd;  priority=S.PriorShiftEnd;  sortpriority=S.SortShiftEnd;  description=M.DescrShiftEnd;  flags="NotEmptyCommandLine";
-  action=ShiftEnd;
+  action=function() return ShiftEnd() end;
 }

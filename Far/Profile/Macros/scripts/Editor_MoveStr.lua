@@ -1,4 +1,4 @@
-﻿-------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
 -- Перемещение строк в редакторе. © SimSU
 -------------------------------------------------------------------------------
 
@@ -106,10 +106,10 @@ SimSU.Editor_MoveStr=Editor_MoveStr; _G.SimSU=SimSU
 
 Macro {id="eecbc57b-b419-428b-956a-73890374ab13";
   area="Editor"; key=S.KeyDown; priority=S.PriorDown; sortpriority=S.SortDown; description=M.DescrDown;
-  action=Down;
+  action=function() return Down() end;
 }
 
 Macro {id="22a066e5-1f2f-4248-b4fc-15b2c4f35405";
   area="Editor"; key=S.KeyUp;   priority=S.PriorUp;   sortpriority=S.SortUp;   description=M.DescrUp;
-  action=Up;
+  action=function() return Up() end;
 }

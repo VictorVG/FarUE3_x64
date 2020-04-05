@@ -73,5 +73,5 @@ SimSU.Editor_SmartDel=Editor_SmartDel; _G.SimSU=SimSU
 Macro {id="030c1eb2-ce0d-47e3-b470-0f8f65d55c9b";
   area="Editor"; key=S.Key; priority=S.Prior; sortpriority=S.Sort; description=M.Descr;
   condition=function() return Editor.Sel(0,4)==0 and Editor.RealPos>mf.trim(Editor.Value,2):len() end;
-  action=Editor_SmartDel;
+  action=function() return Editor_SmartDel() end;
 }

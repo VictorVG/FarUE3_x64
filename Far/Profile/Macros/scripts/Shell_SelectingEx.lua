@@ -1,5 +1,6 @@
-﻿-------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
 -- Расширенная работа с пометкой файлов. © SimSU
+-- + правки © BAX
 -------------------------------------------------------------------------------
 
 ---- Настройки
@@ -59,6 +60,7 @@ return{
   mAddAll  = "&! Пометить все";
   mUnAll   = "&% Снять пометку со всех";
   mInvert  = "&* Инвертировать";
+  mDay     = "&D Отметить файлы за день";
   mMove    = "Позиционироваться на";
   mFirst   = "&F Первый";
   mPrev    = "&P Предыдущий";
@@ -78,6 +80,7 @@ return{
   DescrPrev   = "Переход на предыдущий помеченный файл. © SimSU";
   DescrNext   = "Переход на следующий помеченный файл. © SimSU";
   DescrLast   = "Переход на последний помеченный файл. © SimSU";
+  DescrDay    = "Пометка файлов с днём записи равным дню записи файла под курсором. © SimSU";
 
   mTitle   = "Operations on selection";
   mToEdit  = "&E Bring selection to editor";
@@ -96,6 +99,7 @@ return{
   mAddAll  = "&! Select all";
   mUnAll   = "&% Unselect all";
   mInvert  = "&* Reverse selection";
+  mDay     = "&D Select files for a day";
   mMove    = "Position to";
   mFirst   = "&F First";
   mPrev    = "&P Previous";
@@ -140,7 +144,8 @@ local function ClipboardMark(Mark)
     local FilePath=mf.fsplit(FullFileName,0x1+0x2):gsub("\\$","")
     local Name=mf.fsplit(FullFileName,0x4+0x8)
     if FilePath=="" or FilePath==PanelPath then
-      Panel.Select(0,Mark,2,Name)
+      --Panel.Select(0,Mark,2,Name)
+      Panel.Select(0,Mark,3,Name)
     end
   end
   return true
@@ -205,82 +210,43 @@ local function GoLast()
 end
 
 local function Select()
-  local item={}
+  -- + идеи BAX, 23.02.2019
+  local mi={ -- far.Menu
+    {text=M.mToEdit ; AccelKey=(S.KeyToEdit or "");  Action=ToEditor                          };
+    {text=M.mClip   ;                    separator=true                                       };
+    {text=M.mCopy   ; AccelKey="CtrlShiftIns"                                                 };
+    {text=M.mMark   ; AccelKey=(S.KeyMark   or "");  Action=function() return ClipboardMark(true )end};
+    {text=M.mRemMark; AccelKey=(S.KeyUnMark or "");  Action=function() return ClipboardMark(false)end};
+    {text=M.mPanels ;                    separator=true                                       };
+    {text=M.mSync   ; AccelKey=(S.KeySync   or "");  Action=Synchronize                       };
+    {text=M.mAddName; AccelKey="AltAdd"                                                       };
+    {text=M.mAddExt ; AccelKey="CtrlAdd"                                                      };
+    {text=M.mUnName ; AccelKey="AltSubtract"                                                  };
+    {text=M.mUnExt  ; AccelKey="CtrlSubtract"                                                 };
+    {text=M.mAddMark; AccelKey="Add"                                                          };
+    {text=M.mUnMark ; AccelKey="Subtract"                                                     };
+    {text=M.mAddAll ; AccelKey="ShiftAdd"                                                     };
+    {text=M.mUnAll  ; AccelKey="ShiftSubtract"                                                };
+    {text=M.mInvert ; AccelKey="Multiply"                                                     };
+    {text=M.mDay    ; AccelKey=(S.KeyDay    or "");  Action=DayMark                           };
+    {text=M.mMove   ;                    separator=true                                       };
+    {text=M.mFirst  ; AccelKey=(S.KeyFirst  or "");  Action=GoFirst                           };
+    {text=M.mPrev   ; AccelKey=(S.KeyPrev   or "");  Action=GoPrevious                        };
+    {text=M.mNext   ; AccelKey=(S.KeyNext   or "");  Action=GoNext                            };
+    {text=M.mLast   ; AccelKey=(S.KeyLast   or "");  Action=GoLast                            };
+  }
   local len = 0
-  item[01]=M.mToEdit
-  item[02]="\1 "..M.mClip
-  item[03]=M.mCopy
-  item[04]=M.mMark
-  item[05]=M.mRemMark
-  item[06]="\1 "..M.mPanels
-  item[07]=M.mSync
-  item[08]=M.mAddName
-  item[09]=M.mAddExt
-  item[10]=M.mUnName
-  item[11]=M.mUnExt
-  item[12]=M.mAddMark
-  item[13]=M.mUnMark
-  item[14]=M.mAddAll
-  item[15]=M.mUnAll
-  item[16]=M.mInvert
-  item[17]="\1 "..M.mMove
-  item[18]=M.mFirst
-  item[19]=M.mPrev
-  item[20]=M.mNext
-  item[21]=M.mLast
-  for i=1,#item do
-    len= item[i]:len()>len and item[i]:find("\1",1,true)~=1 and item[i]:len() or len
+  for i,v in ipairs(mi) do len = (v.separator~=true) and (len < v.text:len()) and   v.text:len() or len end
+  len = len + 2
+  for i,v in ipairs(mi) do
+    v.text = (v.separator~=true) and   ((v.text .. (' '):rep(len)):sub(1,len) .. v.AccelKey) or v.text
+    v.selected = (i==LastItem)
   end
-  len=len+2
-  for i=1,#item do
-    item[i]= item[i]:find("\1",1,true)~=1 and item[i]..(' '):rep(len-item[i]:len()) or item[i]
+  local it, pos = far.Menu({Title=M.mTitle}, mi)
+  if it then
+    LastItem=pos
+    return it.Action and it.Action() or Keys(it.AccelKey)
   end
-  item[01]=item[01]..(S.KeyToEdit or "")
-  --
-  item[03]=item[03].."CtrlShiftIns"
-  item[04]=item[04]..(S.KeyMark   or "")
-  item[05]=item[05]..(S.KeyUnMark or "")
-  --
-  item[ 7]=item[07]..(S.KeySync   or "")
-  item[ 8]=item[08].."AltAdd"
-  item[09]=item[09].."CtrlAdd"
-  item[10]=item[10].."AltSubtract"
-  item[11]=item[11].."CtrlSubtract"
-  item[12]=item[12].."Add"
-  item[13]=item[13].."Subtract"
-  item[14]=item[14].."ShiftAdd"
-  item[15]=item[15].."ShiftSubtract"
-  item[16]=item[16].."Multiply"
-  --
-  item[18]=item[18]..(S.KeyFirst  or "")
-  item[19]=item[19]..(S.KeyPrev   or "")
-  item[20]=item[20]..(S.KeyNext   or "")
-  item[21]=item[21]..(S.KeyLast   or "")
-
-  LastItem=Menu.Show(table.concat(item,"\n"),M.mTitle,0x8,LastItem)
-
-  return
-  LastItem==01 and ToEditor()                                   or
-  --                                                            or
-  LastItem==03 and Keys("CtrlShiftIns")                         or
-  LastItem==04 and ClipboardMark(true)                          or
-  LastItem==05 and ClipboardMark(false)                         or
-  --                                                            or
-  LastItem==07 and Synchronize()                                or
-  LastItem==08 and Keys("AltAdd")                               or
-  LastItem==09 and Keys("CtrlAdd")                              or
-  LastItem==10 and Keys("AltSubtract")                          or
-  LastItem==11 and Keys("CtrlSubtract")                         or
-  LastItem==12 and Keys("Add")                                  or
-  LastItem==13 and Keys("Subtract")                             or
-  LastItem==14 and Keys("ShiftAdd")                             or
-  LastItem==15 and Keys("ShiftSubtract")                        or
-  LastItem==16 and Keys("Multiply")                             or
-  --                                                            or
-  LastItem==18 and GoFirst()                                    or
-  LastItem==19 and GoPrevious()                                 or
-  LastItem==20 and GoNext()                                     or
-  LastItem==21 and GoLast()
 end
 
 -------------------------------------------------------------------------------
@@ -304,50 +270,50 @@ SimSU.Shell_SelectingEx=Shell_SelectingEx; _G.SimSU=SimSU
 
 Macro {id="7ff37302-a606-4a17-972d-b51c006c4da7";
   area="Shell"; key=S.Key;       priority=S.Prior;       sortpriority=S.Sort;       description=M.Descr;
-  action=Select;
+  action=function() return Select() end;
 }
 Macro {id="5fb1e2d0-87fc-4eda-a398-28e20a3eaf2f";
   area="Shell"; key=S.KeyToEdit; priority=S.PriorToEdit; sortpriority=S.SortToEdit; description=M.DescrToEdit;
   condition = function() return APanel.Visible and APanel.FilePanel end;
-  action=ToEditor;
+  action=function() return ToEditor() end;
 }
 Macro {id="6c556f56-da67-4a52-a490-90430947d7c2";
   area="Shell"; key=S.KeyMark;   priority=S.PriorMark;   sortpriority=S.SortMark;   description=M.DescrMark;
   condition = function() return APanel.Visible and APanel.FilePanel end;
-  action=function() ClipboardMark(true) end;
+  action=function() return ClipboardMark(true) end;
 }
 Macro {id="db6e5645-0053-4598-94d7-cf6bb133c20f";
   area="Shell"; key=S.KeyUnMark; priority=S.PriorUnMark; sortpriority=S.SortUnMark; description=M.DescrUnMark;
   condition = function() return APanel.Visible and APanel.FilePanel end;
-  action=function() ClipboardMark(false) end;
+  action=function() return ClipboardMark(false) end;
 }
 Macro {id="512a4220-7018-4d02-9ca7-833c01269575";
   area="Shell"; key=S.KeySync;   priority=S.PriorSync;   sortpriority=S.SortSync;   description=M.DescrSync;
   condition = function() return APanel.Visible and APanel.FilePanel and PPanel.Visible and PPanel.FilePanel end;
-  action=Synchronize;
+  action=function() return Synchronize() end;
 }
 Macro {id="bf643ce8-5cec-41b9-803b-e794a0a3e97b";
   area="Shell"; key=S.KeyFirst;  priority=S.PriorFirst;  sortpriority=S.SortFirst;  description=M.DescrFirst; flags="Selection";
   condition = function() return APanel.Visible and APanel.FilePanel end;
-  action=GoFirst;
+  action=function() return GoFirst() end;
 }
 Macro {id="a67c3e04-7061-4f6c-a525-bbde0ad7fe0d";
   area="Shell"; key=S.KeyPrev;   priority=S.PriorPrev;   sortpriority=S.SortPrev;   description=M.DescrPrev; flags="Selection";
   condition = function() return APanel.Visible and APanel.FilePanel end;
-  action=GoPrevious;
+  action=function() return GoPrevious() end;
 }
 Macro {id="904c717f-5e8b-4da4-bd1b-63dbf464094b";
   area="Shell"; key=S.KeyNext;   priority=S.PriorNext;   sortpriority=S.SortNext;   description=M.DescrNext; flags="Selection";
   condition = function() return APanel.Visible and APanel.FilePanel end;
-  action=GoNext;
+  action=function() return GoNext() end;
 }
 Macro {id="8e60772c-2a38-41f2-9f75-49335df9ee63";
   area="Shell"; key=S.KeyLast;   priority=S.PriorLast;   sortpriority=S.SortLast;   description=M.DescrLast; flags="Selection";
   condition = function() return APanel.Visible and APanel.FilePanel end;
-  action=GoLast;
+  action=function() return GoLast() end;
 }
 Macro {id="4afe7929-4974-49e6-8db2-59e3822e457f";
   area="Shell"; key=S.KeyDay;    priority=S.PriorDay;    sortpriority=S.SortDay;    description=M.DescrDay;
   condition = function() return APanel.Visible and APanel.FilePanel end;
-  action=DayMark;
+  action=function() return DayMark() end;
 }

@@ -126,29 +126,29 @@ if not Macro then return {Shell_Shift_F5F6F7=Shell_Shift_F5F6F7} end
 SimSU.Shell_Shift_F5F6F7=Shell_Shift_F5F6F7; _G.SimSU=SimSU
 -------------------------------------------------------------------------------
 
---Macro {id="1d93d055-e220-4b6b-aa73-2783b2c16947";
---  area="Shell Tree Search"; key=S.KeyCopy;      priority=S.PriorCopy;      sortpriority=S.SortCopy;      description=M.DescrCopy;      flags="NoPluginPanels NoPluginPPanels";
---  action=function()  CopyMove("F5") end;
---}
---Macro {id="d1a184d8-3b4a-4f70-bbc5-9f0bc4cdd8c0";
---  area="Shell Tree Search"; key=S.KeyMove;      priority=S.PriorMove;      sortpriority=S.SortMove;      description=M.DescrMove;      flags="NoPluginPanels NoPluginPPanels";
---  action=function()  CopyMove("F6") end;
---}
+Macro {id="1d93d055-e220-4b6b-aa73-2783b2c16947";
+  area="Shell Tree Search"; key=S.KeyCopy;      priority=S.PriorCopy;      sortpriority=S.SortCopy;      description=M.DescrCopy;      flags="NoPluginPanels NoPluginPPanels";
+  action=function() return CopyMove("F5") end;
+}
+Macro {id="d1a184d8-3b4a-4f70-bbc5-9f0bc4cdd8c0";
+  area="Shell Tree Search"; key=S.KeyMove;      priority=S.PriorMove;      sortpriority=S.SortMove;      description=M.DescrMove;      flags="NoPluginPanels NoPluginPPanels";
+  action=function() return CopyMove("F6") end;
+}
 Macro {id="0ee8ac37-1fd4-4986-b4b6-446c5aaf7be8";
   area="Shell Tree Search"; key=S.KeyMkDir;     priority=S.PriorMkDir;     sortpriority=S.SortMkDir;     description=M.DescrMkDir;     flags="NoPluginPanels";
-  action=MkDir;
+  action=function() return MkDir() end;
 }
 Macro {id="e54df8c5-7f87-41d1-a43e-927df827e48e";
   area="Shell Tree Search"; key=S.KeyDuplicate; priority=S.PriorDuplicate; sortpriority=S.SortDuplicate; description=M.DescrDuplicate; flags="NoPluginPanels";
-  action=function()  DupRen("ShiftF5") end;
+  action=function() return DupRen("ShiftF5") end;
 }
 Macro {id="1415735a-c181-4909-be96-d7b8d8195772";
   area="Shell Tree Search"; key=S.KeyRename;    priority=S.PriorRename;    sortpriority=S.SortRename;    description=M.DescrRename;    flags="NoPluginPanels";
-  action=function()  DupRen("ShiftF6") end;
+  action=function() return DupRen("ShiftF6") end;
 }
 Macro {id="faa66e8f-0d9f-44fd-bbc1-dae556e0d169";
   area="Shell Tree Search"; key=S.KeyNameDir;   priority=S.PriorNameDir;   sortpriority=S.SortNameDir;   description=M.DescrNameDir;   flags="NoPluginPPanels";
-  action=NameDir;
+  action=function() return NameDir() end;
 }
 
 --Event {group="DialogEvent"; priority=S.ProirDisableHistory; description=M.DescrDisableHistory;

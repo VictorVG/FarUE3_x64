@@ -1,4 +1,4 @@
-﻿-------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
 -- Работа с псевдонимами (синонимами) © SimSU
 -------------------------------------------------------------------------------
 -- Создание псевдонима: в командной строке набираем псевдоним<>команда, нажимаем ShiftSpace - псевдоним задан.
@@ -15,9 +15,10 @@
     C:\>{набираем}дир{нажимаем ShiftSpace}
     C:\>dir /p
       Если нам потребуется выводить только имена файлов (команда dir /p /b), а новый псевдоним делать не нужно, то
-    C:\>{набираем}дир>< /b{нажимаем ShiftSpace}
+    C:\>{набираем}дир /b{нажимаем ShiftSpace}
     C:\>dir /p /b
 ]]
+-- Для удобства клавиша Enter преобразует псевдоним в команду и запускает её на выполнение.
 --[[
   Полезные примеры:
     far<>start %farhome%\far - запуск ещё одной копии FARа в отдельной консоли;
@@ -28,15 +29,15 @@
 local function Settings()
 -- Начало файла Profile\SimSU\Shell_Aliases.cfg
 return{
-  Key="ShiftSpace"; --Prior=50;
-  KeyExec="Enter NumEnter"; PriorExec=51;
+  Key="ShiftSpace";         --Prior    =50; --Sort    =50;
+  KeyExec="Enter NumEnter";   PriorExec=51; --SortExec=50;
 }
 -- Конец файла Profile\SimSU\Shell_Aliases.cfg
 end
 
 ---- Локализация
 _G.far.lang=far.lang or win.GetEnv("farlang")
--- Встроенные языки / Buildin laguages
+-- Встроенные языки / Built-in laguages
 local function Messages()
 if far.lang=="Russian" then
 -- Начало файла Profile\SimSU\Shell_AliasesRussian.lng
@@ -60,66 +61,96 @@ end end
 local M=(loadfile(win.GetEnv("FARPROFILE").."\\SimSU\\Shell_Aliases"..far.lang..".lng") or Messages)()
 local S=(loadfile(win.GetEnv("FARLOCALPROFILE").."\\SimSU\\Shell_Aliases.cfg") or loadfile(win.GetEnv("FARPROFILE").."\\SimSU\\Shell_Aliases.cfg") or Settings)()
 
-local SimSU=SimSU or {}
-SimSU.Shell_Aliases={}
+local SimSU=_G.SimSU or {}
 -------------------------------------------------------------------------------
+local Aliases= mf.mload("SimSU","Aliases") or {}
+local _
+local ok, mod = pcall(require,"SimSU.Shell_RememberSelected"); if ok then SimSU.Shell_RememberSelected=mod.Shell_RememberSelected end
 
-local Aliases=Aliases or mf.mload("SimSU","Aliases") or {}
+local function Set(key,val) -- Добавляем, удаляем, заменяем псевдонимы.
+  if key then
+    Aliases[key]= val~="" and val or nil
+    mf.msave("SimSU","Aliases",Aliases)
+  end
+  return true
+end
 
-function SimSU.Shell_Aliases.Work()
---  Aliases= Aliases or mf.mload("SimSU","Aliases") or {}
+local function SetStr(str) -- Добавляем, удаляем, заменяем псевдонимы с разбором строки.
+  local key,val = str:match("^(.+)<>(.*)$")
+  if not key then return end
+  return Set(key,val)
+end
+
+local function Get(key) -- Получаем значение псевдонима.
+  return Aliases[key]
+end
+
+local function List() -- Лист псевдонимов.
+  local Items={}
+  for key,val in pairs(Aliases) do
+    Items[#Items+1]=key.."<>"..val
+  end
+  return Menu.Show(table.concat(Items,"\n"),M.Title,0x20+0x100)
+end
+
+local function Expand(str) -- Получаем значение псевдонима дополненное параметрами если были.
+  local key,prm = str:match("^(.+)><(.*)$") --or str:match("^(.-)%s+(.*)$")
+  if not key then key,prm = str:match("^(.+)%s+(.*)") end
+  if not prm then key = str:match("^(.+)$") end
+  local val = Get(key)
+  return val and val.." "..(prm or "")
+end
+
+local function Work() -- Работаем с командной строкой.
   if Area.Shell and not CmdLine.Empty then
     local cmd=mf.trim(CmdLine.Value)
-    local key, val, prm
-    if cmd:find("<>") then -- Работа с таблицей псевдонимов.
-      key,val=cmd:match("^(.+)<>(.*)$"); val= val~="" and val or nil
-      if key then -- Добавляем, удаляем, заменяем псевдонимы.
-        Aliases[key]=val
-        mf.msave("SimSU","Aliases",Aliases)
-        Keys("CtrlY")
-      elseif not val then -- Строим лист псевдонимов.
-        local Items={}
-        for k,v in pairs(Aliases) do
-          Items[#Items+1]=k.."<>"..v
-        end
-        Items=Menu.Show(table.concat(Items,"\n"),M.Title,0x20+0x100)
-        Keys("CtrlY")
-        if Items~="" then
-          print(Items); exit()
-        end
+    if cmd=="<>" then
+      Keys("CtrlY"); print(List()); return true
+    elseif cmd:find("<>") then
+      SetStr(cmd); Keys("CtrlY"); return true
+    else
+      cmd=Expand(cmd)
+      if cmd then
+        Keys("CtrlY"); print(cmd)
       end
-    else -- Заменяем псевдоним его значением, если есть и подставляем параметры.
-      key,prm=cmd:match("^(.+)><(.*)$"); key= key or cmd; prm= prm or ""
-      val=Aliases[key]
-      if val then Keys("CtrlY"); print(val); print(prm) end
     end
   end
-end;
+end
 
-function SimSU.Shell_Aliases.Run()
+local function Run() -- Автоматическая работа с комстрокой.
 -- Автоматизация исполнения команды, про ShiftSpace можно не вспоминать, а выполнять всё по Enter.
 -- Работа аналогична предыдущему макросу, только команда получившаяся из псевдонима выполняется сразу.
 -- Если созданы "Полезные примеры" из главного описния, то просто набираем far и жмём Enter - получаем ещё одну копию FARа :)
-  _ = SimSU.Shell_RememberSelected and SimSU.Shell_RememberSelected.Save and SimSU.Shell_RememberSelected.Save(APanel)
-  SimSU.Shell_Aliases.Work()
-  if not CmdLine.Empty then
-    mmode(1,mmode(1,0),Keys("Enter"))
---1    while not Area.Shell do mmode(1,mmode(1,0),Keys(mf.waitkey(100))) end -- Вопросы...
+  if Area.Shell then
+    _ = SimSU.Shell_RememberSelected and SimSU.Shell_RememberSelected.Save and SimSU.Shell_RememberSelected.Save(APanel)
+    if not Work() then mmode(1,mmode(1,0),Keys("Enter")) end  --Keys("Enter") end --
+    _ = SimSU.Shell_RememberSelected and SimSU.Shell_RememberSelected.RestoreLater and SimSU.Shell_RememberSelected.RestoreLater(APanel)
   end
-  far.Timer(100, function(h) if Area.Shell then h:Close(); _ = SimSU.Shell_RememberSelected and SimSU.Shell_RememberSelected.Restore and SimSU.Shell_RememberSelected.Restore(APanel) end end)
---1  _ = SimSU.Shell_RememberSelected and SimSU.Shell_RememberSelected.Restore and SimSU.Shell_RememberSelected.Restore(APanel)
-end;
+end
+
 -------------------------------------------------------------------------------
+local Shell_Aliases={
+  Set    = Set   ;
+  SetStr = SetStr;
+  Get    = Get   ;
+  List   = List  ;
+  Expand = Expand;
+  Work   = Work  ;
+  Run    = Run   ;
+}
+local function filename() return List() end
+-------------------------------------------------------------------------------
+if _filename then return filename(...) end
 if not Macro then return {Shell_Aliases=SimSU.Shell_Aliases} end
-
-local ok, mod = pcall(require,"SimSU.Shell_Aliases"); if ok then SimSU=mod else _G.SimSU=SimSU end
-local ok, mod = pcall(require,"SimSU.Shell_RememberSelected"); if ok then SimSU.Shell_RememberSelected=mod.Shell_RememberSelected end
+SimSU.Shell_Aliases=Shell_Aliases; _G.SimSU=SimSU
 -------------------------------------------------------------------------------
 
-Macro {area="Shell"; key=S.Key; priority=S.Prior; description=M.Descr; flags="NotEmptyCommandLine";
-  action=SimSU.Shell_Aliases.Work;
+Macro {id="99384d9b-90f6-4927-9e90-a08df6cf9ff6";
+  area="Shell"; key=S.Key;     priority=S.Prior;     sortpriority=S.Sort;     description=M.Descr;     flags="NotEmptyCommandLine";
+  action=function() return Work() end;
 }
 
-Macro {area="Shell"; key=S.KeyExec; priority=S.PriorExec; description=M.DescrExec; flags="NotEmptyCommandLine";
-  action=SimSU.Shell_Aliases.Run;
+Macro {id="b0d31b24-8d7c-4b9f-933b-9e0fbb55e64a";
+  area="Shell"; key=S.KeyExec; priority=S.PriorExec; sortpriority=S.SortExec; description=M.DescrExec; flags="NotEmptyCommandLine";
+  action=function() return Run() end;
 }

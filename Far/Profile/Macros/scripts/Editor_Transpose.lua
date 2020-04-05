@@ -98,5 +98,5 @@ SimSU.Editor_Transpose=Editor_Transpose; _G.SimSU=SimSU
 
 Macro {id="62ac13e3-d49b-4335-b8b5-00bb8830fed5";
   area="Editor"; key=S.Key; priority=S.Prior; sortpriority=S.Sort; description=M.Descr;
-  action=Sel;
+  action=function() return Sel() end;
 }

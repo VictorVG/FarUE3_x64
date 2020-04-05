@@ -79,13 +79,13 @@ SimSU.Editor_TabSize=Editor_TabSize; _G.SimSU=SimSU
 
 Macro {id="5b1bdd12-57c3-492b-a3c6-c4ed0eaf9ba7";
   area="Editor"; key=S.KeyInc; priority=S.PriorInc; sortpriority=S.SortInc; description=M.DescrInc;
-  action=Increase;
+  action=function() return Increase() end;
 }
 Macro {id="9497500d-0157-4c57-9912-068ceb7d913c";
   area="Editor"; key=S.KeyDec; priority=S.PriorDec; sortpriority=S.SortDec; description=M.DescrDec;
-  action=Decrease;
+  action=function() return Decrease() end;
 }
 Macro {id="9dc17b62-736c-4665-99f2-353871551467";
   area="Editor"; key=S.KeyExp; priority=S.PriorExp; sortpriority=S.SortExp; description=M.DescrExp;
-  action=Expand;
+  action=function() return Expand() end;
 }

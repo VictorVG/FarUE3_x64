@@ -83,9 +83,9 @@ SimSU.Shell_HistoryPath=Shell_HistoryPath; _G.SimSU=SimSU
 
 Macro {id="2453f255-aae4-4414-9190-1d37a74c6ff1";
   area="Shell"; key=S.KeyBack;    priority=S.PriorBack;    sortpriority=S.SortBack;    description=M.DescrBack;
-  action=Backward;
+  action=function() return Backward() end;
 }
 Macro {id="81c14ac1-83eb-4107-acbe-01f60f789d53";
   area="Shell"; key=S.KeyForward; priority=S.PriorForward; sortpriority=S.SortForward; description=M.DescrForward;
-  action=Forward;
+  action=function() return Forward() end;
 }

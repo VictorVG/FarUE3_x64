@@ -1,4 +1,4 @@
-﻿-------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
 --        Набор макросов для математических вычислений. © SimSU
 -------------------------------------------------------------------------------
 -- Умеет:
@@ -54,6 +54,91 @@ return{
 }
 -- Конец файла Profile\SimSU\Common_Calculator.cfg
 end
+
+local function str2tab(str)
+  str=str or ""
+  local a={}
+  for val in str:gmatch("%S+") do
+    a[#a+1]=val
+  end
+  return a
+end
+local function tabnum(tab)
+  tab=tab or {}
+  local j,a=1,{}
+  for i=1,#tab do
+    a[j]=tonumber(tab[i])
+    if a[j] then j=j+1 end
+  end
+  return a
+end
+local function tabstr(tab)
+  tab=tab or {}
+  local j,a=1,{}
+  for i=1,#tab do
+    a[j]=tab[i]:match("'.-'") or tab[i]:match('".-"')
+    if a[j] then j=j+1 end
+  end
+  return a
+end
+
+local function tab2str(tab,sep)
+  tab=tab or {}
+  sep=sep or "\t"
+  return table.concat(tab,sep)
+end
+
+local function count(str)
+  str=str or ""
+  local tab=str2tab(str)
+  return #tab,#tabnum(tab),#tabstr(tab)
+end
+
+local function sumnum(tab)
+  local s=0
+  for i=1,#tab do
+    s=s+tab[i]
+  end
+  return s
+end
+
+local function mean(tab)
+  return tab and #tab>0 and sumnum(tab)/#tab or nil
+end
+
+local function sqrnum(tab)
+  local a={}
+  for i=1,#tab do
+    a[i]=tab[i]*tab[i]
+  end
+  return a
+end
+
+local function addnum(tab,num)
+  tab=tab or {}
+  num=num or 0
+  for i=1,#tab do
+    a[i]=tab[i]+num
+  end
+  return a
+end
+
+local function multnum(tab,num)
+  tab=tab or {}
+  num=num or 0
+  for i=1,#tab do
+    a[i]=tab[i]*num
+  end
+  return a
+end
+
+local function sigma(tab)
+  tab=tab or {}
+  if #tab>1 then
+    return sumnum(sqrnum(addnum(tab,-mean(tab))))/(#tab-1)
+  end
+end
+
 
 ---- Локализация
 _G.far.lang=far.lang or win.GetEnv("farlang")
@@ -180,13 +265,13 @@ SimSU.Common_Calculator=Common_Calculator; _G.SimSU=SimSU
 
 Macro {id="c14ec47b-10b4-4e20-9a24-c1276d62513e";
   area="Common"; key=S.KeyCalc; priority=S.PriorCalc; sortpriority=S.SortCalc; description=M.CalcDescr;
-  action=Prompt;
+  action=function() return Prompt() end;
 }
 Macro {id="13ae2551-c8ed-49cb-8f23-587485a5f7af";
   area="Common"; key=S.KeyClip; priority=S.PriorClip; sortpriority=S.SortClip; description=M.ClipDescr;
-  action=ClipCalc;
+  action=function() return ClipCalc() end;
 }
 Macro {id="f0e8628e-c2b9-4f2a-b4f8-1f7ef76ab7d6";
-  area="Common"; key=S.KeySel;  priority=S.PriorSel;  sortpriority=S.SortSel;  description=M.SelDescr;
-  action=SelCalc;
+  area="Common"; key=S.KeySel; priority=S.PriorSel; sortpriority=S.SortSel; description=M.SelDescr;
+  action=function() return SelCalc() end;
 }

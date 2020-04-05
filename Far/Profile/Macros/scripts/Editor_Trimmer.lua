@@ -125,5 +125,5 @@ SimSU.Editor_Trimmer=Editor_Trimmer; _G.SimSU=SimSU
 
 Macro {id="eb40ca78-6ea4-4394-9827-fde3615423ab";
   area="Editor"; key=S.Key; priority=S.Prior; sortpriority=S.Sort; description=M.Descr;
-  action=Trim;
+  action=function() return Trim() end;
 }

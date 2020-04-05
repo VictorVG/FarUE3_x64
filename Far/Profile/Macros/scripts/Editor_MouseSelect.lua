@@ -68,63 +68,85 @@ local S=(loadfile(win.GetEnv("FARLOCALPROFILE").."\\SimSU\\Editor_MouseSelect.cf
 
 local SimSU= _G.SimSU or {}
 -------------------------------------------------------------------------------
-local TitleBar,KeyBar,ScrollBar
 S.Timing = S.Timing==nil and Settings().Timing or S.Timing
 
-local function Condition()
-  -- Функция инициализации переменных и проверки условия запуска макроса,
-  -- чтобы не запускать макрос при кликах в скролбар, функциональные клавиши и т.п.
-  TitleBar=Far.Cfg_Get("Editor","ShowTitleBar")=="true" and 1 or 0 -- Если строка статуса включена, то надо корректировать координату Y мыши и не выделять если в неё кликнули.
-  KeyBar=Far.KeyBar_Show(0) -- Если кейбар включен, то не выделять если в него кликнули.
-  ScrollBar=Editor.Set(15,-1) -- Если скролбар включен, то не выделять если в него кликнули.
-  return Mouse.X<Far.Width-ScrollBar and Mouse.Y>=TitleBar and Mouse.Y<Far.Height-KeyBar -- Кликнули в текст, значит разрешим макрос макрос.
+local Editor=Editor
+local Sel=Editor.Sel
+local Pos=Editor.Pos
+local Set=Editor.Set
+local editorGetInfo=editor.GetInfo
+
+local function GetInfo()
+-- Расширение функции editor.GetInfo, чтобы знать координаты окна редактора в фаре и состяние строк заголовка и клавишь, а также полосы прокрутки.
+  local EdInf=editorGetInfo()
+  EdInf.TitleBar=Far.Cfg_Get("Editor","ShowTitleBar")=="true" and 1 or 0 -- Строка статуса включена?
+  EdInf.KeyBar=Far.KeyBar_Show(0)                                        -- Кейбар включен?
+  EdInf.ScrollBar=Set(15)                                                -- Скролбар включен?
+                                                                         -------------------------------------------
+  local C=far.AdvControl("ACTL_GETCURSORPOS")                            -- (X1,Y1)                               --
+  EdInf.X1=C.X-(EdInf.CurTabPos-EdInf.LeftPos)                           --                                       --
+  EdInf.Y1=C.Y-(EdInf.CurLine-EdInf.TopScreenLine)-EdInf.TitleBar        --       Координаты окна редактора       --
+  EdInf.X2=C.X-(EdInf.CurTabPos-EdInf.LeftPos)    +EdInf.WindowSizeX     --                                       --
+  EdInf.Y2=C.Y-(EdInf.CurLine-EdInf.TopScreenLine)+EdInf.WindowSizeY     --                               (X2,Y2) --
+                                                                         -------------------------------------------
+  return EdInf
+end
+
+local function InEditorMouse()
+-- Проверка - мышка в тексте?
+  local EdInf=GetInfo()
+  return Mouse.X>=EdInf.X1 and Mouse.Y>=EdInf.Y1+EdInf.TitleBar and Mouse.X<=EdInf.X2-EdInf.ScrollBar and Mouse.Y<=EdInf.Y2-EdInf.KeyBar -- Кликнули в текст, значит разрешим макрос.
 end
 
 local function MouseToText()
--- Функция пересчёта экранных координат мышки в координаты текста.
-  local X0,Y0 = editor.GetInfo(nil).LeftPos,editor.GetInfo(nil).TopScreenLine
-  local Yc= Mouse.Y==TitleBar-1 and Y0 or Mouse.Y>=Far.Height-1-KeyBar and Y0+Far.Height-1-TitleBar-KeyBar or Y0+Mouse.Y-TitleBar
-  local Xc= Mouse.X==0 and X0 or Mouse.X>=Far.Width-1-ScrollBar and X0+Far.Width-1-ScrollBar or X0+Mouse.X
-  return Xc,Yc,X0,Y0 -- Координаты курсора и координаты экрана.
+-- Пересчёт экранных координат мышки в координаты текста.
+  local EdInf = GetInfo()
+  local X1 = EdInf.LeftPos
+  local Y1 = EdInf.TopScreenLine
+  local X2 = X1+EdInf.WindowSizeX-EdInf.ScrollBar
+  local Y2 = Y1+EdInf.WindowSizeY-EdInf.KeyBar
+  local Xm = X1+Mouse.X-EdInf.X1               ;  Xm = Xm<X1 and X1 or Xm>X2 and X2 or Xm
+  local Ym = Y1+Mouse.Y-EdInf.Y1-EdInf.TitleBar;  Ym = Ym<Y1 and Y1 or Ym>Y2 and Y2 or Ym
+  return Xm,Ym,X1,Y1,X2,Y2 -- Координаты мышки и экрана в тексте
 end
 
 local function MouseMove(SelMode,Xb,Yb)
 -- Функция обработки движения мышки.
   local MM=mmode(1,1) -- Запретим перерисовку экрана.
-  local EOL=Editor.Set(7,1) -- Разрешим "курсор за пределами строки".
-  local Xc,Yc,X0,Y0 = MouseToText()
-  if not ((SelMode==1 or SelMode==2) and Xb and Yb) then Xb=Xc; Yb=Yc end -- За начало примем текущие координаты.
+  local EOL=Set(7,1) -- Разрешим "курсор за пределами строки".
+  local Xm,Ym,X1,Y1,X2,Y2 = MouseToText()
+  if not ((SelMode==1 or SelMode==2) and Xb and Yb) then Xb=Xm; Yb=Ym end -- За начало примем текущие координаты.
   while Mouse.Button~=0 do
     if SelMode==1 or SelMode==2 then
       -- Выделение. И магия :) для табов с вертикальными блоками.
-      Editor.Pos(1,1,Yb); Editor.Pos(1,4-SelMode,Xb); Editor.Sel(SelMode+1,0)
-      Editor.Pos(1,1,Yc); Editor.Pos(1,4-SelMode,Xc); Editor.Sel(SelMode+1,1)
+      Pos(1,1,Yb); Pos(1,4-SelMode,Xb); Sel(SelMode+1,0)
+      Pos(1,1,Ym); Pos(1,4-SelMode,Xm); Sel(SelMode+1,1)
     end
-    Editor.Pos(1,4,Y0); Editor.Pos(1,5,X0) -- Координаты экрана.
-    Editor.Pos(1,1,Yc); Editor.Pos(1,3,Xc) -- Координаты курсора в тексте.
-    mmode(1,mmode(1,0),Editor.Pos(1,2,nil)) -- Перерисуем экран. Двинем курсор для колорера.
+    Pos(1,5,X1); Pos(1,4,Y1) -- Координаты экрана в тексте.
+    Pos(1,3,Xm); Pos(1,1,Ym) -- Координаты мышки в тексте.
+    mmode(1,mmode(1,0),Pos(1,2)) -- Перерисуем экран. Двинем курсор для колорера(v.1.2.11.0).
     mf.waitkey(1)
-    Xc,Yc,X0,Y0 = MouseToText() -- Новые координаты.
+    Xm,Ym,X1,Y1,X2,Y2 = MouseToText() -- Новые координаты.
     -- Скроллирование.
-    if Xc==X0 and X0>1 then X0=X0-1 Xc=X0 elseif Xc==X0+Far.Width-1-ScrollBar then X0=X0+1; Xc=X0+Far.Width-1-ScrollBar end
-    if Yc==Y0 and Y0>1 then Y0=Y0-1 Yc=Y0 elseif Yc==Y0+Far.Height-1-KeyBar-TitleBar and Yc<Editor.Lines then Y0=Y0+1; Yc=Y0+Far.Height-1-KeyBar-TitleBar end
+    if Xm==X1 and X1>1 then X1=X1-1; Xm=X1 elseif Xm==X2                     then X1=X1+1; Xm=X2+1 end
+    if Ym==Y1 and Y1>1 then Y1=Y1-1; Ym=Y1 elseif Ym==Y2 and Ym<Editor.Lines then Y1=Y1+1; Ym=Y2+1 end
   end
-  Editor.Set(7,EOL) -- Восстановим состояние "курсор за пределами строки".
+  Set(7,EOL) -- Восстановим состояние "курсор за пределами строки".
   mmode(1,MM) -- Восстановим состояние отрисовки.
 end
 
 local function ClickInSel()
 -- Функция проверки на клик в выделенной области.
-  local Xc,Yc,X0,Y0 = MouseToText()
-  local St=Editor.Sel(0,4); local Yb= St==0 and Yc or Editor.Sel(0,0); local Xb= St==0 and Xc or Editor.Sel(0,1); local Ye= St==0 and Yc or Editor.Sel(0,2); local Xe= St==0 and Xc or Editor.Sel(0,3) -- Тип и координаты выделения.
-  local Sl=(St==0 or (St>0 and Yc<=Ye and Yc>=Yb)) -- Курсор в строках где есть выделение.
-  local Sp=(Sl and ((St==2 and Xc>=Xb and Xc<=Xe) or (St==1 and ((Yb~=Ye and Yc==Yb and Xc>=Xb) or (Yb~=Ye and Yc==Ye and Xc<=Xe) or (Yb==Ye and Xc>=Xb and Xc<=Xe) or (Yb~=Ye and Yc~=Yb and Yc~=Ye))))) -- Курсор точно в выделении.
+  local Xm,Ym = MouseToText()
+  local St=Sel(0,4); local Yb= St==0 and Ym or Sel(0,0); local Xb= St==0 and Xm or Sel(0,1); local Ye= St==0 and Ym or Sel(0,2); local Xe= St==0 and Xm or Sel(0,3) -- Тип и координаты выделения.
+  local Sl=(St==0 or (St>0 and Ym<=Ye and Ym>=Yb)) -- Курсор в строках где есть выделение.
+  local Sp=(Sl and ((St==2 and Xm>=Xb and Xm<=Xe) or (St==1 and ((Yb~=Ye and Ym==Yb and Xm>=Xb) or (Yb~=Ye and Ym==Ye and Xm<=Xe) or (Yb==Ye and Xm>=Xb and Xm<=Xe) or (Yb~=Ye and Ym~=Yb and Ym~=Ye))))) -- Курсор точно в выделении.
   if not Sp then
     Xb=nil; Yb=nil -- Если кликнули не в выделенной области, то считаем, что и выделения нет.
   else
-    if (Xb-Xc)^2+(Yb-Yc)^2<(Xe-Xc)^2+(Ye-Yc)^2 then Xb,Yb = Xe,Ye end -- За начало выделенной области примем её дальний от места клика угол.
+    if (Xb-Xm)^2+(Yb-Ym)^2<(Xe-Xm)^2+(Ye-Ym)^2 then Xb,Yb = Xe,Ye end -- За начало выделенной области примем её дальний от места клика угол.
   end
-  return Xb,Yb,X0,Y0 -- Координаты начала выделенного блока и координаты экрана.
+  return Xb,Yb -- Координаты начала выделенного блока и координаты экрана.
 end
 
 local function SelWord(SelectType,Line,Column)
@@ -132,12 +154,12 @@ local function SelWord(SelectType,Line,Column)
   local St= SelectType or 1
   local Xc,Yc
   if Line and Column then Yc,Xc = Line,Column else Xc,Yc = MouseToText() end
-  Editor.Pos(1,1,Yc); Editor.Pos(1,3,Xc)
+  Pos(1,1,Yc); Pos(1,3,Xc)
   local s=Editor.Value; local Xct=Editor.RealPos
   local Xe=Xct while s:sub(Xe,Xe):find("[%w_]") do Xe=Xe+1 end-- Ищем конец слова c курсором.
   local Xb=Xct while s:sub(Xb-1,Xb-1):find("[%w_]") do Xb=Xb-1 end -- Ищем начало слова c курсором.
-  Editor.Pos(1,2,Xb); Editor.Sel(St+1,0); Editor.Pos(1,2,Xe); Editor.Sel(St+1,1) -- Выделяем найденное слово, если слово не нашли, то выделение просто снимется из-за равенства Beg и End.
-  mmode(1,mmode(1,0),Editor.Pos(1,2,Xct)) -- Перерисуем экран. Двинем курсор для колорера.
+  Pos(1,2,Xb); Sel(St+1,0); Pos(1,2,Xe); Sel(St+1,1) -- Выделяем найденное слово, если слово не нашли, то выделение просто снимется из-за равенства Beg и End.
+  mmode(1,mmode(1,0),Pos(1,2,Xct)) -- Перерисуем экран. Двинем курсор для колорера.
 end
 
 local function SelLine(SelectType,Line,Column)
@@ -146,11 +168,11 @@ local function SelLine(SelectType,Line,Column)
   local Xc,Yc
   if Line then Yc=Line; Xc= Column or Editor.CurPos else  Xc,Yc = MouseToText() end
   local Yb=Yc; local Ye= St==1 and Yc<Editor.Lines and Yc+1 or Yc
-  Editor.Pos(1,1,Yc); local s=Editor.Value
+  Pos(1,1,Yc); local s=Editor.Value
   local Xb=1; local Xe= Yb~=Ye and 1 or s:len()+1
-  Editor.Pos(1,1,Yb); Editor.Pos(1,2,Xb); Editor.Sel(St+1,0); Editor.Pos(1,1,Ye); Editor.Pos(1,2,Xe); Editor.Sel(St+1,1)
-  Editor.Pos(1,1,Yc) -- Координаты курсора в тексте.
-  mmode(1,mmode(1,0),Editor.Pos(1,2,Xc)) -- Перерисуем экран. Двинем курсор для колорера.
+  Pos(1,1,Yb); Pos(1,2,Xb); Sel(St+1,0); Pos(1,1,Ye); Pos(1,2,Xe); Sel(St+1,1)
+  Pos(1,1,Yc) -- Координаты курсора в тексте.
+  mmode(1,mmode(1,0),Pos(1,2,Xc)) -- Перерисуем экран. Двинем курсор для колорера.
 end
 
 local function MouseSelect(Action,PostAct)
@@ -158,8 +180,8 @@ local function MouseSelect(Action,PostAct)
   local NumClick=1
   local PA=true
   while NumClick do
-    local Act = Action ~=nil and ((Editor.Sel(0,4)>0 and ClickInSel() and Action ["InSel"..NumClick]) or (Editor.Sel(0,4)>0 and not ClickInSel() and Action ["NotSel"..NumClick]) or Action ["Click"..NumClick])
-    local PAct= PostAct~=nil and ((Editor.Sel(0,4)>0 and ClickInSel() and PostAct["InSel"..NumClick]) or (Editor.Sel(0,4)>0 and not ClickInSel() and PostAct["NotSel"..NumClick]) or PostAct["Click"..NumClick])
+    local Act = Action ~=nil and ((Sel(0,4)>0 and ClickInSel() and Action ["InSel"..NumClick]) or (Sel(0,4)>0 and not ClickInSel() and Action ["NotSel"..NumClick]) or Action ["Click"..NumClick])
+    local PAct= PostAct~=nil and ((Sel(0,4)>0 and ClickInSel() and PostAct["InSel"..NumClick]) or (Sel(0,4)>0 and not ClickInSel() and PostAct["NotSel"..NumClick]) or PostAct["Click"..NumClick])
     if     Act=="SelNorm"  then MouseMove(1)
     elseif Act=="SelVert"  then MouseMove(2)
     elseif Act=="SelNone"  then MouseMove(0)
@@ -169,8 +191,8 @@ local function MouseSelect(Action,PostAct)
     elseif Act=="WordVert" then SelWord(2)
     elseif Act=="LineNorm" then SelLine(1)
     elseif Act=="LineVert" then SelLine(2)
-    elseif Act=="Move"     then local PB=Editor.Set(2,1); MouseMove(0); Keys("CtrlM"); Editor.Set(2,PB); PA=false
-    elseif Act=="Copy"     then local PB=Editor.Set(2,1); MouseMove(0); Keys("CtrlP"); Editor.Set(2,PB); PA=false
+    elseif Act=="Move"     then local PB=Set(2,1); MouseMove(0); Keys("CtrlM"); Set(2,PB); PA=false
+    elseif Act=="Copy"     then local PB=Set(2,1); MouseMove(0); Keys("CtrlP"); Set(2,PB); PA=false
     end
     if     PA and PAct=="Copy"    then mf.clip(1,Editor.SelValue)
     elseif PA and PAct=="Cut"     then mf.clip(1,Editor.SelValue); editor.DeleteBlock() --Keys("CtrlD")
@@ -187,13 +209,14 @@ end;
 
 -------------------------------------------------------------------------------
 local Editor_MouseSelect={
-  Condition   = Condition  ;
-  MouseToText = MouseToText;
-  MouseMove   = MouseMove  ;
-  ClickInSel  = ClickInSel ;
-  SelWord     = SelWord    ;
-  SelLine     = SelLine    ;
-  MouseSelect = MouseSelect;
+  GetInfo      = GetInfo      ;
+  InEditorMouse= InEditorMouse;
+  MouseToText  = MouseToText  ;
+  MouseMove    = MouseMove    ;
+  ClickInSel   = ClickInSel   ;
+  SelWord      = SelWord      ;
+  SelLine      = SelLine      ;
+  MouseSelect  = MouseSelect  ;
 }
 local function filename(args) return MouseSelect(args[1],args[2]) end
 -------------------------------------------------------------------------------
@@ -205,7 +228,7 @@ SimSU.Editor_MouseSelect=Editor_MouseSelect; _G.SimSU=SimSU
 for i=1,#S do
 Macro {id=S[i].id;
   area="Editor"; key=S[i].Key; priority=S[i].Prior; sortpriority=S[i].Sort; description=M[i];
-  condition=Condition;
-  action=function() MouseSelect(S[i].Action,S[i].PostAct) end;
+  condition=function() return InEditorMouse() end;
+  action=function() return MouseSelect(S[i].Action,S[i].PostAct) end;
 }
 end

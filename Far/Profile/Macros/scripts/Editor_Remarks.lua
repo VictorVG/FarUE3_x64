@@ -174,22 +174,22 @@ SimSU.Editor_Remarks=Editor_Remarks; _G.SimSU=SimSU
 
 Macro {id="25cce9ac-0dcf-44af-8a4b-bb286f05276e";
   area="Editor"; key=S.KeyOptions;   priority=S.PriorOptions;   sortpriority=S.SortOptions;   description=M.DescrOptions;
-  action=Options;
+  action=function() return Options() end;
 }
 Macro {id="05194455-816f-435b-9887-3ecd382fd699";
   area="Editor"; key=S.KeyComment;   priority=S.PriorComment;   sortpriority=S.SortComment;   description=M.DescrComment;
-  action=function() CommUnComm(true) end;
+  action=function() return CommUnComm(true) end;
 }
 Macro {id="e2f89002-2a3d-48f6-ab29-59905b9446b5";
   area="Editor"; key=S.KeyUnComment; priority=S.PriorUnComment; sortpriority=S.SortUnComment; description=M.DescrUnComment;
-  action=function() CommUnComm(false) end;
+  action=function() return CommUnComm(false) end;
 }
 Macro {id="63c9f50f-c1d9-4027-914f-49976e1e2808";
   area="Editor"; key=S.KeyTab;       priority=S.PriorTab;       sortpriority=S.SortTab;       description=M.DescrTab;
   condition=function() return editor.GetInfo().BlockType==F.BTYPE_STREAM end;
-  action=function() CommUnComm(true,"\t") end;
+  action=function() return CommUnComm(true,"\t") end;
 }
 Macro {id="dc7e93d1-39ac-4cee-800e-06d94e3b9ec3";
   area="Editor"; key=S.KeyUnTab;     priority=S.PriorUnTab;     sortpriority=S.SortUnTab;     description=M.DescrUnTab;     flags="EVSelection";
-  action=function() CommUnComm(false,"\t") end;
+  action=function() return CommUnComm(false,"\t") end;
 }

@@ -1,4 +1,4 @@
-﻿-------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
 -- Удаление резервных и временных файлов. © SimSU
 -------------------------------------------------------------------------------
 -- Мелкий рефакторинг VictorVG, 16.11.2018 04:40:47 +0300
@@ -12,7 +12,7 @@ return{
   };
   {id="c7eda6df-3e65-4eec-b50a-7bc6d4dd8ce1";
   Key="AltT"; --Prior=50;  --Sort=50;
-  Mask="/.+\\.(tmp|temp|(~\\w?|\\s?)tmp(~|\\s?)|\\w?log|dir|xml|c|h|(c|h)pp|txt|(h|i)\\.(\\w?|\\s?|(c|h)pp|c|h|rc))$/i"; -- Маска для временных файлов (регулярное выражение).
+  Mask="/.+\\.(log|tmp|temp|(~\\w?|\\s?)tmp(~|\\s?)|\\w?log|dir|xml|c|h|(c|h)pp|txt|(h|i)\\.(\\w?|\\s?|(c|h)pp|c|h|rc))$/i"; -- Маска для временных файлов (регулярное выражение).
   };
 }
 -- Конец файла Profile\SimSU\Shell_DelBak.cfg
@@ -70,6 +70,6 @@ SimSU.Shell_DelBak=Shell_DelBak; _G.SimSU=SimSU
 for i=1,#S do
   Macro {id=S[i].id;
     area="Shell"; key=S[i].Key; priority=S[i].Prior; sortpriority=S[i].Sort; description=M.Descr;
-    action=function() SimSU.Shell_DelBak(S[i].Mask) end;
+    action=function() return Shell_DelBak(S[i].Mask) end;
   }
 end

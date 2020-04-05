@@ -1,4 +1,4 @@
-﻿-------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
 -- Выполнение команды через меню пользователя. © SimSU
 -------------------------------------------------------------------------------
 
@@ -120,5 +120,5 @@ SimSU.Common_Exec=Common_Exec; _G.SimSU=SimSU
 
 Macro {id="a116558f-987c-40e4-bfb7-0707bde5c238";
   area="Shell"; key=S.Key; priority=S.Prior; sortpriority=S.Sort; description=M.Descr; flags="NotEmptyCommandLine";
-  action=CmdLine;
+  action=function() return CmdLine() end;
 }

@@ -103,25 +103,25 @@ SimSU.Editor_SmartHomeEnd=Editor_SmartHomeEnd; _G.SimSU=SimSU
 
 Macro {id="aee06b9b-f428-4d8e-93b3-71176e6c6a79";
   area="Editor"; key=S.KeyHome;      priority=S.PriorHome;      sortpriority=S.SortHome;      description=M.DescrHome;
-  action=Home;
+  action=function() return Home() end;
 }
 Macro {id="4b9a2144-5468-44fe-9fef-ce690488eec3";
   area="Editor"; key=S.KeyEnd;       priority=S.PriorEnd;       sortpriority=S.SortEnd;       description=M.DescrEnd;
-  action=End;
+  action=function() return End() end;
 }
 Macro {id="a2fd702e-cc45-4bdd-9104-895ef64938dc";
   area="Editor"; key=S.KeyShiftHome; priority=S.PriorShiftHome; sortpriority=S.SortShiftHome; description=M.DescrShiftHome;
-  action=function() Select(true,1) end;
+  action=function() return Select(true,1) end;
 }
 Macro {id="06bc096b-df42-469b-b144-0d49b4b5112b";
   area="Editor"; key=S.KeyAltHome;   priority=S.PriorAltHome;   sortpriority=S.SortAltHome;   description=M.DescrAltHome;
-  action=function() Select(true,2) end;
+  action=function() return Select(true,2) end;
 }
 Macro {id="edd0e9e0-633d-428b-a50a-4ba025a96c8b";
   area="Editor"; key=S.KeyShiftEnd;  priority=S.PriorShiftEnd;  sortpriority=S.SortShiftEnd;  description=M.DescrShiftEnd;
-  action=function() Select(false,1) end;
+  action=function() return Select(false,1) end;
 }
 Macro {id="c32cf6fa-cefe-4c0e-92b9-e7a0a16875a5";
   area="Editor"; key=S.KeyAltEnd;    priority=S.PriorAltEnd;    sortpriority=S.SortAltEnd;    description=M.DescrAltEnd;
-  action=function() Select(false,2) end;
+  action=function() return Select(false,2) end;
 }

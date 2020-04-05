@@ -1,4 +1,4 @@
-﻿-------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
 -- Список завершения LuaMacro. © SimSU
 -------------------------------------------------------------------------------
 
@@ -120,15 +120,15 @@ S.Addon   = S.Addon  ==nil and Settings().Addon   or S.Addon
 S.Aliases = S.Aliases==nil and Settings().Aliases or S.Aliases
 
 local function GetLuaWord(String,Position)
-  local str=String or Editor.Value; local pos= Position or Editor.CurPos
+  local str=String or Editor.Value; local pos= Position or Editor.RealPos
   local _,b,e,w
-  _,e = str:find("^[a-zA-Z_0-9]+",pos); e= e or pos-1
+  w,e = str:find("^[a-zA-Z_0-9]+",pos); e= e or pos-1
   b,e,w=str:sub(1,e):find("([a-zA-Z_0-9]+)$")
   return w,b,e
 end
 
 local function GetChain(String,Position,Chain)
-  local str=String or Editor.Value; local pos= Position or Editor.CurPos; local chain= Chain or {}
+  local str=String or Editor.Value; local pos= Position or Editor.RealPos; local chain= Chain or {}
   local w,b = GetLuaWord(str,pos); w = w or ""; b = b and b-1 or pos-1; chain[#chain+1]=w
   if str:sub(b,b)=="." then GetChain(str,b,chain) end
 end
@@ -158,7 +158,7 @@ local function Fields(Chain)
 end
 
 local function Complete()
-  local str=Editor.Value; local pos=Editor.CurPos
+  local str=Editor.Value; local pos=Editor.RealPos
   local w,b,e = GetLuaWord(str,pos)
   local chain={}; GetChain(str,pos,chain)
   if #chain==2 and S.Aliases[chain[2]] and type(S.Aliases[chain[2]])=="string" then --Подстановки
@@ -193,5 +193,5 @@ SimSU.Editor_MacroComplete=Editor_MacroComplete; _G.SimSU=SimSU
 
 Macro {id="a55f1a7c-e357-43ae-8e13-5386f1f4116e";
   area="Editor"; filemask="*.lua"; key=S.Key; priority=S.Prior; sortpriority=S.Sort; description=M.Descr;
-  action=Complete;
+  action=function() return Complete() end;
 }
