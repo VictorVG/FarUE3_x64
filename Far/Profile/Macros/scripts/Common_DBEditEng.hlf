@@ -79,7 +79,7 @@ $^Plugin select
 $^Script macros list
   #Key#          |  #Script#
 
-  #AltShiftF2# - |~Main window~@main@.
+  #CtrlShiftF5# - |~Main window~@main@.
   #AltShiftF3# - |Import dialog.
 
 @=
@@ -190,7 +190,7 @@ $^About
 
  Author:       #IgorZ#
 
- Version:      #2.1.3#
+ Version:      #2.1.4#
 
  Net address: ~http://forum.farmanager.com/viewtopic.php?t=10120~@http://forum.farmanager.com/viewtopic.php?t=10120@
 @=‗

@@ -1,4 +1,4 @@
-local lua_explorer = require"le"
+﻿local lua_explorer = require"le"
 
 local function getAllLocals(level)
 	local locals = {}
@@ -64,7 +64,7 @@ local function showLocals(level,shift)
 	local info = debug.getinfo(level,'')
 	if not info then	mf.beep() return	end
 	local locals,n,vararg = getLocalsAndParams(level)
-	if n>0 or vararg  then 
+	if n>0 or vararg  then
 		lua_explorer(locals, ('locals [%d]: %s'):format(level-shift,info.name or 'main chunk'))
 		syncLocals(level,locals,n)
 		if vararg then	syncVararg(level,vararg)	end
@@ -83,7 +83,7 @@ local function ExpandBreakKeys(bkeys)
 				new.BreakKey = key
 				table.insert(bkeys,new)
 			end
-		end 
+		end
 	end
 end
 
@@ -168,6 +168,6 @@ local addbrkeys = {
 	{BreakKey = 'CtrlShift+V',	action = function()	lua_explorer(win.GetVirtualKeys(),'VK')	end},
 	{BreakKey = 'CtrlShift+U',	action = function()	lua_explorer(win.Uuid(win.Uuid()):upper())	end},
 	{BreakKey = 'CtrlShift+M',	action = function()	lua_explorer(debug.getregistry()._LOADED,'_LOADED')	end},
-	
+
 }
 lua_explorer(addbrkeys,nil,'addBrKeys')

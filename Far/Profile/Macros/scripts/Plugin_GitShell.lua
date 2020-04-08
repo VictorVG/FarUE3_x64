@@ -1,4 +1,4 @@
--- VictorVG @ VikSoft.Ru, 1996 - 2019
+﻿-- VictorVG @ VikSoft.Ru, 1996 - 2019
 --
 -- v1.0, Initial release
 -- 19.02.2018  02:01:28 +0300

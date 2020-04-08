@@ -1,4 +1,4 @@
--- Open current graphics or video file at active panel in to Review.
+﻿-- Open current graphics or video file at active panel in to Review.
 --
 -- v1.0, Initial version
 -- VictorVG, 14.08.2019 01:07:44 +0300

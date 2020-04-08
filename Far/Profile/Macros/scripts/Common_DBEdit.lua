@@ -2,7 +2,7 @@
 local nfo = Info {... or _filename,
   name          = "DBEdit";
   description   = "Импорт/экспорт/редактирование данных плагинов";
-  version       = "2.1.3.1"; --в формате semver: http://semver.org/lang/ru/
+  version       = "2.1.4.1"; --в формате semver: http://semver.org/lang/ru/
   author        = "IgorZ";
   url           = "http://forum.farmanager.com/viewtopic.php?t=10120";
   id            = "51465236-592A-4C28-A047-929FCBFD8672";
@@ -64,6 +64,8 @@ history         = [[
                     Rebind конечно аргумент... для оправдания неудачных технических решений, но как у врача НЕ НАВРЕДИ, так в технике РАБОТАЕТ -
                     НЕ ЛОМАЙ! Хоткеи специально подбирались с учётом наличия в ОС клавишных комбинаций типа Ctrl-Alt-F4
                     (немедленное завершение активной программы) которые она обрабатывает сама. /VictorVG, 02.12.2018 18:29:44 +0300/
+2019/12/10 v2.1.4 - Доработан вызов action-функций с учётом введённых в build 717 параметров для condition/action. Рефакторинг.
+2019/12/10 v2.1.4.1 - Повторим 2.1.3.1: правка хоткеев Alt-Shift-F2 на Ctrl-Shift-F5, Alt-Shift-F3 на Alt-Shift-F5 /VictorVG, 10.12.2019 18:53:06 +0300/
 ]];
 }
 if not nfo then return nfo end
@@ -84,7 +86,7 @@ local Guids = {
   SelPlug  = win.Uuid("234AEF34-B8FF-4995-97FE-E527271712A9"),
 }
 local LMBuild = far.GetPluginInformation(far.FindPlugin(F.PFM_GUID,Guids.LuaMacro)).GInfo.Version[4] -- запомним версию LuaMacro
-local PathName = debug.getinfo(function()end).source:sub(2):match("(.*)%.lua$") -- получим заготовку для имён языковых файлов
+local PathName = debug.getinfo(function()end).source:match("^@?([^@].*)%.[^%.\\]+$") -- путь и имя без расширения
 -- +
 --[==[переменные]==]
 -- -
@@ -95,8 +97,8 @@ local tbl_format,PName,UID,overwrite,L = "internal","LuaMacro" -- чем фор�
 local LoadLang,GetTree,PutElem,SaveToFile,ReadFromFile,Edit,Remove,ReadDB,SelPlugin,DATAToStrings,ElemToStr,ShowHelp
 --
 function LoadLang() --[[загрузить настройки языка]]
-local FL,dummy = Far.GetConfig("Language.Main"):sub(1,3),function() return {"Cannot find languages files"} end -- язык, пустая функция
-if not L or L.Lang~=FL then L = (loadfile(PathName..FL..".lng") or loadfile(PathName.."Eng.lng") or dummy)(LMBuild) end -- обновим, если язык другой
+local FL,dummy = Far.GetConfig("Language.Main"):sub(1,3),function() return {"Cannot find language files"} end -- язык, пустая функция
+L = L and L.Lang==FL and L or (loadfile(PathName..FL..".lng") or loadfile(PathName.."Eng.lng") or dummy)(LMBuild) -- обновим, если язык другой
 end --LoadLang
 --
 function GetTree(obj,id,parent) --[[прочитаем поддерево]]
@@ -353,7 +355,7 @@ repeat
   end
   table.sort(list,function(a,b) return a.name:upper()<b.name:upper() end) -- отсортируем по имени
   for i,v in ipairs(list) do if v.name==PName then n = i end end -- найдём текущий
-  res = far.Menu({Title=L.PlugMenu,Bottom="Enter, Esc, F1, CtrlA/L/G/F/S",SelectIndex=n,Id=Guids.SelPlug,Flags=F.FMENU_SHOWAMPERSAND+F.FMENU_WRAPMODE},
+  res = far.Menu({Title=L.PlugMenu,Bottom="Enter,Esc,F1,CtrlA/L/G/F/S",SelectIndex=n,Id=Guids.SelPlug,Flags=F.FMENU_SHOWAMPERSAND+F.FMENU_WRAPMODE},
     list,{{BreakKey="F1"},{BreakKey="C+A"},{BreakKey="C+G"},{BreakKey="C+L"},{BreakKey="C+F"},{BreakKey="C+S"}}) -- меню
   if not res then return false end -- Esc
   if not res.BreakKey then PName,UID = res.name,res.uid return true end -- Enter
@@ -450,8 +452,8 @@ repeat
   local items,NL = {},0
   for _,v in pairs(tbl) do items[#items+1] = {text=v.name,elem=v} NL = math.max(NL,v.name:len()) end -- сформируем заготовку меню
   table.sort(items,function(a,b) return a.elem.type..a.text<b.elem.type..b.text end) -- отсортируем по типу и по имени
-  for i,v in ipairs(items) do -- добавим в пункты меню значения переменных (или " " для подключей)
-    if not v.res then v.text = ("%-"..NL.."s│".."%s"):format(v.text,v.elem.type==F.FST_SUBKEY and " " or tostring(v.elem.value):gsub("\n","\\n")) end
+  for i,v in ipairs(items) do -- добавим в пункты меню значения переменных (или "" для подключей)
+    if not v.res then v.text = ("%-"..NL.."s│".."%s"):format(v.text,v.elem.type==F.FST_SUBKEY and "" or tostring(v.elem.value):gsub("\n","\\n")) end
     if not v.res and v.elem.type==F.FST_DATA then -- для FST_DATA добавим расшифровку
       for j,w in ipairs(DATAToStrings(v.elem)) do table.insert(items,i+j,{text=(" "):rep(NL).."│"..w,res=true,elem=v.elem}) end
     end
@@ -583,10 +585,10 @@ end
 --[=[Макросы]=]
 -- -
 Macro{
-  area="Common"; key="CtrlShiftF5"; description=L.EMDesc; [(LMBuild<579 and "u" or "").."id"]=Guids.ExpMacro; action=ShowMenu;
+  area="Common"; key="CtrlShiftF5"; description=L.EMDesc; [(LMBuild<579 and "u" or "").."id"]=Guids.ExpMacro; action=function() ShowMenu() end;
 }
 Macro{
-  area="Common"; key="AltShiftF5"; description=L.IMDesc; [(LMBuild<579 and "u" or "").."id"]=Guids.ImpMacro; action=Restore;
+  area="Common"; key="AltShiftF5"; description=L.IMDesc; [(LMBuild<579 and "u" or "").."id"]=Guids.ImpMacro; action=function() Restore() end;
 }
 -- +
 --[=[Пункт меню]=]

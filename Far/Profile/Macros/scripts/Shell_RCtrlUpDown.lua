@@ -1,4 +1,4 @@
-Macro {
+﻿Macro {
 area="Shell"; key="RCtrlUp"; description="Предыдущая команда (CtrlE).";
 action=function()
  return Keys("CtrlE")

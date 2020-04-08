@@ -1,4 +1,4 @@
-local Info = Info or package.loaded.regscript or function(...) return ... end --luacheck: ignore 113/Info
+﻿local Info = Info or package.loaded.regscript or function(...) return ... end --luacheck: ignore 113/Info
 local nfo = Info { _filename or ...,
 	name        = "Lua Explorer Advanced";
 	description = "Explore Lua environment in your Far manager";
@@ -103,7 +103,7 @@ local function makeMenuItems(obj)
 
 	-- Far uses some properties that in fact are functions in obj.properties
 	-- but they logically belong to the object itself. It's all Lua magic ;)
-	
+
 	--if getmetatable(obj)=="access denied" then ...
 	local success,props = pcall(function()return obj.properties end)
 	--if not success then far.Message(props,'Error in __index metamethod',nil,'wl') end
@@ -316,7 +316,7 @@ brkeys = {
 	{BreakKey = 'CtrlShift+Insert',	action = function(obj, key)
 		far.CopyToClipboard ((valfmt(key,'list')))
 	end},
-	
+
 	{BreakKey = 'CtrlAlt+Insert',	action = function(obj, key, kpath)
 		far.CopyToClipboard (kpath:gsub('^_G%.','')..(valfmt(key,'list')))
 	end},
@@ -436,7 +436,7 @@ nfo.execute = function()
 	process(_G,'')
 	--require"le"(_G,'_G')
 end
-if Macro then 
+if Macro then
 	Macro { description = "Lua Explorer";
 		area="Common";	key="CtrlShiftF12";	action=nfo.execute
 	}

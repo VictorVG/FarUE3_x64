@@ -1,4 +1,4 @@
-local Info = Info or package.loaded.regscript or function(...) return ... end --luacheck: ignore 113/Info
+﻿local Info = Info or package.loaded.regscript or function(...) return ... end --luacheck: ignore 113/Info
 local nfo = Info { _filename or ...,
   name        = "Luacheck FAR scripts";
   description = "Using luacheck in FAR editor [tool for linting and static analysis of Lua code]";

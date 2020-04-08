@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<farconfig version="3.0.5570">
+<farconfig version="3.0.5580">
 	<generalconfig>
 		<setting key="Cmdline" name="AutoComplete" type="qword" value="0000000000000001"/>
 		<setting key="Cmdline" name="DelRemovesBlocks" type="qword" value="0000000000000001"/>
@@ -140,6 +140,7 @@
 		<setting key="Panel" name="Highlight" type="qword" value="0000000000000001"/>
 		<setting key="Panel" name="RememberLogicalDrives" type="qword" value="0000000000000000"/>
 		<setting key="Panel" name="ReverseSort" type="qword" value="0000000000000001"/>
+		<setting key="Panel" name="ReverseSortCharCompat" type="qword" value="0000000000000000"/>
 		<setting key="Panel" name="RightClickRule" type="qword" value="0000000000000002"/>
 		<setting key="Panel" name="RightClickSelect" type="qword" value="0000000000000001"/>
 		<setting key="Panel" name="SelectFolders" type="qword" value="0000000000000001"/>
@@ -1661,6 +1662,9 @@
 					<key name="Configuration">
 						<value name="Version" type="text" value="2.4.5"/>
 						<key name="CDCache">
+							<value name="anonymous@192.168.1.1" type="hex" value="41,2F,3D,2F,2F,0D,0A,2F,73,77,61,70,3D,2F,2F,0D,0A,2F,46,54,50,2F,54,48,41,49,50,48,4F,4F,4E,20,42,55,52,4E,45,52,20,53,75,70,65,72,20,42,6C,61,73,74,65,72,3D,2F,2F,0D,0A,2F,46,54,50,2F,46,61,72,33,3D,2F,2F,0D,0A,2F,46,54,50,3D,2F,2F,0D,0A,00"/>
+							<value name="anonymous@ftp.raxco.com" type="hex" value="41,2F,70,75,62,2F,64,6F,77,6E,6C,6F,61,64,2F,50,44,31,34,2E,30,3D,2F,2F,0D,0A,2F,70,75,62,2F,64,6F,77,6E,6C,6F,61,64,2F,50,44,31,34,2E,30,2F,55,73,65,72,47,75,69,64,65,73,3D,2F,2F,0D,0A,2F,70,75,62,2F,64,6F,77,6E,6C,6F,61,64,2F,50,44,31,34,2E,30,2F,54,6F,6F,6C,73,3D,2F,2F,0D,0A,2F,70,75,62,2F,64,6F,77,6E,6C,6F,61,64,3D,2F,2F,0D,0A,2F,70,75,62,2F,64,6F,77,6E,6C,6F,61,64,2F,4D,75,6C,74,69,6D,65,64,69,61,3D,2F,2F,0D,0A,2F,70,75,62,2F,64,6F,77,6E,6C,6F,61,64,2F,54,6F,6F,6C,73,3D,2F,2F,0D,0A,2F,70,75,62,3D,2F,2F,0D,0A,2F,3D,2F,2F,0D,0A,00"/>
+							<value name="vic4935@webdav.yandex.ru" type="hex" value="41,2F,46,61,72,33,3D,2F,2F,0D,0A,2F,3D,2F,2F,0D,0A,2F,56,69,64,65,6F,3D,2F,2F,0D,0A"/>
 						</key>
 						<key name="Interface">
 							<value name="AutoReadDirectoryAfterOp" type="qword" value="0000000000000001"/>
@@ -1788,60 +1792,10 @@
 					<key name="Sessions">
 						<key name="Default%20Settings">
 							<value name="FSProtocol" type="text" value="SFTP%20(SCP)"/>
-							<value name="Version" type="text" value="2.4.5"/>
+							<value name="Version" type="text" value="2.4.4"/>
 						</key>
-						<key name="FreeBSD%20(FTP)">
-							<value name="CodePage" type="text" value=""/>
-							<value name="FSProtocol" type="text" value="FTP"/>
-							<value name="FtpAllowEmptyPassword" type="qword" value="0000000000000001"/>
-							<value name="HostName" type="text" value="ftp.freebsd.org"/>
-							<value name="KEX" type="text" value="ecdh,ecdh,ecdh,ecdh,ecdh,ecdh"/>
-							<value name="LookupUserGroups2" type="qword" value="0000000000000000"/>
-							<value name="Password" type="text" value="A35C7B5E4A4B1D323332253133292F3A282C723A2E39393E2F3872332E3B292F392E1C2F392E2A392E723F333196393BCC50"/>
-							<value name="PingType" type="qword" value="0000000000000002"/>
-							<value name="PortNumber" type="qword" value="0000000000000015"/>
-							<value name="RemoteDirectory" type="text" value="/pub/FreeBSD/"/>
-							<value name="SFTPMaxVersion" type="qword" value="0000000000000000"/>
-							<value name="Timeout" type="qword" value="000000000000005A"/>
-							<value name="UpdateDirectories" type="qword" value="0000000000000000"/>
-							<value name="UserName" type="text" value="Anonymous"/>
-							<value name="Version" type="text" value="2.4.5"/>
-						</key>
-						<key name="RARLabs%20(FTP)">
-							<value name="CodePage" type="text" value=""/>
-							<value name="FSProtocol" type="text" value="FTP"/>
-							<value name="FtpAllowEmptyPassword" type="qword" value="0000000000000001"/>
-							<value name="HostName" type="text" value="ftp.rarlabs.com"/>
-							<value name="KEX" type="text" value="ecdh,ecdh,ecdh,ecdh,ecdh,ecdh"/>
-							<value name="LookupUserGroups2" type="qword" value="0000000000000000"/>
-							<value name="Password" type="text" value="A35C7B56B144F32015486FD60E381D323332253133292F3A282C722E3D2E303D3E2F723F3331292F392E1C2F392E2A392E723F3331"/>
-							<value name="PingType" type="qword" value="0000000000000002"/>
-							<value name="PortNumber" type="qword" value="0000000000000015"/>
-							<value name="RemoteDirectory" type="text" value="/rar/"/>
-							<value name="SFTPMaxVersion" type="qword" value="0000000000000000"/>
-							<value name="TimeDifferenceAuto" type="qword" value="0000000000000000"/>
-							<value name="Timeout" type="qword" value="000000000000005A"/>
-							<value name="UpdateDirectories" type="qword" value="0000000000000000"/>
-							<value name="UserName" type="text" value="Anonymous"/>
-							<value name="Version" type="text" value="2.4.5"/>
-						</key>
-						<key name="gnu.org">
-							<value name="CodePage" type="text" value=""/>
-							<value name="FSProtocol" type="text" value="FTP"/>
-							<value name="FtpAllowEmptyPassword" type="qword" value="0000000000000001"/>
-							<value name="HostName" type="text" value="ftp.gnu.org"/>
-							<value name="KEX" type="text" value="ecdh,ecdh,ecdh,ecdh,ecdh,ecdh"/>
-							<value name="LookupUserGroups2" type="qword" value="0000000000000000"/>
-							<value name="Password" type="text" value="A35C7F5FC902561D323332253133292F3A282C723B322972332E3B292F392E1C2F392E2A392E723F333161C069B458228060"/>
-							<value name="PingType" type="qword" value="0000000000000002"/>
-							<value name="PortNumber" type="qword" value="0000000000000015"/>
-							<value name="RemoteDirectory" type="text" value="/pub/"/>
-							<value name="SFTPMaxVersion" type="qword" value="0000000000000000"/>
-							<value name="UpdateDirectories" type="qword" value="0000000000000000"/>
-							<value name="UserName" type="text" value="Anonymous"/>
-							<value name="Version" type="text" value="2.4.5"/>
-						</key>
-					</key></key>
+					</key>
+				</key>
 			</hierarchicalconfig>
 		</plugin>
 		<plugin guid="4EBBEFC8-2084-4B7F-94C0-692CE136894D">
@@ -1898,16 +1852,18 @@
 							<value name="InsertEventKey" type="text" value="RCtrlF11"/>
 							<value name="InsertMIKey" type="text" value="RCtrlF11"/>
 							<value name="InsertMacroKey" type="text" value="RCtrlF11"/>
+							<value name="InsertPanelKey" type="text" value="RCtrlF11"/>
 							<value name="InsertPrefixKey" type="text" value="RCtrlF11"/>
 							<value name="InsertScriptKey" type="text" value="LCtrlF11"/>
 							<value name="InsertUidKey" type="text" value="RCtrlU"/>
 							<value name="KeyFilter" type="text" value=""/>
 							<value name="MISortingOrder" type="text" value="A"/>
-							<value name="MacroMaxDescWidth" type="qword" value="00000000000003E8"/>
 							<value name="MacroSortingOrder" type="text" value="OCAKD"/>
 							<value name="ManagerKey" type="text" value="AltShiftF11"/>
-							<value name="MaxKeyWidth" type="qword" value="00000000000003E8"/>
+							<value name="MaxFileWidth" type="qword" value="000000000000002E"/>
+							<value name="MaxKeyWidth" type="qword" value="0000000000000044"/>
 							<value name="ModuleSortingOrder" type="text" value="TMN"/>
+							<value name="PanelSortingOrder" type="text" value="AT"/>
 							<value name="PrefixSortingOrder" type="text" value="P"/>
 							<value name="ReloadKey" type="text" value="CtrlF9"/>
 							<value name="ShowEvents" type="qword" value="0000000000000001"/>
@@ -1916,10 +1872,12 @@
 							<value name="ShowMenuItems" type="qword" value="0000000000000001"/>
 							<value name="ShowModules" type="qword" value="0000000000000001"/>
 							<value name="ShowNonActiveMacros" type="qword" value="0000000000000001"/>
+							<value name="ShowPanels" type="qword" value="0000000000000001"/>
 							<value name="ShowPrefixes" type="qword" value="0000000000000001"/>
 						</key>
 					</key>
 					<key name="LuaMacro">
+						<value name="MacroBrowser" type="hex"/>
 					</key>
 				</key>
 			</hierarchicalconfig>
@@ -1993,6 +1951,11 @@
 			</hierarchicalconfig>
 		</plugin>
 		<plugin guid="6F332978-08B8-4919-847A-EFBB6154C99A">
+			<hierarchicalconfig>
+				<key name="6F332978-08B8-4919-847A-EFBB6154C99A" description="LuaFAR for Editor">
+					<value name="alldata" type="hex"/>
+				</key>
+			</hierarchicalconfig>
 		</plugin>
 		<plugin guid="742910F1-02ED-4542-851F-DEE37C2E13B2">
 			<hierarchicalconfig>
@@ -2081,6 +2044,7 @@
 		<plugin guid="8E11EA75-0303-4374-AC60-D1E38F865449">
 			<hierarchicalconfig>
 				<key name="8E11EA75-0303-4374-AC60-D1E38F865449" description="LuaFAR Search">
+					<value name="alldata" type="hex"/>
 				</key>
 			</hierarchicalconfig>
 		</plugin>
@@ -2204,7 +2168,7 @@
 					<value name="play_mode" type="qword" value="0000000000000002"/>
 					<value name="remove_album" type="qword" value="0000000000000001"/>
 					<value name="use_analyze" type="qword" value="0000000000000001"/>
-					<value name="volume" type="qword" value="0000000000000257"/>
+					<value name="volume" type="qword" value="00000000000003AC"/>
 					<value name="wasapi_play_url" type="qword" value="0000000000000001"/>
 				</key>
 			</hierarchicalconfig>
@@ -2435,7 +2399,7 @@
 						<key name="{42E4AEB1-A230-44F4-B33C-F195BB654931}%1">
 							<value name="Hidden" type="qword" value="0000000000000000"/>
 							<value name="Hotkey" type="text" value="\"/>
-							<value name="LastAccess" type="qword" value="000000004F231560"/>
+							<value name="LastAccess" type="qword" value="00000000507E6A49"/>
 							<value name="NewName" type="text" value=""/>
 						</key>
 						<key name="{4BFB9B87-CC29-493A-BEB8-557D63487917}">
@@ -2763,7 +2727,7 @@
 						<key name="{C941E865-9C29-485C-99B3-0C710940F2D8}">
 							<value name="Hidden" type="qword" value="0000000000000000"/>
 							<value name="Hotkey" type="text" value="5"/>
-							<value name="LastAccess" type="qword" value="000000004EF882E7"/>
+							<value name="LastAccess" type="qword" value="0000000050879D6F"/>
 							<value name="NewName" type="text" value=""/>
 						</key>
 						<key name="{CDF48DA0-0334-4169-8453-69048DD3B51C}">
@@ -2811,7 +2775,7 @@
 						<key name="{DD10A9C6-ECAC-4BFA-BB07-4A1E92744162}">
 							<value name="Hidden" type="qword" value="0000000000000000"/>
 							<value name="Hotkey" type="text" value="-"/>
-							<value name="LastAccess" type="qword" value="000000004F4D1C41"/>
+							<value name="LastAccess" type="qword" value="000000005087ADE8"/>
 							<value name="NewName" type="text" value=""/>
 						</key>
 						<key name="{DEEC52C3-AC76-4AD3-A6EF-CAFC33BD4C05}">
@@ -2894,7 +2858,7 @@
 						<key name="{F39EFDBF-A2E3-44F5-B4DF-519548A62BF9}">
 							<value name="Hidden" type="qword" value="0000000000000000"/>
 							<value name="Hotkey" type="text" value="u"/>
-							<value name="LastAccess" type="qword" value="000000004F03A285"/>
+							<value name="LastAccess" type="qword" value="00000000507F3DA9"/>
 							<value name="NewName" type="text" value=""/>
 						</key>
 						<key name="{F39EFDBF-A2E3-44F5-B4DF-519548A62BFA}">
@@ -3279,10 +3243,10 @@
 					<value name="rpl_space2tab" type="qword" value="0000000000000000"/>
 					<value name="rpl_space2tab_bo" type="qword" value="0000000000000001"/>
 					<value name="rpl_space2tab_n" type="qword" value="0000000000000004"/>
-					<value name="rpl_specal_chars" type="qword" value="0000000000000001"/>
+					<value name="rpl_specal_chars" type="qword" value="0000000000000000"/>
 					<value name="save_bak" type="qword" value="0000000000000000"/>
 					<value name="set_bom" type="qword" value="0000000000000001"/>
-					<value name="src_codepage" type="qword" value="000000000000FDE8"/>
+					<value name="src_codepage" type="qword" value="000000000000FDE9"/>
 					<value name="trim_eol_spaces" type="qword" value="0000000000000001"/>
 					<value name="trim_line" type="qword" value="0000000000000001"/>
 				</key>

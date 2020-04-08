@@ -126,14 +126,14 @@ if not Macro then return {Shell_Shift_F5F6F7=Shell_Shift_F5F6F7} end
 SimSU.Shell_Shift_F5F6F7=Shell_Shift_F5F6F7; _G.SimSU=SimSU
 -------------------------------------------------------------------------------
 
-Macro {id="1d93d055-e220-4b6b-aa73-2783b2c16947";
-  area="Shell Tree Search"; key=S.KeyCopy;      priority=S.PriorCopy;      sortpriority=S.SortCopy;      description=M.DescrCopy;      flags="NoPluginPanels NoPluginPPanels";
-  action=function() return CopyMove("F5") end;
-}
-Macro {id="d1a184d8-3b4a-4f70-bbc5-9f0bc4cdd8c0";
-  area="Shell Tree Search"; key=S.KeyMove;      priority=S.PriorMove;      sortpriority=S.SortMove;      description=M.DescrMove;      flags="NoPluginPanels NoPluginPPanels";
-  action=function() return CopyMove("F6") end;
-}
+-- Macro {id="1d93d055-e220-4b6b-aa73-2783b2c16947";
+--   area="Shell Tree Search"; key=S.KeyCopy;      priority=S.PriorCopy;      sortpriority=S.SortCopy;      description=M.DescrCopy;      flags="NoPluginPanels NoPluginPPanels";
+--   action=function() return CopyMove("F5") end;
+-- }
+-- Macro {id="d1a184d8-3b4a-4f70-bbc5-9f0bc4cdd8c0";
+--   area="Shell Tree Search"; key=S.KeyMove;      priority=S.PriorMove;      sortpriority=S.SortMove;      description=M.DescrMove;      flags="NoPluginPanels NoPluginPPanels";
+--   action=function() return CopyMove("F6") end;
+-- }
 Macro {id="0ee8ac37-1fd4-4986-b4b6-446c5aaf7be8";
   area="Shell Tree Search"; key=S.KeyMkDir;     priority=S.PriorMkDir;     sortpriority=S.SortMkDir;     description=M.DescrMkDir;     flags="NoPluginPanels";
   action=function() return MkDir() end;

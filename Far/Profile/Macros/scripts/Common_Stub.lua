@@ -1,4 +1,4 @@
--- This is stub for some potential data lost keys. Don't remove it! /VictorVG/
+﻿-- This is stub for some potential data lost keys. Don't remove it! /VictorVG/
 -- v1.0, Initial build
 -- 27.11.2019 15:05:37 +0300
 
