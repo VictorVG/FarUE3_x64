@@ -1,6 +1,6 @@
 ﻿.Language=Ukrainian,Ukrainian (Українська)
 
-//Version: 3.0.0.5580
+//Version: 3.0.0.5586
 
 //[MYes]
 "Так"
@@ -430,7 +430,7 @@
 //[MConfigClearType]
 "Перемальовка з підтримкою ClearType (може бути повільною)"
 //[MConfigSetConsoleIcon]
-"Виставляти іконку консолі"
+"Іконка консолі:"
 //[MConfigSetAdminConsoleIcon]
 "Альтернативна для адміністратора"
 //[MConfigTitleAddons]
@@ -3851,16 +3851,20 @@
 "Джерело:"
 //[MExcFunction]
 "Функція:"
-//[MExcModule]
-"Модуль:"
+//[MExcFileName]
+"Файл:"
+//[MExcPlugin]
+"Плагін:"
 //[MExcFarVersion]
-"Версія:"
+"Far:"
 //[MExcOSVersion]
 "ОС:"
 //[MExcTerminate]
 "Завершити Far"
 //[MExcUnload]
 "Вивантажити плагін"
+//[MExcCopy]
+"Копіювати"
 //[MExcStack]
 "Стек"
 //[MExcMinidump]

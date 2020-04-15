@@ -1,6 +1,6 @@
 ﻿.Language=Russian,Russian (Русский)
 
-//Version: 3.0.0.5580
+//Version: 3.0.0.5586
 
 //[MYes]
 "Да"
@@ -430,7 +430,7 @@
 //[MConfigClearType]
 "Перер&исовка с поддержкой ClearType (может быть медленной)"
 //[MConfigSetConsoleIcon]
-"Выставлять иконку консоли"
+"Иконка консоли:"
 //[MConfigSetAdminConsoleIcon]
 "Альтернативная для администратора"
 //[MConfigTitleAddons]
@@ -3851,16 +3851,20 @@
 "Источник:"
 //[MExcFunction]
 "Функция:"
-//[MExcModule]
-"Модуль:"
+//[MExcFileName]
+"Файл:"
+//[MExcPlugin]
+"Плагин:"
 //[MExcFarVersion]
-"Версия:"
+"Far:"
 //[MExcOSVersion]
 "ОС:"
 //[MExcTerminate]
 "Завершить Far"
 //[MExcUnload]
 "Выгрузить плагин"
+//[MExcCopy]
+"Копировать"
 //[MExcStack]
 "Стек"
 //[MExcMinidump]

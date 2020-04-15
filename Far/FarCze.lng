@@ -1,6 +1,6 @@
 ﻿.Language=Czech,Czech (Čeština)
 
-//Version: 3.0.0.5580
+//Version: 3.0.0.5586
 
 //[MYes]
 "Ano"
@@ -430,7 +430,7 @@
 //[MConfigClearType]
 "Použít &ClearType (pomalejší)"
 //[MConfigSetConsoleIcon]
-"Nastavit ikonu okna konzole"
+"Ikona okna konzole:"
 //[MConfigSetAdminConsoleIcon]
 "Alternativní ikona pro správce"
 //[MConfigTitleAddons]
@@ -3850,10 +3850,12 @@
 "Zdroj:"
 //[MExcFunction]
 "Funkce:"
-//[MExcModule]
+//[MExcFileName]
+"Soubor:"
+//[MExcPlugin]
 "Modul:"
 //[MExcFarVersion]
-"Verze:"
+"Far:"
 // need translation:
 //[MExcOSVersion]
 "OS:"
@@ -3861,6 +3863,8 @@
 "Ukončit Far"
 //[MExcUnload]
 "Ukončit modul"
+//[MExcCopy]
+"Kopírovat"
 //[MExcStack]
 "Stack"
 //[MExcMinidump]

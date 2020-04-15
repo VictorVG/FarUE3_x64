@@ -1,6 +1,6 @@
 ﻿.Language=Belarusian,Belarusian (Беларуская)
 
-//Version: 3.0.0.5580
+//Version: 3.0.0.5586
 
 //[MYes]
 "Так"
@@ -430,7 +430,7 @@
 //[MConfigClearType]
 "Перамалёўка з падтрымкай ClearType (можа быць марудным)"
 //[MConfigSetConsoleIcon]
-"Прызначыць гузік кансолі"
+"Гузік кансолі:"
 //[MConfigSetAdminConsoleIcon]
 "Дадаткова для Адміністратара"
 //[MConfigTitleAddons]
@@ -3854,16 +3854,20 @@
 "Крыніца:"
 //[MExcFunction]
 "Функцыя:"
-//[MExcModule]
-"Модуль:"
+//[MExcFileName]
+"Файл:"
+//[MExcPlugin]
+"Дадатак:"
 //[MExcFarVersion]
-"Версія:"
+"Far:"
 //[MExcOSVersion]
 "ОС:"
 //[MExcTerminate]
 "Забіць Far"
 //[MExcUnload]
 "Выгрузіць дадатак"
+//[MExcCopy]
+"Капіяваць"
 //[MExcStack]
 "Стэк"
 //[MExcMinidump]

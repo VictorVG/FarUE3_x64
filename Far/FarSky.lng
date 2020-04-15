@@ -1,6 +1,6 @@
 ﻿.Language=Slovak,Slovak (Slovenčina)
 
-//Version: 3.0.0.5580
+//Version: 3.0.0.5586
 
 //[MYes]
 "Áno"
@@ -431,7 +431,7 @@
 //[MConfigClearType]
 "Použiť &ClearType (pomalšie)"
 //[MConfigSetConsoleIcon]
-"Nastaviť ikonu konzoly"
+"Ikona konzoly:"
 //[MConfigSetAdminConsoleIcon]
 "Alternatívne pre správcu"
 //[MConfigTitleAddons]
@@ -3863,10 +3863,12 @@
 "Zdroje:"
 //[MExcFunction]
 "Funkcia:"
-//[MExcModule]
+//[MExcFileName]
+"Súbor:"
+//[MExcPlugin]
 "Modul:"
 //[MExcFarVersion]
-"Verzia:"
+"Far:"
 // need translation:
 //[MExcOSVersion]
 "OS:"
@@ -3874,6 +3876,8 @@
 "Ukončiť Far"
 //[MExcUnload]
 "Zatvoriť modul"
+//[MExcCopy]
+"Skopírovať"
 //[MExcStack]
 "Halda"
 //[MExcMinidump]

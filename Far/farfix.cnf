@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<farconfig version="3.0.5512">
+<farconfig>
 	<generalconfig>
-		<setting key="System" name="CopyPreserveTimestamps" type="qword" value="0000000000000000"/>
-		<setting key="System" name="DriveMenuMode" type="qword" value="00000000000012E7"/>
+		<setting key="PluginConfirmations" name="OpenFilePlugin" type="qword" value="0000000000000001"/>
+		<setting key="System" name="PluginMaxReadData" type="qword" value="00000000000BB800"/>
 	</generalconfig>
 </farconfig>

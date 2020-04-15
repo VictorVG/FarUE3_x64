@@ -1,6 +1,6 @@
 ﻿.Language=Hungarian,Hungarian (Magyar)
 
-//Version: 3.0.0.5580
+//Version: 3.0.0.5586
 
 //[MYes]
 "Igen"
@@ -462,7 +462,7 @@
 "ClearType-friendly redraw (can be slow)"
 // need translation:
 //[MConfigSetConsoleIcon]
-"Set console icon"
+"Console icon:"
 // need translation:
 //[MConfigSetAdminConsoleIcon]
 "Alternate for Administrator"
@@ -4130,12 +4130,12 @@
 // need translation:
 //[MExcFunction]
 "Function:"
-// need translation:
-//[MExcModule]
-"Module:"
-// need translation:
+//[MExcFileName]
+"Fájl:"
+//[MExcPlugin]
+"Plugin:"
 //[MExcFarVersion]
-"Version:"
+"Far:"
 // need translation:
 //[MExcOSVersion]
 "OS:"
@@ -4145,6 +4145,8 @@
 // need translation:
 //[MExcUnload]
 "Unload plugin"
+//[MExcCopy]
+"Másol"
 // need translation:
 //[MExcStack]
 "Stack"

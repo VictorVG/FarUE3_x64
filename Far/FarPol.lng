@@ -1,6 +1,6 @@
 ﻿.Language=Polish,Polish (Polski)
 
-//Version: 3.0.0.5580
+//Version: 3.0.0.5586
 
 //[MYes]
 "Tak"
@@ -430,7 +430,7 @@
 //[MConfigClearType]
 "&Rysowanie zgodne z ClearType (może być wolniejsze)"
 //[MConfigSetConsoleIcon]
-"Ustaw iko&nę konsoli"
+"Iko&na konsoli:"
 //[MConfigSetAdminConsoleIcon]
 "Inna dla Administratora"
 //[MConfigTitleAddons]
@@ -3848,16 +3848,20 @@
 "Źródło:"
 //[MExcFunction]
 "Funkcja:"
-//[MExcModule]
-"Moduł:"
+//[MExcFileName]
+"Plik:"
+//[MExcPlugin]
+"Wtyczka:"
 //[MExcFarVersion]
-"Wersja:"
+"Far:"
 //[MExcOSVersion]
 "OS:"
 //[MExcTerminate]
 "Zamknięcie Far"
 //[MExcUnload]
 "Wyłącz wtyczkę"
+//[MExcCopy]
+"Kopiuj"
 //[MExcStack]
 "Stos"
 //[MExcMinidump]

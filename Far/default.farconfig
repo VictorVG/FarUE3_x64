@@ -242,8 +242,7 @@
 		<setting key="System" name="MultiCopy" type="qword" value="0000000000000000"/>
 		<setting key="System" name="MultiMakeDir" type="qword" value="0000000000000001"/>
 		<setting key="System" name="OEMPluginsSupport" type="qword" value="0000000000000001"/>
-		<setting key="System" name="PluginMaxReadData" type="qword" value="0000000000080000"/>
-		<setting key="System" name="QuotedName" type="qword" value="0000000000000001"/>
+		<setting key="System" name="PluginMaxReadData" type="qword" value="00000000000BB800"/><setting key="System" name="QuotedName" type="qword" value="0000000000000001"/>
 		<setting key="System" name="QuotedSymbols" type="text" value=" &amp;()[]{}^=;!'+,` "/>
 		<setting key="System" name="SaveFoldersHistory" type="qword" value="0000000000000001"/>
 		<setting key="System" name="SaveHistory" type="qword" value="0000000000000001"/>

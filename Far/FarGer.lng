@@ -1,6 +1,6 @@
 ﻿.Language=German,German (Deutsch)
 
-//Version: 3.0.0.5580
+//Version: 3.0.0.5586
 
 //[MYes]
 "Ja"
@@ -436,7 +436,7 @@
 //[MConfigClearType]
 "Neu mit der ClearType zeichnen (kann langsam sein)"
 //[MConfigSetConsoleIcon]
-"Konsole anzeigen"
+"Konsole symbol:"
 //[MConfigSetAdminConsoleIcon]
 "Alternatives Konsolezeichen für Administrator"
 //[MConfigTitleAddons]
@@ -3941,12 +3941,12 @@
 "Source:"
 //[MExcFunction]
 "Funktion:"
-// need translation:
-//[MExcModule]
-"Module:"
-// need translation:
+//[MExcFileName]
+"Date:"
+//[MExcPlugin]
+"Plugin:"
 //[MExcFarVersion]
-"Version:"
+"Far:"
 // need translation:
 //[MExcOSVersion]
 "OS:"
@@ -3955,6 +3955,8 @@
 // need translation:
 //[MExcUnload]
 "Unload plugin"
+//[MExcCopy]
+"Kopieren"
 // need translation:
 //[MExcStack]
 "Stack"

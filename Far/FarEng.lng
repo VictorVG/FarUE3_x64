@@ -1,6 +1,6 @@
 ﻿.Language=English,English
 
-//Version: 3.0.0.5580
+//Version: 3.0.0.5586
 
 //[MYes]
 "Yes"
@@ -430,7 +430,7 @@
 //[MConfigClearType]
 "Cl&earType-friendly redraw (can be slow)"
 //[MConfigSetConsoleIcon]
-"Set console &icon"
+"Сonsole &icon:"
 //[MConfigSetAdminConsoleIcon]
 "Alternate for &Administrator"
 //[MConfigTitleAddons]
@@ -3848,16 +3848,20 @@
 "Source:"
 //[MExcFunction]
 "Function:"
-//[MExcModule]
-"Module:"
+//[MExcFileName]
+"File:"
+//[MExcPlugin]
+"Plugin:"
 //[MExcFarVersion]
-"Version:"
+"Far:"
 //[MExcOSVersion]
 "OS:"
 //[MExcTerminate]
 "&Terminate Far"
 //[MExcUnload]
 "&Unload plugin"
+//[MExcCopy]
+"Copy"
 //[MExcStack]
 "&Stack"
 //[MExcMinidump]

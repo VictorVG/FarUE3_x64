@@ -1,6 +1,6 @@
 ﻿.Language=Italian,Italian (Italiano)
 
-//Version: 3.0.0.5580
+//Version: 3.0.0.5586
 
 //[MYes]
 "&Si"
@@ -430,7 +430,7 @@
 //[MConfigClearType]
 "Modalità ClearT&ype (può rallentare)"
 //[MConfigSetConsoleIcon]
-"Imposta Icona Far:"
+"Icona di console:"
 //[MConfigSetAdminConsoleIcon]
 "Diversa Quando Amministratore"
 //[MConfigTitleAddons]
@@ -3860,10 +3860,12 @@
 "Origine:"
 //[MExcFunction]
 "Funzione:"
-//[MExcModule]
-"Modulo:"
+//[MExcFileName]
+"File:"
+//[MExcPlugin]
+"Plugin:"
 //[MExcFarVersion]
-"Versione:"
+"Far:"
 // need translation:
 //[MExcOSVersion]
 "OS:"
@@ -3871,6 +3873,8 @@
 "Termina Far"
 //[MExcUnload]
 "Scarica Plugin"
+//[MExcCopy]
+"Copia"
 //[MExcStack]
 "Stack"
 //[MExcMinidump]

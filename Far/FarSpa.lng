@@ -1,6 +1,6 @@
 ﻿.Language=Spanish,Spanish (Español)
 
-//Version: 3.0.0.5580
+//Version: 3.0.0.5586
 
 //[MYes]
 "Si"
@@ -430,7 +430,7 @@
 //[MConfigClearType]
 "Limpiar rediseño (puede ser lento)"
 //[MConfigSetConsoleIcon]
-"Poner ícono para ventana de consola"
+"Icono de consola:"
 //[MConfigSetAdminConsoleIcon]
 "Alternar por Administrador"
 //[MConfigTitleAddons]
@@ -3864,10 +3864,12 @@
 "Origen:"
 //[MExcFunction]
 "Función:"
-//[MExcModule]
-"Módulo:"
+//[MExcFileName]
+"Archivo:"
+//[MExcPlugin]
+"Complemento:"
 //[MExcFarVersion]
-"Versión:"
+"Far:"
 // need translation:
 //[MExcOSVersion]
 "OS:"
@@ -3875,6 +3877,8 @@
 "Terminar Far"
 //[MExcUnload]
 "Descargar de memoria complemento"
+//[MExcCopy]
+"Copiar"
 // need translation:
 //[MExcStack]
 "Stack"
