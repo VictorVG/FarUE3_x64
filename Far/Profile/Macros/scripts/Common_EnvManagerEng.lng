@@ -41,6 +41,7 @@
   Hdr = "Environment manager",
   CU = "HKCU:",
   LM = "HKLM:",
+  DEL = " == DELETE == ",
   OK = "OK",
   Cancel = "Cancel",
   BLHdr = "Delete variables from black list",

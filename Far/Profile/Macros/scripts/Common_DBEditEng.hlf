@@ -10,7 +10,7 @@ $^Main window
 edit them, export to a file and import the previously exported file.
 The title bar indicates which plugin DB is opened and current subkey.
 Local and global DB profiles are denoted by a #LOCAL# and #GLOBAL#.
-Window contains the contents of the current subkey, grouped by types: subkeys (marked with ##), numbers, strings, data.
+Window contains the contents of the current subkey, grouped by types: subkeys (marked with # #), numbers, strings, data.
 For data are showed both source and value if possible.
 
 ^#Hotkeys#

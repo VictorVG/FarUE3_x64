@@ -452,8 +452,8 @@ repeat
   local items,NL = {},0
   for _,v in pairs(tbl) do items[#items+1] = {text=v.name,elem=v} NL = math.max(NL,v.name:len()) end -- сформируем заготовку меню
   table.sort(items,function(a,b) return a.elem.type..a.text<b.elem.type..b.text end) -- отсортируем по типу и по имени
-  for i,v in ipairs(items) do -- добавим в пункты меню значения переменных (или "" для подключей)
-    if not v.res then v.text = ("%-"..NL.."s│".."%s"):format(v.text,v.elem.type==F.FST_SUBKEY and "" or tostring(v.elem.value):gsub("\n","\\n")) end
+  for i,v in ipairs(items) do -- добавим в пункты меню значения переменных (или " " для подключей)
+    if not v.res then v.text = ("%-"..NL.."s│".."%s"):format(v.text,v.elem.type==F.FST_SUBKEY and " " or tostring(v.elem.value):gsub("\n","\\n")) end
     if not v.res and v.elem.type==F.FST_DATA then -- для FST_DATA добавим расшифровку
       for j,w in ipairs(DATAToStrings(v.elem)) do table.insert(items,i+j,{text=(" "):rep(NL).."│"..w,res=true,elem=v.elem}) end
     end

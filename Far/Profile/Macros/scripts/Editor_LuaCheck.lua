@@ -2,8 +2,8 @@
 local nfo = Info { _filename or ...,
   name        = "Luacheck FAR scripts";
   description = "Using luacheck in FAR editor [tool for linting and static analysis of Lua code]";
-  version     = "1.4.3-far5505.lm712"; --http://semver.org/lang/ru/
-  author      = "jd";
+  version     = "1.4.4-far5505.lm712"; --http://semver.org/lang/ru/
+  author      = "jd"; -- Update up to support lm738+ VictorVG, 18.04.2020 19:41:30 +0300
   url         = "http://forum.farmanager.com/viewtopic.php?f=15&t=9650";
   id          = "73924F99-3AE6-4B3E-9981-ABC0ECB199EC";
   minfarversion = {3,0,0,5106,0}; --luamacro/luafar build 634 (Panel.SetPath)
@@ -31,6 +31,12 @@ local nfo = Info { _filename or ...,
   };
   --disabled = true;
 }
+local function IsLmVer(num)
+local lmvr,rt,bld = far.GetPluginInformation(far.FindPlugin("PFM_GUID",win.Uuid("4EBBEFC8-2084-4B7F-94C0-692CE136894D")))
+  if lmvr.GInfo.Version[4] >= num then rt=true else rt=false end
+  return rt
+end
+
 if not nfo or nfo.disabled then return end
 
 local luacheck_min_version = "0.19.0"
@@ -44,7 +50,6 @@ if O.CycleMode~="ping-pong" then O.CycleMode = false end
 local F = far.Flags
 local ptn_path = "^.+[\\/]"
 
-local ConvertToAnsi = true --https://github.com/mpeterv/luacheck/issues/45
 local _path = (...):match(ptn_path)
 local files = {
   far_stds="far_standards.lua.cfg",
@@ -565,7 +570,7 @@ end
 
 function Check()
   if not loadLuacheck() then return end
-  local ei = editor.GetInfo()
+  local ei,ConvertToAnsi = editor.GetInfo()
   if not ei then return end
   local sel = editor.GetSelection()
   if sel then --save for further restoring
@@ -577,9 +582,15 @@ function Check()
   local source = {}
   for i=1,ei.TotalLines do source[i] = editor.GetString(nil,i).StringText end
   local text = table.concat(source,"\n")
-  if ConvertToAnsi then
-    text = win.WideCharToMultiByte(win.Utf8ToUtf16(text),win.GetACP())
+
+  -- Make BugFix for https://github.com/mpeterv/luacheck/issues/45 compatible this LuaMacro b738 or newer.
+  if IsLmVer(738) then
+   if not utf8.utf8valid(text) then ConvertToAnsi = true else ConvertToAnsi = false end
+  else
+   ConvertToAnsi = true
   end
+
+  if ConvertToAnsi then text = win.WideCharToMultiByte(win.Utf8ToUtf16(text),win.GetACP()) end
   local isMoon = ProcessName("*.moon",ei.FileName)
   local moon_info
   if isMoon then

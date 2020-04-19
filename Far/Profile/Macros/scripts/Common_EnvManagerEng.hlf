@@ -59,10 +59,11 @@ Dialog elements are showed and described lower.
 $^Save variables into file
 ^#Description#
   This dialog allows to save selected variables into file.
-  File format:
-  Sequence of line pairs of type:
+
+  File format: sequence of line pairs of type
   #@@REM (Mem||HKLM|HKCU)#
   #@@SET <Name>=<Value>#
+
   First string denotes variable source: memory, system registry or user registry.
 Second string contains name and value of variable.
 Because file format conforms to Windows command file format, that it can be not only ~imported~@load@ with EnvManager,
@@ -93,15 +94,16 @@ but also execute from command line.
 @load
 $^Load variables from file
 ^#Description#
-  This dialog allows to load environment variables from file.
-Any variable can be viewed in separate window. Selected variables will be loaded after confirming.
+  This dialog allows to load environment variables from file and delete existing environment variables..
+Any variable can be viewed in separate window. Selected variables will be loaded/deleted after confirming.
 
-  File format:
-  Sequence of line pairs of type:
+  File format: sequence of line pairs of type
   #@@REM (Mem||HKLM|HKCU)#
-  #@@SET <Name>=<Value>#
+  #@@SET <Name>=[<Value>]#
+
   First string denotes variable source: memory, system registry or user registry.
 Second string contains name and value of variable. Any data can be contained between line pairs.
+If #<Value># is omitted, than this variable will be deleted.
 
 ^#Hotkeys#
   #F1#        - |This help.
@@ -128,9 +130,13 @@ Second string contains name and value of variable. Any data can be contained bet
 
 @prefix
 $^Command line
+^#List#
 
-  #EMLoad:[file]# - |Import variables from file specified. If file name is omitted, input dialog is started.
+  #EMLoad:[file]#    - |Import variables from file specified. If file name is omitted, input dialog is started.
 If file is found and successfully read, variables selection for loading is produced ~in dialog~@load@.
+
+  #EMLoadAll:[file]# - |Import variables from file specified. If file name is omitted, input dialog is started.
+If file is found and successfully read, all founded variables are loaded.
 
 @=
 
@@ -141,7 +147,7 @@ $^About
 
  Author:       #IgorZ#
 
- Version:      #1.4.0#
+ Version:      #1.4.1#
 
  Net address: ~http://forum.farmanager.com/viewtopic.php?t=9975~@http://forum.farmanager.com/viewtopic.php?t=9975@
 @=‗

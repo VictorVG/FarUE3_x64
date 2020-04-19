@@ -1,4 +1,4 @@
--- http://luacheck.readthedocs.io/en/stable/config.html
+﻿-- http://luacheck.readthedocs.io/en/stable/config.html
 
 local options = {
 

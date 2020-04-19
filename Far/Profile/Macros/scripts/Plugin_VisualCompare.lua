@@ -1,6 +1,8 @@
-﻿-- Visual Compare files or folders for panels: Files, Branch, Temporary, Arclite, Netbox, Observer, TorrentView.
--- v.1.8
--- https://forum.ru-board.com/topic.cgi?forum=5&topic=49572&start=2080#6
+﻿-- Panel.VisualCompare.lua
+-- v.1.8.3
+-- Visual Compare files or folders for panels: Files, Branch, Temporary, Arclite, Netbox, Observer, TorrentView.
+-- Keys: CtrlAltC
+-- Url: https://forum.ru-board.com/topic.cgi?forum=5&topic=49572&start=2080#6
 
 local ffi = require("ffi")
 
@@ -88,7 +90,7 @@ action = function()
   elseif APanel.SelCount==1 and PPanel.SelCount==1 then PC,AC = panel.GetSelectedPanelItem(nil,0,1).FileName,panel.GetSelectedPanelItem(nil,1,1).FileName
   elseif APanel.SelCount==1 then S2,PC,AC = true,panel.GetSelectedPanelItem(nil,1,1).FileName,panel.GetCurrentPanelItem(nil,1).FileName
     CI=panel.GetPanelInfo(nil,1).CurrentItem
-    panel.SetSelection(nil,1,CI,true)
+    panel.BeginSelection(nil,1) panel.SetSelection(nil,1,CI,true)
   elseif APanel.SelCount==0 and PPanel.SelCount==1 then PC=panel.GetSelectedPanelItem(nil,0,1).FileName
   end
   local eAP,ePP = AF=="arc" or APR=="ma" or ePF:match(APR or ""),PF=="arc" or PPR=="ma" or ePF:match(PPR or "")
@@ -100,24 +102,31 @@ action = function()
     if eAP then AP=TMP..APD e(AP,AC) end
     if ePP then PP=TMP..PPD panel.SetActivePanel(nil,0) e(PP,PC) panel.SetActivePanel(nil,0) end
   end
-  if CI then panel.SetSelection(nil,1,CI,false) end
+  if CI then panel.SetSelection(nil,1,CI,false) panel.EndSelection(nil,1) end
   AP,PP = f(AP,AC),f(PP,PC)
   if AP==PP then far.Message("it's the same object\n\n1st: "..PP.."\n2nd: "..AP,VC)
   else
+    local NotRead,NotReadFile = false,""
     local function crash_protect(f)
-      local fffe,efbbbf,zero = "\255\254","\239\187\191",false
+      local fffezzzz,zzzzfeff,feff,fffe,efbbbf,zero = "\255\254\000\000","\000\000\254\255","\254\255","\255\254","\239\187\191"
       if not win.GetFileInfo(f).FileAttributes:find("d") then
         local h=io.open(f,"rb")
-        local s=h:read(4) or ""
-        local l=string.len(s)
-        if h then zero=(l==0 or l==3 and s==efbbbf or l==2 and s==fffe) h:close() end
+        if h then
+          local s=h:read(4) or ""
+          local l=string.len(s)
+          zero=(l==0 or l==3 and s==efbbbf or l==2 and (s==fffe or s==feff) or l==4 and (s==fffezzzz or s==zzzzfeff)) h:close()
+        else
+          NotRead,NotReadFile = true,f
+        end
       end
       return zero
     end
-    if crash_protect(AP) and crash_protect(PP)
+    local cp_AP,cp_PP = crash_protect(AP),crash_protect(PP)
+    if NotRead then far.Message("\nCrash protect!\n\nFile: "..NotReadFile.."\n- blocked?",VC)
+    elseif cp_AP and cp_PP
     then
       local APlen = AP:len()-PP:len()
-      far.Message("Crash protect!\n\n1st: "..PP..(APlen>0 and string.rep(" ",APlen) or "").."\n2nd: "..AP..(APlen<0 and string.rep(" ",-APlen) or ""),VC)
+      far.Message("\nCrash protect!\n\nFiles have zero sizes or BOM only\n\n1st: "..PP..(APlen>0 and string.rep(" ",APlen) or "").."\n2nd: "..AP..(APlen<0 and string.rep(" ",-APlen) or ""),VC)
     else
       if APanel.Left
       then Plugin.Command(VisComp,'"'..AP..'" "'..PP..'"')

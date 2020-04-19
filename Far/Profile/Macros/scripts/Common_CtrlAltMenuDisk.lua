@@ -2,7 +2,7 @@
 local nfo = Info {_filename or ...,
   name          = "CtrlAltMenuDisk";
   description   = "Переключение дисков по Ctrl/Alt/Shift+<-/->";
-  version       = "4.1.1"; --http://semver.org/lang/ru/
+  version       = "4.1.2"; --http://semver.org/lang/ru/
   author        = "IgorZ";
   url           = "http://forum.farmanager.com/viewtopic.php?t=7471";
   id            = "097450AF-B186-425A-961A-4A884FC2B732";
@@ -13,7 +13,7 @@ local nfo = Info {_filename or ...,
 при нажатии RightCtrl/LeftAlt - для правой, при нажатии Shift - для активной.
 Меняется в настройках.
 ]];
-history         = [[
+  history       = [[
 2012/11/02 v1.0   - Первый релиз
 2012/11/13 v1.1   - Добавлены опции: использовать/игнорировать Shift/стрелки; игнорировать/обрабатывать закрытые панели.
                     Не пытаемся обрабатывать нефайловые панели (всё равно смена диска не работает).
@@ -60,14 +60,39 @@ history         = [[
 2018/02/09 v4.1.0 - Горизонтальная позиция мини-панели настраивается. Скрипт добавляется в меню дисков. Подсказки. Рефакторинг.
 2018/11/06 v4.1.1 - Исправлена подсказка для конфигурации. Рефакторинг.
 2018/12/15 v4.1.1.1 - Опечатка в хинте, выкинул пункт из меню дисков - скрипт там только мешает /VictorVG/
+2019/12/04 v4.1.2 - Исправлена подсказка мини-панели. Дополнена справка о подсказке. Доработан вид меню выбора плагинов в конфигурации.
+                    Добавлен показ в подсказке метки тома для дисков. Рефакторинг.
 ]];
+  options       = {
+    DefProfile = far.Flags.PSL_ROAMING--[[far.Flags.PSL_LOCAL--]] -- место хранения настроек по умолчанию: глобальные/локальные
+  }
 }
 if not nfo then return end
+-- +
+--[[ffi]]
+-- -
+local ffi = require"ffi"
+ffi.cdef[[
+BOOL FreeLibrary(HMODULE hModule); //https://msdn.microsoft.com/library/ms683152
+HMODULE LoadLibraryExW(LPCTSTR lpFileName,HANDLE hFile,DWORD dwFlags); //https://msdn.microsoft.com/library/ms684179
+int GetProcAddress(HMODULE hModule,LPCSTR lpProcName); //https://msdn.microsoft.com/library/ms683212
+BOOL GetVolumeInformationA(         //https://docs.microsoft.com/en-us/windows/win32/api/fileapi/nf-fileapi-getvolumeinformationa
+  LPCSTR lpRootPathName,            // address of root directory of the file system
+  LPSTR lpVolumeNameBuffer,         // address of name of the volume
+  DWORD nVolumeNameSize,            // length of lpVolumeNameBuffer
+  LPDWORD lpVolumeSerialNumber,     // address of volume serial number
+  LPDWORD lpMaximumComponentLength, // address of system's maximum filename length
+  LPDWORD lpFileSystemFlags,        // address of file system flags
+  LPSTR lpFileSystemNameBuffer,     // address of name of file system
+  DWORD nFileSystemNameSize         // length of lpFileSystemNameBuffer
+ );
+]]
+local fC,DONT_RESOLVE_DLL_REFERENCES = ffi.C,0x00000001
 -- +
 --[[константы]]
 -- -
 local F,C,A_Z,Author,ConfPart,PlugPart,KeyPart = far.Flags,far.Colors,"ABCDEFGHIJKLMNOPQRSTUVWXYZ","IgorZ","CASArrowsDiskSwitch","Plugins","Keys"
-local Period = 50
+local Period = 100
 local Guids = {
   LuaMacro = win.Uuid("4EBBEFC8-2084-4B7F-94C0-692CE136894D"); -- guid LuaMacro
   Macro = "48994AA9-76FF-4DA1-9228-5189D02BD8C2",
@@ -76,7 +101,7 @@ local Guids = {
   PlugMenu = "A4A5A5A7-AD64-4DD1-8C61-28CB90358817",
   ConfDialog = win.Uuid("D86EB908-8F29-4D8B-99D7-13DEB1FCA322"),
 }
-local PathName = (...):match("(.*)%.lua") -- путь и общая часть имени
+local PathName = debug.getinfo(function()end).source:match("^@?([^@].*)%.[^%.\\]+$") -- путь и имя без расширения
 local LMBuild = far.GetPluginInformation(far.FindPlugin(F.PFM_GUID,Guids.LuaMacro)).GInfo.Version[4] -- запомним версию LuaMacro
 local Def = { -- настройки по умолчанию
   UseHidden = 1, -- отрабатывать для скрытой панели
@@ -98,7 +123,6 @@ local Def = { -- настройки по умолчанию
     ["1"]=win.Uuid("B77C964B-E31E-4D4C-8FE5-D6B0C6853E7C"), -- TmpPanel
 --  ["4"]=win.Uuid("148FE5E0-7129-4269-B30F-A1A866DD009A"), -- TrueBranch
 } }
-local DefProfile = F.PSL_ROAMING--[[F.PSL_LOCAL--]]-- место хранения настроек по умолчанию: глобальные--[[локальные--]]
 -- +
 --[[переменные]]
 -- -
@@ -114,18 +138,18 @@ local LoadLang,LoadSettings,SaveSettings,MakePanel,MakeOutPanel,GetDrive,CD,GetH
 local Config,OnTimer,TestCond,ChangeDrive,MouseCond,MouseProc
 --
 function LoadLang() --[[загрузить настройки языка]]
-local FL,dummy = Far.GetConfig("Language.Main"):sub(1,3),function() return {"Cannot find languages files"} end -- язык, пустая функция
-if not L or L.Lang~=FL then L = (loadfile(PathName..FL..".lng") or loadfile(PathName.."Eng.lng") or dummy)(LMBuild) end -- обновим, если язык другой
+local FL,dummy = Far.GetConfig("Language.Main"):sub(1,3),function() return {"Cannot find language files"} end -- язык, пустая функция
+L = L and L.Lang==FL and L or (loadfile(PathName..FL..".lng") or loadfile(PathName.."Eng.lng") or dummy)(LMBuild) -- обновим, если язык другой
 end --LoadLang
 --
 function LoadSettings(ForceDef) --[[загрузить настройки из БД]]
-local obj = far.CreateSettings(nil,DefProfile) -- откроем предпочтительные настройки
+UsedProfile = nfo.options.DefProfile -- запомним профиль
+local obj = far.CreateSettings(nil,UsedProfile) -- откроем предпочтительные настройки
 local key = obj:OpenSubkey(obj:OpenSubkey(0,Author) or 0,ConfPart) -- есть раздел?
-UsedProfile = DefProfile -- запомним профиль
 if not key then -- настроек нет?
-  obj:Free() obj = far.CreateSettings(nil,DefProfile==F.PSL_LOCAL and F.PSL_ROAMING or F.PSL_LOCAL) -- откроем другие настройки
+  obj:Free() obj = far.CreateSettings(nil,UsedProfile==F.PSL_LOCAL and F.PSL_ROAMING or F.PSL_LOCAL) -- откроем другие настройки
   key = obj:OpenSubkey(obj:OpenSubkey(0,Author) or 0,ConfPart) -- есть раздел? если нет, неважно, какой открыт, всё равно брать умолчания
-  if key then UsedProfile = DefProfile==F.PSL_LOCAL and F.PSL_ROAMING or F.PSL_LOCAL end -- из другого профиля открылись? запомним профиль
+  if key then UsedProfile = UsedProfile==F.PSL_LOCAL and F.PSL_ROAMING or F.PSL_LOCAL end -- из другого профиля открылись? запомним профиль
 end
 local function L1(n) return not ForceDef and obj:Get(key or -1,n,type(Def[n])=="string" and F.FST_STRING or F.FST_QWORD) or Def[n] end
 S = { KP = {},Plugins = {},PDescr = {}, -- считаем настройки
@@ -154,8 +178,8 @@ function SaveSettings() --[[сохранить настройки в БД]]
 if UsedProfile==F.PSL_LOCAL then win.CreateDir(win.GetEnv("FARLOCALPROFILE").."\\PluginsData") end -- создадим папку для локальных настроек, если надо
 local obj = far.CreateSettings(nil,UsedProfile) -- откроем ранее прочитанные или предпочтительные настройки
 local key = obj:CreateSubkey(obj:CreateSubkey(0,Author),ConfPart) -- откроем/создадим раздел
-local function S1(n,v) v = (v==nil)and S[n]or v;v = v==true and 1 or v==false and 0 or v;local t = type(v)=="string" and F.FST_STRING or F.FST_QWORD
-                       if obj:Get(key,n,t)~=v then obj:Set(key,n,t,v) end end
+local function S1(n,v) if v==nil then v=S[n] end; if v==nil then obj:Delete(key,n) else local w,t = v==true and 1 or v or 0,
+                       type(v)=="string" and F.FST_STRING or F.FST_QWORD; if obj:Get(key,n,t)~=w then obj:Set(key,n,t,w) end end end
 S1("UseHidden") S1("SwitchPanelsOn") S1("SpDelim") S1("LowerCurDrive") S1("OutStr") S1("OutCol") S1("ExcludeDrives") S1("PermPanel") S1("FixedPerm")
 local mainkey = key -- основной раздел
 key = obj:CreateSubkey(key,KeyPart) for n,v in pairs(S.KP) do S1(n,v) end -- сохраним список клавиш
@@ -243,13 +267,6 @@ end
 end --SwitchChar
 -- начало PluginList
 if #AllPlugs==0 then -- Заполним таблицу всех плагинов
-  local ffi = require"ffi"
-  ffi.cdef[[
-BOOL FreeLibrary(HMODULE hModule); //https://msdn.microsoft.com/library/ms683152
-HMODULE LoadLibraryExW(LPCTSTR lpFileName,HANDLE hFile,DWORD dwFlags); //https://msdn.microsoft.com/library/ms684179
-int GetProcAddress(HMODULE hModule,LPCSTR lpProcName); //https://msdn.microsoft.com/library/ms683212
-]]
-  local fC,DONT_RESOLVE_DLL_REFERENCES = ffi.C,0x00000001
   for _,p in ipairs(far.GetPlugins()) do -- переберём все плагины
     local pinfo = far.GetPluginInformation(p) -- информация о плагине
     if pinfo and band(pinfo.PInfo.Flags,F.PF_DISABLEPANELS)==0 then -- плагин на месте и работает с панелями?
@@ -264,7 +281,8 @@ int GetProcAddress(HMODULE hModule,LPCSTR lpProcName); //https://msdn.microsoft.
 end
 WorkStr = TmpStr -- скопируем строку отмеченных плагинов
 for n,v in pairs(TmpPlugins) do WorkPlugins[n] = v end -- скопируем список плагинов для работы
-local prop = {Flags = F.FMENU_SHOWAMPERSAND+F.FMENU_WRAPMODE,Bottom="Ins, Space, Num+, Num-, Num*, CtrlUp, CtrlDown, Enter, Esc, F1, CtrlH"}
+local prop = {Flags = F.FMENU_SHOWAMPERSAND+F.FMENU_WRAPMODE,Title=L.diConf.Plugins:gsub("&",""),
+                                                             Bottom="Ins, Space, Num+, Num-, Num*, CtrlUp, CtrlDown, Enter, Esc, F1, CtrlH"}
 local bkeys = {{BreakKey="INSERT"},{BreakKey="NUMPAD0"},{BreakKey="SPACE"},{BreakKey="ADD"},{BreakKey="SUBTRACT"},{BreakKey="MULTIPLY"}
   ,{BreakKey="C+UP"},{BreakKey="C+DOWN"},{BreakKey="C+NUMPAD8"},{BreakKey="C+NUMPAD2"},{BreakKey="F1"},{BreakKey="C+H"},{BreakKey="RETURN"}}
 repeat -- рабочий цикл
@@ -274,12 +292,18 @@ repeat -- рабочий цикл
     local item = AllPlugs[uid] -- информация о плагине
     items[#items+1],RevPlugins[uid] = {text=item.text,id=uid,checked=c},c -- добавим элемент меню, запомним, что этот плагин отмеченный
   end
-  items[#items+1] = {separator=true} -- добавим разделитель
+  items[#items+1] = {separator=true,text=L.diConf.PluginsOff} -- добавим разделитель
   for uid,item in pairs(AllPlugs) do -- все плагины как попало
     if not RevPlugins[uid] and (item.panel or ShowHidden) then -- если неотмеченный и панельный или показывать все
       items[#items+1] = {text=item.text,id=uid,grayed=not item.panel} -- добавим элемент меню
     end
   end
+  table.sort(items,function(a,b)
+if a.checked and b.checked then return WorkStr:cfind(a.checked)<WorkStr:cfind(b.checked)
+elseif a.checked or b.checked then return a.checked
+elseif a.separator or b.separator then return a.separator
+else return a.text:upper()<b.text:upper() end
+                   end)
   local res,pos = far.Menu(prop,items,bkeys) -- выведем список плагинов
   if not res then return end -- нажали Esc? Выйдем
   if res.BreakKey then
@@ -402,6 +426,7 @@ if type(nfo)=="table" then nfo.config = Config end
 -- +
 --[[обработчик по таймеру]]
 -- -
+local sb -- буфер под сохранение изменяемого участка экрана
 function OnTimer(tmr)
 if not S.PermPanel then return end
 if stop_timer then -- всё?
@@ -414,7 +439,7 @@ elseif not in_process and Area.Current and ("Shell Info QView Tree Search"):find
   local DrvL,DrvR = (OutList:cfind(GetDrive(LPanel),1,true)),(OutList:cfind(GetDrive(RPanel),1,true)) -- диски/плагины по умолчанию слева и справа
   local x,y,l,lw,yOK = Mouse.X,Mouse.Y,OutList:len(),LPanel.Width -- координаты курсора мыши, длина панели, ширина левой панели
   panel.RedrawPanel(nil,0) panel.RedrawPanel(nil,1)
-  in_process = true -- сообщим, что начали работу
+  in_process = true -- начали работу
   for nstr in (S.OutStr..";"):gmatch("(%-?%d+)[;,]") do nstr = tonumber(nstr) -- переберём все номера строк
     if LPanel.Visible or S.FixedPerm then -- левая панель не скрыта или панели постоянные?
       local nstr1 = nstr<0 and LPanel.Height+nstr or nstr -- Если № строки для вывода<0, то отсчитывать от нижней строки вверх
@@ -435,21 +460,31 @@ elseif not in_process and Area.Current and ("Shell Info QView Tree Search"):find
   end
   local offset = (x>lw and x-lw or x)-S.OutCol -- смещение курсора мыши в мини-панели
   local char = OutList:sub(offset,offset) -- символ под мышью
+  if sb then far.RestoreScreen(sb) end -- восстановим строку для подсказки
   if offset>0 and offset<=l and yOK and char~=" " then -- если строка и столбец совпадают, и под курсором не промежуток между символами
+    sb = far.SaveScreen(1,y+1,Far.Width,y+2) -- запомним строки для подсказки
     local WP = (x>lw) and RPanel or LPanel -- панель под мышью
-    far.Text(x,y+1,SelColor,char=="?" and L.diConf.Hdr or char..":"==WP.Path:sub(1,2) and WP.Path or far.LIsAlpha(char) and far.ConvertPath(char..":")
-                               or S.PDescr[char] or "") -- выведем подсказку
+    local buf,res,path = ("\0"):rep(260) -- буфер под метку тома, результат вызова функции, путь
+    if char:find("[A-Za-z]") or (DrvL and x==S.OutCol+DrvL) or (DrvR and x==lw+S.OutCol+DrvR) then -- диск или исходный пункт?
+      path = ((DrvL and x==S.OutCol+DrvL) or (DrvR and x==lw+S.OutCol+DrvR)) and WP.Path:gsub("%:$",":\\") or far.ConvertPath(char..":") -- путь
+      res = fC.GetVolumeInformationA(ffi.cast("LPCSTR",win.WideCharToMultiByte(win.Utf8ToUtf16(far.GetPathRoot(path)),win.GetACP()).."\\"),
+                                     ffi.cast("LPSTR",buf),260,nil,nil,nil,nil,0) -- получим метку тома
+    end
+    far.Text(x,y+1,SelColor,char=="?" and L.diConf.Hdr or S.PDescr[char] or (res~=0 and "["..ffi.string(buf).."]" or L.er.VolLbl)) -- подсказка
+    far.Text(x,y+2,SelColor,path) -- подсказка 2 строка
+  else -- не выводим подсказку
+    sb = nil -- запомним, что не сохраняли
   end
-  in_process = false -- сообщим, что закончили работу
+  in_process = false -- закончили работу
 end
 end
 -- +
 --[[Macro condition - инициализация переменных и проверка условий]]
 -- -
 function TestCond(key)
-WPanel,KeyMod,Key = nil,regex.match(key,"^((?:.?Ctrl)?(?:.?Alt)?(?:Shift)?(?<=.))(.*)$") -- обнулим рабочую панель, запомним клавишу и модификатор
+KeyMod,Key = regex.match(key or "Home","^((?:.?Ctrl)?(?:.?Alt)?(?:Shift)?(?<=.))(.*)$") -- запомним клавишу и модификатор
 local LRAP = {L=APanel.Left and APanel or PPanel,R=APanel.Left and PPanel or APanel,A=APanel,P=PPanel} -- возможные значения рабочей панели
-for p,k in pairs(S.KP) do if (" "..k.." "):cfind(" "..KeyMod.." ",1,true) then WPanel = LRAP[p] end end -- найдём рабочую панель
+WPanel = nil; for p,k in pairs(S.KP) do if (" "..k.." "):cfind(" "..KeyMod.." ",1,true) then WPanel = LRAP[p] end end -- найдём рабочую панель
 if WPanel and WPanel.Type~=0 then WPanel = WPanel==APanel and PPanel or APanel end-- если рабочая панель не файловая, переключаем на другой
 return WPanel and WPanel.Type==0 and (WPanel.Visible or S.UseHidden) and (CmdLine.Empty or not KeyMod:cfind("Ctrl"))
 end
@@ -465,7 +500,7 @@ DrvNum = DrvList:cfind(GetDrive(WPanel,((S.KP.Left.." "..S.KP.Right):match("\\([
 if not DrvNum then DrvNum,DrvList = 1,"."..DrvList end -- не нашли? Добавим в первую позицию условное текущее содержимое панели
 local StartDrv,StartOut = DrvNum,PanelPos+DrvNum+(S.SpDelim and DrvNum-1 or 0) -- начальные диск, позиция
 if S.LowerCurDrive then DrvList = DrvList:sub(1,DrvNum-1)..DrvList:sub(DrvNum,DrvNum):lower()..DrvList:sub(DrvNum+1) end -- выделим его в панели
-local OutList,h,s1 = MakeOutPanel(DrvList),far.SaveScreen() -- выводимый на экран список; сохраним весь экран, кто его (юзера) знает...
+local OutList,h,h1 = MakeOutPanel(DrvList),far.SaveScreen() -- выводимый на экран список; сохраним весь экран, кто его (юзера) знает...
 in_process = true
 repeat -- Обработаем очередное нажатие стрелки
   if Key~="" then
@@ -482,10 +517,18 @@ repeat -- Обработаем очередное нажатие стрелки
       far.Text(StartOut,nstr,StartColor,DrvList:sub(StartDrv,StartDrv)) -- и стартовый диск
       far.Text(PanelPos+DrvNum+(S.SpDelim and DrvNum-1 or 0),nstr,SelColor,DrvList:sub(DrvNum,DrvNum)) -- и курсор
     end
-    local nstr,char = tonumber(S.OutStr:match("^%d+")),DrvList:sub(DrvNum,DrvNum) -- строка мини-панели для подсказки, символ для подсказки
-    if s1 then far.RestoreScreen(s1) end s1 = far.SaveScreen(1,nstr+1,Far.Width,nstr+1) -- восстановим строку для подсказки и снова запомним
-    far.Text(PanelPos+DrvNum+(S.SpDelim and DrvNum-1 or 0),nstr<0 and WPanel.Height+nstr+1 or nstr+1,SelColor,char=="?" and L.diConf.Hdr -- подсказка
-      or char==DrvList:sub(StartDrv,StartDrv) and WPanel.Path or far.LIsAlpha(char) and far.ConvertPath(char..":") or S.PDescr[char] or "")
+    local nstr,char = tonumber(S.OutStr:match("^%-?%d+")),DrvList:sub(DrvNum,DrvNum) -- строка мини-панели для подсказки, символ для подсказки
+    nstr = tonumber(nstr) nstr = nstr<0 and WPanel.Height+nstr+1 or nstr+1 -- Если № строки для вывода<0, то отсчитывать от нижней строки вверх
+    if h1 then far.RestoreScreen(h1) end h1 = far.SaveScreen(1,nstr,Far.Width,nstr+1) -- восстановим строку для подсказки и снова запомним
+    local buf,res,path = ("\0"):rep(260) -- буфер под метку тома, результат вызова функции, путь
+    if char:find("[A-Za-z]") or char==DrvList:sub(StartDrv,StartDrv) then -- диск или исходный пункт?
+      path = char==DrvList:sub(StartDrv,StartDrv) and WPanel.Path:gsub("%:$",":\\") or far.ConvertPath(char..":") -- путь на диске
+      res = fC.GetVolumeInformationA(ffi.cast("LPCSTR",win.WideCharToMultiByte(win.Utf8ToUtf16(far.GetPathRoot(path)),win.GetACP()).."\\"),
+                                     ffi.cast("LPSTR",buf),260,nil,nil,nil,nil,0) -- получим метку тома
+    end
+    far.Text(PanelPos+DrvNum+(S.SpDelim and DrvNum-1 or 0),nstr,SelColor, -- подсказка 1 строка
+      char=="?" and L.diConf.Hdr or S.PDescr[char] or (res~=0 and "["..ffi.string(buf).."]" or L.er.VolLbl))
+    far.Text(PanelPos+DrvNum+(S.SpDelim and DrvNum-1 or 0),nstr+1,SelColor,path) -- подсказка 2 строка
     far.Text()
   end
   Key = mf.waitkey(100):gsub(KeyMod,"") -- очередное нажатие (или пустая строка)

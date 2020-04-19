@@ -9,9 +9,9 @@ $^Work panel
    Mini-bar with a list of drives and plugins used for changing of current drive or plugin on Far panel.
 It can work in four modes: called at press one of key combination (controlled from keyboard),
 called from plugin or drives menu (controlled from keyboard), showed on mouse move over mini-bar area (controlled by mouse),
-always showed (controlled by mouse). Mini-bars may be more as one, all works synchronically for each Far panel,
-mini-panel output lines ~are configurable~@config@, output start columns are fixed.
-Drives in mini-bar designated with acorresponding letters, plugins designated with symbols, ~appointed by user~@plugins@.
+always showed (controlled by mouse). Mini-bars may be more as one, all works synchronously for each Far panel,
+mini-panel output lines and start column ~are configurable~@config@. Minihelp is printed below of first string in list from config.
+Drives in mini-bar designated with corresponding letters, plugins designated with symbols, ~appointed by user~@plugins@.
 Also at the last position #?# symbol denotes ~settings dialog~@config@.
 In addition in the first position a #.# char may be referred to the current path, if script cannot define current drive or plugin.
 Start position (of current drive) is marked.
@@ -41,7 +41,7 @@ $^Configuration
 ^#Purpose#
 
    This dialog lets you configure a script to work with hidden panels, use modifier keys,
-work panel view as well as the list of displayed disks and ~plugins~@plugins@. 
+work panel view as well as the list of displayed disks and ~plugins~@plugins@.
 
 ^#Keys#
 
@@ -61,9 +61,10 @@ Showed only if #Switch on hidden panel# mode in on. Possible values:
   #Left#,#Right#,#Active#,#Passive#             - |For suitable panels defines, with which prefixes script changes drive on panel.
 Prefixes may be more as one. In field there are delimited with spaces.
   #<--#,#-->#                               - |Defines, which keys (with prefixes) moves drive select cursor left/right.
-Keys may be more as one. In field there are delimited with spaces. Key designation may see with this macro:
- #repeat far.Message("Press key: ","","") far.Text() until far.Show("Was pressed "..mf.waitkey())#
- If key name is preceded by #\D#(#\d#) or #\P#(#\p#), then this key switches only drives or only plugins respectively.
+Keys may be more as one. In field they are delimited with spaces.
+If key name is preceded by #\D#(#\d#) or #\P#(#\p#), then this key switches only drives or only plugins respectively.
+   Right prefixes and keys designation you can see with this macro:
+ #repeat far.Message("Press key: ","","") far.Text() until far.Show("Was pressed "..mf.waitkey().."\n\nEnter to exit")#
 
   #Separate symbols in panel with spaces# - |Defines, out symbols in work panel together or separate with spaces.
   #Current drive in lowercase#            - |Defines, out current drive char in lowercase, or in uppercase as other.
@@ -113,7 +114,7 @@ $^About
 
  Author:        #IgorZ#
 
- Version:       #v4.1.1#
+ Version:       #v4.1.2#
 
  Net address: ~http://forum.farmanager.com/viewtopic.php?t=7471~@http://forum.farmanager.com/viewtopic.php?t=7471@
 @=‗
@@ -122,7 +123,7 @@ $^About
 
  Script replaces ansi plugin Active Drive by Ilya V. Gershman
  ~http://plugring.farmanager.com/plugin.php?pid=21&l=en~@http://plugring.farmanager.com/plugin.php?pid=21&l=en@
- 
+
  #Left#/#Right# (or other keys assigned) with #LeftCtrl#/#LeftAlt#/#RightCtrl#/#RightAlt#/#Shift#
 changes drive for left/right/active/passive (depend on ~configuration~@config@) panel.
 By default with pressed #LeftCtrl#/#RightAlt# left panel drive changes, with #RightCtrl#/#LeftAlt# - right panel,

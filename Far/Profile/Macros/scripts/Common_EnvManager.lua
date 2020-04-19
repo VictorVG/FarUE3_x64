@@ -2,12 +2,12 @@
 local nfo = Info {_filename or ...,
   name          = "Environment manager";
   description   = "Менеджер переменных окружения";
-  version       = "1.4.0"; --http://semver.org/lang/ru/
+  version       = "1.4.1"; --http://semver.org/lang/ru/
   author        = "IgorZ";
   url           = "http://forum.farmanager.com/viewtopic.php?t=9975";
   id            = "76BC77D8-38EF-4196-8D53-F12230CBA885";
   minfarversion = {3,0,0,4000,0};
-  files         = "*Eng.lng;*Rus.lng";
+  files         = "*Eng.lng;*Rus.lng;*Eng.hlf;*Rus.hlf";
   helptxt       = [[
 Позволяет манипулировать переменными окружения.
 Управление: Alt+Shift+E - вызов меню
@@ -30,6 +30,8 @@ history         = [[
 2017/08/08 v1.3.3 - Исправлена ошибка с удалением всех переменных из чёрного списка, внесённая в версии 1.3.2.
 2017/09/20 v1.4.0 - Добавлена возможность временно отключать переменные. Добавлена возможность загружать переменные из файла с командной строки.
                     Переделана справка. Рефакторинг.
+2017/09/21 v1.4.1 - Добавлена возможность загружать переменные из файла с командной строки без диалога выбора переменных. Добавлена возможность
+                    удалять переменные при загрузке из файла. Мелкие правки.
 ]];
 }
 if not nfo then return end
@@ -130,7 +132,7 @@ else -- в реестр
     win.DeleteRegValue(dst,RegAdr[dst],name) -- удалим
   end
   C.SendMessageTimeoutA(ffi.cast("HWND",-1),0x1A,0,ffi.cast("LPARAM","Environment"),2,1000,ffi.cast("DWORD_PTR*",0)) -- обновить
-  mf.waitkey(100) -- подождём, а то не успевает обновиться
+  mf.sleep(100) -- подождём, а то не успевает обновиться
 end
 end
 --
@@ -294,7 +296,7 @@ end
 file:close() -- закроем файл
 end
 --
-function LoadEnv(fname)
+function LoadEnv(fname,forceall)
 local Hotkeys = {{BreakKey="F1"},{BreakKey="F3"},{BreakKey="INSERT"},{BreakKey="NUMPAD0"},{BreakKey="SPACE"},
                  {BreakKey="ADD"},{BreakKey="SUBTRACT"},{BreakKey="MULTIPLY"},
                  {BreakKey="S+ADD"},{BreakKey="S+SUBTRACT"},{BreakKey="S+MULTIPLY"},
@@ -313,8 +315,8 @@ local file = io.open(name,"r") -- откроем файл
 if not file then far.Message(L.Err.NoOpen..name..'"',L.LoadEnv,";Ok","w") return end -- не открылся? уйдём
 local list,text = {},"\n"..file:read("*a").."\n"; -- прочитаем всё содержимое
 file:close() -- закроем файл
-for s,n,v in text:gmatch("\n@REM (....)\n@SET ([^=\n]+)=([^\n]*)") do
-  if s==aMe or s==aLM or s==aCU then list[#list+1] = {dst=s,Name=n,Value=v,checked=true} end
+for s,n,v in text:gmatch("\n@REM (....)\n@SET ([^=\n]+)=([^\n]*)") do -- заполним список
+  if s==aMe or s==aLM or s==aCU then list[#list+1] = {dst=s,Name=n,Value=(v=="" and L.DEL or v),checked=true} end
 end
 if #list==0 then far.Message(L.Err.NoData..name..'"',L.LoadEnv,";Ok","w") return end
 table.sort(list,function(a,b) return a.Name:upper()==b.Name:upper() and a.dst<b.dst or a.Name:upper()<b.Name:upper() end) -- отсортируем
@@ -322,42 +324,44 @@ local l = 0
 for _,v in ipairs(list) do l = math.max(l,v.Name:len()) end
 for _,v in ipairs(list) do v.text = v.dst..": "..v.Name..(" "):rep(l-v.Name:len())..(" = ")..v.Value end
 local pos,res = 1
-repeat
-  res,pos = far.Menu({Title=L.LoadEnv,Bottom="Enter,Esc,F1,F3,Ins,Space,(Shift/Ctrl/Alt)Num+/-/*",SelectIndex=pos,Id=Guids.LoadMenu},list,Hotkeys)
-  if not res then return -- Esc? ничего не делаем
-  elseif not res.BreakKey then break -- Enter? Работаем дальше
-  elseif res.BreakKey=="F1" then ShowHelp("LoadEnv")
-  elseif res.BreakKey=="F3" then far.Message(list[pos].text,L.LoadEnv,";Ok","l")
-  elseif res.BreakKey=="ADD" then -- Num+
-    for i=1,#list do list[i].checked = true end -- выделим все
-  elseif res.BreakKey=="SUBTRACT" then -- Num-
-    for i=1,#list do list[i].checked = false end -- снимем выделение со всех
-  elseif res.BreakKey=="MULTIPLY" then -- Num*
-    for i=1,#list do list[i].checked = not list[i].checked end -- инвертируем выделение на всех
-  elseif res.BreakKey=="S+ADD" then -- ShiftNum+
-    for i=1,#list do if list[i].dst==aMe then list[i].checked = true end end -- выделим все из памяти
-  elseif res.BreakKey=="S+SUBTRACT" then -- ShiftNum-
-    for i=1,#list do if list[i].dst==aMe then list[i].checked = false end end -- снимем выделение со всех из памяти
-  elseif res.BreakKey=="S+MULTIPLY" then -- ShiftNum*
-    for i=1,#list do if list[i].dst==aMe then list[i].checked = not list[i].checked end end -- инвертируем выделение на всех из памяти
-  elseif res.BreakKey=="C+ADD" then -- CtrlNum+
-    for i=1,#list do if list[i].dst==aCU then list[i].checked = true end end -- выделим все пользователя
-  elseif res.BreakKey=="C+SUBTRACT" then -- CtrlNum-
-    for i=1,#list do if list[i].dst==aCU then list[i].checked = false end end -- снимем выделение со всех пользователя
-  elseif res.BreakKey=="C+MULTIPLY" then -- CtrlNum*
-    for i=1,#list do if list[i].dst==aCU then list[i].checked = not list[i].checked end end -- инвертируем выделение на всех пользователя
-  elseif res.BreakKey=="A+ADD" then -- AltNum+
-    for i=1,#list do if list[i].dst==aLM then list[i].checked = true end end -- выделим все системные
-  elseif res.BreakKey=="A+SUBTRACT" then -- AltNum-
-    for i=1,#list do if list[i].dst==aLM then list[i].checked = false end end -- снимем выделение со всех системных
-  elseif res.BreakKey=="A+MULTIPLY" then -- AltNum*
-    for i=1,#list do if list[i].dst==aLM then list[i].checked = not list[i].checked end end -- инвертируем выделение на всех системных
-  else -- Ins/Space
-    list[pos].checked = not list[pos].checked -- инвертируем выделение
-    if pos<#list then pos = pos+1 else pos = 1 end -- перейдём на следующий элемент
-  end
-until false
-for _,v in ipairs(list) do if v.checked then Set(v.Name,v.dst,v.Value) end end -- проверим
+if not forceall then -- если не требуется загружать все переменные без запроса выбора
+  repeat
+    res,pos = far.Menu({Title=L.LoadEnv,Bottom="Enter,Esc,F1,F3,Ins,Space,(Shift/Ctrl/Alt)Num+/-/*",SelectIndex=pos,Id=Guids.LoadMenu},list,Hotkeys)
+    if not res then return -- Esc? ничего не делаем
+    elseif not res.BreakKey then break -- Enter? Работаем дальше
+    elseif res.BreakKey=="F1" then ShowHelp("LoadEnv")
+    elseif res.BreakKey=="F3" then far.Message(list[pos].text,L.LoadEnv,";Ok","l")
+    elseif res.BreakKey=="ADD" then -- Num+
+      for i=1,#list do list[i].checked = true end -- выделим все
+    elseif res.BreakKey=="SUBTRACT" then -- Num-
+      for i=1,#list do list[i].checked = false end -- снимем выделение со всех
+    elseif res.BreakKey=="MULTIPLY" then -- Num*
+      for i=1,#list do list[i].checked = not list[i].checked end -- инвертируем выделение на всех
+    elseif res.BreakKey=="S+ADD" then -- ShiftNum+
+      for i=1,#list do if list[i].dst==aMe then list[i].checked = true end end -- выделим все из памяти
+    elseif res.BreakKey=="S+SUBTRACT" then -- ShiftNum-
+      for i=1,#list do if list[i].dst==aMe then list[i].checked = false end end -- снимем выделение со всех из памяти
+    elseif res.BreakKey=="S+MULTIPLY" then -- ShiftNum*
+      for i=1,#list do if list[i].dst==aMe then list[i].checked = not list[i].checked end end -- инвертируем выделение на всех из памяти
+    elseif res.BreakKey=="C+ADD" then -- CtrlNum+
+      for i=1,#list do if list[i].dst==aCU then list[i].checked = true end end -- выделим все пользователя
+    elseif res.BreakKey=="C+SUBTRACT" then -- CtrlNum-
+      for i=1,#list do if list[i].dst==aCU then list[i].checked = false end end -- снимем выделение со всех пользователя
+    elseif res.BreakKey=="C+MULTIPLY" then -- CtrlNum*
+      for i=1,#list do if list[i].dst==aCU then list[i].checked = not list[i].checked end end -- инвертируем выделение на всех пользователя
+    elseif res.BreakKey=="A+ADD" then -- AltNum+
+      for i=1,#list do if list[i].dst==aLM then list[i].checked = true end end -- выделим все системные
+    elseif res.BreakKey=="A+SUBTRACT" then -- AltNum-
+      for i=1,#list do if list[i].dst==aLM then list[i].checked = false end end -- снимем выделение со всех системных
+    elseif res.BreakKey=="A+MULTIPLY" then -- AltNum*
+      for i=1,#list do if list[i].dst==aLM then list[i].checked = not list[i].checked end end -- инвертируем выделение на всех системных
+    else -- Ins/Space
+      list[pos].checked = not list[pos].checked -- инвертируем выделение
+      if pos<#list then pos = pos+1 else pos = 1 end -- перейдём на следующий элемент
+    end
+  until false
+end
+for _,v in ipairs(list) do if v.checked then Set(v.Name,v.dst,v.Value~=L.DEL and v.Value or nil) end end -- проверим
 end
 --
 function ShowHelp(text) --[[Вывести справку]]
@@ -477,3 +481,4 @@ MenuItem{
 --[=[Префикс]=]
 -- -
 CommandLine { description = L.Desc; prefixes = "EMLoad"; action = function(_,name) LoadEnv(name) end; }
+CommandLine { description = L.Desc; prefixes = "EMLoadAll"; action = function(_,name) LoadEnv(name,"all") end; }

@@ -18,13 +18,15 @@
     OutStr = "Mini-bar coordinates.   &Y:",
     OutCol = "; &X:",
     Plugins = "Processed pl&ugins",
+    PluginsOff = "Other plugins",
     PlugCharHdr = "Set char to symboling of plugin '%s' (A-Z.?%s are unacceptable)",
-    PermPanel = "Switch on permane&nt panels",
+    PermPanel = "Switch on permanen&t panels",
     FixedPerm = "Fix the&m",
   },
 -- errors
   er =  {
     Cancel = "User cancel",
+    VolLbl = "not available",
   },
 -- messages and minidialogs
   OK = "OK",

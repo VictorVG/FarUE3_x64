@@ -1,10 +1,14 @@
-﻿-- http://forum.ru-board.com/topic.cgi?forum=5&topic=49572&start=2280#12
--- v1.2
+﻿-- Panel.SelectBOM.lua
+-- v1.3
+-- Selection files with BOM
+-- Keys: launch from Macro Browser alt.
+-- Url: https://forum.ru-board.com/topic.cgi?forum=5&topic=49572&start=2280#12
+
 local F = far.Flags
-local ffi = require'ffi'
-local NULL = ffi.cast("void*",0)
-local PANEL_ACTIVE = ffi.cast("HANDLE",-1)
-local pBL0,pBL1 = ffi.cast("BOOL*",0),ffi.cast("BOOL*",1)
+--local ffi = require'ffi'
+--local NULL = ffi.cast("void*",0)
+--local PANEL_ACTIVE = ffi.cast("HANDLE",-1)
+--local pBL0,pBL1 = ffi.cast("BOOL*",0),ffi.cast("BOOL*",1)
 local ReportPath=win.GetEnv('TEMP')..'\\boom.txt'
 local boom,Report = {},false
 local function process(f,t)
@@ -75,32 +79,38 @@ action=function()
     --local s='' for i=1,#ChkBOX do s=s..(ChkBOX[i] and 1 or 0) end far.Message(s,'BOX')
     local ttime=far.FarClock()
     ReportPath = tReportPath=='' and ReportPath or tReportPath
-    local head={}
+    local head,itm0,itm1 = {},{},{}
     for i=2,6 do local s=Items[i][10]:gsub("&","") table.insert(head,s) end
     boom={} for i=1,#head do boom[i]={} end
     local ItemsNumber=panel.GetPanelInfo(nil,1).ItemsNumber
-    local pc=ffi.cast("struct PluginStartupInfo*",far.CPluginStartupInfo()).PanelControl
-    pc(PANEL_ACTIVE,"FCTL_BEGINSELECTION",0,NULL)
+    --local pc=ffi.cast("struct PluginStartupInfo*",far.CPluginStartupInfo()).PanelControl
+    --pc(PANEL_ACTIVE,"FCTL_BEGINSELECTION",0,NULL)
     for Item=1,ItemsNumber do
       local GPItem=panel.GetPanelItem(nil,1,Item)
-      pc(PANEL_ACTIVE,"FCTL_SETSELECTION",Item-1,(GPItem.FileAttributes:find("d") or process(GPItem.FileName,ChkBOX)==0) and pBL0 or pBL1)
+      table.insert((GPItem.FileAttributes:find("d") or process(GPItem.FileName,ChkBOX)==0) and itm0 or itm1,Item)
+      --pc(PANEL_ACTIVE,"FCTL_SETSELECTION",Item-1,(GPItem.FileAttributes:find("d") or process(GPItem.FileName,ChkBOX)==0) and pBL0 or pBL1)
     end
-    pc(PANEL_ACTIVE,"FCTL_ENDSELECTION",0,NULL)
-    pc(PANEL_ACTIVE,"FCTL_REDRAWPANEL",0,NULL)
-    ttime = far.FarClock()-ttime
+    panel.BeginSelection(nil,1)
+    panel.SetSelection(nil,1,itm0,false)
+    panel.SetSelection(nil,1,itm1,true)
+    panel.EndSelection(nil,1)
+    panel.RedrawPanel(nil,1)
+    --pc(PANEL_ACTIVE,"FCTL_ENDSELECTION",0,NULL)
+    --pc(PANEL_ACTIVE,"FCTL_REDRAWPANEL",0,NULL)
     if Report then
+      ttime = far.FarClock()-ttime
       local ans=1
-      if win.GetFileInfo(ReportPath) then ans=far.Message(ReportPath.."\nexist - overwrite?","SelBOM WARNING",";YesNo","w") end
+      if win.GetFileInfo(ReportPath) then ans=far.Message(ReportPath.."\nexist - overwrite?","BOOM! WARNING",";YesNo","w") end
       if ans==1 then
         local h=io.open(ReportPath,'wb')
         if h then
           local function _RootDir()
             local ItemInfo=panel.GetPanelInfo(0)
-            local iItem, iTop=ItemInfo.CurrentItem, ItemInfo.TopPanelItem
-            Panel.SetPosIdx(0, 1)
-            local sRes=APanel.Path0
-            panel.RedrawPanel(nil, 1, {CurrentItem=iItem; TopPanelItem=iTop})
-            return sRes
+            local iItem,iTop = ItemInfo.CurrentItem,ItemInfo.TopPanelItem
+            Panel.SetPosIdx(0,1)
+            local APP0=APanel.Path0
+            panel.RedrawPanel(nil,1,{CurrentItem=iItem; TopPanelItem=iTop})
+            return APP0
           end
           h:write('Scan:\t'..ItemsNumber..' objects\n')
           h:write('Time:\t'..ttime..' mcs\n')
