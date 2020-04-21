@@ -6,7 +6,6 @@ set prm=%prm:~0,3% && set M=%prm:~0,1% && set N=%prm:~2,1%
 if %M% geq 6 (if %N% geq 1 (move /y "%~dp0Far\wget.ex7" "%~dp0Far\wget.exe" > nul & move /y "%~dp0Far\wget.tx7" "%~dp0Far\wget.txt" > nul))
 if exist Far\wget.*7 (del /f/q Far\wget.*7 > nul)
 cd /d "%~dp0Far" > nul
-far -clearcache
 if exist "plugins\advcmpexw" (move /y "plugins\advcmpexw" "plugins\advcmpex" > nul)
 if exist "plugins\dnd\drgndrop_x86*.hook" (del /f/q "plugins\dnd\drgndrop_x86*.hook" > nul)
 if exist "plugins\dnd\holder_x86*.dnd"  (del /f/q "plugins\dnd\holder_x86*.dnd" > nul)
@@ -49,6 +48,7 @@ far -import default.farconfig
 rem The next string used only if needed fix some Far or plug-in's settings, is another not used and always mast be comment!
 if exist farfix.cnf (start /wait far "lua:mf.print('far -import farfix.cnf') Keys('Enter F10 Enter')" && del /f/q farfix.cnf > nul)
 if exist wg.cmd (del/f/q wg.cmd > nul)
+far -clearcache
 cd /d "%~dp0" > nul
 del /f/q "%~dp0update.cmd" > nul
 exit /b 0 > nul
