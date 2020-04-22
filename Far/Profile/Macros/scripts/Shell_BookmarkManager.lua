@@ -2,7 +2,7 @@
 local nfo = Info {_filename or ...,
   name          = "Bookmark manager";
   description   = "Менеджер закладок на папки для Fara";
-  version       = "3.0.3"; --http://semver.org/lang/ru/
+  version       = "3.0.4"; --http://semver.org/lang/ru/
   author        = "IgorZ";
   url           = "http://forum.farmanager.com/viewtopic.php?t=8465";
   id            = "F93842EB-FFD3-481A-8AA8-2E7DCEBDF2B1";
@@ -80,6 +80,7 @@ history         = [[
 2018/11/26 v3.0.2 - При вызове скрипта как функции без параметров ошибка не выдаётся. Исправлена ошибка при переходе в плагин.
 2019/12/09 v3.0.3 - Исправлена ошибка при нажатии клавиш в режиме активной фильтрации. Предпочтительное место хранения закладок теперь настраивается.
                     Доработан вызов action-функций с учётом введённых в build 717 параметров для condition/action. Рефакторинг.
+2020/04/22 v3.0.4 - Исправлена работа диалога настроек. Дополнена справка по диалогу настроек.
 ]];
   options       = { DefProfile = far.Flags.PSL_ROAMING--[[far.Flags.PSL_LOCAL--]] } -- место хранения настроек по умолчанию: глобальные/локальные
 }
@@ -457,7 +458,7 @@ local TmpColor,ov = S.SeqColor
 local function cDlgProc (hDlg,Msg,Param1,Param2) -- обработка событий диалога
 if Msg==F.DN_HOTKEY and Param1==4 then -- Предпочтительное место хранения закладок?
   far.SendDlgMessage(hDlg,"DM_SETCHECK",far.SendDlgMessage(hDlg,"DM_GETCHECK",5)==F.BSTATE_CHECKED and 6 or 5,F.BSTATE_CHECKED)
-elseif Msg==F.DN_BTNCLICK and Param1==7 then -- переключение работы со скрытыми панелями?
+elseif Msg==F.DN_BTNCLICK and Param1==7 then -- переключение работы с переменными окружения?
   hDlg:send(F.DM_SHOWITEM,Param1+1,Param2) -- установим видимость зависимого чекбокса
 elseif Msg==F.DN_BTNCLICK and Param1==11 then -- нажали кнопку выбора цвета подсказки?
   TmpColor = math.fmod(far.ColorDialog(TmpColor) or TmpColor,0x100) -- выберем новый или сохраним старый
@@ -474,7 +475,7 @@ elseif Msg==F.DN_CLOSE then
   far.SendDlgMessage(hDlg,"DM_SETFOCUS",2) -- переключимся на чекбокс
 end
 local rect = hDlg:send(F.DM_GETDLGRECT,0) -- окно диалога
-if TmpColor~=0 then far.Text() far.Text(rect.Left+45,rect.Top+8,TmpColor,L.diConf.ColorSample) else hDlg:send(F.DM_REDRAW) end -- пример подсказки
+if TmpColor~=0 then far.Text() far.Text(rect.Left+45,rect.Top+9,TmpColor,L.diConf.ColorSample) else hDlg:send(F.DM_REDRAW) end -- пример подсказки
 end
 --
 local Items = { -- диалог настройки конфигурации
@@ -491,7 +492,7 @@ local Items = { -- диалог настройки конфигурации
 --[[09]] {F.DI_CHECKBOX,    5, 7, 0, 7,S.ExtMask and 1 or 0,0,0,0,L.diConf.ExtMask},
 --[[10]] {F.DI_CHECKBOX,    5, 8, 0, 8,S.MenuForOne and 1 or 0,0,0,0,L.diConf.MenuForOne},
 --[[11]] {F.DI_BUTTON,      7, 9, 0, 9,0,0,0,F.DIF_BTNNOCLOSE,L.diConf.SeqColor},
---[[12]] {F.DI_TEXT,       45,10, 0,10,0,0,0,0,L.diConf.NoHint},
+--[[12]] {F.DI_TEXT,       45, 9, 0, 9,0,0,0,0,L.diConf.NoHint},
 --[[13]] {F.DI_TEXT,        5,10, 0,10,0,0,0,0,L.diConf.SeqLine},
 --[[14]] {F.DI_EDIT,       52,10,57,10,0,0,0,0,S.SeqLine},
 --[[15]] {F.DI_TEXT,        5,11, 0,11,0,0,0,0,L.diConf.GoToDelay},
@@ -507,8 +508,8 @@ local Items = { -- диалог настройки конфигурации
 -- начало кода функции
 local res = far.Dialog(Guids.Config,-1,-1,78,17,nil,Items,nil,cDlgProc) -- вызовем диалог
 if res~=20 and res~=21 then return end -- не "ОК" - уйдём
-S = { UseLocal = Items[2][6]~=0 and F.PSL_LOCAL,UseGlobal = Items[3][6]~=0 and F.PSL_ROAMING,UseEnv = Items[4][6]~=0, -- новые значения
-      DefBMProfile = Items[6][6]==1 and F.PSL_LOCAL or F.PSL_ROAMING,ShowEnv = Items[8][6]~=0,ExtMask = Items[9][6]~=0,MenuForOne = Items[10][6]~=0,
+S = { UseLocal = Items[2][6]~=0 and F.PSL_LOCAL,UseGlobal = Items[3][6]~=0 and F.PSL_ROAMING,UseEnv = Items[7][6]~=0, -- новые значения
+      DefBMProfile = Items[5][6]==1 and F.PSL_LOCAL or F.PSL_ROAMING,ShowEnv = Items[8][6]~=0,ExtMask = Items[9][6]~=0,MenuForOne = Items[10][6]~=0,
       SeqColor = TmpColor,SeqLine = tonumber(Items[14][10]),GoToMessDelay = tonumber(Items[16][10]),SaveMessDelay = tonumber(Items[18][10])}
 if res==20 then SaveSettings() end -- сохраним в БД, если надо
 end -- Config

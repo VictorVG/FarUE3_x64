@@ -10,7 +10,7 @@ $^Main window
 edit them, export to a file and import the previously exported file.
 The title bar indicates which plugin DB is opened and current subkey.
 Local and global DB profiles are denoted by a #LOCAL# and #GLOBAL#.
-Window contains the contents of the current subkey, grouped by types: subkeys (marked with # #), numbers, strings, data.
+Window contains the contents of the current subkey, grouped by types: subkeys (marked with ##), numbers, strings, data.
 For data are showed both source and value if possible.
 
 ^#Hotkeys#
@@ -32,6 +32,10 @@ For data are showed both source and value if possible.
   #CtrlC#    - |Jump to same subkey in other DB of current plugin.
   #CtrlG#    - |Jump to same subkey in global DB of current plugin.
   #CtrlL#    - |Jump to same subkey in local DB of current plugin.
+
+  #Ctrl1#    - |For tables unpack use module #inspect#, if prsent, else internal function.
+  #Ctrl2#    - |For tables unpack use function #dump# of module #moon#, if prsent, else internal function.
+  #Ctrl3#    - |For tables unpack use internal function.
 
 @=
 
@@ -79,7 +83,7 @@ $^Plugin select
 $^Script macros list
   #Key#          |  #Script#
 
-  #CtrlShiftF5# - |~Main window~@main@.
+  #AltShiftF2# - |~Main window~@main@.
   #AltShiftF3# - |Import dialog.
 
 @=
@@ -190,7 +194,7 @@ $^About
 
  Author:       #IgorZ#
 
- Version:      #2.1.4#
+ Version:      #2.1.5#
 
  Net address: ~http://forum.farmanager.com/viewtopic.php?t=10120~@http://forum.farmanager.com/viewtopic.php?t=10120@
 @=‗

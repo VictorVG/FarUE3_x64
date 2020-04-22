@@ -137,7 +137,7 @@ Depend on selected operation in first case bookmark may be copied or changed.
 
   Bookmark name may contain following characters: #',-./0123456789;=ABCDEFGHIJKLMNOPQRSTUVWXYZ[]`#.
 Illegal symbol, pressed on same key with legal, replaced with this legal or ignored.
-For example, typed in cyrillic layout bookmark #"Хлам"# will be converted to #'[KFV'#.
+For example, typed in Cyrillic layout bookmark #"Хлам"# will be converted to #'[KFV'#.
 
   Bookmark value may be in old or new format.
 
@@ -208,10 +208,13 @@ and configure script parameters. Changes may be refused or accepted, temporarily
   #Use local bookmarks#                - |Use bookmarks stored in local Far profile. Usually this is computer dependent information.
   #Use global bookmarks#               - |Use bookmarks stored in global Far profile. Usually this is computer independent information.
   #Use bookmarks#                      - |This option replaces two previous, if local and global profiles stored in same place.
+  #Mainly use bookmarks:#              - |In which base - local or global - to save bookmarks by default.
+Which bookmark - local or global - to use,  if both are present.
   #Use environment variables#          - |Use for jump environment variables, which values contain existing paths.
   #Show environment variables in menu# - |Allows to use environment variables as bookmarks, but do not shows it in ~bookmark menu~@main@.
   #Extended mask#                      - |If part of full name do not corresponds to real element,
 an attempt is made to interpret it as mask, enclosing in #*#.
+  #Menu for single coincidence#        - |On partially coincidence with bookmark name to out menu, if only one item suits.
   #Select hint color#                  - |Calls the color setup dialog for a hint at ~interactive use~@keys@.
 If "black on black" color was selected, hint does not printed.
   #Hint line#                          - |Defines, in which line hint is printed at ~interactive use~@keys@.
@@ -225,6 +228,7 @@ Values allowable:
   #Save#                               - |Save settings and exit.
   #Apply until exit#                   - |Apply settings temporarily and exit.
   #Cancel#                             - |Exit without settings saving.
+  #Help#                               - |This help.
 
 @=
 
@@ -276,7 +280,7 @@ $^About
 
  Author:       #IgorZ#
 
- Version:      #3.0.3#
+ Version:      #3.0.4#
 
  Net address: ~http://forum.farmanager.com/viewtopic.php?t=8465~@http://forum.farmanager.com/viewtopic.php?t=8465@
 @=‗
