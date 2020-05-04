@@ -1,6 +1,6 @@
 ﻿.Language=Italian,Italian (Italiano)
 
-//Version: 3.0.0.5591
+//Version: 3.0.0.5594
 
 //[MYes]
 "&Si"
@@ -30,8 +30,6 @@
 "&Ignora"
 //[MDelete]
 "&Elimina"
-//[MSplit]
-"&Dividi"
 
 //[MHCancel]
 "&Annulla"
@@ -895,10 +893,9 @@
 "Vuoi Distruggere Il File"
 //[MAskWipe]
 "Vuoi Distruggere"
-//[MDeleteLinkTitle]
-"Elimina Collegamento"
+// need translation:
 //[MAskDeleteLink]
-"E' Un Link Simbolico Ad"
+"Un Link Simbolico Ad"
 //[MAskDeleteLinkFolder]
 "Una Cartella"
 //[MAskDeleteLinkFile]
@@ -950,9 +947,6 @@
 "Sa&lta Tutti"
 //[MDeleteFileCancel]
 "&Annulla"
-
-//[MDeleteLinkDelete]
-"Cancella Link"
 
 //[MDeletingTitle]
 "Eliminminazione"

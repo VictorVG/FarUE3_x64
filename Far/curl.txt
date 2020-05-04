@@ -194,6 +194,7 @@ Usage: curl [options...] <url>
      --ssl           Try SSL/TLS
      --ssl-allow-beast Allow security flaw to improve interop
      --ssl-no-revoke Disable cert revocation checks (Schannel)
+     --ssl-revoke-best-effort Ignore revocation offline or missing revocation list errors (Schannel)
      --ssl-reqd      Require SSL/TLS
  -2, --sslv2         Use SSLv2
  -3, --sslv3         Use SSLv3

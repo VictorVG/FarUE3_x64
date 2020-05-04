@@ -1,6 +1,6 @@
 ﻿.Language=Slovak,Slovak (Slovenčina)
 
-//Version: 3.0.0.5591
+//Version: 3.0.0.5594
 
 //[MYes]
 "Áno"
@@ -30,8 +30,6 @@
 "Ignorovať"
 //[MDelete]
 "Zmazať"
-//[MSplit]
-"Rozdeliť"
 
 //[MHCancel]
 "&Storno"
@@ -898,10 +896,9 @@
 "Chcete vymazať súbor"
 //[MAskWipe]
 "Chcete vymazať"
-//[MDeleteLinkTitle]
-"Zmazať prepojenie"
+// need translation:
 //[MAskDeleteLink]
-"je prepojenie na"
+"prepojenie na"
 //[MAskDeleteLinkFolder]
 "priečinok"
 //[MAskDeleteLinkFile]
@@ -953,9 +950,6 @@
 "Pr&eskočiť všetky"
 //[MDeleteFileCancel]
 "&Storno"
-
-//[MDeleteLinkDelete]
-"Zmazať prepojenie"
 
 //[MDeletingTitle]
 "Mazanie"

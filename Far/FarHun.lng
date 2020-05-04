@@ -1,6 +1,6 @@
 ﻿.Language=Hungarian,Hungarian (Magyar)
 
-//Version: 3.0.0.5591
+//Version: 3.0.0.5594
 
 //[MYes]
 "Igen"
@@ -31,8 +31,6 @@
 "Mégis"
 //[MDelete]
 "Töröl"
-//[MSplit]
-"Feloszt"
 
 //[MHCancel]
 "Még&sem"
@@ -992,10 +990,9 @@
 "Ki akarja söpörni a fájlt?"
 //[MAskWipe]
 "Ki akar söpörni"
-//[MDeleteLinkTitle]
-"Link törlése"
+// need translation:
 //[MAskDeleteLink]
-"linkelve ide:"
+"link ide"
 //[MAskDeleteLinkFolder]
 "mappa"
 //[MAskDeleteLinkFile]
@@ -1053,9 +1050,6 @@
 "Mind&et"
 //[MDeleteFileCancel]
 "&Mégsem"
-
-//[MDeleteLinkDelete]
-"Link törlése"
 
 //[MDeletingTitle]
 "Törlés"

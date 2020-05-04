@@ -6,7 +6,7 @@
 # *                            | (__| |_| |  _ <| |___
 # *                             \___|\___/|_| \_\_____|
 # *
-# * Copyright (C) 1998 - 2016, Daniel Stenberg, <daniel@haxx.se>, et al.
+# * Copyright (C) 1998 - 2020, Daniel Stenberg, <daniel@haxx.se>, et al.
 # *
 # * This software is licensed as described in the file COPYING, which
 # * you should have received as part of this distribution. The terms
@@ -20,11 +20,11 @@
 # * KIND, either express or implied.
 # *
 # ***************************************************************************
-# This Perl script creates a fresh curl-ca-bundle.crt file for use with libcurl.
+# This Perl script creates a fresh curl-ca-bundl.crt file for use with libcurl.
 # It downloads certdata.txt from Mozilla's source tree (see URL below),
 # then parses certdata.txt and extracts CA Root Certificates into PEM format.
 # These are then processed with the OpenSSL commandline tool to produce the
-# final curl-ca-bundle.crt file.
+# final curl-ca-bundl.crt file.
 # The script is based on the parse-certs script written by Roland Krikava.
 # This Perl script works on almost any platform since its only external
 # dependency is the OpenSSL commandline tool for optional text listing.
@@ -38,6 +38,7 @@ use warnings;
 use vars qw($opt_b $opt_d $opt_f $opt_h $opt_i $opt_k $opt_l $opt_m $opt_n $opt_p $opt_q $opt_s $opt_t $opt_u $opt_v $opt_w);
 use List::Util;
 use Text::Wrap;
+use Time::Local;
 my $MOD_SHA = "Digest::SHA";
 eval "require $MOD_SHA";
 if ($@) {
@@ -62,7 +63,7 @@ $opt_d = 'release';
 # If the OpenSSL commandline is not in search path you can configure it here!
 my $openssl = 'openssl';
 
-my $version = '1.27';
+my $version = '1.28';
 
 $opt_w = 76; # default base64 encoded lines length
 
@@ -164,7 +165,7 @@ sub warning_message() {
 
 sub HELP_MESSAGE() {
   print "Usage:\t${0} [-b] [-d<certdata>] [-f] [-i] [-k] [-l] [-n] [-p<purposes:levels>] [-q] [-s<algorithms>] [-t] [-u] [-v] [-w<l>] [<outputfile>]\n";
-  print "\t-b\tbackup an existing version of curl-ca-bundle.crt\n";
+  print "\t-b\tbackup an existing version of curl-ca-bundl.crt\n";
   print "\t-d\tspecify Mozilla tree to pull certdata.txt or custom URL\n";
   print "\t\t  Valid names are:\n";
   print "\t\t    ", join( ", ", map { ( $_ =~ m/$opt_d/ ) ? "$_ (default)" : "$_" } sort keys %urls ), "\n";
@@ -288,7 +289,7 @@ sub should_output_cert(%) {
   return 0;
 }
 
-my $crt = $ARGV[0] || 'curl-ca-bundle.crt';
+my $crt = $ARGV[0] || 'curl-ca-bundl.crt';
 (my $txt = $url) =~ s@(.*/|\?.*)@@g;
 
 my $stdout = $crt eq '-';
@@ -421,6 +422,8 @@ my $certnum = 0;
 my $skipnum = 0;
 my $start_of_cert = 0;
 my @precert;
+my $cka_value;
+my $valid = 1;
 
 open(TXT,"$txt") or die "Couldn't open $txt: $!\n";
 while (<TXT>) {
@@ -435,6 +438,7 @@ while (<TXT>) {
   }
   elsif(/^# (Issuer|Serial Number|Subject|Not Valid Before|Not Valid After |Fingerprint \(MD5\)|Fingerprint \(SHA1\)):/) {
       push @precert, $_;
+      $valid = 1;
       next;
   }
   elsif(/^#|^\s*$/) {
@@ -442,6 +446,49 @@ while (<TXT>) {
       next;
   }
   chomp;
+
+  # Example:
+  # CKA_NSS_SERVER_DISTRUST_AFTER MULTILINE_OCTAL
+  # \062\060\060\066\061\067\060\060\060\060\060\060\132
+  # END
+
+  if (/^CKA_NSS_SERVER_DISTRUST_AFTER (CK_BBOOL CK_FALSE|MULTILINE_OCTAL)/) {
+      if($1 eq "MULTILINE_OCTAL") {
+          my @timestamp;
+          while (<TXT>) {
+              last if (/^END/);
+              chomp;
+              my @octets = split(/\\/);
+              shift @octets;
+              for (@octets) {
+                  push @timestamp, chr(oct);
+              }
+          }
+          # A trailing Z in the timestamp signifies UTC
+          if($timestamp[12] ne "Z") {
+              report "distrust date stamp is not using UTC";
+          }
+          # Example date: 200617000000Z
+          # Means 2020-06-17 00:00:00 UTC
+          my $distrustat =
+            timegm($timestamp[10] . $timestamp[11], # second
+                   $timestamp[8] . $timestamp[9],   # minute
+                   $timestamp[6] . $timestamp[7],   # hour
+                   $timestamp[4] . $timestamp[5],   # day
+                   ($timestamp[2] . $timestamp[3]) - 1, # month
+                   "20" . $timestamp[0] . $timestamp[1]); # year
+          if(time >= $distrustat) {
+              # not trusted anymore
+              $skipnum++;
+              report "Skipping: $caname is not trusted anymore" if ($opt_v);
+              $valid = 0;
+          }
+          else {
+              # still trusted
+          }
+      }
+      next;
+  }
 
   # this is a match for the start of a certificate
   if (/^CKA_CLASS CK_OBJECT_CLASS CKO_CERTIFICATE/) {
@@ -452,21 +499,18 @@ while (<TXT>) {
   }
   my %trust_purposes_by_level;
   if ($start_of_cert && /^CKA_VALUE MULTILINE_OCTAL/) {
-    my $data;
+    $cka_value="";
     while (<TXT>) {
       last if (/^END/);
       chomp;
       my @octets = split(/\\/);
       shift @octets;
       for (@octets) {
-        $data .= chr(oct);
+        $cka_value .= chr(oct);
       }
     }
-    # scan forwards until the trust part
-    while (<TXT>) {
-      last if (/^CKA_CLASS CK_OBJECT_CLASS CKO_NSS_TRUST/);
-      chomp;
-    }
+  }
+  if(/^CKA_CLASS CK_OBJECT_CLASS CKO_NSS_TRUST/ && $valid) {
     # now scan the trust part to determine how we should trust this cert
     while (<TXT>) {
       last if (/^#/);
@@ -485,6 +529,13 @@ while (<TXT>) {
       $skipnum ++;
       report "Skipping: $caname" if ($opt_v);
     } else {
+      my $data = $cka_value;
+      $cka_value = "";
+
+      if(!length($data)) {
+          # if empty, skip
+          next;
+      }
       my $encoded = MIME::Base64::encode_base64($data, '');
       $encoded =~ s/(.{1,${opt_w}})/$1\n/g;
       my $pem = "-----BEGIN CERTIFICATE-----\n"

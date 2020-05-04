@@ -1,6 +1,6 @@
 ﻿.Language=Polish,Polish (Polski)
 
-//Version: 3.0.0.5591
+//Version: 3.0.0.5594
 
 //[MYes]
 "Tak"
@@ -30,8 +30,6 @@
 "Zignoruj"
 //[MDelete]
 "Usuń"
-//[MSplit]
-"Podziel"
 
 //[MHCancel]
 "&Anuluj"
@@ -892,10 +890,9 @@
 "Czy chcesz wymazać plik"
 //[MAskWipe]
 "Czy chcesz wymazać"
-//[MDeleteLinkTitle]
-"Usuń link"
+// need translation:
 //[MAskDeleteLink]
-"jest linkiem do:"
+"linkiem do"
 //[MAskDeleteLinkFolder]
 "folder"
 //[MAskDeleteLinkFile]
@@ -947,9 +944,6 @@
 "O&miń wszystkie"
 //[MDeleteFileCancel]
 "&Anuluj"
-
-//[MDeleteLinkDelete]
-"Usuń link"
 
 //[MDeletingTitle]
 "Usuwam"

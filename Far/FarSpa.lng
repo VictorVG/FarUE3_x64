@@ -1,6 +1,6 @@
 ﻿.Language=Spanish,Spanish (Español)
 
-//Version: 3.0.0.5591
+//Version: 3.0.0.5594
 
 //[MYes]
 "Si"
@@ -30,8 +30,6 @@
 "Ignorar"
 //[MDelete]
 "Borrar"
-//[MSplit]
-"Dividir"
 
 //[MHCancel]
 "&Cancelar"
@@ -897,10 +895,9 @@
 "Desea destruir el archivo"
 //[MAskWipe]
 "Desea destruir"
-//[MDeleteLinkTitle]
-"Borrar enlace"
+// need translation:
 //[MAskDeleteLink]
-"es un enlace al"
+"un enlace al"
 //[MAskDeleteLinkFolder]
 "directorio"
 //[MAskDeleteLinkFile]
@@ -952,9 +949,6 @@
 "Saltar t&odos"
 //[MDeleteFileCancel]
 "&Cancelar"
-
-//[MDeleteLinkDelete]
-"Borrar enlace"
 
 //[MDeletingTitle]
 "Borrando"

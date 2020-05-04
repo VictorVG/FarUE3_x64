@@ -1,6 +1,6 @@
 ﻿.Language=Russian,Russian (Русский)
 
-//Version: 3.0.0.5591
+//Version: 3.0.0.5594
 
 //[MYes]
 "Да"
@@ -30,8 +30,6 @@
 "Игнорировать"
 //[MDelete]
 "Удалить"
-//[MSplit]
-"Разделить"
 
 //[MHCancel]
 "&Отмена"
@@ -892,10 +890,8 @@
 "Вы хотите уничтожить файл"
 //[MAskWipe]
 "Вы хотите уничтожить"
-//[MDeleteLinkTitle]
-"Удаление ссылки"
 //[MAskDeleteLink]
-"является ссылкой на"
+"cсылка на"
 //[MAskDeleteLinkFolder]
 "папку"
 //[MAskDeleteLinkFile]
@@ -947,9 +943,6 @@
 "П&ропустить все"
 //[MDeleteFileCancel]
 "&Отменить"
-
-//[MDeleteLinkDelete]
-"Удалить ссылку"
 
 //[MDeletingTitle]
 "Удаление"

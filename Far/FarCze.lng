@@ -1,6 +1,6 @@
 ﻿.Language=Czech,Czech (Čeština)
 
-//Version: 3.0.0.5591
+//Version: 3.0.0.5594
 
 //[MYes]
 "Ano"
@@ -30,8 +30,6 @@
 "Ignorovat"
 //[MDelete]
 "Smazat"
-//[MSplit]
-"Rozdělit"
 
 //[MHCancel]
 "&Storno"
@@ -893,10 +891,9 @@
 "Přejete si vymazat soubor"
 //[MAskWipe]
 "Přejete si vymazat"
-//[MDeleteLinkTitle]
-"Smazat link"
+// need translation:
 //[MAskDeleteLink]
-"je link na"
+"link na"
 //[MAskDeleteLinkFolder]
 "adresář"
 //[MAskDeleteLinkFile]
@@ -948,9 +945,6 @@
 "Př&eskočit vše"
 //[MDeleteFileCancel]
 "&Storno"
-
-//[MDeleteLinkDelete]
-"Smazat link"
 
 //[MDeletingTitle]
 "Mazání"

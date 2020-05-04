@@ -12,4 +12,4 @@ Warning:
   consequences of use of this software.
 
 Artem Senichev (artemsen@gmail.com)
-              https://sourceforge.net/projects/farplugs/
+              https://sourceforge.net/projects/farplugs/files/

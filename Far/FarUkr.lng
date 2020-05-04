@@ -1,6 +1,6 @@
 ﻿.Language=Ukrainian,Ukrainian (Українська)
 
-//Version: 3.0.0.5591
+//Version: 3.0.0.5594
 
 //[MYes]
 "Так"
@@ -30,8 +30,6 @@
 "Ігнорувати"
 //[MDelete]
 "Видалити"
-//[MSplit]
-"Розділити"
 
 //[MHCancel]
 "&Скасувати"
@@ -892,10 +890,8 @@
 "Ви бажаєте знищити файл"
 //[MAskWipe]
 "Ви бажаєте знищити"
-//[MDeleteLinkTitle]
-"Видалення посилання"
 //[MAskDeleteLink]
-"є посиланням на"
+"посилання на"
 //[MAskDeleteLinkFolder]
 "папку"
 //[MAskDeleteLinkFile]
@@ -947,9 +943,6 @@
 "П&ропустити все"
 //[MDeleteFileCancel]
 "&Скасувати"
-
-//[MDeleteLinkDelete]
-"Видалити посилання"
 
 //[MDeletingTitle]
 "Видалення"

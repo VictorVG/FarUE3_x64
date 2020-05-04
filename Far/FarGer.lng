@@ -1,6 +1,6 @@
 ﻿.Language=German,German (Deutsch)
 
-//Version: 3.0.0.5591
+//Version: 3.0.0.5594
 
 //[MYes]
 "Ja"
@@ -30,8 +30,6 @@
 "Ignorieren"
 //[MDelete]
 "Löschen"
-//[MSplit]
-"Zerteilen"
 
 //[MHCancel]
 "&Abbrechen"
@@ -912,10 +910,9 @@
 "Wollen Sie die Datei sicher löschen"
 //[MAskWipe]
 "Wollen Sie das Objekt sicher löschen"
-//[MDeleteLinkTitle]
-"Link löschen"
+// need translation:
 //[MAskDeleteLink]
-"ist ein Link auf"
+"ein Link auf"
 //[MAskDeleteLinkFolder]
 "Ordner"
 //[MAskDeleteLinkFile]
@@ -967,9 +964,6 @@
 "A&lle überspr."
 //[MDeleteFileCancel]
 "Ab&bruch"
-
-//[MDeleteLinkDelete]
-"Link löschen"
 
 //[MDeletingTitle]
 "Lösche"
