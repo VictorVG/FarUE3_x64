@@ -1,8 +1,6 @@
 ﻿-- +
--- Для версии 5.0.0+
+-- Для версии 5.1.0+
 -- -
-local LMbuild = ...
---
 return {
 -- язык
   Lang = "Russian",
@@ -15,7 +13,7 @@ return {
   CommandLine = "Префикс командной строки",
   PanelModule = "Панельный модуль",
 -- пункты меню
-  AreaItems = type(LMbuild)=="number" and LMbuild>=626 and {
+  AreaItems = {
     {text="&Shell                │ Файловые панели"},
     {text="&Info                 │ Информационная панель"},
     {text="&QView                │ Панель быстрого просмотра"},
@@ -34,32 +32,11 @@ return {
     {text="&Help                 │ Система помощи"},
     {text="Gra&bber              │ Область копирования"},
     {text="Deskto&p              │ Экран"},
---    {text="HMe&nu                │ Тоже меню"},
-    {text="&Other                │ Режим копирования текста с экрана"},
-    {text="&Common               │ Макросы из этой области работают везде"},
-    type = "Macro",
-  } or {
-    {text="&Shell                │ Файловые панели"},
-    {text="&Info                 │ Информационная панель"},
-    {text="&QView                │ Панель быстрого просмотра"},
-    {text="&Tree                 │ Панель дерева папок"},
-    {text="Sea&rch               │ Быстрый поиск в панелях"},
-    {text="&FindFolder           │ Панель поиска папок"},
-    {text="&Viewer               │ Внутренняя программа просмотра"},
-    {text="&Editor               │ Редактор"},
-    {text="&Dialog               │ Диалоги"},
-    {text="&Menu                 │ Прочие меню"},
-    {text="M&ainMenu             │ Основное меню"},
-    {text="&UserMenu             │ Пользовательское меню"},
-    {text="Dis&ks                │ Меню выбора диска"},
-    {text="She&llAutoCompletion  │ Список автодополнения в панелях"},
-    {text="Dialo&gAutoCompletion │ Список автодополнения в диалогах"},
-    {text="&Help                 │ Система помощи"},
     {text="&Other                │ Режим копирования текста с экрана"},
     {text="&Common               │ Макросы из этой области работают везде"},
     type = "Macro",
   },
-  GroupItems = type(LMbuild)=="number" and LMbuild>=531 and {
+  GroupItems = {
     {text="&DialogEvent  │ События диалогов"},
     {text="&ViewerEvent  │ События встроенного просмотрщика"},
     {text="&EditorEvent  │ События встроенного редактора"},
@@ -67,27 +44,14 @@ return {
     {text="&ConsoleInput │ Нажатие клавиатуры/мыши в консоли"},
     {text="E&xitFAR      │ Выход из Farа"},
     type = "Event",
-  } or {
-    {text="&DialogEvent  │ События диалогов"},
-    {text="&ViewerEvent  │ События встроенного просмотрщика"},
-    {text="&EditorEvent  │ События встроенного редактора"},
-    {text="Editor&Input  │ Нажатие клавиатуры/мыши в редакторе"},
-    {text="E&xitFAR      │ Выход из Farа"},
-    type = "Event",
   },
 -- списки для комбобоксов
-  cbEventsList = type(LMbuild)=="number" and LMbuild>=531 and {
+  cbEventsList = {
     {Text="DialogEvent:  События диалогов"},
     {Text="ViewerEvent:  События встроенного просмотрщика"},
     {Text="EditorEvent:  События встроенного редактора"},
     {Text="EditorInput:  Нажатие клавиатуры/мыши в редакторе"},
     {Text="ConsoleInput: Нажатие клавиатуры/мыши в консоли"},
-    {Text="ExitFAR:      Выход из Farа"},
-  } or {
-    {Text="DialogEvent:  События диалогов"},
-    {Text="ViewerEvent:  События встроенного просмотрщика"},
-    {Text="EditorEvent:  События встроенного редактора"},
-    {Text="EditorInput:  Нажатие клавиатуры/мыши в редакторе"},
     {Text="ExitFAR:      Выход из Farа"},
   },
   cbFunctionsList = {
@@ -150,7 +114,6 @@ return {
 -- диалоги
   diShow = {
     File     = "Файл:                │",
-    Uid      = "uid:                 │",
     guid     = "guid:                │",
     id       = "id:                  │",
     index    = "index:               │",
@@ -194,7 +157,6 @@ return {
     MenuItemHdr = "Настройки пункта меню плагинов",
     PrefixHdr = "Настройки префикса командной строки",
     PanelHdr = "Настройки панельного модуля",
-    Uid = "&1 Uid:",
     id = "&1 id:",
     Guid = "&1 GUID:",
     GenUid = "Генерирова&ть",
@@ -246,13 +208,12 @@ return {
     TextNotInFile2 = "-- или файл не найден",
     FunNotInFile1 = "--Функция определена не в файле или нестандартно,",
     FunNotInFile2 = "-- или файл не найден",
-    OldFormat = "В старом формате",
   },
-  diConf = {--все=(двнсыктпа);уники=(сыа);по разу=(днктп);остальные=(в)--нсыва
+  diConf = {
     Hdr = "Конфигурация",
-    MaxKeyField = "Предел дли&ны поля:  клавиш -",--дв&н!
+    MaxKeyField = "Предел дли&ны поля:  клавиш -",
     MaxFileField = ", файла &-",
-    MaxDescField = ",    опи&сания -",--&с+
+    MaxDescField = ",    опи&сания -",
     Macro = "Макросы",
     Event = "События",
     Module = "Модули",
@@ -262,9 +223,9 @@ return {
     ShowMacros = "Стационарные,",
     ShowKeyMacros = "Клавиатурные,",
     ShowNonActiveMacros = "Для всех областей",
-    Show = " Показ&ывать ",--&ы+
-    SortingOrder = " &Порядок сортировки ",--ктп&в
-    Filter = " Фильтров&ать ",--&а+
+    Show = " Показ&ывать ",
+    SortingOrder = " &Порядок сортировки ",
+    Filter = " Фильтров&ать ",
     KeyFilter = "Клавиши",
     AreaFilter = "Области",
     GroupFilter = "Группы",
@@ -280,7 +241,7 @@ return {
     EditScriptKey = "&8.'Редактировать скрипт'",
     InsertUidKey = "&9.'Вставить guid'",
     ReloadKey = "&0.'Перезагрузить скрипты'",
-    ChangeBtn = "Изменить",--т
+    ChangeBtn = "Изменить",
   },
   diFilter = {
     MacroHdr = "Фильтр областей",
@@ -290,7 +251,6 @@ return {
   diRebind = {
     Hdr = "Перепривязка клавиш",
     File     = "Файл:       │",
-    Uid      = "uid:        │",
     id       = "id:         │",
     Area     = "Область/и:  │",
     OldKey   = "Ор. клав.:  │",
@@ -331,7 +291,7 @@ return {
     EditUnsavedKeyMacro = "Невозможно редактировать несохранённый клавиатурный макрос",
     NotFilePanel = "Действие доступно только из файловой панели",
     NotEditor = "Действие доступно только из редактора",
-    NoUid = "Не задан uid",
+    NoId = "Не задан id",
     NoPartKeys = "Игнорировать;Редактировать",
     NotLMFun = "LuaManager: неверное имя функции",
     No_regscript = "Модуль regscript не установлен корректно",

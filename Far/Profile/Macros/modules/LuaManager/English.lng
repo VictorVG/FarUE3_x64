@@ -1,8 +1,6 @@
 ﻿-- +
--- For version 5.0.0+
+-- For version 5.1.0+
 -- -
-local LMbuild = ...
---
 return {
 -- language
   Lang = "English",
@@ -15,7 +13,7 @@ return {
   CommandLine = "Command line prefix",
   PanelModule = "Panel module",
 -- menu items
-  AreaItems = type(LMbuild)=="number" and LMbuild>=626 and {
+  AreaItems = {
     {text="&Shell                │ File panels"},
     {text="&Info                 │ Info panel"},
     {text="&QView                │ Quick view panel"},
@@ -34,32 +32,11 @@ return {
     {text="&Help                 │ Far help system"},
     {text="Gra&bber              │ Screen grabber"},
     {text="Deskto&p              │ Desktop"},
---    {text="HMe&nu                │ Menu, yes"},
-    {text="&Other                │ User screen"},
-    {text="&Common               │ Macros for all areas"},
-    type = "Macro",
-  } or {
-    {text="&Shell                │ File panels"},
-    {text="&Info                 │ Info panel"},
-    {text="&QView                │ Quick view panel"},
-    {text="&Tree                 │ Folder tree panel"},
-    {text="Sea&rch               │ Quick search in panels"},
-    {text="&FindFolder           │ Find folder panel"},
-    {text="&Viewer               │ Internal viewer"},
-    {text="&Editor               │ Internal editor"},
-    {text="&Dialog               │ Dialogs"},
-    {text="&Menu                 │ Menus"},
-    {text="M&ainMenu             │ Far main menu"},
-    {text="&UserMenu             │ User menu"},
-    {text="Dis&ks                │ Disk select menu"},
-    {text="She&llAutoCompletion  │ Autocompletion in panels"},
-    {text="Dialo&gAutoCompletion │ Autocompletion in dialogs"},
-    {text="&Help                 │ Far help system"},
     {text="&Other                │ User screen"},
     {text="&Common               │ Macros for all areas"},
     type = "Macro",
   },
-  GroupItems = type(LMbuild)=="number" and LMbuild>=531 and {
+  GroupItems = {
     {text="&DialogEvent  │ Dialog events"},
     {text="&ViewerEvent  │ Internal viewer events"},
     {text="&EditorEvent  │ Internal editor events"},
@@ -67,45 +44,32 @@ return {
     {text="&ConsoleInput │ Keyboard/mouse pressed in console"},
     {text="E&xitFAR      │ Exit from Far"},
     type = "Event",
-  } or {
-    {text="&DialogEvent  │ Dialog events"},
-    {text="&ViewerEvent  │ Internal viewer events"},
-    {text="&EditorEvent  │ Internal editor events"},
-    {text="Editor&Input  │ Keyboard/mouse pressed in editor"},
-    {text="E&xitFAR      │ Exit from Far"},
-    type = "Event",
   },
 -- combobox lists
-  cbEventsList = type(LMbuild)=="number" and LMbuild>=531 and {
+  cbEventsList = {
     {Text="DialogEvent:  Dialog events"},
     {Text="ViewerEvent:  Internal viewer events"},
     {Text="EditorEvent:  Internal editor events"},
     {Text="EditorInput:  Keyboard/mouse pressed"},
     {Text="ConsoleInput: Keyboard/mouse pressed in console"},
     {Text="ExitFAR:      Exit from Far"},
-  } or {
-    {Text="DialogEvent:  Dialog events"},
-    {Text="ViewerEvent:  Internal viewer events"},
-    {Text="EditorEvent:  Internal editor events"},
-    {Text="EditorInput:  Keyboard/mouse pressed"},
-    {Text="ExitFAR:      Exit from Far"},
   },
   cbFunctionsList = {
-    {Text="&Analyse:           Panel host file analyse"},
-    {Text="&ClosePanel:        Close opened panel"},
-    {Text="C&ompare:           Sort panel content"},
-    {Text="&DeleteFiles:       Delete files from panel"},
-    {Text="&GetFiles:          Get files from panel"},
-    {Text="Get&FindData:       Get file list"},
-    {Text="GetOpenPanel&Info:  Get info about panel"},
-    {Text="&MakeDirectory:     Create directory in panel"},
-    {Text="&Open:              Open panel"},
-    {Text="Process&HostFile:   Process host file"},
-    {Text="ProcessPanel&Event: Process panel events"},
-    {Text="ProcessPanel&Input: Process keyboard/mouse"},
-    {Text="&PutFiles:          Put files into panel"},
-    {Text="&SetDirectory:      Set panel directory"},
-    {Text="SetFind&List:       Move from search dialog to panel"},
+    {Text="?&Analyse:           Panel host file analyse"},
+    {Text="?&ClosePanel:        Close opened panel"},
+    {Text="?C&ompare:           Sort panel content"},
+    {Text="?&DeleteFiles:       Delete files from panel"},
+    {Text="?&GetFiles:          Get files from panel"},
+    {Text="?Get&FindData:       Get file list"},
+    {Text="?GetOpenPanel&Info:  Get info about panel"},
+    {Text="?&MakeDirectory:     Create directory in panel"},
+    {Text="?&Open:              Open panel"},
+    {Text="?Process&HostFile:   Process host file"},
+    {Text="?ProcessPanel&Event: Process panel events"},
+    {Text="?ProcessPanel&Input: Process keyboard/mouse"},
+    {Text="?&PutFiles:          Put files into panel"},
+    {Text="?&SetDirectory:      Set panel directory"},
+    {Text="?SetFind&List:       Move from search dialog to panel"},
   },
   cbMacroSortVariants = {
     A="area: Areas list",
@@ -150,7 +114,6 @@ return {
 -- dialogs
   diShow = {
     File     = "File:         │",
-    Uid      = "uid:          │",
     guid     = "guid:         │",
     id       = "id:           │",
     index    = "index:        │",
@@ -194,7 +157,6 @@ return {
     MenuItemHdr = "Plugin menu item settings",
     PrefixHdr = "Command line prefix settings",
     PanelHdr = "Panel module settings",
-    Uid = "&1 Uid:",
     id = "&1 id:",
     Guid = "&1 GUID:",
     GenUid = "  Ge&nerate  ",
@@ -246,7 +208,6 @@ return {
     TextNotInFile2 = "-- or file is not found",
     FunNotInFile1 = "--Function id defined not in file or non-standard,",
     FunNotInFile2 = "-- or file is not found",
-    OldFormat = "In old format",
   },
   diConf = {
     Hdr = "Config",
@@ -290,7 +251,6 @@ return {
   diRebind = {
     Hdr = "Rebind keys",
     File     = "File:       │",
-    Uid      = "uid:        │",
     id       = "id:         │",
     Area     = "Area(s):    │",
     OldKey   = "Old key(s): │",
@@ -331,7 +291,7 @@ return {
     EditUnsavedKeyMacro = "Cannot edit unsaved keyboard macro",
     NotFilePanel = "It is possible from file panel only",
     NotEditor = "It is possible from editor only",
-    NoUid = "Uid is not available",
+    NoId = "id is not available",
     NoPartKeys = "Ignore;Edit",
     NotLMFun = "LuaManager: bad function name",
     No_regscript = "Module regscript is not correctly installed",

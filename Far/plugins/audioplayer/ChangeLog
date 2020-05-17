@@ -1,3 +1,14 @@
+AudioPlayer 3.44.8 15-05-2020
+-----------------------------
+ * Возвращён bassopus.dll
+ + .rad as playlist
+ + lua:Plugin.Call("9C3A61FC-F349-48E8-9B78-DAEBD821694B",...)
+
+AudioPlayer 3.44.7 05-05-2020
+-----------------------------
+ * bassasio.dll/basswasapi.dll оставались в памяти после unload(AudioPlayer.dll)
+ * Обновлены изменившиеся bass*.dll
+
 AudioPlayer 3.44.6 30-04-2020
 -----------------------------
  + iso.wv

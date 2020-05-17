@@ -2,12 +2,12 @@
 local nfo = Info {... or _filename,
   name          = "LuaManager macros";
   description   = "Набор макросов и пункт меню плагинов для LuaManager";
-  version       = "1.0.3"; --в формате semver: http://semver.org/lang/ru/
+  version       = "1.0.6"; --в формате semver: http://semver.org/lang/ru/
   author        = "IgorZ";
   url           = "http://forum.farmanager.com/viewtopic.php?t=7936";
   id            = "2062CE37-181E-4721-95A4-ED1019E61586";
   parent_id     = "180EE412-CBDE-40C7-9AE6-37FC64673CBD";
-  minfarversion = {3,0,0,4000,0}; --при несоответствии скрипт завершится
+  minfarversion = {3,0,0,5210,0}; --при несоответствии скрипт завершится
   helptxt       = [[
 Клавиши вызова макросов по умолчанию:
   AltShiftF11 - Менеджер Lua/Moon-скриптов
@@ -26,55 +26,44 @@ if not nfo then return nfo end
 --
 local OK_LM,LM = pcall(require,"LuaManager") -- найдём LuaManager
 if not OK_LM then far.Message("Cannot find LuaManager module ",nfo.name,";Ok","w") return end -- не нашли - ничего не будет
-local L,G,K,LMBuild = LM.__MData() -- языковые данные, guid-ы, клавиши вызова, версия LuaMacro
+local FM,L,G,K = "*.lua,*.moon",LM.__MData() -- файловая маска, языковые данные, guid-ы, клавиши вызова
 -- +
 --[==[Макросы]==]
 -- -
 Macro{
-  description=L.UidDesc; area="Editor"; filemask="*.lua,*.moon"; key=K.InsUid;
-  [(LMBuild<579 and "u" or "").."id"]=G.UidMacro; action=LM.InsUid;
+  description=L.UidDesc; area="Editor"; filemask=FM; key=K.InsUid; id=G.UidMacro; action=LM.InsUid;
 }
 Macro{
-  description=L.InsertDesc; area="Editor"; filemask="*.lua,*.moon"; key=K.InsScript;
-  [(LMBuild<579 and "u" or "").."id"]=G.InsScriptMacro; action=LM.InsertScript;
+  description=L.InsertDesc; area="Editor"; filemask=FM; key=K.InsScript; id=G.InsScriptMacro; action=function() LM.InsertScript() end;
 }
 Macro{
-  description=L.InsertMacroDesc; area="Editor"; filemask="*.lua,*.moon"; key=K.InsMacro;
-  [(LMBuild<579 and "u" or "").."id"]=G.InsMacroMacro; action=function() LM.InsertScript(1) end;
+  description=L.InsertMacroDesc; area="Editor"; filemask=FM; key=K.InsMacro; id=G.InsMacroMacro; action=function() LM.InsertScript(1) end;
 }
 Macro{
-  description=L.InsertEventDesc; area="Editor"; filemask="*.lua,*.moon"; key=K.InsEvent;
-  [(LMBuild<579 and "u" or "").."id"]=G.InsEventMacro; action=function() LM.InsertScript(2) end;
+  description=L.InsertEventDesc; area="Editor"; filemask=FM; key=K.InsEvent; id=G.InsEventMacro; action=function() LM.InsertScript(2) end;
 }
 Macro{
-  description=L.InsertMIDesc; area="Editor"; filemask="*.lua,*.moon"; key=K.InsMI;
-  [(LMBuild<579 and "u" or "").."id"]=G.InsMIMacro; action=function() LM.InsertScript(3) end;
+  description=L.InsertMIDesc; area="Editor"; filemask=FM; key=K.InsMI; id=G.InsMIMacro; action=function() LM.InsertScript(3) end;
 }
 Macro{
-  description=L.InsertPrefixDesc; area="Editor"; filemask="*.lua,*.moon"; key=K.InsPrefix;
-  [(LMBuild<579 and "u" or "").."id"]=G.InsPrefixMacro; action=function() LM.InsertScript(4) end;
+  description=L.InsertPrefixDesc; area="Editor"; filemask=FM; key=K.InsPrefix; id=G.InsPrefixMacro; action=function() LM.InsertScript(4) end;
 }
 Macro{
-  description=L.InsertPanelDesc; area="Editor"; filemask="*.lua,*.moon"; key=K.InsPanel;
-  [(LMBuild<579 and "u" or "").."id"]=G.InsPanelMacro; action=function() LM.InsertScript(5) end;
+  description=L.InsertPanelDesc; area="Editor"; filemask=FM; key=K.InsPanel; id=G.InsPanelMacro; action=function() LM.InsertScript(5) end;
 }
 Macro{
-  description=L.EditDesc; area="Editor"; filemask="*.lua,*.moon"; key=K.EditScript;
-  [(LMBuild<579 and "u" or "").."id"]=G.EditScriptMacro; action=LM.EditScript;
+  description=L.EditDesc; area="Editor"; filemask=FM; key=K.EditScript; id=G.EditScriptMacro; action=function() LM.EditScript() end;
 }
 Macro{
-  description=L.ReloadDesc; area="Editor"; filemask="*.lua,*.moon"; key=K.Reload;
-  [(LMBuild<579 and "u" or "").."id"]=G.ReloadMacro; action=LM.Reload;
+  description=L.ReloadDesc; area="Editor"; filemask=FM; key=K.Reload; id=G.ReloadMacro; action=function() LM.Reload() end;
 }
 Macro{
-  description=L.MacroDesc; area="Common"; key=K.Manager;
-  [(LMBuild<579 and "u" or "").."id"]=G.MMEMacro; action=LM.Main;
+  description=L.MacroDesc; area="Common"; key=K.Manager; id=G.MMEMacro; action=function() LM.Main() end;
 }
 -- +
 --[==[Пункт меню]==]
 -- -
 MenuItem{
-  description = L.MacroDesc; menu = "Plugins Config"; area = "Common";
-  guid = G.PlugMenu; text = function() return L.MacroDesc end;
+  description = L.MacroDesc; menu = "Plugins Config"; area = "Common"; guid = G.PlugMenu; text = L.MacroDesc;
   action = function(OpenFrom) if OpenFrom then LM() else LM.Config() end end;
 }

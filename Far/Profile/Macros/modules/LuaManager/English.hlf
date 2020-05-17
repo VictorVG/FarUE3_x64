@@ -165,6 +165,8 @@ and return to ~main menu~@main@.
   #Del#         - |Delete this viewed object.
   #CtrlPgDn#    - |Go to the file, contained this object, in panel.
   #CtrlL#       - |Load module.
+  #Num+#        - |Expand tables.
+  #Num-#        - |Collapse tables.
 
 @=
 
@@ -177,11 +179,10 @@ $^Edit script in dialog
 Details about fields values read in appropriate documentation, placed by default in #%FARHOME%\Encyclopedia#.
   Note: the unsaved keyboard scripts are edited by calling standard Far macro editing dialog.
 
-  #1. Uid#
   #1. id#
-  #1. GUID#                  - |Uid/id of regular macro or event handler, plugin menu item or panel module guid.
+  #1. GUID#                  - |id of regular macro or event handler, plugin menu item or panel module guid.
 For macros and event handlers actually only if ~'rebind'~@foreign@ module is set.
-  #Generate#                 - |Generate new random id/uid or guid.
+  #Generate#                 - |Generate new random id or guid.
 
   #2. Description#           - |Script description.
 
@@ -234,7 +235,6 @@ F4 or double click open action in Far editor. Action may be any expression with 
 
   #OK#                       - |Write changed script and close dialog.
   #Cancel#                   - |Close dialog without saving of changes.
-  #In old format#            - |Write keyboard macro in format for Far version less as 4202.
 
 @=
 
@@ -509,7 +509,7 @@ Show and filtering parameters, stored in configuration, are ignored.
 in which that line included, else script select menu is outed.
 
    5. #require"LuaManager".InsUid()#.
-      |Insert generated on the fly uid into cursor position.
+      |Insert generated on the fly guid into cursor position.
 
    6. #require"LuaManager".Reload(<OnNotSaved>)#.
       |Reload all scripts. If current area is editor with file changed, then #OnNotSaved# defines action:
@@ -592,7 +592,7 @@ $^About
 
  Author:       #IgorZ#
 
- Version:      #5.0.6#
+ Version:      #5.1.0#
 
  Net address: ~http://forum.farmanager.com/viewtopic.php?t=7936~@http://forum.farmanager.com/viewtopic.php?t=7936@
 @=‗
