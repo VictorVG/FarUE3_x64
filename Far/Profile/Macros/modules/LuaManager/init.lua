@@ -2,7 +2,7 @@
 local nfo = Info {
   name          = "LuaManager";
   description   = "Менеджер Lua/Moon-скриптов для Fara";
-  version       = "5.1.0"; --в формате semver: http://semver.org/lang/ru/
+  version       = "5.1.1"; --в формате semver: http://semver.org/lang/ru/
   author        = "IgorZ";
   url           = "http://forum.farmanager.com/viewtopic.php?t=7936";
   id            = "180EE412-CBDE-40C7-9AE6-37FC64673CBD";
@@ -153,8 +153,7 @@ local nfo = Info {
 2019/11/22 v5.0.6 - Исправлена ошибка, возникающая после редактировании модуля вида ?\init.lua.
 2020/05/15 v5.1.0 - Убрана совместимость с очень старыми версиями Far. Исправлена ошибка с редактированием нового панельного модуля в диалоге.
                     Улучшена замена фрагмента. Обрезаем лишние BOM. Рефакторинг.
-2020/05/16 v5.1.0 - Fix by Shmuel Zeigerman - падал в строке 511 из-за некорректной работы скрипта с UTF-8.
-
+2020/05/18 v5.1.1 - Поправлено обрезание BOM.
 ]];
   options       = {
     DefProfile = far.Flags.PSL_ROAMING--[[far.Flags.PSL_LOCAL--]] -- место хранения настроек по умолчанию: глобальные/локальные
@@ -510,8 +509,7 @@ local tfn,dr = far.MkTemp()..item.FileName:lower():match("%..-$"),dlg:send(F.DM_
 Write(tfn,src=="" and def or src) -- заполним файл
 editor.Editor(tfn,(item.descr or item.description)..". "..L.diEdit[what]:gsub("&",""):gsub("^. ","")..(w2 or ""), -- отредактируем через дырочку
   dr.Left+4,dr.Top+2,dr.Right-4,dr.Bottom-2,F.EF_DISABLEHISTORY+F.EF_DISABLESAVEPOS)
-utf8.sgsub = string.gsub
-local text = Read(tfn):sgsub("^\239\187\191",""):sgsub("^\254\255",""):sgsub("^\255\254","") -- новое значение
+local text = string.gsub(Read(tfn),"^\239\187\191","") -- новое значение
 win.DeleteFile(tfn) -- больше не нужен
 return (src=="" and text==def) and "" or text -- вернём пустой текст, если было пусто
 end
