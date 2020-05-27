@@ -1,6 +1,6 @@
 ﻿.Language=Italian,Italian (Italiano)
 
-//Version: 3.0.0.5604
+//Version: 3.0.0.5610
 
 //[MYes]
 "&Si"
@@ -2752,7 +2752,7 @@
 //[MChangeDriveFixed]
 "Disco Fisso"
 //[MChangeDriveNetwork]
-"Coll. Rete"
+"Rete"
 //[MChangeDriveDisconnectedNetwork]
 "Disconnesso"
 //[MChangeDriveCDROM]
@@ -2937,7 +2937,7 @@
 //[MSetAttrVolMount]
 "Volume:"
 //[MSetAttrDfsTargets]
-"Destinazioni DFS"
+"Destinazioni DFS:"
 //[MSetAttrUnknownReparsePoint]
 "(dati sconosciuti)"
 //[MSetAttrReadOnly]

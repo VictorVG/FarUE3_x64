@@ -1,6 +1,6 @@
 ﻿.Language=Russian,Russian (Русский)
 
-//Version: 3.0.0.5604
+//Version: 3.0.0.5610
 
 //[MYes]
 "Да"
@@ -2931,7 +2931,7 @@
 //[MSetAttrVolMount]
 "Том:"
 //[MSetAttrDfsTargets]
-"DFS цели"
+"DFS цели:"
 //[MSetAttrUnknownReparsePoint]
 "(нет данных)"
 //[MSetAttrReadOnly]

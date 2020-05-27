@@ -1,6 +1,6 @@
 ﻿.Language=Czech,Czech (Čeština)
 
-//Version: 3.0.0.5604
+//Version: 3.0.0.5610
 
 //[MYes]
 "Ano"
@@ -2750,7 +2750,7 @@
 //[MChangeDriveFixed]
 "pevná"
 //[MChangeDriveNetwork]
-"síťová"
+"síťový"
 //[MChangeDriveDisconnectedNetwork]
 "odpojená"
 //[MChangeDriveCDROM]
@@ -2934,7 +2934,7 @@
 //[MSetAttrVolMount]
 "Svazek:"
 //[MSetAttrDfsTargets]
-"DFS cíly"
+"DFS cíly:"
 //[MSetAttrUnknownReparsePoint]
 "(data nejsou k dispozici)"
 //[MSetAttrReadOnly]

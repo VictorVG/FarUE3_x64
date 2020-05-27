@@ -151,7 +151,7 @@ Also depend on ~configuration~@config@, part of full name, do not corresponding 
 If mask corresponds to several elements, menu is displayed for select a single.
 In this case, an action with an element may be selected, similar to the ~bookmark menu~@main@.
 If value is folder, it is opened in panel.
-If value is file, folder, containing it, is opened in panel, than file becomes a current.
+If value is file, and modifiers are absent, then action menu is showed.
 Value can contain environment variables.
 
   There are four tags:   #A# - |active panel;
@@ -159,7 +159,8 @@ Value can contain environment variables.
                          #L# - |left panel;
                          #R# - |right panel.
 
-  There are three modifiers: #C# - |when new folders on panels are set, make this panel active.
+  There are three modifiers: #C# - |for folders: when new folders on panels are set, make this panel active.
+                                 |for files: immediately go to file, do not show action menu.
                              #X# - |do not change panels, open element with OS capabilities.
                              #E# - |do not change panels, edit element with OS capabilities.
 
@@ -280,7 +281,7 @@ $^About
 
  Author:       #IgorZ#
 
- Version:      #3.0.4#
+ Version:      #3.0.5#
 
  Net address: ~http://forum.farmanager.com/viewtopic.php?t=8465~@http://forum.farmanager.com/viewtopic.php?t=8465@
 @=‗

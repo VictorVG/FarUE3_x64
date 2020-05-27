@@ -1,6 +1,6 @@
 ﻿.Language=Hungarian,Hungarian (Magyar)
 
-//Version: 3.0.0.5604
+//Version: 3.0.0.5610
 
 //[MYes]
 "Igen"
@@ -3159,7 +3159,7 @@
 "Kötet:"
 // need translation:
 //[MSetAttrDfsTargets]
-"DFS Targets"
+"DFS Targets:"
 //[MSetAttrUnknownReparsePoint]
 "(adat nem elérhető)"
 //[MSetAttrReadOnly]

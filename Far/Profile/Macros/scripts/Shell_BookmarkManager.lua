@@ -2,7 +2,7 @@
 local nfo = Info {_filename or ...,
   name          = "Bookmark manager";
   description   = "Менеджер закладок на папки для Fara";
-  version       = "3.0.4"; --http://semver.org/lang/ru/
+  version       = "3.0.5"; --http://semver.org/lang/ru/
   author        = "IgorZ";
   url           = "http://forum.farmanager.com/viewtopic.php?t=8465";
   id            = "F93842EB-FFD3-481A-8AA8-2E7DCEBDF2B1";
@@ -81,6 +81,7 @@ history         = [[
 2019/12/09 v3.0.3 - Исправлена ошибка при нажатии клавиш в режиме активной фильтрации. Предпочтительное место хранения закладок теперь настраивается.
                     Доработан вызов action-функций с учётом введённых в build 717 параметров для condition/action. Рефакторинг.
 2020/04/22 v3.0.4 - Исправлена работа диалога настроек. Дополнена справка по диалогу настроек.
+2020/05/22 v3.0.5 - Исправлена работа с закладкой на файл. Дополнена справка по закладкам.
 ]];
   options       = { DefProfile = far.Flags.PSL_ROAMING--[[far.Flags.PSL_LOCAL--]] } -- место хранения настроек по умолчанию: глобальные/локальные
 }
@@ -234,7 +235,7 @@ for AP,Pnl in pairs({[1]=A,[0]=P}) do -- переберём панели (есл
   if Pnl.Cmd:find("[XE]") then
     win.ShellExecute(nil,Pnl.Cmd=="X" and "open" or "edit",Pnl.Folder) return -- запустить/редактировать - передать в систему
   else
-    if not Pnl.id and not win.GetFileAttr(Pnl.Folder):match('d') then Pnl.Folder,Pnl.FN = Pnl.Folder:match([[^(.*)([^\]*)$]]) end -- файл? поделим
+    if not Pnl.id and not win.GetFileAttr(Pnl.Folder):match('d') then Pnl.Folder,Pnl.FN = Pnl.Folder:match([[^(.-)([^\]*)$]]) end -- файл? поделим
     local cd = panel.SetPanelDirectory(nil,AP,{PluginId=Pnl.id,File=Pnl.File,Name=Pnl.Folder,Param=Pnl.Param}) -- сменим каталог
     if cd and (Pnl.Cmd=="C") and AP==0 then cd = panel.SetActivePanel(nil,0) end -- если данную пассивную панель надо сделать активной, сделаем
     if cd and Pnl.FN then Panel.SetPos(Pnl.Cmd=="C" and 0 or 1-AP,Pnl.FN) end -- если надо позиционироваться на файле, сделаем

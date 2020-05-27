@@ -1,6 +1,6 @@
 ﻿.Language=Polish,Polish (Polski)
 
-//Version: 3.0.0.5604
+//Version: 3.0.0.5610
 
 //[MYes]
 "Tak"
@@ -2932,7 +2932,7 @@
 //[MSetAttrVolMount]
 "Wolumen:"
 //[MSetAttrDfsTargets]
-"Cel DFS"
+"Cel DFS:"
 //[MSetAttrUnknownReparsePoint]
 "(dane niedostępne)"
 //[MSetAttrReadOnly]

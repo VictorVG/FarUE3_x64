@@ -1,6 +1,6 @@
 ﻿.Language=Spanish,Spanish (Español)
 
-//Version: 3.0.0.5604
+//Version: 3.0.0.5610
 
 //[MYes]
 "Si"
@@ -2942,7 +2942,7 @@
 //[MSetAttrVolMount]
 "Volumen:"
 //[MSetAttrDfsTargets]
-"DFS Destinos"
+"DFS Destinos:"
 //[MSetAttrUnknownReparsePoint]
 "(datos no disponibles)"
 //[MSetAttrReadOnly]

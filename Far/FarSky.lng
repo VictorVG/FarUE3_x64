@@ -1,6 +1,6 @@
 ﻿.Language=Slovak,Slovak (Slovenčina)
 
-//Version: 3.0.0.5604
+//Version: 3.0.0.5610
 
 //[MYes]
 "Áno"
@@ -2940,7 +2940,7 @@
 //[MSetAttrVolMount]
 "Zväzok:"
 //[MSetAttrDfsTargets]
-"DFS ciele"
+"DFS ciele:"
 //[MSetAttrUnknownReparsePoint]
 "(dáta nie sú k dispozícii)"
 //[MSetAttrReadOnly]

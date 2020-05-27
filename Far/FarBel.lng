@@ -1,6 +1,6 @@
 ﻿.Language=Belarusian,Belarusian (Беларуская)
 
-//Version: 3.0.0.5604
+//Version: 3.0.0.5610
 
 //[MYes]
 "Так"
@@ -2392,7 +2392,7 @@
 //[MInfoFixed]
 "Замацаваныя"
 //[MInfoNetwork]
-"Сеткавыя"
+"Сеткавы"
 //[MInfoCDROM]
 "CD-ROM"
 //[MInfoCD_RW]
@@ -2931,7 +2931,7 @@
 //[MSetAttrVolMount]
 "Дыск:"
 //[MSetAttrDfsTargets]
-"DFS мэты"
+"DFS мэты:"
 //[MSetAttrUnknownReparsePoint]
 "(няма дадзеных)"
 //[MSetAttrReadOnly]

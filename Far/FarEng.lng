@@ -1,6 +1,6 @@
 ﻿.Language=English,English
 
-//Version: 3.0.0.5604
+//Version: 3.0.0.5610
 
 //[MYes]
 "Yes"
@@ -2931,7 +2931,7 @@
 //[MSetAttrVolMount]
 "Volume:"
 //[MSetAttrDfsTargets]
-"DFS Targets"
+"DFS Targets:"
 //[MSetAttrUnknownReparsePoint]
 "(data not available)"
 //[MSetAttrReadOnly]
