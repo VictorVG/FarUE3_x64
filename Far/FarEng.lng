@@ -1,6 +1,6 @@
 ﻿.Language=English,English
 
-//Version: 3.0.0.5616
+//Version: 3.0.0.5622
 
 //[MYes]
 "Yes"
@@ -1586,9 +1586,9 @@
 //[MEditNewPlugin1]
 "The name of the file to edit cannot be empty"
 //[MEditorLoadCPWarn1]
-"File contains characters that cannot be"
+"The file contains characters that cannot be"
 //[MEditorLoadCPWarn2]
-"correctly read using selected code page."
+"correctly read using the selected code page."
 //[MEditorReloadCPWarnLost1]
 "File has to be reloaded to change code page."
 //[MEditorReloadCPWarnLost2]
@@ -1596,11 +1596,11 @@
 //[MEditorSaveCPWarn1]
 "Editor contains characters that cannot be"
 //[MEditorSaveCPWarn2]
-"correctly saved using selected code page."
+"correctly saved using the selected code page."
 //[MEditorSwitchCPWarn1]
 "Editor contains characters that cannot be"
 //[MEditorSwitchCPWarn2]
-"correctly translated using selected code page [{0}]"
+"correctly translated using the selected code page:"
 //[MEditorSwitchCPConfirm]
 "Continue?"
 //[MEditDataLostWarn]
@@ -2395,16 +2395,34 @@
 "Network"
 //[MInfoCDROM]
 "CD-ROM"
-//[MInfoCD_RW]
+//[MInfoCDR]
+"CD-R"
+//[MInfoCDRW]
 "CD-RW"
-//[MInfoCD_RWDVD]
+//[MInfoCDRWDVD]
 "CD-RW/DVD"
-//[MInfoDVD_ROM]
+//[MInfoDVDROM]
 "DVD-ROM"
-//[MInfoDVD_RW]
+//[MInfoDVDR]
+"DVD-R"
+//[MInfoDVDRW]
 "DVD-RW"
-//[MInfoDVD_RAM]
+//[MInfoDVDRAM]
 "DVD-RAM"
+//[MInfoBDROM]
+"BD-ROM"
+//[MInfoBDR]
+"BD-R"
+//[MInfoBDRW]
+"BD-RW"
+//[MInfoHDDVDROM]
+"HDDVD-ROM"
+//[MInfoHDDVDR]
+"HDDVD-R"
+//[MInfoHDDVDRW]
+"HDDVD-RW"
+//[MInfoHDDVDRAM]
+"HDDVD-RAM"
 //[MInfoRAM]
 "RAM"
 //[MInfoSUBST]
@@ -2753,24 +2771,34 @@
 "disconnected"
 //[MChangeDriveCDROM]
 "CD-ROM"
-//[MChangeDriveCD_RW]
+//[MChangeDriveCDR]
+"CD-R"
+//[MChangeDriveCDRW]
 "CD-RW"
-//[MChangeDriveCD_RWDVD]
+//[MChangeDriveCDRWDVD]
 "CD-RW/DVD"
-//[MChangeDriveDVD_ROM]
+//[MChangeDriveDVDROM]
 "DVD-ROM"
-//[MChangeDriveDVD_RW]
+//[MChangeDriveDVDR]
+"DVD-R"
+//[MChangeDriveDVDRW]
 "DVD-RW"
-//[MChangeDriveDVD_RAM]
+//[MChangeDriveDVDRAM]
 "DVD-RAM"
-//[MChangeDriveBD_ROM]
+//[MChangeDriveBDROM]
 "BD-ROM"
-//[MChangeDriveBD_RW]
+//[MChangeDriveBDR]
+"BD-R"
+//[MChangeDriveBDRW]
 "BD-RW"
-//[MChangeDriveHDDVD_ROM]
+//[MChangeDriveHDDVDROM]
 "HDDVD-ROM"
-//[MChangeDriveHDDVD_RW]
+//[MChangeDriveHDDVDR]
+"HDDVD-R"
+//[MChangeDriveHDDVDRW]
 "HDDVD-RW"
+//[MChangeDriveHDDVDRAM]
+"HDDVD-RAM"
 //[MChangeDriveRAM]
 "RAM disk"
 //[MChangeDriveSUBST]
@@ -4739,8 +4767,13 @@
 //[MKBTreeCtrlAltShiftF12]
 ""
 
-//[MCopyTimeInfo]
-"Time: {0}    Remaining: {1}    {2}B/s"
+//[MCopyTimeInfoElapsed]
+"Time:"
+//[MCopyTimeInfoRemaining]
+"Remaining:"
+// Bytes per second
+//[MCopyTimeInfoSpeed]
+"B/s"
 
 //[MKeyESCWasPressed]
 "Operation has been interrupted"

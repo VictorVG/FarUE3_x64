@@ -1,3 +1,37 @@
+drkns 17.06.2020 19:50:37 +0100 - build 5622
+
+1. Copy progress dialog correctly shows times over 100 hours.
+
+drkns 17.06.2020 08:40:49 +0100 - build 5621
+
+1. Fix typo in 5620.
+
+drkns 17.06.2020 01:01:01 +0100 - build 5620
+
+1. Incorrect flags processing in DialogBuilder.
+
+2. Corrections of codepage switching error messages.
+
+3. Refactoring.
+
+drkns 16.06.2020 02:25:55 +0100 - build 5619
+
+1. Correction of 5618.
+
+drkns 15.06.2020 21:22:23 +0100 - build 5618
+
+1. Incorrect CD drive type detection in some cases.
+
+2. Refactoring.
+
+shmuel 09.06.2020 16:37:06 +0300 - build 5617
+
+1. Revert 5613.
+
+svs 08.06.2020 20:49:34 +0300 - build 5616
+
+1. SQLite 3.32.2
+
 drkns 01.06.2020 02:05:40 +0100 - build 5615
 
 1. Refactoring.

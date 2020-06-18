@@ -1,6 +1,6 @@
 ﻿.Language=Hungarian,Hungarian (Magyar)
 
-//Version: 3.0.0.5616
+//Version: 3.0.0.5622
 
 //[MYes]
 "Igen"
@@ -1712,10 +1712,10 @@
 "A szerkesztendő fájlnak nevet kell adni"
 // need translation:
 //[MEditorLoadCPWarn1]
-"File contains characters that cannot be"
+"The file contains characters that cannot be"
 // need translation:
 //[MEditorLoadCPWarn2]
-"correctly read using selected code page."
+"correctly read using the selected code page."
 // need translation:
 //[MEditorReloadCPWarnLost1]
 "File has to be reloaded to change code page."
@@ -1727,13 +1727,13 @@
 "Editor contains characters that cannot be"
 // need translation:
 //[MEditorSaveCPWarn2]
-"correctly saved using selected code page."
+"correctly saved using the selected code page."
 // need translation:
 //[MEditorSwitchCPWarn1]
 "Editor contains characters that cannot be"
 // need translation:
 //[MEditorSwitchCPWarn2]
-"correctly translated using selected code page [{0}]"
+"correctly translated using the selected code page:"
 // need translation:
 //[MEditorSwitchCPConfirm]
 "Continue?"
@@ -2557,16 +2557,34 @@
 "Hálózati"
 //[MInfoCDROM]
 "CD-ROM"
-//[MInfoCD_RW]
+//[MInfoCDR]
+"CD-R"
+//[MInfoCDRW]
 "CD-RW"
-//[MInfoCD_RWDVD]
+//[MInfoCDRWDVD]
 "CD-RW/DVD"
-//[MInfoDVD_ROM]
+//[MInfoDVDROM]
 "DVD-ROM"
-//[MInfoDVD_RW]
+//[MInfoDVDR]
+"DVD-R"
+//[MInfoDVDRW]
 "DVD-RW"
-//[MInfoDVD_RAM]
+//[MInfoDVDRAM]
 "DVD-RAM"
+//[MInfoBDROM]
+"BD-ROM"
+//[MInfoBDR]
+"BD-R"
+//[MInfoBDRW]
+"BD-RW"
+//[MInfoHDDVDROM]
+"HDDVD-ROM"
+//[MInfoHDDVDR]
+"HDDVD-R"
+//[MInfoHDDVDRW]
+"HDDVD-RW"
+//[MInfoHDDVDRAM]
+"HDDVD-RAM"
 //[MInfoRAM]
 "RAM"
 //[MInfoSUBST]
@@ -2957,24 +2975,34 @@
 "leválasztva"
 //[MChangeDriveCDROM]
 "CD-ROM"
-//[MChangeDriveCD_RW]
+//[MChangeDriveCDR]
+"CD-R"
+//[MChangeDriveCDRW]
 "CD-RW"
-//[MChangeDriveCD_RWDVD]
+//[MChangeDriveCDRWDVD]
 "CD-RW/DVD"
-//[MChangeDriveDVD_ROM]
+//[MChangeDriveDVDROM]
 "DVD-ROM"
-//[MChangeDriveDVD_RW]
+//[MChangeDriveDVDR]
+"DVD-R"
+//[MChangeDriveDVDRW]
 "DVD-RW"
-//[MChangeDriveDVD_RAM]
+//[MChangeDriveDVDRAM]
 "DVD-RAM"
-//[MChangeDriveBD_ROM]
+//[MChangeDriveBDROM]
 "BD-ROM"
-//[MChangeDriveBD_RW]
+//[MChangeDriveBDR]
+"BD-R"
+//[MChangeDriveBDRW]
 "BD-RW"
-//[MChangeDriveHDDVD_ROM]
+//[MChangeDriveHDDVDROM]
 "HDDVD-ROM"
-//[MChangeDriveHDDVD_RW]
+//[MChangeDriveHDDVDR]
+"HDDVD-R"
+//[MChangeDriveHDDVDRW]
 "HDDVD-RW"
+//[MChangeDriveHDDVDRAM]
+"HDDVD-RAM"
 //[MChangeDriveRAM]
 "RAM lemez"
 //[MChangeDriveSUBST]
@@ -5030,8 +5058,13 @@
 //[MKBTreeCtrlAltShiftF12]
 ""
 
-//[MCopyTimeInfo]
-"Eltelt: {0}    Maradt: {1}     {2}B/s"
+//[MCopyTimeInfoElapsed]
+"Eltelt:"
+//[MCopyTimeInfoRemaining]
+"Maradt:"
+// Bytes per second
+//[MCopyTimeInfoSpeed]
+"B/s"
 
 //[MKeyESCWasPressed]
 "A műveletet megszakította"
