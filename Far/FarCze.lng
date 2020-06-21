@@ -1,6 +1,6 @@
 ﻿.Language=Czech,Czech (Čeština)
 
-//Version: 3.0.0.5623
+//Version: 3.0.0.5624
 
 //[MYes]
 "Ano"
@@ -984,6 +984,9 @@
 "Nemohu přesunout soubor do koše"
 //[MCannotRecycleFolder]
 "Nemohu přesunout složku do koše"
+// need translation:
+//[MTryToDeletePermanently]
+"Try to delete it permanently?"
 
 //[MCannotGetSecurity]
 "Nelze získat přístupová práva pro"

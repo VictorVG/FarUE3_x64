@@ -1,6 +1,6 @@
 ﻿.Language=Belarusian,Belarusian (Беларуская)
 
-//Version: 3.0.0.5623
+//Version: 3.0.0.5624
 
 //[MYes]
 "Так"
@@ -982,6 +982,8 @@
 "Немагчыма перанесці файл у Сметнік"
 //[MCannotRecycleFolder]
 "Немагчыма перанесці каталог у Сметнік"
+//[MTryToDeletePermanently]
+"Паспрабаваць выдаліць канчаткова?"
 
 //[MCannotGetSecurity]
 "Немагчыма атрымаць правы доступа да файлу"

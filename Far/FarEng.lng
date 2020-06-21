@@ -1,6 +1,6 @@
 ﻿.Language=English,English
 
-//Version: 3.0.0.5623
+//Version: 3.0.0.5624
 
 //[MYes]
 "Yes"
@@ -982,6 +982,8 @@
 "Cannot move file to the Recycle Bin"
 //[MCannotRecycleFolder]
 "Cannot move folder to the Recycle Bin"
+//[MTryToDeletePermanently]
+"Try to delete it permanently?"
 
 //[MCannotGetSecurity]
 "Cannot get file access rights for"

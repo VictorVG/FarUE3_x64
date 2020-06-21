@@ -1,6 +1,6 @@
 ﻿.Language=Italian,Italian (Italiano)
 
-//Version: 3.0.0.5623
+//Version: 3.0.0.5624
 
 //[MYes]
 "&Si"
@@ -986,6 +986,9 @@
 "Non Posso Spostare Il File Nel Cestino"
 //[MCannotRecycleFolder]
 "Non Posso Spostare La Cartella Nel Cestino"
+// need translation:
+//[MTryToDeletePermanently]
+"Try to delete it permanently?"
 
 //[MCannotGetSecurity]
 "Non Posso Leggere Le Autorizzazioni Per"

@@ -1,6 +1,6 @@
 ﻿.Language=Hungarian,Hungarian (Magyar)
 
-//Version: 3.0.0.5623
+//Version: 3.0.0.5624
 
 //[MYes]
 "Igen"
@@ -1091,6 +1091,9 @@
 // need translation:
 //[MCannotRecycleFolder]
 "Cannot move folder to the Recycle Bin"
+// need translation:
+//[MTryToDeletePermanently]
+"Try to delete it permanently?"
 
 //[MCannotGetSecurity]
 "A fájlhoz nincs hozzáférési joga:"

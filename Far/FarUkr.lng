@@ -1,6 +1,6 @@
 ﻿.Language=Ukrainian,Ukrainian (Українська)
 
-//Version: 3.0.0.5623
+//Version: 3.0.0.5624
 
 //[MYes]
 "Так"
@@ -982,6 +982,8 @@
 "Не вдалося перемістити файл у Кошик"
 //[MCannotRecycleFolder]
 "Не вдалося перемістити папку в Кошик"
+//[MTryToDeletePermanently]
+"Спробувати видалити остаточно?"
 
 //[MCannotGetSecurity]
 "Помилка отримання прав доступу до файлу"

@@ -1,6 +1,6 @@
 ﻿.Language=Russian,Russian (Русский)
 
-//Version: 3.0.0.5623
+//Version: 3.0.0.5624
 
 //[MYes]
 "Да"
@@ -982,6 +982,8 @@
 "Не удалось переместить файл в Корзину"
 //[MCannotRecycleFolder]
 "Не удалось переместить папку в Корзину"
+//[MTryToDeletePermanently]
+"Попробовать удалить окончательно?"
 
 //[MCannotGetSecurity]
 "Ошибка получения прав доступа к файлу"

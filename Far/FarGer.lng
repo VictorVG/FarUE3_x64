@@ -1,6 +1,6 @@
 ﻿.Language=German,German (Deutsch)
 
-//Version: 3.0.0.5623
+//Version: 3.0.0.5624
 
 //[MYes]
 "Ja"
@@ -1003,6 +1003,9 @@
 "Datei konnte in den Papierkorb nicht verschieben werden"
 //[MCannotRecycleFolder]
 "Ordner konnte in den Papierkorb nicht verschieben werden"
+// need translation:
+//[MTryToDeletePermanently]
+"Try to delete it permanently?"
 
 //[MCannotGetSecurity]
 "Kann Zugriffsrechte nicht lesen für"

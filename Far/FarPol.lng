@@ -1,6 +1,6 @@
 ﻿.Language=Polish,Polish (Polski)
 
-//Version: 3.0.0.5623
+//Version: 3.0.0.5624
 
 //[MYes]
 "Tak"
@@ -983,6 +983,9 @@
 "Nie można przenieść pliku do Kosza"
 //[MCannotRecycleFolder]
 "Nie można przenieść folderu do Kosza"
+// need translation:
+//[MTryToDeletePermanently]
+"Try to delete it permanently?"
 
 //[MCannotGetSecurity]
 "Nie można pobrać praw dostępu dla"
