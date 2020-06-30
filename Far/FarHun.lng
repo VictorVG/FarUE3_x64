@@ -1,6 +1,6 @@
 ﻿.Language=Hungarian,Hungarian (Magyar)
 
-//Version: 3.0.0.5625
+//Version: 3.0.0.5629
 
 //[MYes]
 "Igen"
@@ -4146,15 +4146,12 @@
 // need translation:
 //[MExcDetails]
 "Details:"
-// need translation:
 //[MExcAddress]
-"Address:"
-// need translation:
+"Cím:"
 //[MExcSource]
-"Source:"
-// need translation:
+"Forrás:"
 //[MExcFunction]
-"Function:"
+"Funkció:"
 //[MExcFileName]
 "Fájl:"
 //[MExcPlugin]

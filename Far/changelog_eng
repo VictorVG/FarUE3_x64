@@ -1,3 +1,21 @@
+drkns 29.06.2020 20:22:06 +0100 - build 5629
+
+1. Ejecting a CD with Panel.RememberLogicalDrives enabled had funny effects.
+
+drkns 27.06.2020 15:01:02 +0100 - build 5628
+
+1. Correction of 5627.
+
+drkns 26.06.2020 22:44:22 +0100 - build 5627
+
+1. Forum: A strange revert of the previous user filter selection after editing.
+
+2. Refactoring.
+
+drkns 24.06.2020 17:33:33 +0100 - build 5626
+
+1. 0003804: "Save file position" option doesn't work in editor and viewer.
+
 drkns 21.06.2020 22:47:28 +0100 - build 5625
 
 1. Refactoring.
