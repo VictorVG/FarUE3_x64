@@ -1,6 +1,6 @@
 ﻿.Language=Ukrainian,Ukrainian (Українська)
 
-//Version: 3.0.0.5629
+//Version: 3.0.0.5637
 
 //[MYes]
 "Так"
@@ -2738,8 +2738,8 @@
 "Кількість &потоків"
 //[MMenuSortByStreamsSize]
 "Розмір по&токів"
-//[MMenuSortByFullName]
-"Повне ім'я"
+//[MMenuSortByNameOnly]
+"Тільки ім'я"
 //[MMenuSortUseGroups]
 "Використовувати &групи сортування"
 //[MMenuSortSelectedFirst]

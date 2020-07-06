@@ -1,6 +1,6 @@
 ﻿.Language=Spanish,Spanish (Español)
 
-//Version: 3.0.0.5629
+//Version: 3.0.0.5637
 
 //[MYes]
 "Si"
@@ -2746,8 +2746,8 @@
 "Número de flujos"
 //[MMenuSortByStreamsSize]
 "Tamaño de flujos"
-//[MMenuSortByFullName]
-"Nombre completo"
+//[MMenuSortByNameOnly]
+"Solo nombre"
 //[MMenuSortUseGroups]
 "Usar orden/&grupo"
 //[MMenuSortSelectedFirst]

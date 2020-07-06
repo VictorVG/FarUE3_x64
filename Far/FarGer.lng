@@ -1,6 +1,6 @@
 ﻿.Language=German,German (Deutsch)
 
-//Version: 3.0.0.5629
+//Version: 3.0.0.5637
 
 //[MYes]
 "Ja"
@@ -2794,8 +2794,8 @@
 // need translation:
 //[MMenuSortByStreamsSize]
 "Si&ze of streams"
-//[MMenuSortByFullName]
-"&Voller Name"
+//[MMenuSortByNameOnly]
+"Nur Name"
 //[MMenuSortUseGroups]
 "Sortier&gruppen verw."
 //[MMenuSortSelectedFirst]

@@ -1,6 +1,6 @@
 ﻿.Language=Russian,Russian (Русский)
 
-//Version: 3.0.0.5629
+//Version: 3.0.0.5637
 
 //[MYes]
 "Да"
@@ -2738,8 +2738,8 @@
 "Количество &потоков"
 //[MMenuSortByStreamsSize]
 "Размер по&токов"
-//[MMenuSortByFullName]
-"&Полное имя"
+//[MMenuSortByNameOnly]
+"Только имя"
 //[MMenuSortUseGroups]
 "Использовать &группы сортировки"
 //[MMenuSortSelectedFirst]

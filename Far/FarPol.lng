@@ -1,6 +1,6 @@
 ﻿.Language=Polish,Polish (Polski)
 
-//Version: 3.0.0.5629
+//Version: 3.0.0.5637
 
 //[MYes]
 "Tak"
@@ -2740,8 +2740,8 @@
 "L&iczby strumieni"
 //[MMenuSortByStreamsSize]
 "Wi&elkości strumieni"
-//[MMenuSortByFullName]
-"Pełnej nazw&y"
+//[MMenuSortByNameOnly]
+"Tylko nazwa"
 //[MMenuSortUseGroups]
 "Użyj &grup sortowania"
 //[MMenuSortSelectedFirst]

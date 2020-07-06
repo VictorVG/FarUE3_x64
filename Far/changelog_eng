@@ -1,3 +1,61 @@
+drkns 05.07.2020 19:49:40 +0100 - build 5637
+
+1. Continuation of 5370 - skip redundant scroll on startup.
+
+drkns 05.07.2020 18:37:32 +0100 - build 5636
+
+1. VS 2019 16.7 & GCC warnings.
+
+drkns 05.07.2020 15:10:15 +0100 - build 5635
+
+1. Another attempt to workaround Windows 10 console host bugs.
+
+drkns 04.07.2020 13:30:24 +0100 - build 5634
+
+1. Correction of 5598.
+
+drkns 04.07.2020 12:52:29 +0100 - build 5633
+
+1. gh-250: Use ArcLite for .apk and .aar by default
+
+drkns 04.07.2020 02:32:19 +0100 - build 5632
+
+1. C++20 warnings.
+
+2. VS 2019 16.7 warnings.
+
+3. A few minor optimisations of size formatting.
+
+drkns 03.07.2020 02:42:42 +0100 - build 5631
+
+1. Continuation and improving of 5630.1:
+   - Multiple sorting criteria can be defined permanently: Ctrl+F12, F4 on a mode, Ins/Del/CtrlUp/CtrlDown/CtrlR.
+   - Default criteria replicate the previous behaviour.
+
+2. Fixed old and new bugs in preserving selection on a panel update.
+
+drkns 02.07.2020 01:07:47 +0100 - build 5630
+
+1. Experimental:
+   - File panels use stable sorting.
+   - Sorting criteria don't fallback to file names.
+   What does it mean:
+   - Panel sorting preserves the current order of equivalent elements.
+   What does it mean:
+   - Various criteria can be applied sequentially.
+     Example:
+     Ctrl+F5, Ctrl+F6 - sort files by size, files of the same size - by modification time.
+
+2. Experimental:
+   - "Name" criterion renamed to "Only name".
+   - "Full name" criterion renamed to "Name".
+   No difference in normal panels, but should work faster.
+   In plugin panels this is more sensible when full names are displayed.
+
+3. Folders re-reading optimisation.
+
+4. A few minor changes.
+
 drkns 29.06.2020 20:22:06 +0100 - build 5629
 
 1. Ejecting a CD with Panel.RememberLogicalDrives enabled had funny effects.

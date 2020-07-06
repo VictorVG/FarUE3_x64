@@ -8,11 +8,6 @@ if exist Far\wget.*7 (del /f/q Far\wget.*7 > nul)
 cd /d "%~dp0Far" > nul
 far -clearcache
 if exist "plugins\advcmpexw" (move /y "plugins\advcmpexw" "plugins\advcmpex" > nul)
-if exist "plugins\dnd\drgndrop_x86*.hook" (del /f/q "plugins\dnd\drgndrop_x86*.hook" > nul)
-if exist "plugins\dnd\holder_x86*.dnd"  (del /f/q "plugins\dnd\holder_x86*.dnd" > nul)
-if exist "plugins\farhints" (rd /s/q "plugins\farhints" > nul)
-if exist "plugins\multiarc\Formats\targz.fmt" (del /f/q "plugins\multiarc\Formats\targz.fmt" > nul)
-if exist "plugins\sqlitedb" (rd /s/q "plugins\sqlitedb" > nul)
 if exist "plugins\arclite\Codecs\WinCryptHashers.ini" (
 if exist "plugins\arclite\Formats\WinCryptHashers.ini" (del /s/f/q "plugins\arclite\Codecs\WinCryptHashers.ini" > nul
         ) else (
@@ -20,6 +15,13 @@ if exist "plugins\arclite\Formats\WinCryptHashers.ini" (del /s/f/q "plugins\arcl
         )
         )
 if exist "plugins\arclite\Codecs\WinCryptHashers.64.codec" (del /s/f/q "plugins\arclite\Codecs\WinCryptHashers.64.codec" >nul)
+if exist "plugins\dnd\drgndrop_x86*.hook" (del /f/q "plugins\dnd\drgndrop_x86*.hook" > nul)
+if exist "plugins\dnd\holder_x86*.dnd"  (del /f/q "plugins\dnd\holder_x86*.dnd" > nul)
+if exist "plugins\farhints" (rd /s/q "plugins\farhints" > nul)
+if exist "plugins\multiarc\Formats\targz.fmt" (del /f/q "plugins\multiarc\Formats\targz.fmt" > nul)
+if exist "plugins\sqlitedb" (rd /s/q "plugins\sqlitedb" > nul)
+if exist "plugins\observer\modules\msvcp100.dll" (del /f/q "plugins\observer\modules\msvcp100.dll" > nul)
+if exist "plugins\observer\modules\msvcr100.dll" (del /f/q "plugins\observer\modules\msvcr100.dll" > nul)
 if exist "plugins\svcmgr\svcmgr-x32.dll" (del /f/q "plugins\svcmgr\svcmgr-x32.dll" > nul)
 if exist "Profile\Macros\modules\c0BOM.lua" (del /f/q "Profile\Macros\modules\c0BOM.lua" > nul)
 if exist "Profile\Macros\modules\luacheck\analyze.lua" (del /f/q "Profile\Macros\modules\luacheck\analyze.lua" > nul)

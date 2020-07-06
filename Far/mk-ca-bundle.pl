@@ -20,11 +20,11 @@
 # * KIND, either express or implied.
 # *
 # ***************************************************************************
-# This Perl script creates a fresh curl-ca-bundl.crt file for use with libcurl.
+# This Perl script creates a fresh curl-ca-bundle.crt file for use with libcurl.
 # It downloads certdata.txt from Mozilla's source tree (see URL below),
 # then parses certdata.txt and extracts CA Root Certificates into PEM format.
 # These are then processed with the OpenSSL commandline tool to produce the
-# final curl-ca-bundl.crt file.
+# final curl-ca-bundle.crt file.
 # The script is based on the parse-certs script written by Roland Krikava.
 # This Perl script works on almost any platform since its only external
 # dependency is the OpenSSL commandline tool for optional text listing.
@@ -165,7 +165,7 @@ sub warning_message() {
 
 sub HELP_MESSAGE() {
   print "Usage:\t${0} [-b] [-d<certdata>] [-f] [-i] [-k] [-l] [-n] [-p<purposes:levels>] [-q] [-s<algorithms>] [-t] [-u] [-v] [-w<l>] [<outputfile>]\n";
-  print "\t-b\tbackup an existing version of curl-ca-bundl.crt\n";
+  print "\t-b\tbackup an existing version of curl-ca-bundle.crt\n";
   print "\t-d\tspecify Mozilla tree to pull certdata.txt or custom URL\n";
   print "\t\t  Valid names are:\n";
   print "\t\t    ", join( ", ", map { ( $_ =~ m/$opt_d/ ) ? "$_ (default)" : "$_" } sort keys %urls ), "\n";
@@ -289,7 +289,7 @@ sub should_output_cert(%) {
   return 0;
 }
 
-my $crt = $ARGV[0] || 'curl-ca-bundl.crt';
+my $crt = $ARGV[0] || 'curl-ca-bundle.crt';
 (my $txt = $url) =~ s@(.*/|\?.*)@@g;
 
 my $stdout = $crt eq '-';

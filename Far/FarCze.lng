@@ -1,6 +1,6 @@
 ﻿.Language=Czech,Czech (Čeština)
 
-//Version: 3.0.0.5629
+//Version: 3.0.0.5637
 
 //[MYes]
 "Ano"
@@ -2741,8 +2741,8 @@
 "Počtu to&ků"
 //[MMenuSortByStreamsSize]
 "Velikos&ti toků"
-//[MMenuSortByFullName]
-"&Úplného názvu"
+//[MMenuSortByNameOnly]
+"&Pouze názvu"
 //[MMenuSortUseGroups]
 "Řazení podle skup&in"
 //[MMenuSortSelectedFirst]

@@ -1,6 +1,6 @@
 ﻿.Language=Hungarian,Hungarian (Magyar)
 
-//Version: 3.0.0.5629
+//Version: 3.0.0.5637
 
 //[MYes]
 "Igen"
@@ -2940,9 +2940,8 @@
 "Stream-e&k száma"
 //[MMenuSortByStreamsSize]
 "Stream-ek m&érete"
-// need translation:
-//[MMenuSortByFullName]
-"&Full name"
+//[MMenuSortByNameOnly]
+"Csak név"
 //[MMenuSortUseGroups]
 "Rend. cs&oport haszn."
 //[MMenuSortSelectedFirst]

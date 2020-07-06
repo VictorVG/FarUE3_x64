@@ -1,6 +1,6 @@
 ﻿.Language=Slovak,Slovak (Slovenčina)
 
-//Version: 3.0.0.5629
+//Version: 3.0.0.5637
 
 //[MYes]
 "Áno"
@@ -2746,8 +2746,8 @@
 "Počtu toko&v"
 //[MMenuSortByStreamsSize]
 "Veľkos&ti tokov"
-//[MMenuSortByFullName]
-"&Úplneho názvu"
+//[MMenuSortByNameOnly]
+"Iba názvu"
 //[MMenuSortUseGroups]
 "Skup&inového triedenia"
 //[MMenuSortSelectedFirst]
