@@ -12,6 +12,8 @@
 "LF Search: Buscar"
 "LF Search: Reemplazar"
 "LF Search: Grep"
+// need translation:
+"LF Search: find Lua pattern"
 "El editor está bloqueado. Desea desbloquearlo?"
 " Reemplazar "
 " con "
@@ -64,6 +66,8 @@
 "Grep"
 "Renombrar"
 "Panel"
+// need translation:
+"Find Lua pattern"
 "Repetir (búsqueda inversa)"
 "Encontrar palabra bajo cursor"
 "Encontrar palabra bajo cursor (inverso)"
@@ -197,6 +201,8 @@
 "Nombre archivo de &registro:"
 "Procesando directorio:"
 "<directorio del complemento>"
+// need translation:
+"Could not create output file"
 "LF Search: panel temporal"
 " %sLuaFAR Panel Temp. [%d] "
 "temporal (LuaFAR)"
