@@ -1,6 +1,8 @@
 xdoc2txt - extracts text from various binary documents such as PDF, WORD,
 EXCEL, and Ichitaro
 
+Home suite: http://ebstudio.info/home/xdoc2txt.html
+
 Overview
 
   * xdoc2txt is a general-purpose text converter that extracts text
