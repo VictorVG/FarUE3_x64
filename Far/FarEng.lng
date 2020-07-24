@@ -1,6 +1,6 @@
 ﻿.Language=English,English
 
-//Version: 3.0.0.5640
+//Version: 3.0.0.5645
 
 //[MYes]
 "Yes"
@@ -638,8 +638,6 @@
 "Default code pa&ge:"
 //[MConfigEditor]
 "Configuration editor"
-//[MConfigEditorHelp]
-"Enter, F4, Shift+F4, Ctrl+H, Shift+F1"
 
 //[MSaveSetupTitle]
 "Save setup"
@@ -1079,8 +1077,6 @@
 "Searching for"
 //[MEditSearchStatistics]
 "Occurrences: {0}, lines: {1}"
-//[MEditFindAllMenuFooter]
-"F1, F5, Ctrl+Enter, Ctrl+Up/Down, Add"
 //[MEditNotFound]
 "Could not find the string"
 
@@ -1110,10 +1106,6 @@
 
 //[MFolderShortcutsTitle]
 "Folder shortcuts"
-//[MFolderShortcutBottom]
-"Edit: Del,Ins,F4"
-//[MFolderShortcutBottomSub]
-"Edit: Del,Ins,F4"
 //[MShortcutNone]
 "<none>"
 //[MShortcutPlugin]
@@ -1613,12 +1605,6 @@
 "Save"
 //[MEditorSaveCPWarnShow]
 "Show"
-//[MEditorSwitchUnicodeCPDisabled]
-"Unicode code page switch is not supported"
-//[MEditorTryReloadFile]
-"You can reload file using custom code page (ShiftF4)"
-//[MEditorSwitchToUnicodeCPDisabled]
-"Switch to unicode code page {0} is not supported"
 //[MEditorCPNotSupported]
 "Code page {0} is not supported in your system"
 
@@ -1721,8 +1707,6 @@
 
 //[MAssocTitle]
 "File associations"
-//[MAssocBottom]
-"Edit: Del,Ins,F4"
 //[MAskDelAssoc]
 "Do you wish to delete association for"
 
@@ -2192,8 +2176,6 @@
 
 //[MFilterTitle]
 "Filters menu"
-//[MFilterBottom]
-"+,-,Space,I,X,BS,Shift+BS,Ins,Del,F4,F5,Ctrl+Up,Ctrl+Dn"
 //[MPanelFileType]
 "Panel file type"
 //[MFolderFileType]
@@ -2312,10 +2294,6 @@
 "Favorites"
 //[MGetCodePageOther]
 "Other"
-//[MGetCodePageBottomTitle]
-"Ctrl+H, Del, Ins, F4"
-//[MGetCodePageBottomShortTitle]
-"Ctrl+H, Del, F4"
 //[MGetCodePageEditCodePageName]
 "Rename the code page"
 //[MGetCodePageResetCodePageName]
@@ -2323,8 +2301,6 @@
 
 //[MHighlightTitle]
 "Files highlighting"
-//[MHighlightBottom]
-"Ins,Del,F4,F5,Ctrl+Up,Ctrl+Down"
 //[MHighlightUpperSortGroup]
 "Upper sort group"
 //[MHighlightLowerSortGroup]
@@ -2746,8 +2722,6 @@
 "Show selected f&irst"
 //[MMenuSortDirectoriesFirst]
 "Sho&w directories first"
-//[MMaskGroupBottom]
-"Edit: Ins, Del, F4, F7, Ctrl+R"
 //[MMaskGroupName]
 "&Name:"
 //[MMaskGroupMasks]
@@ -2845,8 +2819,6 @@
 "can now be safely removed"
 //[MHotPlugListTitle]
 "Hotplug devices list"
-//[MHotPlugListBottom]
-"Edit: Del,Ctrl+R"
 
 //[MChangeDriveDisconnectTitle]
 "Disconnect network drive"
@@ -2891,8 +2863,6 @@
 "Show n&etwork drive parameters"
 //[MChangeDriveShowVirtualDisk]
 "Detect virtual disks"
-//[MChangeDriveMenuFooter]
-"Del,Shift+Del,F3,F4,F9"
 
 //[MSearchFileTitle]
 "Search"
@@ -2910,8 +2880,6 @@
 
 //[MProcessListTitle]
 "Task list"
-//[MProcessListBottom]
-"Edit: Del,Ctrl+R,F2"
 //[MKillProcessTitle]
 "Kill task"
 //[MAskKillProcess]
@@ -3576,8 +3544,6 @@
 "Global"
 //[MLocalMenuTitle]
 "Local menu"
-//[MMainMenuBottomTitle]
-"Edit: Del,Ins,F4,Alt+F4"
 //[MAskDeleteMenuItem]
 "Do you wish to delete the menu item"
 //[MAskDeleteSubMenuItem]
@@ -3719,8 +3685,6 @@
 
 //[MEditPanelModes]
 "Edit panel modes"
-//[MEditPanelModesBottom]
-"Ins,Del,F4,Ctrl+Enter,Ctrl+Shift+Enter"
 
 //[MEditPanelModeName]
 "&Name"
@@ -3854,11 +3818,6 @@
 "Plugin &item GUID:"
 //[MPluginPrefix]
 "Plugin &prefix:"
-//[MPluginHotKeyBottom]
-"F4 - set hot key, F3 - information"
-
-//[MRightCtrl]
-"RightCtrl"
 //[MExcTrappedException]
 "Exception occurred"
 //[MExcException]
@@ -3908,9 +3867,6 @@
 "current Far version is {0}."
 //[MPlgLoadPluginError]
 "Error loading plugin"
-
-//[MCheckBox2State]
-"?"
 
 //[MHelpTitle]
 "Help"

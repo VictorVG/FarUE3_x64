@@ -1,6 +1,6 @@
 ﻿.Language=Spanish,Spanish (Español)
 
-//Version: 3.0.0.5640
+//Version: 3.0.0.5645
 
 //[MYes]
 "Si"
@@ -641,9 +641,6 @@
 // need translation:
 //[MConfigEditor]
 "Configuration editor"
-// need translation:
-//[MConfigEditorHelp]
-"Enter, F4, Shift+F4, Ctrl+H, Shift+F1"
 
 //[MSaveSetupTitle]
 "Guardar configuración"
@@ -1086,8 +1083,6 @@
 "Buscando por"
 //[MEditSearchStatistics]
 "Frecuencia: {0}, líneas: {1}"
-//[MEditFindAllMenuFooter]
-"F1, F5, Ctrl+Enter, Ctrl+Up/Down, Añadir"
 //[MEditNotFound]
 "No se puede encontrar la cadena"
 
@@ -1117,10 +1112,6 @@
 
 //[MFolderShortcutsTitle]
 "Atajos a directorios"
-//[MFolderShortcutBottom]
-"Editar: Del,Ins,F4"
-//[MFolderShortcutBottomSub]
-"Editar: Del,Ins,F4"
 //[MShortcutNone]
 "<nada>"
 //[MShortcutPlugin]
@@ -1620,12 +1611,6 @@
 "Guardar"
 //[MEditorSaveCPWarnShow]
 "Mostrar"
-//[MEditorSwitchUnicodeCPDisabled]
-"Cambio a página de códigos unicode no está soportado"
-//[MEditorTryReloadFile]
-"Usted puede recargar el archivo usando página de códigos a elección (ShiftF4)"
-//[MEditorSwitchToUnicodeCPDisabled]
-"Cambio a página de códigos unicode {0} no está soportado"
 //[MEditorCPNotSupported]
 "Página de códigos {0} no está soportado en su sistema"
 
@@ -1728,8 +1713,6 @@
 
 //[MAssocTitle]
 "Asociación de archivos"
-//[MAssocBottom]
-"Editar: Del,Ins,F4"
 //[MAskDelAssoc]
 "Desea borrar la asociación para"
 
@@ -2199,8 +2182,6 @@
 
 //[MFilterTitle]
 "Menú de Filtros"
-//[MFilterBottom]
-"+,-,Espacio,I,X,BS,Shift+BS,Ins,Del,F4,F5,Ctrl+Up,Ctrl+Dn"
 //[MPanelFileType]
 "Tipo de panel de archivo"
 //[MFolderFileType]
@@ -2319,10 +2300,6 @@
 "Favoritos"
 //[MGetCodePageOther]
 "Otro"
-//[MGetCodePageBottomTitle]
-"Ctrl+H, Del, Ins, F4"
-//[MGetCodePageBottomShortTitle]
-"Ctrl+H, Del, F4"
 // need translation:
 //[MGetCodePageEditCodePageName]
 "Editar nombre de página de códigos"
@@ -2331,8 +2308,6 @@
 
 //[MHighlightTitle]
 "Resaltado de archivos"
-//[MHighlightBottom]
-"Ins,Del,F4,F5,Ctrl+Up,Ctrl+Down"
 //[MHighlightUpperSortGroup]
 "Grupo de ordenamiento de arriba"
 //[MHighlightLowerSortGroup]
@@ -2754,8 +2729,6 @@
 "Mostrar seleccionados primero"
 //[MMenuSortDirectoriesFirst]
 "Mostrar directorios primero"
-//[MMaskGroupBottom]
-"Editar: Ins, Del, F4, F7, Ctrl+R"
 //[MMaskGroupName]
 "&Nombre:"
 //[MMaskGroupMasks]
@@ -2855,8 +2828,6 @@
 "ahora puede ser removido de forma segura"
 //[MHotPlugListTitle]
 "Lista de dispositivos Hotplug"
-//[MHotPlugListBottom]
-"Editar: Del,Ctrl+R"
 
 //[MChangeDriveDisconnectTitle]
 "Desconectar unidad de red"
@@ -2903,8 +2874,6 @@
 // need translation:
 //[MChangeDriveShowVirtualDisk]
 "Detect virtual disks"
-//[MChangeDriveMenuFooter]
-"Del,Shift+Del,F3,F4,F9"
 
 //[MSearchFileTitle]
 "Buscar"
@@ -2922,8 +2891,6 @@
 
 //[MProcessListTitle]
 "Lista de tareas"
-//[MProcessListBottom]
-"Editar: Del,Ctrl+R,F2"
 //[MKillProcessTitle]
 "Terminar tarea"
 //[MAskKillProcess]
@@ -3594,8 +3561,6 @@
 "Global"
 //[MLocalMenuTitle]
 "Menú local"
-//[MMainMenuBottomTitle]
-"Editar: Del,Ins,F4,Alt+F4"
 //[MAskDeleteMenuItem]
 "Desea borrar el ítem del menú"
 //[MAskDeleteSubMenuItem]
@@ -3737,8 +3702,6 @@
 
 //[MEditPanelModes]
 "Editar modo de paneles"
-//[MEditPanelModesBottom]
-"Ins,Del,F4,Ctrl+Enter,Ctrl+Shift+Enter"
 
 //[MEditPanelModeName]
 "Nombre"
@@ -3872,11 +3835,6 @@
 "&Item GUID complemento:"
 //[MPluginPrefix]
 "&Prefijo de complemento:"
-//[MPluginHotKeyBottom]
-"F4 - tecla de atajo, F3 - información"
-
-//[MRightCtrl]
-"CtrlDrcho"
 //[MExcTrappedException]
 "Error de excepción"
 //[MExcException]
@@ -3930,9 +3888,6 @@
 "La versión actual de Far es {0}."
 //[MPlgLoadPluginError]
 "Error al cargar complemento"
-
-//[MCheckBox2State]
-"?"
 
 //[MHelpTitle]
 "Ayuda"

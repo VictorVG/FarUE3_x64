@@ -1,6 +1,6 @@
 ﻿.Language=German,German (Deutsch)
 
-//Version: 3.0.0.5640
+//Version: 3.0.0.5645
 
 //[MYes]
 "Ja"
@@ -652,9 +652,6 @@
 // need translation:
 //[MConfigEditor]
 "Configuration editor"
-// need translation:
-//[MConfigEditorHelp]
-"Enter, F4, Shift+F4, Ctrl+H, Shift+F1"
 
 //[MSaveSetupTitle]
 "Einstellungen speichern"
@@ -1109,8 +1106,6 @@
 "Suche nach"
 //[MEditSearchStatistics]
 "Vorkommen: {0}, Zeilen: {1}"
-//[MEditFindAllMenuFooter]
-"F1, F5, Ctrl+Enter, Ctrl+Up/Down, Add"
 //[MEditNotFound]
 "Konnte Zeichenkette nicht finden"
 
@@ -1142,10 +1137,6 @@
 
 //[MFolderShortcutsTitle]
 "Ordnerschnellzugriff"
-//[MFolderShortcutBottom]
-"Bearb.: Entf,Einf,F4"
-//[MFolderShortcutBottomSub]
-"Bearb.: Entf,Einf,F4"
 //[MShortcutNone]
 "<keiner>"
 //[MShortcutPlugin]
@@ -1649,12 +1640,6 @@
 "Speichern"
 //[MEditorSaveCPWarnShow]
 "Zeigen"
-//[MEditorSwitchUnicodeCPDisabled]
-"Unicode Codepage kann nicht verändert werden"
-//[MEditorTryReloadFile]
-"Sie können die Datei neu starten, um neue Codepage zu wählen (ShiftF4)"
-//[MEditorSwitchToUnicodeCPDisabled]
-"Wechseln zu Unicode Codepage {0} ist nicht unterstützt"
 //[MEditorCPNotSupported]
 "Codepage {0} ist nicht unterstützt"
 
@@ -1760,8 +1745,6 @@
 
 //[MAssocTitle]
 "Dateiverknüpfungen"
-//[MAssocBottom]
-"Bearb.: Entf,Einf,F4"
 //[MAskDelAssoc]
 "Wollen Sie die Verknüpfung löschen für"
 
@@ -2234,8 +2217,6 @@
 
 //[MFilterTitle]
 "Filtermenü"
-//[MFilterBottom]
-"+,-,Leer,I,X,BS,UmschBS,Einf,Entf,F4,F5,Strg+Up,Strg+Dn"
 //[MPanelFileType]
 "Dateityp in Panel"
 //[MFolderFileType]
@@ -2362,10 +2343,6 @@
 // need translation:
 //[MGetCodePageOther]
 "Other"
-//[MGetCodePageBottomTitle]
-"Strg+H, Entf, Einf, F4"
-//[MGetCodePageBottomShortTitle]
-"Strg+H, Entf, F4"
 // need translation:
 //[MGetCodePageEditCodePageName]
 "Codepagename bearbeiten"
@@ -2374,8 +2351,6 @@
 
 //[MHighlightTitle]
 "Farbmarkierungen"
-//[MHighlightBottom]
-"Einf,Entf,F4,F5,Strg+Up,Strg+Down"
 //[MHighlightUpperSortGroup]
 "Obere Sortiergruppen"
 //[MHighlightLowerSortGroup]
@@ -2802,8 +2777,6 @@
 "&Ausgewählte zuerst"
 //[MMenuSortDirectoriesFirst]
 "Verzeichnisse zuerst anzeigen"
-//[MMaskGroupBottom]
-"Tasten: Einf, Entf, F4, F7, Strg+R"
 //[MMaskGroupName]
 "&Name:"
 //[MMaskGroupMasks]
@@ -2904,8 +2877,6 @@
 "kann nun vom Computer getrennt werden"
 //[MHotPlugListTitle]
 "Hardware sicher entfernen"
-//[MHotPlugListBottom]
-"Tasten: Entf,Strg+R,F1"
 
 //[MChangeDriveDisconnectTitle]
 "Netzwerklaufwerk trennen"
@@ -2953,8 +2924,6 @@
 // need translation:
 //[MChangeDriveShowVirtualDisk]
 "Detect virtual disks"
-//[MChangeDriveMenuFooter]
-"Entf,Shift+Entf,F3,F4,F9"
 
 //[MSearchFileTitle]
 "Suchen"
@@ -2972,8 +2941,6 @@
 
 //[MProcessListTitle]
 "Taskliste"
-//[MProcessListBottom]
-"Tasten: Entf,Strg+R,F2"
 //[MKillProcessTitle]
 "Task beenden"
 //[MAskKillProcess]
@@ -3663,8 +3630,6 @@
 "Globalmenü"
 //[MLocalMenuTitle]
 "Lokales Menü"
-//[MMainMenuBottomTitle]
-"Bearb.: Entf,Einf,F4,Alt+F4"
 //[MAskDeleteMenuItem]
 "Do you wish to delete the menu item"
 //[MAskDeleteSubMenuItem]
@@ -3810,8 +3775,6 @@
 
 //[MEditPanelModes]
 "Anzeigemodi von Panels bearbeiten"
-//[MEditPanelModesBottom]
-"Ins,Del,F4,Ctrl+Enter,Ctrl+Shift+Enter"
 
 //[MEditPanelModeName]
 "Name"
@@ -3946,12 +3909,6 @@
 "&Punkt GUID:"
 //[MPluginPrefix]
 "Plugin &Präfix:"
-// need translation:
-//[MPluginHotKeyBottom]
-"Kurztaste setzen: F4, information: F3"
-
-//[MRightCtrl]
-"StrgRechts"
 //[MExcTrappedException]
 "Ausnahmefehler aufgetreten"
 //[MExcException]
@@ -4008,9 +3965,6 @@
 // need translation:
 //[MPlgLoadPluginError]
 "Fehler beim Laden des Pluginmoduls"
-
-//[MCheckBox2State]
-"?"
 
 //[MHelpTitle]
 "Hilfe"

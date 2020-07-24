@@ -1,6 +1,6 @@
 ﻿.Language=Czech,Czech (Čeština)
 
-//Version: 3.0.0.5640
+//Version: 3.0.0.5645
 
 //[MYes]
 "Ano"
@@ -638,8 +638,6 @@
 "Výchozí stránka kódování:"
 //[MConfigEditor]
 "Editor konfigurace"
-//[MConfigEditorHelp]
-"Enter, F4, Shift+F4, Ctrl+H, Shift+F1"
 
 //[MSaveSetupTitle]
 "Uložit nastavení"
@@ -1082,8 +1080,6 @@
 "Vyhledávám"
 //[MEditSearchStatistics]
 "Nalezených: {0}, řádky: {1}"
-//[MEditFindAllMenuFooter]
-"F1, F5, Ctrl+Enter, Ctrl+Up/Down, Add"
 //[MEditNotFound]
 "Nemůžu najít řetězec"
 
@@ -1113,10 +1109,6 @@
 
 //[MFolderShortcutsTitle]
 "Adresářové zkratky"
-//[MFolderShortcutBottom]
-"Změnit: Del,Ins,F4"
-//[MFolderShortcutBottomSub]
-"Změnit: Del,Ins,F4"
 //[MShortcutNone]
 "<není>"
 //[MShortcutPlugin]
@@ -1616,12 +1608,6 @@
 "Uložit"
 //[MEditorSaveCPWarnShow]
 "Zobrazit"
-//[MEditorSwitchUnicodeCPDisabled]
-"Přepínač kódové stránky Unicode není podporovaný"
-//[MEditorTryReloadFile]
-"Můžete znova načíst soubor s uživatelskou kódovou stránkou (ShiftF4)"
-//[MEditorSwitchToUnicodeCPDisabled]
-"Přepnutí na kódovou stránku Unicode {0} není podporované"
 //[MEditorCPNotSupported]
 "Kódová stránka {0} není podporovaná ve vašem systému"
 
@@ -1724,8 +1710,6 @@
 
 //[MAssocTitle]
 "Asociace souborů"
-//[MAssocBottom]
-"Změnit: Del,Ins,F4"
 //[MAskDelAssoc]
 "Přejete si smazat asociace pro"
 
@@ -2195,8 +2179,6 @@
 
 //[MFilterTitle]
 "Menu filtrů"
-//[MFilterBottom]
-"+,-,Mezera,I,X,BS,Shift+BS,Ins,Del,F4,F5,Ctrl+Up,Ctrl+Dn"
 //[MPanelFileType]
 "Typ panelu souborů"
 //[MFolderFileType]
@@ -2315,10 +2297,6 @@
 "Oblíbené"
 //[MGetCodePageOther]
 "Jiné"
-//[MGetCodePageBottomTitle]
-"Ctrl+H, Del, Ins, F4"
-//[MGetCodePageBottomShortTitle]
-"Ctrl+H, Del, F4"
 //[MGetCodePageEditCodePageName]
 "Upravit název kódové stránky"
 //[MGetCodePageResetCodePageName]
@@ -2326,8 +2304,6 @@
 
 //[MHighlightTitle]
 "Zvýrazňování souborů"
-//[MHighlightBottom]
-"Ins,Del,F4,F5,Ctrl+Up,Ctrl+Down"
 //[MHighlightUpperSortGroup]
 "Vzestupné řazení"
 //[MHighlightLowerSortGroup]
@@ -2749,8 +2725,6 @@
 "Nejdřív zobrazit vy&brané"
 //[MMenuSortDirectoriesFirst]
 "Nejdří&ve zobrazit adresáře"
-//[MMaskGroupBottom]
-"Změnit: Ins, Del, F4, F7, Ctrl+R"
 //[MMaskGroupName]
 "Jmé&no:"
 //[MMaskGroupMasks]
@@ -2848,8 +2822,6 @@
 "může být nyní bezpečně odebráno"
 //[MHotPlugListTitle]
 "Seznam vyjímatelných zařízení"
-//[MHotPlugListBottom]
-"Edit: Del,Ctrl+R"
 
 //[MChangeDriveDisconnectTitle]
 "Odpojit síťovou jednotku"
@@ -2895,8 +2867,6 @@
 // need translation:
 //[MChangeDriveShowVirtualDisk]
 "Detect virtual disks"
-//[MChangeDriveMenuFooter]
-"Del,Shift+Del,F3,F4,F9"
 
 //[MSearchFileTitle]
 "Hledat"
@@ -2914,8 +2884,6 @@
 
 //[MProcessListTitle]
 "Seznam úloh"
-//[MProcessListBottom]
-"Změnit: Del,Ctrl+R,F2"
 //[MKillProcessTitle]
 "Ukončit úlohu"
 //[MAskKillProcess]
@@ -3580,8 +3548,6 @@
 "Global"
 //[MLocalMenuTitle]
 "Lokální menu"
-//[MMainMenuBottomTitle]
-"Změnit: Del,Ins,F4,Alt+F4"
 //[MAskDeleteMenuItem]
 "Přejete si smazat položku v menu"
 //[MAskDeleteSubMenuItem]
@@ -3723,8 +3689,6 @@
 
 //[MEditPanelModes]
 "Upravit módy souborových panelů"
-//[MEditPanelModesBottom]
-"Ins,Del,F4,Ctrl+Enter,Ctrl+Shift+Enter"
 
 //[MEditPanelModeName]
 "Jméno"
@@ -3858,11 +3822,6 @@
 "GUID položky m&odulu:"
 //[MPluginPrefix]
 "Předpona mo&dulu:"
-//[MPluginHotKeyBottom]
-"F4 - nastavení horké klávesy, F3 - informace"
-
-//[MRightCtrl]
-"PravýCtrl"
 //[MExcTrappedException]
 "Vyskytla se výjimka"
 //[MExcException]
@@ -3913,9 +3872,6 @@
 "nynější verze Faru je {0}."
 //[MPlgLoadPluginError]
 "Chyba při nahrávání modulu"
-
-//[MCheckBox2State]
-"?"
 
 //[MHelpTitle]
 "Nápověda"

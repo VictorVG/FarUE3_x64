@@ -7,6 +7,8 @@ if %M% geq 6 (if %N% geq 1 (move /y "%~dp0Far\wget.ex7" "%~dp0Far\wget.exe" > nu
 if exist Far\wget.*7 (del /f/q Far\wget.*7 > nul)
 cd /d "%~dp0Far" > nul
 far -clearcache
+if exist wget.ini (del /f/q wget.ini > nul)
+if exist wgetrc (ren wgetrc wgetrc.sam > nul)
 if exist "plugins\advcmpexw" (move /y "plugins\advcmpexw" "plugins\advcmpex" > nul)
 if exist "plugins\arclite\Codecs\WinCryptHashers.ini" (
 if exist "plugins\arclite\Formats\WinCryptHashers.ini" (del /s/f/q "plugins\arclite\Codecs\WinCryptHashers.ini" > nul

@@ -1,6 +1,6 @@
 ﻿.Language=Hungarian,Hungarian (Magyar)
 
-//Version: 3.0.0.5640
+//Version: 3.0.0.5645
 
 //[MYes]
 "Igen"
@@ -727,9 +727,6 @@
 // need translation:
 //[MConfigEditor]
 "Configuration editor"
-// need translation:
-//[MConfigEditorHelp]
-"Enter, F4, Shift+F4, Ctrl+H, Shift+F1"
 
 //[MSaveSetupTitle]
 "Beállítások mentése"
@@ -1200,8 +1197,6 @@
 // need translation:
 //[MEditSearchStatistics]
 "Occurrences: {0}, lines: {1}"
-//[MEditFindAllMenuFooter]
-"F1, F5, Ctrl+Enter, Ctrl+Up/Down, Add"
 //[MEditNotFound]
 "A szöveg nem található:"
 
@@ -1232,10 +1227,6 @@
 
 //[MFolderShortcutsTitle]
 "Mappa gyorsbillentyűk"
-//[MFolderShortcutBottom]
-"Szerk.: Del,Ins,F4"
-//[MFolderShortcutBottomSub]
-"Szerk.: Del,Ins,F4"
 //[MShortcutNone]
 "<nincs>"
 //[MShortcutPlugin]
@@ -1751,15 +1742,6 @@
 //[MEditorSaveCPWarnShow]
 "Show"
 // need translation:
-//[MEditorSwitchUnicodeCPDisabled]
-"Unicode code page switch is not supported"
-// need translation:
-//[MEditorTryReloadFile]
-"You can reload file using custom code page (ShiftF4)"
-// need translation:
-//[MEditorSwitchToUnicodeCPDisabled]
-"Switch to unicode code page {0} is not supported"
-// need translation:
 //[MEditorCPNotSupported]
 "Code page {0} is not supported in your system"
 
@@ -1867,8 +1849,6 @@
 
 //[MAssocTitle]
 "Fájltársítások"
-//[MAssocBottom]
-"Szerk.: Del,Ins,F4"
 //[MAskDelAssoc]
 "Törölni szeretné a társítást?"
 
@@ -2341,8 +2321,6 @@
 
 //[MFilterTitle]
 "Szűrők menü"
-//[MFilterBottom]
-"+,-,Szóköz,I,X,BS,Shift+BS,Ins,Del,F4,F5,Ctrl+Fel,Ctrl+Le"
 //[MPanelFileType]
 "A panel fájltípusa"
 //[MFolderFileType]
@@ -2466,10 +2444,6 @@
 "Kedvencek"
 //[MGetCodePageOther]
 "Egyéb"
-//[MGetCodePageBottomTitle]
-"Ctrl+H, Del, Ins, F4"
-//[MGetCodePageBottomShortTitle]
-"Ctrl+H, Del, F4"
 // need translation:
 //[MGetCodePageEditCodePageName]
 "Rename the code page"
@@ -2479,8 +2453,6 @@
 
 //[MHighlightTitle]
 "Fájlkiemelések, rendezési csoportok"
-//[MHighlightBottom]
-"Ins,Del,F4,F5,Ctrl+Fel,Ctrl+Le"
 //[MHighlightUpperSortGroup]
 "Felsőbbrendű csoport"
 //[MHighlightLowerSortGroup]
@@ -2949,8 +2921,6 @@
 // need translation:
 //[MMenuSortDirectoriesFirst]
 "Sho&w directories first"
-//[MMaskGroupBottom]
-"Szerk.: Ins, Del, F4, F7, Ctrl+R"
 //[MMaskGroupName]
 "&Neve:"
 //[MMaskGroupMasks]
@@ -3055,8 +3025,6 @@
 "már biztonságosan eltávolítható"
 //[MHotPlugListTitle]
 "Hotplug eszközök"
-//[MHotPlugListBottom]
-"Szerkesztés: Del,Ctrl+R"
 
 //[MChangeDriveDisconnectTitle]
 "Hálózati meghajtó leválasztása"
@@ -3115,8 +3083,6 @@
 // need translation:
 //[MChangeDriveShowVirtualDisk]
 "Detect virtual disks"
-//[MChangeDriveMenuFooter]
-"Del,Shift+Del,F3,F4,F9"
 
 //[MSearchFileTitle]
 "Keresés"
@@ -3134,8 +3100,6 @@
 
 //[MProcessListTitle]
 "Futó programok"
-//[MProcessListBottom]
-"Szerk.: Del,Ctrl+R,F2"
 //[MKillProcessTitle]
 "Programkilövés"
 //[MAskKillProcess]
@@ -3831,8 +3795,6 @@
 "Global"
 //[MLocalMenuTitle]
 "Helyi menü"
-//[MMainMenuBottomTitle]
-"Szerk.: Del,Ins,F4,Alt+F4"
 //[MAskDeleteMenuItem]
 "Biztosan törli a menüelemet?"
 //[MAskDeleteSubMenuItem]
@@ -3984,8 +3946,6 @@
 
 //[MEditPanelModes]
 "Panel módok szerkesztése"
-//[MEditPanelModesBottom]
-"Ins,Del,F4,Ctrl+Enter,Ctrl+Shift+Enter"
 
 //[MEditPanelModeName]
 "Neve"
@@ -4131,12 +4091,6 @@
 // need translation:
 //[MPluginPrefix]
 "Plugin &prefix:"
-// need translation:
-//[MPluginHotKeyBottom]
-"F4 - gyorsbillentyű hozzárendelés, F3 - information"
-
-//[MRightCtrl]
-"JobbCtrl"
 //[MExcTrappedException]
 "Kivétel történt"
 // need translation:
@@ -4195,9 +4149,6 @@
 // need translation:
 //[MPlgLoadPluginError]
 "Plugin betöltési hiba"
-
-//[MCheckBox2State]
-"?"
 
 //[MHelpTitle]
 "Súgó"

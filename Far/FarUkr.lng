@@ -1,6 +1,6 @@
 ﻿.Language=Ukrainian,Ukrainian (Українська)
 
-//Version: 3.0.0.5640
+//Version: 3.0.0.5645
 
 //[MYes]
 "Так"
@@ -638,8 +638,6 @@
 "Кодова сторін&ка за замовчуванням:"
 //[MConfigEditor]
 "Редактор конфігурації"
-//[MConfigEditorHelp]
-"Enter, F4, Shift+F4, Ctrl+H, Shift+F1"
 
 //[MSaveSetupTitle]
 "Конфігурація"
@@ -1079,8 +1077,6 @@
 "Шукати"
 //[MEditSearchStatistics]
 "Входжень: {0}, рядків: {1}"
-//[MEditFindAllMenuFooter]
-"F1, F5, Ctrl+Enter, Ctrl+Up/Down, Add"
 //[MEditNotFound]
 "Рядок не знайдено"
 
@@ -1110,10 +1106,6 @@
 
 //[MFolderShortcutsTitle]
 "Посилання на папки"
-//[MFolderShortcutBottom]
-"Редагування: Del,Ins,F4"
-//[MFolderShortcutBottomSub]
-"Редагування: Del,Ins,F4"
 //[MShortcutNone]
 "<відсутній>"
 //[MShortcutPlugin]
@@ -1613,12 +1605,6 @@
 "Зберегти"
 //[MEditorSaveCPWarnShow]
 "Показати"
-//[MEditorSwitchUnicodeCPDisabled]
-"Не можна змінити юнікодну кодову сторінку"
-//[MEditorTryReloadFile]
-"Можна перечитати файл, вказавши потрібну кодову сторінку (Shift+F4)"
-//[MEditorSwitchToUnicodeCPDisabled]
-"Переключення на юнікодну кодову сторінку {0} не підтримується"
 //[MEditorCPNotSupported]
 "Кодова сторінка {0} не підтримується вашою системою"
 
@@ -1721,8 +1707,6 @@
 
 //[MAssocTitle]
 "Асоціації для файлів"
-//[MAssocBottom]
-"Редагування: Del,Ins,F4"
 //[MAskDelAssoc]
 "Ви бажаєте видалити асоціацію для"
 
@@ -2192,8 +2176,6 @@
 
 //[MFilterTitle]
 "Меню фільтрів"
-//[MFilterBottom]
-"+,-,Пробіл,I,X,BS,Shift+BS,Ins,Del,F4,F5,Ctrl+Up,Ctrl+Dn"
 //[MPanelFileType]
 "Файли панелі"
 //[MFolderFileType]
@@ -2312,10 +2294,6 @@
 "Вибрані"
 //[MGetCodePageOther]
 "Інші"
-//[MGetCodePageBottomTitle]
-"Ctrl+H, Del, Ins, F4"
-//[MGetCodePageBottomShortTitle]
-"Ctrl+H, Del, F4"
 //[MGetCodePageEditCodePageName]
 "Перейменування кодової сторінки"
 //[MGetCodePageResetCodePageName]
@@ -2323,8 +2301,6 @@
 
 //[MHighlightTitle]
 "Розмальовка файлів"
-//[MHighlightBottom]
-"Ins,Del,F4,F5,Ctrl+Up,Ctrl+Down"
 //[MHighlightUpperSortGroup]
 "Верхня група сортування"
 //[MHighlightLowerSortGroup]
@@ -2746,8 +2722,6 @@
 "Позначені &файли вперед"
 //[MMenuSortDirectoriesFirst]
 "&Каталоги вперед"
-//[MMaskGroupBottom]
-"Редагування: Ins, Del, F4, F7, Ctrl+R"
 //[MMaskGroupName]
 "&Ім'я:"
 //[MMaskGroupMasks]
@@ -2845,8 +2819,6 @@
 "можна безпечно від'єднати від комп'ютера"
 //[MHotPlugListTitle]
 "Hotplug-пристрої"
-//[MHotPlugListBottom]
-"Редагування: Del,Ctrl+R"
 
 //[MChangeDriveDisconnectTitle]
 "Від'єднання мережевого диска"
@@ -2891,8 +2863,6 @@
 "Показувати параметри мережевих дисків"
 //[MChangeDriveShowVirtualDisk]
 "Визначати віртуальні диски"
-//[MChangeDriveMenuFooter]
-"Del,Shift+Del,F3,F4,F9"
 
 //[MSearchFileTitle]
 "Пошук"
@@ -2910,8 +2880,6 @@
 
 //[MProcessListTitle]
 "Список завдань"
-//[MProcessListBottom]
-"Редагування: Del,Ctrl+R,F2"
 //[MKillProcessTitle]
 "Видалення завдання"
 //[MAskKillProcess]
@@ -3579,8 +3547,6 @@
 "Глобальне"
 //[MLocalMenuTitle]
 "Локальне меню"
-//[MMainMenuBottomTitle]
-"Редагування: Del,Ins,F4,Alt+F4"
 //[MAskDeleteMenuItem]
 "Ви бажаєте видалити пункт меню"
 //[MAskDeleteSubMenuItem]
@@ -3722,8 +3688,6 @@
 
 //[MEditPanelModes]
 "Режими панелі"
-//[MEditPanelModesBottom]
-"Ins,Del,F4,Ctrl+Enter,Ctrl+Shift+Enter"
 
 //[MEditPanelModeName]
 "Им'я"
@@ -3857,11 +3821,6 @@
 "GU&ID пункту:"
 //[MPluginPrefix]
 "&Префікс плагіна:"
-//[MPluginHotKeyBottom]
-"F4 - задати гарячу клавішу, F3 - інформація"
-
-//[MRightCtrl]
-"ПравийCtrl"
 //[MExcTrappedException]
 "Виняткова ситуація"
 //[MExcException]
@@ -3911,9 +3870,6 @@
 "поточна версія Far - {0}."
 //[MPlgLoadPluginError]
 "Помилка при завантаженні плагіна"
-
-//[MCheckBox2State]
-"?"
 
 //[MHelpTitle]
 "Допомога"

@@ -1,6 +1,6 @@
 ﻿.Language=Italian,Italian (Italiano)
 
-//Version: 3.0.0.5640
+//Version: 3.0.0.5645
 
 //[MYes]
 "&Si"
@@ -639,9 +639,6 @@
 // need translation:
 //[MConfigEditor]
 "Configuration editor"
-// need translation:
-//[MConfigEditorHelp]
-"Enter, F4, Shift+F4, Ctrl+H, Shift+F1"
 
 //[MSaveSetupTitle]
 "Salva Impostazioni"
@@ -1084,8 +1081,6 @@
 "Ricerca Di"
 //[MEditSearchStatistics]
 "Occorrenze: {0}, Linee: {1}"
-//[MEditFindAllMenuFooter]
-"Aggiungi [F1] [F5] [CTRL+INVIO] [CTRL+Up/Down]"
 //[MEditNotFound]
 "La Stringa Non Esiste"
 
@@ -1115,10 +1110,6 @@
 
 //[MFolderShortcutsTitle]
 "Collegamento Cartelle"
-//[MFolderShortcutBottom]
-"Edita: [DEL] [INS] [F4]"
-//[MFolderShortcutBottomSub]
-"Edita: [DEL] [INS] [F4]"
 //[MShortcutNone]
 "[niente]"
 //[MShortcutPlugin]
@@ -1618,12 +1609,6 @@
 "Sal&va"
 //[MEditorSaveCPWarnShow]
 "&Mostra"
-//[MEditorSwitchUnicodeCPDisabled]
-"Il Cambio Di Codifica Ad Unicode Non è Supportata"
-//[MEditorTryReloadFile]
-"Puoi Ricaricare Il File Usando Una Tabella Personale [SHIFT+F4]"
-//[MEditorSwitchToUnicodeCPDisabled]
-"Il Cambio In Unicode {0} Non è Supportato"
 //[MEditorCPNotSupported]
 "La Codifica {0} Non è Supportata Nel Tuo Sistema"
 
@@ -1726,8 +1711,6 @@
 
 //[MAssocTitle]
 "Associazioni Dei Files"
-//[MAssocBottom]
-"Edita: [DEL] [INS] [F4]"
 //[MAskDelAssoc]
 "Vuoi Eliminare Le Associazioni Per"
 
@@ -2197,8 +2180,6 @@
 
 //[MFilterTitle]
 "Menu Filtri"
-//[MFilterBottom]
-"[+] [-] [Spazio] [I] [X] [BS] [INS] [DEL] [F4] [F5] [Ctrl+Su] [Ctrl+Giu]"
 //[MPanelFileType]
 "Pannello Filtri"
 //[MFolderFileType]
@@ -2317,10 +2298,6 @@
 "Preferiti"
 //[MGetCodePageOther]
 "Altro"
-//[MGetCodePageBottomTitle]
-"[Ctrl+H] [Canc] [Ins] [F4]"
-//[MGetCodePageBottomShortTitle]
-"[Ctrl+H] [Canc] [F4]"
 //[MGetCodePageEditCodePageName]
 "Modifica Nome Codepage"
 //[MGetCodePageResetCodePageName]
@@ -2328,8 +2305,6 @@
 
 //[MHighlightTitle]
 "Evidenzia File"
-//[MHighlightBottom]
-"[INS] [DEL] [F4] [F5] [Ctrl+Giu] [Ctrl+Su]"
 //[MHighlightUpperSortGroup]
 "Gruppo Ordinamento Superiore"
 //[MHighlightLowerSortGroup]
@@ -2748,11 +2723,9 @@
 //[MMenuSortUseGroups]
 "G&ruppi Ordinamento"
 //[MMenuSortSelectedFirst]
-"Prima I Selezionati [Shift+F1&2]"
+"Prima I Selezionati"
 //[MMenuSortDirectoriesFirst]
 "&Mostra Le Cartelle Per Prime"
-//[MMaskGroupBottom]
-"Edita: [INS] [DEL] [F4] [F7] [Ctrl+R]"
 //[MMaskGroupName]
 "&Nome:"
 //[MMaskGroupMasks]
@@ -2850,8 +2823,6 @@
 "Può Ora Esser Rimossa"
 //[MHotPlugListTitle]
 "Lista Periferiche HotPlug"
-//[MHotPlugListBottom]
-"Edita: [Canc] [Ctrl+R]"
 
 //[MChangeDriveDisconnectTitle]
 "Rimozione Unità Di Rete"
@@ -2898,8 +2869,6 @@
 // need translation:
 //[MChangeDriveShowVirtualDisk]
 "Detect virtual disks"
-//[MChangeDriveMenuFooter]
-"[Canc] [Shift+Canc] [F3] [F4] [F9]"
 
 //[MSearchFileTitle]
 "Ricerca"
@@ -2917,8 +2886,6 @@
 
 //[MProcessListTitle]
 "Lista Processi Attivi"
-//[MProcessListBottom]
-"Edita: [Canc] [Ctrl+R] [F2]"
 //[MKillProcessTitle]
 "Termina Il Processo"
 //[MAskKillProcess]
@@ -3590,8 +3557,6 @@
 "Globale"
 //[MLocalMenuTitle]
 "Menu Locale"
-//[MMainMenuBottomTitle]
-"Edita: [DEL] [INS] [F4] [ALT+F4]"
 //[MAskDeleteMenuItem]
 "Vuoi Cancellare Questa Voce"
 //[MAskDeleteSubMenuItem]
@@ -3733,8 +3698,6 @@
 
 //[MEditPanelModes]
 "Editor Delle Modalità"
-//[MEditPanelModesBottom]
-"Ins,Del,F4,Ctrl+Enter,Ctrl+Shift+Enter"
 
 //[MEditPanelModeName]
 "Nome"
@@ -3868,11 +3831,6 @@
 "&item GUID:"
 //[MPluginPrefix]
 "Prefi&sso:"
-//[MPluginHotKeyBottom]
-"[F4] Assegna Tasto [F3] Informazioni"
-
-//[MRightCtrl]
-"CtrlDestra"
 //[MExcTrappedException]
 "Eccezione Interna"
 //[MExcException]
@@ -3924,9 +3882,6 @@
 "Versione Attuale: {0}"
 //[MPlgLoadPluginError]
 "Errore Di Caricamento Del Modulo Plugin"
-
-//[MCheckBox2State]
-"?"
 
 //[MHelpTitle]
 "Aiuto"
