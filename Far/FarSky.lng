@@ -1,6 +1,6 @@
 ﻿.Language=Slovak,Slovak (Slovenčina)
 
-//Version: 3.0.0.5645
+//Version: 3.0.0.5647
 
 //[MYes]
 "Áno"
@@ -514,6 +514,8 @@
 "DNS fully-qualified"
 //[MConfigInfoPanelUNTitle]
 "Formát &užívateľského mena"
+//[MConfigInfoPanelUNLogon]
+"Prihlasovacie meno"
 //[MConfigInfoPanelUNFullyQualifiedDN]
 "Fully Qualified Domain Name"
 //[MConfigInfoPanelUNSamCompatible]
@@ -530,6 +532,10 @@
 "Service Principal"
 //[MConfigInfoPanelUNDnsDomain]
 "DNS Domain"
+//[MConfigInfoPanelUNGivenName]
+"Meno"
+//[MConfigInfoPanelUNSurname]
+"Priezvisko"
 //[MConfigInfoPanelShowPowerStatus]
 "Zobraziť stav na&pájania"
 //[MConfigInfoPanelShowCDInfo]

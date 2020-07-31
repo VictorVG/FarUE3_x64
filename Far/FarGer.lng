@@ -1,6 +1,6 @@
 ﻿.Language=German,German (Deutsch)
 
-//Version: 3.0.0.5645
+//Version: 3.0.0.5647
 
 //[MYes]
 "Ja"
@@ -520,6 +520,8 @@
 "DNS vollqualifiziert"
 //[MConfigInfoPanelUNTitle]
 "Format des &Benutzernames"
+//[MConfigInfoPanelUNLogon]
+"Anmeldename"
 //[MConfigInfoPanelUNFullyQualifiedDN]
 "Vollqualifizierte Domain Name"
 //[MConfigInfoPanelUNSamCompatible]
@@ -536,6 +538,10 @@
 "Dienstleister"
 //[MConfigInfoPanelUNDnsDomain]
 "Dns Domain"
+//[MConfigInfoPanelUNGivenName]
+"Vorname"
+//[MConfigInfoPanelUNSurname]
+"Nachname"
 //[MConfigInfoPanelShowPowerStatus]
 "&Power-Status anzeigen"
 //[MConfigInfoPanelShowCDInfo]

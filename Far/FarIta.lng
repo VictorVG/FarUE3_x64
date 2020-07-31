@@ -1,6 +1,6 @@
 ﻿.Language=Italian,Italian (Italiano)
 
-//Version: 3.0.0.5645
+//Version: 3.0.0.5647
 
 //[MYes]
 "&Si"
@@ -513,6 +513,8 @@
 "DNS Qualificato"
 //[MConfigInfoPanelUNTitle]
 "&Formato Nome Utente"
+//[MConfigInfoPanelUNLogon]
+"Nome di accesso"
 //[MConfigInfoPanelUNFullyQualifiedDN]
 "Nome Dominio Completo"
 //[MConfigInfoPanelUNSamCompatible]
@@ -529,6 +531,10 @@
 "Servizio Principale"
 //[MConfigInfoPanelUNDnsDomain]
 "Dominio DNS"
+//[MConfigInfoPanelUNGivenName]
+"Nome"
+//[MConfigInfoPanelUNSurname]
+"Cognome"
 //[MConfigInfoPanelShowPowerStatus]
 "Mostra Stato &Energetico"
 //[MConfigInfoPanelShowCDInfo]

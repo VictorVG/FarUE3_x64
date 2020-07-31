@@ -1,6 +1,6 @@
 ﻿.Language=Ukrainian,Ukrainian (Українська)
 
-//Version: 3.0.0.5645
+//Version: 3.0.0.5647
 
 //[MYes]
 "Так"
@@ -513,6 +513,8 @@
 "Повне DNS ім'я"
 //[MConfigInfoPanelUNTitle]
 "Формат відображення імені &користувача"
+//[MConfigInfoPanelUNLogon]
+"Ім'я для входу"
 //[MConfigInfoPanelUNFullyQualifiedDN]
 "Повне доменне ім'я"
 //[MConfigInfoPanelUNSamCompatible]
@@ -529,6 +531,10 @@
 "Учасник служби"
 //[MConfigInfoPanelUNDnsDomain]
 "Ім'я домену DNS"
+//[MConfigInfoPanelUNGivenName]
+"Дане ім’я"
+//[MConfigInfoPanelUNSurname]
+"Прізвище"
 //[MConfigInfoPanelShowPowerStatus]
 "Показувати стан ж&ивлення"
 //[MConfigInfoPanelShowCDInfo]

@@ -1,6 +1,6 @@
 ﻿.Language=English,English
 
-//Version: 3.0.0.5645
+//Version: 3.0.0.5647
 
 //[MYes]
 "Yes"
@@ -513,6 +513,8 @@
 "DNS fully-qualified"
 //[MConfigInfoPanelUNTitle]
 "&User name format"
+//[MConfigInfoPanelUNLogon]
+"Logon name"
 //[MConfigInfoPanelUNFullyQualifiedDN]
 "Fully Qualified Domain Name"
 //[MConfigInfoPanelUNSamCompatible]
@@ -529,6 +531,10 @@
 "Service Principal"
 //[MConfigInfoPanelUNDnsDomain]
 "DNS Domain"
+//[MConfigInfoPanelUNGivenName]
+"Given name"
+//[MConfigInfoPanelUNSurname]
+"Surname"
 //[MConfigInfoPanelShowPowerStatus]
 "Show &power status"
 //[MConfigInfoPanelShowCDInfo]

@@ -1,6 +1,6 @@
 ﻿.Language=Russian,Russian (Русский)
 
-//Version: 3.0.0.5645
+//Version: 3.0.0.5647
 
 //[MYes]
 "Да"
@@ -513,6 +513,8 @@
 "Полное DNS имя"
 //[MConfigInfoPanelUNTitle]
 "Формат вывода имени &пользователя"
+//[MConfigInfoPanelUNLogon]
+"Имя для входа"
 //[MConfigInfoPanelUNFullyQualifiedDN]
 "Полностью определённое имя домена"
 //[MConfigInfoPanelUNSamCompatible]
@@ -529,6 +531,10 @@
 "Субъект-служба"
 //[MConfigInfoPanelUNDnsDomain]
 "Имя домена DNS"
+//[MConfigInfoPanelUNGivenName]
+"Собственное имя"
+//[MConfigInfoPanelUNSurname]
+"Фамилия"
 //[MConfigInfoPanelShowPowerStatus]
 "Показывать состояние п&итания"
 //[MConfigInfoPanelShowCDInfo]

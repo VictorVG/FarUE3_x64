@@ -1,6 +1,6 @@
 ﻿.Language=Belarusian,Belarusian (Беларуская)
 
-//Version: 3.0.0.5645
+//Version: 3.0.0.5647
 
 //[MYes]
 "Так"
@@ -513,6 +513,8 @@
 "Поўнае імя DNS"
 //[MConfigInfoPanelUNTitle]
 "Выгляд імі &карыстальніка"
+//[MConfigInfoPanelUNLogon]
+"Імя ўваходу"
 //[MConfigInfoPanelUNFullyQualifiedDN]
 "Поўны вызначаны дамен"
 //[MConfigInfoPanelUNSamCompatible]
@@ -529,6 +531,10 @@
 "Суб'ект-служба"
 //[MConfigInfoPanelUNDnsDomain]
 "Дамен DNS"
+//[MConfigInfoPanelUNGivenName]
+"Названае імя"
+//[MConfigInfoPanelUNSurname]
+"Прозвішча"
 //[MConfigInfoPanelShowPowerStatus]
 "Адлюстраваць стан с&ілкавання"
 //[MConfigInfoPanelShowCDInfo]

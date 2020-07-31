@@ -1,6 +1,6 @@
 ﻿.Language=Spanish,Spanish (Español)
 
-//Version: 3.0.0.5645
+//Version: 3.0.0.5647
 
 //[MYes]
 "Si"
@@ -513,6 +513,8 @@
 "DNS calificado"
 //[MConfigInfoPanelUNTitle]
 "Formato nombre de &usuario"
+//[MConfigInfoPanelUNLogon]
+"Nombre de inicio de sesión"
 //[MConfigInfoPanelUNFullyQualifiedDN]
 "Nombre dominio completamente calificado"
 //[MConfigInfoPanelUNSamCompatible]
@@ -529,6 +531,10 @@
 "Servicio principal"
 //[MConfigInfoPanelUNDnsDomain]
 "Dominio DNS"
+//[MConfigInfoPanelUNGivenName]
+"Nombre dado"
+//[MConfigInfoPanelUNSurname]
+"Apellido"
 //[MConfigInfoPanelShowPowerStatus]
 "Mostrar estado de &encendido"
 //[MConfigInfoPanelShowCDInfo]

@@ -1,6 +1,6 @@
 ﻿.Language=Czech,Czech (Čeština)
 
-//Version: 3.0.0.5645
+//Version: 3.0.0.5647
 
 //[MYes]
 "Ano"
@@ -513,6 +513,8 @@
 "DNS s celým názvem"
 //[MConfigInfoPanelUNTitle]
 "&User name format"
+//[MConfigInfoPanelUNLogon]
+"Přihlašovací jméno"
 //[MConfigInfoPanelUNFullyQualifiedDN]
 "Plně kvalifikovaný doménový název"
 //[MConfigInfoPanelUNSamCompatible]
@@ -529,6 +531,10 @@
 "Service Principal"
 //[MConfigInfoPanelUNDnsDomain]
 "DNS Domain"
+//[MConfigInfoPanelUNGivenName]
+"Křestní jméno"
+//[MConfigInfoPanelUNSurname]
+"Příjmení"
 //[MConfigInfoPanelShowPowerStatus]
 "Zobrazit stav na&pájení"
 //[MConfigInfoPanelShowCDInfo]
