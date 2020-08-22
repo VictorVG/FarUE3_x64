@@ -2,8 +2,8 @@
 
 Установка: StackTracePlus.lua положить в ./modules и в _macroinit.lua добавить строки:
 
-   local STP = require "StackTracePlus"
-   debug.traceback = function(...) return STP.stacktrace(...):gsub("\r\n","\n") end
+   local STP = require("StackTracePlus")
+   if STP then debug.traceback = function(...) return string.gsub(STP.stacktrace(...), "\r\n", "\n") end end
 
 --]]
 

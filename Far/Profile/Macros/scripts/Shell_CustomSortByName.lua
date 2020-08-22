@@ -1,5 +1,79 @@
-﻿-- http://forum.ru-board.com/topic.cgi?forum=5&topic=49572&start=2240#16
--- v1.1
+﻿-- Panel.CustomSortByName.lua
+-- v1.1.0.1
+-- Very powerful panel file sorting
+-- ![Panel.CustomSortByName](http://i.piccy.info/i9/305c735c17b77b86698f8161f3b6988e/1585847695/9001/1370793/2020_04_02_201018.png)
+-- <details><summary>Сортировки файлов в панели:</summary>
+--
+-- 1. С вводом Offset при нажатии шорката, если вместо ввода числа нажать Enter, то будет использовано прежнее значение. Стартовое значение (по умолчанию) 0, т.е. обычная сортировка по имени.
+-- 2. C вводом Symbols аналогично п.1, значение по умолчанию "-_ ".
+--  п.1 и п.2 с игнорированием символов - игнорируется то, что Майкрософт считает символами.
+-- 3. По группе цифр в имени файла с поиском в прямом, либо обратном направлении.
+-- 4. По подстроке, захваченной регэкспом. Регэкспы можно комментировать, в этом случае первую строку начинаем с -- (2-х минусов), далее комментарий, затем перевод строки и на второй строке пишем сам регэксп. Порядок сортировки можно изменить, добавив в конец регэкспа конструкцию {!:...}, где вместо ... указываем порядок возврата захваченных групп, например {!:$3$2$1}. Для поиска каждой группы по всей строке вне зависимости от их позиции, используется конструкция {?:pat1}{?:pat2}{?:pat3}{!:$3$2$1}, где patN - характерный паттерн группы, захватывается первый совпавший.
+-- 5. По функции пользователя. Примеры:
+--  [x] Offset=0
+--  [x] Func
+-- <details><summary>by BOM</summary>
+--
+--   ``` lua
+--     -- by BOM
+--     local function bom(fp)
+--       local res,efbbbf,fffe,feff,ffi = 0,'\239\187\191','\255\254','\254\255',require'ffi'
+--       local f=win.WideCharToMultiByte(ffi.string(fp,tonumber(ffi.C.wcslen(fp))*2),65001)
+--       local h=io.open(f,"rb")
+--       if h then
+--         local s=h:read(3) or '' h:close()
+--         if s==efbbbf then res=3 else s=string.sub(s,1,2) if s==fffe then res=2 elseif s==feff then res=1 end end
+--       end
+--       return res
+--     end
+--     return bom(_G.sFuncTbl.fp1)-bom(_G.sFuncTbl.fp2)
+--   ```
+-- </details>
+-- <details><summary>by FullPath length</summary>
+--
+--   ``` lua
+--     -- by FullPath length
+--     local ffi = require'ffi'
+--     return tonumber(ffi.C.wcslen(_G.sFuncTbl.fp1))-tonumber(ffi.C.wcslen(_G.sFuncTbl.fp2))
+--   ```
+-- </details>
+-- <details><summary>by FileName length</summary>
+--
+--   ``` lua
+--     -- by FileName length
+--     return _G.sFuncTbl.ln1-_G.sFuncTbl.ln2
+--   ```
+-- </details>
+-- <details><summary>by level Folder</summary>
+--
+--   ``` lua
+--   -- by level Folder
+--     local ffi,BS = require'ffi',[[\\]]
+--     local _,x1 = regex.gsubW(ffi.string(_G.sFuncTbl.fp1,tonumber(ffi.C.wcslen(_G.sFuncTbl.fp1))*2),BS,"")
+--     local _,x2 = regex.gsubW(ffi.string(_G.sFuncTbl.fp2,tonumber(ffi.C.wcslen(_G.sFuncTbl.fp2))*2),BS,"")
+--     return x1-x2
+--   ```
+-- </details>
+-- <details><summary>by HEX in FileName</summary>
+--
+--   ``` lua
+--     -- by HEX in FileName
+--     local ffi,RE,huge = require'ffi','[0-9A-Fa-f]+$',math.huge
+--     local function p(s)
+--       local num=huge
+--       local fp=ffi.string(s,tonumber(ffi.C.wcslen(s))*2)
+--       local hex=regex.matchW(fp,RE)
+--       if hex then num=tonumber(string.gsub(hex,'\000',''),16) end
+--       return num
+--     end
+--     return p(_G.sFuncTbl.fp1)-p(_G.sFuncTbl.fp2)
+--   ```
+-- </details>
+-- </details>
+-- ---
+-- Keys: CtrlShiftF3 or from Menu "Sort by"
+-- Tip: In the dialog all elements have prompts, press F1 for help
+-- Url: https://forum.ru-board.com/topic.cgi?forum=5&topic=49572&start=2240#16
 
 if not (bit and jit) then return end
 
@@ -9,9 +83,10 @@ local uGuid = win.Uuid(guid)
 local MenuGuid = "B8B6E1DA-4221-47D2-AB2E-9EC67D0DC1E3"
 
 -- Settings --------------------------------------------------------------------
+local ModeNumber = 100110
 local GFocus,tSort = 3,{nil,true,0,false,"",false,false,false,4,true,false,"",false,"",false}
 local First,AlgSort,Offset,Symbols,DigSort,Digits,DirectSeek,xRegexp,sRegexp,xFunc,sFunc,sRgxTbl,sRgxRet,sRgxTrue = true,tSort[2],tSort[3],tSort[5],tSort[8],tSort[9],tSort[10],tSort[11],tSort[12],tSort[13],tSort[14],{}
-local Desc1,Indi1 = "Custom: by name","!?"
+local Desc1,Indi1 = "Custom: by Name","!?"
 local Indicator = Indi1
 local Key = "CtrlShiftF3"
 --------------------------------------------------------------------------------
@@ -31,26 +106,25 @@ wchar_t* wcspbrk(const wchar_t*, const wchar_t*);
 
 local edtFlags = F.DIF_HISTORY+F.DIF_USELASTHISTORY
 local Items = {
- --[[01]] {F.DI_DOUBLEBOX,    3,1, 65,9, 0, 0,0, 0, "Custom sort. Help: F1"},
- --[[02]] {F.DI_CHECKBOX,     5,2, 15,2, 0, 0,0, 0, "O&ffset"},
-
- --[[03]] {F.DI_EDIT,        16,2, 22,2, 0, 0,0, 0, ""},
- --[[04]] {F.DI_CHECKBOX,    25,2, 36,2, 0, 0,0, 0, "Sy&mbols"},
- --[[05]] {F.DI_EDIT,        37,2, 63,2, 0, "CustomSortByName_Symbols",0, edtFlags, ""},
- --[[06]] {F.DI_CHECKBOX,     5,3, 20,3, 0, 0,0, 0, "Ignore &case"},
- --[[07]] {F.DI_CHECKBOX,    37,3, 56,3, 0, 0,0, 0, "Ignore &symbols"},
- --[[08]] {F.DI_CHECKBOX,     5,4, 15,4, 0, 0,0, 0, "&Digits"},
- --[[09]] {F.DI_EDIT,        16,4, 19,4, 0, 0,0, 0, ""},
- --[[10]] {F.DI_CHECKBOX,    37,4, 52,4, 0, 0,0, 0, "Direct s&eek"},
- --[[11]] {F.DI_CHECKBOX,     5,5, 15,5, 0, 0,0, 0, "Re&gexp"},
- --[[12]] {F.DI_EDIT,        16,5, 63,5, 0, "CustomSortByName_Regexp",0, edtFlags, ""},
- --[[13]] {F.DI_CHECKBOX,     5,6, 15,6, 0, 0,0, 0, "F&unc()"},
- --[[14]] {F.DI_EDIT,        16,6, 63,6, 0, "CustomSortByName_Function",0, edtFlags, ""},
- --[[15]] {F.DI_CHECKBOX,     5,8, 15,8, 0, 0,0, 0, "Re&port"},
- --[[16]] {F.DI_TEXT,        -1,7,  0,0, 0, 0,0, F.DIF_SEPARATOR,""},
- --[[17]] {F.DI_BUTTON,       0,8,  0,0, 0, 0,0, F.DIF_DEFAULTBUTTON+F.DIF_CENTERGROUP,"&Ok"},
- --[[18]] {F.DI_BUTTON,       0,8,  0,0, 0, 0,0, F.DIF_CENTERGROUP,"Ca&ncel"}
- }
+--[[01]] {F.DI_DOUBLEBOX,    3,1, 65,9, 0, 0,0, 0, "Custom sort by Name. Help: F1"},
+--[[02]] {F.DI_CHECKBOX,     5,2, 15,0, 0, 0,0, 0, "O&ffset"},
+--[[03]] {F.DI_EDIT,        16,2, 22,0, 0, 0,0, 0, ""},
+--[[04]] {F.DI_CHECKBOX,    25,2, 36,0, 0, 0,0, 0, "Sy&mbols"},
+--[[05]] {F.DI_EDIT,        37,2, 63,0, 0, "CustomSortByName_Symbols",0, edtFlags, ""},
+--[[06]] {F.DI_CHECKBOX,     5,3, 20,0, 0, 0,0, 0, "Ignore &case"},
+--[[07]] {F.DI_CHECKBOX,    37,3, 56,0, 0, 0,0, 0, "Ignore &symbols"},
+--[[08]] {F.DI_CHECKBOX,     5,4, 15,0, 0, 0,0, 0, "&Digits"},
+--[[09]] {F.DI_EDIT,        16,4, 19,0, 0, 0,0, 0, ""},
+--[[10]] {F.DI_CHECKBOX,    37,4, 52,0, 0, 0,0, 0, "Direct s&eek"},
+--[[11]] {F.DI_CHECKBOX,     5,5, 15,0, 0, 0,0, 0, "Re&gexp"},
+--[[12]] {F.DI_EDIT,        16,5, 63,0, 0, "CustomSortByName_Regexp",0, edtFlags, ""},
+--[[13]] {F.DI_CHECKBOX,     5,6, 15,0, 0, 0,0, 0, "F&unc()"},
+--[[14]] {F.DI_EDIT,        16,6, 63,0, 0, "CustomSortByName_Function",0, edtFlags, ""},
+--[[15]] {F.DI_CHECKBOX,     5,8, 15,0, 0, 0,0, 0, "Re&port"},
+--[[16]] {F.DI_TEXT,        -1,7,  0,0, 0, 0,0, F.DIF_SEPARATOR,""},
+--[[17]] {F.DI_BUTTON,       0,8,  0,0, 0, 0,0, F.DIF_DEFAULTBUTTON+F.DIF_CENTERGROUP,"&Ok"},
+--[[18]] {F.DI_BUTTON,       0,8,  0,0, 0, 0,0, F.DIF_CENTERGROUP,"Ca&ncel"}
+}
 
 local function ToWChar(str)
   str=win.Utf8ToUtf16(str)
@@ -191,15 +265,15 @@ local function DlgProc(hDlg,Msg,Param1,Param2)
     ttSort[14] = tostring(hDlg:send(F.DM_GETTEXT,14))
     Set2()
     hDlg:send(F.DM_SETCHECK,10,ttSort[10] and F.BSTATE_CHECKED or F.BSTATE_UNCHECKED)
-    hDlg:send(F.DM_SETFOCUS,GFocus,0)
+    hDlg:send(F.DM_SETFOCUS,GFocus)
   elseif Msg==F.DN_BTNCLICK and Param1==2 then   -- [x] Offset
     ttSort[2] = Param2~=0 ttSort[4] = not ttSort[2] SetAlg()
     GFocus = ttSort[2] and 3 or 5
-    hDlg:send(F.DM_SETFOCUS,GFocus,0)
+    hDlg:send(F.DM_SETFOCUS,GFocus)
   elseif Msg==F.DN_BTNCLICK and Param1==4 then   -- [x] Symbols
     ttSort[4] = Param2~=0 ttSort[2] = not ttSort[4] SetAlg()
     GFocus = ttSort[2] and 3 or 5
-    hDlg:send(F.DM_SETFOCUS,GFocus,0)
+    hDlg:send(F.DM_SETFOCUS,GFocus)
   elseif Msg==F.DN_EDITCHANGE and Param1==3 then -- Offset changed
     ttSort[3] = tonumber(hDlg:send(F.DM_GETTEXT,3)) or ttSort[3]
   elseif (Msg==F.DN_EDITCHANGE or Msg==F.DN_LISTCHANGE) and Param1==5 then -- Symbols changed
@@ -211,7 +285,7 @@ local function DlgProc(hDlg,Msg,Param1,Param2)
   elseif Msg==F.DN_BTNCLICK and Param1==8 then   -- [x] Digits
     SetAlg2(Param1,Param2~=0)
     GFocus = ttSort[8] and 9 or 11
-    hDlg:send(F.DM_SETFOCUS,GFocus,0)
+    hDlg:send(F.DM_SETFOCUS,GFocus)
   elseif Msg==F.DN_EDITCHANGE and Param1==9 then -- Digits changed
     ttSort[9] = tonumber(hDlg:send(F.DM_GETTEXT,9)) or ttSort[9]
     maxnum = math.pow(10,ttSort[9])
@@ -220,13 +294,13 @@ local function DlgProc(hDlg,Msg,Param1,Param2)
   elseif Msg==F.DN_BTNCLICK and Param1==11 then   -- [x] Regexp
     SetAlg2(Param1,Param2~=0)
     GFocus = ttSort[11] and 12 or 13
-    hDlg:send(F.DM_SETFOCUS,GFocus,0)
+    hDlg:send(F.DM_SETFOCUS,GFocus)
   elseif (Msg==F.DN_EDITCHANGE or Msg==F.DN_LISTCHANGE) and Param1==12 then -- Regexp changed
     ttSort[12] = tostring(hDlg:send(F.DM_GETTEXT,12)) or ttSort[12]
   elseif Msg==F.DN_BTNCLICK and Param1==13 then   -- [x] Func()
     SetAlg2(Param1,Param2~=0)
     GFocus = ttSort[13] and 14 or 15
-    hDlg:send(F.DM_SETFOCUS,GFocus,0)
+    hDlg:send(F.DM_SETFOCUS,GFocus)
   elseif (Msg==F.DN_EDITCHANGE or Msg==F.DN_LISTCHANGE) and Param1==14 then -- Func() changed
     ttSort[14] = tostring(hDlg:send(F.DM_GETTEXT,14)) or ttSort[14]
   elseif Msg==F.DN_BTNCLICK and Param1==15 then   -- [x] Report
@@ -239,7 +313,7 @@ local function DlgProc(hDlg,Msg,Param1,Param2)
   return true
 end
 
-Panel.LoadCustomSortMode(110,{Description=Desc1;Indicator=Indicator;Compare=Compare})
+Panel.LoadCustomSortMode(ModeNumber,{Description=Desc1;Indicator=Indicator;Compare=Compare})
 
 Macro {
   description = Desc1; area = "Shell Menu"; key = Key.." Enter MsLClick";
@@ -262,8 +336,8 @@ Macro {
       Flags = tSort[7] and bit.bor(Flags,C.NORM_IGNORESYMBOLS) or bit.band(Flags,bit.bnot(C.NORM_IGNORESYMBOLS))
       count = 0
       local ttime=far.FarClock()
-      Panel.LoadCustomSortMode(110,{Description=Desc1;Indicator=Indicator;Compare=Compare})
-      Panel.SetCustomSortMode(110,0)
+      Panel.LoadCustomSortMode(ModeNumber,{Description=Desc1;Indicator=Indicator;Compare=Compare})
+      Panel.SetCustomSortMode(ModeNumber,0)
       ttime = far.FarClock()-ttime
       local report = "Curr count: "..count.."  mcs: "..ttime
       if count0 then

@@ -1,5 +1,9 @@
-﻿-- https://forum.ru-board.com/topic.cgi?forum=5&topic=49572&start=2240#16
--- v2.0
+﻿-- Panel.CustomSortByAttributes.lua
+-- v2.0.0.1
+-- Panel files sorting by attributes
+-- ![Panel.CustomSortByAttributes](http://i.piccy.info/i9/e4a7f377afa812d28e195dbae27e802b/1585895856/14743/1370861/2020_04_03_093318.png)
+-- Keys: CtrlShiftF3 or from Menu "Sort by"
+-- Url: https://forum.ru-board.com/topic.cgi?forum=5&topic=49572&start=2240#16
 
 if not (bit and jit) then return end
 
@@ -7,7 +11,7 @@ local F = far.Flags
 local guid = win.Uuid("A79390CE-5450-403A-8FAE-17EE3315CB38")
 local MenuGuid = "B8B6E1DA-4221-47D2-AB2E-9EC67D0DC1E3"
 -- Settings --------------------------------------------------------------------
-local ModeNumber = 109
+local ModeNumber = 100109
 local Description = "Custom: by Attributes"
 local Indi1 = "aA"
 local Indicator = Indi1
@@ -78,7 +82,7 @@ local AttributeValue = {
 --  FILE_ATTRIBUTE_DEVICE                0x00000040
 --  FILE_ATTRIBUTE_NORMAL                0x00000080
 
-local SAttributes,FAttributes,FAMasque,AttributesWeight,CompareMode,xReport,count,FName,GFocus,ttime0,count0 = "",{},0x205FFF37,0,true,false,0,"",5
+local SAttributes,FAttributes,FAMasque,AttributesWeight,CompareMode,xReport,count,FName,GFocus,ttime0,count0 = "",{},0x205FFF37,0,true,false,0,"",4
 for i=1,#AttributeValue do FAttributes[i]=false end
 
 local function BySelected(l)
@@ -116,7 +120,7 @@ local function DlgProc(hDlg,Msg,Param1,Param2)
     for i=1,#AttributeValue do
       hDlg:send(F.DM_SETCHECK,i+6,tFAttributes[i] and F.BSTATE_CHECKED or F.BSTATE_UNCHECKED)
     end
-    hDlg:send(F.DM_SETFOCUS,GFocus,0)
+    hDlg:send(F.DM_SETFOCUS,GFocus)
   elseif Msg==F.DN_EDITCHANGE and Param1==4 then
     local text = hDlg:send(F.DM_GETTEXT,4):lower()
     if text:match("^%d") then text=text:gsub("%D","")
@@ -161,8 +165,6 @@ local function DlgProc(hDlg,Msg,Param1,Param2)
     hDlg:send(F.DM_SETTEXT,4,tSAttributes)
   elseif Msg==F.DN_BTNCLICK and Param1==28 then   -- [x] Report
     xReport = Param2~=0
-  elseif Msg==F.DN_GOTFOCUS then
-    if Param1>1 and Param1<#Items-2 then GFocus=Param1 end
   else
     return
   end

@@ -143,7 +143,6 @@
   ║  S··················· │ CtrlShiftD                                                       │ Shell_DelEmptyDir.lua                      │ Delete empty folder                           ║
   ║  S··················· │ CtrlShiftE                                                       │ Shell_SelectingEx.lua                      │ Копирование имён помеченных файлов в          ║
   ║                       │                                                                  │                                            │ редактор. © SimSU                             ║
-  ║  S··················· │ CtrlShiftF12                                                     │ Shell_SortDir.lua                          │ Sort files with StrCmpLogicalW                ║
   ║  S··················· │ CtrlShiftF8                                                      │ Shell_CmdsFromCurDir.lua                   │ Display commands that have been launched      ║
   ║                       │                                                                  │                                            │ from the current directory                    ║
   ║  S··················· │ CtrlShiftM                                                       │ Shell_SelectingEx.lua                      │ Пометка файлов имена которых находятся в      ║
@@ -505,4 +504,4 @@
   ║                                                                                                                                                                                       ║
   ╚═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
 
-  28.07.2020 19:51:43 +0300
+  21.08.2020 02:11:21 +0300
