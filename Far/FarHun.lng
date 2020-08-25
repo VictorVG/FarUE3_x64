@@ -1,6 +1,6 @@
 ﻿.Language=Hungarian,Hungarian (Magyar)
 
-//Version: 3.0.0.5656
+//Version: 3.0.0.5657
 
 //[MYes]
 "Igen"
@@ -398,7 +398,7 @@
 "Right click selects files"
 //[MConfigSortFolderExt]
 "Mappák is rendezhetők &kiterjesztés szerint"
-//[MConfigReverseSort]
+//[MConfigAllowReverseSort]
 "Fordí&tott rendezés engedélyezése"
 //[MConfigAutoUpdateLimit]
 "Pan&el automatikus frissítése kikapcsolva,"

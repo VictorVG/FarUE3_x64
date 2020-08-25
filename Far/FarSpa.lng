@@ -1,6 +1,6 @@
 ﻿.Language=Spanish,Spanish (Español)
 
-//Version: 3.0.0.5656
+//Version: 3.0.0.5657
 
 //[MYes]
 "Si"
@@ -372,7 +372,7 @@
 "Clic derecho selecciona archivos"
 //[MConfigSortFolderExt]
 "Ordenar directorios por extensión"
-//[MConfigReverseSort]
+//[MConfigAllowReverseSort]
 "Permitir modo de orden in&verso"
 //[MConfigAutoUpdateLimit]
 "Desactiva actuali&zación automát. de paneles"

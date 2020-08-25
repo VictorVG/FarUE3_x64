@@ -1,6 +1,6 @@
 ﻿.Language=Slovak,Slovak (Slovenčina)
 
-//Version: 3.0.0.5656
+//Version: 3.0.0.5657
 
 //[MYes]
 "Áno"
@@ -372,7 +372,7 @@
 "Voliť súbory pravým kliknutím"
 //[MConfigSortFolderExt]
 "Triediť priečinky podľa prípony"
-//[MConfigReverseSort]
+//[MConfigAllowReverseSort]
 "Po&voliť opačné triedenie"
 //[MConfigAutoUpdateLimit]
 "Zrušiť a&utomatickú aktualizáciu panelov"

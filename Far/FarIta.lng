@@ -1,6 +1,6 @@
 ﻿.Language=Italian,Italian (Italiano)
 
-//Version: 3.0.0.5656
+//Version: 3.0.0.5657
 
 //[MYes]
 "&Si"
@@ -372,7 +372,7 @@
 "Tasto Destro &Seleziona Files"
 //[MConfigSortFolderExt]
 "Ordina Cartelle Per &Estensione"
-//[MConfigReverseSort]
+//[MConfigAllowReverseSort]
 "Permetti &Ordinamento Inverso"
 //[MConfigAutoUpdateLimit]
 "Disabilita Aggiornamento Automatico"

@@ -1,6 +1,6 @@
 ﻿.Language=Polish,Polish (Polski)
 
-//Version: 3.0.0.5656
+//Version: 3.0.0.5657
 
 //[MYes]
 "Tak"
@@ -372,7 +372,7 @@
 "Pr&awy klik zaznacza pliki"
 //[MConfigSortFolderExt]
 "Sortuj nazwy folderów wg r&ozszerzeń"
-//[MConfigReverseSort]
+//[MConfigAllowReverseSort]
 "Włącz &możliwość odwrotnego sortowania"
 //[MConfigAutoUpdateLimit]
 "&Wyłącz automatyczną aktualizację paneli"

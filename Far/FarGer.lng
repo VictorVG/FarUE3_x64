@@ -1,6 +1,6 @@
 ﻿.Language=German,German (Deutsch)
 
-//Version: 3.0.0.5656
+//Version: 3.0.0.5657
 
 //[MYes]
 "Ja"
@@ -377,7 +377,7 @@
 "Durch den Klick mit der rechten Maustaste wird die Datei ausgewählt"
 //[MConfigSortFolderExt]
 "Ordner nach Er&weiterung sortieren"
-//[MConfigReverseSort]
+//[MConfigAllowReverseSort]
 "&Umgekehrte Sortiermodi zulassen"
 //[MConfigAutoUpdateLimit]
 "Automatisches Panelupdate &deaktivieren"

@@ -1,6 +1,6 @@
 ﻿.Language=Ukrainian,Ukrainian (Українська)
 
-//Version: 3.0.0.5656
+//Version: 3.0.0.5657
 
 //[MYes]
 "Так"
@@ -372,7 +372,7 @@
 "Правий клац помічає файли"
 //[MConfigSortFolderExt]
 "Сортувати імена папок за ти&пом"
-//[MConfigReverseSort]
+//[MConfigAllowReverseSort]
 "Дозволити зв&оротнє сортування"
 //[MConfigAutoUpdateLimit]
 "Не автоо&новлювати панелі,"

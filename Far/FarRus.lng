@@ -1,6 +1,6 @@
 ﻿.Language=Russian,Russian (Русский)
 
-//Version: 3.0.0.5656
+//Version: 3.0.0.5657
 
 //[MYes]
 "Да"
@@ -372,7 +372,7 @@
 "Правый клик помечает файлы"
 //[MConfigSortFolderExt]
 "Сортировать имена папок по рас&ширению"
-//[MConfigReverseSort]
+//[MConfigAllowReverseSort]
 "Разрешить &обратную сортировку"
 //[MConfigAutoUpdateLimit]
 "Отключать автооб&новление панелей,"

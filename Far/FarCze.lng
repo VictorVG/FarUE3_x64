@@ -1,6 +1,6 @@
 ﻿.Language=Czech,Czech (Čeština)
 
-//Version: 3.0.0.5656
+//Version: 3.0.0.5657
 
 //[MYes]
 "Ano"
@@ -372,7 +372,7 @@
 "Klik pravým tlačítkem vybere soubory"
 //[MConfigSortFolderExt]
 "Řadit adresáře podle přípony"
-//[MConfigReverseSort]
+//[MConfigAllowReverseSort]
 "Po&volit změnu směru řazení"
 //[MConfigAutoUpdateLimit]
 "Vypnout a&utomatickou aktualizaci panelů"
