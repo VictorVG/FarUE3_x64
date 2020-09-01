@@ -1,6 +1,6 @@
 ﻿.Language=Czech,Czech (Čeština)
 
-//Version: 3.0.0.5659
+//Version: 3.0.0.5661
 
 //[MYes]
 "Ano"
@@ -3849,6 +3849,9 @@
 // need translation:
 //[MExcOSVersion]
 "OS:"
+// need translation:
+//[MExcKernelVersion]
+"Kernel:"
 //[MExcTerminate]
 "Ukončit Far"
 //[MExcUnload]

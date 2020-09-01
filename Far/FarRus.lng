@@ -1,6 +1,6 @@
 ﻿.Language=Russian,Russian (Русский)
 
-//Version: 3.0.0.5659
+//Version: 3.0.0.5661
 
 //[MYes]
 "Да"
@@ -3847,6 +3847,8 @@
 "Far:"
 //[MExcOSVersion]
 "ОС:"
+//[MExcKernelVersion]
+"Ядро:"
 //[MExcTerminate]
 "Завершить Far"
 //[MExcUnload]

@@ -1,6 +1,6 @@
 ﻿.Language=Italian,Italian (Italiano)
 
-//Version: 3.0.0.5659
+//Version: 3.0.0.5661
 
 //[MYes]
 "&Si"
@@ -3858,6 +3858,9 @@
 // need translation:
 //[MExcOSVersion]
 "OS:"
+// need translation:
+//[MExcKernelVersion]
+"Kernel:"
 //[MExcTerminate]
 "Termina Far"
 //[MExcUnload]

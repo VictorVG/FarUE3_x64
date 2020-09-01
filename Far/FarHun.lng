@@ -1,6 +1,6 @@
 ﻿.Language=Hungarian,Hungarian (Magyar)
 
-//Version: 3.0.0.5659
+//Version: 3.0.0.5661
 
 //[MYes]
 "Igen"
@@ -4120,6 +4120,9 @@
 // need translation:
 //[MExcOSVersion]
 "OS:"
+// need translation:
+//[MExcKernelVersion]
+"Kernel:"
 // need translation:
 //[MExcTerminate]
 "Terminate Far"

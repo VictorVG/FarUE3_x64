@@ -1,6 +1,6 @@
 ﻿.Language=Ukrainian,Ukrainian (Українська)
 
-//Version: 3.0.0.5659
+//Version: 3.0.0.5661
 
 //[MYes]
 "Так"
@@ -3847,6 +3847,8 @@
 "Far:"
 //[MExcOSVersion]
 "ОС:"
+//[MExcKernelVersion]
+"Ядро:"
 //[MExcTerminate]
 "Завершити Far"
 //[MExcUnload]

@@ -1,6 +1,6 @@
 ﻿.Language=Polish,Polish (Polski)
 
-//Version: 3.0.0.5659
+//Version: 3.0.0.5661
 
 //[MYes]
 "Tak"
@@ -3844,6 +3844,9 @@
 "Far:"
 //[MExcOSVersion]
 "OS:"
+// need translation:
+//[MExcKernelVersion]
+"Kernel:"
 //[MExcTerminate]
 "Zamknięcie Far"
 //[MExcUnload]

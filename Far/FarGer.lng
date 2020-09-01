@@ -1,6 +1,6 @@
 ﻿.Language=German,German (Deutsch)
 
-//Version: 3.0.0.5659
+//Version: 3.0.0.5661
 
 //[MYes]
 "Ja"
@@ -3937,6 +3937,9 @@
 // need translation:
 //[MExcOSVersion]
 "OS:"
+// need translation:
+//[MExcKernelVersion]
+"Kernel:"
 //[MExcTerminate]
 "Far beenden"
 // need translation:
