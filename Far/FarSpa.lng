@@ -1,6 +1,6 @@
 ﻿.Language=Spanish,Spanish (Español)
 
-//Version: 3.0.0.5665
+//Version: 3.0.5674.0 (Private) x64
 
 //[MYes]
 "Si"
@@ -2825,7 +2825,7 @@
 //[MHotPlugDisks]
 "(disco(s): {0})"
 //[MChangeCouldNotEjectHotPlugMedia]
-"No se puede remover dispositivo para unidad {0}:"
+"No se puede remover dispositivo para unidad {0}"
 //[MChangeCouldNotEjectHotPlugMedia2]
 "No se puede remover el dispositivo:"
 //[MChangeHotPlugNotify1]
@@ -2838,9 +2838,9 @@
 //[MChangeDriveDisconnectTitle]
 "Desconectar unidad de red"
 //[MChangeDriveDisconnectQuestion]
-"Quiere desconectarse desde la unidad {0}:?"
+"Quiere desconectarse desde la unidad {0}?"
 //[MChangeDriveDisconnectMapped]
-"La unidad %c: es mapeada hacia:"
+"La unidad es mapeada hacia:"
 //[MChangeDriveDisconnectReconnect]
 "&Reconectar al iniciar sesión"
 
@@ -3835,10 +3835,10 @@
 "&Versión:"
 //[MPluginModulePath]
 "Ruta de &módulo:"
-//[MPluginGUID]
-"&GUID complemento:"
-//[MPluginItemGUID]
-"&Item GUID complemento:"
+//[MPluginUUID]
+"&UUID complemento:"
+//[MPluginItemUUID]
+"&Item UUID complemento:"
 //[MPluginPrefix]
 "&Prefijo de complemento:"
 //[MExcTrappedException]

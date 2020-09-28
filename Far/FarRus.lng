@@ -1,6 +1,6 @@
 ﻿.Language=Russian,Russian (Русский)
 
-//Version: 3.0.0.5665
+//Version: 3.0.5674.0 (Private) x64
 
 //[MYes]
 "Да"
@@ -2816,7 +2816,7 @@
 //[MHotPlugDisks]
 "(диск(и): {0})"
 //[MChangeCouldNotEjectHotPlugMedia]
-"Невозможно удалить устройство для диска {0}:"
+"Невозможно удалить устройство для диска {0}"
 //[MChangeCouldNotEjectHotPlugMedia2]
 "Невозможно удалить устройство:"
 //[MChangeHotPlugNotify1]
@@ -2829,9 +2829,9 @@
 //[MChangeDriveDisconnectTitle]
 "Отсоединение сетевого диска"
 //[MChangeDriveDisconnectQuestion]
-"Вы хотите удалить соединение с устройством {0}:?"
+"Вы хотите удалить соединение с устройством {0}?"
 //[MChangeDriveDisconnectMapped]
-"На устройство {0}: отображена папка:"
+"На устройство отображена папка:"
 //[MChangeDriveDisconnectReconnect]
 "&Восстанавливать при входе в систему"
 
@@ -3821,10 +3821,10 @@
 "&Версия:"
 //[MPluginModulePath]
 "&Файл плагина:"
-//[MPluginGUID]
-"&GUID плагина:"
-//[MPluginItemGUID]
-"GU&ID пункта:"
+//[MPluginUUID]
+"&UUID плагина:"
+//[MPluginItemUUID]
+"UU&ID пункта:"
 //[MPluginPrefix]
 "&Префикс плагина:"
 //[MExcTrappedException]

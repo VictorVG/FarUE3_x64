@@ -1,6 +1,6 @@
 ﻿.Language=Italian,Italian (Italiano)
 
-//Version: 3.0.0.5665
+//Version: 3.0.5674.0 (Private) x64
 
 //[MYes]
 "&Si"
@@ -2796,7 +2796,7 @@
 //[MChangeDriveCannotReadDisk]
 "Non Posso Leggere Il Disco Unità"
 //[MChangeDriveCannotDisconnect]
-"Non Posso Disconnettermi Da {0}:"
+"Non Posso Disconnettermi Da {0}"
 //[MChangeDriveCannotDelSubst]
 "Non Posso Eliminare Un Drive SUBST {0}"
 //[MChangeDriveCannotDetach]
@@ -2807,11 +2807,11 @@
 //[MChangeSUBSTDisconnectDriveTitle]
 "Disconnessione Disco Virtuale"
 //[MChangeSUBSTDisconnectDriveQuestion]
-"Elimino Disco SUBST {0}:?"
+"Elimino Disco SUBST {0}?"
 //[MChangeVHDDisconnectDriveTitle]
 "Smontaggio Disco Virtuale"
 //[MChangeVHDDisconnectDriveQuestion]
-"Smontare Disco Virtuale {0}:?"
+"Smontare Disco Virtuale {0}?"
 
 //[MChangeHotPlugDisconnectDriveTitle]
 "Disconnetti Unità"
@@ -2820,7 +2820,7 @@
 //[MHotPlugDisks]
 "(unità: {0})"
 //[MChangeCouldNotEjectHotPlugMedia]
-"Non Posso Rimuovere La Periferica In {0}:"
+"Non Posso Rimuovere La Periferica In {0}"
 //[MChangeCouldNotEjectHotPlugMedia2]
 "Non Posso Rimuovere La Periferica:"
 //[MChangeHotPlugNotify1]
@@ -2833,9 +2833,9 @@
 //[MChangeDriveDisconnectTitle]
 "Rimozione Unità Di Rete"
 //[MChangeDriveDisconnectQuestion]
-"Vuoi Disconnetterti Il Disco {0}:?"
+"Vuoi Disconnetterti Il Disco {0}?"
 //[MChangeDriveDisconnectMapped]
-"Il Disco {0}: E' Mappato Su:"
+"Il Disco E' Mappato Su:"
 //[MChangeDriveDisconnectReconnect]
 "&Reconnetti Al Riavvio"
 
@@ -3831,10 +3831,10 @@
 "&Versione:"
 //[MPluginModulePath]
 "&Percorso:"
-//[MPluginGUID]
-"&GUID:"
-//[MPluginItemGUID]
-"&item GUID:"
+//[MPluginUUID]
+"&UUID:"
+//[MPluginItemUUID]
+"&item UUID:"
 //[MPluginPrefix]
 "Prefi&sso:"
 //[MExcTrappedException]

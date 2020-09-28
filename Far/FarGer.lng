@@ -1,6 +1,6 @@
 ﻿.Language=German,German (Deutsch)
 
-//Version: 3.0.0.5665
+//Version: 3.0.5674.0 (Private) x64
 
 //[MYes]
 "Ja"
@@ -2874,7 +2874,7 @@
 //[MHotPlugDisks]
 "(Laufwerk(e): {0})"
 //[MChangeCouldNotEjectHotPlugMedia]
-"Ein Gerät für Laufwerk {0}: konnte nicht entfernt werden"
+"Ein Gerät für Laufwerk {0} konnte nicht entfernt werden"
 //[MChangeCouldNotEjectHotPlugMedia2]
 "Kann folgendes Geräte nicht entfernen:"
 //[MChangeHotPlugNotify1]
@@ -2887,9 +2887,9 @@
 //[MChangeDriveDisconnectTitle]
 "Netzwerklaufwerk trennen"
 //[MChangeDriveDisconnectQuestion]
-"Wollen Sie die Verbindung zu Laufwerk {0}: trennen?"
+"Wollen Sie die Verbindung zu Laufwerk {0} trennen?"
 //[MChangeDriveDisconnectMapped]
-"Laufwerk {0}: ist verknüpft zu:"
+"Laufwerk ist verknüpft zu:"
 //[MChangeDriveDisconnectReconnect]
 "Bei Anmeldung &verbinden"
 
@@ -3909,10 +3909,10 @@
 "&Version:"
 //[MPluginModulePath]
 "&Plugin-Datei:"
-//[MPluginGUID]
-"Pludin GUID"
-//[MPluginItemGUID]
-"&Punkt GUID:"
+//[MPluginUUID]
+"Pludin UUID"
+//[MPluginItemUUID]
+"&Punkt UUID:"
 //[MPluginPrefix]
 "Plugin &Präfix:"
 //[MExcTrappedException]

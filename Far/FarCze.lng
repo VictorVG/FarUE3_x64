@@ -1,6 +1,6 @@
 ﻿.Language=Czech,Czech (Čeština)
 
-//Version: 3.0.0.5665
+//Version: 3.0.5674.0 (Private) x64
 
 //[MYes]
 "Ano"
@@ -2819,7 +2819,7 @@
 //[MHotPlugDisks]
 "(disk(y): {0})"
 //[MChangeCouldNotEjectHotPlugMedia]
-"Nelze odpojit zařízení pro jednotku {0}:"
+"Nelze odpojit zařízení pro jednotku {0}"
 //[MChangeCouldNotEjectHotPlugMedia2]
 "Zařízení nelze odpojit."
 //[MChangeHotPlugNotify1]
@@ -2832,9 +2832,9 @@
 //[MChangeDriveDisconnectTitle]
 "Odpojit síťovou jednotku"
 //[MChangeDriveDisconnectQuestion]
-"Chcete odpojit od jednotky {0}:?"
+"Chcete odpojit od jednotky {0}?"
 //[MChangeDriveDisconnectMapped]
-"Jednotka {0}: je namapována na:"
+"Jednotka je namapována na:"
 //[MChangeDriveDisconnectReconnect]
 "&Znovu připojit při přihlášení"
 
@@ -3822,10 +3822,10 @@
 "&Verze:"
 //[MPluginModulePath]
 "Cesta k &modulu:"
-//[MPluginGUID]
-"&GUID modulu:"
-//[MPluginItemGUID]
-"GUID položky m&odulu:"
+//[MPluginUUID]
+"&UUID modulu:"
+//[MPluginItemUUID]
+"UUID položky m&odulu:"
 //[MPluginPrefix]
 "Předpona mo&dulu:"
 //[MExcTrappedException]

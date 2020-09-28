@@ -1,6 +1,6 @@
 ﻿.Language=Ukrainian,Ukrainian (Українська)
 
-//Version: 3.0.0.5665
+//Version: 3.0.5674.0 (Private) x64
 
 //[MYes]
 "Так"
@@ -2816,7 +2816,7 @@
 //[MHotPlugDisks]
 "(диск(и): {0})"
 //[MChangeCouldNotEjectHotPlugMedia]
-"Неможливо видалити пристрій для диска {0}:"
+"Неможливо видалити пристрій для диска {0}"
 //[MChangeCouldNotEjectHotPlugMedia2]
 "Неможливо видалити пристрій:"
 //[MChangeHotPlugNotify1]
@@ -2829,9 +2829,9 @@
 //[MChangeDriveDisconnectTitle]
 "Від'єднання мережевого диска"
 //[MChangeDriveDisconnectQuestion]
-"Ви бажаєте видалити з'єднання з пристроєм {0}:?"
+"Ви бажаєте видалити з'єднання з пристроєм {0}?"
 //[MChangeDriveDisconnectMapped]
-"На пристрій {0}: відображена папка:"
+"На пристрій відображена папка:"
 //[MChangeDriveDisconnectReconnect]
 "&Відновлювати при вході в систему"
 
@@ -3821,10 +3821,10 @@
 "&Версія:"
 //[MPluginModulePath]
 "&Файл плагіна:"
-//[MPluginGUID]
-"&GUID плагіна:"
-//[MPluginItemGUID]
-"GU&ID пункту:"
+//[MPluginUUID]
+"&UUID плагіна:"
+//[MPluginItemUUID]
+"UU&ID пункту:"
 //[MPluginPrefix]
 "&Префікс плагіна:"
 //[MExcTrappedException]

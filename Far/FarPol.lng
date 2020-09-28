@@ -1,6 +1,6 @@
 ﻿.Language=Polish,Polish (Polski)
 
-//Version: 3.0.0.5665
+//Version: 3.0.5674.0 (Private) x64
 
 //[MYes]
 "Tak"
@@ -2816,7 +2816,7 @@
 //[MHotPlugDisks]
 "(dysk(i): {0})"
 //[MChangeCouldNotEjectHotPlugMedia]
-"Nie udało się odłączyć dysku {0}:"
+"Nie udało się odłączyć dysku {0}"
 //[MChangeCouldNotEjectHotPlugMedia2]
 "Nie udało się odłączyć urządzenia:"
 //[MChangeHotPlugNotify1]
@@ -2829,9 +2829,9 @@
 //[MChangeDriveDisconnectTitle]
 "Odłączanie dysku sieciowego"
 //[MChangeDriveDisconnectQuestion]
-"Czy odłączyć dysk {0}:?"
+"Czy odłączyć dysk {0}?"
 //[MChangeDriveDisconnectMapped]
-"Dysk {0}: jest skojarzony z:"
+"Dysk jest skojarzony z:"
 //[MChangeDriveDisconnectReconnect]
 "&Podłącz ponownie przy logowaniu"
 
@@ -3818,10 +3818,10 @@
 "&Wersja:"
 //[MPluginModulePath]
 "Ścieżka &modułu:"
-//[MPluginGUID]
-"&GUID wtyczki:"
-//[MPluginItemGUID]
-"G&UID menu wtyczki:"
+//[MPluginUUID]
+"&UUID wtyczki:"
+//[MPluginItemUUID]
+"U&UID menu wtyczki:"
 //[MPluginPrefix]
 "&Przedrostek wtyczki:"
 //[MExcTrappedException]

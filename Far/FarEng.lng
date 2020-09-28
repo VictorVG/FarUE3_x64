@@ -1,6 +1,6 @@
 ﻿.Language=English,English
 
-//Version: 3.0.0.5665
+//Version: 3.0.5674.0 (Private) x64
 
 //[MYes]
 "Yes"
@@ -1590,7 +1590,7 @@
 //[MEditorLoadCPWarn2]
 "correctly read using the selected code page."
 //[MEditorReloadCPWarnLost1]
-"File has to be reloaded to change code page."
+"The file has to be reloaded to change the code page."
 //[MEditorReloadCPWarnLost2]
 "All unsaved changes will be lost."
 //[MEditorSaveCPWarn1]
@@ -1604,7 +1604,7 @@
 //[MEditorSwitchCPConfirm]
 "Continue?"
 //[MEditDataLostWarn]
-"During file editing some data were lost."
+"During the file editing some data was lost."
 //[MEditorSaveNotRecommended]
 "It is not recommended to save this file."
 //[MEditorSave]
@@ -2816,7 +2816,7 @@
 //[MHotPlugDisks]
 "(disk(s): {0})"
 //[MChangeCouldNotEjectHotPlugMedia]
-"Cannot remove a device for drive {0}:"
+"Cannot remove a device for drive {0}"
 //[MChangeCouldNotEjectHotPlugMedia2]
 "Cannot remove a device:"
 //[MChangeHotPlugNotify1]
@@ -2829,9 +2829,9 @@
 //[MChangeDriveDisconnectTitle]
 "Disconnect network drive"
 //[MChangeDriveDisconnectQuestion]
-"Do you want to disconnect from the drive {0}:?"
+"Do you want to disconnect from the drive {0}?"
 //[MChangeDriveDisconnectMapped]
-"The drive {0}: is mapped to:"
+"The drive is mapped to:"
 //[MChangeDriveDisconnectReconnect]
 "&Reconnect at logon"
 
@@ -3818,10 +3818,10 @@
 "&Version:"
 //[MPluginModulePath]
 "&Module path:"
-//[MPluginGUID]
-"Plugin &GUID:"
-//[MPluginItemGUID]
-"Plugin &item GUID:"
+//[MPluginUUID]
+"Plugin &UUID:"
+//[MPluginItemUUID]
+"Plugin &item UUID:"
 //[MPluginPrefix]
 "Plugin &prefix:"
 //[MExcTrappedException]

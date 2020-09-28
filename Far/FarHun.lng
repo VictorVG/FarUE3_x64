@@ -1,6 +1,6 @@
 ﻿.Language=Hungarian,Hungarian (Magyar)
 
-//Version: 3.0.0.5665
+//Version: 3.0.5674.0 (Private) x64
 
 //[MYes]
 "Igen"
@@ -1718,7 +1718,7 @@
 "correctly read using the selected code page."
 // need translation:
 //[MEditorReloadCPWarnLost1]
-"File has to be reloaded to change code page."
+"The file has to be reloaded to change the code page."
 // need translation:
 //[MEditorReloadCPWarnLost2]
 "All unsaved changes will be lost."
@@ -1739,7 +1739,7 @@
 "Continue?"
 // need translation:
 //[MEditDataLostWarn]
-"During file editing some data were lost."
+"During the file editing some data was lost."
 //[MEditorSaveNotRecommended]
 "A fájl mentése nem ajánlott."
 //[MEditorSave]
@@ -3022,7 +3022,7 @@
 //[MHotPlugDisks]
 "({0} meghajtó)"
 //[MChangeCouldNotEjectHotPlugMedia]
-"{0}: eszköz nem távolítható el"
+"{0} eszköz nem távolítható el"
 //[MChangeCouldNotEjectHotPlugMedia2]
 "Az eszköz nem távolítható el:"
 //[MChangeHotPlugNotify1]
@@ -3035,9 +3035,9 @@
 //[MChangeDriveDisconnectTitle]
 "Hálózati meghajtó leválasztása"
 //[MChangeDriveDisconnectQuestion]
-"Le akar válni {0}: meghajtóról?"
+"Le akar válni {0} meghajtóról?"
 //[MChangeDriveDisconnectMapped]
-"{0}: meghajtó hozzárendelve:"
+"Meghajtó hozzárendelve:"
 //[MChangeDriveDisconnectReconnect]
 "&Bejelentkezésnél újracsatlakoztat"
 
@@ -4089,11 +4089,11 @@
 //[MPluginModulePath]
 "&Module path:"
 // need translation:
-//[MPluginGUID]
-"Plugin &GUID:"
+//[MPluginUUID]
+"Plugin &UUID:"
 // need translation:
-//[MPluginItemGUID]
-"Plugin &item GUID:"
+//[MPluginItemUUID]
+"Plugin &item UUID:"
 // need translation:
 //[MPluginPrefix]
 "Plugin &prefix:"

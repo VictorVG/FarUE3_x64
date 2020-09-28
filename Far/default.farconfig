@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<farconfig version="3.0.5663">
+<farconfig version="3.0.5671">
 	<generalconfig>
 		<setting key="Cmdline" name="AutoComplete" type="qword" value="0000000000000001"/>
 		<setting key="Cmdline" name="DelRemovesBlocks" type="qword" value="0000000000000001"/>
@@ -123,7 +123,7 @@
 		<setting key="Layout" name="FullscreenHelp" type="qword" value="0000000000000000"/>
 		<setting key="Layout" name="LeftHeightDecrement" type="qword" value="0000000000000000"/>
 		<setting key="Layout" name="RightHeightDecrement" type="qword" value="0000000000000000"/>
-		<setting key="Layout" name="WidthDecrement" type="qword" value="0000000000000003"/>
+		<setting key="Layout" name="WidthDecrement" type="qword" value="0000000000000000"/>
 		<setting key="Macros" name="CONVFMT" type="text" value="%.6g"/>
 		<setting key="Macros" name="DateFormat" type="text" value="%a %b %d %H:%M:%S %z %Y"/>
 		<setting key="Macros" name="KeyRecordCtrlDot" type="text" value="Ctrl."/>
@@ -189,21 +189,6 @@
 		<setting key="Panel.Right" name="Type" type="qword" value="0000000000000000"/>
 		<setting key="Panel.Right" name="ViewMode" type="qword" value="0000000000000009"/>
 		<setting key="Panel.Right" name="Visible" type="qword" value="0000000000000001"/>
-		<setting key="Panel.SortLayers" name="0" type="text" value=""/>
-		<setting key="Panel.SortLayers" name="1" type="text" value="1"/>
-		<setting key="Panel.SortLayers" name="10" type="text" value="2 1"/>
-		<setting key="Panel.SortLayers" name="11" type="text" value="2 1"/>
-		<setting key="Panel.SortLayers" name="12" type="text" value="2 1"/>
-		<setting key="Panel.SortLayers" name="13" type="text" value="2 1"/>
-		<setting key="Panel.SortLayers" name="14" type="text" value="2 1"/>
-		<setting key="Panel.SortLayers" name="2" type="text" value="2 1"/>
-		<setting key="Panel.SortLayers" name="3" type="text" value="2 1"/>
-		<setting key="Panel.SortLayers" name="4" type="text" value="2 1"/>
-		<setting key="Panel.SortLayers" name="5" type="text" value="2 1"/>
-		<setting key="Panel.SortLayers" name="6" type="text" value="2 1"/>
-		<setting key="Panel.SortLayers" name="7" type="text" value="2 1"/>
-		<setting key="Panel.SortLayers" name="8" type="text" value="2 1"/>
-		<setting key="Panel.SortLayers" name="9" type="text" value="2 1"/>
 		<setting key="Panel.Tree" name="AutoChangeFolder" type="qword" value="0000000000000001"/>
 		<setting key="Panel.Tree" name="MinTreeCount" type="qword" value="0000000000000001"/>
 		<setting key="Panel.Tree" name="TreeFileAttr" type="qword" value="0000000000000002"/>
@@ -353,7 +338,8 @@
 		<setting key="Panel.Left" name="Folder" type="text" value="C:\"/>
 		<setting key="Panel.Right" name="CurFile" type="text" value="Windows"/>
 		<setting key="Panel.Right" name="Folder" type="text" value="C:\"/>
-	</localconfig><colors>
+	</localconfig>
+	<colors>
 		<object name="Clock" background="FF000003" foreground="FF000000" flags="fg4bit bg4bit"/>
 		<object name="CommandLine" background="FF000000" foreground="FF000007" flags="fg4bit bg4bit"/>
 		<object name="CommandLine.Prefix" background="FF000000" foreground="FF000007" flags="fg4bit bg4bit"/>
@@ -1368,7 +1354,7 @@
 							<value name="Enabled" type="qword" value="0000000000000001"/>
 							<value name="IgnoreMask" type="text" value=""/>
 							<value name="Kind" type="qword" value="0000000000000002"/>
-							<value name="Modified" type="qword" value="000000005093A450"/>
+							<value name="Modified" type="qword" value="000000004694A36A"/>
 							<value name="Name" type="text" value="DXVideo.pvd"/>
 							<value name="Priority" type="qword" value="0000000000000F01"/>
 							<value name="Title" type="text" value="DXVideo"/>
@@ -1379,18 +1365,18 @@
 							<value name="Enabled" type="qword" value="0000000000000001"/>
 							<value name="IgnoreMask" type="text" value=""/>
 							<value name="Kind" type="qword" value="0000000000000002"/>
-							<value name="Modified" type="qword" value="000000005093A450"/>
+							<value name="Modified" type="qword" value="000000004694A369"/>
 							<value name="Name" type="text" value="GFL.pvd"/>
 							<value name="Priority" type="qword" value="0000000000000F02"/>
 							<value name="Title" type="text" value="GFL"/>
 						</key>
 						<key name="Decoder3">
-							<value name="ActiveMask" type="text" value="bmp,dib,rle,gif,ico,icon,jpeg,jpe,jpg,jfif,exif,png,tiff,tif,wdp,jxr"/>
+							<value name="ActiveMask" type="text" value="bmp,dib,rle,gif,ico,icon,jpeg,jpe,jpg,jfif,exif,png,tiff,tif,wdp,jxr,arw,cr2,crw,dng,erf,kdc,mrw,nef,nrw,orf,pef,raf,raw,rw2,rwl,sr2,srw"/>
 							<value name="CustomMask" type="qword" value="0000000000000000"/>
 							<value name="Enabled" type="qword" value="0000000000000001"/>
 							<value name="IgnoreMask" type="text" value=""/>
 							<value name="Kind" type="qword" value="0000000000000002"/>
-							<value name="Modified" type="qword" value="000000005093A450"/>
+							<value name="Modified" type="qword" value="000000004694A36A"/>
 							<value name="Name" type="text" value="WIC.pvd"/>
 							<value name="Priority" type="qword" value="0000000000000F02"/>
 							<value name="Title" type="text" value="WIC"/>
@@ -1490,7 +1476,10 @@
 		</plugin>
 		<plugin guid="1D1BA1CB-3A05-4F4B-91B3-F8E71A55420E">
 			<hierarchicalconfig>
-				<key name="1D1BA1CB-3A05-4F4B-91B3-F8E71A55420E" description="NTFS File Information"/>
+				<key name="1D1BA1CB-3A05-4F4B-91B3-F8E71A55420E" description="NTFS File Information">
+					<value name="FilePanelReverseSort" type="qword" value="0000000000000001"/>
+					<value name="FilePanelSortMode" type="qword" value="0000000000000007"/>
+				</key>
 			</hierarchicalconfig>
 		</plugin>
 		<plugin guid="1E26A927-5135-48C6-88B2-845FB8945484">
@@ -1589,6 +1578,11 @@
 				</key>
 			</hierarchicalconfig>
 		</plugin>
+		<plugin guid="23C16506-38EE-48D1-9874-CD1736408867">
+			<hierarchicalconfig>
+				<key name="23C16506-38EE-48D1-9874-CD1736408867" description="LUA Format Block"/>
+			</hierarchicalconfig>
+		</plugin>
 		<plugin guid="257CF2CF-5025-4442-8FAC-239F56C21FC0">
 			<hierarchicalconfig>
 				<key name="257CF2CF-5025-4442-8FAC-239F56C21FC0" description="RegEditor">
@@ -1637,7 +1631,7 @@
 		</plugin>
 		<plugin guid="2AE19EDB-6028-4983-A552-8F270EA19270">
 			<hierarchicalconfig>
-				<key name="2AE19EDB-6028-4983-A552-8F270EA19270">
+				<key name="2AE19EDB-6028-4983-A552-8F270EA19270" description="Network sniffer">
 					<value name="add_fw_rule" type="qword" value="0000000000000001"/>
 					<value name="add_to_disk_menu" type="qword" value="0000000000000001"/>
 					<value name="add_to_panel_menu" type="qword" value="0000000000000001"/>
@@ -1750,10 +1744,10 @@
 									<value name="EditorUploadSameOptions" type="qword" value="0000000000000001"/>
 									<value name="FullScreenDetailed" type="qword" value="0000000000000001"/>
 									<value name="HostNameInTitle" type="qword" value="0000000000000001"/>
-									<value name="PageantPath" type="text" value="G:%5Cdev%5Cfar3%5C26%5CFar%5Cplugins%5Cnetbox%5Cputty%5Cpageant.exe"/>
+									<value name="PageantPath" type="text"/>
 									<value name="PluginsMenu" type="qword" value="0000000000000001"/>
 									<value name="PluginsMenuCommands" type="qword" value="0000000000000001"/>
-									<value name="PuttygenPath" type="text" value="G:%5Cdev%5Cfar3%5C26%5CFar%5Cplugins%5Cnetbox%5Cputty%5Cputtygen.exe"/>
+									<value name="PuttygenPath" type="text"/>
 									<value name="QueueBeep" type="qword" value="0000000000000001"/>
 									<value name="SessionNameInTitle" type="qword" value="0000000000000001"/>
 									<value name="StatusColumnTypesDetailed" type="text" value="NR"/>
@@ -1766,8 +1760,7 @@
 								</key>
 							</key>
 						</key>
-						<key name="LastFingerprints">
-						</key>
+						<key name="LastFingerprints"/>
 						<key name="Logging">
 							<value name="LogFileAppend" type="qword" value="0000000000000001"/>
 							<value name="LogWindowLines" type="qword" value="0000000000000064"/>
@@ -1783,98 +1776,15 @@
 						<key name="Usage"/>
 					</key>
 					<key name="Sessions">
-						<key name="Default%20Settings">
-							<value name="FSProtocol" type="text" value="SFTP%20(SCP)"/>
-							<value name="Version" type="text" value="2.4.5"/>
-						</key>
-						<key name="FreeBSD%20(FTP)">
-							<value name="CodePage" type="text" value=""/>
-							<value name="FSProtocol" type="text" value="FTP"/>
-							<value name="FtpAllowEmptyPassword" type="qword" value="0000000000000001"/>
-							<value name="HostName" type="text" value="ftp.freebsd.org"/>
-							<value name="Password" type="text" value="A35C7B5E4A4B1D323332253133292F3A282C723A2E39393E2F3872332E3B292F392E1C2F392E2A392E723F333196393BCC50"/>
-							<value name="PingType" type="qword" value="0000000000000002"/>
-							<value name="PortNumber" type="qword" value="0000000000000015"/>
-							<value name="RemoteDirectory" type="text" value="/pub/FreeBSD/"/>
-							<value name="SFTPMaxVersion" type="qword" value="0000000000000000"/>
-							<value name="Timeout" type="qword" value="000000000000005A"/>
-							<value name="UpdateDirectories" type="qword" value="0000000000000000"/>
-							<value name="UserName" type="text" value="Anonymous"/>
-							<value name="Version" type="text" value="2.4.5"/>
-						</key>
-						<key name="LiBO%20(FTP)">
-							<value name="CodePage" type="text" value=""/>
-							<value name="FSProtocol" type="text" value="FTP"/>
-							<value name="FtpAllowEmptyPassword" type="qword" value="0000000000000001"/>
-							<value name="HostName" type="text" value="ftp5.gwdg.de"/>
-							<value name="Password" type="text" value="A35C785BDC09974083DE461D323332253133292F3A282C69723B2B383B723839292F392E1C2F392E2A392E723F3331211B6B"/>
-							<value name="PingType" type="qword" value="0000000000000002"/>
-							<value name="PortNumber" type="qword" value="0000000000000015"/>
-							<value name="RemoteDirectory" type="text" value="/pub/tdf/libreoffice/"/>
-							<value name="SFTPMaxVersion" type="qword" value="0000000000000000"/>
-							<value name="TimeDifferenceAuto" type="qword" value="0000000000000000"/>
-							<value name="Timeout" type="qword" value="000000000000005A"/>
-							<value name="UpdateDirectories" type="qword" value="0000000000000000"/>
-							<value name="UserName" type="text" value="Anonymous"/>
-							<value name="Version" type="text" value="2.4.5"/>
-						</key>
-						<key name="RARLabs%20(FTP)">
-							<value name="CodePage" type="text" value=""/>
-							<value name="FSProtocol" type="text" value="FTP"/>
-							<value name="FtpAllowEmptyPassword" type="qword" value="0000000000000001"/>
-							<value name="HostName" type="text" value="ftp.rarlabs.com"/>
-							<value name="Password" type="text" value="A35C7B56B144F32015486FD60E381D323332253133292F3A282C722E3D2E303D3E2F723F3331292F392E1C2F392E2A392E723F3331"/>
-							<value name="PingType" type="qword" value="0000000000000002"/>
-							<value name="PortNumber" type="qword" value="0000000000000015"/>
-							<value name="RemoteDirectory" type="text" value="/rar/"/>
-							<value name="SFTPMaxVersion" type="qword" value="0000000000000000"/>
-							<value name="TimeDifferenceAuto" type="qword" value="0000000000000000"/>
-							<value name="Timeout" type="qword" value="000000000000005A"/>
-							<value name="UpdateDirectories" type="qword" value="0000000000000000"/>
-							<value name="UserName" type="text" value="Anonymous"/>
-							<value name="Version" type="text" value="2.4.5"/>
-						</key>
-						<key name="VideoLAN%20(FTP)">
-							<value name="CodePage" type="text" value=""/>
-							<value name="FSProtocol" type="text" value="FTP"/>
-							<value name="FtpAllowEmptyPassword" type="qword" value="0000000000000001"/>
-							<value name="HostName" type="text" value="ftp.videolan.org"/>
-							<value name="Password" type="text" value="A35C74546C176E2618EA60C23D323332253133292F3A282C722A35383933303D3272332E3B292F392E1C2F392E2A392E723F3331"/>
-							<value name="PingType" type="qword" value="0000000000000002"/>
-							<value name="PortNumber" type="qword" value="0000000000000015"/>
-							<value name="RemoteDirectory" type="text" value="/pub/"/>
-							<value name="SFTPMaxVersion" type="qword" value="0000000000000000"/>
-							<value name="Timeout" type="qword" value="0000000000000078"/>
-							<value name="UpdateDirectories" type="qword" value="0000000000000000"/>
-							<value name="UserName" type="text" value="anonymous"/>
-							<value name="Version" type="text" value="2.4.5"/>
-						</key>
-						<key name="gnu.org%20(FTP)">
-							<value name="CodePage" type="text" value=""/>
-							<value name="FSProtocol" type="text" value="FTP"/>
-							<value name="FtpAllowEmptyPassword" type="qword" value="0000000000000001"/>
-							<value name="HostName" type="text" value="ftp.gnu.org"/>
-							<value name="Password" type="text" value="A35C7F569BA04178124B0F4E094C1D323332253133292F3A282C723B322972332E3B292F392E1C2F392E2A392E723F33319E"/>
-							<value name="PingType" type="qword" value="0000000000000002"/>
-							<value name="PortNumber" type="qword" value="0000000000000015"/>
-							<value name="RemoteDirectory" type="text" value="/pub/"/>
-							<value name="SFTPMaxVersion" type="qword" value="0000000000000000"/>
-							<value name="UpdateDirectories" type="qword" value="0000000000000000"/>
-							<value name="UserName" type="text" value="Anonymous"/>
-							<value name="Version" type="text" value="2.4.5"/>
-						</key>
 					</key>
-					<key name="SshHostKeys">
-					</key>
+					<key name="SshHostKeys"/>
 				</key>
 			</hierarchicalconfig>
 		</plugin>
 		<plugin guid="4EBBEFC8-2084-4B7F-94C0-692CE136894D">
 			<hierarchicalconfig>
 				<key name="4EBBEFC8-2084-4B7F-94C0-692CE136894D" description="LuaMacro">
-					<key name="Duplicate Fighter">
-						<value name="settings" type="base64"/>
-					</key>
+					<key name="Duplicate Fighter"/>
 					<key name="IgorZ">
 						<key name="BookmarkManagerConfig">
 							<value name="GoToMessDelay" type="qword" value="FFFFFFFFFFFFFFFF"/>
@@ -1934,6 +1844,7 @@
 							<value name="InsertUidKey" type="text" value="RCtrlU"/>
 							<value name="KeyFilter" type="text" value=""/>
 							<value name="MISortingOrder" type="text" value="A"/>
+							<value name="MacroMaxDescWidth" type="qword" value="00000000000003E8"/>
 							<value name="MacroSortingOrder" type="text" value="OCAKD"/>
 							<value name="ManagerKey" type="text" value="AltShiftF11"/>
 							<value name="MaxFileWidth" type="qword" value="000000000000002E"/>
@@ -1953,20 +1864,28 @@
 							<value name="ShowPrefixes" type="qword" value="0000000000000001"/>
 						</key>
 					</key>
-					<key name="LuaMacro">
-						<value name="MacroBrowser" type="base64"/>
-					</key>
+					<key name="LuaMacro"/>
 				</key>
 			</hierarchicalconfig>
 		</plugin>
 		<plugin guid="59223378-9DCD-45FC-97C9-AD0251A3C53F">
 			<hierarchicalconfig>
-				<key name="59223378-9DCD-45FC-97C9-AD0251A3C53F"/>
+				<key name="59223378-9DCD-45FC-97C9-AD0251A3C53F" description="UCharMap">
+					<value name="FontName" type="text" value="Lucida Console"/>
+					<value name="FontSize" type="qword" value="0000000000000020"/>
+					<value name="GroupBy" type="qword" value="0000000000000001"/>
+					<value name="Maximized" type="qword" value="0000000000000000"/>
+					<value name="ShowCharName" type="qword" value="0000000000000001"/>
+					<value name="ShowGroupName" type="qword" value="0000000000000000"/>
+					<value name="ShowHidden" type="qword" value="0000000000000001"/>
+					<value name="ShowHints" type="qword" value="0000000000000001"/>
+					<value name="ShowNumbers" type="qword" value="0000000000000001"/>
+				</key>
 			</hierarchicalconfig>
 		</plugin>
 		<plugin guid="5FE4D394-2FE5-453F-8DB9-D63C32E01D13">
 			<hierarchicalconfig>
-				<key name="5FE4D394-2FE5-453F-8DB9-D63C32E01D13">
+				<key name="5FE4D394-2FE5-453F-8DB9-D63C32E01D13" description="sortstr">
 					<value name="Prefix" type="text" value="sortstr"/>
 					<value name="asempty" type="qword" value="0000000000000000"/>
 					<value name="case" type="qword" value="0000000000000000"/>
@@ -2062,7 +1981,7 @@
 		</plugin>
 		<plugin guid="7BDEDB07-FBE5-4807-9356-6427CE1CB99D">
 			<hierarchicalconfig>
-				<key name="7BDEDB07-FBE5-4807-9356-6427CE1CB99D">
+				<key name="7BDEDB07-FBE5-4807-9356-6427CE1CB99D" description="Hash calculator">
 					<value name="add_to_panel_menu" type="qword" value="0000000000000001"/>
 					<value name="cmd_prefix" type="text" value="HashCalc"/>
 					<value name="use_crc32" type="qword" value="0000000000000001"/>
@@ -2081,7 +2000,7 @@
 		</plugin>
 		<plugin guid="7DDE66C0-9C85-44DF-B592-31E615CB56D3">
 			<hierarchicalconfig>
-				<key name="7DDE66C0-9C85-44DF-B592-31E615CB56D3">
+				<key name="7DDE66C0-9C85-44DF-B592-31E615CB56D3" description="PEAnalyzer">
 					<value name="add_to_panel_menu" type="qword" value="0000000000000001"/>
 					<value name="clr_base" type="qword" value="000000000000010F"/>
 					<value name="clr_binary" type="qword" value="0000000000000106"/>
@@ -2106,7 +2025,7 @@
 		</plugin>
 		<plugin guid="7E509EC9-41A3-44A3-B228-D6C94BE46AEE">
 			<hierarchicalconfig>
-				<key name="7E509EC9-41A3-44A3-B228-D6C94BE46AEE"/>
+				<key name="7E509EC9-41A3-44A3-B228-D6C94BE46AEE" description="Mine Sweeper"/>
 			</hierarchicalconfig>
 		</plugin>
 		<plugin guid="8E11EA75-0303-4374-AC60-D1E38F865449">
@@ -2130,7 +2049,7 @@
 		</plugin>
 		<plugin guid="9297F37D-0EE3-4F91-ADC1-675C9BED9E48">
 			<hierarchicalconfig>
-				<key name="9297F37D-0EE3-4F91-ADC1-675C9BED9E48">
+				<key name="9297F37D-0EE3-4F91-ADC1-675C9BED9E48" description="Hexitor">
 					<value name="add_to_editor_menu" type="qword" value="0000000000000001"/>
 					<value name="add_to_panel_menu" type="qword" value="0000000000000001"/>
 					<value name="add_to_viewer_menu" type="qword" value="0000000000000001"/>
@@ -2264,6 +2183,13 @@
 				</key>
 			</hierarchicalconfig>
 		</plugin>
+		<plugin guid="9F9554B3-AD82-437A-8C2B-D84192B8E2FA">
+			<hierarchicalconfig>
+				<key name="9F9554B3-AD82-437A-8C2B-D84192B8E2FA" description="Hunspell">
+					<value name="custom_dict" type="text"/>
+				</key>
+			</hierarchicalconfig>
+		</plugin>
 		<plugin guid="A227A268-5682-4C83-9341-EAE3405D4666">
 			<hierarchicalconfig>
 				<key name="A227A268-5682-4C83-9341-EAE3405D4666" description="Word Completion">
@@ -2305,9 +2231,17 @@
 				</key>
 			</hierarchicalconfig>
 		</plugin>
+		<plugin guid="A718B580-E55F-44BB-908F-5143C8278361">
+			<hierarchicalconfig>
+				<key name="A718B580-E55F-44BB-908F-5143C8278361" description="ESC-TSC-Mini"/>
+			</hierarchicalconfig>
+		</plugin>
 		<plugin guid="A745761D-42B5-4E67-83DA-F07AF367AE86">
 			<hierarchicalconfig>
-				<key name="A745761D-42B5-4E67-83DA-F07AF367AE86"/>
+				<key name="A745761D-42B5-4E67-83DA-F07AF367AE86" description="LuaFAR History">
+					<value name="commands" type="base64"/>
+					<value name="config" type="base64"/>
+				</key>
 			</hierarchicalconfig>
 		</plugin>
 		<plugin guid="A74EC909-41F1-409B-9C4C-CA389BB93F45">
@@ -2405,7 +2339,7 @@
 						<key name="{1D1BA1CB-3A05-4F4B-91B3-F8E71A55420E}">
 							<value name="Hidden" type="qword" value="0000000000000000"/>
 							<value name="Hotkey" type="text" value="s"/>
-							<value name="LastAccess" type="qword" value="0000000051233592"/>
+							<value name="LastAccess" type="qword" value="0000000051373CA2"/>
 							<value name="NewName" type="text" value=""/>
 						</key>
 						<key name="{2099F3F1-A147-4D0F-BB82-60E472513BC0}">
@@ -2513,7 +2447,7 @@
 						<key name="{4EBBEFC8-2084-4B7F-94C0-692CE136894D}%6">
 							<value name="Hidden" type="qword" value="0000000000000000"/>
 							<value name="Hotkey" type="text" value=""/>
-							<value name="LastAccess" type="qword" value="0000000050FE1369"/>
+							<value name="LastAccess" type="qword" value="00000000513533BB"/>
 							<value name="NewName" type="text" value=""/>
 						</key>
 						<key name="{4EBBEFC8-2084-4B7F-94C0-692CE136894D}%7">
@@ -2913,7 +2847,7 @@
 						<key name="{F1EBAFF4-A643-4046-9F0B-7D0A9A577299}">
 							<value name="Hidden" type="qword" value="0000000000000000"/>
 							<value name="Hotkey" type="text" value=""/>
-							<value name="LastAccess" type="qword" value="00000000511F5C2A"/>
+							<value name="LastAccess" type="qword" value="0000000051330C61"/>
 							<value name="NewName" type="text" value=""/>
 						</key>
 						<key name="{F250C12A-78E2-4ABC-A784-3FDD3156E415}">
@@ -2937,7 +2871,7 @@
 						<key name="{F6E77027-05BA-4ECF-A8D3-7D57B2D80C53}">
 							<value name="Hidden" type="qword" value="0000000000000000"/>
 							<value name="Hotkey" type="text" value="2"/>
-							<value name="LastAccess" type="qword" value="000000005126A559"/>
+							<value name="LastAccess" type="qword" value="000000005130762F"/>
 							<value name="NewName" type="text" value=""/>
 						</key>
 						<key name="{F9AF80C3-54AC-4924-B607-FE05A3866A88}">
@@ -3025,6 +2959,11 @@
 				</key>
 			</hierarchicalconfig>
 		</plugin>
+		<plugin guid="B2EC2264-0F55-4B86-87F7-F1392B8FC5DC">
+			<hierarchicalconfig>
+				<key name="B2EC2264-0F55-4B86-87F7-F1392B8FC5DC" description="Dialog Tools"/>
+			</hierarchicalconfig>
+		</plugin>
 		<plugin guid="B66C436D-E657-419C-86D3-6834B9ACF3D2">
 			<hierarchicalconfig>
 				<key name="B66C436D-E657-419C-86D3-6834B9ACF3D2" description="Brackets">
@@ -3081,9 +3020,14 @@
 				</key>
 			</hierarchicalconfig>
 		</plugin>
+		<plugin guid="C5508DDB-5175-4736-9A10-C8F6EED7B32F">
+			<hierarchicalconfig>
+				<key name="C5508DDB-5175-4736-9A10-C8F6EED7B32F" description="MultiArc"/>
+			</hierarchicalconfig>
+		</plugin>
 		<plugin guid="C58ECBF9-8C61-486A-8B5F-C3B3060CAE8E">
 			<hierarchicalconfig>
-				<key name="C58ECBF9-8C61-486A-8B5F-C3B3060CAE8E"/>
+				<key name="C58ECBF9-8C61-486A-8B5F-C3B3060CAE8E" description="Json"/>
 			</hierarchicalconfig>
 		</plugin>
 		<plugin guid="D0704272-AEFA-40DF-9141-DFCB4C9E6125">
@@ -3149,13 +3093,14 @@
 		<plugin guid="D4BC5EA7-8229-4FFE-AAC1-5A4F51A0986A">
 			<hierarchicalconfig>
 				<key name="D4BC5EA7-8229-4FFE-AAC1-5A4F51A0986A" description="Polygon">
+					<value name="root" type="base64"/>
 					<key name="files"/>
 				</key>
 			</hierarchicalconfig>
 		</plugin>
 		<plugin guid="D82D6847-0C7B-4BF4-9A31-B0B929707854">
 			<hierarchicalconfig>
-				<key name="D82D6847-0C7B-4BF4-9A31-B0B929707854">
+				<key name="D82D6847-0C7B-4BF4-9A31-B0B929707854" description="MBlockEditor">
 					<value name="CommentFromBegin" type="text" value="off"/>
 					<key name=".bat">
 						<value name="Comment" type="text" value="rem "/>
@@ -3371,6 +3316,36 @@
 				</key>
 			</hierarchicalconfig>
 		</plugin>
+		<plugin guid="E4ABD267-C2F9-4158-818F-B0E040A2AB9F">
+			<hierarchicalconfig>
+				<key name="E4ABD267-C2F9-4158-818F-B0E040A2AB9F" description="EdtFind">
+					<value name="CaseSensitive" type="qword" value="0000000000000000"/>
+					<value name="CenterAlways" type="qword" value="0000000000000000"/>
+					<value name="CursorAtEnd" type="qword" value="0000000000000000"/>
+					<value name="FindColor" type="qword" value="000000020000000F"/>
+					<value name="GrepAutoSync" type="qword" value="0000000000000001"/>
+					<value name="GrepFoundColor" type="qword" value="000000000000000A"/>
+					<value name="GrepMaximized" type="qword" value="0000000000000000"/>
+					<value name="GrepNumColor" type="qword" value="0000000000000008"/>
+					<value name="GrepShowHints" type="qword" value="0000000000000001"/>
+					<value name="GrepShowLines" type="qword" value="0000000000000001"/>
+					<value name="GrepShowMatch" type="qword" value="0000000000000001"/>
+					<value name="GrepTrimSpaces" type="qword" value="0000000000000001"/>
+					<value name="GroupUndo" type="qword" value="0000000000000001"/>
+					<value name="LoopSearch" type="qword" value="0000000000000001"/>
+					<value name="MarkWholeTab" type="qword" value="0000000000000001"/>
+					<value name="MatchColor" type="qword" value="0000000F00000000"/>
+					<value name="PersistentMatches" type="qword" value="0000000000000000"/>
+					<value name="PromptOnReplace" type="qword" value="0000000000000001"/>
+					<value name="Regexp" type="qword" value="0000000000000000"/>
+					<value name="SelectFound" type="qword" value="0000000000000001"/>
+					<value name="ShowAllFound" type="qword" value="0000000000000001"/>
+					<value name="ShowProgress" type="qword" value="0000000000000001"/>
+					<value name="WholeWords" type="qword" value="0000000000000000"/>
+					<value name="XLatMask" type="qword" value="0000000000000001"/>
+				</key>
+			</hierarchicalconfig>
+		</plugin>
 		<plugin guid="E80B8002-EED3-4563-9C78-2E3C3246F8D3">
 			<hierarchicalconfig>
 				<key name="E80B8002-EED3-4563-9C78-2E3C3246F8D3" description="VisRen"/>
@@ -3378,13 +3353,18 @@
 		</plugin>
 		<plugin guid="EB39ECBE-B2FF-4696-95D1-EFA7D3B88679">
 			<hierarchicalconfig>
-				<key name="EB39ECBE-B2FF-4696-95D1-EFA7D3B88679">
+				<key name="EB39ECBE-B2FF-4696-95D1-EFA7D3B88679" description="svcmgr">
 					<value name="AddToDisksMenu" type="qword" value="0000000000000001"/>
 					<value name="AddToPluginsMenu" type="qword" value="0000000000000001"/>
 					<value name="Prefix" type="text" value="svcmgr"/>
 					<value name="waitForState" type="qword" value="0000000000000001"/>
 					<value name="waitTimeout" type="qword" value="0000000000002710"/>
 				</key>
+			</hierarchicalconfig>
+		</plugin>
+		<plugin guid="ECF8A2AF-7AAF-4038-8FF9-49B333E2BAE9">
+			<hierarchicalconfig>
+				<key name="ECF8A2AF-7AAF-4038-8FF9-49B333E2BAE9" description="ver_c0"/>
 			</hierarchicalconfig>
 		</plugin>
 		<plugin guid="ED0C4BD8-D2F0-4B6E-A19F-B0B0137C9B0C">
@@ -3441,7 +3421,7 @@
 		</plugin>
 		<plugin guid="F1EBAFF4-A643-4046-9F0B-7D0A9A577299">
 			<hierarchicalconfig>
-				<key name="F1EBAFF4-A643-4046-9F0B-7D0A9A577299">
+				<key name="F1EBAFF4-A643-4046-9F0B-7D0A9A577299" description="UnInstall">
 					<value name="EnterAction" type="qword" value="0000000000000006"/>
 					<value name="ForceMsiUse" type="qword" value="0000000000000000"/>
 					<value name="RunLowPriority" type="qword" value="0000000000000000"/>
@@ -3453,7 +3433,7 @@
 		</plugin>
 		<plugin guid="F250C12A-78E2-4ABC-A784-3FDD3156E415">
 			<hierarchicalconfig>
-				<key name="F250C12A-78E2-4ABC-A784-3FDD3156E415">
+				<key name="F250C12A-78E2-4ABC-A784-3FDD3156E415" description="RESearch">
 					<value name="AllCP" type="base64" value="YgMAALAEAADjBAAA6f0AAA=="/>
 					<value name="DotMatchesNewline" type="qword" value="0000000000000001"/>
 					<value name="EAutoFindInSelection" type="qword" value="0000000000000001"/>
@@ -3576,7 +3556,7 @@
 		</plugin>
 		<plugin guid="F39EFDBF-A2E3-44F5-B4DF-519548A62BF9">
 			<hierarchicalconfig>
-				<key name="F39EFDBF-A2E3-44F5-B4DF-519548A62BF9">
+				<key name="F39EFDBF-A2E3-44F5-B4DF-519548A62BF9" description="File unlock">
 					<value name="add_to_panel_menu" type="qword" value="0000000000000001"/>
 					<value name="cmd_prefix" type="text" value="FileUnlock"/>
 				</key>

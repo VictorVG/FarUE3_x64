@@ -1,6 +1,6 @@
 ﻿.Language=Belarusian,Belarusian (Беларуская)
 
-//Version: 3.0.0.5665
+//Version: 3.0.5674.0 (Private) x64
 
 //[MYes]
 "Так"
@@ -2816,7 +2816,7 @@
 //[MHotPlugDisks]
 "(дыск(і): {0})"
 //[MChangeCouldNotEjectHotPlugMedia]
-"Немагчыма выдаліць прыстасаванне для дыску {0}:"
+"Немагчыма выдаліць прыстасаванне для дыску {0}"
 //[MChangeCouldNotEjectHotPlugMedia2]
 "Немагчыма выдаліць прыстасаванне:"
 //[MChangeHotPlugNotify1]
@@ -2829,9 +2829,9 @@
 //[MChangeDriveDisconnectTitle]
 "Адлучэнне сеткавага дыску"
 //[MChangeDriveDisconnectQuestion]
-"Вы жадаеце выдаліць сувязь з прыстасаваннем {0}:?"
+"Вы жадаеце выдаліць сувязь з прыстасаваннем {0}?"
 //[MChangeDriveDisconnectMapped]
-"На прыстасаванне {0}: адлюстраваны каталог:"
+"На прыстасаванне адлюстраваны каталог:"
 //[MChangeDriveDisconnectReconnect]
 "Узна&віць пры уваходзе ў сістэму"
 
@@ -3824,10 +3824,10 @@
 "&Версія:"
 //[MPluginModulePath]
 "&Шлях да дадатку:"
-//[MPluginGUID]
-"GUID &дадатак:"
-//[MPluginItemGUID]
-"GUID &элемент:"
+//[MPluginUUID]
+"UUID &дадатак:"
+//[MPluginItemUUID]
+"UUID &элемент:"
 //[MPluginPrefix]
 "&Прыстаўка дадатку:"
 //[MExcTrappedException]

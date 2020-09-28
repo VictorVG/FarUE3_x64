@@ -1,6 +1,6 @@
 ﻿.Language=Slovak,Slovak (Slovenčina)
 
-//Version: 3.0.0.5665
+//Version: 3.0.5674.0 (Private) x64
 
 //[MYes]
 "Áno"
@@ -2823,7 +2823,7 @@
 //[MHotPlugDisks]
 "(disk(y): {0})"
 //[MChangeCouldNotEjectHotPlugMedia]
-"Nemôžem odstrániť zariadenie pre jednotku {0}:"
+"Nemôžem odstrániť zariadenie pre jednotku {0}"
 //[MChangeCouldNotEjectHotPlugMedia2]
 "Nemôžem odstrániť zariadenie."
 //[MChangeHotPlugNotify1]
@@ -2836,9 +2836,9 @@
 //[MChangeDriveDisconnectTitle]
 "Odpojiť sieťový disk"
 //[MChangeDriveDisconnectQuestion]
-"Chcete odpojiť od jednotky {0}:?"
+"Chcete odpojiť od jednotky {0}?"
 //[MChangeDriveDisconnectMapped]
-"Jednotka {0}: je namapovaná na:"
+"Jednotka je namapovaná na:"
 //[MChangeDriveDisconnectReconnect]
 "&Znova pripojiť pri prihlásení"
 
@@ -3834,10 +3834,10 @@
 "&Verzia:"
 //[MPluginModulePath]
 "Cesta k &modulu:"
-//[MPluginGUID]
-"&GUID modulu:"
-//[MPluginItemGUID]
-"GUID položky m&odulu:"
+//[MPluginUUID]
+"&UUID modulu:"
+//[MPluginItemUUID]
+"UUID položky m&odulu:"
 //[MPluginPrefix]
 "Predpona mo&dulu:"
 //[MExcTrappedException]
