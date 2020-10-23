@@ -16,7 +16,7 @@ if exist "plugins\arclite\Formats\WinCryptHashers.ini" (del /s/f/q "plugins\arcl
         move /y "plugins\arclite\Codecs\WinCryptHashers.ini" "plugins\arclite\Formats\WinCryptHashers.ini" > nul
         )
         )
-if exist "plugins\arclite\Codecs\WinCryptHashers.64.codec" (del /s/f/q "plugins\arclite\Codecs\WinCryptHashers.64.codec" >nul)
+if exist "plugins\arclite\Codecs\WinCryptHashers.64.codec" (del /s/f/q "plugins\arclite\Codecs\WinCryptHashers.64.codec" > nul)
 if exist "plugins\dnd\drgndrop_x86*.hook" (del /f/q "plugins\dnd\drgndrop_x86*.hook" > nul)
 if exist "plugins\dnd\holder_x86*.dnd"  (del /f/q "plugins\dnd\holder_x86*.dnd" > nul)
 if exist "plugins\farhints" (rd /s/q "plugins\farhints" > nul)

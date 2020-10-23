@@ -126,7 +126,7 @@ $^О скрипте
 
  Автор:        #IgorZ#
 
- Версия:       #v4.1.2#
+ Версия:       #v4.1.3#
 
  Адрес в сети: ~http://forum.farmanager.com/viewtopic.php?t=7471~@http://forum.farmanager.com/viewtopic.php?t=7471@
 @=‗
@@ -135,7 +135,7 @@ $^О скрипте
 
  Макрос заменяет анси-плагин Change Active Drive by Ilya V. Gershman
  ~http://plugring.farmanager.com/plugin.php?pid=21&l=ru~@http://plugring.farmanager.com/plugin.php?pid=21&l=ru@
-
+ 
  #Left#/#Right# (или другие назначенные клавиши) в сочетании с #LeftCtrl#/#LeftAlt#/#RightCtrl#/#RightAlt#/#Shift#
 в указанных комбинациях меняют диск для левой/правой/активной/пассивной (в зависимости от ~настроек~@config@) панели.
 По умолчанию при нажатии #LeftCtrl#/#RightAlt# меняется диск для левой панели, при нажатии #RightCtrl#/#LeftAlt# - для правой,

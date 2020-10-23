@@ -1,4 +1,5 @@
 Usage: curl [options...] <url>
+
      --abstract-unix-socket <path> Connect via abstract Unix domain socket
      --alt-svc <file name> Enable alt-svc with this cache file
      --anyauth       Pick any authentication method
@@ -21,6 +22,7 @@ Usage: curl [options...] <url>
      --create-dirs   Create necessary local directory hierarchy
      --crlf          Convert LF to CRLF in upload
      --crlfile <file> Get a CRL list in PEM format from the given file
+     --curves <algorithm list> (EC) TLS key exchange algorithm(s) to request
  -d, --data <data>   HTTP POST data
      --data-ascii <data> HTTP POST ASCII data
      --data-binary <data> HTTP POST binary data
@@ -65,7 +67,7 @@ Usage: curl [options...] <url>
      --haproxy-protocol Send HAProxy PROXY protocol v1 header
  -I, --head          Show document info only
  -H, --header <header/@file> Pass custom header(s) to server
- -h, --help          This help text
+ -h, --help <category> Get help for commands
      --hostpubmd5 <md5> Acceptable MD5 hash of the host public key
      --http0.9       Allow HTTP 0.9 responses
  -0, --http1.0       Use HTTP 1.0
@@ -116,6 +118,7 @@ Usage: curl [options...] <url>
      --ntlm-wb       Use HTTP NTLM authentication with winbind
      --oauth2-bearer <token> OAuth 2 Bearer Token
  -o, --output <file> Write to file instead of stdout
+     --output-dir <dir> Directory to save files in
  -Z, --parallel      Perform transfers in parallel
      --parallel-immediate Do not wait for multiplexing (with --parallel)
      --parallel-max  Maximum concurrency for parallel transfers

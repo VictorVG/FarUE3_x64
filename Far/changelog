@@ -1,3 +1,56 @@
+drkns 22.10.2020 22:17:27 +0100 - build 5686
+
+1. Удалены lng строки для single viewer/editor functional keys.
+   Они все равно такие же, а пустые кнопки для недоступных действий мы можем сделать и программно.
+
+yogdg 22.10.2020 14:31:20 -0300 - build 5685
+
+1. gh-247: Customizable number of bytes by line in hex viewer
+
+drkns 21.10.2020 17:46:37 +0100 - build 5684
+
+1. gh-274: Editor: Selection isn't cleared on Ctrl+Home/End.
+
+drkns 21.10.2020 01:35:56 +0100 - build 5683
+
+1. Выделение мышью в полях ввода могло работать неадекватно.
+
+2. Уточнения обработки мыши в прочих элементах интерфейса.
+
+drkns 19.10.2020 07:52:23 +0100 - build 5682
+
+1. Уточнение 5681.
+
+drkns 19.10.2020 00:01:37 +0100 - build 5681
+
+1. Рефакторинг.
+
+drkns 18.10.2020 23:54:25 +0100 - build 5680
+
+1. Уточнение 5679.
+
+drkns 18.10.2020 23:32:51 +0100 - build 5679
+
+1. gh-269: Apply variables to subsequent lines as well.
+
+drkns 12.10.2020 08:40:27 +0100 - build 5678
+
+1. Уточнение 5677.
+
+drkns 12.10.2020 00:12:45 +0100 - build 5677
+
+1. Рефакторинг.
+
+2. Как выяснилось, gnu ld maps бесполезны для stack tracing, поэтому теперь вместо них используется вывод objdump.
+
+yjh 11.10.2020 09:35:31 +0300 - build 5676
+
+1. Добавляем .lz,.tlz к маске <arc>
+
+drkns 30.09.2020 17:31:32 +0100 - build 5675
+
+1. gh-269: Feature Request: Reuse User Input tokens in F2 User Menu
+
 drkns 28.09.2020 20:03:38 +0100 - build 5674
 
 1. Уточнение 5672.

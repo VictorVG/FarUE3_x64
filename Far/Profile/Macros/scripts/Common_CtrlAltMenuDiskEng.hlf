@@ -41,7 +41,7 @@ $^Configuration
 ^#Purpose#
 
    This dialog lets you configure a script to work with hidden panels, use modifier keys,
-work panel view as well as the list of displayed disks and ~plugins~@plugins@.
+work panel view as well as the list of displayed disks and ~plugins~@plugins@. 
 
 ^#Keys#
 
@@ -114,7 +114,7 @@ $^About
 
  Author:        #IgorZ#
 
- Version:       #v4.1.2#
+ Version:       #v4.1.3#
 
  Net address: ~http://forum.farmanager.com/viewtopic.php?t=7471~@http://forum.farmanager.com/viewtopic.php?t=7471@
 @=‗
@@ -123,7 +123,7 @@ $^About
 
  Script replaces ansi plugin Active Drive by Ilya V. Gershman
  ~http://plugring.farmanager.com/plugin.php?pid=21&l=en~@http://plugring.farmanager.com/plugin.php?pid=21&l=en@
-
+ 
  #Left#/#Right# (or other keys assigned) with #LeftCtrl#/#LeftAlt#/#RightCtrl#/#RightAlt#/#Shift#
 changes drive for left/right/active/passive (depend on ~configuration~@config@) panel.
 By default with pressed #LeftCtrl#/#RightAlt# left panel drive changes, with #RightCtrl#/#LeftAlt# - right panel,

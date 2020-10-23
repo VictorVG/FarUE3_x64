@@ -2,7 +2,7 @@
 local nfo = Info {_filename or ...,
   name          = "CtrlAltMenuDisk";
   description   = "Переключение дисков по Ctrl/Alt/Shift+<-/->";
-  version       = "4.1.2"; --http://semver.org/lang/ru/
+  version       = "4.1.3"; --http://semver.org/lang/ru/
   author        = "IgorZ";
   url           = "http://forum.farmanager.com/viewtopic.php?t=7471";
   id            = "097450AF-B186-425A-961A-4A884FC2B732";
@@ -59,9 +59,9 @@ local nfo = Info {_filename or ...,
 2018/01/05 v4.0.1 - Укрощение курсора в поле "Диски, исключаемые из списка" диалога настроек.
 2018/02/09 v4.1.0 - Горизонтальная позиция мини-панели настраивается. Скрипт добавляется в меню дисков. Подсказки. Рефакторинг.
 2018/11/06 v4.1.1 - Исправлена подсказка для конфигурации. Рефакторинг.
-2018/12/15 v4.1.1.1 - Опечатка в хинте, выкинул пункт из меню дисков - скрипт там только мешает /VictorVG/
 2019/12/04 v4.1.2 - Исправлена подсказка мини-панели. Дополнена справка о подсказке. Доработан вид меню выбора плагинов в конфигурации.
                     Добавлен показ в подсказке метки тома для дисков. Рефакторинг.
+2020/10/16 v4.1.3 - Исправлена подсказка мини-панели (перевод в UTF8). Исправлена ошибка с набором не буквы для исключаемого диска в настройках.
 ]];
   options       = {
     DefProfile = far.Flags.PSL_ROAMING--[[far.Flags.PSL_LOCAL--]] -- место хранения настроек по умолчанию: глобальные/локальные
@@ -361,7 +361,7 @@ elseif Msg==F.DN_KILLFOCUS and Param1==19 then -- строка вывода?
   if n<1 or rest~="" then hDlg:send(F.DM_SETTEXT,Param1,ov) end -- новое значение плохое? откатим
 elseif Msg==F.DN_EDITCHANGE and Param1==23 then -- сменилось значение поля ввода "исключаемые диски"?
   local CP = hDlg:send(F.DM_GETCURSORPOS,Param1) -- запомним координаты курсора
-  hDlg:send(F.DM_SETTEXT,Param1,A_Z:gsub("[^"..hDlg:send(F.DM_GETTEXT,Param1):upper():gsub("[^"..A_Z.."]","").."]","")) -- поправим и запишем
+  hDlg:send(F.DM_SETTEXT,Param1,A_Z:gsub("[^ "..hDlg:send(F.DM_GETTEXT,Param1):upper():gsub("[^"..A_Z.."]","").."]","")) -- поправим и запишем
   hDlg:send(F.DM_SETCURSORPOS,Param1,CP) -- восстановим позицию курсора
 elseif Msg==F.DN_BTNCLICK and Param1==24 then -- выбор плагинов
   PluginList()
@@ -470,7 +470,8 @@ elseif not in_process and Area.Current and ("Shell Info QView Tree Search"):find
       res = fC.GetVolumeInformationA(ffi.cast("LPCSTR",win.WideCharToMultiByte(win.Utf8ToUtf16(far.GetPathRoot(path)),win.GetACP()).."\\"),
                                      ffi.cast("LPSTR",buf),260,nil,nil,nil,nil,0) -- получим метку тома
     end
-    far.Text(x,y+1,SelColor,char=="?" and L.diConf.Hdr or S.PDescr[char] or (res~=0 and "["..ffi.string(buf).."]" or L.er.VolLbl)) -- подсказка
+    far.Text(x,y+1,SelColor,char=="?" and L.diConf.Hdr or S.PDescr[char] or
+      (res~=0 and "["..win.Utf16ToUtf8(win.MultiByteToWideChar(ffi.string(buf),win.GetACP())).."]" or L.er.VolLbl)) -- подсказка 1 строка
     far.Text(x,y+2,SelColor,path) -- подсказка 2 строка
   else -- не выводим подсказку
     sb = nil -- запомним, что не сохраняли
@@ -526,8 +527,8 @@ repeat -- Обработаем очередное нажатие стрелки
       res = fC.GetVolumeInformationA(ffi.cast("LPCSTR",win.WideCharToMultiByte(win.Utf8ToUtf16(far.GetPathRoot(path)),win.GetACP()).."\\"),
                                      ffi.cast("LPSTR",buf),260,nil,nil,nil,nil,0) -- получим метку тома
     end
-    far.Text(PanelPos+DrvNum+(S.SpDelim and DrvNum-1 or 0),nstr,SelColor, -- подсказка 1 строка
-      char=="?" and L.diConf.Hdr or S.PDescr[char] or (res~=0 and "["..ffi.string(buf).."]" or L.er.VolLbl))
+    far.Text(PanelPos+DrvNum+(S.SpDelim and DrvNum-1 or 0),nstr,SelColor,char=="?" and L.diConf.Hdr or S.PDescr[char] or -- подсказка 1 строка
+      (res~=0 and "["..win.Utf16ToUtf8(win.MultiByteToWideChar(ffi.string(buf),win.GetACP())).."]" or L.er.VolLbl))
     far.Text(PanelPos+DrvNum+(S.SpDelim and DrvNum-1 or 0),nstr+1,SelColor,path) -- подсказка 2 строка
     far.Text()
   end
@@ -597,7 +598,7 @@ Event{
 --[[Пункт меню]]
 -- -
 MenuItem {
-  description = L.Desc; menu = "Plugins Config"; area = "Shell"; guid = Guids.PlugMenu; text = function() return L.Desc end;
+  description = L.Desc; menu = "Plugins Disks Config"; area = "Shell"; guid = Guids.PlugMenu; text = function() return L.Desc end;
   action = function(OpenFrom)
 if not OpenFrom then Config() return -- меню конфигурации?
 elseif OpenFrom==F.OPEN_LEFTDISKMENU then WPanel = APanel.Left and APanel or PPanel -- левое меню дисков?

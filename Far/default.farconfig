@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<farconfig version="3.0.5671">
+<farconfig version="3.0.5676">
 	<generalconfig>
 		<setting key="Cmdline" name="AutoComplete" type="qword" value="0000000000000001"/>
 		<setting key="Cmdline" name="DelRemovesBlocks" type="qword" value="0000000000000001"/>
@@ -131,7 +131,7 @@
 		<setting key="Macros" name="KeyRecordRCtrlDot" type="text" value="RCtrl."/>
 		<setting key="Macros" name="KeyRecordRCtrlShiftDot" type="text" value="RCtrlShift."/>
 		<setting key="Macros" name="ShowPlayIndicator" type="qword" value="0000000000000001"/>
-		<setting key="Masks" name="arc" type="text" value="*.rar,*.zip,*.[zj],*.[bg7x]z,*.[bg]zip,*.tar,*.t[agbx]z,*.ar[cj],*.r[0-9][0-9],*.a[0-9][0-9],*.bz2,*.cab,*.msi,*.jar,*.lha,*.lzh,*.ha,*.ac[bei],*.pa[ck],*.rk,*.cpio,*.rpm,*.zoo,*.hqx,*.sit,*.ice,*.uc2,*.ain,*.imp,*.777,*.ufa,*.boa,*.bs[2a],*.sea,*.hpk,*.ddi,*.x2,*.rkv,*.[lw]sz,*.h[ay]p,*.lim,*.sqz,*.chz"/>
+		<setting key="Masks" name="arc" type="text" value="*.rar,*.zip,*.[zj],*.[7bgxl]z,*.[bg]zip,*.tar,*.t[agbxl]z,*.ar[cj],*.r[0-9][0-9],*.a[0-9][0-9],*.bz2,*.cab,*.msi,*.jar,*.lha,*.lzh,*.ha,*.ac[bei],*.pa[ck],*.rk,*.cpio,*.rpm,*.zoo,*.hqx,*.sit,*.ice,*.uc2,*.ain,*.imp,*.777,*.ufa,*.boa,*.bs[2a],*.sea,*.hpk,*.ddi,*.x2,*.rkv,*.[lw]sz,*.h[ay]p,*.lim,*.sqz,*.chz"/>
 		<setting key="Masks" name="exec" type="text" value="*.exe,*.com,*.bat,*.cmd,%PATHEXT%"/>
 		<setting key="Masks" name="temp" type="text" value="*.bak,*.tmp"/>
 		<setting key="Masks" name="video" type="text" value="*.3gp,*.avi,*.flv,*.m2t,*.mkv,*.mov,*.mp4,*.mp4v,*.mp4a,*.mpg,*.mpeg,*.mts,*.ts,*.wbem,*.wmv"/>
