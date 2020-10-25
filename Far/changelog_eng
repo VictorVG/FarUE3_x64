@@ -1,3 +1,22 @@
+drkns 25.10.2020 20:54:39 +0000 - build 5690
+
+1. 0003818: Infinite restart of .cmd batches via a double click and exiting using Ctrl-Break.
+
+drkns 25.10.2020 05:30:03 +0000 - build 5689
+
+1. Fix clang build & warnings.
+
+drkns 25.10.2020 01:11:40 +0000 - build 5688
+
+1. Refactoring.
+
+drkns 23.10.2020 22:18:08 +0100 - build 5687
+
+1. Exception handling:
+   - intercept std::terminate
+   - alternative stack retrieval
+   - show registers.
+
 drkns 22.10.2020 22:17:27 +0100 - build 5686
 
 1. Removed lng lines for single viewer/editor functional keys.
