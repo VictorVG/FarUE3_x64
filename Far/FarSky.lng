@@ -1,6 +1,6 @@
 ﻿.Language=Slovak,Slovak (Slovenčina)
 
-//Version: 3.0.5690.0 (Private) x64
+//Version: 3.0.5696.0 (Private) x64
 
 //[MYes]
 "Áno"
@@ -2304,6 +2304,8 @@
 "Najprv zobraziť vy&brané"
 //[MMenuSortDirectoriesFirst]
 "Najpr&v zobraziť priečinky"
+//[MMaskGroupTitle]
+"Skupiny masiek súborov"
 //[MMaskGroupName]
 "Me&no:"
 //[MMaskGroupMasks]

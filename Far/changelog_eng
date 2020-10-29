@@ -1,3 +1,27 @@
+drkns 28.10.2020 00:18:12 +0000 - build 5696
+
+1. Is some cases pointers to internal data were exposed to plugins.
+
+drkns 27.10.2020 20:48:41 +0000 - build 5695
+
+1. Forum: if FarGetPluginPanelItem::Size is less than the required size, FCTL_GETPANELITEM will fill as much as possible.
+
+drkns 27.10.2020 00:25:27 +0000 - build 5694
+
+1. 0003821 / gh-279: Redundant ampersand in the "Group of file masks" dialog title.
+
+drkns 26.10.2020 20:48:46 +0000 - build 5693
+
+1. New versions of fmt, tinyxml2, Catch2.
+
+drkns 26.10.2020 18:02:12 +0000 - build 5692
+
+1. Forum: 5688 freezes in disks menu if a network drive is not available.
+
+drkns 26.10.2020 02:03:19 +0000 - build 5691
+
+1. Correction of 5683.
+
 drkns 25.10.2020 20:54:39 +0000 - build 5690
 
 1. 0003818: Infinite restart of .cmd batches via a double click and exiting using Ctrl-Break.

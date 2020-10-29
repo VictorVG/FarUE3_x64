@@ -1,6 +1,6 @@
 ﻿.Language=Italian,Italian (Italiano)
 
-//Version: 3.0.5690.0 (Private) x64
+//Version: 3.0.5696.0 (Private) x64
 
 //[MYes]
 "&Si"
@@ -2301,6 +2301,8 @@
 "Prima I Selezionati"
 //[MMenuSortDirectoriesFirst]
 "&Mostra Le Cartelle Per Prime"
+//[MMaskGroupTitle]
+"Maschere Filtri"
 //[MMaskGroupName]
 "&Nome:"
 //[MMaskGroupMasks]

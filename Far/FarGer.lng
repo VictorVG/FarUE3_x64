@@ -1,6 +1,6 @@
 ﻿.Language=German,German (Deutsch)
 
-//Version: 3.0.5690.0 (Private) x64
+//Version: 3.0.5696.0 (Private) x64
 
 //[MYes]
 "Ja"
@@ -2350,6 +2350,8 @@
 "&Ausgewählte zuerst"
 //[MMenuSortDirectoriesFirst]
 "Verzeichnisse zuerst anzeigen"
+//[MMaskGroupTitle]
+"Gruppe der Datenmasken"
 //[MMaskGroupName]
 "&Name:"
 //[MMaskGroupMasks]

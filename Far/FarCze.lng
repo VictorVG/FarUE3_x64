@@ -1,6 +1,6 @@
 ﻿.Language=Czech,Czech (Čeština)
 
-//Version: 3.0.5690.0 (Private) x64
+//Version: 3.0.5696.0 (Private) x64
 
 //[MYes]
 "Ano"
@@ -2074,7 +2074,7 @@
 //[MCreateFolder]
 "Vytvořit &adresář:"
 //[MMakeFolderLinkType]
-"Typ linku:"
+"&Typ linku:"
 //[MMakeFolderLinkNone]
 "Žádný"
 //[MMakeFolderLinkJunction]
@@ -2300,6 +2300,8 @@
 "Nejdřív zobrazit vy&brané"
 //[MMenuSortDirectoriesFirst]
 "Nejdří&ve zobrazit adresáře"
+//[MMaskGroupTitle]
+"Skupiny masek souborů"
 //[MMaskGroupName]
 "Jmé&no:"
 //[MMaskGroupMasks]

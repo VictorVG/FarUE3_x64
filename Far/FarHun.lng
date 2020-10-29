@@ -1,6 +1,6 @@
 ﻿.Language=Hungarian,Hungarian (Magyar)
 
-//Version: 3.0.5690.0 (Private) x64
+//Version: 3.0.5696.0 (Private) x64
 
 //[MYes]
 "Igen"
@@ -2496,6 +2496,9 @@
 // need translation:
 //[MMenuSortDirectoriesFirst]
 "Sho&w directories first"
+// need translation:
+//[MMaskGroupTitle]
+"Groups of file masks"
 //[MMaskGroupName]
 "&Neve:"
 //[MMaskGroupMasks]

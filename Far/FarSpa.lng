@@ -1,6 +1,6 @@
 ﻿.Language=Spanish,Spanish (Español)
 
-//Version: 3.0.5690.0 (Private) x64
+//Version: 3.0.5696.0 (Private) x64
 
 //[MYes]
 "Si"
@@ -2304,6 +2304,8 @@
 "Mostrar seleccionados primero"
 //[MMenuSortDirectoriesFirst]
 "Mostrar directorios primero"
+//[MMaskGroupTitle]
+"Grupos de máscara de archivos"
 //[MMaskGroupName]
 "&Nombre:"
 //[MMaskGroupMasks]

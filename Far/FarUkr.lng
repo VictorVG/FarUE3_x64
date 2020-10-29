@@ -1,6 +1,6 @@
 ﻿.Language=Ukrainian,Ukrainian (Українська)
 
-//Version: 3.0.5690.0 (Private) x64
+//Version: 3.0.5696.0 (Private) x64
 
 //[MYes]
 "Так"
@@ -2297,6 +2297,8 @@
 "Позначені &файли вперед"
 //[MMenuSortDirectoriesFirst]
 "&Каталоги вперед"
+//[MMaskGroupTitle]
+"Групи масок файлів"
 //[MMaskGroupName]
 "&Ім'я:"
 //[MMaskGroupMasks]

@@ -1,6 +1,6 @@
 ﻿.Language=Polish,Polish (Polski)
 
-//Version: 3.0.5690.0 (Private) x64
+//Version: 3.0.5696.0 (Private) x64
 
 //[MYes]
 "Tak"
@@ -1769,9 +1769,9 @@
 //[MFindFileText]
 "Zawierający &tekst:"
 //[MFindFileHex]
-"Zawierający wartość &szesnastkową:"
+"Zawierający wartość szesnas&tkową:"
 //[MFindFileCodePage]
-"Użyj tablicy znaków:"
+"Użyj ta&blicy znaków:"
 //[MFindFileCodePageBottom]
 "Spacja, Ins"
 //[MFindFileCase]
@@ -1785,17 +1785,17 @@
 //[MFindArchives]
 "Szukaj w arc&hiwach"
 //[MFindFolders]
-"Szukaj &folderów"
+"Szukaj f&olderów"
 //[MFindSymLinks]
 "Szukaj w &linkach"
 //[MFindAlternateStreams]
-"Szukaj w alternatywnych strumieniach"
+"Szukaj w alt. st&rumieniach"
 //[MSearchForHex]
 "Szukaj wartości &szesnastkowej"
 //[MSearchNotContaining]
-"Nie zawierające"
+"&Nie zawierające"
 //[MSearchWhere]
-"Obszar wyszukiwania:"
+"Obszar w&yszukiwania:"
 //[MSearchAllDisks]
 "Na dyskach &stałych"
 //[MSearchAllButNetwork]
@@ -2069,17 +2069,17 @@
 //[MMakeFolderTitle]
 "Utwórz folder"
 //[MCreateFolder]
-"Nazwa folderu:"
+"&Nazwa folderu:"
 //[MMakeFolderLinkType]
 "Typ linku:"
 //[MMakeFolderLinkNone]
 "Brak"
 //[MMakeFolderLinkJunction]
-"skrzyżowanie folderów"
+"Przyłączenie folderu"
 //[MMakeFolderLinkSymlink]
-"link symboliczny"
+"Link symboliczny"
 //[MMakeFolderLinkTarget]
-"Cel:"
+"&Cel:"
 //[MMultiMakeDir]
 "Przetwarzaj &wiele nazw"
 //[MIncorrectDirList]
@@ -2297,6 +2297,8 @@
 "Zazna&czone najpierw"
 //[MMenuSortDirectoriesFirst]
 "Najpierw &foldery"
+//[MMaskGroupTitle]
+"Grupy masek plików"
 //[MMaskGroupName]
 "&Nazwa:"
 //[MMaskGroupMasks]
@@ -3172,7 +3174,7 @@
 //[MViewSearchForHex]
 "Szukaj &wartości szesnastkowych"
 //[MViewSearchCase]
-"&Uwzględnij wielkość liter"
+"&Uwzględnij wielkość znaków"
 //[MViewSearchWholeWords]
 "Tylko &całe słowa"
 //[MViewSearchReverse]
