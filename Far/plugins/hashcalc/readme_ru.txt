@@ -12,4 +12,4 @@
 
 Артём Сеничев (artemsen@gmail.com)
 Вдадимир Сургучев (vladimir.surguchev@gmail.com)
-              https://sourceforge.net/projects/farplugs/
+              https://sourceforge.net/projects/farplugs/files/
