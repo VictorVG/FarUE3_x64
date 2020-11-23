@@ -3,8 +3,13 @@ rem Update script for FarUE3 x64 only!
 setlocal enableextensions
 for /f "tokens=4" %%a in ('ver') do (set prm=%%a)
 set prm=%prm:~0,3% && set M=%prm:~0,1% && set N=%prm:~2,1%
-if %M% geq 6 (if %N% geq 1 (move /y "%~dp0Far\wget.ex7" "%~dp0Far\wget.exe" > nul & move /y "%~dp0Far\wget.tx7" "%~dp0Far\wget.txt" > nul))
-if exist Far\wget.*7 (del /f/q Far\wget.*7 > nul)
+if %M% geq 6 (
+  if %N% geq 1 (
+  if exist "%~dp0Far\wget.ex7" (move /y "%~dp0Far\wget.ex7" "%~dp0Far\wget.exe" > nul)
+  if exist "%~dp0Far\wget.tx7" (move /y "%~dp0Far\wget.tx7" "%~dp0Far\wget.txt" > nul)
+  if exist "%~dp0Far\wget.*7" (del /f/q Far\wget.*7 > nul)
+ )
+)
 cd /d "%~dp0Far" > nul
 far -clearcache
 if exist wget.ini (del /f/q wget.ini > nul)
@@ -21,9 +26,9 @@ if exist "plugins\dnd\drgndrop_x86*.hook" (del /f/q "plugins\dnd\drgndrop_x86*.h
 if exist "plugins\dnd\holder_x86*.dnd"  (del /f/q "plugins\dnd\holder_x86*.dnd" > nul)
 if exist "plugins\farhints" (rd /s/q "plugins\farhints" > nul)
 if exist "plugins\multiarc\Formats\targz.fmt" (del /f/q "plugins\multiarc\Formats\targz.fmt" > nul)
-if exist "plugins\sqlitedb" (rd /s/q "plugins\sqlitedb" > nul)
 if exist "plugins\observer\modules\msvcp100.dll" (del /f/q "plugins\observer\modules\msvcp100.dll" > nul)
 if exist "plugins\observer\modules\msvcr100.dll" (del /f/q "plugins\observer\modules\msvcr100.dll" > nul)
+if exist "plugins\sqlitedb" (rd /s/q "plugins\sqlitedb" > nul)
 if exist "plugins\svcmgr\svcmgr-x32.dll" (del /f/q "plugins\svcmgr\svcmgr-x32.dll" > nul)
 if exist "Profile\Macros\modules\c0BOM.lua" (del /f/q "Profile\Macros\modules\c0BOM.lua" > nul)
 if exist "Profile\Macros\modules\luacheck\analyze.lua" (del /f/q "Profile\Macros\modules\luacheck\analyze.lua" > nul)
@@ -54,7 +59,7 @@ if exist "Profile\PluginsData\CDF48DA0-0334-4169-8453-69048DD3B51C.db" (del /f/q
 if exist "Profile\PluginsData\FC97A376-00D9-4DE4-B2E1-BFDC3A8D8B0B.db" (del /f/q "Profile\PluginsData\FC97A376-00D9-4DE4-B2E1-BFDC3A8D8B0B.db" > nul)
 far -import default.farconfig
 rem The next string used only if needed fix some Far or plug-in's settings, is another not used and always mast be comment!
-if exist farfix.cnf (start /wait far "lua:mf.print('far -import farfix.cnf') Keys('Enter F10 Enter')" && del /f/q farfix.cnf > nul)
+if exist farfix.cnf (start /wait /b far -import farfix.cnf && del /f/q farfix.cnf > nul)
 if exist wg.cmd (del/f/q wg.cmd > nul)
 cd /d "%~dp0" > nul
 del /f/q "%~dp0update.cmd" > nul

@@ -1,6 +1,6 @@
 ﻿.Language=Polish,Polish (Polski)
 
-//Version: 3.0.5697.0 (Private) x64
+//Version: 3.0.5709.0 (Private) x64
 
 //[MYes]
 "Tak"
@@ -1813,7 +1813,7 @@
 //[MSearchInSelected]
 "W &zaznaczonych folderach"
 //[MFindUseFilter]
-"&Filtruj"
+"F& iltruj"
 //[MFindUsingFilter]
 "używając filtra"
 //[MFindFileFind]
@@ -4348,11 +4348,11 @@
 //[MFileHilightTitle]
 "Zaznaczanie plików"
 //[MFileFilterName]
-"Nazwa:"
+"&Nazwa:"
 //[MFileFilterMatchMask]
 "&Maska:"
 //[MFileFilterSize]
-"Ro&zmiar:"
+"&Rozmiar:"
 // up to 4 characters
 //[MFileFilterSizeFromSign]
 ">&="
@@ -4360,9 +4360,9 @@
 //[MFileFilterSizeToSign]
 "&<="
 //[MFileHardLinksCount]
-"Posiada więcej niż jeden twardy link"
+"Ma &więcej niż jeden twardy link"
 //[MFileFilterDate]
-"Da&ta/Czas:"
+"&Data/Czas:"
 //[MFileFilterWrited]
 "&zapisu"
 //[MFileFilterCreated]
@@ -4380,9 +4380,9 @@
 //[MFileFilterDateBeforeSign]
 "<="
 //[MFileFilterCurrent]
-"&Bieżący"
+"&Bieżąca"
 //[MFileFilterBlank]
-"&Wyczyść"
+"Wyc&zyść"
 //[MFileFilterAttr]
 "&Atrybuty"
 //[MFileFilterAttrChoose]

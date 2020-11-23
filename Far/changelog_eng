@@ -1,3 +1,58 @@
+drkns 22.11.2020 22:32:51 +0000 - build 5709
+
+1. And again.
+
+drkns 22.11.2020 17:59:19 +0000 - build 5708
+
+1. A few executor corrections.
+
+drkns 22.11.2020 01:28:27 +0000 - build 5707
+
+1. Exception handling improvements.
+
+drkns 16.11.2020 22:47:34 +0000 - build 5706
+
+1. gh-290 again: searching for the executable partially restored. Alas, there's no other way.
+
+drkns 16.11.2020 18:52:48 +0000 - build 5705
+
+1. gh-290: New executor gives priority to folders over programs with the same name in PATH.
+
+drkns 15.11.2020 22:37:26 +0000 - build 5704
+
+1. Increase the delay before removing the temporary files, created with !@!.
+
+drkns 15.11.2020 10:16:18 +0000 - build 5703
+
+1. Executor logic correction.
+
+drkns 14.11.2020 22:00:22 +0000 - build 5702
+
+1. Experimental: reimplemented and simplifiled the executor (based on https://forum.farmanager.com/viewtopic.php?t=12275):
+   - Removed searching for the executable - the OS knows better.
+   - Removed System.Executor.UseAppPath and System.Executor.FullTitle.
+   - Associations processing is disabled by default. Set System.Executor.UseAssociations to true to enable.
+
+2. Refactoring.
+
+yjh 14.11.2020 21:21:30 +0300 - build 5701
+
+1. Add .msi to <arc> mask.
+
+drkns 11.11.2020 19:38:14 +0000 - build 5700
+
+1. Correction of 5698.1 again.
+
+drkns 08.11.2020 19:45:32 +0000 - build 5699
+
+1. Correction of 5698.1.
+
+drkns 05.11.2020 19:04:14 +0000 - build 5698
+
+1. Experimental: reduce the number of executor parameters.
+
+2. Add a list of loaded modules to exception information.
+
 drkns 03.11.2020 15:55:05 +0000 - build 5697
 
 1. In some cases some data coundn't be read from registry.
@@ -7516,7 +7571,7 @@ drkns 15.12.2014 21:16:06 +0200 - build 4217
 
 drkns 15.12.2014 19:31:52 +0200 - build 4216
 
-1. A couple if issues in 4214.
+1. A couple of issues in 4214.
 
 svs 15.12.2014 13:05:37 +0300 - build 4215
 
@@ -8776,7 +8831,7 @@ drkns 09.06.2014 22:12:24 +0200 - build 3949
 
 shmuel 08.06.2014 22:47:12 +0200 - build 3948
 
-1. Refactoring.
+1. Minor refactoring.
 
 svs 07.06.2014 11:16:01 +0400 - build 3947
 
@@ -8784,7 +8839,7 @@ svs 07.06.2014 11:16:01 +0400 - build 3947
 
 shmuel 06.06.2014 21:35:19 +0200 - build 3946
 
-1. Refactoring.
+1. Minor refactoring.
 
 drkns 06.06.2014 19:00:44 +0200 - build 3945
 
@@ -10489,7 +10544,7 @@ shmuel 03.09.2013 14:58:38 +0200 - build 3631
 1. If a plugin running from a macro called MCTL_EXECSTRING then after MCTL_EXECSTRING execution
    screen redrawing could be disabled, so the plugin was unable to display a menu.
 
-2. Slightly refactoring.
+2. Slight refactoring.
 
 shmuel 02.09.2013 11:19:10 +0200 - build 3630
 
@@ -12004,11 +12059,11 @@ drkns 07.04.2013 20:11:40 +0200 - build 3306
 
 drkns 07.04.2013 14:17:22 +0200 - build 3305
 
-1. Correction of 3301.
+1. Continuation of 3301.
 
 drkns 07.04.2013 11:36:42 +0200 - build 3304
 
-1. Correction of 3301.
+1. Continuation of 3301.
 
 drkns 07.04.2013 10:30:14 +0200 - build 3303
 
@@ -12084,7 +12139,7 @@ shmuel 01.04.2013 15:55:51 +0200 - build 3290
 
 drkns 30.03.2013 13:20:21 +0200 - build 3289
 
-1. Continuation of 3283.2.
+1. Correction of 3283.2.
 
 2. Refactoring.
 
@@ -14112,7 +14167,7 @@ drkns 02.11.2012 02:18:10 +0200 - build 2921
 
 drkns 02.11.2012 02:05:17 +0200 - build 2920
 
-1. Slightly refactoring of configdb.
+1. Slight refactoring of configdb.
 
 zg 01.11.2012 23:05:49 +0200 - build 2919
 
@@ -14977,7 +15032,7 @@ w17 05.07.2012 17:33:42 +0400 - build 2758
 
 w17 05.07.2012 11:43:50 +0400 - build 2757
 
-1.M#2129: After FAR startup, ".." in the root of a network share is missing.
+1. M#2129: After FAR startup, ".." in the root of a network share is missing.
 
 w17 04.07.2012 12:16:35 +0400 - build 2756
 
@@ -18746,7 +18801,7 @@ svs 09.08.2011 23:18:26 +0300 - build 2140
 
 drkns 08.08.2011 11:37:13 +0200 - build 2139
 
-1.Mantis#0001589: Displaying of file extension in panel column or "Align file extensions"
+1. Mantis#0001589: Displaying of file extension in panel column or "Align file extensions"
 
 drkns 08.08.2011 10:51:58 +0200 - build 2138
 
@@ -19339,7 +19394,7 @@ drkns 20.05.2011 15:02:43 +0200 - build 2039
 
 1. At folder creation, it is possible to add its reparse point.
 
-2. A couple of minorities
+2. A couple of trifles.
 
 svs 20.05.2011 11:13:13 +0300 - build 2038
 
@@ -19503,7 +19558,7 @@ drkns 08.05.2011 16:37:54 +0200 - build 2025
 
 2. Mantis#0001763: Far 3.0 gcc build error (incorrect character case in an include)
 
-3. Another couple of minorities.
+3. Another couple of trifles.
 
 drkns 04.05.2011 12:24:24 +0200 - build 2024
 
@@ -19554,7 +19609,7 @@ drkns 29.04.2011 23:55:55 +0200 - build 2017
 
 1. GCC warnings.
 
-2. A couple of minorities.
+2. A couple of trifles.
 
 t-rex 29.04.2011 21:06:02 +0200 - build 2016
 
@@ -19591,7 +19646,7 @@ t-rex 28.04.2011 21:33:34 +0200 - build 2012 future
 
 drkns 28.04.2011 14:16:24 +0200 - build 2011
 
-1. A couple of minorities on paths initialization.
+1. A couple of trifles on paths initialization.
 
 drkns 28.04.2011 13:52:23 +0200 - build 2010
 
@@ -19765,7 +19820,7 @@ drkns 21.04.2011 16:44:21 +0200 - build 1982
 
 2. Histories are displayes with separation by days.
 
-3. Some more minorities.
+3. Some more trifles.
 
 t-rex 21.04.2011 03:19:32 +0200 - build 1981
 
@@ -22508,7 +22563,7 @@ drkns 29.05.2010 13:08:42 +0200 - build 1576
 
 drkns 29.05.2010 12:14:02 +0200 - build 1575
 
-1. Another couple of minorities of the same subject.
+1. Another couple of trifles of the same subject.
 
 drkns 28.05.2010 23:47:51 +0200 - build 1574
 
@@ -24227,14 +24282,14 @@ svs 29.12.2009 15:10:25 +0300 - build 1304
 
 1. I was wrong about language-dependent %FARADMINMODE% :-)
 
-Next iteration...
+   Next iteration...
 
-Now
-%FARADMINMODE% is a number and equals to 1, if we are admin
+   Now
+     %FARADMINMODE% is a number and equals to 1, if we are admin
 
-cmdprompt has new '$@xx' (see MConfigCmdlinePromptFormatAdmin)
-Here, 'xx' contains two symbols surrounding the word "Administrator"
-For example, "$@{}$s$p$g" is displayed as "{Administrator} C:\>"
+   cmdprompt has new '$@xx' (see MConfigCmdlinePromptFormatAdmin)
+   Here, 'xx' contains two symbols surrounding the word "Administrator"
+   For example, "$@{}$s$p$g" is displayed as "{Administrator} C:\>"
 
 svs 29.12.2009 13:33:22 +0300 - build 1303
 
