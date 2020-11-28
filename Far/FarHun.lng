@@ -3498,7 +3498,7 @@
 //[MCfgDizListNames]
 "Megjegyzés&fájlok nevei, vesszővel elválasztva:"
 //[MCfgDizSetHidden]
-"Az új megjegyzésfájl ""&rejtett"" attribútumú legyen"
+"Az új megjegyzésfájl \"&rejtett\" attribútumú legyen"
 //[MCfgDizROUpdate]
 "&Csak olvasható megjegyzésfájlok frissítése"
 //[MCfgDizStartPos]

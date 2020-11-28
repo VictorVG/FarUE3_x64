@@ -3241,9 +3241,9 @@
 //[MCfgDizListNames]
 "Seznam pop&isových souborů oddělených čárkami:"
 //[MCfgDizSetHidden]
-"Novým souborům s popisy nastavit atribut ""&Skrytý"""
+"Novým souborům s popisy nastavit atribut \"&Skrytý\""
 //[MCfgDizROUpdate]
-"Aktualizovat popisové soubory s atributem ""Jen pro čtení"""
+"Aktualizovat popisové soubory s atributem \"Jen pro čtení\""
 //[MCfgDizStartPos]
 "&Pozice nových popisů v řetězci"
 //[MCfgDizNotUpdate]

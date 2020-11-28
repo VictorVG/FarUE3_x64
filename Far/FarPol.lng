@@ -3237,7 +3237,7 @@
 //[MCfgDizListNames]
 "Nazwy &plików z opisami oddzielone przecinkami:"
 //[MCfgDizSetHidden]
-"Ustaw atrybut ""&Ukryty"" dla nowych plików z opisami"
+"Ustaw atrybut \"&Ukryty\" dla nowych plików z opisami"
 //[MCfgDizROUpdate]
 "Aktualizuj plik opisu tylko do odczytu"
 //[MCfgDizStartPos]

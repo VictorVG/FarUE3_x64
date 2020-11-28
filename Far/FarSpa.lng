@@ -3254,7 +3254,7 @@
 //[MCfgDizListNames]
 "Nombres de &listas de descripción delimitado con comas:"
 //[MCfgDizSetHidden]
-"Poner atributo"
+"Poner atributo \"Oculto\" en nuevas listas de descripción"
 //[MCfgDizROUpdate]
 "&Actualizar archivo descripción de sólo lectura"
 //[MCfgDizStartPos]

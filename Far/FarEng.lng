@@ -3237,7 +3237,7 @@
 //[MCfgDizListNames]
 "Description &list names delimited with commas:"
 //[MCfgDizSetHidden]
-"Set ""&Hidden"" attribute to new description lists"
+"Set \"&Hidden\" attribute to new description lists"
 //[MCfgDizROUpdate]
 "Update &read only description file"
 //[MCfgDizStartPos]
