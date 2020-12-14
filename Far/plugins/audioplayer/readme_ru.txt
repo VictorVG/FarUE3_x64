@@ -17,4 +17,4 @@
 
 Артём Сеничев (artemsen@gmail.com)
 Владимир Сургучев (vladimir.surguchev@gmail.com)
-              https://sourceforge.net/projects/farplugs/files/
+              https://sourceforge.net/projects/farplugs/files/AudioPlayer/

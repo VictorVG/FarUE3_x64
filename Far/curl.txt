@@ -69,6 +69,7 @@ Usage: curl [options...] <url>
  -H, --header <header/@file> Pass custom header(s) to server
  -h, --help <category> Get help for commands
      --hostpubmd5 <md5> Acceptable MD5 hash of the host public key
+     --hsts <file name> Enable HSTS with this cache file
      --http0.9       Allow HTTP 0.9 responses
  -0, --http1.0       Use HTTP 1.0
      --http1.1       Use HTTP 1.1

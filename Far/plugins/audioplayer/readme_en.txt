@@ -17,4 +17,4 @@ Warning:
 
 Artem Senichev (artemsen@gmail.com)
 Vladimir Surguchev (vladimir.surguchev@gmail.com)
-              https://sourceforge.net/projects/farplugs/files/
+              https://sourceforge.net/projects/farplugs/files/AudioPlayer/
