@@ -143,6 +143,7 @@
   ║  S··················· │ CtrlShiftD                                                       │ Shell_DelEmptyDir.lua                      │ Delete empty folder                           ║
   ║  S··················· │ CtrlShiftE                                                       │ Shell_SelectingEx.lua                      │ Копирование имён помеченных файлов в          ║
   ║                       │                                                                  │                                            │ редактор. © SimSU                             ║
+  ║  S··················· │ CtrlShiftF12                                                     │ Shell_SortDir.lua                          │ Sort files with StrCmpLogicalW                ║
   ║  S··················· │ CtrlShiftF8                                                      │ Shell_CmdsFromCurDir.lua                   │ Display commands that have been launched      ║
   ║                       │                                                                  │                                            │ from the current directory                    ║
   ║  S··················· │ CtrlShiftM                                                       │ Shell_SelectingEx.lua                      │ Пометка файлов имена которых находятся в      ║
@@ -365,7 +366,6 @@
   ║  ········D··········· │ End                                                              │ Plugin_Review.lua                          │ Review: Goto Last Image                       ║
   ║  ········D··········· │ Enter Home End Up Down PgUp PgDn Left Right CtrlPgUp CtrlPgDn    │ Plugin_SizeManager.lua                     │ Size Manager: panel navigation                ║
   ║  ········D··········· │ F CtrlF                                                          │ Plugin_Review.lua                          │ Review: Fullscreen mode On/Off                ║
-  ║  ········D··········· │ F1                                                               │ Plugin_AudioPlayer.lua                     │ AudioPlayer: key bindings help by F1          ║
   ║  ········D··········· │ F1                                                               │ Shell_CustomSortByName.lua                 │ Custom: by name - Help                        ║
   ║  ········D··········· │ F3                                                               │ Dialog_DialogTools.lua                     │ DialogTools: Show password                    ║
   ║  ········D··········· │ F4                                                               │ Dialog_DialogTools.lua                     │ DialogTools: Edit                             ║
@@ -504,4 +504,4 @@
   ║                                                                                                                                                                                       ║
   ╚═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
 
-  21.08.2020 02:11:21 +0300
+  19.12.2020 15:01:30 +0300
