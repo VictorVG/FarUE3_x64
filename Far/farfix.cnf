@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <farconfig>
-	<generalconfig>
-		<setting key="Masks" name="arc" type="text" value="*.rar,*.zip,*.[zj],*.[7bgxl]z,*.[bg]zip,*.tar,*.t[agbxl]z,*.ar[cj],*.r[0-9][0-9],*.a[0-9][0-9],*.bz2,*.cab,*.msi,*.jar,*.lha,*.lzh,*.ha,*.ac[bei],*.pa[ck],*.rk,*.cpio,*.rpm,*.zoo,*.hqx,*.sit,*.ice,*.uc2,*.ain,*.imp,*.777,*.ufa,*.boa,*.bs[2a],*.sea,*.hpk,*.ddi,*.x2,*.rkv,*.[lw]sz,*.h[ay]p,*.lim,*.sqz,*.chz"/>
-	</generalconfig></farconfig>
+	<pluginsconfig>
+		<plugin guid="9C3A61FC-F349-48E8-9B78-DAEBD821694B">
+			<hierarchicalconfig>
+				<key name="9C3A61FC-F349-48E8-9B78-DAEBD821694B" description="Audio player">
+					<value name="excluded_exts" type="text" value="mp4;mkv"/>
+				</key>
+			</hierarchicalconfig>
+		</plugin>
+	</pluginsconfig>
+</farconfig>

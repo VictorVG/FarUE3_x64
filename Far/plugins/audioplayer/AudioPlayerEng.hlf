@@ -77,6 +77,7 @@ $ #Player dialog#
 	#Last track           # - Ctrl+End, Ctrl+PgDn
 	#Volume adjust        # - Up/Down or Volume bar click
 	#Played track position# - Home (start), Progress bar click, [Shift+]Left/Right or Mouse wheel (back/forward 5 [seconds]percents !settings)
+   #Show/Hide playlist   # - Ctrl_L, Index area click
 
 	~Next playing track selection mode~@PlayMode@
 

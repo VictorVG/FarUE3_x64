@@ -169,6 +169,7 @@
   ║                       │                                                                  │                                            │ с сохранением выделения файлов. © SimSU       ║
   ║  S··················· │ Enter NumEnter                                                   │ Shell_Aliases.lua                          │ Исполнение псевдонима (синонима) © SimSU      ║
   ║  S··················· │ Enter NumEnter CtrlPgDn                                          │ Plugin_MultiArc.lua                        │ Open Rar use MultiArc                         ║
+  ║  S··················· │ Enter NumEnter MsM1Click                                         │ Plugin_AudioPlayer.lua                     │ AudiPlayer                                    ║
   ║  S··················· │ Enter NumEnter MsM1Click                                         │ Plugin_IntChecker.lua                      │ Integrity Checker: check integrity use        ║
   ║                       │                                                                  │                                            │ check summ                                    ║
   ║  S··················· │ F3 CtrlPgDn                                                      │ SV_Review.lua                              │ Review: Open video files                      ║
@@ -504,4 +505,4 @@
   ║                                                                                                                                                                                       ║
   ╚═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
 
-  19.12.2020 15:01:30 +0300
+  26.12.2020 05:20:03 +0300
