@@ -4,8 +4,9 @@
 
 @Contents
 $^ #Visual renaming files#
-$^ #3.0 build 18#
+$^ #3.2.0#
 $^ #Copyright (C) 2007 Alexey Samlyukov#
+$^ #Copyright (C) 2020 FarPlugins Team#
    Far  plugin   for   visual   files   renaming   with   additional
 capabilities.
 
@@ -62,7 +63,7 @@ capabilities.
              or #" - "# will be treated as artist name.
              First character in every word will be capitalized.
              All characters after that sequence will be treated as
-             song title and only first character in the first word
+             song title and only first character in the first word 
              will be capitalized.
              For example:
                "j.lAsT - lonEsoMe ShePheRD.mp3"

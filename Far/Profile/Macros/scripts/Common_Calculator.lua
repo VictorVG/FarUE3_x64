@@ -184,7 +184,7 @@ local function Calc(Expression) -- Функция вычисления мате�
   end
   --
   local state, err = pcall(CALC,Expression)
-  if not state then _, err = pcall(CALC,mf.trim(Expression):gsub("[%c%s]+","%+")) end -- Попробуем просто просуммировать.
+  if not state then _, err = pcall(CALC,mf.trim(Expression):gsub("[%c%s]+","+")) end -- Попробуем просто просуммировать.
   return err
 end
 
@@ -265,13 +265,13 @@ SimSU.Common_Calculator=Common_Calculator; _G.SimSU=SimSU
 
 Macro {id="c14ec47b-10b4-4e20-9a24-c1276d62513e";
   area="Common"; key=S.KeyCalc; priority=S.PriorCalc; sortpriority=S.SortCalc; description=M.CalcDescr;
-  action=function() return Prompt() end;
+  action=function() return  Prompt() end;
 }
 Macro {id="13ae2551-c8ed-49cb-8f23-587485a5f7af";
   area="Common"; key=S.KeyClip; priority=S.PriorClip; sortpriority=S.SortClip; description=M.ClipDescr;
-  action=function() return ClipCalc() end;
+  action=function() return  ClipCalc() end;
 }
 Macro {id="f0e8628e-c2b9-4f2a-b4f8-1f7ef76ab7d6";
-  area="Common"; key=S.KeySel; priority=S.PriorSel; sortpriority=S.SortSel; description=M.SelDescr;
-  action=function() return SelCalc() end;
+  area="Common"; key=S.KeySel;  priority=S.PriorSel;  sortpriority=S.SortSel;  description=M.SelDescr;
+  action=function() return  SelCalc() end;
 }

@@ -1,10 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<farconfig>
+<farconfig version="3.0.5723">
 	<pluginsconfig>
+		<plugin guid="1D1BA1CB-3A05-4F4B-91B3-F8E71A55420E">
+			<hierarchicalconfig>
+				<key name="1D1BA1CB-3A05-4F4B-91B3-F8E71A55420E" description="NTFS File Information">
+					<value name="ContentOptionsCRC16" type="qword" value="0000000000000001"/>
+					<value name="ContentOptionsCRC32" type="qword" value="0000000000000001"/>
+					<value name="ContentOptionsCompression" type="qword" value="0000000000000001"/>
+					<value name="ContentOptionsED2K" type="qword" value="0000000000000001"/>
+					<value name="ContentOptionsMD5" type="qword" value="0000000000000001"/>
+					<value name="ContentOptionsSHA1" type="qword" value="0000000000000001"/>
+					<value name="ContentOptionsSHA256" type="qword" value="0000000000000001"/>
+					<value name="ContentOptionsSHA3-256" type="qword" value="0000000000000001"/>
+					<value name="FilePanelSortMode" type="qword" value="000000000000000E"/>
+				</key>
+			</hierarchicalconfig>
+		</plugin>
+		<plugin guid="23C16506-38EE-48D1-9874-CD1736408867">
+			<hierarchicalconfig>
+				<key name="23C16506-38EE-48D1-9874-CD1736408867" description="LUA Format Block">
+					<key name="lfblock.data">
+						<value name="align" type="qword" value="0000000000000001"/>
+						<value name="first" type="qword" value="0000000000000004"/>
+						<value name="insertline" type="qword" value="0000000000000001"/>
+						<value name="left" type="qword" value="0000000000000001"/>
+						<value name="paragraph" type="qword" value="0000000000000003"/>
+						<value name="right" type="qword" value="000000000000004E"/>
+					</key>
+				</key>
+			</hierarchicalconfig>
+		</plugin>
+		<plugin guid="42E4AEB1-A230-44F4-B33C-F195BB654931">
+			<hierarchicalconfig>
+				<key name="42E4AEB1-A230-44F4-B33C-F195BB654931" description="NetBox">
+					</key>
+					<key name="Sessions">
+						<key name="Default%20Settings">
+							<value name="FSProtocol" type="text" value="SFTP%20(SCP)"/>
+							<value name="Version" type="text" value="2.4.5"/>
+						</key>
+					</key>
+			</hierarchicalconfig>
+		</plugin>
+		<plugin guid="4EBBEFC8-2084-4B7F-94C0-692CE136894D">
+			<hierarchicalconfig>
+				<key name="4EBBEFC8-2084-4B7F-94C0-692CE136894D" description="LuaMacro">
+					<key name="IgorZ">
+						<key name="CASArrowsDiskSwitch">
+							<value name="FixedPerm" type="qword" value="0000000000000000"/>
+							<value name="PermPanel" type="qword" value="0000000000000000"/>
+							</key>
+						</key>
+					</key>
+			</hierarchicalconfig>
+		</plugin>
 		<plugin guid="9C3A61FC-F349-48E8-9B78-DAEBD821694B">
 			<hierarchicalconfig>
 				<key name="9C3A61FC-F349-48E8-9B78-DAEBD821694B" description="Audio player">
-					<value name="excluded_exts" type="text" value="mp4;mkv"/>
+					<value name="volume" type="qword" value="0000000000000104"/>
 				</key>
 			</hierarchicalconfig>
 		</plugin>

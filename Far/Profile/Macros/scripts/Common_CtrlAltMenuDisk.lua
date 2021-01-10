@@ -2,7 +2,7 @@
 local nfo = Info {_filename or ...,
   name          = "CtrlAltMenuDisk";
   description   = "Переключение дисков по Ctrl/Alt/Shift+<-/->";
-  version       = "4.1.3"; --http://semver.org/lang/ru/
+  version       = "4.1.4"; --http://semver.org/lang/ru/
   author        = "IgorZ";
   url           = "http://forum.farmanager.com/viewtopic.php?t=7471";
   id            = "097450AF-B186-425A-961A-4A884FC2B732";
@@ -62,6 +62,7 @@ local nfo = Info {_filename or ...,
 2019/12/04 v4.1.2 - Исправлена подсказка мини-панели. Дополнена справка о подсказке. Доработан вид меню выбора плагинов в конфигурации.
                     Добавлен показ в подсказке метки тома для дисков. Рефакторинг.
 2020/10/16 v4.1.3 - Исправлена подсказка мини-панели (перевод в UTF8). Исправлена ошибка с набором не буквы для исключаемого диска в настройках.
+2020/12/30 v4.1.4 - Исправлена загрузка значений из БД. Исправлена сортировка плагинов в диалоге настройки.
 ]];
   options       = {
     DefProfile = far.Flags.PSL_ROAMING--[[far.Flags.PSL_LOCAL--]] -- место хранения настроек по умолчанию: глобальные/локальные
@@ -142,7 +143,7 @@ local FL,dummy = Far.GetConfig("Language.Main"):sub(1,3),function() return {"Can
 L = L and L.Lang==FL and L or (loadfile(PathName..FL..".lng") or loadfile(PathName.."Eng.lng") or dummy)(LMBuild) -- обновим, если язык другой
 end --LoadLang
 --
-function LoadSettings(ForceDef) --[[загрузить настройки из БД]]
+function LoadSettings(GetDf) --[[загрузить настройки из БД]]
 UsedProfile = nfo.options.DefProfile -- запомним профиль
 local obj = far.CreateSettings(nil,UsedProfile) -- откроем предпочтительные настройки
 local key = obj:OpenSubkey(obj:OpenSubkey(0,Author) or 0,ConfPart) -- есть раздел?
@@ -151,22 +152,21 @@ if not key then -- настроек нет?
   key = obj:OpenSubkey(obj:OpenSubkey(0,Author) or 0,ConfPart) -- есть раздел? если нет, неважно, какой открыт, всё равно брать умолчания
   if key then UsedProfile = UsedProfile==F.PSL_LOCAL and F.PSL_ROAMING or F.PSL_LOCAL end -- из другого профиля открылись? запомним профиль
 end
-local function L1(n) return not ForceDef and obj:Get(key or -1,n,type(Def[n])=="string" and F.FST_STRING or F.FST_QWORD) or Def[n] end
+local function L1(n,d) if d==nil then d=Def[n] end return not GetDf and obj:Get(key or-1,n,type(d)=="string" and F.FST_STRING or F.FST_QWORD) or d end
 S = { KP = {},Plugins = {},PDescr = {}, -- считаем настройки
   UseHidden = L1("UseHidden")~=0,SwitchPanelsOn = L1("SwitchPanelsOn"),SpDelim = L1("SpDelim")~=0,LowerCurDrive = L1("LowerCurDrive")~=0,
   OutStr = L1("OutStr"),OutCol = L1("OutCol"),ExcludeDrives = L1("ExcludeDrives"),PermPanel = L1("PermPanel")~=0,FixedPerm = L1("FixedPerm")~=0}
 key = obj:OpenSubkey(key or -1,KeyPart) -- подраздел со списком клавиш
-for n,v in pairs(Def.KP) do S.KP[n] = not ForceDef and obj:Get(key or -1,n,F.FST_STRING) or v end -- загрузим значения из БД или умолчания
-key = obj:OpenSubkey(obj:OpenSubkey(obj:OpenSubkey(0,Author) or 0,ConfPart) or -1,KeyPart) -- подраздел со списком плагинов
-S.PlugStr = L1("PlugStr") -- список плагинов
-if S.PlugStr then -- прочитан?
+for n,v in pairs(Def.KP) do S.KP[n] = L1(n,v) end -- загрузим значения из БД или умолчания
+key = obj:OpenSubkey(obj:OpenSubkey(obj:OpenSubkey(0,Author) or 0,ConfPart) or -1,PlugPart) -- подраздел со списком плагинов
+S.PlugStr = L1("PlugStr","") -- список плагинов
+if S.PlugStr~="" then -- прочитан?
   for c in S.PlugStr:gmatch(".") do --для каждого обозначения плагина
-    local u = L1(c) -- достанем GUID
-    if u then S.Plugins[c] = win.Uuid(u) else S.PlugStr = S.PlugStr:gsub(c,"?") end -- достался - запомним, иначе заменим символ плагина на "?"
+    local u = L1(c,"") -- достанем GUID
+    if u~="" then S.Plugins[c] = win.Uuid(u) else S.PlugStr = S.PlugStr:gsub(c,"?") end -- достался - запомним, иначе заменим символ плагина на "?"
   end
   S.PlugStr = S.PlugStr:gsub("%?","") -- выкинем "?", для которых нет guidов плагинов в БД
 else -- список не прочитан, берём умолчания
-  S.PlugStr = "" -- инициализируем
   for n,v in pairs(Def.Plugins) do S.Plugins[n],S.PlugStr = v,S.PlugStr..n end -- возьмём значения по умолчанию
 end
 obj:Free() -- приберёмся
@@ -299,7 +299,7 @@ repeat -- рабочий цикл
     end
   end
   table.sort(items,function(a,b)
-if a.checked and b.checked then return WorkStr:cfind(a.checked)<WorkStr:cfind(b.checked)
+if a.checked and b.checked then return WorkStr:cfind(a.checked,1,true)<WorkStr:cfind(b.checked,1,true)
 elseif a.checked or b.checked then return a.checked
 elseif a.separator or b.separator then return a.separator
 else return a.text:upper()<b.text:upper() end

@@ -46,9 +46,9 @@
 
 @Contents
 $^#File and archive manager#
-$^#3.0.5719.0 (Private) x64#
+$^#3.0.5725.0 (Private) x64#
 $^#Copyright © 1996-2000 Eugene Roshal#
-$^#Copyright © 2000-2020 Far Group#
+$^#Copyright © 2000-2021 Far Group#
  ~Help file index~@Index@
  ~How to use help~@Help@
 
@@ -352,9 +352,9 @@ $ #Panel control commands#
  Deselect files with the same extension as the        #Ctrl+<Gray ->#
  current file
  Invert selection including folders                   #Ctrl+<Gray *>#
- (ignore command line state)
  Select files with the same name as the current file   #Alt+<Gray +>#
  Deselect files with the same name as the current file #Alt+<Gray ->#
+ Invert selection on files, deselect folders           #Alt+<Gray *>#
  Select all files                                    #Shift+<Gray +>#
  Deselect all files                                  #Shift+<Gray ->#
  Restore previous selection                                  #Ctrl+M#
@@ -4382,6 +4382,9 @@ the same #name# as that of the item under cursor. #†#
  #Ctrl+<Gray *># inverts the current selection on all items,
 including folders.
 
+ #Alt+<Gray *># inverts the current selection on files only,
+folders are deselected.
+
  #Ctrl+M# restores the last selection.
 
 
@@ -5456,6 +5459,8 @@ If current value of an option is other than the default, the option is marked wi
 
  #Shift+F4#      For the integer type, hexadecimal editor dialog is opened,
                for other types works as #F4#.
+
+ #Del#           Reset the option to its default value.
 
  #Ctrl+H#        Hide/show options having default values.
 

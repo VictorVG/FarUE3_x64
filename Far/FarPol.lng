@@ -1,6 +1,6 @@
 ﻿.Language=Polish,Polish (Polski)
 
-//Version: 3.0.5719.0 (Private) x64
+//Version: 3.0.5725.0 (Private) x64
 
 //[MYes]
 "Tak"
@@ -1813,7 +1813,7 @@
 //[MSearchInSelected]
 "W &zaznaczonych folderach"
 //[MFindUseFilter]
-"F& iltruj"
+"F&iltruj"
 //[MFindUsingFilter]
 "używając filtra"
 //[MFindFileFind]
@@ -4483,9 +4483,9 @@
 //[MCompletionFilesTitle]
 "Pliki"
 //[MObjectLockedReason]
-"Obiekt będzie {0} w:"
+"Obiekt jest {0} w:"
 //[MObjectLockedReasonPlayed]
-"odtworzony"
+"odtwarzany"
 //[MObjectLockedReasonEdited]
 "edytowany"
 //[MObjectLockedReasonOpened]

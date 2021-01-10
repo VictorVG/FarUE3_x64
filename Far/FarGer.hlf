@@ -46,9 +46,9 @@
 
 @Contents
 $^#Datei- und Archiv-Manager.#
-$^#3.0.5719.0 (Private) x64#
+$^#3.0.5725.0 (Private) x64#
 $^#Copyright © 1996-2000 Eugene Roshal#
-$^#Copyright © 2000-2020 Far Group#
+$^#Copyright © 2000-2021 Far Group#
  ~Help file index~@Index@
  ~Hilfe über Hilfe~@Help@
 
@@ -355,10 +355,11 @@ $ #Befehl zur Fenstersteuerung#
 
  Dateiauswahl mit aktueller Erweiterung aufheben      #Strg+<Grau ->#
 
- Auswahl inkl. Verzeichnissen aufheben                #Strg+<Grau *>#
+ Auswahl inkl. Verzeichnissen umkehren                #Strg+<Grau *>#
 
  Dateien mit aktuellem Namen auswählen                 #Alt+<Grau +>#
  Dateiauswahl mit aktuellem Namen aufheben             #Alt+<Grau ->#
+ Invert selection on files, deselect folders           #Alt+<Grau *>#
 
  Alle Dateien auswählen                              #Umsch+<Grau +>#
  Auswahl aller Dateien aufheben                      #Umsch+<Grau ->#
@@ -4480,6 +4481,9 @@ auf der der Cursor/Auswahlbalken steht. #†#
  #Strg+<Grau *># kehrt die aktuelle Auswahl einschließlich
 Verzeichnisse um.
 
+ #Alt+<Grau *># inverts the current selection on files only,
+folders are deselected.
+
  #Strg+M# stellte eine vorherige Auswahl wieder her.
 
 
@@ -5558,6 +5562,8 @@ If current value of an option is other than the default, the option is marked wi
 
  #Shift+F4#      For the integer type, hexadecimal editor dialog is opened,
                for other types works as #F4#.
+
+ #Del#           Reset the option to its default value.
 
  #Ctrl+H#        Hide/show options having default values.
 

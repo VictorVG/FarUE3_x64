@@ -99,6 +99,7 @@
     <location link="jar:common.jar!base/java.hrc"/>
     <filename>/\.ja(va|v|d)$/i</filename>
     <firstline weight='2'>/^\/\/ Decompiled by Jad/</firstline>
+    <firstline weight='2'>/^\/\*\r?\n \* Decompiled with CFR/</firstline><!-- support another java decompiler https://github.com/leibnitz27/cfr -->
     <parameters>
       <param name="tabs-as-errors" value="false" description="Shows tabulation symbol as error"/>
       <param name="spaces-as-errors" value="false" description="Shows trailing spaces as error"/>
@@ -362,7 +363,7 @@
   </prototype>
   <prototype name="jScript" group="inet" description="JavaScript">
     <location link="jar:common.jar!inet/jscript.hrc"/>
-    <filename>/\.(js|mocha|ts)$/i</filename>
+    <filename>/\.(cjs|mjs|js|mocha|ts)$/i</filename>
   </prototype>
   <prototype name="actionscript" group="inet" description="ActionScript">
     <location link="jar:common.jar!inet/actionscript.hrc"/>
@@ -581,7 +582,7 @@
   </prototype>
   <prototype name="config" group="scripts" description="Config, INI and CTL">
     <location link="jar:common.jar!scripts/config.hrc"/>
-    <filename>/\.(ctl|tpl|ini|cfg|inf|srg|conf|types|tab|dof|dsk|lng)$/i</filename>
+    <filename>/\.(ctl|tpl|ini|cfg|inf|srg|conf|types|tab|dof|dsk|lng|editorconfig)$/i</filename>
     <firstline>/^[;\[\#]/</firstline>
   </prototype>
   <prototype name="awk" group="scripts" description="AWK">

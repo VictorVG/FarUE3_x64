@@ -3,7 +3,7 @@
 .Options CtrlStartPosChar=^<wrap>
 
 @Contents
-$^#UnInstall 1.10.20#
+$^#UnInstall 1.10.21#
 $^#Contents#
 
  #Columns#
@@ -50,7 +50,7 @@ $^#Contents#
  ~Discussion~@http://forum.farmanager.com/viewtopic.php?t=3597@
 
 @Configuration
-$^#UnInstall 1.10.20#
+$^#UnInstall 1.10.21#
 $^#Configuration#
 
  #Show in the Editor#, #Show in the Viewer#
@@ -76,7 +76,7 @@ in the registry - this command will be used instead of «msiexec /?{GUID}».
  ~Contents~@Contents@
 
 @UninstallEntry
-$^#UnInstall 1.10.20#
+$^#UnInstall 1.10.21#
 $^#Uninstall entry information#
 
  Use #PgUp#/#PgDn# to view previous/next program
@@ -84,7 +84,7 @@ $^#Uninstall entry information#
  ~Contents~@Contents@
 
 @ActionMenu
-$^#UnInstall 1.10.20#
+$^#UnInstall 1.10.21#
 $^#Select action#
 
  #F7# change proirity of uninstall process

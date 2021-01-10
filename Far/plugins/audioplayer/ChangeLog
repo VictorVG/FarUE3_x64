@@ -1,3 +1,16 @@
+AudioPlayer 3.45.3 27-12-2020
+-----------------------------
+ * More bug fix
+
+AudioPlayer 3.45.2 27-12-2020
+-----------------------------
+ * Volume control (keyboard Up/Down) fix
+
+AudioPlayer 3.45.1 26-12-2020
+-----------------------------
+ + BASSWEBM, *.weba
+ * .cue fix once more
+
 AudioPlayer 3.45.0 25-12-2020
 -----------------------------
  + Show playlist (minimalistic) -- Ctrl+L

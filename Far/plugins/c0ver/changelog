@@ -1,1 +1,27 @@
-* Исправил:  - ошибку в GlobalInfo() приводившую к бесконечным обновлениям v3.1 до v3.1 с плагринга  - MinFarVersion >= 4214 (подсказал shmuel за что ему огромное СПАСИБО!)  - Version - не перепутать  - минимальная версия ОС Windows XP/Server 2003 x86/AMD64    /VictorVG, Fri Mar 04 03:12:04 +0300 2016/* '.sys' extension added* More extensions supported (dl, so, fmt, module, fll, ahp, t32, t64, sfx).* '.Net' modules are identified as [xDN] (or [sDN] when signed).* [dos]/[win] when plugin fails to retrieve information about PE file.* Some StringVersionInfo's fails.* String FileVersion or ProductVersion preferred.* Some PE Files was skipped.* IsBadReadPtr was eliminated.* MapViewOfFile only for required part of PE file.* Extensions com и pvd.* [IA64] для образов Itanium platform.* Пытаемся обрабатывать файлы, открытые другими приложениями (FILE_SHARE_READ, FILE_SHARE_READ|FILE_SHARE_WRITE, 0).* [s32] вместо [x32] (и т.п.) для PE файлов с цифровой подписью.
+Version 3.2
+
+* Don't load cloud files (OneDrive free up space feature).
+
+
+Version 3.1
+
+* '.sys' extension added
+
+* More extensions supported (dl, so, fmt, module, fll, ahp, t32, t64, sfx).
+* '.Net' modules are identified as [xDN] (or [sDN] when signed).
+
+* [dos]/[win] when plugin fails to retrieve information about PE file.
+* Some StringVersionInfo's fails.
+* String FileVersion or ProductVersion preferred.
+
+* Some PE Files was skipped.
+
+* IsBadReadPtr was eliminated.
+* MapViewOfFile only for required part of PE file.
+
+* Extensions com и pvd.
+
+* [IA64] для образов Itanium platform.
+* Пытаемся обрабатывать файлы, открытые другими приложениями (FILE_SHARE_READ, FILE_SHARE_READ|FILE_SHARE_WRITE, 0).
+
+* [s32] вместо [x32] (и т.п.) для PE файлов с цифровой подписью.

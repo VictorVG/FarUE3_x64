@@ -2,9 +2,10 @@
 .PluginContents=AdvCmpEx
 
 @Contents
-$^ #AdvCmpEx#
-$^ #3.0 build 35#
+$^ #Расширенное сравнение файлов#
+$^ #3.2.0#
 $^ #Copyright (C) 2006 Alexey Samlyukov#
+$^ #Copyright (C) 2020 FarPlugins Team#
 
     Этот плагин аналогичен встроенной команде Far Manager "Сравнение папок", но также
 позволяет указать дополнительные режимы и параметры сравнения.
