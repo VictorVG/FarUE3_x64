@@ -1,6 +1,6 @@
 ﻿.Language=Spanish,Spanish (Español)
 
-//Version: 3.0.5725.0 (Private) x64
+//Version: 3.0.5727.0 (Private) x64
 
 //[MYes]
 "Si"
@@ -2518,6 +2518,9 @@
 "Volumen:"
 //[MSetAttrDfsTargets]
 "DFS Destinos:"
+// need translation:
+//[MSetAttrAppExecLink]
+"App Alias:"
 //[MSetAttrUnknownReparsePoint]
 "(datos no disponibles)"
 //[MSetAttrReadOnly]

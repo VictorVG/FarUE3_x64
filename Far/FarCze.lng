@@ -1,6 +1,6 @@
 ﻿.Language=Czech,Czech (Čeština)
 
-//Version: 3.0.5725.0 (Private) x64
+//Version: 3.0.5727.0 (Private) x64
 
 //[MYes]
 "Ano"
@@ -2511,6 +2511,9 @@
 "Svazek:"
 //[MSetAttrDfsTargets]
 "DFS cíly:"
+// need translation:
+//[MSetAttrAppExecLink]
+"App Alias:"
 //[MSetAttrUnknownReparsePoint]
 "(data nejsou k dispozici)"
 //[MSetAttrReadOnly]

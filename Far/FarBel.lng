@@ -1,6 +1,6 @@
 ﻿.Language=Belarusian,Belarusian (Беларуская)
 
-//Version: 3.0.5725.0 (Private) x64
+//Version: 3.0.5727.0 (Private) x64
 
 //[MYes]
 "Так"
@@ -2507,6 +2507,9 @@
 "Дыск:"
 //[MSetAttrDfsTargets]
 "DFS мэты:"
+// need translation:
+//[MSetAttrAppExecLink]
+"App Alias:"
 //[MSetAttrUnknownReparsePoint]
 "(няма дадзеных)"
 //[MSetAttrReadOnly]

@@ -1,6 +1,6 @@
 ﻿.Language=Italian,Italian (Italiano)
 
-//Version: 3.0.5725.0 (Private) x64
+//Version: 3.0.5727.0 (Private) x64
 
 //[MYes]
 "&Si"
@@ -2513,6 +2513,9 @@
 "Volume:"
 //[MSetAttrDfsTargets]
 "Destinazioni DFS:"
+// need translation:
+//[MSetAttrAppExecLink]
+"App Alias:"
 //[MSetAttrUnknownReparsePoint]
 "(dati sconosciuti)"
 //[MSetAttrReadOnly]

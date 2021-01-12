@@ -1,6 +1,6 @@
 ﻿.Language=Hungarian,Hungarian (Magyar)
 
-//Version: 3.0.5725.0 (Private) x64
+//Version: 3.0.5727.0 (Private) x64
 
 //[MYes]
 "Igen"
@@ -2732,6 +2732,9 @@
 // need translation:
 //[MSetAttrDfsTargets]
 "DFS Targets:"
+// need translation:
+//[MSetAttrAppExecLink]
+"App Alias:"
 //[MSetAttrUnknownReparsePoint]
 "(adat nem elérhető)"
 //[MSetAttrReadOnly]

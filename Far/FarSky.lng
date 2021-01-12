@@ -1,6 +1,6 @@
 ﻿.Language=Slovak,Slovak (Slovenčina)
 
-//Version: 3.0.5725.0 (Private) x64
+//Version: 3.0.5727.0 (Private) x64
 
 //[MYes]
 "Áno"
@@ -2516,6 +2516,9 @@
 "Zväzok:"
 //[MSetAttrDfsTargets]
 "DFS ciele:"
+// need translation:
+//[MSetAttrAppExecLink]
+"App Alias:"
 //[MSetAttrUnknownReparsePoint]
 "(dáta nie sú k dispozícii)"
 //[MSetAttrReadOnly]

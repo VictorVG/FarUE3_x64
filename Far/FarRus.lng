@@ -1,6 +1,6 @@
 ﻿.Language=Russian,Russian (Русский)
 
-//Version: 3.0.5725.0 (Private) x64
+//Version: 3.0.5727.0 (Private) x64
 
 //[MYes]
 "Да"
@@ -2507,6 +2507,9 @@
 "Том:"
 //[MSetAttrDfsTargets]
 "DFS цели:"
+// need translation:
+//[MSetAttrAppExecLink]
+"App Alias:"
 //[MSetAttrUnknownReparsePoint]
 "(нет данных)"
 //[MSetAttrReadOnly]
