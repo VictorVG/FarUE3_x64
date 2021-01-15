@@ -1,6 +1,6 @@
 ﻿.Language=Polish,Polish (Polski)
 
-//Version: 3.0.5727.0 (Private) x64
+//Version: 3.0.5730.0 (Private) x64
 
 //[MYes]
 "Tak"
@@ -2507,9 +2507,8 @@
 "Wolumen:"
 //[MSetAttrDfsTargets]
 "Cel DFS:"
-// need translation:
 //[MSetAttrAppExecLink]
-"App Alias:"
+"Alias aplikacji:"
 //[MSetAttrUnknownReparsePoint]
 "(dane niedostępne)"
 //[MSetAttrReadOnly]
