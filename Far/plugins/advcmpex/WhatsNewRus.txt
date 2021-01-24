@@ -6,6 +6,9 @@
 AdvCmpEx
 ~~~~~~~~
 
+Version 3.2.0 (24.01.2021)
+[-] Fix by DrKnS https://forum.farmanager.com/viewtopic.php?p=164280#p164280
+
 Version 3.2.0 (09.01.2021)
 --------------------------
 [+] добавлена поддержка Windows 2000 и WindowsXP

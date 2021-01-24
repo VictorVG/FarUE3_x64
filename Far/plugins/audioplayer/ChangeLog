@@ -1,3 +1,10 @@
+AudioPlayer 3.45.4 22-01-2021
+-----------------------------
+ + Dialog width control -- Ctrl+Add / Ctrl+Subtract
+ + Playlist height control -- Ctrl+Multiply / Ctrl+Divide
+ * Use tags when build playlist from panel files
+ * Updated bassalac.dll
+
 AudioPlayer 3.45.3 27-12-2020
 -----------------------------
  * More bug fix
