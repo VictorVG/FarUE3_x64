@@ -1,0 +1,5501 @@
+﻿.Language=Lithuanian,Lithuanian (Lietuvių)
+
+//Version: 3.0.5737.0 (Private) x64
+
+//[MYes]
+"Taip"
+//[MNo]
+"Ne"
+//[MOk]
+"Gerai"
+
+//[MHYes]
+"&Taip"
+//[MHNo]
+"&Ne"
+//[MHOk]
+"&Gerai"
+
+//[MCancel]
+"Atšaukti"
+// need translation:
+//[MReset]
+"&Reset"
+//[MRetry]
+"Bandyti vėl"
+//[MSkip]
+"Praleisti"
+// need translation:
+//[MAbort]
+"Abort"
+// need translation:
+//[MIgnore]
+"Ignore"
+//[MDelete]
+"Trinti"
+
+//[MHCancel]
+"&Atšaukti"
+//[MHRetry]
+"&Bandyti vėl"
+//[MHSkip]
+"&Praleisti"
+// need translation:
+//[MHSkipAll]
+"S&kip all"
+// need translation:
+//[MHAbort]
+"&Abort"
+// need translation:
+//[MHIgnore]
+"&Ignore"
+//[MHDelete]
+"&Trinti"
+// need translation:
+//[MHRemove]
+"R&emove"
+//[MHSplit]
+"Padalinti"
+
+//[MWarning]
+"Įspėjimas"
+//[MError]
+"Klaida"
+
+//[MQuit]
+"Išeiti"
+//[MAskQuit]
+"Ar norite išeiti iš Far?"
+
+// Panels: functional keys
+//[MF1]
+"Pagalb"
+//[MF2]
+"Meniu"
+//[MF3]
+"Žiūrėt"
+//[MF4]
+"Redag"
+//[MF5]
+"Kopij"
+//[MF6]
+"Perkel"
+//[MF7]
+"Katal"
+//[MF8]
+"Trinti"
+//[MF9]
+"KonfMn"
+//[MF10]
+"Išeiti"
+//[MF11]
+"Pried"
+//[MF12]
+"Ekran"
+
+//[MShiftF1]
+"Supak"
+//[MShiftF2]
+"Išpak"
+//[MShiftF3]
+"ArcKmd"
+//[MShiftF4]
+"Reda…"
+//[MShiftF5]
+"Kopij"
+//[MShiftF6]
+"Pervad"
+//[MShiftF7]
+""
+//[MShiftF8]
+"Trinti"
+//[MShiftF9]
+"Išsaug"
+//[MShiftF10]
+"Paskut"
+//[MShiftF11]
+"Grupė"
+// need translation:
+//[MShiftF12]
+"SelUp"
+
+//[MAltF1]
+"Kairė"
+//[MAltF2]
+"Dešinė"
+//[MAltF3]
+"Žiūr"
+//[MAltF4]
+"Reda…"
+//[MAltF5]
+"Spausd"
+//[MAltF6]
+"Saitas"
+//[MAltF7]
+"Rasti"
+//[MAltF8]
+"Istor"
+//[MAltF9]
+"Video"
+//[MAltF10]
+"Medis"
+//[MAltF11]
+"ŽiūrIs"
+//[MAltF12]
+"KatIs"
+
+//[MCtrlF1]
+"Kairė"
+//[MCtrlF2]
+"Dešinė"
+//[MCtrlF3]
+"Vardą"
+//[MCtrlF4]
+"Plėtin"
+//[MCtrlF5]
+"Modif"
+//[MCtrlF6]
+"Dydį"
+//[MCtrlF7]
+"Nerūš"
+//[MCtrlF8]
+"Sukūr"
+//[MCtrlF9]
+"Naudoj"
+//[MCtrlF10]
+"Aprašy"
+//[MCtrlF11]
+"Savin"
+//[MCtrlF12]
+"Rušiuot"
+
+// Main AltShift
+//[MAltShiftF1]
+""
+//[MAltShiftF2]
+""
+//[MAltShiftF3]
+""
+//[MAltShiftF4]
+""
+//[MAltShiftF5]
+""
+//[MAltShiftF6]
+""
+//[MAltShiftF7]
+""
+//[MAltShiftF8]
+""
+// need translation:
+//[MAltShiftF9]
+"ConfPl"
+//[MAltShiftF10]
+""
+//[MAltShiftF11]
+""
+//[MAltShiftF12]
+""
+
+//Main CtrlShift
+//[MCtrlShiftF1]
+""
+//[MCtrlShiftF2]
+""
+//[MCtrlShiftF3]
+"Žiūrėt"
+//[MCtrlShiftF4]
+"Redag"
+//[MCtrlShiftF5]
+""
+//[MCtrlShiftF6]
+""
+//[MCtrlShiftF7]
+""
+//[MCtrlShiftF8]
+""
+//[MCtrlShiftF9]
+""
+//[MCtrlShiftF10]
+""
+//[MCtrlShiftF11]
+""
+//[MCtrlShiftF12]
+""
+
+// Main CtrlAlt
+//[MCtrlAltF1]
+""
+//[MCtrlAltF2]
+""
+//[MCtrlAltF3]
+""
+//[MCtrlAltF4]
+""
+//[MCtrlAltF5]
+""
+//[MCtrlAltF6]
+""
+//[MCtrlAltF7]
+""
+//[MCtrlAltF8]
+""
+//[MCtrlAltF9]
+""
+//[MCtrlAltF10]
+""
+//[MCtrlAltF11]
+""
+//[MCtrlAltF12]
+""
+
+// Main CtrlAltShift
+//[MCtrlAltShiftF1]
+""
+//[MCtrlAltShiftF2]
+""
+//[MCtrlAltShiftF3]
+""
+//[MCtrlAltShiftF4]
+""
+//[MCtrlAltShiftF5]
+""
+//[MCtrlAltShiftF6]
+""
+//[MCtrlAltShiftF7]
+""
+//[MCtrlAltShiftF8]
+""
+//[MCtrlAltShiftF9]
+""
+//[MCtrlAltShiftF10]
+""
+//[MCtrlAltShiftF11]
+""
+// Panels: end of functional keys
+//[MCtrlAltShiftF12]
+""
+
+//[MHistoryTitle]
+"Istorija"
+// need translation:
+//[MHistoryInfoTitle]
+"Information"
+// need translation:
+//[MHistoryInfoFolder]
+"Folder:"
+//[MFolderHistoryTitle]
+"Katalogų istorija"
+//[MViewHistoryTitle]
+"Failų peržiūros istorija"
+// need translation:
+//[MViewHistoryIsCreate]
+"Create the file?"
+//[MHistoryView]
+"Žiūrėti"
+//[MHistoryEdit]
+"Redaguoti"
+// need translation:
+//[MHistoryExt]
+"Ext."
+
+// need translation:
+//[MHistoryClear]
+"All records in the history will be deleted. Continue?"
+// need translation:
+//[MClear]
+"&Clear history"
+
+//[MConfigSystemTitle]
+"Sisteminiai nuostatai"
+//[MConfigRecycleBin]
+"&Trinti į Recycle Bin"
+//[MConfigSystemCopy]
+"Naudoti &sistemos kopijavimo rutiną"
+//[MConfigCopySharing]
+"Kopijuoti failus at&vertus įrašymui"
+// need translation:
+//[MConfigScanJunction]
+"Scan s&ymbolic links"
+// need translation:
+//[MConfigSmartFolderMonitor]
+"&Update panels only when Far is active"
+//[MConfigSaveHistory]
+"Išsaugoti komandų &istoriją"
+//[MConfigSaveFoldersHistory]
+"Išsaugoti &katalogų istoriją"
+//[MConfigSaveViewHistory]
+"Išsaugoti &žiūrėjimo ir redagavimo istoriją"
+//[MConfigRegisteredTypes]
+"Naudoti Windows &registruotus tipus"
+// need translation:
+//[MConfigUpdateEnvironment]
+"Automatic update of &environment variables"
+// need translation:
+//[MConfigElevation]
+"Request administrator rights:"
+// need translation:
+//[MConfigElevationModify]
+"For &modification"
+// need translation:
+//[MConfigElevationRead]
+"For &reading"
+// need translation:
+//[MConfigElevationUsePrivileges]
+"Use additional &privileges"
+// need translation:
+//[MConfigSortingCollation]
+"Sorti&ng collation:"
+// need translation:
+//[MConfigSortingOrdinal]
+"ordinal"
+// need translation:
+//[MConfigSortingInvariant]
+"invariant"
+// need translation:
+//[MConfigSortingLinguistic]
+"linguistic"
+// need translation:
+//[MConfigSortingDigitsAsNumbers]
+"Treat digits &as numbers"
+// need translation:
+//[MConfigSortingCase]
+"&Case sensitive"
+//[MConfigAutoSave]
+"&Auto išsaugoti nuostatus"
+
+// need translation:
+//[MConfigTreeTitle]
+"Tree settings"
+//[MConfigTreeAutoChange]
+"&Auto keisti katalogą"
+// need translation:
+//[MConfigTreeLabelMinFolder]
+"&Minimum number of folders:"
+// need translation:
+//[MConfigTreeLabel1]
+"Store a file with folder structure for:"
+// need translation:
+//[MConfigTreeLabelLocalDisk]
+"local drives"
+// need translation:
+//[MConfigTreeLabelNetDisk]
+"network drives"
+// need translation:
+//[MConfigTreeLabelNetPath]
+"network paths"
+// need translation:
+//[MConfigTreeLabelRemovableDisk]
+"removable drives"
+// need translation:
+//[MConfigTreeLabelCDDisk]
+"optical drives"
+// need translation:
+//[MConfigTreeLabelExceptPath]
+"Don't create the file for following drives and paths:"
+// need translation:
+//[MConfigTreeLabelSaveLocalPath]
+"Path for local, removale and optical drives:"
+// need translation:
+//[MConfigTreeLabelSaveNetPath]
+"Path for network drives and paths:"
+
+//[MConfigPanelTitle]
+"Langų parametrai"
+//[MConfigHidden]
+"Rodyti &hidden ir system failus"
+//[MConfigHighlight]
+"Par&yškinti failus"
+//[MConfigSelectFolders]
+"Žymėti &katalogus"
+// need translation:
+//[MConfigRightClickSelect]
+"Right clic&k selects files"
+// need translation:
+//[MConfigSortFolderExt]
+"Sort folder names by e&xtension"
+//[MConfigAllowReverseSort]
+"Leisti at&virkštinį rūšiavimo būdą"
+// need translation:
+//[MConfigAutoUpdateLimit]
+"&Disable automatic panel update"
+// need translation:
+//[MConfigAutoUpdateLimit2]
+"if ob&ject count exceeds"
+// need translation:
+//[MConfigAutoUpdateRemoteDrive]
+"Network drives autor&efresh"
+//[MConfigShowColumns]
+"Rodyti s&tulpelių antraštes"
+//[MConfigShowStatus]
+"Rodyti &statuso juostą"
+// need translation:
+//[MConfigDetailedJunction]
+"Detect volume mount &points"
+//[MConfigShowTotal]
+"Rodyti failų dydžio su&minę informaciją"
+//[MConfigShowFree]
+"Rodyti &laisvos vietos kiekį"
+//[MConfigShowScrollbar]
+"Rodyti šlia&užiklį"
+//[MConfigShowScreensNumber]
+"Rodyti nematomų ekra&nų skaičių"
+//[MConfigShowSortMode]
+"Rodyti rūšiavimo &būdo raidę"
+// need translation:
+//[MConfigShowDotsInRoot]
+"Show \"&..\" in root folders"
+
+//[MConfigInterfaceTitle]
+"Sąsajos nuostatai"
+//[MConfigClock]
+"&Laikrodis"
+//[MConfigViewerEditorClock]
+"Laik&rodis redaktoriuje"
+//[MConfigMouse]
+"&Pelė"
+//[MConfigKeyBar]
+"Rodyti &funkcinių klavišų juostą"
+//[MConfigMenuBar]
+"Visada rodyti &meniu juostą"
+//[MConfigSaver]
+"&Ekrano užsklanda"
+//[MConfigSaverMinutes]
+"minutės"
+//[MConfigCopyTotal]
+"Rodyti &bendro progreso indikatorių"
+// need translation:
+//[MConfigCopyTimeRule]
+"Show cop&ying time information"
+// need translation:
+//[MConfigDeleteTotal]
+"Show total &delete progress indicator"
+// need translation:
+//[MConfigPgUpChangeDisk]
+"Use Ctrl+Pg&Up to change drive"
+// need translation:
+//[MConfigUseVirtualTerminalForRendering]
+"Use &Virtual Terminal for rendering"
+// need translation:
+//[MConfigClearType]
+"Cl&earType-friendly redraw (can be slow)"
+// need translation:
+//[MConfigSetConsoleIcon]
+"Сonsole &icon:"
+// need translation:
+//[MConfigSetAdminConsoleIcon]
+"Alternate for &Administrator"
+// need translation:
+//[MConfigTitleAddons]
+"Far &window title addons:"
+
+// need translation:
+//[MConfigDlgSetsTitle]
+"Dialog settings"
+//[MConfigDialogsEditHistory]
+"Dialogų teksto &istorija"
+// need translation:
+//[MConfigDialogsEditBlock]
+"&Persistent blocks in edit controls"
+// need translation:
+//[MConfigDialogsDelRemovesBlocks]
+"&Del removes blocks in edit controls"
+// need translation:
+//[MConfigDialogsAutoComplete]
+"&AutoComplete in edit controls"
+// need translation:
+//[MConfigDialogsEULBsClear]
+"&Backspace deletes unchanged text"
+// need translation:
+//[MConfigDialogsMouseButton]
+"Mouse click &outside a dialog closes it"
+
+// need translation:
+//[MConfigVMenuTitle]
+"Menu settings"
+// need translation:
+//[MConfigVMenuLBtnClick]
+"&Left mouse click outside a menu"
+// need translation:
+//[MConfigVMenuRBtnClick]
+"&Right mouse click outside a menu"
+// need translation:
+//[MConfigVMenuMBtnClick]
+"&Middle mouse click outside a menu"
+// need translation:
+//[MConfigVMenuClickCancel]
+"Cancel menu"
+// need translation:
+//[MConfigVMenuClickApply]
+"Execute selected item"
+// need translation:
+//[MConfigVMenuClickIgnore]
+"Do nothing"
+
+// need translation:
+//[MConfigCmdlineTitle]
+"Command line settings"
+// need translation:
+//[MConfigCmdlineEditBlock]
+"&Persistent blocks"
+// need translation:
+//[MConfigCmdlineDelRemovesBlocks]
+"&Del removes blocks"
+// need translation:
+//[MConfigCmdlineAutoComplete]
+"&AutoComplete"
+//[MConfigCmdlineUsePromptFormat]
+"Nustatyti komandinės eilutės pr&ompt formatą"
+// need translation:
+//[MConfigCmdlineUseHomeDir]
+"Use &home dir"
+//[MConfigCmdlinePromptFormatAdmin]
+"Administratorius"
+
+// need translation:
+//[MConfigAutoCompleteTitle]
+"AutoComplete settings"
+
+// need translation:
+//[MConfigAutoCompleteShowList]
+"&Show a list"
+
+// need translation:
+//[MConfigAutoCompleteModalList]
+"&Modal mode"
+
+// need translation:
+//[MConfigAutoCompleteAutoAppend]
+"&Append the first matched item"
+
+// need translation:
+//[MConfigInfoPanelTitle]
+"InfoPanel settings"
+// need translation:
+//[MConfigInfoPanelCNTitle]
+"Computer &name format"
+// need translation:
+//[MConfigInfoPanelCNPhysicalNetBIOS]
+"Physical NetBIOS"
+// need translation:
+//[MConfigInfoPanelCNPhysicalDnsHostname]
+"Physical DNS hostname"
+// need translation:
+//[MConfigInfoPanelCNPhysicalDnsDomain]
+"Physical DNS domain"
+// need translation:
+//[MConfigInfoPanelCNPhysicalDnsFullyQualified]
+"Physical DNS fully-qualified"
+//[MConfigInfoPanelCNNetBIOS]
+"NetBIOS"
+// need translation:
+//[MConfigInfoPanelCNDnsHostname]
+"DNS hostname"
+// need translation:
+//[MConfigInfoPanelCNDnsDomain]
+"DNS domain"
+// need translation:
+//[MConfigInfoPanelCNDnsFullyQualified]
+"DNS fully-qualified"
+// need translation:
+//[MConfigInfoPanelUNTitle]
+"&User name format"
+// need translation:
+//[MConfigInfoPanelUNLogon]
+"Logon name"
+// need translation:
+//[MConfigInfoPanelUNFullyQualifiedDN]
+"Fully Qualified Domain Name"
+// need translation:
+//[MConfigInfoPanelUNSamCompatible]
+"Sam Compatible"
+// need translation:
+//[MConfigInfoPanelUNDisplay]
+"Display Name"
+// need translation:
+//[MConfigInfoPanelUNUniqueId]
+"Unique Id"
+// need translation:
+//[MConfigInfoPanelUNCanonical]
+"Canonical Name"
+// need translation:
+//[MConfigInfoPanelUNUserPrincipal]
+"User Principial Name"
+// need translation:
+//[MConfigInfoPanelUNServicePrincipal]
+"Service Principal"
+// need translation:
+//[MConfigInfoPanelUNDnsDomain]
+"DNS Domain"
+// need translation:
+//[MConfigInfoPanelUNGivenName]
+"Given name"
+// need translation:
+//[MConfigInfoPanelUNSurname]
+"Surname"
+// need translation:
+//[MConfigInfoPanelShowPowerStatus]
+"Show &power status"
+// need translation:
+//[MConfigInfoPanelShowCDInfo]
+"Show &CD drive parameters"
+
+// need translation:
+//[MMenuInfoShowModeTitle]
+"Show Info"
+// need translation:
+//[MMenuInfoShowModeDisk]
+"&Disk"
+// need translation:
+//[MMenuInfoShowModeMemory]
+"&Memory"
+// need translation:
+//[MMenuInfoShowModeDirDiz]
+"&Description"
+// need translation:
+//[MMenuInfoShowModePluginDiz]
+"Plu&gin panel"
+// need translation:
+//[MMenuInfoShowModePower]
+"&Power status"
+
+//[MViewConfigTitle]
+"Peržiūra"
+//[MViewConfigExternalF3]
+"Naudoti išorinė peržiūros programa su F3 vietoj Alt+F3"
+//[MViewConfigExternalCommand]
+"&Peržiūros komanda:"
+//[MViewConfigInternal]
+"Vidinė peržiūros programa"
+//[MViewConfigSavePos]
+"Iš&saugoti failo poziciją"
+// need translation:
+//[MViewConfigSaveShortPos]
+"Save &bookmarks"
+// need translation:
+//[MViewConfigSaveCodepage]
+"Save file &code page"
+// need translation:
+//[MViewConfigSaveWrapMode]
+"Save w&rap mode"
+// need translation:
+//[MViewConfigSaveViewMode]
+"Save vi&ew mode"
+// need translation:
+//[MViewConfigDetectDumpMode]
+"Detect d&ump view mode"
+//[MViewAutoDetectCodePage]
+"Auto&nustatyti kodavimo puslapį"
+//[MViewConfigTabSize]
+"Tab d&ydis"
+// need translation:
+//[MViewConfigScrollbar]
+"Show scro&llbar"
+// need translation:
+//[MViewConfigArrows]
+"Show scrolling arro&ws"
+// need translation:
+//[MViewConfigPersistentSelection]
+"&Persistent selection"
+// need translation:
+//[MViewConfigDefaultCodePage]
+"&Default code page:"
+// need translation:
+//[MViewConfigMaxLineSize]
+"&Maximum line width"
+// need translation:
+//[MViewConfigVisible0x00]
+"Visible '\\&0'"
+// need translation:
+//[MViewConfigEditAutofocus]
+"Search dialog auto-&focus"
+
+//[MEditConfigTitle]
+"Redaktorius"
+//[MEditConfigEditorF4]
+"Naudoti išorinis redaktorius su F4 vietoj Alt+F4"
+//[MEditConfigEditorCommand]
+"&Redaktoriaus komanda:"
+//[MEditConfigInternal]
+"Vidinis redaktorius"
+// need translation:
+//[MEditConfigExpandTabsTitle]
+"Expand &tabs:"
+
+// need translation:
+//[MEditConfigDoNotExpandTabs]
+"Do not expand tabs"
+// need translation:
+//[MEditConfigExpandTabs]
+"Expand newly entered tabs to spaces"
+// need translation:
+//[MEditConfigConvertAllTabsToSpaces]
+"Expand all tabs to spaces"
+//[MEditConfigPersistentBlocks]
+"&Pastovus blokas"
+
+//[MEditConfigDelRemovesBlocks]
+"&Del ištrina bloką"
+//[MEditConfigAutoIndent]
+"Auto &atitraukti eilutę"
+//[MEditConfigSavePos]
+"Iš&saugoti failo poziciją"
+// need translation:
+//[MEditConfigSaveShortPos]
+"Save &bookmarks"
+//[MEditCursorBeyondEnd]
+"&Žymeklis už eilutės pabaigos"
+//[MEditAutoDetectCodePage]
+"Auto&nustatyti kodavimo puslapį"
+// need translation:
+//[MEditShareWrite]
+"Allow editing files ope&ned for writing"
+// need translation:
+//[MEditLockROFileModification]
+"Lock editing of read-only &files"
+// need translation:
+//[MEditWarningBeforeOpenROFile]
+"&Warn when opening read-only files"
+//[MEditConfigTabSize]
+"Tab d&ydis"
+// need translation:
+//[MEditConfigScrollbar]
+"S&how scrollbar"
+// need translation:
+//[MEditShowWhiteSpace]
+"Sh&ow white space"
+// need translation:
+//[MEditConfigSelFound]
+"Se&lect found"
+// need translation:
+//[MEditConfigCursorAtEnd]
+"Cu&rsor at the end"
+// need translation:
+//[MEditConfigDefaultCodePage]
+"Default code pa&ge:"
+// need translation:
+//[MConfigEditor]
+"Configuration editor"
+
+//[MSaveSetupTitle]
+"Išsaugoti nuostatus"
+//[MSaveSetupAsk1]
+"Ar norite išsaugoti"
+//[MSaveSetupAsk2]
+"esamus nuostatus?"
+//[MSaveSetup]
+"Išsaugoti"
+
+//[MCopyDlgTitle]
+"Kopijuoti"
+//[MMoveDlgTitle]
+"Pervadinti/Perkelti"
+//[MLinkDlgTitle]
+"Saitas"
+//[MCopySecurity]
+"Kopijuoti &priėjimo teises"
+// need translation:
+//[MCopySecurityDefault]
+"Defau&lt"
+//[MCopySecurityCopy]
+"Ko&pijuoti"
+// need translation:
+//[MCopySecurityInherit]
+"&Inherit"
+// need translation:
+//[MCopyIfFileExist]
+"Already e&xisting files:"
+// need translation:
+//[MCopyAsk]
+"&Ask"
+// need translation:
+//[MCopyAskRO]
+"Also ask on &R/O files"
+// need translation:
+//[MCopyOnlyNewerFiles]
+"Only ne&wer file(s)"
+// need translation:
+//[MLinkType]
+"Link t&ype:"
+// need translation:
+//[MLinkTypeJunction]
+"directory &junction"
+// need translation:
+//[MLinkTypeHardlink]
+"&hard link"
+// need translation:
+//[MLinkTypeSymlink]
+"&symbolic link"
+// need translation:
+//[MLinkTypeSymlinkFile]
+"symbolic link (&file)"
+// need translation:
+//[MLinkTypeSymlinkDirectory]
+"symbolic link (fol&der)"
+// need translation:
+//[MCopyPreserveTimestamps]
+"Preserve timestamps"
+// need translation:
+//[MCopySymLinkContents]
+"Cop&y contents of symbolic links"
+// need translation:
+//[MCopyMultiActions]
+"Process &multiple destinations"
+//[MCopyDlgCopy]
+"&Kopijuoti"
+//[MCopyDlgTree]
+"F10-&Medis"
+//[MCopyDlgCancel]
+"&Atšaukti"
+//[MCopyDlgRename]
+"Per&vadinti"
+//[MCopyDlgLink]
+"&Saitas"
+//[MCopyDlgTotal]
+"Viso"
+// need translation:
+//[MCopyPrepareSecury]
+"Applying access rights…"
+// need translation:
+//[MCopyUseFilter]
+"&Use filter"
+// need translation:
+//[MCopySetFilter]
+"Filt&er"
+
+//[MCopyFile]
+"Kopijuoti {0} {1}:"
+//[MMoveFile]
+"Pervadinti ar perkelti {0} {1}:"
+//[MLinkFile]
+"Susieti {0} {1}:"
+//[MCopyFiles]
+"Kopijuoti {0} failu{1} {2}:"
+//[MMoveFiles]
+"Pervadinti ar perkelti {0} failu{1} {2}:"
+//[MLinkFiles]
+"Susieti {0} failu{1} {2}:"
+//[MCMLTargetTO]
+"į"
+//[MCMLTargetIN]
+"su"
+//[MCMLItems0]
+""
+// need translation:
+//[MCMLItemsA]
+"s"
+// need translation:
+//[MCMLItemsS]
+"s"
+
+// need translation:
+//[MCopyIncorrectTargetList]
+"Incorrect target list"
+
+//[MCopyCopyingTitle]
+"Kopijuoju"
+//[MCopyMovingTitle]
+"Perkeliu"
+
+//[MCopyCannotFind]
+"Negaliu rasti  failo"
+
+//[MCannotCopyFolderToItself1]
+"Negaliu nukopijuoti katalogo"
+//[MCannotCopyFolderToItself2]
+"į save patį"
+
+//[MCopyCannotCreateFolder]
+"Negaliu sukurti katalogo"
+// need translation:
+//[MCopyCannotRenameFolder]
+"Cannot rename the folder"
+// need translation:
+//[MCopyIgnore]
+"&Ignore"
+// need translation:
+//[MCopyIgnoreAll]
+"Ignore &All"
+//[MCopyRetry]
+"&Bandyti vėl"
+//[MCopySkip]
+"&Praleist"
+// need translation:
+//[MCopySkipAll]
+"S&kip all"
+//[MCopyCancel]
+"&Atšaukti"
+// need translation:
+//[MCopyDecrypt]
+"&Decrypt"
+// need translation:
+//[MCopyDecryptAll]
+"Decrypt &all"
+
+// need translation:
+//[MCopyCannotCreateLink]
+"Cannot create the link"
+// need translation:
+//[MCopyFolderNotEmpty]
+"Target folder must be empty"
+// need translation:
+//[MCopyCannotCreateJunctionToFile]
+"Cannot create junction. The file already exists:"
+
+// need translation:
+//[MCopyCannotCreateVolMount]
+"Volume mount points error"
+// need translation:
+//[MCopyMountVolFailed]
+"Attempt to volume mount '{0}'"
+// need translation:
+//[MCopyMountVolFailed2]
+"at '{0}' failed"
+// need translation:
+//[MCopyMountName]
+"Disk_"
+
+//[MCannotCopyFileToItself1]
+"Negaliu nukopijuoti failo"
+//[MCannotCopyFileToItself2]
+"į save patį"
+
+// need translation:
+//[MCopyStream1]
+"The source file contains more than one data stream,"
+// need translation:
+//[MCopyStream2]
+"but you're not using the system copy routine."
+// need translation:
+//[MCopyStream3]
+"but the destination volume does not support this feature."
+// need translation:
+//[MCopyStream4]
+"Some data will not be preserved."
+
+// need translation:
+//[MCopyDirectoryOrFile]
+"Does it specify a folder name or file name?"
+// need translation:
+//[MCopyDirectoryOrFileDirectory]
+"Folder"
+// need translation:
+//[MCopyDirectoryOrFileFile]
+"File"
+
+//[MCopyFileExist]
+"Toks failas jau yra"
+//[MCopySource]
+"Kopijuojamas"
+//[MCopyDest]
+"Esantis"
+//[MCopyOverwrite]
+"U&žrašyti"
+//[MCopyAppend]
+"Pri&jungti"
+// need translation:
+//[MCopyRename]
+"R&ename"
+// need translation:
+//[MCopyRememberChoice]
+"&Remember choice"
+// need translation:
+//[MCopyRenameTitle]
+"Rename"
+// need translation:
+//[MCopyRenameText]
+"&New name:"
+
+//[MCopyFileRO]
+"Failas yra read only"
+//[MCopyAskDelete]
+"Ar norite jį ištrinti?"
+//[MCopyDeleteRO]
+"&Trinti"
+//[MCopyDeleteAllRO]
+"&Visus"
+
+//[MCannotCopy]
+"Negaliu nukopijuoti"
+//[MCannotMove]
+"Negaliu perkelti"
+//[MCannotLink]
+"Negaliu susieti"
+//[MCannotCopyTo]
+"į"
+// need translation:
+//[MCopyEncryptWarn1]
+"The file"
+// need translation:
+//[MCopyEncryptWarn2]
+"cannot be copied or moved without losing its encryption."
+// need translation:
+//[MCopyEncryptWarn3]
+"You can choose to ignore this error and continue, or cancel."
+
+//[MCopyReadError]
+"Negaliu nuskaityti duomenų iš"
+//[MCopyWriteError]
+"Negaliu įrašyti duomenų į"
+
+//[MCopyFilesTotalInfo]
+"Failų:"
+// need translation:
+//[MCopyBytesTotalInfo]
+"Bytes:"
+//[MCopyMoving]
+"Perkeliu failą"
+//[MCopyCopying]
+"Kopijuoju failą"
+//[MCopyTo]
+"į"
+
+//[MCopyErrorDiskFull]
+"Diskas pilnas. Įkiškite sekantį"
+
+//[MDeleteTitle]
+"Trinti"
+//[MAskDeleteFolder]
+"Ar norite ištrinti katalogą"
+//[MAskDeleteFile]
+"Ar norite ištrinti failą"
+//[MAskDelete]
+"Ar norite ištrinti"
+//[MAskDeleteRecycleFolder]
+"Ar norite perkelti į Recycle Bin katalogą"
+//[MAskDeleteRecycleFile]
+"Ar norite perkelti į Recycle Bin failą"
+//[MAskDeleteRecycle]
+"Ar norite perkelti į Recycle Bin"
+//[MDeleteWipeTitle]
+"Išvalyti"
+//[MAskWipeFolder]
+"Ar norite išvalyti katalogą"
+//[MAskWipeFile]
+"Ar norite išvalyti failą"
+//[MAskWipe]
+"Ar norite išvalyti"
+// need translation:
+//[MAskDeleteLink]
+"a link to"
+// need translation:
+//[MAskDeleteLinkFolder]
+"folder"
+// need translation:
+//[MAskDeleteLinkFile]
+"file"
+//[MAskDeleteItems]
+"{0} failu{1}"
+//[MAskDeleteItems0]
+""
+// need translation:
+//[MAskDeleteItemsA]
+"s"
+// need translation:
+//[MAskDeleteItemsS]
+"s"
+
+//[MDeleteFolderTitle]
+"Trinti katalogą"
+//[MWipeFolderTitle]
+"Išvalyti katalogą"
+//[MDeleteFilesTitle]
+"Trinti failus"
+//[MWipeFilesTitle]
+"Išvalyti failus"
+//[MDeleteFolderConfirm]
+"Šis katalogas bus ištrintas:"
+//[MWipeFolderConfirm]
+"Šis katalogas bus išvalytas:"
+//[MRecycleFolderConfirm]
+"Šis katalogas bus perkeltas į Recycle Bin:"
+// need translation:
+//[MRecycleFolderConfirmDeleteLink1]
+"Folder contains symbolic links."
+// need translation:
+//[MRecycleFolderConfirmDeleteLink2]
+"To prevent the loss of their content when clearing Recyle Bin"
+// need translation:
+//[MRecycleFolderConfirmDeleteLink3]
+"those links will be broken now."
+// need translation:
+//[MRecycleFolderConfirmDeleteLink4]
+"It would be impossible to restore them later."
+// need translation:
+//[MDeleteWipe]
+"Wipe"
+// need translation:
+//[MDeleteRecycle]
+"Move"
+//[MDeleteFileDelete]
+"&Trinti"
+// need translation:
+//[MDeleteFileWipe]
+"&Wipe"
+//[MDeleteFileAll]
+"&Visus"
+//[MDeleteFileSkip]
+"&Praleist"
+//[MDeleteFileSkipAll]
+"P&raleist visus"
+//[MDeleteFileCancel]
+"&Atšaukti"
+
+//[MDeletingTitle]
+"Trinu"
+
+//[MDeleting]
+"Trinu failą ar katalogą"
+//[MDeletingWiping]
+"Išvalu failą ar katalogą"
+
+//[MDeleteRO]
+"Šis failas yra read only"
+//[MAskDeleteRO]
+"Ar norite jį ištrinti?"
+//[MAskWipeRO]
+"Ar norite jį išvalyti?"
+
+// need translation:
+//[MDeleteHardLink1]
+"Several hard links link to this file."
+// need translation:
+//[MDeleteHardLink2]
+"Wiping this file will void all files linking to it."
+// need translation:
+//[MDeleteHardLink3]
+"Do you wish to wipe this file?"
+
+//[MCannotDeleteFile]
+"Negaliu ištrinti failo"
+//[MCannotDeleteFolder]
+"Negaliu ištrinti katalogo"
+//[MDeleteRetry]
+"&Bandyti vėl"
+//[MDeleteSkip]
+"&Praleist"
+//[MDeleteSkipAll]
+"P&raleist visus"
+//[MDeleteCancel]
+"&Atšaukti"
+// need translation:
+//[MCannotRecycleFile]
+"Cannot move file to the Recycle Bin"
+// need translation:
+//[MCannotRecycleFolder]
+"Cannot move folder to the Recycle Bin"
+// need translation:
+//[MTryToDeletePermanently]
+"Try to delete it permanently?"
+
+//[MCannotGetSecurity]
+"Negaliu gauti failo priėjimo teisių failui"
+//[MCannotSetSecurity]
+"Negaliu nustatyti failo priėjimo teisių failui"
+
+//[MEditTitle]
+"Redaktorius"
+//[MAskReload]
+"jau pakrautas. Pakrauti vėl?"
+//[MCurrent]
+"Rodyti &einamą"
+//[MReload]
+"Pe&rkrauti"
+// need translation:
+//[MNewOpen]
+"&New instance"
+//[MEditCannotOpen]
+"Negaliu atidaryti failo"
+//[MEditReading]
+"Skaitau failą"
+//[MEditAskSave]
+"Failas buvo redaguotas. Iš&saugoti?"
+// need translation:
+//[MEditAskSaveExt]
+"The file was changed by an external program. Save?"
+// need translation:
+//[MEditBtnSaveAs]
+"Save &as…"
+
+//[MEditRO]
+"yra read only failas"
+//[MEditExists]
+"jau egzistuoja"
+//[MEditOvr]
+"Ar norite užrašyti ant jo?"
+//[MEditSaving]
+"Išsaugau failą"
+// Up to 3 characters
+//[MEditStatusLine]
+"Elt"
+// Up to 3 characters
+//[MEditStatusCol]
+"Stl"
+// Up to 2 characters
+// need translation:
+//[MEditStatusChar]
+"Ch"
+
+// need translation:
+//[MEditRSH]
+"is a read-only file"
+// need translation:
+//[MEditFileGetSizeError]
+"File size could not be determined."
+// need translation:
+//[MEditFileLong]
+"has the size of {0},"
+// need translation:
+//[MEditFileLong2]
+"which exceeds the configured maximum size of {0}."
+// need translation:
+//[MEditROOpen]
+"Do you wish to edit it?"
+
+// need translation:
+//[MEditCanNotEditDirectory]
+"It is impossible to edit the folder"
+
+//[MEditSearchTitle]
+"Paieška"
+// need translation:
+//[MEditSearchFor]
+"&Search for"
+// need translation:
+//[MEditSearchPickWord]
+"W&ord"
+// need translation:
+//[MEditSearchPickSelection]
+"Se&lection"
+//[MEditSearchCase]
+"&Didžiosios skiriasi"
+// need translation:
+//[MEditSearchWholeWords]
+"&Whole words"
+//[MEditSearchReverse]
+"At&virkščia paieška"
+// need translation:
+//[MEditSearchRegexp]
+"Re&gular expressions"
+// need translation:
+//[MEditSearchPreserveStyle]
+"&Preserve style"
+//[MEditSearchSearch]
+"&Ieškoti"
+//[MEditSearchAll]
+"&Atšaukti"
+//[MEditSearchCancel]
+"Keisti"
+
+//[MEditReplaceTitle]
+"Pakeisti"
+//[MEditReplaceWith]
+"Pa&keisti"
+//[MEditReplaceReplace]
+"Pakeisti &į"
+
+//[MEditSearchingFor]
+"Ieškau"
+// need translation:
+//[MEditSearchStatistics]
+"Occurrences: {0}, lines: {1}"
+//[MEditNotFound]
+"Negalėjau surasti eilutės"
+
+//[MEditAskReplace]
+"Pakeisti"
+//[MEditAskReplaceWith]
+"į"
+//[MEditReplace]
+"Pa&keisti"
+//[MEditReplaceAll]
+"&Viską"
+//[MEditSkip]
+"&Praleisti"
+//[MEditCancel]
+"&Atšaukti"
+// need translation:
+//[MEditOpenCreateLabel]
+"&Open/create file:"
+// need translation:
+//[MEditOpenAutoDetect]
+"Automatic detection"
+// need translation:
+//[MDefaultCP]
+"Default"
+
+//[MGoTo]
+"Eiti į"
+// need translation:
+//[MGoToHex]
+"&Hex value"
+
+//[MFolderShortcutsTitle]
+"Katalogų nuorodos"
+//[MShortcutNone]
+"<nėra>"
+// need translation:
+//[MShortcutPlugin]
+"<plugin>"
+// need translation:
+//[MFSShortcutName]
+"Title:"
+// need translation:
+//[MFSShortcutPath]
+"Path:"
+// need translation:
+//[MFSShortcutPluginFile]
+"File:"
+// need translation:
+//[MFSShortcutPluginData]
+"Data:"
+// need translation:
+//[MNeedNearPath]
+"Jump to the nearest existing folder?"
+// need translation:
+//[MSaveThisShortcut]
+"Save this shortcut?"
+
+// Editor: functional keys
+//[MEditF1]
+"Pagalb"
+//[MEditF2]
+"Išsaug"
+//[MEditF3]
+""
+// need translation:
+//[MEditF4]
+"Quit"
+//[MEditF5]
+""
+//[MEditF6]
+"Žiūrėt"
+//[MEditF7]
+"Rasti"
+//[MEditF8]
+"ANSI"
+//[MEditF9]
+""
+//[MEditF10]
+"Išeiti"
+//[MEditF11]
+"Prieds"
+//[MEditF12]
+"Ekran"
+
+//Editor: Shift
+//[MEditShiftF1]
+""
+//[MEditShiftF2]
+"IšKaip"
+//[MEditShiftF3]
+""
+// need translation:
+//[MEditShiftF4]
+"Edit…"
+//[MEditShiftF5]
+""
+//[MEditShiftF6]
+""
+//[MEditShiftF7]
+"Kitas"
+// need translation:
+//[MEditShiftF8]
+"CodePg"
+//[MEditShiftF9]
+""
+//[MEditShiftF10]
+"IšIšei"
+//[MEditShiftF11]
+""
+//[MEditShiftF12]
+""
+
+//Editor: Alt
+//[MEditAltF1]
+""
+//[MEditAltF2]
+""
+//[MEditAltF3]
+""
+//[MEditAltF4]
+""
+//[MEditAltF5]
+""
+//[MEditAltF6]
+""
+// need translation:
+//[MEditAltF7]
+"Prev"
+//[MEditAltF8]
+"Eiti"
+//[MEditAltF9]
+"Video"
+//[MEditAltF10]
+""
+// need translation:
+//[MEditAltF11]
+"ViewHs"
+//[MEditAltF12]
+""
+
+//Editor: Ctrl
+//[MEditCtrlF1]
+""
+//[MEditCtrlF2]
+""
+//[MEditCtrlF3]
+""
+//[MEditCtrlF4]
+""
+//[MEditCtrlF5]
+""
+//[MEditCtrlF6]
+""
+//[MEditCtrlF7]
+"Keisti"
+//[MEditCtrlF8]
+""
+//[MEditCtrlF9]
+""
+// need translation:
+//[MEditCtrlF10]
+"GoFile"
+//[MEditCtrlF11]
+""
+//[MEditCtrlF12]
+""
+
+//Editor: AltShift
+//[MEditAltShiftF1]
+""
+//[MEditAltShiftF2]
+""
+//[MEditAltShiftF3]
+""
+//[MEditAltShiftF4]
+""
+//[MEditAltShiftF5]
+""
+//[MEditAltShiftF6]
+""
+//[MEditAltShiftF7]
+""
+//[MEditAltShiftF8]
+""
+// need translation:
+//[MEditAltShiftF9]
+"Config"
+//[MEditAltShiftF10]
+""
+//[MEditAltShiftF11]
+""
+//[MEditAltShiftF12]
+""
+
+//Editor: CtrlShift
+//[MEditCtrlShiftF1]
+""
+//[MEditCtrlShiftF2]
+""
+//[MEditCtrlShiftF3]
+""
+//[MEditCtrlShiftF4]
+""
+//[MEditCtrlShiftF5]
+""
+//[MEditCtrlShiftF6]
+""
+//[MEditCtrlShiftF7]
+""
+//[MEditCtrlShiftF8]
+""
+//[MEditCtrlShiftF9]
+""
+//[MEditCtrlShiftF10]
+""
+//[MEditCtrlShiftF11]
+""
+//[MEditCtrlShiftF12]
+""
+
+// Editor: CtrlAlt
+//[MEditCtrlAltF1]
+""
+//[MEditCtrlAltF2]
+""
+//[MEditCtrlAltF3]
+""
+//[MEditCtrlAltF4]
+""
+//[MEditCtrlAltF5]
+""
+//[MEditCtrlAltF6]
+""
+//[MEditCtrlAltF7]
+""
+//[MEditCtrlAltF8]
+""
+//[MEditCtrlAltF9]
+""
+//[MEditCtrlAltF10]
+""
+//[MEditCtrlAltF11]
+""
+//[MEditCtrlAltF12]
+""
+
+// Editor: CtrlAltShift
+//[MEditCtrlAltShiftF1]
+""
+//[MEditCtrlAltShiftF2]
+""
+//[MEditCtrlAltShiftF3]
+""
+//[MEditCtrlAltShiftF4]
+""
+//[MEditCtrlAltShiftF5]
+""
+//[MEditCtrlAltShiftF6]
+""
+//[MEditCtrlAltShiftF7]
+""
+//[MEditCtrlAltShiftF8]
+""
+//[MEditCtrlAltShiftF9]
+""
+//[MEditCtrlAltShiftF10]
+""
+//[MEditCtrlAltShiftF11]
+""
+//[MEditCtrlAltShiftF12]
+""
+// Editor: end of functional keys
+// This is another text for F8
+//[MEditF8DOS]
+"OEM"
+
+//[MEditSaveAs]
+"Išsaugoti failą vardu"
+// need translation:
+//[MEditCodePage]
+"&Code page:"
+// need translation:
+//[MEditAddSignature]
+"Add &signature (BOM)"
+// need translation:
+//[MEditSaveAsFormatTitle]
+"Change line breaks to:"
+// need translation:
+//[MEditSaveOriginal]
+"Do n&ot change"
+// need translation:
+//[MEditSaveDOS]
+"&Dos/Windows format (CR LF)"
+// need translation:
+//[MEditSaveUnix]
+"&Unix format (LF)"
+// need translation:
+//[MEditSaveMac]
+"&Mac format (CR)"
+//[MEditCannotSave]
+"Negaliu išsaugoti failo"
+// need translation:
+//[MEditSavedChangedNonFile]
+"The file is changed but the file or the folder containing"
+// need translation:
+//[MEditSavedChangedNonFile1]
+"The file or the folder containing"
+// need translation:
+//[MEditSavedChangedNonFile2]
+"this file was moved or deleted. Save?"
+// need translation:
+//[MEditNewPath1]
+"The path to the edited file does not exist,"
+// need translation:
+//[MEditNewPath2]
+"but will be created when the file is saved."
+// need translation:
+//[MEditNewPath3]
+"Continue?"
+// need translation:
+//[MEditNewPlugin1]
+"The name of the file to edit cannot be empty"
+// need translation:
+//[MEditorLoadCPWarn1]
+"The file contains characters that cannot be"
+// need translation:
+//[MEditorLoadCPWarn2]
+"correctly read using the selected code page."
+// need translation:
+//[MEditorReloadCPWarnLost1]
+"The file has to be reloaded to change the code page."
+// need translation:
+//[MEditorReloadCPWarnLost2]
+"All unsaved changes will be lost."
+// need translation:
+//[MEditorSwitchCPConfirm]
+"Continue?"
+// need translation:
+//[MEditDataLostWarn]
+"During the file editing some data was lost."
+// need translation:
+//[MEditorSaveNotRecommended]
+"It is not recommended to save this file."
+// need translation:
+//[MEditorSave]
+"Save"
+// need translation:
+//[MEditorSaveCPWarnShow]
+"Show"
+// need translation:
+//[MEditorCPNotSupported]
+"Code page {0} is not supported in your system"
+
+//[MColumnName]
+"Vardas"
+//[MColumnExtension]
+"Plėtinįs"
+//[MColumnSize]
+"Dydis"
+// need translation:
+//[MColumnAlocatedSize]
+"Allocated"
+//[MColumnDate]
+"Data"
+//[MColumnTime]
+"Laiks"
+//[MColumnWrited]
+"Modifikuotas"
+//[MColumnCreated]
+"Sukurtas"
+//[MColumnAccessed]
+"Naudotas"
+// need translation:
+//[MColumnChanged]
+"Change"
+//[MColumnAttr]
+"Atrib"
+//[MColumnDescription]
+"Aprašymas"
+//[MColumnOwner]
+"Savininkas"
+//[MColumnMumLinks]
+"NumL"
+//[MColumnNumStreams]
+"NumS"
+// need translation:
+//[MColumnStreamsSize]
+"StrmSz"
+//[MColumnUnknown]
+"???"
+
+//[MListUp]
+"Aukštyn"
+//[MListFolder]
+"Katalogs"
+// need translation:
+//[MListSymlink]
+"Symlink"
+// need translation:
+//[MListJunction]
+"Junction"
+// need translation:
+//[MListVolMount]
+"Volume"
+// need translation:
+//[MListUnknownReparsePoint]
+"?Symlink?"
+//[MListBrackets]
+"<>"
+//[MListBytes]
+"B"
+//[MListKb]
+"K"
+//[MListMb]
+"M"
+//[MListGb]
+"G"
+//[MListTb]
+"T"
+//[MListPb]
+"P"
+//[MListEb]
+"E"
+{3} replacement field can receive a sum of files & folders
+//[MListFileSize]
+"Baitai: {0}, faitai: {1}, katalogai: {2}"
+//[MListFileSizeStatus]
+"{0} ({1}/{2}) {3} {4}"
+//[MListFreeSize]
+"{0} baitų laisva"
+
+//[MDirInfoViewTitle]
+"Žiūrėti"
+//[MFileToEdit]
+"Redaguoti failą:"
+
+//[MUnselectTitle]
+"Atžymėti"
+//[MSelectTitle]
+"Pažymėti"
+// need translation:
+//[MSelectFilter]
+"&Filter"
+
+//[MCompareTitle]
+"Palyginti"
+//[MCompareFilePanelsRequired1]
+"Komandai ""Palyginti katalogus"" įvykdyti"
+//[MCompareFilePanelsRequired2]
+"reikia dviejų langų"
+//[MCompareSameFolders1]
+"Katalogų turiniai atrodo"
+//[MCompareSameFolders2]
+"esą identiški"
+
+//[MSelectAssocTitle]
+"Pažymėkit asociaciją"
+
+//[MAssocTitle]
+"Failų asociacijos"
+//[MAskDelAssoc]
+"Ar norite ištrinti asociaciją"
+
+//[MFileAssocTitle]
+"Redaguoti failų asociacijas"
+//[MFileAssocMasks]
+"Failo &maskuotė ar kelios failo maskuotės atskirtos kableliais:"
+//[MFileAssocDescr]
+"Asociacijos apr&ašymas:"
+//[MFileAssocExec]
+"V&ykdyti komandą (naudoti su Enter):"
+//[MFileAssocAltExec]
+"Vykdyti komandą (naudoti su Ctrl+PgDn):"
+//[MFileAssocView]
+"Per&žiūros komanda (naudoti su F3):"
+//[MFileAssocAltView]
+"Peržiūros komanda (naudoti su Alt+F3):"
+//[MFileAssocEdit]
+"&Redagavimo komanda (naudoti su F4):"
+//[MFileAssocAltEdit]
+"Redagavimo komanda (naudoti su Alt+F4):"
+
+// Viewer: functional keys
+//[MViewF1]
+"Pagalb"
+//[MViewF2]
+"Kelt"
+//[MViewF3]
+"Išeiti"
+// need translation:
+//[MViewF4]
+"Hex"
+//[MViewF5]
+""
+//[MViewF6]
+"Redag"
+//[MViewF7]
+"Rasti"
+//[MViewF8]
+"ANSI"
+//[MViewF9]
+""
+//[MViewF10]
+"Išeiti"
+//[MViewF11]
+"Prieds"
+//[MViewF12]
+"Ekran"
+
+//Viewer: Shift
+//[MViewShiftF1]
+""
+// need translation:
+//[MViewShiftF2]
+"WWrap"
+//[MViewShiftF3]
+""
+// need translation:
+//[MViewShiftF4]
+"Mode"
+//[MViewShiftF5]
+""
+//[MViewShiftF6]
+""
+//[MViewShiftF7]
+"Kitas"
+// need translation:
+//[MViewShiftF8]
+"CodePg"
+//[MViewShiftF9]
+""
+//[MViewShiftF10]
+""
+//[MViewShiftF11]
+""
+//[MViewShiftF12]
+""
+
+//Viewer: Alt
+//[MViewAltF1]
+""
+//[MViewAltF2]
+""
+//[MViewAltF3]
+""
+//[MViewAltF4]
+""
+//[MViewAltF5]
+""
+//[MViewAltF6]
+""
+// need translation:
+//[MViewAltF7]
+"Prev"
+//[MViewAltF8]
+"Eiti"
+//[MViewAltF9]
+"Video"
+//[MViewAltF10]
+""
+// need translation:
+//[MViewAltF11]
+"ViewHs"
+//[MViewAltF12]
+""
+
+//Viewer: Ctrl
+//[MViewCtrlF1]
+""
+//[MViewCtrlF2]
+""
+//[MViewCtrlF3]
+""
+//[MViewCtrlF4]
+""
+//[MViewCtrlF5]
+""
+//[MViewCtrlF6]
+""
+//[MViewCtrlF7]
+""
+//[MViewCtrlF8]
+""
+//[MViewCtrlF9]
+""
+// need translation:
+//[MViewCtrlF10]
+"GoFile"
+//[MViewCtrlF11]
+""
+//[MViewCtrlF12]
+""
+
+//Viewer: AltShift
+//[MViewAltShiftF1]
+""
+//[MViewAltShiftF2]
+""
+//[MViewAltShiftF3]
+""
+//[MViewAltShiftF4]
+""
+//[MViewAltShiftF5]
+""
+//[MViewAltShiftF6]
+""
+//[MViewAltShiftF7]
+""
+//[MViewAltShiftF8]
+""
+// need translation:
+//[MViewAltShiftF9]
+"Config"
+//[MViewAltShiftF10]
+""
+//[MViewAltShiftF11]
+""
+//[MViewAltShiftF12]
+""
+
+//Viewer: CtrlShift
+//[MViewCtrlShiftF1]
+""
+//[MViewCtrlShiftF2]
+""
+//[MViewCtrlShiftF3]
+""
+//[MViewCtrlShiftF4]
+""
+//[MViewCtrlShiftF5]
+""
+//[MViewCtrlShiftF6]
+""
+//[MViewCtrlShiftF7]
+""
+//[MViewCtrlShiftF8]
+""
+//[MViewCtrlShiftF9]
+""
+//[MViewCtrlShiftF10]
+""
+//[MViewCtrlShiftF11]
+""
+//[MViewCtrlShiftF12]
+""
+
+//Viewer: CtrlAlt
+//[MViewCtrlAltF1]
+""
+//[MViewCtrlAltF2]
+""
+//[MViewCtrlAltF3]
+""
+//[MViewCtrlAltF4]
+""
+//[MViewCtrlAltF5]
+""
+//[MViewCtrlAltF6]
+""
+//[MViewCtrlAltF7]
+""
+//[MViewCtrlAltF8]
+""
+//[MViewCtrlAltF9]
+""
+//[MViewCtrlAltF10]
+""
+//[MViewCtrlAltF11]
+""
+//[MViewCtrlAltF12]
+""
+
+//Viewer: CtrlAltShift
+//[MViewCtrlAltShiftF1]
+""
+//[MViewCtrlAltShiftF2]
+""
+//[MViewCtrlAltShiftF3]
+""
+//[MViewCtrlAltShiftF4]
+""
+//[MViewCtrlAltShiftF5]
+""
+//[MViewCtrlAltShiftF6]
+""
+//[MViewCtrlAltShiftF7]
+""
+//[MViewCtrlAltShiftF8]
+""
+//[MViewCtrlAltShiftF9]
+""
+//[MViewCtrlAltShiftF10]
+""
+//[MViewCtrlAltShiftF11]
+""
+//[MViewCtrlAltShiftF12]
+""
+//[MViewF2Unwrap]
+"Nekelt"
+// this is another text for F4
+//[MViewF4Text]
+"Tekst"
+// this is another text for F4
+// need translation:
+//[MViewF4Dump]
+"Dump"
+// Viewer: end of functional keys
+// This is another text for F8
+//[MViewF8DOS]
+"OEM"
+// need translation:
+//[MViewMode]
+"View mode"
+//[MInViewer]
+"žiūrėti"
+//[MInEditor]
+"redaguoti"
+
+//[MFilterTitle]
+"Filtras"
+//[MPanelFileType]
+"Lango failų tipas"
+// need translation:
+//[MFolderFileType]
+"Folders"
+//[MCanEditCustomFilterOnly]
+"Tik vartotojo filtrai gali būti redaguojami"
+//[MAskDeleteFilter]
+"Ar norite ištrinti filtrą"
+//[MCanDeleteCustomFilterOnly]
+"Tik vartotojo filtras gali būti ištrintas"
+
+//[MFindFileTitle]
+"Rasti failą"
+//[MFindFileMasks]
+"Failo &maskuotė ar kelios failo maskuotės atskirtos kableliais:"
+//[MFindFileText]
+"Talpinantį &tekstą:"
+// need translation:
+//[MFindFileHex]
+"Con&taining hex:"
+// need translation:
+//[MFindFileCodePage]
+"Using code pa&ge:"
+// need translation:
+//[MFindFileCodePageBottom]
+"Space, Ins"
+//[MFindFileCase]
+"&Didžiosios skiriasi"
+// need translation:
+//[MFindFileWholeWords]
+"&Whole words"
+// need translation:
+//[MFindFileAllCodePages]
+"All standard code pages"
+// need translation:
+//[MFindFileSelectedCodePages]
+"Selected code pages"
+//[MFindArchives]
+"Ieškoti arch&yvuose"
+// need translation:
+//[MFindFolders]
+"Search for f&olders"
+// need translation:
+//[MFindSymLinks]
+"Search in symbolic lin&ks"
+// need translation:
+//[MFindAlternateStreams]
+"Search in a&lternate streams"
+// need translation:
+//[MSearchForHex]
+"Search for &hex"
+// need translation:
+//[MSearchNotContaining]
+"&Not containing"
+// need translation:
+//[MSearchWhere]
+"Select search &area:"
+//[MSearchAllDisks]
+"Ieškoti &visuose fiksuotuose diskuose"
+// need translation:
+//[MSearchAllButNetwork]
+"In all &local drives"
+// need translation:
+//[MSearchInPATH]
+"In &PATH folders"
+// need translation:
+//[MSearchFromRootOfDrive]
+"From the &root of"
+//[MSearchFromRootFolder]
+"Ieškoti nuo ša&kninio katalogo"
+//[MSearchFromCurrent]
+"Ieškoti nuo &einamo katalogo"
+//[MSearchInCurrent]
+"Ieškoti tik eina&mame kataloge"
+//[MSearchInSelected]
+"Ieškoti paž&ymėtuose kataloguose"
+// need translation:
+//[MFindUseFilter]
+"&Use filter"
+// need translation:
+//[MFindUsingFilter]
+"using filter"
+//[MFindFileFind]
+"&Rasti"
+// need translation:
+//[MFindFileDrive]
+"Dri&ve"
+// need translation:
+//[MFindFileSetFilter]
+"Filt&er"
+// need translation:
+//[MFindFileAdvanced]
+"Advance&d"
+//[MFindSearchingIn]
+"Ieškau {0} į"
+//[MFindNewSearch]
+"&Nauja paieška"
+//[MFindGoTo]
+"&Eiti"
+//[MFindView]
+"&Žiūrėti"
+//[MFindPanel]
+"&Langas"
+// need translation:
+//[MFindStop]
+"&Stop"
+
+//[MFindDone]
+"Paieška baigta. Rasta files: {0}, folders: {1}"
+//[MFindCancel]
+"&Atšaukti"
+
+// need translation:
+//[MFindFound]
+"Files: {0}, folders: {1}"
+
+// need translation:
+//[MFindFileAdvancedTitle]
+"Find file advanced options"
+// need translation:
+//[MFindFileSearchFirst]
+"Search only in the &first:"
+// need translation:
+//[MFindFileSearchOutputFormat]
+"&Output format:"
+// need translation:
+//[MFindAlternateModeTypes]
+"Column &types"
+// need translation:
+//[MFindAlternateModeWidths]
+"Column &widths"
+
+// need translation:
+//[MFoldTreeSearch]
+"Search:"
+
+// need translation:
+//[MGetCodePageTitle]
+"Code pages"
+// need translation:
+//[MGetCodePageSystem]
+"System"
+//[MGetCodePageUnicode]
+"Unicode"
+// need translation:
+//[MGetCodePageFavorites]
+"Favorites"
+// need translation:
+//[MGetCodePageOther]
+"Other"
+// need translation:
+//[MGetCodePageEditCodePageName]
+"Rename the code page"
+// need translation:
+//[MGetCodePageResetCodePageName]
+"&Reset"
+
+//[MHighlightTitle]
+"Failų paryškinimai"
+// need translation:
+//[MHighlightUpperSortGroup]
+"Upper sort group"
+// need translation:
+//[MHighlightLowerSortGroup]
+"Lower sort group"
+// need translation:
+//[MHighlightLastGroup]
+"Lowest priority highlighting group"
+//[MHighlightAskDel]
+"Ar norite ištrinti paryškinimą failams"
+// need translation:
+//[MHighlightWarning]
+"You will lose all changes"
+// need translation:
+//[MHighlightAskRestore]
+"Do you wish to restore default highlighting?"
+
+//[MHighlightEditTitle]
+"Redaguoti failų paryškinimus"
+//[MHighlightMarkChar]
+"Pasirinktinas si&mbolis pažymėti apibrėžtiems failams,"
+// need translation:
+//[MHighlightTransparentMarkChar]
+"tra&nsparent"
+//[MHighlightColors]
+"Failo vardo spalvos (\"juoda ant juodos\" - pradinė spalva)"
+//[MHighlightFileName1]
+"&1. Normalus"
+//[MHighlightFileName2]
+"&3. Pažymėtas"
+//[MHighlightFileName3]
+"&5. Po kursoriumi"
+//[MHighlightFileName4]
+"&7. Pažymėtas po kursoriumi"
+// need translation:
+//[MHighlightMarking1]
+"&2. Marking"
+// need translation:
+//[MHighlightMarking2]
+"&4. Marking"
+// need translation:
+//[MHighlightMarking3]
+"&6. Marking"
+// need translation:
+//[MHighlightMarking4]
+"&8. Marking"
+// need translation:
+//[MHighlightExample]
+"filename.ext"
+// need translation:
+//[MHighlightContinueProcessing]
+"C&ontinue processing"
+
+//[MInfoTitle]
+"Informacija"
+//[MInfoCompName]
+"Kompiuterio vardas"
+// need translation:
+//[MInfoCompDescription]
+"Computer description"
+//[MInfoUserName]
+"Vartotojo vardas"
+// need translation:
+//[MInfoUserDescription]
+"User description"
+// need translation:
+//[MInfoUserAccessLevel]
+"Access level"
+// need translation:
+//[MInfoUserAccessLevelGuest]
+"Guest"
+// need translation:
+//[MInfoUserAccessLevelUser]
+"User"
+//[MInfoUserAccessLevelAdministrator]
+"Administratorius"
+// need translation:
+//[MInfoUserAccessLevelUnknown]
+"Unknown"
+// need translation:
+//[MInfoDiskTitle]
+"Disk"
+//[MInfoRemovable]
+"Keičiamas"
+//[MInfoFixed]
+"Fiksuotas"
+//[MInfoNetwork]
+"Tinklas"
+//[MInfoCDROM]
+"CD-ROM"
+//[MInfoCDR]
+"CD-R"
+//[MInfoCDRW]
+"CD-RW"
+//[MInfoCDRWDVD]
+"CD-RW/DVD"
+//[MInfoDVDROM]
+"DVD-ROM"
+//[MInfoDVDR]
+"DVD-R"
+//[MInfoDVDRW]
+"DVD-RW"
+//[MInfoDVDRAM]
+"DVD-RAM"
+//[MInfoBDROM]
+"BD-ROM"
+//[MInfoBDR]
+"BD-R"
+//[MInfoBDRW]
+"BD-RW"
+//[MInfoHDDVDROM]
+"HDDVD-ROM"
+//[MInfoHDDVDR]
+"HDDVD-R"
+//[MInfoHDDVDRW]
+"HDDVD-RW"
+//[MInfoHDDVDRAM]
+"HDDVD-RAM"
+//[MInfoRAM]
+"RAM"
+//[MInfoSUBST]
+"Subst"
+// need translation:
+//[MInfoVirtual]
+"Virtual"
+// need translation:
+//[MInfoUnknown]
+"Unknown"
+//[MInfoDisk]
+"Diskas"
+//[MInfoDiskTotal]
+"Iš viso baitų"
+//[MInfoDiskFree]
+"Laisva baitų"
+//[MInfoDiskLabel]
+"Disko vardas"
+//[MInfoDiskNumber]
+"Serijinis numeris"
+//[MInfoMemory]
+"Atmintis"
+//[MInfoMemoryLoad]
+"Užimta"
+// need translation:
+//[MInfoMemoryInstalled]
+"Installed"
+//[MInfoMemoryTotal]
+"Iš viso"
+//[MInfoMemoryFree]
+"Laisva"
+//[MInfoVirtualTotal]
+"Iš viso virtualios"
+//[MInfoVirtualFree]
+"Laisva virtualios"
+// need translation:
+//[MInfoPageFileTotal]
+"Total paging file"
+// need translation:
+//[MInfoPageFileFree]
+"Free paging file"
+// need translation:
+//[MInfoDescription]
+"Description"
+//[MInfoDizAbsent]
+"Katalogo aprašymo failas nerastas"
+// need translation:
+//[MInfoPlugin]
+"Plugin"
+// need translation:
+//[MInfoPowerStatus]
+"Power Status"
+// need translation:
+//[MInfoPowerStatusAC]
+"AC power status"
+// need translation:
+//[MInfoPowerStatusACOffline]
+"Offline"
+// need translation:
+//[MInfoPowerStatusACOnline]
+"Online"
+// need translation:
+//[MInfoPowerStatusACBackUp]
+"Backup power"
+// need translation:
+//[MInfoPowerStatusACUnknown]
+"Unknown"
+// need translation:
+//[MInfoPowerStatusBCLifePercent]
+"Battery life percent"
+// need translation:
+//[MInfoPowerStatusBCLifePercentUnknown]
+"Unknown"
+// need translation:
+//[MInfoPowerStatusBC]
+"Battery charge status"
+// need translation:
+//[MInfoPowerStatusBCHigh]
+"High"
+// need translation:
+//[MInfoPowerStatusBCLow]
+"Low"
+// need translation:
+//[MInfoPowerStatusBCCritical]
+"Critical"
+// need translation:
+//[MInfoPowerStatusBCCharging]
+"Charging"
+// need translation:
+//[MInfoPowerStatusBCNoSysBat]
+"No system battery"
+// need translation:
+//[MInfoPowerStatusBCUnknown]
+"Unknown"
+// need translation:
+//[MInfoPowerStatusBCTimeRem]
+"Battery life time"
+// need translation:
+//[MInfoPowerStatusBCFullTimeRem]
+"Battery full time"
+// need translation:
+//[MInfoPowerStatusUnknown]
+"Unknown"
+// need translation:
+//[MAccessDenied]
+"Access denied"
+
+//[MCannotExecute]
+"Negaliu įvykdyti"
+// need translation:
+//[MCannotInvokeComspec]
+"Cannot invoke command interpreter"
+// need translation:
+//[MCheckComspecVar]
+"Check COMSPEC environment variable"
+//[MScanningFolder]
+"Skenuoju katalogą"
+
+//[MMakeFolderTitle]
+"Sukurti katalogą"
+//[MCreateFolder]
+"Sukurti katalogą:"
+// need translation:
+//[MMakeFolderLinkType]
+"&Link type:"
+// need translation:
+//[MMakeFolderLinkNone]
+"&none"
+// need translation:
+//[MMakeFolderLinkJunction]
+"directory &junction"
+// need translation:
+//[MMakeFolderLinkSymlink]
+"symbolic &link"
+// need translation:
+//[MMakeFolderLinkTarget]
+"&Target:"
+// need translation:
+//[MMultiMakeDir]
+"Process &multiple names"
+// need translation:
+//[MIncorrectDirList]
+"Incorrect folders list"
+//[MCannotCreateFolder]
+"Negaliu sukurti katalogo"
+
+//[MMenuBriefView]
+"&Trumpai"
+//[MMenuMediumView]
+"&Vidutiniškai"
+//[MMenuFullView]
+"&Pilnai"
+//[MMenuWideView]
+"P&lačiai"
+//[MMenuDetailedView]
+"&Detaliai"
+//[MMenuDizView]
+"Apraš&ymai"
+//[MMenuLongDizView]
+"Il&gi aprašymai"
+//[MMenuOwnersView]
+"&Failo savininkai"
+//[MMenuLinksView]
+"Failo &saitai"
+//[MMenuAlternativeView]
+"Pilnai &alternatyva"
+
+//[MMenuInfoPanel]
+"&Info langas"
+//[MMenuTreePanel]
+"&Medis"
+//[MMenuQuickView]
+"Vai&zdas"
+//[MMenuSortModes]
+"Rūšiavimo b&ūdai"
+//[MMenuLongNames]
+"&Rodyti ilgus vardus"
+//[MMenuTogglePanel]
+"Langas &On/Off"
+//[MMenuReread]
+"At&naujinti"
+//[MMenuChangeDrive]
+"&Keisti diską"
+
+//[MMenuView]
+"&Žiūrėti"
+//[MMenuEdit]
+"R&edaguoti"
+//[MMenuCopy]
+"&Kopijuoti"
+//[MMenuMove]
+"Pe&rvadinti/Perkelti"
+// need translation:
+//[MMenuLink]
+"Lin&k"
+//[MMenuCreateFolder]
+"&Sukurti katalogą"
+//[MMenuDelete]
+"&Trinti"
+// need translation:
+//[MMenuWipe]
+"&Wipe"
+//[MMenuAdd]
+"Su&pakuoti į archyvą"
+//[MMenuExtract]
+"Išar&chyvuoti failus"
+//[MMenuArchiveCommands]
+"Arc&hyvo komandos"
+//[MMenuAttributes]
+"Failo &atributai"
+//[MMenuApplyCommand]
+"Panaudoti k&omandą"
+//[MMenuDescribe]
+"Apraš&yti failus"
+//[MMenuSelectGroup]
+"Pažymėti &grupę"
+//[MMenuUnselectGroup]
+"Atžymėti gr&upę"
+//[MMenuInvertSelection]
+"At&virkščiai pažymėt"
+//[MMenuRestoreSelection]
+"At&naujinti žymėjimą"
+
+//[MMenuFindFile]
+"&Rasti failą"
+//[MMenuHistory]
+"&Istorija"
+//[MMenuVideoMode]
+"&Video režimas"
+//[MMenuFindFolder]
+"Ras&ti katalogą"
+//[MMenuViewHistory]
+"Per&žiūros istorija"
+//[MMenuFoldersHistory]
+"Katal&ogų istorija"
+//[MMenuSwapPanels]
+"&Sukeisti langus"
+//[MMenuTogglePanels]
+"&Langai On/Off"
+//[MMenuCompareFolders]
+"&Palyginti katalogus"
+//[MMenuUserMenu]
+"Redaguoti vartotojo &meniu"
+//[MMenuFileAssociations]
+"Failų &asociacijos"
+//[MMenuFolderShortcuts]
+"Katalogų nuoro&dos"
+//[MMenuFilter]
+"Failų lango &filtras"
+//[MMenuPluginCommands]
+"Komandos - pri&edai"
+//[MMenuWindowsList]
+"E&kranų sąrašas"
+//[MMenuProcessList]
+"&Užduočių sąrašas"
+// need translation:
+//[MMenuHotPlugList]
+"Ho&tplug devices list"
+
+//[MMenuSystemSettings]
+"Siste&miniai nuostatai"
+//[MMenuPanelSettings]
+"La&ngų parametrai"
+// need translation:
+//[MMenuTreeSettings]
+"&Tree settings"
+//[MMenuInterface]
+"&Sąsajos nuostatai"
+//[MMenuLanguages]
+"Kal&ba"
+//[MMenuPluginsConfig]
+"Pri&edų konfigūracija"
+// need translation:
+//[MMenuPluginsManagerSettings]
+"Plugins manage&r settings"
+// need translation:
+//[MMenuDialogSettings]
+"Di&alog settings"
+// need translation:
+//[MMenuVMenuSettings]
+"Menu settings"
+// need translation:
+//[MMenuCmdlineSettings]
+"&Command line settings"
+// need translation:
+//[MMenuAutoCompleteSettings]
+"Au&toComplete settings"
+// need translation:
+//[MMenuInfoPanelSettings]
+"Inf&oPanel settings"
+// need translation:
+//[MMenuMaskGroups]
+"Groups of file mas&ks"
+//[MMenuConfirmation]
+"Pa&tvirtinimai"
+//[MMenuFilePanelModes]
+"Failų lan&go režimai"
+//[MMenuFileDescriptions]
+"Failų &aprašymai"
+//[MMenuFolderInfoFiles]
+"&Katalogų aprašymo failai"
+//[MMenuViewer]
+"Per&žiūros nuostatai"
+//[MMenuEditor]
+"&Redaktoriaus nuostatai"
+// need translation:
+//[MMenuCodePages]
+"Code pages"
+//[MMenuColors]
+"Spa&lvos"
+//[MMenuFilesHighlighting]
+"Failų par&yškinimai ir rūšiavimo grupes"
+//[MMenuSaveSetup]
+"&Išsaugoti nuostatus"
+//[MMenuTogglePanelRight]
+"Langas &On/Off"
+//[MMenuChangeDriveRight]
+"&Keisti diską"
+
+//[MMenuLeftTitle]
+"&Kairė"
+//[MMenuFilesTitle]
+"&Failai"
+//[MMenuCommandsTitle]
+"Ko&mandos"
+//[MMenuOptionsTitle]
+"&Opcijos"
+//[MMenuRightTitle]
+"&Dešinė"
+
+//[MMenuSortTitle]
+"Rūšiuoti pagal"
+//[MMenuSortByName]
+"&Vardą"
+//[MMenuSortByExt]
+"&Plėtinį"
+//[MMenuSortByWrite]
+"&Modifikavimo laiką"
+//[MMenuSortBySize]
+"&Dydį"
+//[MMenuUnsorted]
+"&Nerūšiuoti"
+//[MMenuSortByCreation]
+"&Sukūrimo datą"
+//[MMenuSortByAccess]
+"Nau&dojimo datą"
+// need translation:
+//[MMenuSortByChange]
+"Chan&ge time"
+//[MMenuSortByDiz]
+"Ap&rašymą"
+//[MMenuSortByOwner]
+"S&avininką"
+//[MMenuSortByAllocatedSize]
+"S&upakuoto dydį"
+//[MMenuSortByNumLinks]
+"&Hard links skaičių"
+// need translation:
+//[MMenuSortByNumStreams]
+"Number of st&reams"
+// need translation:
+//[MMenuSortByStreamsSize]
+"Si&ze of streams"
+// need translation:
+//[MMenuSortByNameOnly]
+"Name only"
+//[MMenuSortUseGroups]
+"Naudoti rūšiavimo &grupes"
+//[MMenuSortSelectedFirst]
+"Pirmiau rodyti pa&žymėtus"
+// need translation:
+//[MMenuSortDirectoriesFirst]
+"Sho&w directories first"
+// need translation:
+//[MMaskGroupTitle]
+"Groups of file masks"
+// need translation:
+//[MMaskGroupName]
+"&Name:"
+// need translation:
+//[MMaskGroupMasks]
+"A file &mask or several file masks:"
+// need translation:
+//[MMaskGroupAskDelete]
+"Do you wish to delete"
+// need translation:
+//[MMaskGroupRestore]
+"Do you wish to restore default mask sets?"
+// need translation:
+//[MMaskGroupFindMask]
+"&Mask:"
+// need translation:
+//[MMaskGroupTotal]
+"Total: {0}"
+
+//[MChangeDriveTitle]
+"Keisti diską"
+//[MChangeDriveRemovable]
+"keičiamas"
+//[MChangeDriveFixed]
+"fiksuotas"
+//[MChangeDriveNetwork]
+"tinklas"
+// need translation:
+//[MChangeDriveDisconnectedNetwork]
+"disconnected"
+//[MChangeDriveCDROM]
+"CD-ROM"
+//[MChangeDriveCDR]
+"CD-R"
+//[MChangeDriveCDRW]
+"CD-RW"
+//[MChangeDriveCDRWDVD]
+"CD-RW/DVD"
+//[MChangeDriveDVDROM]
+"DVD-ROM"
+//[MChangeDriveDVDR]
+"DVD-R"
+//[MChangeDriveDVDRW]
+"DVD-RW"
+//[MChangeDriveDVDRAM]
+"DVD-RAM"
+//[MChangeDriveBDROM]
+"BD-ROM"
+//[MChangeDriveBDR]
+"BD-R"
+//[MChangeDriveBDRW]
+"BD-RW"
+//[MChangeDriveHDDVDROM]
+"HDDVD-ROM"
+//[MChangeDriveHDDVDR]
+"HDDVD-R"
+//[MChangeDriveHDDVDRW]
+"HDDVD-RW"
+//[MChangeDriveHDDVDRAM]
+"HDDVD-RAM"
+//[MChangeDriveRAM]
+"RAM diskas"
+// need translation:
+//[MChangeDriveSUBST]
+"subst"
+// need translation:
+//[MChangeDriveVirtual]
+"virtual"
+//[MChangeDriveLabelAbsent]
+"neprieinamas"
+//[MChangeDriveCannotReadDisk]
+"Negaliu nuskaityti disko"
+//[MChangeDriveCannotDisconnect]
+"Negaliu atsijungti nuo {0}"
+// need translation:
+//[MChangeDriveCannotDelSubst]
+"Cannot delete a substituted disk {0}"
+// need translation:
+//[MChangeDriveCannotDetach]
+"Cannot detach a virtual disk {0}"
+//[MChangeDriveOpenFiles]
+"Jei neuždarysite atvertų failų, galite prarasti duomenis"
+
+// need translation:
+//[MChangeSUBSTDisconnectDriveTitle]
+"Substituted disk deletion"
+// need translation:
+//[MChangeSUBSTDisconnectDriveQuestion]
+"Delete SUBST-disk {0}?"
+// need translation:
+//[MChangeVHDDisconnectDriveTitle]
+"Virtual disk detaching"
+// need translation:
+//[MChangeVHDDisconnectDriveQuestion]
+"Detach virtual disk {0}?"
+
+// need translation:
+//[MChangeHotPlugDisconnectDriveTitle]
+"Device Removal"
+// need translation:
+//[MChangeHotPlugDisconnectDriveQuestion]
+"Do you want to remove the device"
+// need translation:
+//[MHotPlugDisks]
+"(disk(s): {0})"
+// need translation:
+//[MChangeCouldNotEjectHotPlugMedia]
+"Cannot remove a device for drive {0}"
+// need translation:
+//[MChangeCouldNotEjectHotPlugMedia2]
+"Cannot remove a device:"
+// need translation:
+//[MChangeHotPlugNotify1]
+"The device"
+// need translation:
+//[MChangeHotPlugNotify2]
+"can now be safely removed"
+// need translation:
+//[MHotPlugListTitle]
+"Hotplug devices list"
+
+// need translation:
+//[MChangeDriveDisconnectTitle]
+"Disconnect network drive"
+// need translation:
+//[MChangeDriveDisconnectQuestion]
+"Do you want to disconnect from the drive {0}?"
+// need translation:
+//[MChangeDriveDisconnectMapped]
+"The drive is mapped to:"
+// need translation:
+//[MChangeDriveDisconnectReconnect]
+"&Reconnect at logon"
+
+//[MChangeDriveAskDisconnect]
+"Ar prietaisą norite atjungti bet kuriuo atveju?"
+// need translation:
+//[MChangeWaitingLoadDisk]
+"Waiting for the disk to mount…"
+// need translation:
+//[MChangeCouldNotEjectMedia]
+"Could not eject media from drive"
+// need translation:
+//[MChangeDriveConfigure]
+"Change Drive Menu Options"
+// need translation:
+//[MChangeDriveShowDiskType]
+"Show disk &type"
+// need translation:
+//[MChangeDriveShowPath]
+"Show &network name / SUBST path / VHD name"
+// need translation:
+//[MChangeDriveShowLabel]
+"Show disk &label"
+// need translation:
+//[MChangeDriveShowLabelUseShell]
+"Use shell na&me"
+// need translation:
+//[MChangeDriveShowFileSystem]
+"Show &file system type"
+// need translation:
+//[MChangeDriveShowSize]
+"Show &size"
+// need translation:
+//[MChangeDriveShowSizeFloat]
+"Show si&ze as a decimal fraction"
+// need translation:
+//[MChangeDriveShowRemovableDrive]
+"Show &removable drive parameters"
+// need translation:
+//[MChangeDriveShowPlugins]
+"Show &plugins"
+// need translation:
+//[MChangeDriveSortPluginsByHotkey]
+"Sort plugins by &hotkey"
+// need translation:
+//[MChangeDriveShowCD]
+"Show &CD drive parameters"
+// need translation:
+//[MChangeDriveShowNetworkDrive]
+"Show n&etwork drive parameters"
+// need translation:
+//[MChangeDriveShowVirtualDisk]
+"Detect virtual disks"
+
+//[MSearchFileTitle]
+"Paieška"
+//[MCannotCreateListTemp]
+"Negaliu sukurti laikino failo failų sąrašui"
+
+//[MDragFiles]
+"{0} failai"
+//[MDragMove]
+"Perkelti {0}"
+//[MDragCopy]
+"Kopijuoti {0}"
+
+//[MProcessListTitle]
+"Užduočių sąrašas"
+//[MKillProcessTitle]
+"Panaikinti užduotį"
+//[MAskKillProcess]
+"Ar norite uždaryti pažymėtą programą?"
+//[MKillProcessWarning]
+"Jūs prarasite visą neišsaugota informaciją šioje programoje"
+//[MKillProcessKill]
+"Uždaryti"
+//[MCannotKillProcess]
+"Negaliu uždaryti nurodytos programos"
+// need translation:
+//[MCannotKillProcessPerm]
+"You have no permission to kill this process."
+
+//[MQuickViewTitle]
+"Vaizdas"
+// need translation:
+//[MQuickViewUnknownReparsePoint]
+"Unknown reparse point"
+// need translation:
+//[MQuickViewNoData]
+"(data not available)"
+//[MQuickViewFolders]
+"Katalogai:"
+//[MQuickViewFiles]
+"Failai:"
+//[MQuickViewBytes]
+"Failų dydis"
+//[MQuickViewAllocated]
+"Suarchyvuotų dydis"
+//[MQuickViewCluster]
+"Klasterio dydis"
+// need translation:
+//[MQuickViewSlack]
+"Files slack:"
+// need translation:
+//[MQuickViewMFTOverhead]
+"MFT overhead:"
+
+//[MSetAttrTitle]
+"Atributai"
+//[MSetAttrFor]
+"Keisti atributus"
+// need translation:
+//[MSetAttrSelectedObjects]
+"selected objects"
+// need translation:
+//[MSetAttrHardLinks]
+"hard links"
+// need translation:
+//[MSetAttrJunction]
+"&Junction:"
+// need translation:
+//[MSetAttrSymlink]
+"Symlink:"
+// need translation:
+//[MSetAttrVolMount]
+"Volume:"
+// need translation:
+//[MSetAttrDfsTargets]
+"DFS Targets:"
+// need translation:
+//[MSetAttrAppExecLink]
+"App Alias:"
+// need translation:
+//[MSetAttrUnknownReparsePoint]
+"(data not available)"
+// need translation:
+//[MSetAttrReadOnly]
+"&Read only"
+// need translation:
+//[MSetAttrArchive]
+"&Archive"
+// need translation:
+//[MSetAttrHidden]
+"&Hidden"
+// need translation:
+//[MSetAttrSystem]
+"&System"
+// need translation:
+//[MSetAttrCompressed]
+"&Compressed"
+// need translation:
+//[MSetAttrEncrypted]
+"&Encrypted"
+// need translation:
+//[MSetAttrNotIndexed]
+"Not &indexed"
+// need translation:
+//[MSetAttrSparse]
+"&Sparse"
+// need translation:
+//[MSetAttrTemporary]
+"&Temporary"
+// need translation:
+//[MSetAttrOffline]
+"&Offline"
+// need translation:
+//[MSetAttrReparsePoint]
+"&Reparse point"
+// need translation:
+//[MSetAttrVirtual]
+"&Virtual"
+// need translation:
+//[MSetAttrIntegrityStream]
+"&Integrity stream"
+// need translation:
+//[MSetAttrNoScrubData]
+"&No scrub data"
+// need translation:
+//[MSetAttrPinned]
+"&Pinned"
+// need translation:
+//[MSetAttrUnpinned]
+"&Unpinned"
+// need translation:
+//[MSetAttrRecallOnOpen]
+"R&ecall on open"
+// need translation:
+//[MSetAttrRecallOnDataAccess]
+"Rec&all on data access"
+// need translation:
+//[MSetAttrStrictlySequential]
+"Strictly se&quential"
+// need translation:
+//[MSetAttrMore]
+"&More"
+//[MSetAttrSubfolders]
+"Apdoroti pa&katalogius"
+// need translation:
+//[MSetAttrOwner]
+"Owner&:"
+//[MSetAttrModification]
+"&Modifikuotas laikas:"
+//[MSetAttrCreation]
+"Su&kurtas laikas:"
+//[MSetAttrLastAccess]
+"&Naudotas laikas:"
+// need translation:
+//[MSetAttrChange]
+"Chan&ge time:"
+// need translation:
+//[MSetAttrOriginal]
+"&Original"
+//[MSetAttrCurrent]
+"&Einamas"
+// need translation:
+//[MSetAttrBlank]
+"&Blank"
+//[MSetAttrSet]
+"Keisti"
+
+// need translation:
+//[MSetAttrDateTitleMDY]
+"MM{0}DD{0}YYYYY"
+// need translation:
+//[MSetAttrDateTitleDMY]
+"DD{0}MM{0}YYYYY"
+// need translation:
+//[MSetAttrDateTitleYMD]
+"YYYYY{0}MM{0}DD"
+// need translation:
+//[MSetAttrTimeTitle]
+"hh{0}mm{0}ss"
+// need translation:
+//[MSetAttrSystemDialog]
+"System &properties"
+
+//[MSetAttrSetting]
+"Uždedu atributus failui"
+//[MSetAttrCannotFor]
+"Negaliu uždėti atributų failui"
+//[MSetAttrCompressedCannotFor]
+"Negaliu uždėti atributo COMPRESSED failui"
+//[MSetAttrEncryptedCannotFor]
+"Negaliu uždėti atributo ENCRYPTED failui"
+//[MSetAttrSparseCannotFor]
+"Negaliu uždėti atributo SPARSE failui"
+//[MSetAttrTimeCannotFor]
+"Negaliu uždėti failo laiko failui"
+// need translation:
+//[MSetAttrOwnerCannotFor]
+"Cannot set owner for"
+// need translation:
+//[MSetAttrReparsePointCannotFor]
+"Cannot remove reparse point for"
+
+//[MSetColorPanel]
+"&Langas"
+//[MSetColorDialog]
+"&Dialogas"
+//[MSetColorWarning]
+"&Įspėjamasis pranešimas"
+//[MSetColorMenu]
+"&Meniu"
+//[MSetColorHMenu]
+"Hori&zontalus meniu"
+//[MSetColorKeyBar]
+"Funkciniu &klavišų juosta"
+//[MSetColorCommandLine]
+"K&omandinė eilutė"
+//[MSetColorClock]
+"&Laikrodis"
+//[MSetColorViewer]
+"&Peržiūra"
+//[MSetColorEditor]
+"R&edaktorius"
+//[MSetColorHelp]
+"P&agalba"
+//[MSetDefaultColors]
+"Grįžti prie pra&dinių spalvų"
+//[MSetBW]
+"Juodai-&baltas režimas"
+
+//[MSetColorPanelNormal]
+"Normalus tekstas"
+//[MSetColorPanelSelected]
+"Pažymėtas tekstas"
+// need translation:
+//[MSetColorPanelHighlightedText]
+"Highlighted text"
+//[MSetColorPanelHighlightedInfo]
+"Paryškinta info"
+//[MSetColorPanelDragging]
+"Tempiamas tekstas"
+//[MSetColorPanelBox]
+"Rėmelis"
+//[MSetColorPanelNormalCursor]
+"Normalus kursorius"
+//[MSetColorPanelSelectedCursor]
+"Pažymėtas kursorius"
+//[MSetColorPanelNormalTitle]
+"Normali antraštė"
+//[MSetColorPanelSelectedTitle]
+"Pažymėta antraštė"
+//[MSetColorPanelColumnTitle]
+"Stulpelio antraštė"
+//[MSetColorPanelTotalInfo]
+"Suminė informacija"
+//[MSetColorPanelSelectedInfo]
+"Pažymėta informacija"
+//[MSetColorPanelScrollbar]
+"Šliaužiklis"
+//[MSetColorPanelScreensNumber]
+"Nematomų ekranų skaičius"
+
+//[MSetColorDialogNormal]
+"Normalus tekstas"
+//[MSetColorDialogHighlighted]
+"Paryškintas tekstas"
+// need translation:
+//[MSetColorDialogDisabled]
+"Disabled text"
+//[MSetColorDialogBox]
+"Rėmelis"
+//[MSetColorDialogBoxTitle]
+"Antraštė"
+//[MSetColorDialogHighlightedBoxTitle]
+"Paryškinta antraštė"
+//[MSetColorDialogTextInput]
+"Teksto įvedimas"
+//[MSetColorDialogUnchangedTextInput]
+"Nepasikeitusio teksto įvedimas"
+//[MSetColorDialogSelectedTextInput]
+"Pažymėto teksto įvedimas"
+// need translation:
+//[MSetColorDialogEditDisabled]
+"Disabled input line"
+//[MSetColorDialogButtons]
+"Mygtukai"
+//[MSetColorDialogSelectedButtons]
+"Pažymėti mygtukai"
+//[MSetColorDialogHighlightedButtons]
+"Paryškinti mygtukai"
+//[MSetColorDialogSelectedHighlightedButtons]
+"Pažymėti paryškinti mygtukai"
+// need translation:
+//[MSetColorDialogDefaultButton]
+"Default button"
+// need translation:
+//[MSetColorDialogSelectedDefaultButton]
+"Selected default button"
+// need translation:
+//[MSetColorDialogHighlightedDefaultButton]
+"Highlighted default button"
+// need translation:
+//[MSetColorDialogSelectedHighlightedDefaultButton]
+"Selected highlighted default button"
+//[MSetColorDialogListBoxControl]
+"Sąrašo"
+// need translation:
+//[MSetColorDialogComboBoxControl]
+"Combobox"
+
+//[MSetColorDialogListText]
+"Normalus tekstas"
+//[MSetColorDialogListSelectedText]
+"Pažymėtas tekstas"
+//[MSetColorDialogListHighLight]
+"Paryškintas tekstas"
+// need translation:
+//[MSetColorDialogListSelectedHighLight]
+"Selected highlighted text"
+// need translation:
+//[MSetColorDialogListDisabled]
+"Disabled item"
+//[MSetColorDialogListBox]
+"Rėmelis"
+//[MSetColorDialogListTitle]
+"Antraštė"
+// need translation:
+//[MSetColorDialogListGrayed]
+"Grayed list text"
+// need translation:
+//[MSetColorDialogSelectedListGrayed]
+"Selected grayed list text"
+//[MSetColorDialogListScrollBar]
+"Šliaužiklis"
+// need translation:
+//[MSetColorDialogListArrows]
+"Long string indicators"
+// need translation:
+//[MSetColorDialogListArrowsSelected]
+"Selected long string indicators"
+// need translation:
+//[MSetColorDialogListArrowsDisabled]
+"Disabled long string indicators"
+
+//[MSetColorMenuNormal]
+"Normalus tekstas"
+//[MSetColorMenuSelected]
+"Pažymėtas tekstas"
+//[MSetColorMenuHighlighted]
+"Paryškintas tekstas"
+//[MSetColorMenuSelectedHighlighted]
+"Pažymėtas paryškintas tekstas"
+// need translation:
+//[MSetColorMenuDisabled]
+"Disabled text"
+// need translation:
+//[MSetColorMenuGrayed]
+"Grayed text"
+// need translation:
+//[MSetColorMenuSelectedGrayed]
+"Selected grayed text"
+//[MSetColorMenuBox]
+"Rėmelis"
+//[MSetColorMenuTitle]
+"Antraštė"
+//[MSetColorMenuScrollBar]
+"Šliaužiklis"
+// need translation:
+//[MSetColorMenuArrows]
+"Long string indicators"
+// need translation:
+//[MSetColorMenuArrowsSelected]
+"Selected long string indicators"
+// need translation:
+//[MSetColorMenuArrowsDisabled]
+"Disabled long string indicators"
+
+//[MSetColorHMenuNormal]
+"Normalus tekstas"
+//[MSetColorHMenuSelected]
+"Pažymėtas tekstas"
+//[MSetColorHMenuHighlighted]
+"Paryškintas tekstas"
+//[MSetColorHMenuSelectedHighlighted]
+"Pažymėtas paryškintas tekstas"
+
+//[MSetColorKeyBarNumbers]
+"Klavišų numeriai"
+//[MSetColorKeyBarNames]
+"Klavišų vardai"
+//[MSetColorKeyBarBackground]
+"Fonas"
+
+//[MSetColorCommandLineNormal]
+"Teksto įvedimas"
+//[MSetColorCommandLineSelected]
+"Pažymėto teksto įvedimas"
+// need translation:
+//[MSetColorCommandLinePrefix]
+"Prefix text"
+// need translation:
+//[MSetColorCommandLineUserScreen]
+"User screen"
+
+//[MSetColorClockNormal]
+"Normalus tekstas (Langas)"
+//[MSetColorClockNormalEditor]
+"Normalus tekstas (Redaktorius)"
+//[MSetColorClockNormalViewer]
+"Pažymėtas tekstas (Peržiūra)"
+
+//[MSetColorViewerNormal]
+"Normalus tekstas"
+//[MSetColorViewerSelected]
+"Pažymėtas tekstas"
+//[MSetColorViewerStatus]
+"Statuso juosta"
+//[MSetColorViewerArrows]
+"Ekrano postūmio rodyklės"
+//[MSetColorViewerScrollbar]
+"Šliaužiklis"
+
+//[MSetColorEditorNormal]
+"Normalus tekstas"
+//[MSetColorEditorSelected]
+"Pažymėtas tekstas"
+//[MSetColorEditorStatus]
+"Statuso juosta"
+//[MSetColorEditorScrollbar]
+"Šliaužiklis"
+
+//[MSetColorHelpNormal]
+"Normalus tekstas"
+//[MSetColorHelpHighlighted]
+"Paryškintas tekstas"
+//[MSetColorHelpReference]
+"Nuoroda"
+//[MSetColorHelpSelectedReference]
+"Pažymėta nuoroda"
+//[MSetColorHelpBox]
+"Rėmelis"
+//[MSetColorHelpBoxTitle]
+"Antraštė"
+//[MSetColorHelpScrollbar]
+"Šliaužiklis"
+
+//[MSetColorGroupsTitle]
+"Spalvų grupės"
+//[MSetColorItemsTitle]
+"Grupės punktai"
+
+//[MSetColorTitle]
+"Spalva"
+//[MSetColorForeground]
+"&Raidės"
+//[MSetColorBackground]
+"&Fonas"
+
+// 3 characters max
+//[MSetColorForeRGB]
+"&RGB"
+
+// 3 characters max
+//[MSetColorBackRGB]
+"R&GB"
+// need translation:
+//[MSetColorForeTransparent]
+"&Transparent"
+// need translation:
+//[MSetColorBackTransparent]
+"T&ransparent"
+//[MSetColorSample]
+"Tekstas Tekstas Tekstas Tekstas Te"
+//[MSetColorSet]
+"Gerai"
+//[MSetColorCancel]
+"Atšaukti"
+
+//[MSetConfirmTitle]
+"Patvirtinti"
+//[MSetConfirmCopy]
+"&Kopijuojant"
+//[MSetConfirmMove]
+"&Perkeliant"
+// need translation:
+//[MSetConfirmRO]
+"&Overwrite and delete R/O files"
+//[MSetConfirmDrag]
+"Pert&empiant pele"
+//[MSetConfirmDelete]
+"&Trinant"
+//[MSetConfirmDeleteFolders]
+"Trinant &netuščius katalogus"
+// need translation:
+//[MSetConfirmEsc]
+"&Interrupt operation"
+// need translation:
+//[MSetConfirmRemoveConnection]
+"Disconnect &network drive"
+// need translation:
+//[MSetConfirmRemoveSUBST]
+"Delete &SUBST-disk"
+// need translation:
+//[MSetConfirmDetachVHD]
+"Detach &virtual disk"
+// need translation:
+//[MSetConfirmRemoveHotPlug]
+"Hot&Plug-device removal"
+// need translation:
+//[MSetConfirmAllowReedit]
+"&Reload edited file"
+// need translation:
+//[MSetConfirmHistoryClear]
+"Clear &history list"
+//[MSetConfirmExit]
+"I&šeinant"
+
+// need translation:
+//[MPluginsManagerSettingsTitle]
+"Plugins manager settings"
+// need translation:
+//[MPluginsManagerOEMPluginsSupport]
+"&OEM plugins support"
+// need translation:
+//[MPluginsManagerScanSymlinks]
+"Scan s&ymbolic links"
+// need translation:
+//[MPluginsManagerOFP]
+"&File processing"
+// need translation:
+//[MPluginsManagerStdAssoc]
+"Show standard &association item"
+// need translation:
+//[MPluginsManagerEvenOne]
+"&Even if only one plugin found"
+// need translation:
+//[MPluginsManagerSFL]
+"Search &results (SetFindList)"
+// need translation:
+//[MPluginsManagerPF]
+"&Prefix processing"
+// need translation:
+//[MPluginConfirmationTitle]
+"Plugin selection"
+// need translation:
+//[MMenuPluginStdAssociation]
+"Standard association"
+
+//[MFindFolderTitle]
+"Rasti katalogą"
+
+// Find folder Tree KeyBar
+// need translation:
+//[MFolderTreeF1]
+"Help"
+// need translation:
+//[MFolderTreeF2]
+"Rescan"
+//[MFolderTreeF3]
+""
+//[MFolderTreeF4]
+""
+// need translation:
+//[MFolderTreeF5]
+"Zoom"
+//[MFolderTreeF6]
+""
+//[MFolderTreeF7]
+""
+//[MFolderTreeF8]
+""
+//[MFolderTreeF9]
+""
+// need translation:
+//[MFolderTreeF10]
+"Quit"
+//[MFolderTreeF11]
+""
+//[MFolderTreeF12]
+""
+//[MFolderTreeShiftF1]
+""
+//[MFolderTreeShiftF2]
+""
+//[MFolderTreeShiftF3]
+""
+//[MFolderTreeShiftF4]
+""
+//[MFolderTreeShiftF5]
+""
+//[MFolderTreeShiftF6]
+""
+//[MFolderTreeShiftF7]
+""
+//[MFolderTreeShiftF8]
+""
+//[MFolderTreeShiftF9]
+""
+//[MFolderTreeShiftF10]
+""
+//[MFolderTreeShiftF11]
+""
+//[MFolderTreeShiftF12]
+""
+//[MFolderTreeAltF1]
+""
+//[MFolderTreeAltF2]
+""
+//[MFolderTreeAltF3]
+""
+//[MFolderTreeAltF4]
+""
+//[MFolderTreeAltF5]
+""
+//[MFolderTreeAltF6]
+""
+//[MFolderTreeAltF7]
+""
+//[MFolderTreeAltF8]
+""
+//[MFolderTreeAltF9]
+"Video"
+//[MFolderTreeAltF10]
+""
+//[MFolderTreeAltF11]
+""
+//[MFolderTreeAltF12]
+""
+//[MFolderTreeCtrlF1]
+""
+//[MFolderTreeCtrlF2]
+""
+//[MFolderTreeCtrlF3]
+""
+//[MFolderTreeCtrlF4]
+""
+//[MFolderTreeCtrlF5]
+""
+//[MFolderTreeCtrlF6]
+""
+//[MFolderTreeCtrlF7]
+""
+//[MFolderTreeCtrlF8]
+""
+//[MFolderTreeCtrlF9]
+""
+//[MFolderTreeCtrlF10]
+""
+//[MFolderTreeCtrlF11]
+""
+//[MFolderTreeCtrlF12]
+""
+//[MFolderTreeCtrlShiftF1]
+""
+//[MFolderTreeCtrlShiftF2]
+""
+//[MFolderTreeCtrlShiftF3]
+""
+//[MFolderTreeCtrlShiftF4]
+""
+//[MFolderTreeCtrlShiftF5]
+""
+//[MFolderTreeCtrlShiftF6]
+""
+//[MFolderTreeCtrlShiftF7]
+""
+//[MFolderTreeCtrlShiftF8]
+""
+//[MFolderTreeCtrlShiftF9]
+""
+//[MFolderTreeCtrlShiftF10]
+""
+//[MFolderTreeCtrlShiftF11]
+""
+//[MFolderTreeCtrlShiftF12]
+""
+//[MFolderTreeCtrlAltF1]
+""
+//[MFolderTreeCtrlAltF2]
+""
+//[MFolderTreeCtrlAltF3]
+""
+//[MFolderTreeCtrlAltF4]
+""
+//[MFolderTreeCtrlAltF5]
+""
+//[MFolderTreeCtrlAltF6]
+""
+//[MFolderTreeCtrlAltF7]
+""
+//[MFolderTreeCtrlAltF8]
+""
+//[MFolderTreeCtrlAltF9]
+""
+//[MFolderTreeCtrlAltF10]
+""
+//[MFolderTreeCtrlAltF11]
+""
+//[MFolderTreeCtrlAltF12]
+""
+//[MFolderTreeAltShiftF1]
+""
+//[MFolderTreeAltShiftF2]
+""
+//[MFolderTreeAltShiftF3]
+""
+//[MFolderTreeAltShiftF4]
+""
+//[MFolderTreeAltShiftF5]
+""
+//[MFolderTreeAltShiftF6]
+""
+//[MFolderTreeAltShiftF7]
+""
+//[MFolderTreeAltShiftF8]
+""
+//[MFolderTreeAltShiftF9]
+""
+//[MFolderTreeAltShiftF10]
+""
+//[MFolderTreeAltShiftF11]
+""
+//[MFolderTreeAltShiftF12]
+""
+//[MFolderTreeCtrlAltShiftF1]
+""
+//[MFolderTreeCtrlAltShiftF2]
+""
+//[MFolderTreeCtrlAltShiftF3]
+""
+//[MFolderTreeCtrlAltShiftF4]
+""
+//[MFolderTreeCtrlAltShiftF5]
+""
+//[MFolderTreeCtrlAltShiftF6]
+""
+//[MFolderTreeCtrlAltShiftF7]
+""
+//[MFolderTreeCtrlAltShiftF8]
+""
+//[MFolderTreeCtrlAltShiftF9]
+""
+//[MFolderTreeCtrlAltShiftF10]
+""
+//[MFolderTreeCtrlAltShiftF11]
+""
+//[MFolderTreeCtrlAltShiftF12]
+""
+//[MTreeTitle]
+"Medis"
+//[MCannotSaveTree]
+"Negaliu išsaugoti katalogų medžio faile"
+//[MReadingTree]
+"Skaitau katalogų medį"
+
+//[MUserMenuTitle]
+"Vartotojo meniu"
+//[MChooseMenuType]
+"Pasirinkite kurį vartotojo meniu redaguoti"
+//[MChooseMenuMain]
+"Pagrindinį"
+//[MChooseMenuLocal]
+"Vietinį"
+//[MMainMenuTitle]
+"Pagrindinis meniu"
+
+// <...menu (User)>
+// need translation:
+//[MMainMenuUser]
+"User"
+// need translation:
+//[MMainMenuGlobal]
+"Global"
+//[MLocalMenuTitle]
+"Vietinis meniu"
+//[MAskDeleteMenuItem]
+"Ar norite ištrinti iš meniu"
+// need translation:
+//[MAskDeleteSubMenuItem]
+"Do you wish to delete the submenu"
+// need translation:
+//[MUserMenuInvalidInputLabel]
+"Invalid format for UserMenu Label"
+// need translation:
+//[MUserMenuInvalidInputHotKey]
+"Invalid format for Hot Key"
+
+//[MEditMenuTitle]
+"Redaguoti vartotojo meniu"
+//[MEditMenuHotKey]
+"&Greitraktis:"
+//[MEditMenuLabel]
+"&Vardas:"
+//[MEditMenuCommands]
+"&Komandos:"
+
+//[MAskInsertMenuOrCommand]
+"Ar norite įterpti naują komandą ar naują meniu?"
+//[MMenuInsertCommand]
+"Įterpti komandą"
+//[MMenuInsertMenu]
+"Įterpti meniu"
+
+//[MEditSubmenuTitle]
+"Redaguoti submeniu vardą"
+//[MEditSubmenuHotKey]
+"&Greitraktis:"
+//[MEditSubmenuLabel]
+"&Vardas:"
+// need translation:
+//[MEditMenuConfirmation]
+"Save changes?"
+// need translation:
+//[MEditMenuError]
+"Cannot update menu"
+
+//[MViewerTitle]
+"Peržiūra"
+//[MViewerCannotOpenFile]
+"Negaliu atidaryti failo"
+// Up to 3 characters
+//[MViewerStatusCol]
+"Stl"
+
+//[MViewSearchTitle]
+"Paieška"
+//[MViewSearchFor]
+"&Rasti"
+//[MViewSearchForText]
+"Ieškoti &teksto"
+//[MViewSearchForHex]
+"Ieškoti &hex"
+//[MViewSearchCase]
+"&Didžiosios skiriasi"
+// need translation:
+//[MViewSearchWholeWords]
+"&Whole words"
+//[MViewSearchReverse]
+"At&virkščia paieška"
+// need translation:
+//[MViewSearchRegexp]
+"Re&gular expressions"
+//[MViewSearchSearch]
+"&Ieškoti"
+//[MViewSearchCancel]
+"&Atšaukti"
+
+//[MViewSearchingFor]
+"Ieškau"
+// need translation:
+//[MViewSearchingHex]
+"Searching for bytes"
+//[MViewSearchCannotFind]
+"Negalėjau surasti eilutės"
+// need translation:
+//[MViewSearchCannotFindHex]
+"Could not find the bytes"
+// need translation:
+//[MViewSearchEod]
+"End of the document reached"
+// need translation:
+//[MViewSearchFromBegin]
+"Continue from the beginning of the document?"
+// need translation:
+//[MViewSearchBod]
+"Begin of the document reached"
+// need translation:
+//[MViewSearchFromEnd]
+"Continue from the end of the document?"
+// need translation:
+//[MViewSearchCycle]
+"The whole document scanned"
+// need translation:
+//[MViewSearchRepeat]
+"Repeat the search in the document?"
+
+//[MPrintTitle]
+"Spausdinti"
+//[MPrintTo]
+"Spausdinti {0} su"
+//[MPrintFilesTo]
+"Spausdinti {0} failus su"
+//[MPreparingForPrinting]
+"Ruošiu failus spausdinimui"
+// need translation:
+//[MCannotEnumeratePrinters]
+"Cannot enumerate available printers list"
+//[MCannotOpenPrinter]
+"Negaliu susisiekti su spausdintuvu"
+//[MCannotPrint]
+"Negaliu spausdinti"
+
+//[MDescribeFiles]
+"Aprašymo failas"
+//[MEnterDescription]
+"Įveskite aprašymą"
+
+//[MReadingDiz]
+"Skaitau failo aprašymą"
+//[MCannotUpdateDiz]
+"Negaliu atnaujinti failo aprašymo"
+
+//[MCfgDizTitle]
+"Failų aprašymai"
+//[MCfgDizListNames]
+"Aprašymo failų &sąrašas, vardai atskirti kableliais:"
+//[MCfgDizSetHidden]
+"Uždėti \"&Hidden\" atributą naujiems aprašymų failams"
+// need translation:
+//[MCfgDizROUpdate]
+"Update &read only description file"
+//[MCfgDizStartPos]
+"Naujų aprašymų &pozicija eilutėje"
+//[MCfgDizNotUpdate]
+"&Neatnaujinti aprašymų"
+//[MCfgDizUpdateIfDisplayed]
+"Atnaujinti jei &rodomi"
+//[MCfgDizAlwaysUpdate]
+"&Visada atnaujinti"
+// need translation:
+//[MCfgDizAnsiByDefault]
+"Use ANS&I code page by default"
+// need translation:
+//[MCfgDizSaveInUTF]
+"Save in UTF-&8"
+
+// need translation:
+//[MReadingTitleFiles]
+"Update of panels"
+//[MReadingFiles]
+"Skaitau: {0} failus"
+//[MOperationNotCompleted]
+"Operacija nepabaigta"
+
+//[MEditPanelModes]
+"Redaguoti langų režimus"
+
+//[MEditPanelModeName]
+"&Vardas"
+//[MEditPanelModeTypes]
+"Stulpelių &tipai"
+//[MEditPanelModeWidths]
+"Stulpelių &pločiai"
+//[MEditPanelModeStatusTypes]
+"St&atuso juostos stulpelių tipai"
+//[MEditPanelModeStatusWidths]
+"Statuso j&uostos stulpelių pločiai"
+//[MEditPanelModeFullscreen]
+"Pilnaekranis &vaizdas"
+//[MEditPanelModeAlignExtensions]
+"Sulygiuoti failų p&lėtinius"
+//[MEditPanelModeAlignFolderExtensions]
+"Sulygiuoti katalogus plėtinius"
+//[MEditPanelModeFoldersUpperCase]
+"Rodyti katalogus &didžiosiomis"
+//[MEditPanelModeFilesLowerCase]
+"Rodyti failų vardus &mažosiomis"
+//[MEditPanelModeUpperToLowerCase]
+"Rodyti didžiosiomis parašytus failų vardus ma&žosiomis"
+
+//[MSetFolderInfoTitle]
+"Katalogo aprašymo failai"
+//[MSetFolderInfoNames]
+"Įveskite failų vardus atskirtus kableliais (* ir ? leidžiami)"
+
+//[MScreensTitle]
+"Ekranai"
+//[MScreensPanels]
+"Langai"
+//[MScreensView]
+"Žiūrėti"
+//[MScreensEdit]
+"Redaguoti"
+
+//[MAskApplyCommandTitle]
+"Panaudoti komandą"
+//[MAskApplyCommand]
+"Įveskite komandą pažymėtų failų apdorojimui"
+
+//[MPluginConfigTitle]
+"Priedų konfigūracija"
+//[MPluginCommandsMenuTitle]
+"Komandos - priedai"
+
+//[MPreparingList]
+"Ruošiu failų sąrašą"
+
+//[MLangTitle]
+"Pagrindinė kalba"
+//[MHelpLangTitle]
+"Pagalbos kalba"
+
+//[MDefineMacroTitle]
+"Apibrėžti makro"
+//[MDefineMacro]
+"Paspauskite pasirinktą klavišą"
+// need translation:
+//[MMacroReDefinedKey]
+"Macro key '{0}' already defined."
+// need translation:
+//[MMacroDeleteKey]
+"Macro key '{0}' will be removed."
+// need translation:
+//[MMacroCommonReDefinedKey]
+"Common macro key '{0}' already defined."
+// need translation:
+//[MMacroCommonDeleteKey]
+"Common macro key '{0}' will be removed."
+// need translation:
+//[MMacroSequence]
+"Sequence:"
+// need translation:
+//[MMacroReDefinedKey2]
+"Redefine?"
+// need translation:
+//[MMacroDeleteKey2]
+"Delete?"
+// need translation:
+//[MMacroEditKey]
+"Chan&ge"
+
+//[MMacroSettingsTitle]
+"Makro parametrai dėl '{0}'"
+// need translation:
+//[MMacroSettingsSequence]
+"Se&quence:"
+// need translation:
+//[MMacroSettingsDescription]
+"&Description:"
+//[MMacroSettingsEnableOutput]
+"Išvedimą į ekraną kol vykdoma makro"
+//[MMacroSettingsRunAfterStart]
+"Vykdyti po Far &paleidimo"
+// need translation:
+//[MMacroSettingsActivePanel]
+"&Active panel"
+// need translation:
+//[MMacroSettingsPassivePanel]
+"&Passive panel"
+// need translation:
+//[MMacroSettingsPluginPanel]
+"P&lugin panel"
+// need translation:
+//[MMacroSettingsFolders]
+"Execute for &folders"
+// need translation:
+//[MMacroSettingsSelectionPresent]
+"Se&lection present"
+//[MMacroSettingsCommandLine]
+"Komandinė eilutė tuščia"
+// need translation:
+//[MMacroSettingsSelectionBlockPresent]
+"Selection &block present"
+// need translation:
+//[MMacroPluginLuamacroNotLoaded]
+"Plugin LuaMacro is not loaded"
+// need translation:
+//[MMacroRecordingIsDisabled]
+"Macro recording is disabled"
+
+//[MCannotSaveFile]
+"Negaliu išsaugoti failo"
+//[MTextSavedToTemp]
+"Redaguotas tekstas išsaugotas"
+
+//[MPluginHotKeyTitle]
+"Priskirti priedui greitraktį"
+//[MPluginHotKey]
+"Įveskite greitraktį (raidė ar skaitmuo)"
+// need translation:
+//[MPluginInformation]
+"Plugin information"
+// need translation:
+//[MPluginModuleTitle]
+"&Title:"
+// need translation:
+//[MPluginDescription]
+"&Description:"
+// need translation:
+//[MPluginAuthor]
+"&Author:"
+// need translation:
+//[MPluginVersion]
+"&Version:"
+// need translation:
+//[MPluginModulePath]
+"&Module path:"
+// need translation:
+//[MPluginUUID]
+"Plugin &UUID:"
+// need translation:
+//[MPluginItemUUID]
+"Plugin &item UUID:"
+// need translation:
+//[MPluginPrefix]
+"Plugin &prefix:"
+// need translation:
+//[MExcTrappedException]
+"Exception occurred"
+// need translation:
+//[MExcException]
+"Exception:"
+// need translation:
+//[MExcDetails]
+"Details:"
+// need translation:
+//[MExcAddress]
+"Address:"
+// need translation:
+//[MExcSource]
+"Source:"
+// need translation:
+//[MExcFunction]
+"Function:"
+// need translation:
+//[MExcFileName]
+"File:"
+// need translation:
+//[MExcPlugin]
+"Plugin:"
+//[MExcFarVersion]
+"Far:"
+// need translation:
+//[MExcOSVersion]
+"OS:"
+// need translation:
+//[MExcKernelVersion]
+"Kernel:"
+// need translation:
+//[MExcTerminate]
+"&Terminate Far"
+// need translation:
+//[MExcUnload]
+"&Unload plugin"
+// need translation:
+//[MExcCopy]
+"Copy"
+// need translation:
+//[MExcStack]
+"&Stack"
+// need translation:
+//[MExcMinidump]
+"&Minidump"
+// need translation:
+//[MExcMinidumpSuccess]
+"Minidump saved to"
+
+// need translation:
+//[MNetUserName]
+"User name"
+// need translation:
+//[MNetUserPassword]
+"User password"
+
+// need translation:
+//[MReadFolderError]
+"Cannot read folder contents"
+
+// need translation:
+//[MPlgBadVers]
+"This plugin requires more recent version of Far"
+// need translation:
+//[MPlgRequired]
+"Required Far version is {0},"
+// need translation:
+//[MPlgRequired2]
+"current Far version is {0}."
+// need translation:
+//[MPlgLoadPluginError]
+"Error loading plugin"
+
+// need translation:
+//[MHelpTitle]
+"Help"
+// need translation:
+//[MHelpActivatorURL]
+"This reference starts an external application"
+// need translation:
+//[MHelpActivatorFormat]
+"with parameter:"
+// need translation:
+//[MHelpActivatorQ]
+"Do you wish to start it?"
+// need translation:
+//[MCannotOpenHelp]
+"Cannot open the file"
+// need translation:
+//[MHelpTopicNotFound]
+"Requested help topic not found:"
+
+//[MPluginsHelpTitle]
+"Priedų pagalba"
+// need translation:
+//[MDocumentsHelpTitle]
+"Documents help"
+
+// need translation:
+//[MHelpSearchTitle]
+"Search"
+// need translation:
+//[MHelpSearchingFor]
+"&Search for"
+// need translation:
+//[MHelpSearchCannotFind]
+"Could not find the string"
+
+// Help KeyBar F1-12
+// need translation:
+//[MHelpF1]
+"Help"
+//[MHelpF2]
+""
+//[MHelpF3]
+""
+//[MHelpF4]
+""
+// need translation:
+//[MHelpF5]
+"Zoom"
+//[MHelpF6]
+""
+// need translation:
+//[MHelpF7]
+"Search"
+//[MHelpF8]
+""
+//[MHelpF9]
+""
+// need translation:
+//[MHelpF10]
+"Quit"
+//[MHelpF11]
+""
+//[MHelpF12]
+""
+
+// Help KeyBar Shift+F1-12
+// need translation:
+//[MHelpShiftF1]
+"Index"
+// need translation:
+//[MHelpShiftF2]
+"Plugin"
+// need translation:
+//[MHelpShiftF3]
+"Docums"
+//[MHelpShiftF4]
+""
+//[MHelpShiftF5]
+""
+//[MHelpShiftF6]
+""
+// need translation:
+//[MHelpShiftF7]
+"Next"
+//[MHelpShiftF8]
+""
+//[MHelpShiftF9]
+""
+//[MHelpShiftF10]
+""
+//[MHelpShiftF11]
+""
+//[MHelpShiftF12]
+""
+
+// Help KeyBar Alt+F1-12
+// need translation:
+//[MHelpAltF1]
+"Prev"
+//[MHelpAltF2]
+""
+//[MHelpAltF3]
+""
+//[MHelpAltF4]
+""
+//[MHelpAltF5]
+""
+//[MHelpAltF6]
+""
+//[MHelpAltF7]
+""
+//[MHelpAltF8]
+""
+//[MHelpAltF9]
+"Video"
+//[MHelpAltF10]
+""
+//[MHelpAltF11]
+""
+//[MHelpAltF12]
+""
+
+// Help KeyBar Ctrl+F1-12
+//[MHelpCtrlF1]
+""
+//[MHelpCtrlF2]
+""
+//[MHelpCtrlF3]
+""
+//[MHelpCtrlF4]
+""
+//[MHelpCtrlF5]
+""
+//[MHelpCtrlF6]
+""
+//[MHelpCtrlF7]
+""
+//[MHelpCtrlF8]
+""
+//[MHelpCtrlF9]
+""
+//[MHelpCtrlF10]
+""
+//[MHelpCtrlF11]
+""
+//[MHelpCtrlF12]
+""
+
+// Help KeyBar AltShiftF1-12
+//[MHelpAltShiftF1]
+""
+//[MHelpAltShiftF2]
+""
+//[MHelpAltShiftF3]
+""
+//[MHelpAltShiftF4]
+""
+//[MHelpAltShiftF5]
+""
+//[MHelpAltShiftF6]
+""
+//[MHelpAltShiftF7]
+""
+//[MHelpAltShiftF8]
+""
+//[MHelpAltShiftF9]
+""
+//[MHelpAltShiftF10]
+""
+//[MHelpAltShiftF11]
+""
+//[MHelpAltShiftF12]
+""
+
+// Help KeyBar CtrlShiftF1-12
+//[MHelpCtrlShiftF1]
+""
+//[MHelpCtrlShiftF2]
+""
+//[MHelpCtrlShiftF3]
+""
+//[MHelpCtrlShiftF4]
+""
+//[MHelpCtrlShiftF5]
+""
+//[MHelpCtrlShiftF6]
+""
+//[MHelpCtrlShiftF7]
+""
+//[MHelpCtrlShiftF8]
+""
+//[MHelpCtrlShiftF9]
+""
+//[MHelpCtrlShiftF10]
+""
+//[MHelpCtrlShiftF11]
+""
+//[MHelpCtrlShiftF12]
+""
+
+// Help KeyBar CtrlAltF1-12
+//[MHelpCtrlAltF1]
+""
+//[MHelpCtrlAltF2]
+""
+//[MHelpCtrlAltF3]
+""
+//[MHelpCtrlAltF4]
+""
+//[MHelpCtrlAltF5]
+""
+//[MHelpCtrlAltF6]
+""
+//[MHelpCtrlAltF7]
+""
+//[MHelpCtrlAltF8]
+""
+//[MHelpCtrlAltF9]
+""
+//[MHelpCtrlAltF10]
+""
+//[MHelpCtrlAltF11]
+""
+//[MHelpCtrlAltF12]
+""
+
+// Help KeyBar CtrlAltShiftF1-12
+//[MHelpCtrlAltShiftF1]
+""
+//[MHelpCtrlAltShiftF2]
+""
+//[MHelpCtrlAltShiftF3]
+""
+//[MHelpCtrlAltShiftF4]
+""
+//[MHelpCtrlAltShiftF5]
+""
+//[MHelpCtrlAltShiftF6]
+""
+//[MHelpCtrlAltShiftF7]
+""
+//[MHelpCtrlAltShiftF8]
+""
+//[MHelpCtrlAltShiftF9]
+""
+//[MHelpCtrlAltShiftF10]
+""
+//[MHelpCtrlAltShiftF11]
+""
+//[MHelpCtrlAltShiftF12]
+""
+
+// InfoPanel KeyBar F1-F12
+// need translation:
+//[MInfoF1]
+"Help"
+// need translation:
+//[MInfoF2]
+"Wrap"
+// need translation:
+//[MInfoF3]
+"VieDiz"
+// need translation:
+//[MInfoF4]
+"EdtDiz"
+//[MInfoF5]
+""
+//[MInfoF6]
+""
+// need translation:
+//[MInfoF7]
+"Search"
+//[MInfoF8]
+"ANSI"
+// need translation:
+//[MInfoF9]
+"ConfMn"
+// need translation:
+//[MInfoF10]
+"Quit"
+// need translation:
+//[MInfoF11]
+"Plugin"
+// need translation:
+//[MInfoF12]
+"Screen"
+
+// InfoPanel KeyBar Shift+F1-F12
+//[MInfoShiftF1]
+""
+// need translation:
+//[MInfoShiftF2]
+"WWrap"
+//[MInfoShiftF3]
+""
+//[MInfoShiftF4]
+""
+//[MInfoShiftF5]
+""
+//[MInfoShiftF6]
+""
+// need translation:
+//[MInfoShiftF7]
+"Next"
+// need translation:
+//[MInfoShiftF8]
+"CodePg"
+// need translation:
+//[MInfoShiftF9]
+"Save"
+// need translation:
+//[MInfoShiftF10]
+"Last"
+//[MInfoShiftF11]
+""
+//[MInfoShiftF12]
+""
+
+// InfoPanel KeyBar Alt+F1-F12
+// need translation:
+//[MInfoAltF1]
+"Left"
+// need translation:
+//[MInfoAltF2]
+"Right"
+//[MInfoAltF3]
+""
+//[MInfoAltF4]
+""
+//[MInfoAltF5]
+""
+//[MInfoAltF6]
+""
+// need translation:
+//[MInfoAltF7]
+"Find"
+// need translation:
+//[MInfoAltF8]
+"Goto"
+//[MInfoAltF9]
+"Video"
+// need translation:
+//[MInfoAltF10]
+"Tree"
+// need translation:
+//[MInfoAltF11]
+"ViewHs"
+// need translation:
+//[MInfoAltF12]
+"FoldHs"
+
+// InfoPanel KeyBar Ctrl+F1-F12
+// need translation:
+//[MInfoCtrlF1]
+"Left"
+// need translation:
+//[MInfoCtrlF2]
+"Right"
+//[MInfoCtrlF3]
+""
+//[MInfoCtrlF4]
+""
+//[MInfoCtrlF5]
+""
+//[MInfoCtrlF6]
+""
+//[MInfoCtrlF7]
+""
+//[MInfoCtrlF8]
+""
+//[MInfoCtrlF9]
+""
+//[MInfoCtrlF10]
+""
+//[MInfoCtrlF11]
+""
+//[MInfoCtrlF12]
+"Režimas"
+
+// InfoPanel KeyBar AltShiftF1-12
+//[MInfoAltShiftF1]
+""
+//[MInfoAltShiftF2]
+""
+//[MInfoAltShiftF3]
+""
+//[MInfoAltShiftF4]
+""
+//[MInfoAltShiftF5]
+""
+//[MInfoAltShiftF6]
+""
+//[MInfoAltShiftF7]
+""
+//[MInfoAltShiftF8]
+""
+//[MInfoAltShiftF9]
+""
+//[MInfoAltShiftF10]
+""
+//[MInfoAltShiftF11]
+""
+//[MInfoAltShiftF12]
+""
+
+// InfoPanel KeyBar CtrlShiftF1-12
+//[MInfoCtrlShiftF1]
+""
+//[MInfoCtrlShiftF2]
+""
+//[MInfoCtrlShiftF3]
+""
+//[MInfoCtrlShiftF4]
+""
+//[MInfoCtrlShiftF5]
+""
+//[MInfoCtrlShiftF6]
+""
+//[MInfoCtrlShiftF7]
+""
+//[MInfoCtrlShiftF8]
+""
+//[MInfoCtrlShiftF9]
+""
+//[MInfoCtrlShiftF10]
+""
+//[MInfoCtrlShiftF11]
+""
+//[MInfoCtrlShiftF12]
+""
+
+// InfoPanel KeyBar CtrlAltF1-12
+//[MInfoCtrlAltF1]
+""
+//[MInfoCtrlAltF2]
+""
+//[MInfoCtrlAltF3]
+""
+//[MInfoCtrlAltF4]
+""
+//[MInfoCtrlAltF5]
+""
+//[MInfoCtrlAltF6]
+""
+//[MInfoCtrlAltF7]
+""
+//[MInfoCtrlAltF8]
+""
+//[MInfoCtrlAltF9]
+""
+//[MInfoCtrlAltF10]
+""
+//[MInfoCtrlAltF11]
+""
+//[MInfoCtrlAltF12]
+""
+
+// InfoPanel KeyBar CtrlAltShiftF1-12
+//[MInfoCtrlAltShiftF1]
+""
+//[MInfoCtrlAltShiftF2]
+""
+//[MInfoCtrlAltShiftF3]
+""
+//[MInfoCtrlAltShiftF4]
+""
+//[MInfoCtrlAltShiftF5]
+""
+//[MInfoCtrlAltShiftF6]
+""
+//[MInfoCtrlAltShiftF7]
+""
+//[MInfoCtrlAltShiftF8]
+""
+//[MInfoCtrlAltShiftF9]
+""
+//[MInfoCtrlAltShiftF10]
+""
+//[MInfoCtrlAltShiftF11]
+""
+//[MInfoCtrlAltShiftF12]
+""
+
+// QView KeyBar F1-F12
+// need translation:
+//[MQViewF1]
+"Help"
+// need translation:
+//[MQViewF2]
+"Wrap"
+// need translation:
+//[MQViewF3]
+"View"
+// need translation:
+//[MQViewF4]
+"Hex"
+//[MQViewF5]
+""
+//[MQViewF6]
+""
+// need translation:
+//[MQViewF7]
+"Search"
+//[MQViewF8]
+"ANSI"
+// need translation:
+//[MQViewF9]
+"ConfMn"
+// need translation:
+//[MQViewF10]
+"Quit"
+// need translation:
+//[MQViewF11]
+"Plugin"
+// need translation:
+//[MQViewF12]
+"Screen"
+
+// QView KeyBar Shift+F1-F12
+//[MQViewShiftF1]
+""
+// need translation:
+//[MQViewShiftF2]
+"WWrap"
+//[MQViewShiftF3]
+""
+//[MQViewShiftF4]
+""
+//[MQViewShiftF5]
+""
+//[MQViewShiftF6]
+""
+// need translation:
+//[MQViewShiftF7]
+"Next"
+// need translation:
+//[MQViewShiftF8]
+"CodePg"
+// need translation:
+//[MQViewShiftF9]
+"Save"
+// need translation:
+//[MQViewShiftF10]
+"Last"
+//[MQViewShiftF11]
+""
+//[MQViewShiftF12]
+""
+
+// QView KeyBar Alt+F1-F12
+// need translation:
+//[MQViewAltF1]
+"Left"
+// need translation:
+//[MQViewAltF2]
+"Right"
+//[MQViewAltF3]
+""
+//[MQViewAltF4]
+""
+//[MQViewAltF5]
+""
+//[MQViewAltF6]
+""
+// need translation:
+//[MQViewAltF7]
+"Find"
+// need translation:
+//[MQViewAltF8]
+"Goto"
+//[MQViewAltF9]
+"Video"
+// need translation:
+//[MQViewAltF10]
+"Tree"
+// need translation:
+//[MQViewAltF11]
+"ViewHs"
+// need translation:
+//[MQViewAltF12]
+"FoldHs"
+
+// QView KeyBar Ctrl+F1-F12
+// need translation:
+//[MQViewCtrlF1]
+"Left"
+// need translation:
+//[MQViewCtrlF2]
+"Right"
+//[MQViewCtrlF3]
+""
+//[MQViewCtrlF4]
+""
+//[MQViewCtrlF5]
+""
+//[MQViewCtrlF6]
+""
+//[MQViewCtrlF7]
+""
+//[MQViewCtrlF8]
+""
+//[MQViewCtrlF9]
+""
+//[MQViewCtrlF10]
+""
+//[MQViewCtrlF11]
+""
+//[MQViewCtrlF12]
+""
+
+// QView KeyBar AltShiftF1-12
+//[MQViewAltShiftF1]
+""
+//[MQViewAltShiftF2]
+""
+//[MQViewAltShiftF3]
+""
+//[MQViewAltShiftF4]
+""
+//[MQViewAltShiftF5]
+""
+//[MQViewAltShiftF6]
+""
+//[MQViewAltShiftF7]
+""
+//[MQViewAltShiftF8]
+""
+//[MQViewAltShiftF9]
+""
+//[MQViewAltShiftF10]
+""
+//[MQViewAltShiftF11]
+""
+//[MQViewAltShiftF12]
+""
+
+// QView KeyBar CtrlShiftF1-12
+//[MQViewCtrlShiftF1]
+""
+//[MQViewCtrlShiftF2]
+""
+//[MQViewCtrlShiftF3]
+""
+//[MQViewCtrlShiftF4]
+""
+//[MQViewCtrlShiftF5]
+""
+//[MQViewCtrlShiftF6]
+""
+//[MQViewCtrlShiftF7]
+""
+//[MQViewCtrlShiftF8]
+""
+//[MQViewCtrlShiftF9]
+""
+//[MQViewCtrlShiftF10]
+""
+//[MQViewCtrlShiftF11]
+""
+//[MQViewCtrlShiftF12]
+""
+
+// QView KeyBar CtrlAltF1-12
+//[MQViewCtrlAltF1]
+""
+//[MQViewCtrlAltF2]
+""
+//[MQViewCtrlAltF3]
+""
+//[MQViewCtrlAltF4]
+""
+//[MQViewCtrlAltF5]
+""
+//[MQViewCtrlAltF6]
+""
+//[MQViewCtrlAltF7]
+""
+//[MQViewCtrlAltF8]
+""
+//[MQViewCtrlAltF9]
+""
+//[MQViewCtrlAltF10]
+""
+//[MQViewCtrlAltF11]
+""
+//[MQViewCtrlAltF12]
+""
+
+// QView KeyBar CtrlAltShiftF1-12
+//[MQViewCtrlAltShiftF1]
+""
+//[MQViewCtrlAltShiftF2]
+""
+//[MQViewCtrlAltShiftF3]
+""
+//[MQViewCtrlAltShiftF4]
+""
+//[MQViewCtrlAltShiftF5]
+""
+//[MQViewCtrlAltShiftF6]
+""
+//[MQViewCtrlAltShiftF7]
+""
+//[MQViewCtrlAltShiftF8]
+""
+//[MQViewCtrlAltShiftF9]
+""
+//[MQViewCtrlAltShiftF10]
+""
+//[MQViewCtrlAltShiftF11]
+""
+//[MQViewCtrlAltShiftF12]
+""
+
+// Tree KeyBar F1-F12
+// need translation:
+//[MKBTreeF1]
+"Help"
+// need translation:
+//[MKBTreeF2]
+"UserMn"
+//[MKBTreeF3]
+""
+// need translation:
+//[MKBTreeF4]
+"Attr"
+// need translation:
+//[MKBTreeF5]
+"Copy"
+// need translation:
+//[MKBTreeF6]
+"RenMov"
+// need translation:
+//[MKBTreeF7]
+"MkFold"
+// need translation:
+//[MKBTreeF8]
+"Delete"
+// need translation:
+//[MKBTreeF9]
+"ConfMn"
+// need translation:
+//[MKBTreeF10]
+"Quit"
+// need translation:
+//[MKBTreeF11]
+"Plugin"
+// need translation:
+//[MKBTreeF12]
+"Screen"
+
+// Tree KeyBar Shift+F1-F12
+//[MKBTreeShiftF1]
+""
+//[MKBTreeShiftF2]
+""
+//[MKBTreeShiftF3]
+""
+//[MKBTreeShiftF4]
+""
+// need translation:
+//[MKBTreeShiftF5]
+"Copy"
+// need translation:
+//[MKBTreeShiftF6]
+"Rename"
+//[MKBTreeShiftF7]
+""
+//[MKBTreeShiftF8]
+""
+// need translation:
+//[MKBTreeShiftF9]
+"Save"
+// need translation:
+//[MKBTreeShiftF10]
+"Last"
+// need translation:
+//[MKBTreeShiftF11]
+"Group"
+// need translation:
+//[MKBTreeShiftF12]
+"SelUp"
+
+// Tree KeyBar Alt+F1-F12
+// need translation:
+//[MKBTreeAltF1]
+"Left"
+// need translation:
+//[MKBTreeAltF2]
+"Right"
+//[MKBTreeAltF3]
+""
+//[MKBTreeAltF4]
+""
+//[MKBTreeAltF5]
+""
+//[MKBTreeAltF6]
+""
+// need translation:
+//[MKBTreeAltF7]
+"Find"
+// need translation:
+//[MKBTreeAltF8]
+"Histry"
+//[MKBTreeAltF9]
+"Video"
+// need translation:
+//[MKBTreeAltF10]
+"Tree"
+// need translation:
+//[MKBTreeAltF11]
+"ViewHs"
+// need translation:
+//[MKBTreeAltF12]
+"FoldHs"
+
+// Tree KeyBar Ctrl+F1-F12
+// need translation:
+//[MKBTreeCtrlF1]
+"Left"
+// need translation:
+//[MKBTreeCtrlF2]
+"Right"
+//[MKBTreeCtrlF3]
+""
+//[MKBTreeCtrlF4]
+""
+//[MKBTreeCtrlF5]
+""
+//[MKBTreeCtrlF6]
+""
+//[MKBTreeCtrlF7]
+""
+//[MKBTreeCtrlF8]
+""
+//[MKBTreeCtrlF9]
+""
+//[MKBTreeCtrlF10]
+""
+//[MKBTreeCtrlF11]
+""
+//[MKBTreeCtrlF12]
+""
+
+// Tree KeyBar AltShiftF1-12
+//[MKBTreeAltShiftF1]
+""
+//[MKBTreeAltShiftF2]
+""
+//[MKBTreeAltShiftF3]
+""
+//[MKBTreeAltShiftF4]
+""
+//[MKBTreeAltShiftF5]
+""
+//[MKBTreeAltShiftF6]
+""
+//[MKBTreeAltShiftF7]
+""
+//[MKBTreeAltShiftF8]
+""
+//[MKBTreeAltShiftF9]
+""
+//[MKBTreeAltShiftF10]
+""
+//[MKBTreeAltShiftF11]
+""
+//[MKBTreeAltShiftF12]
+""
+
+// Tree KeyBar CtrlShiftF1-12
+//[MKBTreeCtrlShiftF1]
+""
+//[MKBTreeCtrlShiftF2]
+""
+//[MKBTreeCtrlShiftF3]
+""
+//[MKBTreeCtrlShiftF4]
+""
+//[MKBTreeCtrlShiftF5]
+""
+//[MKBTreeCtrlShiftF6]
+""
+//[MKBTreeCtrlShiftF7]
+""
+//[MKBTreeCtrlShiftF8]
+""
+//[MKBTreeCtrlShiftF9]
+""
+//[MKBTreeCtrlShiftF10]
+""
+//[MKBTreeCtrlShiftF11]
+""
+//[MKBTreeCtrlShiftF12]
+""
+
+// Tree KeyBar CtrlAltF1-12
+//[MKBTreeCtrlAltF1]
+""
+//[MKBTreeCtrlAltF2]
+""
+//[MKBTreeCtrlAltF3]
+""
+//[MKBTreeCtrlAltF4]
+""
+//[MKBTreeCtrlAltF5]
+""
+//[MKBTreeCtrlAltF6]
+""
+//[MKBTreeCtrlAltF7]
+""
+//[MKBTreeCtrlAltF8]
+""
+//[MKBTreeCtrlAltF9]
+""
+//[MKBTreeCtrlAltF10]
+""
+//[MKBTreeCtrlAltF11]
+""
+//[MKBTreeCtrlAltF12]
+""
+
+// Tree KeyBar CtrlAltShiftF1-12
+//[MKBTreeCtrlAltShiftF1]
+""
+//[MKBTreeCtrlAltShiftF2]
+""
+//[MKBTreeCtrlAltShiftF3]
+""
+//[MKBTreeCtrlAltShiftF4]
+""
+//[MKBTreeCtrlAltShiftF5]
+""
+//[MKBTreeCtrlAltShiftF6]
+""
+//[MKBTreeCtrlAltShiftF7]
+""
+//[MKBTreeCtrlAltShiftF8]
+""
+//[MKBTreeCtrlAltShiftF9]
+""
+//[MKBTreeCtrlAltShiftF10]
+""
+//[MKBTreeCtrlAltShiftF11]
+""
+//[MKBTreeCtrlAltShiftF12]
+""
+
+// need translation:
+//[MCopyTimeInfoElapsed]
+"Time:"
+// need translation:
+//[MCopyTimeInfoRemaining]
+"Remaining:"
+// Bytes per second
+// need translation:
+//[MCopyTimeInfoSpeed]
+"B/s"
+
+// need translation:
+//[MKeyESCWasPressed]
+"Operation has been interrupted"
+// need translation:
+//[MDoYouWantToCancel]
+"Do you really want to cancel it?"
+// need translation:
+//[MDoYouWantToContinue]
+"Continue work?"
+
+// need translation:
+//[MCheckingFileInPlugin]
+"The file is being checked by the plugin"
+
+//[MDialogType]
+"Dialogas"
+// need translation:
+//[MHelpType]
+"Help"
+// need translation:
+//[MFolderTreeType]
+"FolderTree"
+//[MVMenuType]
+"Meniu"
+
+// need translation:
+//[MIncorrectMask]
+"File-mask string contains errors"
+
+//[MPanelBracketsForLongName]
+"{}"
+
+// need translation:
+//[MComspecNotFound]
+"Environment variable %COMSPEC% not defined"
+
+// need translation:
+//[MOpenPluginCannotOpenFile]
+"Cannot open the file"
+
+// need translation:
+//[MFileFilterTitle]
+"Filter"
+// need translation:
+//[MFileHilightTitle]
+"Files highlighting"
+// need translation:
+//[MFileFilterName]
+"&Name:"
+// need translation:
+//[MFileFilterMatchMask]
+"&Mask:"
+// need translation:
+//[MFileFilterSize]
+"Si&ze:"
+// up to 4 characters
+//[MFileFilterSizeFromSign]
+">&="
+// up to 4 characters
+//[MFileFilterSizeToSign]
+"&<="
+// need translation:
+//[MFileHardLinksCount]
+"Has more than one hardlin&k"
+// need translation:
+//[MFileFilterDate]
+"Date&/Time:"
+// need translation:
+//[MFileFilterWrited]
+"&write"
+// need translation:
+//[MFileFilterCreated]
+"&creation"
+// need translation:
+//[MFileFilterOpened]
+"&access"
+// need translation:
+//[MFileFilterChanged]
+"c&hange"
+// need translation:
+//[MFileFilterDateRelative]
+"Relat&ive"
+// up to 4 characters
+//[MFileFilterDateAfterSign]
+">="
+// up to 4 characters
+//[MFileFilterDateBeforeSign]
+"<="
+// need translation:
+//[MFileFilterCurrent]
+"C&urrent"
+// need translation:
+//[MFileFilterBlank]
+"B&lank"
+// need translation:
+//[MFileFilterAttr]
+"Attri&butes"
+//[MFileFilterAttrChoose]
+"&..."
+// need translation:
+//[MFileFilterAttrReadOnly]
+"&Read only"
+// need translation:
+//[MFileFilterAttrArcive]
+"&Archive"
+// need translation:
+//[MFileFilterAttrHidden]
+"&Hidden"
+// need translation:
+//[MFileFilterAttrSystem]
+"&System"
+// need translation:
+//[MFileFilterAttrCompressed]
+"&Compressed"
+// need translation:
+//[MFileFilterAttrEncrypted]
+"&Encrypted"
+// need translation:
+//[MFileFilterAttrDirectory]
+"&Directory"
+// need translation:
+//[MFileFilterAttrNotIndexed]
+"Not &indexed"
+// need translation:
+//[MFileFilterAttrSparse]
+"S&parse"
+// need translation:
+//[MFileFilterAttrTemporary]
+"Temporar&y"
+// need translation:
+//[MFileFilterAttrReparse]
+"Reparse poin&t"
+// need translation:
+//[MFileFilterAttrOffline]
+"O&ffline"
+// need translation:
+//[MFileFilterAttrVirtual]
+"&Virtual"
+// need translation:
+//[MFileFilterAttrIntegrityStream]
+"Inte&grity stream"
+// need translation:
+//[MFileFilterAttrNoScrubData]
+"No scru&b data"
+// need translation:
+//[MFileFilterAttrPinned]
+"Pi&nned"
+// need translation:
+//[MFileFilterAttrUnpinned]
+"&Unpinned"
+// need translation:
+//[MFileFilterAttrRecallOnOpen]
+"Recal&l on open"
+// need translation:
+//[MFileFilterAttrRecallOnDataAccess]
+"Recall &on data access"
+// need translation:
+//[MFileFilterAttrStrictlySequential]
+"Strictly se&quential"
+// need translation:
+//[MFileFilterReset]
+"&Reset"
+// need translation:
+//[MFileFilterMakeTransparent]
+"Make &transparent"
+// need translation:
+//[MFileFilterCancel]
+"Cancel"
+// need translation:
+//[MBadFileSizeFormat]
+"File size field is incorrectly filled"
+
+//[MFarTitleAddonsAdmin]
+"Administratorius"
+// need translation:
+//[MElevationRequired]
+"You need to provide administrator permission"
+// need translation:
+//[MElevationRequiredPrivileges]
+"Additional privileges required"
+// need translation:
+//[MElevationRequiredProcess]
+"to process this object:"
+// need translation:
+//[MElevationRequiredDelete]
+"to delete this object:"
+// need translation:
+//[MElevationRequiredCopy]
+"to copy this object:"
+// need translation:
+//[MElevationRequiredMove]
+"to move this object:"
+// need translation:
+//[MElevationRequiredReplace]
+"to replace this object:"
+// need translation:
+//[MElevationRequiredGetAttributes]
+"to get attributes of this object:"
+// need translation:
+//[MElevationRequiredSetAttributes]
+"to set attributes of this object:"
+// need translation:
+//[MElevationRequiredHardLink]
+"to create this hard link:"
+// need translation:
+//[MElevationRequiredSymLink]
+"to create this symbolic link:"
+// need translation:
+//[MElevationRequiredRecycle]
+"to move this object to recycle bin:"
+// need translation:
+//[MElevationRequiredList]
+"to list this object:"
+// need translation:
+//[MElevationRequiredSetOwner]
+"to set owner of this object:"
+// need translation:
+//[MElevationRequiredOpen]
+"to open this object:"
+// need translation:
+//[MElevationRequiredEncryptFile]
+"to encrypt this object:"
+// need translation:
+//[MElevationRequiredDecryptFile]
+"to decrypt this object:"
+// need translation:
+//[MElevationDoForAll]
+"Do this for &all current objects"
+// need translation:
+//[MElevationDoNotAskAgainInTheCurrentSession]
+"Do not ask again in the current session"
+// need translation:
+//[MCompletionHistoryTitle]
+"History"
+// need translation:
+//[MCompletionEnvironmentTitle]
+"Environment"
+// need translation:
+//[MCompletionFilesTitle]
+"Files"
+// need translation:
+//[MObjectLockedReason]
+"Object is being {0} in:"
+// need translation:
+//[MObjectLockedReasonPlayed]
+"played"
+// need translation:
+//[MObjectLockedReasonEdited]
+"edited"
+// need translation:
+//[MObjectLockedReasonOpened]
+"opened"
+// need translation:
+//[MObjectLockedAndMore]
+"and {0} more processes."
+// need translation:
+//[MObjectLockedSwitchTo]
+"Switch to"
+// need translation:
+//[MObjectLockedClose]
+"Close file"
+// need translation:
+//[MObjectLockedReasonSessionMismatch]
+"One or more processes are running in another Terminal Services session."
+// need translation:
+//[MObjectLockedReasonCriticalProcess]
+"One or more processes are critical processes."
+// need translation:
+//[MObjectLockedReasonCriticalService]
+"One or more services are critical services."
+// need translation:
+//[MObjectLockedReasonDetectedSelf]
+"The file is opened by the current process."
+// need translation:
+//[MProblemDb]
+"Problem configuration DB"
+// need translation:
+//[MShowConfigFolders]
+"Show configuration folders"
+// need translation:
+//[MBadLanguageFile]
+"Incorrect language file"
+// need translation:
+//[MLanguageStringNotFound]
+"String {0} not found"
+// need translation:
+//[MCharacterIsNotSupportedByTheCodepage]
+"The "{0}" character is not supported by the selected code page"
+// keys
+//[MKeyLaunchMediaSelect]
+""
+//[MKeyBrowserFavorites]
+""
+//[MKeyMediaPrevTrack]
+""
+//[MKeyMediaPlayPause]
+""
+//[MKeyMediaNextTrack]
+""
+//[MKeyBrowserRefresh]
+""
+//[MKeyBrowserForward]
+""
+//[MKeyBrowserSearch]
+""
+//[MKeyMswheelRight]
+""
+//[MKeyMswheelDown]
+""
+//[MKeyMswheelLeft]
+""
+//[MKeyBrowserStop]
+""
+//[MKeyBrowserHome]
+""
+//[MKeyBrowserBack]
+""
+//[MKeyVolumeMute]
+""
+//[MKeyVolumeDown]
+""
+//[MKeyScrolllock]
+""
+//[MKeyLaunchMail]
+""
+//[MKeyLaunchApp2]
+""
+//[MKeyLaunchApp1]
+""
+//[MKeyMswheelUp]
+""
+//[MKeyMediaStop]
+""
+//[MKeyBackslash]
+""
+//[MKeyMsm1click]
+""
+//[MKeyMsm2click]
+""
+//[MKeyMsm3click]
+""
+//[MKeyMslclick]
+""
+//[MKeyMsrclick]
+""
+//[MKeyVolumeUp]
+""
+// need translation:
+//[MKeySubtract]
+"Gray -"
+//[MKeyNumenter]
+""
+// need translation:
+//[MKeyMultiply]
+"Gray *"
+//[MKeyCapslock]
+""
+//[MKeyPrntscrn]
+""
+//[MKeyNumlock]
+""
+//[MKeyDecimal]
+""
+//[MKeyStandby]
+""
+//[MKeyDivide]
+""
+//[MKeyNumdel]
+""
+//[MKeySpace]
+""
+//[MKeyRight]
+""
+//[MKeyPause]
+""
+//[MKeyEnter]
+""
+//[MKeyClear]
+""
+//[MKeyBreak]
+""
+//[MKeyPgup]
+""
+//[MKeyPgdn]
+""
+//[MKeyLeft]
+""
+//[MKeyHome]
+""
+//[MKeyDown]
+""
+//[MKeyApps]
+""
+//[MKeyRwin]
+""
+//[MKeyNumpad9]
+""
+//[MKeyNumpad8]
+""
+//[MKeyNumpad7]
+""
+//[MKeyNumpad6]
+""
+//[MKeyNumpad5]
+""
+//[MKeyNumpad4]
+""
+//[MKeyNumpad3]
+""
+//[MKeyNumpad2]
+""
+//[MKeyNumpad1]
+""
+//[MKeyNumpad0]
+""
+//[MKeyLwin]
+""
+//[MKeyTab]
+""
+//[MKeyIns]
+""
+//[MKeyF10]
+""
+//[MKeyF11]
+""
+//[MKeyF12]
+""
+//[MKeyF13]
+""
+//[MKeyF14]
+""
+//[MKeyF15]
+""
+//[MKeyF16]
+""
+//[MKeyF17]
+""
+//[MKeyF18]
+""
+//[MKeyF19]
+""
+//[MKeyF20]
+""
+//[MKeyF21]
+""
+//[MKeyF22]
+""
+//[MKeyF23]
+""
+//[MKeyF24]
+""
+//[MKeyEsc]
+""
+//[MKeyEnd]
+""
+//[MKeyDel]
+""
+// need translation:
+//[MKeyAdd]
+"Gray +"
+//[MKeyUp]
+""
+//[MKeyF9]
+""
+//[MKeyF8]
+""
+//[MKeyF7]
+""
+//[MKeyF6]
+""
+//[MKeyF5]
+""
+//[MKeyF4]
+""
+//[MKeyF3]
+""
+//[MKeyF2]
+""
+//[MKeyF1]
+""
+//[MKeyBs]
+""
+//[MKeyBackbracket]
+""
+//[MKeyQuote]
+""
+//[MKeyBracket]
+""
+//[MKeyColon]
+""
+//[MKeySemicolon]
+""
+//[MKeySlash]
+""
+//[MKeyDot]
+""
+//[MKeyComma]
+""
+//[MKeyRCtrl]
+"DešinysCtrl"
+//[MKeyShift]
+""
+//[MKeyCtrl]
+""
+//[MKeyRAlt]
+""
+// keys end
+//[MKeyAlt]
+""
+
+// need translation:
+//[MNewFileName]
+"?New File?"

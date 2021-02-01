@@ -1,6 +1,6 @@
 ﻿.Language=Slovak,Slovak (Slovenčina)
 
-//Version: 3.0.5731.0 (Private) x64
+//Version: 3.0.5737.0 (Private) x64
 
 //[MYes]
 "Áno"
@@ -478,7 +478,7 @@
 //[MConfigCmdlineUseHomeDir]
 "Použiť &domovský priečinok"
 //[MConfigCmdlinePromptFormatAdmin]
-"Administrátor"
+"Správca"
 
 //[MConfigAutoCompleteTitle]
 "Nastavenia AutoComplete"
@@ -496,40 +496,55 @@
 "Nastavenia InfoPanela"
 //[MConfigInfoPanelCNTitle]
 "Formát &názvu počítača"
+// need translation:
 //[MConfigInfoPanelCNPhysicalNetBIOS]
 "Physical NetBIOS"
+// need translation:
 //[MConfigInfoPanelCNPhysicalDnsHostname]
 "Physical DNS hostname"
+// need translation:
 //[MConfigInfoPanelCNPhysicalDnsDomain]
 "Physical DNS domain"
+// need translation:
 //[MConfigInfoPanelCNPhysicalDnsFullyQualified]
 "Physical DNS fully-qualified"
 //[MConfigInfoPanelCNNetBIOS]
 "NetBIOS"
+// need translation:
 //[MConfigInfoPanelCNDnsHostname]
 "DNS hostname"
+// need translation:
 //[MConfigInfoPanelCNDnsDomain]
 "DNS domain"
+// need translation:
 //[MConfigInfoPanelCNDnsFullyQualified]
 "DNS fully-qualified"
 //[MConfigInfoPanelUNTitle]
 "Formát &užívateľského mena"
 //[MConfigInfoPanelUNLogon]
 "Prihlasovacie meno"
+// need translation:
 //[MConfigInfoPanelUNFullyQualifiedDN]
 "Fully Qualified Domain Name"
+// need translation:
 //[MConfigInfoPanelUNSamCompatible]
 "Sam Compatible"
+// need translation:
 //[MConfigInfoPanelUNDisplay]
 "Display Name"
+// need translation:
 //[MConfigInfoPanelUNUniqueId]
 "Unique Id"
+// need translation:
 //[MConfigInfoPanelUNCanonical]
 "Canonical Name"
+// need translation:
 //[MConfigInfoPanelUNUserPrincipal]
 "User Principial Name"
+// need translation:
 //[MConfigInfoPanelUNServicePrincipal]
 "Service Principal"
+// need translation:
 //[MConfigInfoPanelUNDnsDomain]
 "DNS Domain"
 //[MConfigInfoPanelUNGivenName]
@@ -1388,14 +1403,6 @@
 "Aby sa zmenila kódová stránka musí byť súbor nanovo načítaný."
 //[MEditorReloadCPWarnLost2]
 "Neuložené zmeny budú stratené."
-//[MEditorSaveCPWarn1]
-"Editor obsahuje znaky, ktoré sa nedajú"
-//[MEditorSaveCPWarn2]
-"správne uložiť so zvolenou tabuľkou znakov."
-//[MEditorSwitchCPWarn1]
-"Editor obsahuje znaky, ktoré sa nedajú"
-//[MEditorSwitchCPWarn2]
-"správne preložiť so zvolenou tabuľkou znakov:"
 //[MEditorSwitchCPConfirm]
 "Pokračovať?"
 //[MEditDataLostWarn]
@@ -1461,7 +1468,7 @@
 //[MListBytes]
 "B"
 //[MListKb]
-"k"
+"K"
 //[MListMb]
 "M"
 //[MListGb]
@@ -1546,7 +1553,7 @@
 //[MViewF7]
 "Hľadať"
 //[MViewF8]
-"WIN"
+"ANSI"
 //[MViewF9]
 ""
 //[MViewF10]
@@ -1750,7 +1757,7 @@
 //[MViewF8DOS]
 "OEM"
 //[MViewMode]
-"View mode"
+"Režim zobrazenia"
 //[MInViewer]
 "zobraziť"
 //[MInEditor]
@@ -2452,10 +2459,8 @@
 
 //[MSearchFileTitle]
 "Hľadať"
-//[MCannotCreateListFile]
-"Nemôžem vytvoriť súbor so zoznamom"
 //[MCannotCreateListTemp]
-"(nemôžem vytvoriť dočasný súbor pre zoznam)"
+"Nemôžem vytvoriť dočasný súbor pre zoznam súborov"
 
 //[MDragFiles]
 "{0} súborov"
@@ -2730,8 +2735,10 @@
 "Okraj"
 //[MSetColorDialogListTitle]
 "Názov"
+// need translation:
 //[MSetColorDialogListGrayed]
 "Grayed list text"
+// need translation:
 //[MSetColorDialogSelectedListGrayed]
 "Selected grayed list text"
 //[MSetColorDialogListScrollBar]
@@ -3234,6 +3241,7 @@
 "Vytlačiť {0} súborov na"
 //[MPreparingForPrinting]
 "Pripravujem súbory na tlač"
+// need translation:
 //[MCannotEnumeratePrinters]
 "Cannot enumerate available printers list"
 //[MCannotOpenPrinter]
@@ -3718,7 +3726,7 @@
 //[MInfoF7]
 "Hľadať"
 //[MInfoF8]
-"WIN"
+"ANSI"
 //[MInfoF9]
 "KonfMn"
 //[MInfoF10]
@@ -3926,7 +3934,7 @@
 //[MQViewF7]
 "Hľadať"
 //[MQViewF8]
-"WIN"
+"ANSI"
 //[MQViewF9]
 "KonfMn"
 //[MQViewF10]
@@ -4540,6 +4548,8 @@
 "Nesprávny jazykový súbor"
 //[MLanguageStringNotFound]
 "Reťazec {0} nenájdený"
+//[MCharacterIsNotSupportedByTheCodepage]
+"Vybraná kódová stránka znak "{0}" nepodporuje"
 // keys
 //[MKeyLaunchMediaSelect]
 ""

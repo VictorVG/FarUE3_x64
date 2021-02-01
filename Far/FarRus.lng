@@ -1,6 +1,6 @@
 ﻿.Language=Russian,Russian (Русский)
 
-//Version: 3.0.5731.0 (Private) x64
+//Version: 3.0.5737.0 (Private) x64
 
 //[MYes]
 "Да"
@@ -1381,14 +1381,6 @@
 "Для смены кодовой страницы требуется перезагрузка файла."
 //[MEditorReloadCPWarnLost2]
 "Все несохранённые изменения будут потеряны."
-//[MEditorSaveCPWarn1]
-"Редактор содержит символы, которые невозможно"
-//[MEditorSaveCPWarn2]
-"корректно сохранить, используя выбранную кодовую страницу."
-//[MEditorSwitchCPWarn1]
-"Редактор содержит символы, которые невозможно"
-//[MEditorSwitchCPWarn2]
-"корректно преобразовать, используя выбранную кодовую страницу:"
 //[MEditorSwitchCPConfirm]
 "Продолжить?"
 //[MEditDataLostWarn]
@@ -2443,10 +2435,8 @@
 
 //[MSearchFileTitle]
 "Поиск"
-//[MCannotCreateListFile]
-"Ошибка создания списка файлов"
 //[MCannotCreateListTemp]
-"(невозможно создать временный файл для списка)"
+"Невозможно создать временный файл для списка файлов"
 
 //[MDragFiles]
 "{0} файлов"
@@ -4521,6 +4511,8 @@
 "Некорректный языковой файл"
 //[MLanguageStringNotFound]
 "Строка {0} не найдена"
+//[MCharacterIsNotSupportedByTheCodepage]
+"Символ "{0}" не поддерживается выбранной кодовой страницей"
 // keys
 //[MKeyLaunchMediaSelect]
 ""

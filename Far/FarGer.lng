@@ -1,6 +1,6 @@
 ﻿.Language=German,German (Deutsch)
 
-//Version: 3.0.5731.0 (Private) x64
+//Version: 3.0.5737.0 (Private) x64
 
 //[MYes]
 "Ja"
@@ -482,7 +482,6 @@
 "&Promptformat der Kommandozeile"
 //[MConfigCmdlineUseHomeDir]
 "&Hausverzeichnis benützen"
-// need translation:
 //[MConfigCmdlinePromptFormatAdmin]
 "Administrator"
 
@@ -536,8 +535,9 @@
 "Hauptbenutzername"
 //[MConfigInfoPanelUNServicePrincipal]
 "Dienstleister"
+// need translation:
 //[MConfigInfoPanelUNDnsDomain]
-"Dns Domain"
+"DNS Domain"
 //[MConfigInfoPanelUNGivenName]
 "Vorname"
 //[MConfigInfoPanelUNSurname]
@@ -1415,14 +1415,6 @@
 "Datei muss neu gestartet werden, um neue Codepage zu wählen."
 //[MEditorReloadCPWarnLost2]
 "Alle ungespeicherte Änderungen werden entfernt."
-//[MEditorSaveCPWarn1]
-"Editor enthält Symbole, die korrekt"
-//[MEditorSaveCPWarn2]
-"mit ausgewählte Codepage nicht gespeichert werden können."
-//[MEditorSwitchCPWarn1]
-"Editor enthält Symbole, die korrekt"
-//[MEditorSwitchCPWarn2]
-"mit ausgewählte Codepage nicht gewandelt werden können:"
 //[MEditorSwitchCPConfirm]
 "Fortfahren?"
 //[MEditDataLostWarn]
@@ -1907,7 +1899,6 @@
 // need translation:
 //[MGetCodePageSystem]
 "System"
-// need translation:
 //[MGetCodePageUnicode]
 "Unicode"
 // need translation:
@@ -1982,7 +1973,6 @@
 "Gäst"
 //[MInfoUserAccessLevelUser]
 "Nutzer"
-// need translation:
 //[MInfoUserAccessLevelAdministrator]
 "Administrator"
 //[MInfoUserAccessLevelUnknown]
@@ -2502,10 +2492,8 @@
 
 //[MSearchFileTitle]
 "Suchen"
-//[MCannotCreateListFile]
-"Dateiliste konnte nicht erstellt werden"
 //[MCannotCreateListTemp]
-"(Fehler beim Anlegen einer temporären Datei für Liste)"
+"Fehler beim Anlegen einer temporären Datei für die Liste der Dateien"
 
 //[MDragFiles]
 "{0} Dateien"
@@ -2809,6 +2797,7 @@
 "Markierung"
 //[MSetColorMenuSelectedHighlighted]
 "Aktive Markierung"
+// need translation:
 //[MSetColorMenuDisabled]
 "Disabled text"
 // need translation:
@@ -2822,10 +2811,13 @@
 "Titel"
 //[MSetColorMenuScrollBar]
 "Scrollbalken"
+// need translation:
 //[MSetColorMenuArrows]
 "Long string indicators"
+// need translation:
 //[MSetColorMenuArrowsSelected]
 "Selected long string indicators"
+// need translation:
 //[MSetColorMenuArrowsDisabled]
 "Disabled long string indicators"
 
@@ -3208,12 +3200,16 @@
 "Globalmenü"
 //[MLocalMenuTitle]
 "Lokales Menü"
+// need translation:
 //[MAskDeleteMenuItem]
 "Do you wish to delete the menu item"
+// need translation:
 //[MAskDeleteSubMenuItem]
 "Do you wish to delete the submenu"
+// need translation:
 //[MUserMenuInvalidInputLabel]
 "Invalid format for UserMenu Label"
+// need translation:
 //[MUserMenuInvalidInputHotKey]
 "Invalid format for Hot Key"
 
@@ -3882,9 +3878,8 @@
 ""
 //[MInfoCtrlF11]
 ""
-// need translation:
 //[MInfoCtrlF12]
-"Mode"
+"Modus"
 
 // InfoPanel KeyBar AltShiftF1-12
 //[MInfoAltShiftF1]
@@ -4544,7 +4539,6 @@
 //[MBadFileSizeFormat]
 "Angabe der Dateigröße ist fehlerhaft"
 
-// need translation:
 //[MFarTitleAddonsAdmin]
 "Administrator"
 //[MElevationRequired]
@@ -4630,6 +4624,8 @@
 // need translation:
 //[MLanguageStringNotFound]
 "String {0} not found"
+//[MCharacterIsNotSupportedByTheCodepage]
+"Das Zeichen "{0}" wird von der ausgewählten Codepage nicht unterstützt"
 // keys
 //[MKeyLaunchMediaSelect]
 ""

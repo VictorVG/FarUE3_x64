@@ -1,6 +1,6 @@
 ﻿.Language=Ukrainian,Ukrainian (Українська)
 
-//Version: 3.0.5731.0 (Private) x64
+//Version: 3.0.5737.0 (Private) x64
 
 //[MYes]
 "Так"
@@ -1381,14 +1381,6 @@
 "Для змінення кодової сторінки потрібне перезавантаження файлу."
 //[MEditorReloadCPWarnLost2]
 "Усі незбережені зміни буде втрачено."
-//[MEditorSaveCPWarn1]
-"Редактор містить символи, які неможливо"
-//[MEditorSaveCPWarn2]
-"коректно зберегти з використанням обраної кодової сторінки."
-//[MEditorSwitchCPWarn1]
-"Редактор містить символи, які неможливо"
-//[MEditorSwitchCPWarn2]
-"коректно перетворити з використанням обраної кодової сторінки:"
 //[MEditorSwitchCPConfirm]
 "Продовжити?"
 //[MEditDataLostWarn]
@@ -2443,10 +2435,8 @@
 
 //[MSearchFileTitle]
 "Пошук"
-//[MCannotCreateListFile]
-"Помилка створення списку файлів"
 //[MCannotCreateListTemp]
-"(Неможливо створити тимчасовий файл для списку)"
+"Неможливо створити тимчасовий файл для списку файлів"
 
 //[MDragFiles]
 "{0} файлів"
@@ -4521,6 +4511,8 @@
 "Некоректний мовний файл"
 //[MLanguageStringNotFound]
 "Рядок {0} не знайдено"
+//[MCharacterIsNotSupportedByTheCodepage]
+"Вибрана кодова сторінка не підтримує символ "{0}""
 // keys
 //[MKeyLaunchMediaSelect]
 ""

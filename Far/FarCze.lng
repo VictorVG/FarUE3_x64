@@ -1,6 +1,6 @@
 ﻿.Language=Czech,Czech (Čeština)
 
-//Version: 3.0.5731.0 (Private) x64
+//Version: 3.0.5737.0 (Private) x64
 
 //[MYes]
 "Ano"
@@ -470,6 +470,7 @@
 "&Trvalé bloky"
 //[MConfigCmdlineDelRemovesBlocks]
 "&Del vymaže bloky"
+// need translation:
 //[MConfigCmdlineAutoComplete]
 "&AutoComplete"
 //[MConfigCmdlineUsePromptFormat]
@@ -511,6 +512,7 @@
 "DNS doména"
 //[MConfigInfoPanelCNDnsFullyQualified]
 "DNS s celým názvem"
+// need translation:
 //[MConfigInfoPanelUNTitle]
 "&User name format"
 //[MConfigInfoPanelUNLogon]
@@ -525,10 +527,13 @@
 "Unikátní Id"
 //[MConfigInfoPanelUNCanonical]
 "Kanonický název"
+// need translation:
 //[MConfigInfoPanelUNUserPrincipal]
 "User Principial Name"
+// need translation:
 //[MConfigInfoPanelUNServicePrincipal]
 "Service Principal"
+// need translation:
 //[MConfigInfoPanelUNDnsDomain]
 "DNS Domain"
 //[MConfigInfoPanelUNGivenName]
@@ -929,6 +934,7 @@
 "Složka obsahuje symbolické odkazy."
 //[MRecycleFolderConfirmDeleteLink2]
 "Chcete-li zabránit ztrátě obsahu při vyprázdnění koše"
+// need translation:
 //[MRecycleFolderConfirmDeleteLink3]
 "those links will be broken now."
 //[MRecycleFolderConfirmDeleteLink4]
@@ -1384,14 +1390,6 @@
 "Pro změnu kódové stránky musí být soubor znovu načten."
 //[MEditorReloadCPWarnLost2]
 "Všechny neuložené změny budou ztraceny."
-//[MEditorSaveCPWarn1]
-"Editor obsahuje znaky, které se nedají"
-//[MEditorSaveCPWarn2]
-"správně uložit se zvolenou kódovou stránkou."
-//[MEditorSwitchCPWarn1]
-"Editor obsahuje znaky, které se nedají"
-//[MEditorSwitchCPWarn2]
-"správně přeložit se zvolenou kódovou stránkou:"
 //[MEditorSwitchCPConfirm]
 "Pokračovat?"
 //[MEditDataLostWarn]
@@ -1542,7 +1540,7 @@
 //[MViewF7]
 "Hledat"
 //[MViewF8]
-"WIN"
+"ANSI"
 //[MViewF9]
 ""
 //[MViewF10]
@@ -2447,10 +2445,8 @@
 
 //[MSearchFileTitle]
 "Hledat"
-//[MCannotCreateListFile]
-"Nelze vytvořit soubor se seznamem"
 //[MCannotCreateListTemp]
-"(nelze vytvořit dočasný soubor pro seznam)"
+"Nelze vytvořit dočasný soubor pro seznam souborů"
 
 //[MDragFiles]
 "{0} souborů"
@@ -2476,6 +2472,7 @@
 
 //[MQuickViewTitle]
 "Rychlý náhled"
+// need translation:
 //[MQuickViewUnknownReparsePoint]
 "Unknown reparse point"
 //[MQuickViewNoData]
@@ -2492,6 +2489,7 @@
 "Velikost svazku:"
 //[MQuickViewSlack]
 "Mrtvé místo:"
+// need translation:
 //[MQuickViewMFTOverhead]
 "MFT overhead:"
 
@@ -2602,6 +2600,7 @@
 "Nelze nastavit čas souboru pro"
 //[MSetAttrOwnerCannotFor]
 "Nelze nastavit vlastníka pro"
+// need translation:
 //[MSetAttrReparsePointCannotFor]
 "Cannot remove reparse point for"
 
@@ -2863,6 +2862,7 @@
 "&Přesouvání"
 //[MSetConfirmRO]
 "Př&epsání a smazání R/O souborů"
+// need translation:
 //[MSetConfirmDrag]
 "&Drag and drop"
 //[MSetConfirmDelete]
@@ -3705,7 +3705,7 @@
 //[MInfoF7]
 "Hledat"
 //[MInfoF8]
-"WIN"
+"ANSI"
 //[MInfoF9]
 "KonfMn"
 //[MInfoF10]
@@ -3791,7 +3791,7 @@
 //[MInfoCtrlF11]
 ""
 //[MInfoCtrlF12]
-"Mode"
+"Režim"
 
 // InfoPanel KeyBar AltShiftF1-12
 //[MInfoAltShiftF1]
@@ -3913,7 +3913,7 @@
 //[MQViewF7]
 "Hledat"
 //[MQViewF8]
-"WIN"
+"ANSI"
 //[MQViewF9]
 "KonfMn"
 //[MQViewF10]
@@ -4521,6 +4521,8 @@
 "Chybný jazykový soubor"
 //[MLanguageStringNotFound]
 "Řetězec {0} nebyl nalezen"
+//[MCharacterIsNotSupportedByTheCodepage]
+"Vybraná znaková stránka znak "{0}" nepodporuje"
 // keys
 //[MKeyLaunchMediaSelect]
 ""

@@ -1,6 +1,6 @@
 ﻿.Language=Polish,Polish (Polski)
 
-//Version: 3.0.5731.0 (Private) x64
+//Version: 3.0.5737.0 (Private) x64
 
 //[MYes]
 "Tak"
@@ -1381,14 +1381,6 @@
 "Plik zostanie przeładowany, aby zmienić stronę kodową."
 //[MEditorReloadCPWarnLost2]
 "Wszystkie niezapisane zmany zostaną utracone."
-//[MEditorSaveCPWarn1]
-"Edytor zawiera znaki, które nie mogą być"
-//[MEditorSaveCPWarn2]
-"poprawnie zapisane w wybranej stronie kodowej."
-//[MEditorSwitchCPWarn1]
-"Edytor zawiera znaki, które nie mogą być"
-//[MEditorSwitchCPWarn2]
-"poprawnie przetłumaczone w bieżącej stronie kodowej:"
 //[MEditorSwitchCPConfirm]
 "Kontynuować?"
 //[MEditDataLostWarn]
@@ -1539,7 +1531,7 @@
 //[MViewF7]
 "Szukaj"
 //[MViewF8]
-"Latin 2"
+"ANSI"
 //[MViewF9]
 ""
 //[MViewF10]
@@ -2443,10 +2435,8 @@
 
 //[MSearchFileTitle]
 "Szukaj"
-//[MCannotCreateListFile]
-"Nie można utworzyć listy plików"
 //[MCannotCreateListTemp]
-"(nie można utworzyć pliku tymczasowego dla listy)"
+"Nie można utworzyć pliku tymczasowego dla listy plików"
 
 //[MDragFiles]
 "{0} plików"
@@ -4406,7 +4396,7 @@
 //[MFileFilterAttrNotIndexed]
 "Nie z&indeksowany"
 //[MFileFilterAttrSparse]
-"S&parse"
+"Rzadki"
 //[MFileFilterAttrTemporary]
 "&Tymczasowy"
 //[MFileFilterAttrReparse]
@@ -4514,6 +4504,8 @@
 "Niewłaściwy plik językowy"
 //[MLanguageStringNotFound]
 "Nie znaleziono łańcucha {0}"
+//[MCharacterIsNotSupportedByTheCodepage]
+"Znak "{0}" nie jest obsługiwany przez wybraną stronę kodową"
 // keys
 //[MKeyLaunchMediaSelect]
 ""

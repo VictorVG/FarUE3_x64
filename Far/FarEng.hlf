@@ -46,7 +46,7 @@
 
 @Contents
 $^#File and archive manager#
-$^#3.0.5731.0 (Private) x64#
+$^#3.0.5737.0 (Private) x64#
 $^#Copyright © 1996-2000 Eugene Roshal#
 $^#Copyright © 2000-2021 Far Group#
  ~Help file index~@Index@
@@ -2333,7 +2333,7 @@ Bin can be performed only for local hard disks.
  #Use system copy routine#
  Use the file copy functions provided by the operating system instead of internal
 file copy implementation. It can be useful on NTFS, because the system function
-(CopyFileEx) copies file extended attributes. On the other hand, when using the system
+(CopyFileEx) copies extended file attributes. On the other hand, when using the system
 function, the possibility of "smart" ~copying~@CopyFiles@ of sparse files is not available.
 
  #Copy files opened for writing#
@@ -2465,7 +2465,7 @@ This option significanty slows down displaying directories on slow network conne
  #Show free size#
  Enables displaying the current disk free space.
 
- #Show scrollbar#
+ #Show a scrollbar#
  Enables displaying file and ~tree panel~@TreePanel@ scrollbars.
 
  #Show background screens number#
@@ -3788,8 +3788,8 @@ and external ~viewer~@Viewer@.
                          the character '\0'. The character to display can be
                          set in ~far:config~@FarConfig@ #Viewer.ZeroChar#.
 
- #Show scrollbar#          Show scrollbar in the internal viewer. This
-                         option can also be switched by pressing
+ #Show a scrollbar#        Show a scrollbar in the internal viewer. This
+                         option can also be toggled by pressing
                          #Ctrl+S# in the internal viewer.
 @=
  #Save file position#      Save and restore positions in the recently
@@ -3888,7 +3888,7 @@ $ #Settings dialog: editor#
 
  #Tab size#                Number of spaces in a tab character.
 
- #Show scrollbar#          Show scrollbar.
+ #Show a scrollbar#        Show a scrollbar.
 
  #Show white space#        Make while space characters (spaces, tabulations,
                          line breaks) visible.
@@ -4476,8 +4476,7 @@ dialog should be displayed for the read-only files.
 
  The “#Use system copy routine#” option of the ~System settings~@SystemSettings@
 dialog enables the use of Windows operating system function CopyFileEx. This may be useful
-on NTFS, because CopyFileEx optimizes disk space allocation and copies
-extended file attributes. If this option is off, the internal
+on NTFS, because CopyFileEx copies extended file attributes. If this option is off, the internal
 implementation of the file copy routine is used. The internal
 function is also used if the source file is encrypted and is being
 copied to a different volume.

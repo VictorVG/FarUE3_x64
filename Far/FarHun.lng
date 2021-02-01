@@ -1,6 +1,6 @@
 ﻿.Language=Hungarian,Hungarian (Magyar)
 
-//Version: 3.0.5731.0 (Private) x64
+//Version: 3.0.5737.0 (Private) x64
 
 //[MYes]
 "Igen"
@@ -522,9 +522,8 @@
 // need translation:
 //[MConfigCmdlineUseHomeDir]
 "Use &home dir"
-// need translation:
 //[MConfigCmdlinePromptFormatAdmin]
-"Administrator"
+"Adminisztrátor"
 
 // need translation:
 //[MConfigAutoCompleteTitle]
@@ -1511,18 +1510,6 @@
 //[MEditorReloadCPWarnLost2]
 "All unsaved changes will be lost."
 // need translation:
-//[MEditorSaveCPWarn1]
-"Editor contains characters that cannot be"
-// need translation:
-//[MEditorSaveCPWarn2]
-"correctly saved using the selected code page."
-// need translation:
-//[MEditorSwitchCPWarn1]
-"Editor contains characters that cannot be"
-// need translation:
-//[MEditorSwitchCPWarn2]
-"correctly translated using the selected code page:"
-// need translation:
 //[MEditorSwitchCPConfirm]
 "Continue?"
 // need translation:
@@ -1595,7 +1582,7 @@
 //[MListBytes]
 "B"
 //[MListKb]
-"k"
+"K"
 //[MListMb]
 "M"
 //[MListGb]
@@ -2091,9 +2078,8 @@
 // need translation:
 //[MInfoUserAccessLevelUser]
 "User"
-// need translation:
 //[MInfoUserAccessLevelAdministrator]
-"Administrator"
+"Adminisztrátor"
 // need translation:
 //[MInfoUserAccessLevelUnknown]
 "Unknown"
@@ -2294,6 +2280,7 @@
 //[MMenuAlternativeView]
 "&Alternatív teljes"
 
+// need translation:
 //[MMenuInfoPanel]
 "&Info panel"
 //[MMenuTreePanel]
@@ -2664,10 +2651,8 @@
 
 //[MSearchFileTitle]
 "Keresés"
-//[MCannotCreateListFile]
-"A listafájl nem hozható létre"
 //[MCannotCreateListTemp]
-"(a lista átmeneti fájl nem hozható létre)"
+"Nem sikerült ideiglenes fájlt létrehozni a fájllistához"
 
 //[MDragFiles]
 "{0} fájl"
@@ -4068,9 +4053,8 @@
 ""
 //[MInfoCtrlF11]
 ""
-// need translation:
 //[MInfoCtrlF12]
-"Mode"
+"Mód"
 
 // InfoPanel KeyBar AltShiftF1-12
 //[MInfoAltShiftF1]
@@ -4735,9 +4719,8 @@
 //[MBadFileSizeFormat]
 "A fájlméret mező rosszul van kitöltve"
 
-// need translation:
 //[MFarTitleAddonsAdmin]
-"Administrator"
+"Adminisztrátor"
 // need translation:
 //[MElevationRequired]
 "You need to provide administrator permission"
@@ -4849,6 +4832,8 @@
 // need translation:
 //[MLanguageStringNotFound]
 "String {0} not found"
+//[MCharacterIsNotSupportedByTheCodepage]
+"Az "{0}" karaktert a kiválasztott kódlap nem támogatja"
 // keys
 //[MKeyLaunchMediaSelect]
 ""

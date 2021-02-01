@@ -1,6 +1,6 @@
 ﻿.Language=Belarusian,Belarusian (Беларуская)
 
-//Version: 3.0.5731.0 (Private) x64
+//Version: 3.0.5737.0 (Private) x64
 
 //[MYes]
 "Так"
@@ -1381,14 +1381,6 @@
 "Для змены кадыроўкі патрэбна перапрачытаць файл."
 //[MEditorReloadCPWarnLost2]
 "Усі незахаваныя змены будуць згубленыя."
-//[MEditorSaveCPWarn1]
-"Змена ўтрымоўвае сімвалы, якія немагчыма"
-//[MEditorSaveCPWarn2]
-"правільна захаваць, калі ужыць абраную кадыроўку."
-//[MEditorSwitchCPWarn1]
-"Змена ўтрымоўвае сімвалы, якія немагчыма"
-//[MEditorSwitchCPWarn2]
-"правільна пераўтварыць, калі ўжыць абраную кадыроўку:"
 //[MEditorSwitchCPConfirm]
 "Працягнуць?"
 //[MEditDataLostWarn]
@@ -2443,10 +2435,8 @@
 
 //[MSearchFileTitle]
 "Пошук"
-//[MCannotCreateListFile]
-"Немагчыма стварыць спіс файлаў"
 //[MCannotCreateListTemp]
-"(немагчыма стварыць часовы файл для спісу)"
+"Немагчыма стварыць часовы файл для спісу файлаў"
 
 //[MDragFiles]
 "{0} файлаў"
@@ -4526,6 +4516,8 @@
 "Неправільны моўны файл"
 //[MLanguageStringNotFound]
 "Радок {0} не знойдзены"
+//[MCharacterIsNotSupportedByTheCodepage]
+"Выбраная кодавая старонка не падтрымлівае сімвал "{0}""
 // keys
 //[MKeyLaunchMediaSelect]
 ""

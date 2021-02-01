@@ -1,6 +1,6 @@
 ﻿.Language=English,English
 
-//Version: 3.0.5731.0 (Private) x64
+//Version: 3.0.5737.0 (Private) x64
 
 //[MYes]
 "Yes"
@@ -277,7 +277,7 @@
 //[MViewHistoryTitle]
 "File view and edit history"
 //[MViewHistoryIsCreate]
-"Create file?"
+"Create the file?"
 //[MHistoryView]
 "View"
 //[MHistoryEdit]
@@ -391,7 +391,7 @@
 //[MConfigShowFree]
 "Show f&ree size"
 //[MConfigShowScrollbar]
-"Show scroll&bar"
+"Show a scroll&bar"
 //[MConfigShowScreensNumber]
 "Show background screens &number"
 //[MConfigShowSortMode]
@@ -1381,14 +1381,6 @@
 "The file has to be reloaded to change the code page."
 //[MEditorReloadCPWarnLost2]
 "All unsaved changes will be lost."
-//[MEditorSaveCPWarn1]
-"Editor contains characters that cannot be"
-//[MEditorSaveCPWarn2]
-"correctly saved using the selected code page."
-//[MEditorSwitchCPWarn1]
-"Editor contains characters that cannot be"
-//[MEditorSwitchCPWarn2]
-"correctly translated using the selected code page:"
 //[MEditorSwitchCPConfirm]
 "Continue?"
 //[MEditDataLostWarn]
@@ -2443,10 +2435,8 @@
 
 //[MSearchFileTitle]
 "Search"
-//[MCannotCreateListFile]
-"Cannot create list file"
 //[MCannotCreateListTemp]
-"(cannot create temporary file for list)"
+"Cannot create a temporary file for the list of files"
 
 //[MDragFiles]
 "{0} files"
@@ -4514,6 +4504,8 @@
 "Incorrect language file"
 //[MLanguageStringNotFound]
 "String {0} not found"
+//[MCharacterIsNotSupportedByTheCodepage]
+"The "{0}" character is not supported by the selected code page"
 // keys
 //[MKeyLaunchMediaSelect]
 ""

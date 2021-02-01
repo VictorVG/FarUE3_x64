@@ -1,6 +1,6 @@
 ﻿.Language=Italian,Italian (Italiano)
 
-//Version: 3.0.5731.0 (Private) x64
+//Version: 3.0.5737.0 (Private) x64
 
 //[MYes]
 "&Si"
@@ -477,7 +477,7 @@
 //[MConfigCmdlineUseHomeDir]
 "Usa Cartella &Iniziale"
 //[MConfigCmdlinePromptFormatAdmin]
-"A&mministratore"
+"Amministratore"
 
 //[MConfigAutoCompleteTitle]
 "Impostazioni ► AutoCompletamento"
@@ -1385,14 +1385,6 @@
 "Il File Deve Essere Ricaricato Per La Nuova Tabella"
 //[MEditorReloadCPWarnLost2]
 "Tutte Le Modifiche Non Salvate Verranno Perse"
-//[MEditorSaveCPWarn1]
-"L'Editor Contiene Caratteri, Che Non Possono Essere"
-//[MEditorSaveCPWarn2]
-"Salvati Correttamente Usando La Tabella Selezionata"
-//[MEditorSwitchCPWarn1]
-"L'Editor Contiene Caratteri, Che Non Possono Essere"
-//[MEditorSwitchCPWarn2]
-"Correttamente Tradotti Usando La Tabella Selezionata:"
 //[MEditorSwitchCPConfirm]
 "Continuare?"
 //[MEditDataLostWarn]
@@ -2449,10 +2441,8 @@
 
 //[MSearchFileTitle]
 "Ricerca"
-//[MCannotCreateListFile]
-"Non Posso Creare La Lista Dei Files"
 //[MCannotCreateListTemp]
-"(Non Posso Creare Il File Temporaneo Per La Lista)"
+"Non Posso Creare Il File Temporaneo Per La Lista Dei Files"
 
 //[MDragFiles]
 "{0} Files"
@@ -3923,7 +3913,7 @@
 //[MQViewF7]
 "Cerca"
 //[MQViewF8]
-"Win"
+"ANSI"
 //[MQViewF9]
 "ConfMn"
 //[MQViewF10]
@@ -4394,10 +4384,10 @@
 "Relati&vo"
 // up to 4 characters
 //[MFileFilterDateAfterSign]
-"Do&po:"
+">="
 // up to 4 characters
 //[MFileFilterDateBeforeSign]
-"&Prima:"
+"<="
 //[MFileFilterCurrent]
 "C&orrente"
 //[MFileFilterBlank]
@@ -4537,6 +4527,8 @@
 "File Di Lingua Errato"
 //[MLanguageStringNotFound]
 "Stringa {0} Non Trovata"
+//[MCharacterIsNotSupportedByTheCodepage]
+"Il carattere "{0}" non è supportato dalla tabella codici selezionata"
 // keys
 //[MKeyLaunchMediaSelect]
 ""

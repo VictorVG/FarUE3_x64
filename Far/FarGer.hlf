@@ -46,7 +46,7 @@
 
 @Contents
 $^#Datei- und Archiv-Manager.#
-$^#3.0.5731.0 (Private) x64#
+$^#3.0.5737.0 (Private) x64#
 $^#Copyright © 1996-2000 Eugene Roshal#
 $^#Copyright © 2000-2021 Far Group#
  ~Help file index~@Index@
@@ -2410,8 +2410,7 @@ Bin can be performed only for local hard disks.
 
  #Systemkopierroutine benutzen#
  Benutzt die Windowsfunktion CopyFileEx anstelle der internen Implementation zum Kopieren von Dateien.
-Dies ist nützlich bei NTFS, weil CopyFileEx eine rationellere Speicherplatzausnutzung
-bietet und erweiterte Dateiattribute kopiert. On the other hand, when using the system
+Dies ist nützlich bei NTFS, weil CopyFileEx erweiterte Dateiattribute kopiert. On the other hand, when using the system
 function, the possibility of "smart" ~copying~@CopyFiles@ of sparse files is not available.
 
  #Zum Schreiben geöffnete Dateien kopieren#
@@ -3871,8 +3870,8 @@ für den internen und externen ~Betrachter~@Viewer@.
                          the character '\0'. The character to display can be
                          set in ~far:config~@FarConfig@ #Viewer.ZeroChar#.
 
- #Show scrollbar#          Show scrollbar in the internal viewer. This
-                         option can also be switched by pressing
+ #Show a scrollbar#        Show a scrollbar in the internal viewer. This
+                         option can also be toggled by pressing
                          #Ctrl+S# in the internal viewer.
 @=
  #Dateiposition sichern#   Sichert und restauriert die Position in
@@ -3975,7 +3974,7 @@ für den ~internen~@Editor@ und externen Editor.
  #Tabulatorgröße#          Tab zeigt die entsprechende Anzahl
                          Leerzeichen an.
 
- #Show scrollbar#          Show scrollbar.
+ #Show a scrollbar#        Show a scrollbar.
 
  #Show white space#        Make while space characters (spaces, tabulations,
                          line breaks) visible.
@@ -4578,8 +4577,7 @@ dialog should be displayed for the read-only files.
  Die Option “#Systemkopierroutine benutzen#” im Dialog ~Systemeinstellungen~@SystemSettings@
 erzwingt die Benutzung der Windowsfunktion CopyFileEx anstelle der internen Implementation
 zum Kopieren von Dateien. Dies ist nützlich bei NTFS, weil CopyFileEx
-eine rationellere Speicherplatzausnutzung bietet und erweiterte
-Dateiattribute mitkopiert. If this option is off, the internal
+erweiterte Dateiattribute mitkopiert. If this option is off, the internal
 implementation of the file copy routine is used. The internal
 function is also used if the source file is encrypted and is being
 copied to a different volume.

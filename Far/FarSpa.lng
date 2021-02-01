@@ -1,6 +1,6 @@
 ﻿.Language=Spanish,Spanish (Español)
 
-//Version: 3.0.5731.0 (Private) x64
+//Version: 3.0.5737.0 (Private) x64
 
 //[MYes]
 "Si"
@@ -504,7 +504,8 @@
 //[MConfigInfoPanelCNPhysicalDnsFullyQualified]
 "DNS calificado físico"
 //[MConfigInfoPanelCNNetBIOS]
-"NetBios"
+"NetBIOS"
+// need translation:
 //[MConfigInfoPanelCNDnsHostname]
 "DNS hostname"
 //[MConfigInfoPanelCNDnsDomain]
@@ -1387,14 +1388,6 @@
 "Archivo tiene que ser recargado para cambiar página de códigos."
 //[MEditorReloadCPWarnLost2]
 "Todos los cambios no guardados serán perdidos."
-//[MEditorSaveCPWarn1]
-"El editor contiene caracteres que no pueden ser"
-//[MEditorSaveCPWarn2]
-"correctamente guardados con página de códigos (codepage) seleccionada."
-//[MEditorSwitchCPWarn1]
-"El editor contiene caracteres que no pueden ser correctamente traducidos"
-//[MEditorSwitchCPWarn2]
-"con la página de códigos (codepage) seleccionada:"
 //[MEditorSwitchCPConfirm]
 "Continuar?"
 //[MEditDataLostWarn]
@@ -2033,6 +2026,7 @@
 "Offline"
 //[MInfoPowerStatusACOnline]
 "Online"
+// need translation:
 //[MInfoPowerStatusACBackUp]
 "Backup power"
 //[MInfoPowerStatusACUnknown]
@@ -2454,10 +2448,8 @@
 
 //[MSearchFileTitle]
 "Buscar"
-//[MCannotCreateListFile]
-"No se puede crear archivo de lista"
 //[MCannotCreateListTemp]
-"(no se puede crear archivo temporal para lista)"
+"No se puede crear archivo temporal para la lista de archivos"
 
 //[MDragFiles]
 "{0} archivos"
@@ -4541,6 +4533,8 @@
 "Archivo de idioma incorrecto"
 //[MLanguageStringNotFound]
 "Cadena {0} no encontrada"
+//[MCharacterIsNotSupportedByTheCodepage]
+"El carácter "{0}" no es compatible con la página de códigos seleccionada"
 // keys
 //[MKeyLaunchMediaSelect]
 ""

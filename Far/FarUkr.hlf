@@ -46,7 +46,7 @@
 
 @Contents
 $^#Програма керування файлами та архівами#
-$^#3.0.5731.0 (Private) x64#
+$^#3.0.5737.0 (Private) x64#
 $^#Copyright © 1996-2000 Eugene Roshal#
 $^#Copyright © 2000-2021 Far Group#
  ~Індекс файлу допомоги~@Index@
@@ -2389,8 +2389,7 @@ $ #Системні параметри#
  #Використовувати системну функцію копіювання#
  Використовувати функції копіювання файлів, які надає операційна система, замість
 внутрішньої реалізації копіювання файлів. Це може бути корисне на NTFS, оскiльки
-системна функція (CopyFileEx) виконує більш ефективний розподіл дискового
-простору і копіює розширені атрибути файлів. У той же час, при увімкненій опції
+системна функція (CopyFileEx) копіює розширені атрибути файлів. У той же час, при увімкненій опції
 буде недоступною можливість of "smart" ~copying~@CopyFiles@ of sparse files.
 
  #Копіювати відкриті для запису файли#
@@ -3960,7 +3959,7 @@ $ #Конфігурація редактора#
  #Розмір табуляції#        Кількість пробілів при показі символа
                          табуляції.
 
- #Show scrollbar#          Show scrollbar.
+ #Show a scrollbar#        Show a scrollbar.
 
  #Show white space#        Make while space characters (spaces, tabulations,
                          line breaks) visible.
@@ -4571,8 +4570,7 @@ dialog should be displayed for the read-only files.
 
  Параметр “#Використати системну функцію копіювання#” з діалогу ~Системні параметри~@SystemSettings@
 вмикає використання функції Windows CopyFileEx замість внутрішньої реалізації копіювання файлів.
-Це може бути корисне на NTFS, оскільки CopyFileEx виконує більш ефективний розподіл
-дискового простору і копіює розширені атрибути файлів. If this option is off, the internal
+Це може бути корисне на NTFS, оскільки CopyFileEx копіює розширені атрибути файлів. If this option is off, the internal
 implementation of the file copy routine is used. The internal
 function is also used if the source file is encrypted and is being
 copied to a different volume.
