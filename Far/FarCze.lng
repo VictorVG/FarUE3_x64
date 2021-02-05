@@ -1,6 +1,6 @@
 ﻿.Language=Czech,Czech (Čeština)
 
-//Version: 3.0.5737.0 (Private) x64
+//Version: 3.0.5740.0 (Private) x64
 
 //[MYes]
 "Ano"
@@ -1773,8 +1773,6 @@
 "Obsahující &hex:"
 //[MFindFileCodePage]
 "Použít kódovou &stránku:"
-//[MFindFileCodePageBottom]
-"Mezera, Ins"
 //[MFindFileCase]
 "Roz&lišovat velikost písmen"
 //[MFindFileWholeWords]

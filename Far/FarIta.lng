@@ -1,6 +1,6 @@
 ﻿.Language=Italian,Italian (Italiano)
 
-//Version: 3.0.5737.0 (Private) x64
+//Version: 3.0.5740.0 (Private) x64
 
 //[MYes]
 "&Si"
@@ -1768,8 +1768,6 @@
 "Contenente He&x:"
 //[MFindFileCodePage]
 "Utilizza &Tabella Caratteri"
-//[MFindFileCodePageBottom]
-"Spazio, Inserimento"
 //[MFindFileCase]
 "&MAIUSCOLE/minuscole"
 //[MFindFileWholeWords]

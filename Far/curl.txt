@@ -1,9 +1,9 @@
 Usage: curl [options...] <url>
-
      --abstract-unix-socket <path> Connect via abstract Unix domain socket
      --alt-svc <file name> Enable alt-svc with this cache file
      --anyauth       Pick any authentication method
  -a, --append        Append to target file when uploading
+     --aws-sigv4 <provider1[:provider2[:region[:service]]]> Use AWS V4 signature authentication
      --basic         Use HTTP Basic Authentication
      --cacert <file> CA certificate to verify peer against
      --capath <dir>  CA directory to verify peer against
@@ -20,6 +20,7 @@ Usage: curl [options...] <url>
  -b, --cookie <data|filename> Send cookies from string/file
  -c, --cookie-jar <filename> Write cookies to <filename> after operation
      --create-dirs   Create necessary local directory hierarchy
+     --create-file-mode File mode for created files
      --crlf          Convert LF to CRLF in upload
      --crlfile <file> Get a CRL list in PEM format from the given file
      --curves <algorithm list> (EC) TLS key exchange algorithm(s) to request
@@ -174,7 +175,7 @@ Usage: curl [options...] <url>
  -R, --remote-time   Set the remote file's time on the local output
  -X, --request <command> Specify request command to use
      --request-target Specify the target for this request
-     --resolve <host:port:addr[,addr]...> Resolve the host+port to this address
+     --resolve <[+]host:port:addr[,addr]...> Resolve the host+port to this address
      --retry <num>   Retry request if transient problems occur
      --retry-all-errors Retry all errors (use with --retry)
      --retry-connrefused Retry on connection refused (use with --retry)

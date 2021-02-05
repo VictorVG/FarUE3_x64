@@ -1,6 +1,6 @@
 ﻿.Language=Lithuanian,Lithuanian (Lietuvių)
 
-//Version: 3.0.5737.0 (Private) x64
+//Version: 3.0.5740.0 (Private) x64
 
 //[MYes]
 "Taip"
@@ -2042,9 +2042,6 @@
 // need translation:
 //[MFindFileCodePage]
 "Using code pa&ge:"
-// need translation:
-//[MFindFileCodePageBottom]
-"Space, Ins"
 //[MFindFileCase]
 "&Didžiosios skiriasi"
 // need translation:

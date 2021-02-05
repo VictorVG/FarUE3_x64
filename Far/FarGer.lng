@@ -1,6 +1,6 @@
 ﻿.Language=German,German (Deutsch)
 
-//Version: 3.0.5737.0 (Private) x64
+//Version: 3.0.5740.0 (Private) x64
 
 //[MYes]
 "Ja"
@@ -1804,8 +1804,6 @@
 // need translation:
 //[MFindFileCodePage]
 "Zeichenta&belle verwenden:"
-//[MFindFileCodePageBottom]
-"Leertaste, Ins"
 //[MFindFileCase]
 "Gr&oß-/Kleinschreibung"
 //[MFindFileWholeWords]

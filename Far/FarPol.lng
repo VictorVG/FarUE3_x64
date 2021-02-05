@@ -1,6 +1,6 @@
 ﻿.Language=Polish,Polish (Polski)
 
-//Version: 3.0.5737.0 (Private) x64
+//Version: 3.0.5740.0 (Private) x64
 
 //[MYes]
 "Tak"
@@ -1764,8 +1764,6 @@
 "Zawierający wartość szesnas&tkową:"
 //[MFindFileCodePage]
 "Użyj ta&blicy znaków:"
-//[MFindFileCodePageBottom]
-"Spacja, Ins"
 //[MFindFileCase]
 "&Uwzględnij wielkość liter"
 //[MFindFileWholeWords]

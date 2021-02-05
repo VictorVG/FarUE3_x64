@@ -1,6 +1,6 @@
 ﻿.Language=Ukrainian,Ukrainian (Українська)
 
-//Version: 3.0.5737.0 (Private) x64
+//Version: 3.0.5740.0 (Private) x64
 
 //[MYes]
 "Так"
@@ -1764,8 +1764,6 @@
 "Я&кі містять 16-ковий код:"
 //[MFindFileCodePage]
 "Використ. кодо&ву сторінку:"
-//[MFindFileCodePageBottom]
-"Space, Ins"
 //[MFindFileCase]
 "&Враховувати регістр"
 //[MFindFileWholeWords]

@@ -1,6 +1,6 @@
 ﻿.Language=Hungarian,Hungarian (Magyar)
 
-//Version: 3.0.5737.0 (Private) x64
+//Version: 3.0.5740.0 (Private) x64
 
 //[MYes]
 "Igen"
@@ -1904,8 +1904,6 @@
 "Tartalmazza a he&xát:"
 //[MFindFileCodePage]
 "Kó&dlap:"
-//[MFindFileCodePageBottom]
-"Space, Ins"
 //[MFindFileCase]
 "&Nagy/kisbetű érzékeny"
 //[MFindFileWholeWords]

@@ -1,6 +1,6 @@
 ﻿.Language=Spanish,Spanish (Español)
 
-//Version: 3.0.5737.0 (Private) x64
+//Version: 3.0.5740.0 (Private) x64
 
 //[MYes]
 "Si"
@@ -1771,8 +1771,6 @@
 "Conteniendo hexa:"
 //[MFindFileCodePage]
 "Usando pá&gina de códigos:"
-//[MFindFileCodePageBottom]
-"Espacio,Ins"
 //[MFindFileCase]
 "Sensible min./ma&y."
 //[MFindFileWholeWords]

@@ -1,6 +1,6 @@
 ﻿.Language=Slovak,Slovak (Slovenčina)
 
-//Version: 3.0.5737.0 (Private) x64
+//Version: 3.0.5740.0 (Private) x64
 
 //[MYes]
 "Áno"
@@ -1786,8 +1786,6 @@
 "Obsahujúci &hex:"
 //[MFindFileCodePage]
 "Použiť tabuľku &znakov:"
-//[MFindFileCodePageBottom]
-"Medzera, Ins"
 //[MFindFileCase]
 "ma&lé a VEĽKÉ písmená"
 //[MFindFileWholeWords]

@@ -1,6 +1,6 @@
 ﻿.Language=Belarusian,Belarusian (Беларуская)
 
-//Version: 3.0.5737.0 (Private) x64
+//Version: 3.0.5740.0 (Private) x64
 
 //[MYes]
 "Так"
@@ -1764,8 +1764,6 @@
 "&Змяшчае hex:"
 //[MFindFileCodePage]
 "Ужыць кадыро&ўку:"
-//[MFindFileCodePageBottom]
-"Space, Ins"
 //[MFindFileCase]
 "&Улічваць памер букв"
 //[MFindFileWholeWords]
