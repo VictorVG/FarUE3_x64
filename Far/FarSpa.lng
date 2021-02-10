@@ -1,6 +1,6 @@
 ﻿.Language=Spanish,Spanish (Español)
 
-//Version: 3.0.5740.0 (Private) x64
+//Version: 3.0.5741.0 (Private) x64
 
 //[MYes]
 "Si"
@@ -693,8 +693,8 @@
 //[MLinkTypeSymlinkDirectory]
 "enlace simbólico (&directorio)"
 // need translation:
-//[MCopyPreserveTimestamps]
-"Preserve timestamps"
+//[MCopyPreserveAllTimestamps]
+"Preserve all timestamps"
 //[MCopySymLinkContents]
 "Copiar contenidos de &enlaces simbólicos"
 //[MCopyMultiActions]

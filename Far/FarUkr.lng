@@ -1,6 +1,6 @@
 ﻿.Language=Ukrainian,Ukrainian (Українська)
 
-//Version: 3.0.5740.0 (Private) x64
+//Version: 3.0.5741.0 (Private) x64
 
 //[MYes]
 "Так"
@@ -688,8 +688,8 @@
 "символічне посилання (&файл)"
 //[MLinkTypeSymlinkDirectory]
 "символічне посилання (папка)"
-//[MCopyPreserveTimestamps]
-"Зберігати позначки часу"
+//[MCopyPreserveAllTimestamps]
+"Зберігати всі позначки часу"
 //[MCopySymLinkContents]
 "Копіювати вміст символічних посилань"
 //[MCopyMultiActions]

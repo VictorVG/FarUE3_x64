@@ -1,6 +1,6 @@
 ﻿.Language=Slovak,Slovak (Slovenčina)
 
-//Version: 3.0.5740.0 (Private) x64
+//Version: 3.0.5741.0 (Private) x64
 
 //[MYes]
 "Áno"
@@ -708,8 +708,8 @@
 //[MLinkTypeSymlinkDirectory]
 "symbolické prepoj. (prie&činok)"
 // need translation:
-//[MCopyPreserveTimestamps]
-"Preserve timestamps"
+//[MCopyPreserveAllTimestamps]
+"Preserve all timestamps"
 //[MCopySymLinkContents]
 "Kopírovať obsah sym&bolic. prepoj."
 //[MCopyMultiActions]

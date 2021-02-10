@@ -1,6 +1,6 @@
 ﻿.Language=Lithuanian,Lithuanian (Lietuvių)
 
-//Version: 3.0.5740.0 (Private) x64
+//Version: 3.0.5741.0 (Private) x64
 
 //[MYes]
 "Taip"
@@ -832,8 +832,8 @@
 //[MLinkTypeSymlinkDirectory]
 "symbolic link (fol&der)"
 // need translation:
-//[MCopyPreserveTimestamps]
-"Preserve timestamps"
+//[MCopyPreserveAllTimestamps]
+"Preserve all timestamps"
 // need translation:
 //[MCopySymLinkContents]
 "Cop&y contents of symbolic links"

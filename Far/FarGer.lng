@@ -1,6 +1,6 @@
 ﻿.Language=German,German (Deutsch)
 
-//Version: 3.0.5740.0 (Private) x64
+//Version: 3.0.5741.0 (Private) x64
 
 //[MYes]
 "Ja"
@@ -703,8 +703,8 @@
 //[MLinkTypeSymlinkDirectory]
 "Symbolischer Link (Or&dner)"
 // need translation:
-//[MCopyPreserveTimestamps]
-"Preserve timestamps"
+//[MCopyPreserveAllTimestamps]
+"Preserve all timestamps"
 //[MCopySymLinkContents]
 "Inhalte von s&ymbolischen Links kopieren"
 //[MCopyMultiActions]

@@ -1,6 +1,6 @@
 ﻿.Language=Czech,Czech (Čeština)
 
-//Version: 3.0.5740.0 (Private) x64
+//Version: 3.0.5741.0 (Private) x64
 
 //[MYes]
 "Ano"
@@ -694,8 +694,8 @@
 //[MLinkTypeSymlinkDirectory]
 "symbolický link (&adresář)"
 // need translation:
-//[MCopyPreserveTimestamps]
-"Preserve timestamps"
+//[MCopyPreserveAllTimestamps]
+"Preserve all timestamps"
 //[MCopySymLinkContents]
 "Kopírovat obsah sym&bolických linků"
 //[MCopyMultiActions]

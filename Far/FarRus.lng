@@ -1,6 +1,6 @@
 ﻿.Language=Russian,Russian (Русский)
 
-//Version: 3.0.5740.0 (Private) x64
+//Version: 3.0.5741.0 (Private) x64
 
 //[MYes]
 "Да"
@@ -688,8 +688,8 @@
 "символическая ссылка (&файл)"
 //[MLinkTypeSymlinkDirectory]
 "символическая ссылка (&папка)"
-//[MCopyPreserveTimestamps]
-"Сохранять метки времени"
+//[MCopyPreserveAllTimestamps]
+"Сохранять все метки времени"
 //[MCopySymLinkContents]
 "Копировать содерж&имое символических ссылок"
 //[MCopyMultiActions]

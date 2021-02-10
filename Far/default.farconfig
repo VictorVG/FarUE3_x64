@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<farconfig version="3.0.5723">
+<farconfig version="3.0.5741">
 	<generalconfig>
 		<setting key="Cmdline" name="AutoComplete" type="qword" value="0000000000000001"/>
 		<setting key="Cmdline" name="DelRemovesBlocks" type="qword" value="0000000000000001"/>
@@ -284,6 +284,7 @@
 		<setting key="System.Executor" name="SilentExternal" type="qword" value="0000000000000000"/>
 		<setting key="System.Executor" name="Type" type="qword" value="0000000000000001"/>
 		<setting key="System.Executor" name="UseAppPath" type="qword" value="0000000000000001"/>
+		<setting key="System.Executor" name="UseAssociations" type="qword" value="0000000000000000"/>
 		<setting key="System.Executor" name="UseHomeDir" type="qword" value="0000000000000001"/>
 		<setting key="System.Executor" name="~" type="text" value="C:\"/>
 		<setting key="System.KnownIDs" name="Arclite" type="text" value="65642111-AA69-4B84-B4B8-9249579EC4FA"/>
@@ -336,7 +337,7 @@
 		<setting key="Panel" name="LeftFocus" type="qword" value="0000000000000001"/>
 		<setting key="Panel.Left" name="CurFile" type="text" value="Windows"/>
 		<setting key="Panel.Left" name="Folder" type="text" value="C:\"/>
-		<setting key="Panel.Right" name="CurFile" type="text" value="Windows"/>
+		<setting key="Panel.Right" name="CurFile" type="text" value="$Recycle.Bin"/>
 		<setting key="Panel.Right" name="Folder" type="text" value="C:\"/>
 	</localconfig>
 	<colors>
@@ -1665,8 +1666,6 @@
 				<key name="42E4AEB1-A230-44F4-B33C-F195BB654931" description="NetBox">
 					<key name="Configuration">
 						<value name="Version" type="text" value="2.4.5"/>
-						<key name="CDCache">
-						</key>
 						<key name="Interface">
 							<value name="AutoReadDirectoryAfterOp" type="qword" value="0000000000000001"/>
 							<value name="BeepOnFinish" type="qword" value="0000000000000000"/>
@@ -1760,8 +1759,10 @@
 									<value name="EditorUploadSameOptions" type="qword" value="0000000000000001"/>
 									<value name="FullScreenDetailed" type="qword" value="0000000000000001"/>
 									<value name="HostNameInTitle" type="qword" value="0000000000000001"/>
+									<value name="PageantPath" type="text" value="G:%5Cdev%5Cfar3%5C26%5CFar%5Cplugins%5Cnetbox%5Cputty%5Cpageant.exe"/>
 									<value name="PluginsMenu" type="qword" value="0000000000000001"/>
 									<value name="PluginsMenuCommands" type="qword" value="0000000000000001"/>
+									<value name="PuttygenPath" type="text" value="G:%5Cdev%5Cfar3%5C26%5CFar%5Cplugins%5Cnetbox%5Cputty%5Cputtygen.exe"/>
 									<value name="QueueBeep" type="qword" value="0000000000000001"/>
 									<value name="SessionNameInTitle" type="qword" value="0000000000000001"/>
 									<value name="StatusColumnTypesDetailed" type="text" value="NR"/>
@@ -1773,7 +1774,10 @@
 									</key>
 								</key>
 							</key>
-						</key><key name="Logging">
+						</key>
+						<key name="LastFingerprints">
+						</key>
+						<key name="Logging">
 							<value name="LogFileAppend" type="qword" value="0000000000000001"/>
 							<value name="LogWindowLines" type="qword" value="0000000000000064"/>
 							<value name="PermanentActionsLogFileName" type="text" value="%25TEMP%25%5C&amp;S.xml"/>
@@ -1788,10 +1792,8 @@
 						<key name="Usage"/>
 					</key>
 					<key name="Sessions">
-						<key name="Default%20Settings">
-							<value name="FSProtocol" type="text" value="SFTP%20(SCP)"/>
-							<value name="Version" type="text" value="2.4.5"/>
-						</key>
+					</key>
+					<key name="SshHostKeys">
 					</key>
 				</key>
 			</hierarchicalconfig>
@@ -2047,6 +2049,30 @@
 				<key name="7E509EC9-41A3-44A3-B228-D6C94BE46AEE" description="Mine Sweeper"/>
 			</hierarchicalconfig>
 		</plugin>
+		<plugin guid="894EAABB-C57F-4549-95FC-4AC6F3102A36">
+			<hierarchicalconfig>
+				<key name="894EAABB-C57F-4549-95FC-4AC6F3102A36" description="calculator">
+					<value name="Args" type="text" value=","/>
+					<value name="autoComplete" type="qword" value="0000000000000000"/>
+					<value name="autoUpdate" type="qword" value="0000000000000001"/>
+					<value name="caseSensitive" type="qword" value="0000000000000000"/>
+					<value name="contFractionMax" type="qword" value="0000000000000040"/>
+					<value name="decimalPoint" type="text" value="."/>
+					<value name="digitDelim" type="text" value="'"/>
+					<value name="historyAbove" type="qword" value="0000000000000000"/>
+					<value name="historyBelow" type="qword" value="0000000000000000"/>
+					<value name="historyHide" type="qword" value="0000000000000001"/>
+					<value name="historyLines" type="qword" value="0000000000000008"/>
+					<value name="maxPeriod" type="qword" value="000000000000000A"/>
+					<value name="padZeroes" type="qword" value="0000000000000001"/>
+					<value name="repFractionMaxPeriod" type="qword" value="0000000000000080"/>
+					<value name="repFractionMaxStart" type="qword" value="0000000000000020"/>
+					<value name="resultLength" type="qword" value="0000000000000080"/>
+					<value name="useDelim" type="qword" value="0000000000000000"/>
+					<value name="useRegional" type="qword" value="0000000000000000"/>
+				</key>
+			</hierarchicalconfig>
+		</plugin>
 		<plugin guid="8E11EA75-0303-4374-AC60-D1E38F865449">
 			<hierarchicalconfig>
 				<key name="8E11EA75-0303-4374-AC60-D1E38F865449" description="LuaFAR Search">
@@ -2080,6 +2106,8 @@
 					<value name="save_file_pos" type="qword" value="0000000000000001"/>
 					<value name="show_dword_seps" type="qword" value="0000000000000001"/>
 					<value name="std_cursor_size" type="qword" value="0000000000000001"/>
+					<key name="history">
+					</key>
 				</key>
 			</hierarchicalconfig>
 		</plugin>
@@ -2172,10 +2200,12 @@
 					<value name="out_device_asio" type="qword" value="FFFFFFFFFFFFFFFE"/>
 					<value name="out_device_wasapi" type="qword" value="FFFFFFFFFFFFFFFF"/>
 					<value name="play_mode" type="qword" value="0000000000000002"/>
+					<value name="playlist_height" type="qword" value="0000000000000008"/>
 					<value name="remove_album" type="qword" value="0000000000000001"/>
 					<value name="use_analyze" type="qword" value="0000000000000001"/>
-					<value name="volume" type="qword" value="0000000000000104"/>
+					<value name="volume" type="qword" value="00000000000001A4"/>
 					<value name="wasapi_play_url" type="qword" value="0000000000000001"/>
+					<value name="window_width" type="qword" value="0000000000000032"/>
 				</key>
 			</hierarchicalconfig>
 		</plugin>
@@ -2349,7 +2379,7 @@
 						<key name="{1D1BA1CB-3A05-4F4B-91B3-F8E71A55420E}">
 							<value name="Hidden" type="qword" value="0000000000000000"/>
 							<value name="Hotkey" type="text" value="s"/>
-							<value name="LastAccess" type="qword" value="00000000518D6317"/>
+							<value name="LastAccess" type="qword" value="000000005245BC0C"/>
 							<value name="NewName" type="text" value=""/>
 						</key>
 						<key name="{2099F3F1-A147-4D0F-BB82-60E472513BC0}">
@@ -2451,7 +2481,7 @@
 						<key name="{4EBBEFC8-2084-4B7F-94C0-692CE136894D}%5">
 							<value name="Hidden" type="qword" value="0000000000000000"/>
 							<value name="Hotkey" type="text" value=""/>
-							<value name="LastAccess" type="qword" value="00000000485A75D2"/>
+							<value name="LastAccess" type="qword" value="000000005238BE3B"/>
 							<value name="NewName" type="text" value=""/>
 						</key>
 						<key name="{4EBBEFC8-2084-4B7F-94C0-692CE136894D}%6">
@@ -2463,7 +2493,7 @@
 						<key name="{4EBBEFC8-2084-4B7F-94C0-692CE136894D}%7">
 							<value name="Hidden" type="qword" value="0000000000000000"/>
 							<value name="Hotkey" type="text" value=""/>
-							<value name="LastAccess" type="qword" value="000000005068AF67"/>
+							<value name="LastAccess" type="qword" value="00000000522824E6"/>
 							<value name="NewName" type="text" value=""/>
 						</key>
 						<key name="{4F6BDE22-3F56-496B-B1DD-7991199D2043}">
@@ -2545,7 +2575,7 @@
 						<key name="{7DDE66C0-9C85-44DF-B592-31E615CB56D3}">
 							<value name="Hidden" type="qword" value="0000000000000000"/>
 							<value name="Hotkey" type="text" value=""/>
-							<value name="LastAccess" type="qword" value="00000000483B0BAA"/>
+							<value name="LastAccess" type="qword" value="00000000523D03A3"/>
 							<value name="NewName" type="text" value=""/>
 						</key>
 						<key name="{7DE7CE15-8615-4A8E-A015-DB9BD8B1E7F7}">
@@ -2569,7 +2599,7 @@
 						<key name="{894EAABB-C57F-4549-95FC-4AC6F3102A36}">
 							<value name="Hidden" type="qword" value="0000000000000000"/>
 							<value name="Hotkey" type="text" value=""/>
-							<value name="LastAccess" type="qword" value="000000004E9175F7"/>
+							<value name="LastAccess" type="qword" value="0000000052298A0C"/>
 							<value name="NewName" type="text" value=""/>
 						</key>
 						<key name="{8A92F148-A165-41D7-BB49-9201A16DE91F}">
@@ -2680,7 +2710,7 @@
 						<key name="{AE501DD6-AD57-4A26-A5DF-39ACC3A9DB99}">
 							<value name="Hidden" type="qword" value="0000000000000000"/>
 							<value name="Hotkey" type="text" value="/"/>
-							<value name="LastAccess" type="qword" value="00000000518D9B02"/>
+							<value name="LastAccess" type="qword" value="00000000523F456F"/>
 							<value name="NewName" type="text" value=""/>
 						</key>
 						<key name="{AF4DAB38-C00A-4653-900E-7A8230308010}">
@@ -2833,7 +2863,7 @@
 						<key name="{E80B8002-EED3-4563-9C78-2E3C3246F8D3}">
 							<value name="Hidden" type="qword" value="0000000000000000"/>
 							<value name="Hotkey" type="text" value="2"/>
-							<value name="LastAccess" type="qword" value="0000000051257131"/>
+							<value name="LastAccess" type="qword" value="0000000052266E11"/>
 							<value name="NewName" type="text" value=""/>
 						</key>
 						<key name="{EB39ECBE-B2FF-4696-95D1-EFA7D3B88679}">
@@ -2845,7 +2875,7 @@
 						<key name="{ED0C4BD8-D2F0-4B6E-A19F-B0B0137C9B0C}">
 							<value name="Hidden" type="qword" value="0000000000000000"/>
 							<value name="Hotkey" type="text" value="1"/>
-							<value name="LastAccess" type="qword" value="000000004ED27444"/>
+							<value name="LastAccess" type="qword" value="000000005229820A"/>
 							<value name="NewName" type="text" value=""/>
 						</key>
 						<key name="{F10829AE-E1DE-4A70-8266-176DF3841044}">
@@ -2857,7 +2887,7 @@
 						<key name="{F1EBAFF4-A643-4046-9F0B-7D0A9A577299}">
 							<value name="Hidden" type="qword" value="0000000000000000"/>
 							<value name="Hotkey" type="text" value=""/>
-							<value name="LastAccess" type="qword" value="000000005194BD78"/>
+							<value name="LastAccess" type="qword" value="00000000522A4667"/>
 							<value name="NewName" type="text" value=""/>
 						</key>
 						<key name="{F250C12A-78E2-4ABC-A784-3FDD3156E415}">
@@ -2869,7 +2899,7 @@
 						<key name="{F39EFDBF-A2E3-44F5-B4DF-519548A62BF9}">
 							<value name="Hidden" type="qword" value="0000000000000000"/>
 							<value name="Hotkey" type="text" value="u"/>
-							<value name="LastAccess" type="qword" value="00000000519CA386"/>
+							<value name="LastAccess" type="qword" value="0000000052420E98"/>
 							<value name="NewName" type="text" value=""/>
 						</key>
 						<key name="{F39EFDBF-A2E3-44F5-B4DF-519548A62BFA}">
@@ -3105,6 +3135,9 @@
 				<key name="D4BC5EA7-8229-4FFE-AAC1-5A4F51A0986A" description="Polygon">
 					<value name="root" type="base64"/>
 					<key name="files"/>
+					<key name="root">
+						<value name="plugin" type="base64"/>
+					</key>
 				</key>
 			</hierarchicalconfig>
 		</plugin>
@@ -3387,11 +3420,12 @@
 					<value name="CmpTime" type="qword" value="0000000000000000"/>
 					<value name="Dialog" type="qword" value="0000000000000000"/>
 					<value name="DupContents" type="qword" value="0000000000000000"/>
+					<value name="DupListSmall" type="qword" value="0000000000000000"/>
 					<value name="DupName" type="qword" value="0000000000000001"/>
 					<value name="DupSize" type="qword" value="0000000000000000"/>
 					<value name="Filter" type="qword" value="0000000000000001"/>
 					<value name="Ignore" type="qword" value="0000000000000000"/>
-					<value name="IgnoreMissing" type="qword" value="0000000000000002"/>
+					<value name="IgnoreMissing" type="qword" value="0000000000000000"/>
 					<value name="IgnoreTimeZone" type="qword" value="0000000000000000"/>
 					<value name="LightSync" type="qword" value="0000000000000000"/>
 					<value name="Mode" type="qword" value="0000000000000000"/>

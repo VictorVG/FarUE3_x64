@@ -1,6 +1,6 @@
 ﻿.Language=Hungarian,Hungarian (Magyar)
 
-//Version: 3.0.5740.0 (Private) x64
+//Version: 3.0.5741.0 (Private) x64
 
 //[MYes]
 "Igen"
@@ -777,8 +777,8 @@
 //[MLinkTypeSymlinkDirectory]
 "Szimbolikus link (&mappa)"
 // need translation:
-//[MCopyPreserveTimestamps]
-"Preserve timestamps"
+//[MCopyPreserveAllTimestamps]
+"Preserve all timestamps"
 //[MCopySymLinkContents]
 "Sz&imbolikus linkek másolása"
 //[MCopyMultiActions]

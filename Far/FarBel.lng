@@ -1,6 +1,6 @@
 ﻿.Language=Belarusian,Belarusian (Беларуская)
 
-//Version: 3.0.5740.0 (Private) x64
+//Version: 3.0.5741.0 (Private) x64
 
 //[MYes]
 "Так"
@@ -688,8 +688,8 @@
 "сімвалічны спасылак (&файл)"
 //[MLinkTypeSymlinkDirectory]
 "сімвалічны с&пасылак (каталог)"
-//[MCopyPreserveTimestamps]
-"Захаваць меткі часу"
+//[MCopyPreserveAllTimestamps]
+"Захаваць усе меткі часу"
 //[MCopySymLinkContents]
 "Капіяваць змест с&імвалічнай спасылкі"
 //[MCopyMultiActions]

@@ -1,6 +1,6 @@
 ﻿.Language=Italian,Italian (Italiano)
 
-//Version: 3.0.5740.0 (Private) x64
+//Version: 3.0.5741.0 (Private) x64
 
 //[MYes]
 "&Si"
@@ -690,8 +690,8 @@
 //[MLinkTypeSymlinkDirectory]
 "Link Simbolico (&Cartella)"
 // need translation:
-//[MCopyPreserveTimestamps]
-"Preserve timestamps"
+//[MCopyPreserveAllTimestamps]
+"Preserve all timestamps"
 //[MCopySymLinkContents]
 "Copia Contenuti Dei Link &Simbolici"
 //[MCopyMultiActions]
