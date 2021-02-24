@@ -3,7 +3,7 @@
   ╔════════════════════════════ Макросы. Обработчики событий. Модули. Элементы меню плагинов. Префиксы командной строки. ═════════════════════════════════════════════════════════════════╗
   ║                                                                                                                                                                                       ║
   ╟───────────────────────────────────────────────────────── Макросы (A=SIQTsFVEDmMUdAaH··OC) ────────────────────────────────────────────────────────────────────────────────────────────╢
-  ║                                                                                          │                                                                                            ║
+  ║                                                                                                                                                                                       ║
   ║  S··················C │ none                                                             │ CS_OpenPanel.lua                           │ Restore all panel visible after Far start     ║
   ║  S··················C │ none                                                             │ CS_OpenPanel.lua                           │ Switch all panel visible after Far start      ║
   ║  S··················C │ none                                                             │ CS_OpenPanel.lua                           │ Switch panel visible after Far start          ║
@@ -53,14 +53,14 @@
   ║  S··Ts··············· │ ShiftF6                                                          │ Shell_Shift_F5F6F7.lua                     │ Переименование с сохранением расширения.      ║
   ║                       │                                                                  │                                            │ © SimSU                                       ║
   ║  S··Ts··············· │ ShiftF7                                                          │ Shell_Shift_F5F6F7.lua                     │ Создание папки на пассивной с именем как      ║
-  ║                       │                                                                  │                                            │ у файла под курсором. © SimSU                 ║
+                                                                                             │                                            │ у файла под курсором. © SimSU                 ║
   ║  S··T················ │ AltShift= RAltShift=                                             │ Plugin_AdvCmpEx.lua                        │ AdvCmpEx                                      ║
   ║  S··T················ │ CtrlShiftX                                                       │ Common_Stub.lua                            │ CtrlShiftX stub                               ║
   ║  S··T················ │ LAltShiftS                                                       │ Plugin_SizeManager.lua                     │ Size Manager: run plugin                      ║
   ║  S··T················ │ MsRClick                                                         │ Common_RightClickAlt.lua                   │ EMenu: by RClick and hold                     ║
   ║  S···s··············· │ CtrlAltM                                                         │ Plugin_MeediaInfo.lua                      │ Get MEdiaInfo                                 ║
   ║  S···s··············· │ ShiftDivide                                                      │ SS_FuzzyCompare.lua                        │ Select files with the same names without      ║
-  ║                       │                                                                  │                                            │ numeric prefix and extension                  ║
+                                                                                             │                                            │ numeric prefix and extension                  ║
   ║  S·····VE············ │ AltF11                                                           │ Plugin_LF_History.lua                      │ LuaFAR History: view/edit                     ║
   ║  S·····VE············ │ auto                                                             │ Common_ConsControl.lua                     │ Far console init full screen                  ║
   ║  S·····VE············ │ auto                                                             │ Common_ConsControl.lua                     │ Far console init window                       ║
@@ -76,15 +76,15 @@
   ║  S·······D··········· │ CtrlPgDn CtrlMsWheelDown                                         │ Plugin_Review.lua                          │ Review: Goto Next Page                        ║
   ║  S·······D··········· │ CtrlPgUp CtrlMsWheelUp                                           │ Plugin_Review.lua                          │ Review: Goto Prev Page                        ║
   ║  S········m·········· │ CtrlShiftF3 Enter MsLClick                                       │ Shell_CustomSortByAttributes.lua           │ Custom: by Attributes                         ║
-  ║  S········m·········· │ CtrlShiftF3 Enter MsLClick                                       │ Shell_CustomSortByName.lua                 │ Custom: by name                               ║
+  ║  S········m·········· │ CtrlShiftF3 Enter MsLClick                                       │ Shell_CustomSortByName.lua                 │ Custom: by Name                               ║
   ║  S·········MU········ │ CtrlAltB                                                         │ Plugin_TrueBranch.lua                      │ Ветвь папки                                   ║
   ║  S··················· │ /RCtrl(Shift|RAlt)[^\/]/                                         │ Shell_BookmarkManager.lua                  │ Менеджер закладок: сохранить текущую папку в  ║
-  ║                       │                                                                  │                                            │ закладках                                     ║
+                                                                                             │                                            │ закладках                                     ║
   ║  S··················· │ /RCtrl[^\/]/                                                     │ Shell_BookmarkManager.lua                  │ Менеджер закладок: перейти на закладку        ║
-  ║  S··················· │ AltB                                                             │ Shell_DelBak.lua                           │ Удаление резервных и временных файлов.        ║
+  ║  S··················· │ AltB                                                             │ Shell_DelBak.lua                           │ Удаление резервных и временных файлов         ║
   ║                       │                                                                  │                                            │ © SimSU                                       ║
   ║  S··················· │ AltBS                                                            │ Shell_HistoryPath_and_RememberSelected.lua │ Возврат в предыдущую папку с сохранением      ║
-  ║                       │                                                                  │                                            │ выделения. © SimSU                            ║
+                                                                                             │                                            │ выделения. © SimSU                            ║
   ║  S··················· │ AltBS                                                            │ Shell_HistoryPath.lua                      │ Возврат в предыдущую папку. © SimSU           ║
   ║  S··················· │ AltDown                                                          │ Shell_SelectingEx.lua                      │ Переход на следующий помеченный файл.         ║
   ║                       │                                                                  │                                            │ © SimSU                                       ║
@@ -93,8 +93,8 @@
   ║  S··················· │ AltEnter                                                         │ Shell_GetPath.lua                          │ Display UNC path for current panel item       ║
   ║  S··················· │ AltF1                                                            │ Shell_RememberSelected.lua                 │ Изменить текущий диск в левой панели c        ║
   ║                       │                                                                  │                                            │ сохранением выделения файлов. © SimSU         ║
-  ║  S··················· │ AltF2                                                            │ Shell_RememberSelected.lua                 │ Изменить текущий диск в правой панели         ║
-  ║                       │                                                                  │                                            │ c сохранением выделения файлов. © SimSU       ║
+  ║  S··················· │ AltF2                                                            │ Shell_RememberSelected.lua                 │ Изменить текущий диск в правой панели c       ║
+  ║                       │                                                                  │                                            │ сохранением выделения файлов. © SimSU         ║
   ║  S··················· │ AltF3                                                            │ View_XDOC.lua                              │ View XDOC's as plain text                     ║
   ║  S··················· │ AltG                                                             │ Plugin_IntChecker.lua                      │ Integrity Checker: calculate hash for ...     ║
   ║  S··················· │ AltH                                                             │ Plugin_IntChecker.lua                      │ Integrity Checker: show menu                  ║
@@ -102,7 +102,8 @@
   ║  S··················· │ AltM                                                             │ Shell_RememberSelected.lua                 │ Сохранение/востановление пометки файлов.      ║
   ║                       │                                                                  │                                            │ © SimSU                                       ║
   ║  S··················· │ AltPgUp                                                          │ Shell_Go-Up.lua                            │ Go up in the File System                      ║
-  ║  S··················· │ AltS                                                             │ Shell_SelectingEx.lua                      │ Расширенная работа с пометкой файлов. © SimSU ║
+  ║  S··················· │ AltS                                                             │ Shell_SelectingEx.lua                      │ Расширенная работа с пометкой файлов.         ║
+  ║                       │                                                                  │                                            │ © SimSU                                       ║
   ║  S··················· │ AltShiftB                                                        │ Shell_Branch.lua                           │ DirTree branch                                ║
   ║  S··················· │ AltShiftC                                                        │ Plugin_GitShell.lua                        │ GitShell commit tools                         ║
   ║  S··················· │ AltShiftEnter                                                    │ Shell_SelBOM.lua                           │ BOM: Files select                             ║
@@ -119,13 +120,14 @@
   ║                       │                                                                  │                                            │ © SimSU                                       ║
   ║  S··················· │ BS                                                               │ Shell_BS.lua                               │ Use BS to go to upper folder                  ║
   ║  S··················· │ Ctrl=                                                            │ Shell_SameDir.lua                          │ Same Folder                                   ║
-  ║  S··················· │ CtrlAltC                                                         │ Plugin_VisualCompare.lua                   │ VC: Визуальное сравнение файлов               ║
+  ║  S··················· │ CtrlAltC                                                         │ Plugin_VisualCompare.lua                   │ VC: Visual file comparison                    ║
   ║  S··················· │ CtrlAltD                                                         │ Shell_SelectingEx.lua                      │ Пометка файлов с днём записи равным дню       ║
   ║                       │                                                                  │                                            │ записи файла под курсором. © SimSU            ║
   ║  S··················· │ CtrlAltF12                                                       │ Plugin_LF_History.lua                      │ LuaFAR History: folders                       ║
   ║  S··················· │ CtrlAltF7                                                        │ Shell_CtrlAltF7.lua                        │ find files from file-list @W17                ║
   ║  S··················· │ CtrlAltF9                                                        │ Plugin_ConsoleControl-Macros.lua           │ Console Control: Maximize/Restore console     ║
-  ║  S··················· │ CtrlAltG                                                         │ Plugin_GitShell.lua                        │ buffer GitShell menu                          ║
+  ║                       │                                                                  │                                            │ buffer                                        ║
+  ║  S··················· │ CtrlAltG                                                         │ Plugin_GitShell.lua                        │ GitShell menu                                 ║
   ║  S··················· │ CtrlAltPgUp                                                      │ Plugin_ConsoleControl-Macros.lua           │ Console Control: Topmost On/Off               ║
   ║  S··················· │ CtrlAltR                                                         │ Shell_GitCheckout.lua                      │ Git: Check file under cursor                  ║
   ║  S··················· │ CtrlBackSlash                                                    │ Shell_RememberSelected.lua                 │ Сменить папку на корневую c сохранением       ║
@@ -143,7 +145,6 @@
   ║  S··················· │ CtrlShiftD                                                       │ Shell_DelEmptyDir.lua                      │ Delete empty folder                           ║
   ║  S··················· │ CtrlShiftE                                                       │ Shell_SelectingEx.lua                      │ Копирование имён помеченных файлов в          ║
   ║                       │                                                                  │                                            │ редактор. © SimSU                             ║
-  ║  S··················· │ CtrlShiftF12                                                     │ Shell_SortDir.lua                          │ Sort files with StrCmpLogicalW                ║
   ║  S··················· │ CtrlShiftF8                                                      │ Shell_CmdsFromCurDir.lua                   │ Display commands that have been launched      ║
   ║                       │                                                                  │                                            │ from the current directory                    ║
   ║  S··················· │ CtrlShiftM                                                       │ Shell_SelectingEx.lua                      │ Пометка файлов имена которых находятся в      ║
@@ -165,8 +166,8 @@
   ║  S··················· │ Enter CtrlPgDn                                                   │ Shell_Tarball.lua                          │ Open tarball                                  ║
   ║  S··················· │ Enter NumEnter                                                   │ Common_Exec.lua                            │ Выполнение команды через меню пользователя    ║
   ║                       │                                                                  │                                            │ или Windows. © SimSU                          ║
-  ║  S··················· │ Enter NumEnter                                                   │ Shell_RememberSelected.lua                 │ Запуск, смена папки, вход в архив             ║
-  ║                       │                                                                  │                                            │ с сохранением выделения файлов. © SimSU       ║
+  ║  S··················· │ Enter NumEnter                                                   │ Shell_RememberSelected.lua                 │ Запуск, смена папки, вход в архив c           ║
+  ║                       │                                                                  │                                            │ сохранением выделения файлов. © SimSU         ║
   ║  S··················· │ Enter NumEnter                                                   │ Shell_Aliases.lua                          │ Исполнение псевдонима (синонима) © SimSU      ║
   ║  S··················· │ Enter NumEnter CtrlPgDn                                          │ Plugin_MultiArc.lua                        │ Open Rar use MultiArc                         ║
   ║  S··················· │ Enter NumEnter MsM1Click                                         │ Plugin_IntChecker.lua                      │ Integrity Checker: check integrity use        ║
@@ -183,10 +184,9 @@
   ║  S··················· │ RCtrl/                                                           │ Shell_BookmarkManager.lua                  │ Менеджер закладок: меню закладок              ║
   ║  S··················· │ RCtrlDown                                                        │ Shell_RCtrlUpDown.lua                      │ Следующая команда (CtrlX).                    ║
   ║  S··················· │ RCtrlUp                                                          │ Shell_RCtrlUpDown.lua                      │ Предыдущая команда (CtrlE).                   ║
-  ║  S··················· │ ShiftBS                                                          │ Shell_HistoryPath_and_RememberSelected.lua │ Отмена возврата в предыдущую папку            ║
-  ║                       │                                                                  │                                            │ с сохранением выделения. © SimSU              ║
-  ║  S··················· │ ShiftBS                                                          │ Shell_HistoryPath.lua                      │ Отмена возврата в предыдущую папку.           ║
-  ║                       │                                                                  │                                            │ © SimSU                                       ║
+  ║  S··················· │ ShiftBS                                                          │ Shell_HistoryPath_and_RememberSelected.lua │ Отмена возврата в предыдущую папку с          ║
+  ║                       │                                                                  │                                            │ сохранением выделения. © SimSU                ║
+  ║  S··················· │ ShiftBS                                                          │ Shell_HistoryPath.lua                      │ Отмена возврата в предыдущую папку. © SimSU   ║
   ║  S··················· │ ShiftMsLClick                                                    │ Shell_SelectMouseExplorer.lua              │ Выделение последовательности файлов,          ║
   ║                       │                                                                  │                                            │ аля Explorer. © SimSU                         ║
   ║  S··················· │ ShiftSpace                                                       │ Shell_Aliases.lua                          │ Работа с псевдонимами (синонимами) © SimSU    ║
@@ -201,8 +201,8 @@
   ║  ······V············· │ CtrlAltIns                                                       │ Viewer_Selection.lua                       │ Selection in viewer                           ║
   ║  ······V············· │ CtrlF2                                                           │ DEVQ_UserMenu.lua                          │ Viewer: show common user menu                 ║
   ║  ······V············· │ CtrlF2                                                           │ DEVQ_UserMenu.lua                          │ Viewer: show local menu                       ║
-  ║  ······V············· │ ShiftIns                                                         │ View_ShiftInsSearch.lua                    │ Use Shift-Ins to search text from             ║
-  ║                       │                                                                  │                                            │ clipboard in internal viewer                  ║
+  ║  ······V············· │ ShiftIns                                                         │ View_ShiftInsSearch.lua                    │ Use Shift-Ins to search text from clipboard   ║
+  ║                       │                                                                  │                                            │ in internal viewer                            ║
   ║  ·······E············ │ Alt/                                                             │ Plugin_DelStr.lua                          │ Delete string                                 ║
   ║  ·······E············ │ Alt7                                                             │ Plugin_lfsearch.lua                        │ LuaFAR Search: Toggle Highlight               ║
   ║  ·······E············ │ AltAdd                                                           │ Editor_TabSize.lua                         │ Увеличить размер табуляции. © SimSU           ║
@@ -211,8 +211,8 @@
   ║  ·······E············ │ AltD                                                             │ Editor_InsertCurrentDateTime.lua           │ Вставить текущую дату и время                 ║
   ║  ·······E············ │ AltDel                                                           │ Editor_Trimmer.lua                         │ Удаление конечных пробелов и символов         ║
   ║                       │                                                                  │                                            │ табуляции и пустых строк. © SimSU             ║
-  ║  ·······E············ │ AltEnd AltShiftEnd                                               │ Editor_SmartHomeEnd.lua                    │ В конец строки или за последнюю букву         ║
-  ║                       │                                                                  │                                            │ с выделением вертикального блока. © SimSU     ║
+  ║  ·······E············ │ AltEnd AltShiftEnd                                               │ Editor_SmartHomeEnd.lua                    │ В конец строки или за последнюю букву с       ║
+  ║                       │                                                                  │                                            │ выделением вертикального блока. © SimSU       ║
   ║  ·······E············ │ AltF3                                                            │ Plugin_lfsearch.lua                        │ LuaFAR Search: Editor Find                    ║
   ║  ·······E············ │ AltF5                                                            │ Editor_Print.lua                           │ Print text from editor                        ║
   ║  ·······E············ │ AltHome AltShiftHome                                             │ Editor_SmartHomeEnd.lua                    │ В начало строки или на первую букву с         ║
@@ -240,14 +240,16 @@
   ║                       │                                                                  │                                            │ © SimSU                                       ║
   ║  ·······E············ │ CtrlAltR                                                         │ Editor_SelectingEx.lua                     │ Выделенные блоки - восстановить позицию       ║
   ║                       │                                                                  │                                            │ блока. © SimSU                                ║
-  ║  ·······E············ │ CtrlAltR                                                         │ Editor_Remarks.lua                         │ Настройка комментирования помеченного блока.  ║
-  ║                       │                                                                  │                                            │ © SimSU                                       ║
+  ║  ·······E············ │ CtrlAltR                                                         │ Editor_Remarks.lua                         │ Настройка комментирования помеченного         ║
+  ║                       │                                                                  │                                            │ блока. © SimSU                                ║
   ║  ·······E············ │ CtrlAltS                                                         │ Editor_SelectingEx.lua                     │ Выделенные блоки - сохранить позицию блока.   ║
   ║                       │                                                                  │                                            │ © SimSU                                       ║
   ║  ·······E············ │ CtrlAltT                                                         │ Editor_SelectingEx.lua                     │ Выделенные блоки - переключить тип блока      ║
   ║                       │                                                                  │                                            │ (строчный/вертикальный). © SimSU              ║
-  ║  ·······E············ │ CtrlAltX                                                         │ Editor_SelectingEx.lua                     │ Выделенные блоки - обменять блок              ║
-  ║                       │                                                                  │                                            │ с буфером обмена. © SimSU                     ║
+  ║  ·······E············ │ CtrlAltX                                                         │ Editor_SelectingEx.lua                     │ Выделенные блоки - обменять блок с буфером    ║
+  ║                       │                                                                  │                                            │ обмена. © SimSU                               ║
+  ║  ·······E············ │ CtrlEnter                                                        │ Editor_Macro_Check_Reload_Execute.lua      │ Check macro in editor                         ║
+  ║                       │                                                                  │                                            │ [Reload/Execute/Variables]                    ║
   ║  ·······E············ │ CtrlEnter CtrlNumEnter                                           │ Editor_OpenURL.lua                         │ Open URL or UNC under cursor                  ║
   ║  ·······E············ │ CtrlF10                                                          │ Editor_SaveRun.lua                         │ Save and run script from editor               ║
   ║  ·······E············ │ CtrlF12                                                          │ Common_LMMacros.lua                        │ Редактировать скрипт под курсором             ║
@@ -259,14 +261,12 @@
   ║  ·······E············ │ CtrlH                                                            │ Plugin_hunspell.lua                        │ Hunspell spell checker                        ║
   ║  ·······E············ │ CtrlMsLClick                                                     │ Editor_MouseSelect.lua                     │ Выделение с копированием. © SimSU             ║
   ║  ·······E············ │ CtrlP                                                            │ Plugin_UCharMap.lua                        │ Unicode Charmap: show char on cursor          ║
-  ║  ·······E············ │ CtrlR                                                            │ Editor_Remarks.lua                         │ Разкомментирование помеченного блока.         ║
-  ║                       │                                                                  │                                            │ © SimSU                                       ║
+  ║  ·······E············ │ CtrlR                                                            │ Editor_Remarks.lua                         │ Разкомментирование помеченного блока. © SimSU ║
   ║  ·······E············ │ CtrlS                                                            │ Editor_SaveFile.lua                        │ Editor: Save File                             ║
   ║  ·······E············ │ CtrlShiftBS                                                      │ Editor_BlockIndent.lua                     │ Indent left by space                          ║
   ║  ·······E············ │ CtrlShiftDown                                                    │ Editor_MoveStr.lua                         │ Перемещение строк в редакторе вниз. © SimSU   ║
   ║  ·······E············ │ CtrlShiftEnter                                                   │ Editor_Macro_Check_Reload_Execute.lua      │ Eval selected text and inspect returned       ║
   ║                       │                                                                  │                                            │ values                                        ║
-  ║  ·······E············ │ CtrlShiftEnter                                                   │ Editor_MacroCheck.lua                      │ Eval selected text and inspect returned values║
   ║  ·······E············ │ CtrlShiftF                                                       │ Plugin_LFB.lua                             │ LUA Format Block for Editor by Ladserg (redo) ║
   ║  ·······E············ │ CtrlShiftF3                                                      │ Plugin_lfsearch.lua                        │ LuaFAR Search: Editor Repeat reverse          ║
   ║  ·······E············ │ CtrlShiftF7                                                      │ Editor_LuaCheck.lua                        │ luacheck: process current editor              ║
@@ -313,8 +313,8 @@
   ║                       │                                                                  │                                            │ .lua/.moon файл                               ║
   ║  ·······E············ │ RCtrlF11                                                         │ Common_LMMacros.lua                        │ Вставить панельный модуль в текущий           ║
   ║                       │                                                                  │                                            │ .lua/.moon файл                               ║
-  ║  ·······E············ │ RCtrlF11                                                         │ Common_LMMacros.lua                        │ Вставить префикс командной строки в           ║
-  ║                       │                                                                  │                                            │ текущий .lua/.moon файл                       ║
+  ║  ·······E············ │ RCtrlF11                                                         │ Common_LMMacros.lua                        │ Вставить префикс командной строки в текущий   ║
+  ║                       │                                                                  │                                            │ .lua/.moon файл                               ║
   ║  ·······E············ │ RCtrlF11                                                         │ Common_LMMacros.lua                        │ Вставить пункт меню плагинов в текущий        ║
   ║                       │                                                                  │                                            │ .lua/.moon файл                               ║
   ║  ·······E············ │ RCtrlLeft                                                        │ Editor_SelectingEx.lua                     │ Выделенные блоки - сдвинуть позицию блока     ║
@@ -324,12 +324,12 @@
   ║                       │                                                                  │                                            │ вправо. © SimSU                               ║
   ║  ·······E············ │ RCtrlShiftBackSlash                                              │ Plugin_BlockEditor.lua                     │ Tabulate selection leftward                   ║
   ║  ·······E············ │ RCtrlShiftMultiply                                               │ Plugin_BlockEditor.lua                     │ Uncomment selection                           ║
-  ║  ·······E············ │ RCtrlU                                                           │ Common_LMMacros.lua                        │ Вставить строку guid в текущий .lua/.moon     ║
-  ║                       │                                                                  │                                            │ файл                                          ║
+  ║  ·······E············ │ RCtrlU                                                           │ Common_LMMacros.lua                        │ Вставить строку guid в текущий                ║
+  ║                       │                                                                  │                                            │ .lua/.moon файл                               ║
   ║  ·······E············ │ RCtrlUp                                                          │ Editor_SelectingEx.lua                     │ Выделенные блоки - сдвинуть позицию блока     ║
   ║                       │                                                                  │                                            │ вверх. © SimSU                                ║
-  ║  ·······E············ │ Right                                                            │ Editor_SelectingEx.lua                     │ Выделенные блоки - если в Начале, то перевым  ║
-  ║                       │                                                                  │                                            │ делом перейти в конец блока. © SimSU          ║
+  ║  ·······E············ │ Right                                                            │ Editor_SelectingEx.lua                     │ Выделенные блоки - если в Начале, то          ║
+  ║                       │                                                                  │                                            │ первым делом перейти в конец блока. © SimSU  ║
   ║  ·······E············ │ ShiftBS                                                          │ Editor_BlockIndent.lua                     │ Indent left by tab size                       ║
   ║  ·······E············ │ ShiftEnd                                                         │ Editor_SmartHomeEnd.lua                    │ В конец строки или за последнюю букву с       ║
   ║                       │                                                                  │                                            │ выделением строчного блока. © SimSU           ║
@@ -341,8 +341,8 @@
   ║  ·······E············ │ ShiftSpace                                                       │ Editor_MacroComplete.lua                   │ Список завершения LuaMacro. © SimSU           ║
   ║  ·······E············ │ ShiftTab                                                         │ Editor_Remarks.lua                         │ Отмена табулирования строк выделенного        ║
   ║                       │                                                                  │                                            │ блока. © SimSU                                ║
-  ║  ·······E············ │ Tab                                                              │ Editor_Remarks.lua                         │ Табулирование строк выделенного               ║
-  ║                       │                                                                  │                                            │ блока. © SimSU                                ║
+  ║  ·······E············ │ Tab                                                              │ Editor_Remarks.lua                         │ Табулирование строк выделенного блока.        ║
+  ║                       │                                                                  │                                            │ © SimSU                                       ║
   ║  ········Dm·········· │ CtrlG                                                            │ DlgMnu_ShowGUID.lua                        │ Show dialog/menu ID                           ║
   ║  ········D··········· │ , [ AltMsWheelUp                                                 │ Plugin_Review.lua                          │ Review: Rotate -90                            ║
   ║  ········D··········· │ . ] AltMsWheelDown                                               │ Plugin_Review.lua                          │ Review: Rotate +90                            ║
@@ -354,19 +354,20 @@
   ║  ········D··········· │ CtrlF7                                                           │ Dialog_DialogTools.lua                     │ DialogTools: Replace                          ║
   ║  ········D··········· │ CtrlIns                                                          │ Dialog_DialogTools.lua                     │ DialogTools: Copy pasword                     ║
   ║  ········D··········· │ CtrlMsWheelUp CtrlMsWheelDown ShiftMsWheelUp ShiftMsWheelDown    │ Plugin_Review.lua                          │ Review: Scale Thumbs                          ║
-  ║  ········D··········· │ CtrlShiftV                                                       │ Common_ClipFix.lua                         │ исправление выделенного кривого юникода       ║
-  ║                       │                                                                  │                                            │ в диалоге                                     ║
+  ║  ········D··········· │ CtrlShiftV                                                       │ Common_ClipFix.lua                         │ исправление выделенного кривого               ║
+  ║                       │                                                                  │                                            │ юникода в диалоге                             ║
   ║  ········D··········· │ CtrlShiftW                                                       │ Dialog_EditPick.lua                        │ Pick word under editor cursor                 ║
   ║  ········D··········· │ CtrlShiftZ AltShiftBS                                            │ Dialog_DialogTools.lua                     │ DialogTools: Redo                             ║
   ║  ········D··········· │ CtrlZ AltBS                                                      │ Dialog_DialogTools.lua                     │ DialogTools: Undo                             ║
   ║  ········D··········· │ Ctrl[                                                            │ Plugin_Review.lua                          │ Review: Swap vert                             ║
   ║  ········D··········· │ Ctrl]                                                            │ Plugin_Review.lua                          │ Review: Swap horz                             ║
   ║  ········D··········· │ Del                                                              │ Plugin_GitShell.lua                        │ Delete branch                                 ║
-  ║  ········D··········· │ Down                                                             │ Plugin_MeediaInfo.lua                      │ Navigation Down                               ║
+  ║  ········D··········· │ Del Ins F5 F6 AltLeft AltRight                                   │ Plugin_VisualCompare.lua                   │ VC: Exchange of lines between files           ║
   ║  ········D··········· │ End                                                              │ Plugin_Review.lua                          │ Review: Goto Last Image                       ║
   ║  ········D··········· │ Enter Home End Up Down PgUp PgDn Left Right CtrlPgUp CtrlPgDn    │ Plugin_SizeManager.lua                     │ Size Manager: panel navigation                ║
   ║  ········D··········· │ F CtrlF                                                          │ Plugin_Review.lua                          │ Review: Fullscreen mode On/Off                ║
-  ║  ········D··········· │ F1                                                               │ Shell_CustomSortByName.lua                 │ Custom: by name - Help                        ║
+  ║  ········D··········· │ F1                                                               │ Shell_CustomSortByAttributes.lua           │ Custom: by Attributes - Help                  ║
+  ║  ········D··········· │ F1                                                               │ Shell_CustomSortByName.lua                 │ Custom: by Name - Help                        ║
   ║  ········D··········· │ F3                                                               │ Dialog_DialogTools.lua                     │ DialogTools: Show password                    ║
   ║  ········D··········· │ F4                                                               │ Dialog_DialogTools.lua                     │ DialogTools: Edit                             ║
   ║  ········D··········· │ F7                                                               │ Dialog_DialogTools.lua                     │ DialogTools: Search                           ║
@@ -381,18 +382,6 @@
   ║  ·················e·· │ Esc CtrlTab CtrlO                                                │ Common_CtrlO.lua                           │ CtrlO/Esc - quit Desktop                      ║
   ║                                                                                                                                                                                       ║
   ╟─────────────────────────────────────────────────────────────────────────────────────────────────── Обработчики событий ───────────────────────────────────────────────────────────────╢
-  ║                                                                                                                                                                                       ║
-  ║  DialogEvent  │              │ Editor_LuaCheck.lua                        │ luacheck menu handler                                                                                     ║
-  ║  ViewerEvent  │              │ Common_Picture.lua                         │ index=32                                                                                                  ║
-  ║  EditorEvent  │              │ Editor_Spell.lua                           │ index=122                                                                                                 ║
-  ║  EditorEvent  │ *.lua,*.moon │ Editor_OpenScript.lua                      │ index=85                                                                                                  ║
-  ║  EditorEvent  │              │ Editor_UtfCpSet.lua                        │ index=131                                                                                                 ║
-  ║  ConsoleInput │              │ Common_CtrlAltMenuDisk.lua                 │ CtrlAltMenuDisk: нажатие левой кнопки мыши на мини-панели                                                 ║
-  ║  ExitFAR      │              │ Editor_Spell.lua                           │ index=123                                                                                                 ║
-  ║  ExitFAR      │              │ Common_Picture.lua                         │ index=33                                                                                                  ║
-  ║  ExitFAR      │              │ Common_CtrlAltMenuDisk.lua                 │ CtrlAltMenuDisk: выключить таймер                                                                         ║
-  ║                                                                                                                                                                                       ║
-  ╟────────────────────────────────────────────────────────── Обработчики событий ────────────────────────────────────────────────────────────────────────────────────────────────────────╢
   ║                                                                                                                                                                                       ║
   ║  DialogEvent  │              │ Editor_LuaCheck.lua                        │ luacheck menu handler                                                                                     ║
   ║  ViewerEvent  │              │ Common_Picture.lua                         │ index=32                                                                                                  ║
@@ -469,7 +458,7 @@
   ║                                                                                                                                                                                       ║
   ╟────────────────────────────────────────────────────────── Пункты меню плагинов ───────────────────────────────────────────────────────────────────────────────────────────────────────╢
   ║                                                                                                                                                                                       ║
-  ║  S··················· │ PC. │ Common_CtrlAltMenuDisk.lua                 │ Переключение дисков по Ctrl/Alt/Shift+стрелки                                                              ║
+  ║  S··················· │ PCD │ Common_CtrlAltMenuDisk.lua                 │ Переключение дисков по Ctrl/Alt/Shift+стрелки                                                              ║
   ║  S··················· │ P.. │ Plugin_NamedFold.lua                       │ Named Folders Lua Edition                                                                                  ║
   ║  S··················· │ PCD │ Shell_BookmarkManager.lua                  │ Менеджер закладок                                                                                          ║
   ║  ·······ED··········· │ P.. │ Editor_Past_GUID.lua                       │ Paste GUID: simple format                                                                                  ║
@@ -504,4 +493,4 @@
   ║                                                                                                                                                                                       ║
   ╚═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
 
-  19.12.2020 15:01:30 +0300
+  19.02.2021 13:22:45 +0300

@@ -1,6 +1,6 @@
 ﻿.Language=Polish,Polish (Polski)
 
-//Version: 3.0.5741.0 (Private) x64
+//Version: 3.0.5744.0 (Private) x64
 
 //[MYes]
 "Tak"
@@ -313,7 +313,7 @@
 //[MConfigUpdateEnvironment]
 "Automa&tyczna aktualizacja zmiennych systemowych"
 //[MConfigElevation]
-"wymagane uprawnienia administratora:"
+"Wymagane uprawnienia administratora:"
 //[MConfigElevationModify]
 "Do modyfikacji"
 //[MConfigElevationRead]
@@ -325,7 +325,7 @@
 //[MConfigSortingOrdinal]
 "porządkowo"
 //[MConfigSortingInvariant]
-"bez ustawień regionalnych"
+"bez zmian"
 //[MConfigSortingLinguistic]
 "językowo"
 //[MConfigSortingDigitsAsNumbers]
@@ -489,7 +489,7 @@
 "Tryb &modalny"
 
 //[MConfigAutoCompleteAutoAppend]
-"&Dołącz piewrszy pasujący element"
+"&Dołącz pierwszy pasujący element"
 
 //[MConfigInfoPanelTitle]
 "Ustawienia panelu informacyjnego"
@@ -689,7 +689,7 @@
 //[MLinkTypeSymlinkDirectory]
 "Link symboliczny (do &folderu)"
 //[MCopyPreserveAllTimestamps]
-"Zachowaj oryginalny czas"
+"Zachowaj wszystkie oryg. czasy"
 //[MCopySymLinkContents]
 "&Kopiuj zawartość linków symbolicznych"
 //[MCopyMultiActions]

@@ -1,6 +1,6 @@
 ﻿.Language=Hungarian,Hungarian (Magyar)
 
-//Version: 3.0.5741.0 (Private) x64
+//Version: 3.0.5744.0 (Private) x64
 
 //[MYes]
 "Igen"
@@ -319,7 +319,7 @@
 "Automatic update of environment variables"
 // need translation:
 //[MConfigElevation]
-"request administrator rights:"
+"Request administrator rights:"
 // need translation:
 //[MConfigElevationModify]
 "For modification"
