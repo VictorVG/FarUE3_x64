@@ -1,6 +1,6 @@
 ﻿.Language=Hungarian,Hungarian (Magyar)
 
-//Version: 3.0.5744.0 (Private) x64
+//Version: 3.0.5763.0 (Private) x64
 
 //[MYes]
 "Igen"
@@ -4609,9 +4609,6 @@
 
 //[MComspecNotFound]
 "A %COMSPEC% környezeti változó nincs definiálva"
-
-//[MOpenPluginCannotOpenFile]
-"A fájl nem nyitható meg"
 
 //[MFileFilterTitle]
 "Felhasználói szűrő"

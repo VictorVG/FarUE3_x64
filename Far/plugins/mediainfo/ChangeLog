@@ -1,3 +1,11 @@
+MediaInfo 3.15.2 18-03-2021
+---------------------------
+ * rollback 3.15.1, exiv2 lib не используется для riffvideo (.avi) и qtime (.mp4=qtime у exiv2)
+
+MediaInfo 3.15.1 18-03-2021
+---------------------------
+ * файловый просмотр - exif2 riffvideo.* fix
+
 MediaInfo 3.15 18-12-2020
 -------------------------
  + settings:default_detect_cp (без ui)

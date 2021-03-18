@@ -1,6 +1,6 @@
 ﻿.Language=Russian,Russian (Русский)
 
-//Version: 3.0.5744.0 (Private) x64
+//Version: 3.0.5763.0 (Private) x64
 
 //[MYes]
 "Да"
@@ -4333,9 +4333,6 @@
 
 //[MComspecNotFound]
 "Переменная окружения %COMSPEC% не определена"
-
-//[MOpenPluginCannotOpenFile]
-"Ошибка открытия файла"
 
 //[MFileFilterTitle]
 "Фильтр"

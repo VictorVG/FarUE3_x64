@@ -4,7 +4,9 @@ if "%1" == "-r" (if "%3"=="" (goto usg
  ) else (
  if "%2" == "" (goto usg)
  )
-set br=%4 && git clone -c core.symlinks=true %2 %3 && cd /d %3 && goto brnch)
+if "%1" == "-r" (set br=%4 && git clone --recurse-submodules -c core.symlinks=true %2 %3 && cd /d %3 && goto brnch
+  ) else (
+  set br=%4 && git clone -c core.symlinks=true %2 %3 && cd /d %3 && goto brnch)
 if not "%1" == "-b" (goto usg)
 if not "%3" == "" (set br=%3 && cd %2) else (if not "%2"=="" (if not exist %2 (set br=%2) else ((set br=) && cd %2)) else (set br=))
 :brnch

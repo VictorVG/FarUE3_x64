@@ -1,6 +1,6 @@
 ﻿.Language=German,German (Deutsch)
 
-//Version: 3.0.5744.0 (Private) x64
+//Version: 3.0.5763.0 (Private) x64
 
 //[MYes]
 "Ja"
@@ -4435,9 +4435,6 @@
 
 //[MComspecNotFound]
 "Umgebungsvariable %COMSPEC% nicht definiert"
-
-//[MOpenPluginCannotOpenFile]
-"Kann Datei nicht öffnen"
 
 //[MFileFilterTitle]
 "Filter"

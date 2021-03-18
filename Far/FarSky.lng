@@ -1,6 +1,6 @@
 ﻿.Language=Slovak,Slovak (Slovenčina)
 
-//Version: 3.0.5744.0 (Private) x64
+//Version: 3.0.5763.0 (Private) x64
 
 //[MYes]
 "Áno"
@@ -4367,9 +4367,6 @@
 
 //[MComspecNotFound]
 "Premenná prostredia %COMSPEC% nie je definovaná"
-
-//[MOpenPluginCannotOpenFile]
-"Nemôžem otvoriť súbor"
 
 //[MFileFilterTitle]
 "Filter"

@@ -1,6 +1,6 @@
 ﻿.Language=English,English
 
-//Version: 3.0.5744.0 (Private) x64
+//Version: 3.0.5763.0 (Private) x64
 
 //[MYes]
 "Yes"
@@ -428,7 +428,7 @@
 //[MConfigClearType]
 "Cl&earType-friendly redraw (can be slow)"
 //[MConfigSetConsoleIcon]
-"Сonsole &icon:"
+"Console &icon:"
 //[MConfigSetAdminConsoleIcon]
 "Alternate for &Administrator"
 //[MConfigTitleAddons]
@@ -4329,9 +4329,6 @@
 
 //[MComspecNotFound]
 "Environment variable %COMSPEC% not defined"
-
-//[MOpenPluginCannotOpenFile]
-"Cannot open the file"
 
 //[MFileFilterTitle]
 "Filter"

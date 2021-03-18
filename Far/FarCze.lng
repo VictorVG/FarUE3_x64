@@ -1,6 +1,6 @@
 ﻿.Language=Czech,Czech (Čeština)
 
-//Version: 3.0.5744.0 (Private) x64
+//Version: 3.0.5763.0 (Private) x64
 
 //[MYes]
 "Ano"
@@ -4346,9 +4346,6 @@
 
 //[MComspecNotFound]
 "Proměnná prostředí %COMSPEC% není definována"
-
-//[MOpenPluginCannotOpenFile]
-"Nelze otevřít soubor"
 
 //[MFileFilterTitle]
 "Filtr"

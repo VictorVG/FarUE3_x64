@@ -1,6 +1,6 @@
 ﻿.Language=Italian,Italian (Italiano)
 
-//Version: 3.0.5744.0 (Private) x64
+//Version: 3.0.5763.0 (Private) x64
 
 //[MYes]
 "&Si"
@@ -4346,9 +4346,6 @@
 
 //[MComspecNotFound]
 "Variabile Ambiente %COMSPEC% Non Definita!"
-
-//[MOpenPluginCannotOpenFile]
-"Non Posso Aprire Il File"
 
 //[MFileFilterTitle]
 "Filtro"

@@ -1,6 +1,6 @@
 ﻿.Language=Polish,Polish (Polski)
 
-//Version: 3.0.5744.0 (Private) x64
+//Version: 3.0.5763.0 (Private) x64
 
 //[MYes]
 "Tak"
@@ -465,7 +465,7 @@
 "Nic nie rób"
 
 //[MConfigCmdlineTitle]
-"Ustawienia &linii poleceń"
+"Ustawienia wiersza poleceń"
 //[MConfigCmdlineEditBlock]
 "&Trwałe bloki"
 //[MConfigCmdlineDelRemovesBlocks]
@@ -473,7 +473,7 @@
 //[MConfigCmdlineAutoComplete]
 "&AutoUzupełnianie"
 //[MConfigCmdlineUsePromptFormat]
-"Wy&gląd znaku zachęty linii poleceń"
+"&Format zachęty wiersza poleceń"
 //[MConfigCmdlineUseHomeDir]
 "&Użyj folderu domowego"
 //[MConfigCmdlinePromptFormatAdmin]
@@ -2202,11 +2202,11 @@
 //[MMenuPluginsManagerSettings]
 "Ustawienia ma&nagera wtyczek"
 //[MMenuDialogSettings]
-"Ustawienia okien &dialogowych"
+"Ustawienia okien dialogowyc&h"
 //[MMenuVMenuSettings]
 "Ustawienia &menu"
 //[MMenuCmdlineSettings]
-"Ustawienia li&nii poleceń"
+"Us&tawienia wiersza poleceń"
 //[MMenuAutoCompleteSettings]
 "&Ustawienie AutoUzupełniania"
 //[MMenuInfoPanelSettings]
@@ -2220,13 +2220,13 @@
 //[MMenuFileDescriptions]
 "Opis&y plików"
 //[MMenuFolderInfoFiles]
-"Pliki opisu &folderów"
+"Pliki opisu folde&rów"
 //[MMenuViewer]
 "Ustawienia pod&glądu"
 //[MMenuEditor]
 "Ustawienia &edytora"
 //[MMenuCodePages]
-"S&trony kodowe"
+"Strony ko&dowe"
 //[MMenuColors]
 "&Kolory"
 //[MMenuFilesHighlighting]
@@ -4329,9 +4329,6 @@
 
 //[MComspecNotFound]
 "Nie zdefiniowano zmiennej środowiskowej %COMSPEC%"
-
-//[MOpenPluginCannotOpenFile]
-"Nie można otworzyć pliku"
 
 //[MFileFilterTitle]
 "Filtr wyszukiwania"

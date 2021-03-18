@@ -1,6 +1,6 @@
 ﻿.Language=Lithuanian,Lithuanian (Lietuvių)
 
-//Version: 3.0.5744.0 (Private) x64
+//Version: 3.0.5763.0 (Private) x64
 
 //[MYes]
 "Taip"
@@ -480,7 +480,7 @@
 "Cl&earType-friendly redraw (can be slow)"
 // need translation:
 //[MConfigSetConsoleIcon]
-"Сonsole &icon:"
+"Console &icon:"
 // need translation:
 //[MConfigSetAdminConsoleIcon]
 "Alternate for &Administrator"
@@ -5018,10 +5018,6 @@
 // need translation:
 //[MComspecNotFound]
 "Environment variable %COMSPEC% not defined"
-
-// need translation:
-//[MOpenPluginCannotOpenFile]
-"Cannot open the file"
 
 // need translation:
 //[MFileFilterTitle]
