@@ -1,7 +1,7 @@
-GNU Wget 1.20.1, a non-interactive network retriever, built on mingw32.
+GNU Wget 1.21.1, a non-interactive network retriever.
 
--cares +digest -gpgme +https +ipv6 +iri +large-file +metalink +nls
-+ntlm +opie -psl +ssl/openssl
+-cares +digest +gpgme +https +ipv6 +iri +large-file +metalink -nls
++ntlm +opie +psl +ssl/openssl
 
 Usage: wget [OPTION]... [URL]...
 
@@ -22,11 +22,11 @@ Logging and input file:
   -q,  --quiet                     quiet (no output)
   -v,  --verbose                   be verbose (this is the default)
   -nv, --no-verbose                turn off verboseness, without being quiet
-       --report-speed=TYPE         output bandwidth as TYPE. TYPE can be bits
+       --report-speed=TYPE         output bandwidth as TYPE.  TYPE can be bits
   -i,  --input-file=FILE           download URLs found in local or external
-                                      FILE
+                                     FILE
        --input-metalink=FILE       download files covered in local Metalink
-                                      FILE
+                                     FILE
   -F,  --force-html                treat input file as HTML
   -B,  --base=URL                  resolves HTML input-file links (-i -F)
                                      relative to URL
@@ -39,7 +39,7 @@ Download:
   -t,  --tries=NUMBER              set number of retries to NUMBER (0 unlimits)
        --retry-connrefused         retry even if connection is refused
        --retry-on-http-error=ERRORS    comma-separated list of HTTP errors to
-                                      retry
+                                       retry
   -O,  --output-document=FILE      write documents to FILE
   -nc, --no-clobber                skip downloads that would download to
                                      existing files (overwriting them)
@@ -62,11 +62,14 @@ Download:
        --dns-timeout=SECS          set the DNS lookup timeout to SECS
        --connect-timeout=SECS      set the connect timeout to SECS
        --read-timeout=SECS         set the read timeout to SECS
-  -w,  --wait=SECONDS              wait SECONDS between retrievals
+  -w,  --wait=SECONDS              wait SECONDS between retrievals (applies
+                                     if more then 1 URL is to be retrieved)
        --waitretry=SECONDS         wait 1..SECONDS between retries of a
-                                      retrieval
+                                      retrieval (applies if more then 1 URL
+                                      is to be retrieved)
        --random-wait               wait from 0.5*WAIT...1.5*WAIT secs between
-                                      retrievals
+                                       retrievals (applies if more then 1 URL
+                                       is to be retrieved)
        --no-proxy                  explicitly turn off proxy
   -Q,  --quota=NUMBER              set retrieval quota to NUMBER
        --bind-address=ADDRESS      bind to ADDRESS (hostname or IP) on local
@@ -79,24 +82,24 @@ Download:
   -4,  --inet4-only                connect only to IPv4 addresses
   -6,  --inet6-only                connect only to IPv6 addresses
        --prefer-family=FAMILY      connect first to addresses of specified
-                                      family, one of IPv6, IPv4, or none
+                                     family, one of IPv6, IPv4, or none
        --user=USER                 set both ftp and http user to USER
        --password=PASS             set both ftp and http password to PASS
        --ask-password              prompt for passwords
        --use-askpass=COMMAND       specify credential handler for requesting
                                      username and password.  If no COMMAND is
-                                     specified the WGET_ASKPASS or the
-                                     SSH_ASKPASS environment variable is used.
+                                     specified the WGET_ASKPASS or the SSH_
+                                     ASKPASS environment variable is used.
        --no-iri                    turn off IRI support
        --local-encoding=ENC        use ENC as the local encoding for IRIs
        --remote-encoding=ENC       use ENC as the default remote encoding
        --unlink                    remove file before clobber
        --keep-badhash              keep files with checksum mismatch (append
-                                      .badhash)
+                                    .badhash)
        --metalink-index=NUMBER     Metalink application/metalink4+xml metaurl
-                                      ordinal NUMBER
+                                     ordinal NUMBER
        --metalink-over-http        use Metalink metadata from HTTP response
-                                      headers
+                                     headers
        --preferred-location        preferred location for Metalink resources
 
 Directories:
@@ -116,7 +119,7 @@ HTTP options:
        --default-page=NAME         change the default page name (normally
                                      this is 'index.html'.)
   -E,  --adjust-extension          save HTML/CSS documents with proper
-                                      extensions
+                                     extensions
        --ignore-length             ignore 'Content-Length' header field
        --header=STRING             insert STRING among the headers
        --compression=TYPE          choose compression, one of auto, gzip and
@@ -125,16 +128,16 @@ HTTP options:
        --proxy-user=USER           set USER as proxy username
        --proxy-password=PASS       set PASS as proxy password
        --referer=URL               include 'Referer: URL' header in HTTP
-                                      request
+                                     request
        --save-headers              save the HTTP headers to file
   -U,  --user-agent=AGENT          identify as AGENT instead of Wget/VERSION
        --no-http-keep-alive        disable HTTP keep-alive (persistent
-                                      connections)
+                                     connections)
        --no-cookies                don't use cookies
        --load-cookies=FILE         load cookies from FILE before session
        --save-cookies=FILE         save cookies to FILE after session
        --keep-session-cookies      load and save session (non-permanent)
-                                      cookies
+                                     cookies
        --post-data=STRING          use the POST method; send STRING as the data
        --post-file=FILE            use the POST method; send contents of FILE
        --method=HTTPMethod         use method "HTTPMethod" in the request
@@ -165,19 +168,18 @@ HTTPS (SSL/TLS) options:
                                    'sha256//' and separated by ';', to verify
                                    peer against
        --random-file=FILE          file with random data for seeding the SSL
-                                     PRNG
-       --ciphers=STR               Set the priority string (GnuTLS) or cipher
-                                      list string (OpenSSL) directly.
-                                   Use with care. This option overrides
-                                      --secure-protocol.
-                                   The format and syntax of this string depend
-                                      on the specific SSL/TLS engine.
+                                    PRNG
 
+       --ciphers=STR           Set the priority string (GnuTLS) or cipher list
+                                     string (OpenSSL) directly. Use with care.
+                                   This option overrides --secure-protocol.
+                                   The format and syntax of this string
+                                     depend on the specific SSL/TLS engine.
 HSTS options:
 
        --no-hsts                   disable HSTS
        --hsts-file                 path of HSTS database (will override
-                                      default)
+                                     default)
 
 FTP options:
 
@@ -188,21 +190,20 @@ FTP options:
        --no-passive-ftp            disable the "passive" transfer mode
        --preserve-permissions      preserve remote file permissions
        --retr-symlinks             when recursing, get linked-to files
-                                      (not dir)
+                                    (not dir)
 
 FTPS options:
 
        --ftps-implicit                 use implicit FTPS (default port is 990)
        --ftps-resume-ssl               resume the SSL/TLS session started in
-                                         the control connection when
-                                         opening a data connection
+                                         the control connection when opening a
+                                         data connection
        --ftps-clear-data-connection    cipher the control channel only; all the
-                                          data will be in plaintext
+                                         data will be in plaintext
        --ftps-fallback-to-ftp          fall back to FTP if FTPS is not
-                                          supported in the target server
+                                         supported in the target server
+WARC options:
 
-WARC options
-:
        --warc-file=FILENAME        save request/response data to a .warc.gz
                                       file
        --warc-header=STRING        insert STRING into the warcinfo record
@@ -218,22 +219,18 @@ WARC options
 Recursive download:
 
   -r,  --recursive                 specify recursive download
-  -l,  --level=NUMBER              maximum recursion depth (inf or 0 for
-                                      infinite)
+  -l,  --level=NUMBER              maximum recursion depth (inf or 0 for infinite)
        --delete-after              delete files locally after downloading them
   -k,  --convert-links             make links in downloaded HTML or CSS point to
                                      local files
-       --convert-file-only         convert the file part of the URLs only (
-                                      usually known as the basename)
+       --convert-file-only         convert the file part of the URLs only (usually
+                                     known as the basename)
        --backups=N                 before writing file X, rotate up to N backup
-                                      files
+                                     files
   -K,  --backup-converted          before converting file X, back up as X.orig
-  -m,  --mirror                    shortcut for -N -r -l inf
-                                      --no-remove-listing
-  -p,  --page-requisites           get all images, etc. needed to display HTML
-                                      page
-       --strict-comments           turn on strict (SGML) handling of HTML
-                                      comments
+  -m,  --mirror                    shortcut for -N -r -l inf --no-remove-listing
+  -p,  --page-requisites           get all images, etc. needed to display HTML page
+       --strict-comments           turn on strict (SGML) handling of HTML comments
 
 Recursive accept/reject:
 
@@ -255,5 +252,5 @@ Recursive accept/reject:
   -X,  --exclude-directories=LIST  list of excluded directories
   -np, --no-parent                 don't ascend to the parent directory
 
-Email bug reports, questions, discussions to bug-wget@gnu.org and/or open
-issues at https://savannah.gnu.org/bugs/?func=additem&group=wget .
+Email bug reports, questions, discussions to <bug-wget@gnu.org>
+and/or open issues at https://savannah.gnu.org/bugs/?func=additem&group=wget.
