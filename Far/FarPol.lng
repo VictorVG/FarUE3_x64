@@ -1,6 +1,6 @@
 ﻿.Language=Polish,Polish (Polski)
 
-//Version: 3.0.5768.0 (Private) x64
+//Version: 3.0.5769.0 (Private) x64
 
 //[MYes]
 "Tak"
@@ -570,27 +570,27 @@
 //[MViewConfigSaveWrapMode]
 "Zapisz zawi&janie wierszy"
 //[MViewConfigSaveViewMode]
-"Zapisz t&ryb podglądu"
+"Zapisz try&b podglądu"
 //[MViewConfigDetectDumpMode]
-"Wykryj sposób podglądu"
+"W&ykryj sposób podglądu"
 //[MViewAutoDetectCodePage]
-"Rozpozn&aj stronę kodową pliku"
+"Rozpoznaj stronę kodową plik&u"
 //[MViewConfigTabSize]
 "Rozmiar &tabulatora"
 //[MViewConfigScrollbar]
-"Pokaż &pasek przewijania"
+"P&okaż pasek przewijania"
 //[MViewConfigArrows]
 "Pokaż strzał&ki przewijania"
 //[MViewConfigPersistentSelection]
 "T&rwałe zaznaczenie"
 //[MViewConfigDefaultCodePage]
-"Domyślna strona kodowa:"
+"&Domyślna strona kodowa:"
 //[MViewConfigMaxLineSize]
-"Maksymalna szerokość linii"
+"&Maksymalna szerokość linii"
 //[MViewConfigVisible0x00]
-"Widoczne '\\0'"
+"&Widoczne '\\0'"
 //[MViewConfigEditAutofocus]
-"Auto-focus okna szukania"
+"Auto-&focus okna szukania"
 
 //[MEditConfigTitle]
 "Ustawienia edytora"
@@ -613,7 +613,7 @@
 "T&rwałe bloki"
 
 //[MEditConfigDelRemovesBlocks]
-"&DEL usuwa bloki"
+"DE&L usuwa bloki"
 //[MEditConfigAutoIndent]
 "Automatyczne &wcięcia"
 //[MEditConfigSavePos]
@@ -623,7 +623,7 @@
 //[MEditCursorBeyondEnd]
 "&Kursor za końcem linii"
 //[MEditAutoDetectCodePage]
-"Rozpozn&aj tablicę znaków"
+"Rozpoznaj &stronę kodową"
 //[MEditShareWrite]
 "Z&ezwól na edycję plików otwartych do zapisu"
 //[MEditLockROFileModification]
@@ -633,13 +633,13 @@
 //[MEditConfigTabSize]
 "Rozmiar ta&bulatora"
 //[MEditConfigScrollbar]
-"Pokaż &pasek przewijania"
+"Pokaż pasek przewi&jania"
 //[MEditShowWhiteSpace]
-"Pokaż &białe znaki"
+"Pokaż b&iałe znaki"
 //[MEditConfigSelFound]
 "W&ybierz znalezione"
 //[MEditConfigCursorAtEnd]
-"Kursor na końcu bloku"
+"K&ursor na końcu bloku"
 //[MEditConfigDefaultCodePage]
 "Domyślna strona kodowa:"
 //[MConfigEditor]

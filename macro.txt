@@ -173,6 +173,7 @@
   ║  S··················· │ Enter NumEnter MsM1Click                                         │ Plugin_IntChecker.lua                      │ Integrity Checker: check integrity use        ║
   ║                       │                                                                  │                                            │ check summ                                    ║
   ║  S··················· │ F3 CtrlPgDn                                                      │ SV_Review.lua                              │ Review: Open video files                      ║
+  ║  S··················· │ F3 CtrlPgDn                                                      │ SV_Review.lua                              │ Review: view SVG                              ║
   ║  S··················· │ LAltC                                                            │ Plugin_arclite.lua                         │ ArcLite: Main Menu                            ║
   ║  S··················· │ LAltLCtrlV                                                       │ Plugin_FileVer.lua                         │ File Version                                  ║
   ║  S··················· │ LAltR                                                            │ Plugin_FileCase.lua                        │ File Case                                     ║
@@ -493,4 +494,4 @@
   ║                                                                                                                                                                                       ║
   ╚═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
 
-  19.02.2021 13:22:45 +0300
+  25.03.2021 01:15:39 +0300

@@ -1,5 +1,4 @@
-﻿
-local FarHints = "CDF48DA0-0334-4169-8453-69048DD3B51C"
+﻿local FarHints = "CDF48DA0-0334-4169-8453-69048DD3B51C"
 local ReviewID = "0364224C-A21A-42ED-95FD-34189BA4B204"
 local ViewDlgID = "FAD3BD72-2641-4D00-8F98-5467EEBCE827"
 local ThumbDlgID = "ABDFD3DF-FE59-4714-8068-9F944022EA50"
@@ -389,7 +388,6 @@ Macro
 --    end
 --  end;
 --}
-
 
 
 ------------------------------------------------------------------------------
