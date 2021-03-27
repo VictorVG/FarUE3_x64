@@ -1,3 +1,7 @@
+MediaInfo 3.15.3 25-03-2021
+---------------------------
+ * Recover old OS compatibility for new VC2109 compiler
+
 MediaInfo 3.15.2 18-03-2021
 ---------------------------
  * rollback 3.15.1, exiv2 lib не используется для riffvideo (.avi) и qtime (.mp4=qtime у exiv2)

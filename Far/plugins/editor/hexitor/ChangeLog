@@ -1,3 +1,7 @@
+Hexitor 3.12.4 25-03-2021
+-------------------------
+ * Recover old OS compatibility for new VC2109 compiler
+
 Hexitor 3.12.3 08-08-2019
 -------------------------
  + Polish translation

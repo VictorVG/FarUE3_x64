@@ -1,3 +1,7 @@
+Hunspell 3.5.1 25-03-2021
+-------------------------
+ * Recover old OS compatibility for new VC2109 compiler
+
 Hunspell 3.5.0 21-12-2020
 -------------------------
  * lubhunspell 1.7.0
