@@ -1,7 +1,3 @@
-JClassInfo 3.10.1 25-03-2021
-----------------------------
- * Recover old OS compatibility for new VC2109 compiler
-
 JClassInfo 3.10 13-09-2018
 --------------------------
  * Fernflower обновлён, может декомпилировать java 8 (thanks to Anonymous - https://sourceforge.net/p/farplugs/tickets/110/)

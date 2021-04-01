@@ -1,4 +1,4 @@
-Notes on "Evaluate as script" functionality
+﻿Notes on "Evaluate as script" functionality
 
 All registered ActiveScripting engines will be present in the list, both built-in in Windows
 (JScript and VBScript) and any 3rd party you could have installed, like PerlScript or bundled LuaScript

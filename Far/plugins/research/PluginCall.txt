@@ -1,4 +1,4 @@
-Plugin exposed API reference
+﻿Plugin exposed API reference
 
 NOTE: currently Far3 does not allow opening Panel from Plugin call, so you should not really
 use these for File Search for example.
@@ -42,7 +42,7 @@ Complete operations:
 		Replace			Text, Replace, Script; InSelection, IsRegExp, CaseSensitive, SeveralLine, Reverse, FromCurrent, RemoveEmpty, RemoveNoMatch, AsScript
 		Repeat			Replace, Script; RepeatCount, AsScript
 		Filter			Text; LeaveFilter, IsRegExp, CaseSensitive, Reverse, FromCurrent
-		Transliterate	Text, Replace; 
+		Transliterate	Text, Replace;
 
 	Commands and parameters available from viewer:
 		Search			Text; IsRegExp, CaseSensitive, SeveralLine

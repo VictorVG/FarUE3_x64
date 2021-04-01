@@ -1,4 +1,5 @@
-п»їlocal FarHints = "CDF48DA0-0334-4169-8453-69048DD3B51C"
+
+local FarHints = "CDF48DA0-0334-4169-8453-69048DD3B51C" 
 local ReviewID = "0364224C-A21A-42ED-95FD-34189BA4B204"
 local ViewDlgID = "FAD3BD72-2641-4D00-8F98-5467EEBCE827"
 local ThumbDlgID = "ABDFD3DF-FE59-4714-8068-9F944022EA50"
@@ -46,93 +47,93 @@ function Review.Update(Delay)
 end;
 
 
--- РџРµСЂРµС…РѕРґ Рє СЃР»РµРґСѓСЋС‰РµРјСѓ РёР·РѕР±СЂР°Р¶РµРЅРёСЋ РІ С‚РµРєС‰РµР№ РїР°РЅРµР»Рё
--- Orig=0, Next=1 - Рє СЃР»РµРґСѓСЋС‰РµРјСѓ
--- Orig=0, Next=0 - Рє РїСЂРµРґС‹РґСѓС‰РµРјСѓ
--- Orig=1         - Рє РїРµСЂРІРѕРјСѓ
--- Orig=2         - Рє РїРѕСЃР»РµРґРЅРµРјСѓ
--- Р’РѕР·РІСЂР°С‰Р°РµС‚: РџСЂРёР·РЅР°Рє СѓСЃРїРµС€РЅРѕСЃС‚Рё РїРµСЂРµС…РѕРґР°
+-- Переход к следующему изображению в текщей панели
+-- Orig=0, Next=1 - к следующему
+-- Orig=0, Next=0 - к предыдущему
+-- Orig=1         - к первому
+-- Orig=2         - к последнему
+-- Возвращает: Признак успешности перехода
 
 function Review.Goto(Orig, Next)
   return Plugin.Call(ID, "Goto", Orig, Next)
 end;
 
--- РЈСЃС‚Р°РЅРѕРІРєР° РјР°СЃС€С‚Р°Р±Р° РёР·РѕР±СЂР°Р¶РµРЅРёСЏ
--- Mode=0  - РђРІС‚РѕРјР°С‚РёС‡РµСЃРєРёР№ РјР°СЃС€С‚Р°Р±
---   Val=1 - РџРѕ РјР°РєСЃРёРјР°Р»СЊРЅРѕРјСѓ СЂР°Р·РјРµСЂСѓ
---   Val=2 - РџРѕ С€РёСЂРёРЅРµ
---   Val=3 - РџРѕ РІС‹СЃРѕС‚Рµ
--- Mode=1  - РЈСЃС‚Р°РЅРѕРІРєР° Р»РёРЅРµР№РЅРѕРіРѕ РјР°СЃС€С‚Р°Р±Р°
---   Val   - РњР°СЃС€С‚Р°Р±РЅС‹Р№ РєРѕСЌСЌС„РёС†РёРµРЅС‚ (РІРµС‰РµСЃС‚РІРµРЅРЅРѕРµ С‡РёСЃР»Рѕ), 1 - 100%
--- Mode=2  - РР·РјРµРЅРµРЅРёРµ Р»РѕРіР°СЂРёС„РјРёС‡РµСЃРєРѕРіРѕ РјР°СЃС€С‚Р°Р±Р°
---   Val   - РЁР°Рі РёР·РјРµРЅРµРЅРёСЏ. РџСЂРё 100% РјР°СЃС€С‚Р°Р±Рµ 1 СЃРѕРѕС‚РІРµС‚СЃС‚РІСѓРµС‚ 1%
--- Mode=3  - РўРѕ-Р¶Рµ, С‡С‚Рѕ Mode=2, РѕС‚РЅРѕСЃРёС‚РµР»СЊРЅРѕ РєСѓСЂСЃРѕСЂР° РјС‹С€Рё
--- Р’РѕР·РІСЂР°С‰Р°РµС‚: Р РµР¶РёРј, РљРѕСЌС„С„РёС†РёРµРЅС‚
+-- Установка масштаба изображения
+-- Mode=0  - Автоматический масштаб
+--   Val=1 - По максимальному размеру
+--   Val=2 - По ширине
+--   Val=3 - По высоте
+-- Mode=1  - Установка линейного масштаба
+--   Val   - Масштабный коээфициент (вещественное число), 1 - 100%
+-- Mode=2  - Изменение логарифмического масштаба
+--   Val   - Шаг изменения. При 100% масштабе 1 соответствует 1%
+-- Mode=3  - То-же, что Mode=2, относительно курсора мыши
+-- Возвращает: Режим, Коэффициент
 
 function Review.Scale(Mode, Val)
   return Plugin.Call(ID, "Scale", Mode, Val)
 end;
 
--- РЈСЃС‚Р°РЅРѕРІРєР° С‚РµРєСѓС‰РµР№ СЃС‚СЂР°РЅРёС†С‹ РґР»СЏ РјРЅРѕРіРѕСЃС‚СЂР°РЅРёС‡РЅРѕРіРѕ РёР·РѕР±СЂР°Р¶РµРЅРёСЏ
--- Р’РѕР·РІСЂР°С‰Р°РµС‚: РўРµРєСѓС‰Р°СЏ СЃС‚СЂР°РЅРёС†Р°, РљРѕР»РёС‡РµСЃС‚РІРѕ СЃС‚СЂР°РЅРёС†
+-- Установка текущей страницы для многостраничного изображения
+-- Возвращает: Текущая страница, Количество страниц
 
 function Review.Page(Number)
   return Plugin.Call(ID, "Page", Number)
 end;
 
 
--- РџРѕРІС‚РѕСЂРЅРѕРµ РґРµРєРѕРґРёСЂРѕРІР°РЅРёРµ РёР·РѕР±СЂР°Р¶РµРЅРёСЏ СЃ РїРѕРјРѕС‰СЊСЋ РѕРїСЂРµРґРµР»РµРЅРЅРѕРіРѕ РґРµРєРѕРґРµСЂР°
--- Mode=0 - РўРѕ-Р¶Рµ РґРµРєРѕРґРµСЂ
--- Mode=1 - Р”РµРєРѕРґРµСЂ РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ
--- Mode=2 - РЎР»РµРґСѓСЋС‰РёР№ РґРµРєРѕРґРµСЂ
--- Mode=3 - РџСЂРµРґС‹РґСѓС‰РёР№ РґРµРєРѕРґРµСЂ
--- Р’РѕР·РІСЂР°С‰Р°РµС‚ РёРјСЏ РЅРѕРІРѕРіРѕ РґРµРєРѕРґРµСЂР°
+-- Повторное декодирование изображения с помощью определенного декодера
+-- Mode=0 - То-же декодер
+-- Mode=1 - Декодер по умолчанию
+-- Mode=2 - Следующий декодер
+-- Mode=3 - Предыдущий декодер
+-- Возвращает имя нового декодера
 
 function Review.Decoder(Mode)
   return Plugin.Call(ID, "Decoder", Mode)
 end;
 
 
--- РџРѕРІРѕСЂРѕС‚/РѕС‚СЂР°Р¶РµРЅРёРµ РёР·РѕР±СЂР°Р¶РµРЅРёСЏ
--- Mode=0  - РѕС‚РЅРѕСЃРёС‚РµР»СЊРЅС‹Р№ РїРѕРІРѕСЂРѕС‚
---   Val=1 - РїРѕРІРѕСЂРѕС‚ +90
---   Val=2 - РїРѕРІРѕСЂРѕС‚ -90
---   Val=3 - РѕС‚СЂР°Р¶РµРЅРёРµ РїРѕ РіРѕСЂРёР·РѕРЅС‚Р°Р»Рё
---   Val=4 - РѕС‚СЂР°Р¶РµРЅРёРµ РїРѕ РІРµСЂС‚РёРєР°Р»Рё
+-- Поворот/отражение изображения
+-- Mode=0  - относительный поворот
+--   Val=1 - поворот +90
+--   Val=2 - поворот -90
+--   Val=3 - отражение по горизонтали
+--   Val=4 - отражение по вертикали
 
 function Review.Rotate(Mode, Val)
   return Plugin.Call(ID, "Rotate", Mode, Val)
 end;
 
 
--- РЎРѕС…СЂР°РЅРµРЅРёРµ РїРѕРІРµСЂРЅСѓС‚РѕРіРѕ РёР·РѕР±СЂР°Р¶РµРЅРёСЏ
--- Flags&1 - РџРѕРІРѕСЂРѕС‚ РїСѓС‚РµРј РєРѕСЂСЂРµРєС†РёРё EXIF Р·Р°РіРѕР»РѕРІРєР° (РµСЃР»Рё РІРѕР·РјРѕР¶РЅРѕ)
--- Flags&2 - РџРѕРІРѕСЂРѕС‚ РїСѓС‚РµРј С‚СЂР°РЅСЃС„РѕСЂРјР°С†РёРё
--- Flags&4 - Р”РѕРїСѓСЃС‚РёРјР° С‚СЂР°РЅСЃС„РѕСЂРјР°С†РёСЏ СЃ РїРѕС‚РµСЂРµР№ РєР°С‡РµСЃС‚РІР°
--- Р’РѕР·РІСЂР°С‰Р°РµС‚ РїСЂРёР·РЅР°Рє СѓСЃРїРµС€РЅРѕСЃС‚Рё СЃРѕС…СЂР°РЅРµРЅРёСЏ
+-- Сохранение повернутого изображения
+-- Flags&1 - Поворот путем коррекции EXIF заголовка (если возможно)
+-- Flags&2 - Поворот путем трансформации
+-- Flags&4 - Допустима трансформация с потерей качества
+-- Возвращает признак успешности сохранения
 
 function Review.Save(Flags)
   return Plugin.Call(ID, "Save", Flags)
 end;
 
 
--- Р’РєР»СЋС‡Р°РµС‚/РІС‹РєР»СЋС‡Р°РµС‚ СЂРµР¶РёРј РїРѕР»РЅРѕСЌРєСЂР°РЅРЅРѕРіРѕ РѕС‚РѕР±СЂР°Р¶РµРЅРёСЏ
--- Р•СЃР»Рё РІС…РѕРґРЅРѕР№ РїР°СЂР°РјРµС‚СЂ РѕРїСѓС‰РµРЅ - РІРѕР·РІСЂР°С‰Р°РµС‚ С‚РµРєСѓС‰РµРµ СЃРѕСЃС‚РѕСЏРЅРёРµ
+-- Включает/выключает режим полноэкранного отображения
+-- Если входной параметр опущен - возвращает текущее состояние
 
 function Review.Fullscreen(On)
   return Plugin.Call(ID, "Fullscreen", On)
 end;
 
 
--- РћС‚РѕР±СЂР°Р¶РµРЅРёРµ СЌСЃРєРёР·РѕРІ
+-- Отображение эскизов 
 
 function Review.Thumbs(...)
   return Plugin.Call(ID, "Thumbs", ...)
 end;
 
 
--- РЈСЃС‚Р°РЅР°РІР»РёРІР°РµС‚ СЂР°Р·РјРµСЂ СЌСЃРєРёР·Р°, РµСЃР»Рё Р·Р°РґР°РЅРѕ Val
--- Р’РѕР·РІСЂР°С‰Р°РµС‚: РќРѕРІС‹Р№ СЂР°Р·РјРµСЂ СЌСЃРєРёР·Р°
+-- Устанавливает размер эскиза, если задано Val
+-- Возвращает: Новый размер эскиза
 
 function Review.Size(Val)
   return Plugin.Call(ID, "Size", Val)
@@ -141,9 +142,9 @@ end;
 
 -------------------------------------------------------------------------------
 
-Macro
-{
-  description="Review: QuickView Helper"; area="Shell";
+Macro 
+{ 
+  description="Review: QuickView Helper"; area="Shell"; 
     key="CtrlO CtrlU CtrlF1 CtrlF2 Esc CtrlUp CtrlDown CtrlLeft CtrlRight";
 
   condition=function()
@@ -158,8 +159,8 @@ Macro
 }
 
 
-Macro
-{
+Macro 
+{ 
   description="Review: Scale QuickView with mouse"; area="Shell";
     key="MsWheelUp MsWheelDown";
 
@@ -173,8 +174,8 @@ Macro
 }
 
 
-Macro
-{
+Macro 
+{ 
   description="Review: Scale 0.N%"; area="Dialog"; key="/\\d/"; condition=Review.IsView;
 
   action=function()
@@ -185,8 +186,8 @@ Macro
 }
 
 
-Macro
-{
+Macro 
+{ 
   description="Review: Goto Next Image"; area="Dialog"; key="PgDn Num3 CtrlMsWheelDown"; condition=Review.IsView; priority=99; EnableOutput=true;
 
   action=function()
@@ -199,8 +200,8 @@ Macro
   end;
 }
 
-Macro
-{
+Macro 
+{ 
   description="Review: Goto Prev Image"; area="Dialog"; key="PgUp Num9 CtrlMsWheelUp"; condition=Review.IsView; priority=99; EnableOutput=true;
 
   action=function()
@@ -216,8 +217,8 @@ Macro
 
 local LastFile
 
-Macro
-{
+Macro 
+{ 
   description="Review: Goto First Image"; area="Dialog"; key="Home"; condition=Review.IsView; EnableOutput=true;
 
   action=function()
@@ -232,8 +233,8 @@ Macro
   end;
 }
 
-Macro
-{
+Macro 
+{ 
   description="Review: Goto Last Image"; area="Dialog"; key="End"; condition=Review.IsView; EnableOutput=true;
 
   action=function()
@@ -249,8 +250,8 @@ Macro
 }
 
 
-Macro
-{
+Macro 
+{ 
   description="Review: Goto back Image"; area="Dialog"; key="BS"; condition=Review.IsView; EnableOutput=true;
 
   action=function()
@@ -266,8 +267,8 @@ Macro
 
 
 
-Macro
-{
+Macro 
+{ 
   description="Review: Goto Next Page"; area="Dialog Shell"; key="CtrlPgDn CtrlMsWheelDown"; condition=Review.IsActive;
 
   action=function()
@@ -275,8 +276,8 @@ Macro
   end;
 }
 
-Macro
-{
+Macro 
+{ 
   description="Review: Goto Prev Page"; area="Dialog Shell"; key="CtrlPgUp CtrlMsWheelUp"; condition=Review.IsActive;
 
   action=function()
@@ -284,8 +285,8 @@ Macro
   end;
 }
 
-Macro
-{
+Macro 
+{ 
   description="Review: Goto First Page"; area="Dialog Shell"; key="CtrlHome"; condition=Review.IsActive;
 
   action=function()
@@ -293,8 +294,8 @@ Macro
   end;
 }
 
-Macro
-{
+Macro 
+{ 
   description="Review: Goto Last Page"; area="Dialog Shell"; key="CtrlEnd"; condition=Review.IsActive;
 
   action=function()
@@ -304,8 +305,8 @@ Macro
 }
 
 
-Macro
-{
+Macro 
+{ 
   description="Review: Next Decoder"; area="Dialog Shell"; key="AltPgDn"; condition=Review.IsActive;
 
   action=function()
@@ -313,8 +314,8 @@ Macro
   end;
 }
 
-Macro
-{
+Macro 
+{ 
   description="Review: Prev Decoder"; area="Dialog Shell"; key="AltPgUp"; condition=Review.IsActive;
 
   action=function()
@@ -322,8 +323,8 @@ Macro
   end;
 }
 
-Macro
-{
+Macro 
+{ 
   description="Review: Default Decoder"; area="Dialog Shell"; key="AltHome"; condition=Review.IsActive;
 
   action=function()
@@ -332,8 +333,8 @@ Macro
 }
 
 
-Macro
-{
+Macro 
+{ 
   description="Review: Fullscreen mode On/Off"; area="Dialog"; key="F CtrlF"; condition=Review.IsView;
 
   action=function()
@@ -342,8 +343,8 @@ Macro
 }
 
 
-Macro
-{
+Macro 
+{ 
   description="Review: Rotate +90"; area="Dialog"; key=". ] AltMsWheelDown"; condition=Review.IsView;
 
   action=function()
@@ -351,8 +352,8 @@ Macro
   end;
 }
 
-Macro
-{
+Macro 
+{ 
   description="Review: Rotate -90"; area="Dialog"; key=", [ AltMsWheelUp"; condition=Review.IsView;
 
   action=function()
@@ -360,8 +361,8 @@ Macro
   end;
 }
 
-Macro
-{
+Macro 
+{ 
   description="Review: Swap horz"; area="Dialog"; key="Ctrl]"; condition=Review.IsView;
 
   action=function()
@@ -369,8 +370,8 @@ Macro
   end;
 }
 
-Macro
-{
+Macro 
+{ 
   description="Review: Swap vert"; area="Dialog"; key="Ctrl["; condition=Review.IsView;
 
   action=function()
@@ -378,8 +379,8 @@ Macro
   end;
 }
 
---Macro
---{
+--Macro 
+--{ 
 --  description="Review: Save picture"; area="Dialog"; key="F2"; condition=Review.IsView;
 --
 --  action=function()
@@ -390,14 +391,15 @@ Macro
 --}
 
 
+
 ------------------------------------------------------------------------------
--- Р­СЃРєРёР·С‹
+-- Эскизы
 
 
-Macro
-{
-  description="Review: Scale Thumbs"; area="Dialog";
-    key="CtrlMsWheelUp CtrlMsWheelDown ShiftMsWheelUp ShiftMsWheelDown";
+Macro 
+{ 
+  description="Review: Scale Thumbs"; area="Dialog"; 
+    key="CtrlMsWheelUp CtrlMsWheelDown ShiftMsWheelUp ShiftMsWheelDown"; 
     condition=Review.IsThumbView; priority=99;
 
   action=function()
@@ -410,8 +412,8 @@ Macro
 }
 
 
-Macro
-{
+Macro 
+{ 
   description="Review: Thumbs Size"; area="Dialog"; key="/\\d/"; condition=Review.IsThumbView;
 
   action=function()
@@ -419,3 +421,4 @@ Macro
     Review.Size(96 + n * 32)
   end;
 }
+

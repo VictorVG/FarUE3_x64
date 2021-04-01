@@ -1,8 +1,8 @@
-.Language=English,English
+﻿.Language=English,English
 .PluginContents=Regular Expression Search
 
 @Contents
-$ #Regular Expression Search and Replace, version 8.70#
+$ #Regular Expression Search and Replace, version 8.75#
     This plugin allows you to:
 
     - Perform text search and replace in editor
@@ -124,6 +124,8 @@ $ #Replacement text#
     \u      - uppercase next character.
     \L      - lowercase all charachers until \E.
     \U      - uppercase all charachers until \E.
+    \snn    - convert case to same as captured subpattern number nn.
+    \Snn    - convert case to inverse of captured subpattern number nn.
     \E      - end case modification.
     \xnn    - symbol with hexadecimal code nn (can be 1 or 2 characters).
     \nnn    - symbol with octal code nnn (can be 1 to 3 characters).
@@ -143,10 +145,10 @@ $ #Replacement text#
 
     When repeating text in editor:
     $N      - current item number
-    
+
     When replacing in or renaming files:
     $N      - current matching file number
-    $F      - current file number with at least one match 
+    $F      - current file number with at least one match
     $S      - current find number in this file
     $R      - current replacement number in this file
 
@@ -200,7 +202,7 @@ $ #Common settings#
                                     matched simultaneously.
 
   #Dot matches newline also#          If checked, dot (#.#) will match newline in
-                                    several-line searches, so #a.*b# can match 
+                                    several-line searches, so #a.*b# can match
                                     several-line fragment.
 
   #Use separate thread#               In the case of very large source strings,
@@ -462,7 +464,7 @@ $ #Replace confirmation#
   #Replace# Replace this occurence
   #All#     Replace this and all following
   #Skip#    Skip this occurence
-  #Cancel#  Cancel replace process 
+  #Cancel#  Cancel replace process
 @NoFilesFound
 $ #No Files Found#
   No files matching given restrictions were found.
@@ -548,7 +550,7 @@ is treated as regular expression.
   #[ Advanced ]#             Turn on to use ~Advanced File Search options~@AdvancedFileSearchDlg@,
 press button to configure them. Note, that pressing "OK" in the Advanced dialog automatically
 selects the switch here.
- 
+
   #NOTE:# "\n" in regular expression-based searches matches only newline symbol,
 not carriage-return. To match usual DOS end-of-line, use ".\n", to match both DOS- and
 UNIX-like, use ".?\n".

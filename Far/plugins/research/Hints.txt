@@ -1,4 +1,4 @@
-Some non-obvious aspects of RESearch usage are explained here.
+﻿Some non-obvious aspects of RESearch usage are explained here.
 
 - Literals like '\n' DO NOT work in plain text search! Either use regexp, or enter needed
   symbol directly using Ctrl-Q.

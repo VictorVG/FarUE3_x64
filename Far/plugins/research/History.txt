@@ -1,4 +1,4 @@
-Regular Expression Search and Replace
+﻿Regular Expression Search and Replace
 
  ! Major change
  + Feature added
@@ -9,6 +9,10 @@ Planned:
 	? Extended batch properties, overriding preset properties (e.g. Search from beginning)
 	+ Command to "lock" read-only file before replacing
 	+ Search / Replace in dialogs
+
+Version 8.75 (31.03.2021)
+    + \snn converts case to matching subpattern nn
+    * Built with VS 2019
 
 Version 8.70 (26.02.2020)
     ! Only Far3 continues to be supported
@@ -38,7 +42,7 @@ Version 8.65 (23.11.2015)
 Version 8.64 (24.06.2015)
 	- Fixed bugs with hardlinks and long paths
 	- Fixed settings dialog bug
-	
+
 Version 8.63 (23.06.2015)
 	* Replacing EOLs on Shift-Ins is now optional
 	* Ctrl-Enter in Editor Show All menu positions to found text, but doesn't close menu
@@ -671,7 +675,7 @@ Version 6.00 (10.10.2007)
 	+ Using PCRE 7.40
 	+ Compiled with Unicode property support (works only for UTF-8 searches)
 	* Added regular expression reference in "pcrepattern.html"
-	
+
 	! New feature: "Grep" in panels
 		Searches for text in files and outputs found lines to file or editor window
 
