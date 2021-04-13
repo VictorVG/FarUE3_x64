@@ -46,7 +46,7 @@
 
 @Contents
 $^#Datei- und Archiv-Manager.#
-$^#3.0.5779.0 (Private) x64#
+$^#3.0.5780.0 (Private) x64#
 $^#Copyright © 1996-2000 Eugene Roshal#
 $^#Copyright © 2000-2021 Far Group#
  ~Help file index~@Index@
@@ -1254,7 +1254,6 @@ Supported types: CD-ROM, CD-RW, CD-RW/DVD, DVD-ROM, DVD-RW and DVD-RAM.
  The output format depends on the domain structure, group policies and DNS settings.
 
  #User name format#
-
  Can be one of:
 
  - #Logon Name#

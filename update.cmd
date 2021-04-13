@@ -60,6 +60,8 @@ if exist "Profile\Macros\scripts\Plugin_FarHint.lua" (del /f/q "Profile\Macros\P
 if exist "Profile\Macros\scripts\Shell_DeepTarball.lua" (del /f/q "Profile\Macros\scripts\Shell_DeepTarball.lua" > nul)
 if exist "Profile\Macros\scripts\Shell_DelTmp.lua" (del /f/q "Profile\Macros\scripts\Shell_DelTmp.lua" > nul)
 if exist "Profile\Macros\scripts\Shell_SomDir.lua" (del /f/q "Profile\Macros\scripts\Shell_SomDir.lua" > nul)
+if exist "Profile\Macros\scripts\View_ShiftInsSearch.lua" (move /y "Profile\Macros\scripts\View_ShiftInsSearch.lua" "Profile\Macros\scripts\Viewer_ShiftInsSearch.lua" > nul)
+if exist "Profile\Macros\scripts\View_XDOC.lua" (move /y "Profile\Macros\scripts\View_XDOC.lua" "Profile\Macros\scripts\Viewer_XDOC.lua" > nul)
 if exist "Profile\Macros\scripts\Shell_SortDir.lua" (del /f/q "Profile\Macros\scripts\Shell_SortDir.lua" > nul)
 if exist "Profile\PluginsData\CDF48DA0-0334-4169-8453-69048DD3B51C.db" (del /f/q "Profile\PluginsData\CDF48DA0-0334-4169-8453-69048DD3B51C.db" > nul)
 if exist "Profile\PluginsData\FC97A376-00D9-4DE4-B2E1-BFDC3A8D8B0B.db" (del /f/q "Profile\PluginsData\FC97A376-00D9-4DE4-B2E1-BFDC3A8D8B0B.db" > nul)

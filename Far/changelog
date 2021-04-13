@@ -1,7 +1,7 @@
 --------------------------------------------------------------------------------
-victorVG 09.04.2021 21:30:30 +0300 - build 5779_1
+drkns 12.04.2021 22:35:48 +0100 - build 5780
 
-1. Revert b5765.1 - restore old color for fix chroma select errors
+1. 0003860: file descriptions are not updated (access rights issue)
 
 --------------------------------------------------------------------------------
 drkns 09.04.2021 17:28:29 +0100 - build 5779

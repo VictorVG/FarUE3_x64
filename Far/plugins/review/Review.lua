@@ -1,5 +1,9 @@
+ï»¿--
+-- Review Macro API
+-- Ð Ð°Ð·Ð¼ÐµÑ‰Ð°ÐµÑ‚ÑÑ Ð² ÐºÐ°Ñ‚Ð°Ð»Ð¾Ð³Ðµ Macro\modules
+--
 
-local FarHints = "CDF48DA0-0334-4169-8453-69048DD3B51C" 
+local FarHints = "CDF48DA0-0334-4169-8453-69048DD3B51C"
 local ReviewID = "0364224C-A21A-42ED-95FD-34189BA4B204"
 local ViewDlgID = "FAD3BD72-2641-4D00-8F98-5467EEBCE827"
 local ThumbDlgID = "ABDFD3DF-FE59-4714-8068-9F944022EA50"
@@ -34,6 +38,10 @@ function Review.IsThumbView()
   return Area.Dialog and Dlg.Id == ThumbDlgID
 end;
 
+function Review.IsMedia()
+  return Review.IsView() and Plugin.SyncCall(ID, "IsMedia")
+end;
+
 function Review.IsQuickView()
   return Review.Loaded() and Plugin.SyncCall(ID, "IsQuickView")
 end;
@@ -47,378 +55,124 @@ function Review.Update(Delay)
 end;
 
 
--- Ïåðåõîä ê ñëåäóþùåìó èçîáðàæåíèþ â òåêùåé ïàíåëè
--- Orig=0, Next=1 - ê ñëåäóþùåìó
--- Orig=0, Next=0 - ê ïðåäûäóùåìó
--- Orig=1         - ê ïåðâîìó
--- Orig=2         - ê ïîñëåäíåìó
--- Âîçâðàùàåò: Ïðèçíàê óñïåøíîñòè ïåðåõîäà
+-- ÐŸÐµÑ€ÐµÑ…Ð¾Ð´ Ðº ÑÐ»ÐµÐ´ÑƒÑŽÑ‰ÐµÐ¼Ñƒ Ð¸Ð·Ð¾Ð±Ñ€Ð°Ð¶ÐµÐ½Ð¸ÑŽ Ð² Ñ‚ÐµÐºÑ‰ÐµÐ¹ Ð¿Ð°Ð½ÐµÐ»Ð¸
+-- Orig=0, Next=1 - Ðº ÑÐ»ÐµÐ´ÑƒÑŽÑ‰ÐµÐ¼Ñƒ
+-- Orig=0, Next=0 - Ðº Ð¿Ñ€ÐµÐ´Ñ‹Ð´ÑƒÑ‰ÐµÐ¼Ñƒ
+-- Orig=1         - Ðº Ð¿ÐµÑ€Ð²Ð¾Ð¼Ñƒ
+-- Orig=2         - Ðº Ð¿Ð¾ÑÐ»ÐµÐ´Ð½ÐµÐ¼Ñƒ
+-- Ð’Ð¾Ð·Ð²Ñ€Ð°Ñ‰Ð°ÐµÑ‚: ÐŸÑ€Ð¸Ð·Ð½Ð°Ðº ÑƒÑÐ¿ÐµÑˆÐ½Ð¾ÑÑ‚Ð¸ Ð¿ÐµÑ€ÐµÑ…Ð¾Ð´Ð°
 
 function Review.Goto(Orig, Next)
   return Plugin.Call(ID, "Goto", Orig, Next)
 end;
 
--- Óñòàíîâêà ìàñøòàáà èçîáðàæåíèÿ
--- Mode=0  - Àâòîìàòè÷åñêèé ìàñøòàá
---   Val=1 - Ïî ìàêñèìàëüíîìó ðàçìåðó
---   Val=2 - Ïî øèðèíå
---   Val=3 - Ïî âûñîòå
--- Mode=1  - Óñòàíîâêà ëèíåéíîãî ìàñøòàáà
---   Val   - Ìàñøòàáíûé êîýýôèöèåíò (âåùåñòâåííîå ÷èñëî), 1 - 100%
--- Mode=2  - Èçìåíåíèå ëîãàðèôìè÷åñêîãî ìàñøòàáà
---   Val   - Øàã èçìåíåíèÿ. Ïðè 100% ìàñøòàáå 1 ñîîòâåòñòâóåò 1%
--- Mode=3  - Òî-æå, ÷òî Mode=2, îòíîñèòåëüíî êóðñîðà ìûøè
--- Âîçâðàùàåò: Ðåæèì, Êîýôôèöèåíò
+-- Ð£ÑÑ‚Ð°Ð½Ð¾Ð²ÐºÐ° Ð¼Ð°ÑÑˆÑ‚Ð°Ð±Ð° Ð¸Ð·Ð¾Ð±Ñ€Ð°Ð¶ÐµÐ½Ð¸Ñ
+-- Mode=0  - ÐÐ²Ñ‚Ð¾Ð¼Ð°Ñ‚Ð¸Ñ‡ÐµÑÐºÐ¸Ð¹ Ð¼Ð°ÑÑˆÑ‚Ð°Ð±
+--   Val=1 - ÐŸÐ¾ Ð¼Ð°ÐºÑÐ¸Ð¼Ð°Ð»ÑŒÐ½Ð¾Ð¼Ñƒ Ñ€Ð°Ð·Ð¼ÐµÑ€Ñƒ
+--   Val=2 - ÐŸÐ¾ ÑˆÐ¸Ñ€Ð¸Ð½Ðµ
+--   Val=3 - ÐŸÐ¾ Ð²Ñ‹ÑÐ¾Ñ‚Ðµ
+-- Mode=1  - Ð£ÑÑ‚Ð°Ð½Ð¾Ð²ÐºÐ° Ð»Ð¸Ð½ÐµÐ¹Ð½Ð¾Ð³Ð¾ Ð¼Ð°ÑÑˆÑ‚Ð°Ð±Ð°
+--   Val   - ÐœÐ°ÑÑˆÑ‚Ð°Ð±Ð½Ñ‹Ð¹ ÐºÐ¾ÑÑÑ„Ð¸Ñ†Ð¸ÐµÐ½Ñ‚ (Ð²ÐµÑ‰ÐµÑÑ‚Ð²ÐµÐ½Ð½Ð¾Ðµ Ñ‡Ð¸ÑÐ»Ð¾), 1 - 100%
+-- Mode=2  - Ð˜Ð·Ð¼ÐµÐ½ÐµÐ½Ð¸Ðµ Ð»Ð¾Ð³Ð°Ñ€Ð¸Ñ„Ð¼Ð¸Ñ‡ÐµÑÐºÐ¾Ð³Ð¾ Ð¼Ð°ÑÑˆÑ‚Ð°Ð±Ð°
+--   Val   - Ð¨Ð°Ð³ Ð¸Ð·Ð¼ÐµÐ½ÐµÐ½Ð¸Ñ. ÐŸÑ€Ð¸ 100% Ð¼Ð°ÑÑˆÑ‚Ð°Ð±Ðµ 1 ÑÐ¾Ð¾Ñ‚Ð²ÐµÑ‚ÑÑ‚Ð²ÑƒÐµÑ‚ 1%
+-- Mode=3  - Ð¢Ð¾-Ð¶Ðµ, Ñ‡Ñ‚Ð¾ Mode=2, Ð¾Ñ‚Ð½Ð¾ÑÐ¸Ñ‚ÐµÐ»ÑŒÐ½Ð¾ ÐºÑƒÑ€ÑÐ¾Ñ€Ð° Ð¼Ñ‹ÑˆÐ¸
+-- Ð’Ð¾Ð·Ð²Ñ€Ð°Ñ‰Ð°ÐµÑ‚: Ð ÐµÐ¶Ð¸Ð¼, ÐšÐ¾ÑÑ„Ñ„Ð¸Ñ†Ð¸ÐµÐ½Ñ‚
 
 function Review.Scale(Mode, Val)
   return Plugin.Call(ID, "Scale", Mode, Val)
 end;
 
--- Óñòàíîâêà òåêóùåé ñòðàíèöû äëÿ ìíîãîñòðàíè÷íîãî èçîáðàæåíèÿ
--- Âîçâðàùàåò: Òåêóùàÿ ñòðàíèöà, Êîëè÷åñòâî ñòðàíèö
+-- Ð£ÑÑ‚Ð°Ð½Ð¾Ð²ÐºÐ° Ñ‚ÐµÐºÑƒÑ‰ÐµÐ¹ ÑÑ‚Ñ€Ð°Ð½Ð¸Ñ†Ñ‹ Ð´Ð»Ñ Ð¼Ð½Ð¾Ð³Ð¾ÑÑ‚Ñ€Ð°Ð½Ð¸Ñ‡Ð½Ð¾Ð³Ð¾ Ð¸Ð·Ð¾Ð±Ñ€Ð°Ð¶ÐµÐ½Ð¸Ñ
+-- Ð’Ð¾Ð·Ð²Ñ€Ð°Ñ‰Ð°ÐµÑ‚: Ð¢ÐµÐºÑƒÑ‰Ð°Ñ ÑÑ‚Ñ€Ð°Ð½Ð¸Ñ†Ð°, ÐšÐ¾Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ð¾ ÑÑ‚Ñ€Ð°Ð½Ð¸Ñ†
 
 function Review.Page(Number)
   return Plugin.Call(ID, "Page", Number)
 end;
 
 
--- Ïîâòîðíîå äåêîäèðîâàíèå èçîáðàæåíèÿ ñ ïîìîùüþ îïðåäåëåííîãî äåêîäåðà
--- Mode=0 - Òî-æå äåêîäåð
--- Mode=1 - Äåêîäåð ïî óìîë÷àíèþ
--- Mode=2 - Ñëåäóþùèé äåêîäåð
--- Mode=3 - Ïðåäûäóùèé äåêîäåð
--- Âîçâðàùàåò èìÿ íîâîãî äåêîäåðà
+-- ÐŸÐ¾Ð²Ñ‚Ð¾Ñ€Ð½Ð¾Ðµ Ð´ÐµÐºÐ¾Ð´Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð¸Ðµ Ð¸Ð·Ð¾Ð±Ñ€Ð°Ð¶ÐµÐ½Ð¸Ñ Ñ Ð¿Ð¾Ð¼Ð¾Ñ‰ÑŒÑŽ Ð¾Ð¿Ñ€ÐµÐ´ÐµÐ»ÐµÐ½Ð½Ð¾Ð³Ð¾ Ð´ÐµÐºÐ¾Ð´ÐµÑ€Ð°
+-- Mode=0 - Ð¢Ð¾-Ð¶Ðµ Ð´ÐµÐºÐ¾Ð´ÐµÑ€
+-- Mode=1 - Ð”ÐµÐºÐ¾Ð´ÐµÑ€ Ð¿Ð¾ ÑƒÐ¼Ð¾Ð»Ñ‡Ð°Ð½Ð¸ÑŽ
+-- Mode=2 - Ð¡Ð»ÐµÐ´ÑƒÑŽÑ‰Ð¸Ð¹ Ð´ÐµÐºÐ¾Ð´ÐµÑ€
+-- Mode=3 - ÐŸÑ€ÐµÐ´Ñ‹Ð´ÑƒÑ‰Ð¸Ð¹ Ð´ÐµÐºÐ¾Ð´ÐµÑ€
+-- Ð’Ð¾Ð·Ð²Ñ€Ð°Ñ‰Ð°ÐµÑ‚ Ð¸Ð¼Ñ Ð½Ð¾Ð²Ð¾Ð³Ð¾ Ð´ÐµÐºÐ¾Ð´ÐµÑ€Ð°
 
 function Review.Decoder(Mode)
   return Plugin.Call(ID, "Decoder", Mode)
 end;
 
 
--- Ïîâîðîò/îòðàæåíèå èçîáðàæåíèÿ
--- Mode=0  - îòíîñèòåëüíûé ïîâîðîò
---   Val=1 - ïîâîðîò +90
---   Val=2 - ïîâîðîò -90
---   Val=3 - îòðàæåíèå ïî ãîðèçîíòàëè
---   Val=4 - îòðàæåíèå ïî âåðòèêàëè
+-- ÐŸÐ¾Ð²Ð¾Ñ€Ð¾Ñ‚/Ð¾Ñ‚Ñ€Ð°Ð¶ÐµÐ½Ð¸Ðµ Ð¸Ð·Ð¾Ð±Ñ€Ð°Ð¶ÐµÐ½Ð¸Ñ
+-- Mode=0  - Ð¾Ñ‚Ð½Ð¾ÑÐ¸Ñ‚ÐµÐ»ÑŒÐ½Ñ‹Ð¹ Ð¿Ð¾Ð²Ð¾Ñ€Ð¾Ñ‚
+--   Val=1 - Ð¿Ð¾Ð²Ð¾Ñ€Ð¾Ñ‚ +90
+--   Val=2 - Ð¿Ð¾Ð²Ð¾Ñ€Ð¾Ñ‚ -90
+--   Val=3 - Ð¾Ñ‚Ñ€Ð°Ð¶ÐµÐ½Ð¸Ðµ Ð¿Ð¾ Ð³Ð¾Ñ€Ð¸Ð·Ð¾Ð½Ñ‚Ð°Ð»Ð¸
+--   Val=4 - Ð¾Ñ‚Ñ€Ð°Ð¶ÐµÐ½Ð¸Ðµ Ð¿Ð¾ Ð²ÐµÑ€Ñ‚Ð¸ÐºÐ°Ð»Ð¸
 
 function Review.Rotate(Mode, Val)
   return Plugin.Call(ID, "Rotate", Mode, Val)
 end;
 
 
--- Ñîõðàíåíèå ïîâåðíóòîãî èçîáðàæåíèÿ
--- Flags&1 - Ïîâîðîò ïóòåì êîððåêöèè EXIF çàãîëîâêà (åñëè âîçìîæíî)
--- Flags&2 - Ïîâîðîò ïóòåì òðàíñôîðìàöèè
--- Flags&4 - Äîïóñòèìà òðàíñôîðìàöèÿ ñ ïîòåðåé êà÷åñòâà
--- Âîçâðàùàåò ïðèçíàê óñïåøíîñòè ñîõðàíåíèÿ
+-- Ð¡Ð¾Ñ…Ñ€Ð°Ð½ÐµÐ½Ð¸Ðµ Ð¿Ð¾Ð²ÐµÑ€Ð½ÑƒÑ‚Ð¾Ð³Ð¾ Ð¸Ð·Ð¾Ð±Ñ€Ð°Ð¶ÐµÐ½Ð¸Ñ
+-- Flags&1 - ÐŸÐ¾Ð²Ð¾Ñ€Ð¾Ñ‚ Ð¿ÑƒÑ‚ÐµÐ¼ ÐºÐ¾Ñ€Ñ€ÐµÐºÑ†Ð¸Ð¸ EXIF Ð·Ð°Ð³Ð¾Ð»Ð¾Ð²ÐºÐ° (ÐµÑÐ»Ð¸ Ð²Ð¾Ð·Ð¼Ð¾Ð¶Ð½Ð¾)
+-- Flags&2 - ÐŸÐ¾Ð²Ð¾Ñ€Ð¾Ñ‚ Ð¿ÑƒÑ‚ÐµÐ¼ Ñ‚Ñ€Ð°Ð½ÑÑ„Ð¾Ñ€Ð¼Ð°Ñ†Ð¸Ð¸
+-- Flags&4 - Ð”Ð¾Ð¿ÑƒÑÑ‚Ð¸Ð¼Ð° Ñ‚Ñ€Ð°Ð½ÑÑ„Ð¾Ñ€Ð¼Ð°Ñ†Ð¸Ñ Ñ Ð¿Ð¾Ñ‚ÐµÑ€ÐµÐ¹ ÐºÐ°Ñ‡ÐµÑÑ‚Ð²Ð°
+-- Ð’Ð¾Ð·Ð²Ñ€Ð°Ñ‰Ð°ÐµÑ‚ Ð¿Ñ€Ð¸Ð·Ð½Ð°Ðº ÑƒÑÐ¿ÐµÑˆÐ½Ð¾ÑÑ‚Ð¸ ÑÐ¾Ñ…Ñ€Ð°Ð½ÐµÐ½Ð¸Ñ
 
 function Review.Save(Flags)
   return Plugin.Call(ID, "Save", Flags)
 end;
 
 
--- Âêëþ÷àåò/âûêëþ÷àåò ðåæèì ïîëíîýêðàííîãî îòîáðàæåíèÿ
--- Åñëè âõîäíîé ïàðàìåòð îïóùåí - âîçâðàùàåò òåêóùåå ñîñòîÿíèå
+-- Ð’ÐºÐ»ÑŽÑ‡Ð°ÐµÑ‚/Ð²Ñ‹ÐºÐ»ÑŽÑ‡Ð°ÐµÑ‚ Ñ€ÐµÐ¶Ð¸Ð¼ Ð¿Ð¾Ð»Ð½Ð¾ÑÐºÑ€Ð°Ð½Ð½Ð¾Ð³Ð¾ Ð¾Ñ‚Ð¾Ð±Ñ€Ð°Ð¶ÐµÐ½Ð¸Ñ
+-- Ð•ÑÐ»Ð¸ Ð²Ñ…Ð¾Ð´Ð½Ð¾Ð¹ Ð¿Ð°Ñ€Ð°Ð¼ÐµÑ‚Ñ€ Ð¾Ð¿ÑƒÑ‰ÐµÐ½ - Ð²Ð¾Ð·Ð²Ñ€Ð°Ñ‰Ð°ÐµÑ‚ Ñ‚ÐµÐºÑƒÑ‰ÐµÐµ ÑÐ¾ÑÑ‚Ð¾ÑÐ½Ð¸Ðµ
 
 function Review.Fullscreen(On)
   return Plugin.Call(ID, "Fullscreen", On)
 end;
 
 
--- Îòîáðàæåíèå ýñêèçîâ 
+-- Ð£ÑÑ‚Ð°Ð½Ð°Ð²Ð»Ð¸Ð²Ð°ÐµÑ‚ Ð³Ñ€Ð¾Ð¼ÐºÐ¾ÑÑ‚ÑŒ Ð²Ð¾ÑÐ¿Ñ€Ð¾Ð¸Ð·Ð²ÐµÐ´ÐµÐ½Ð¸Ñ
+-- Ð•ÑÐ»Ð¸ Ð²Ñ…Ð¾Ð´Ð½Ð¾Ð¹ Ð¿Ð°Ñ€Ð°Ð¼ÐµÑ‚Ñ€ Ð¾Ð¿ÑƒÑ‰ÐµÐ½ - Ð²Ð¾Ð·Ð²Ñ€Ð°Ñ‰Ð°ÐµÑ‚ Ñ‚ÐµÐºÑƒÑ‰ÑƒÑŽ Ð³Ñ€Ð¾Ð¼ÐºÐ¾ÑÑ‚ÑŒ
+
+function Review.Volume(Val)
+  return Plugin.Call(ID, "Volume", Val)
+end;
+
+
+-- Ð£ÑÑ‚Ð°Ð½Ð°Ð²Ð»Ð¸Ð²Ð°ÐµÑ‚ Ñ‚ÐµÐºÑƒÑ‰ÑƒÑŽ Ð¿Ð¾Ð·Ð¸Ñ†Ð¸ÑŽ Ð¼ÐµÐ´Ð¸Ð° Ñ„Ð°Ð¹Ð»Ð° (Val - Ð² ms)
+-- Orig=0 - Val - Ð¿Ð¾Ð·Ð¸Ñ†Ð¸Ñ Ð¾Ñ‚ Ð½Ð°Ñ‡Ð°Ð»Ð° Ñ„Ð°Ð¹Ð»Ð°
+-- Orig=1 - Val - ÑÐ¼ÐµÑ‰ÐµÐ½Ð¸Ðµ Ð¾Ñ‚ Ñ‚ÐµÐºÑƒÑ‰ÐµÐ¹ Ð¿Ð¾Ð·Ð¸Ñ†Ð¸Ð¸
+-- Orig=2 - Val - Ð¿Ð¾Ð·Ð¸Ñ†Ð¸Ñ Ð¾Ñ‚ ÐºÐ¾Ð½Ñ†Ð° Ñ„Ð°Ð¹Ð»Ð°
+-- Ð’Ð¾Ð·Ð²Ñ€Ð°Ñ‰Ð°ÐµÑ‚: ÐŸÐ¾Ð·Ð¸Ñ†Ð¸Ñ, Ð”Ð»Ð¸Ð½Ð°
+
+function Review.Seek(Orig, Val)
+  return Plugin.Call(ID, "Seek", Orig, Val)
+end;
+
+
+-- Ð£ÑÑ‚Ð°Ð½Ð°Ð²Ð»Ð¸Ð²Ð°ÐµÑ‚ Ñ‚ÐµÐºÑƒÑ‰Ð¸Ð¹ Audio Ð¿Ð¾Ñ‚Ð¾Ðº
+-- Orig=0 - Val - ÐÐ±ÑÐ¾Ð»ÑŽÑ‚Ð½Ñ‹Ð¹ Ð½Ð¾Ð¼ÐµÑ€ Ð¿Ð¾Ñ‚Ð¾ÐºÐ°
+-- Orig=1 - Val - ÐŸÐµÑ€ÐµÐºÐ»ÑŽÑ‡ÐµÐ½Ð¸Ðµ Ñ‚ÐµÐºÑƒÑ‰ÐµÐ³Ð¾ Ð¿Ð¾Ñ‚Ð¾ÐºÐ° (Ð² Ñ†Ð¸ÐºÐ»Ðµ)
+-- Ð’Ð¾Ð·Ð²Ñ€Ð°Ñ‰Ð°ÐµÑ‚: ÐÐ¾Ð¼ÐµÑ€ Ð¿Ð¾Ñ‚Ð¾ÐºÐ°, ÐšÐ¾Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ð¾ Ð¿Ð¾Ñ‚Ð¾ÐºÐ¾Ð²
+
+function Review.Audio(Orig, Val)
+  return Plugin.Call(ID, "Audio", Orig, Val)
+end;
+
+-- ÐžÑ‚Ð¾Ð±Ñ€Ð°Ð¶ÐµÐ½Ð¸Ðµ ÑÑÐºÐ¸Ð·Ð¾Ð²
 
 function Review.Thumbs(...)
   return Plugin.Call(ID, "Thumbs", ...)
 end;
 
 
--- Óñòàíàâëèâàåò ðàçìåð ýñêèçà, åñëè çàäàíî Val
--- Âîçâðàùàåò: Íîâûé ðàçìåð ýñêèçà
+-- Ð£ÑÑ‚Ð°Ð½Ð°Ð²Ð»Ð¸Ð²Ð°ÐµÑ‚ Ñ€Ð°Ð·Ð¼ÐµÑ€ ÑÑÐºÐ¸Ð·Ð°, ÐµÑÐ»Ð¸ Ð·Ð°Ð´Ð°Ð½Ð¾ Val
+-- Ð’Ð¾Ð·Ð²Ñ€Ð°Ñ‰Ð°ÐµÑ‚: ÐÐ¾Ð²Ñ‹Ð¹ Ñ€Ð°Ð·Ð¼ÐµÑ€ ÑÑÐºÐ¸Ð·Ð°
 
 function Review.Size(Val)
   return Plugin.Call(ID, "Size", Val)
 end;
 
-
--------------------------------------------------------------------------------
-
-Macro 
-{ 
-  description="Review: QuickView Helper"; area="Shell"; 
-    key="CtrlO CtrlU CtrlF1 CtrlF2 Esc CtrlUp CtrlDown CtrlLeft CtrlRight";
-
-  condition=function()
-    if Review.IsQuickView() then
-      Review.Update(0)
-    end
-    return false;
-  end;
-
-  action=function()
-  end;
-}
-
-
-Macro 
-{ 
-  description="Review: Scale QuickView with mouse"; area="Shell";
-    key="MsWheelUp MsWheelDown";
-
-  condition=function()
-    return (Review.Loaded() and Review.IsQuickView()) and 999 or False
-  end;
-
-  action=function()
-    Review.Scale(3, akey(1):sub(-2) == "Up" and 5 or -5)
-  end;
-}
-
-
-Macro 
-{ 
-  description="Review: Scale 0.N%"; area="Dialog"; key="/\\d/"; condition=Review.IsView;
-
-  action=function()
-    n = tonumber("0." .. mf.akey(2))
-    n = n > 0 and n or 1
-    Review.Scale(1, n)
-  end;
-}
-
-
-Macro 
-{ 
-  description="Review: Goto Next Image"; area="Dialog"; key="PgDn Num3 CtrlMsWheelDown"; condition=Review.IsView; priority=99; EnableOutput=true;
-
-  action=function()
-    if Review.Goto(0, 1) then
-      ShowHint("")
-    else
-      mf.beep(0)
-      ShowHint("Last image")
-    end
-  end;
-}
-
-Macro 
-{ 
-  description="Review: Goto Prev Image"; area="Dialog"; key="PgUp Num9 CtrlMsWheelUp"; condition=Review.IsView; priority=99; EnableOutput=true;
-
-  action=function()
-    if Review.Goto(0, 0) then
-      ShowHint("")
-    else
-      mf.beep(0)
-      ShowHint("First image")
-    end;
-  end;
-}
-
-
-local LastFile
-
-Macro 
-{ 
-  description="Review: Goto First Image"; area="Dialog"; key="Home"; condition=Review.IsView; EnableOutput=true;
-
-  action=function()
-    local File = APanel.Current
-    if Review.Goto(1) then
-      LastFile = File
-      ShowHint("")
-    else
-      mf.beep(0)
-      ShowHint("First image")
-    end
-  end;
-}
-
-Macro 
-{ 
-  description="Review: Goto Last Image"; area="Dialog"; key="End"; condition=Review.IsView; EnableOutput=true;
-
-  action=function()
-    local File = APanel.Current
-    if Review.Goto(2) then
-      LastFile = File
-      ShowHint("")
-    else
-      mf.beep(0)
-      ShowHint("Last image")
-    end
-  end;
-}
-
-
-Macro 
-{ 
-  description="Review: Goto back Image"; area="Dialog"; key="BS"; condition=Review.IsView; EnableOutput=true;
-
-  action=function()
-    if LastFile then
-      if Review.Goto(3, LastFile) then
-        LastFile = nil
-      else
-        mf.beep(0)
-      end
-    end
-  end;
-}
-
-
-
-Macro 
-{ 
-  description="Review: Goto Next Page"; area="Dialog Shell"; key="CtrlPgDn CtrlMsWheelDown"; condition=Review.IsActive;
-
-  action=function()
-    Review.Page(Review.Page() + 1)
-  end;
-}
-
-Macro 
-{ 
-  description="Review: Goto Prev Page"; area="Dialog Shell"; key="CtrlPgUp CtrlMsWheelUp"; condition=Review.IsActive;
-
-  action=function()
-    Review.Page(Review.Page() - 1)
-  end;
-}
-
-Macro 
-{ 
-  description="Review: Goto First Page"; area="Dialog Shell"; key="CtrlHome"; condition=Review.IsActive;
-
-  action=function()
-    Review.Page(1)
-  end;
-}
-
-Macro 
-{ 
-  description="Review: Goto Last Page"; area="Dialog Shell"; key="CtrlEnd"; condition=Review.IsActive;
-
-  action=function()
-    local Page, Pages = Review.Page()
-    Review.Page(Pages)
-  end;
-}
-
-
-Macro 
-{ 
-  description="Review: Next Decoder"; area="Dialog Shell"; key="AltPgDn"; condition=Review.IsActive;
-
-  action=function()
-    Review.Decoder(2)
-  end;
-}
-
-Macro 
-{ 
-  description="Review: Prev Decoder"; area="Dialog Shell"; key="AltPgUp"; condition=Review.IsActive;
-
-  action=function()
-    Review.Decoder(3)
-  end;
-}
-
-Macro 
-{ 
-  description="Review: Default Decoder"; area="Dialog Shell"; key="AltHome"; condition=Review.IsActive;
-
-  action=function()
-    Review.Decoder(1)
-  end;
-}
-
-
-Macro 
-{ 
-  description="Review: Fullscreen mode On/Off"; area="Dialog"; key="F CtrlF"; condition=Review.IsView;
-
-  action=function()
-    Review.Fullscreen(not Review.Fullscreen())
-  end;
-}
-
-
-Macro 
-{ 
-  description="Review: Rotate +90"; area="Dialog"; key=". ] AltMsWheelDown"; condition=Review.IsView;
-
-  action=function()
-    Review.Rotate(0, 1);
-  end;
-}
-
-Macro 
-{ 
-  description="Review: Rotate -90"; area="Dialog"; key=", [ AltMsWheelUp"; condition=Review.IsView;
-
-  action=function()
-    Review.Rotate(0, 2);
-  end;
-}
-
-Macro 
-{ 
-  description="Review: Swap horz"; area="Dialog"; key="Ctrl]"; condition=Review.IsView;
-
-  action=function()
-    Review.Rotate(0, 3);
-  end;
-}
-
-Macro 
-{ 
-  description="Review: Swap vert"; area="Dialog"; key="Ctrl["; condition=Review.IsView;
-
-  action=function()
-    Review.Rotate(0, 4);
-  end;
-}
-
---Macro 
---{ 
---  description="Review: Save picture"; area="Dialog"; key="F2"; condition=Review.IsView;
---
---  action=function()
---    if Review.Save(1+2+8) then
-----    ShowHint("Saved")
---    end
---  end;
---}
-
-
-
-------------------------------------------------------------------------------
--- Ýñêèçû
-
-
-Macro 
-{ 
-  description="Review: Scale Thumbs"; area="Dialog"; 
-    key="CtrlMsWheelUp CtrlMsWheelDown ShiftMsWheelUp ShiftMsWheelDown"; 
-    condition=Review.IsThumbView; priority=99;
-
-  action=function()
-    local Delta = akey(1):sub(-2) == "Up" and 1 or -1
-    if akey(1):sub(1,4) == "Ctrl" then
-      Delta = Delta * 16
-    end
-    Review.Size( Review.Size() + Delta )
-  end;
-}
-
-
-Macro 
-{ 
-  description="Review: Thumbs Size"; area="Dialog"; key="/\\d/"; condition=Review.IsThumbView;
-
-  action=function()
-    n = tonumber(mf.akey(2))
-    Review.Size(96 + n * 32)
-  end;
-}
-
+return Review
