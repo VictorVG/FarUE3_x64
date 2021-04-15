@@ -13,3 +13,6 @@ Warning:
 
 Artem Senichev (artemsen@gmail.com)
                https://sourceforge.net/projects/farplugs/
+
+Vladimir Surguchev (2usen10@gmail.com)
+               https://sourceforge.net/projects/farplugs/files/Renewal/

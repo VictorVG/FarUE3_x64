@@ -1,3 +1,9 @@
+PEAnalyzer 3.8.0 13-04-2021
+---------------------------
+ + Sections in file panel
+ * DisAsm debug
+ + Data sections hex dump in DisAsm
+
 PEAnalyzer 3.7.0 07-04-2021
 ---------------------------
  + Открытие файлов в архивах
