@@ -1,6 +1,6 @@
 ﻿.Language=Polish,Polish (Polski)
 
-//Version: 3.0.5784.0 (Private) x64
+//Version: 3.0.5785.0 (Private) x64
 
 //[MYes]
 "Tak"
@@ -2816,21 +2816,33 @@
 //[MSetColorTitle]
 "Kolor"
 //[MSetColorForeground]
-"&Kolor"
+"&Kolor:"
 //[MSetColorBackground]
-"&Tło"
+"&Tło:"
 
 // 3 characters max
 //[MSetColorForeRGB]
-"&RGB"
+"&RGB…"
 
 // 3 characters max
 //[MSetColorBackRGB]
-"R&GB"
-//[MSetColorForeTransparent]
-"P&rzezroczyste"
-//[MSetColorBackTransparent]
-"Pr&zezroczyste"
+"R&GB…"
+//[MSetColorStyleBold]
+"Pogrubienie"
+//[MSetColorStyleItalic]
+"Kursywa"
+//[MSetColorStyleUnderline]
+"Podkreślenie"
+//[MSetColorStyleUnderline2]
+"Podwójne"
+//[MSetColorStyleOverline]
+"Nadkreślenie"
+//[MSetColorStyleStrikeout]
+"Przekreślenie"
+//[MSetColorStyleFaint]
+"Przygaszone"
+//[MSetColorStyleBlink]
+"Miganie"
 //[MSetColorSample]
 "Tekst Tekst Tekst Tekst Tekst Tekst"
 //[MSetColorSet]

@@ -1,6 +1,6 @@
 ﻿.Language=Italian,Italian (Italiano)
 
-//Version: 3.0.5784.0 (Private) x64
+//Version: 3.0.5785.0 (Private) x64
 
 //[MYes]
 "&Si"
@@ -2830,21 +2830,33 @@
 //[MSetColorTitle]
 "Colore"
 //[MSetColorForeground]
-"&PrimoPiano"
+"&PrimoPiano:"
 //[MSetColorBackground]
-"&Sfondo"
+"&Sfondo:"
 
 // 3 characters max
 //[MSetColorForeRGB]
-"&RGB"
+"&RGB…"
 
 // 3 characters max
 //[MSetColorBackRGB]
-"R&GB"
-//[MSetColorForeTransparent]
-"&Trasparente"
-//[MSetColorBackTransparent]
-"T&rasparente"
+"R&GB…"
+//[MSetColorStyleBold]
+"Grassetto"
+//[MSetColorStyleItalic]
+"Corsivo"
+//[MSetColorStyleUnderline]
+"Sottolineato"
+//[MSetColorStyleUnderline2]
+"Doppia"
+//[MSetColorStyleOverline]
+"Linea sopra"
+//[MSetColorStyleStrikeout]
+"Barrato"
+//[MSetColorStyleFaint]
+"Tenue"
+//[MSetColorStyleBlink]
+"Intermittente"
 //[MSetColorSample]
 "[Anteprima Testo Di Esempio!]"
 //[MSetColorSet]

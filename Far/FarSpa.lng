@@ -1,6 +1,6 @@
 ﻿.Language=Spanish,Spanish (Español)
 
-//Version: 3.0.5784.0 (Private) x64
+//Version: 3.0.5785.0 (Private) x64
 
 //[MYes]
 "Si"
@@ -2835,21 +2835,33 @@
 //[MSetColorTitle]
 "Color"
 //[MSetColorForeground]
-"&Caracteres"
+"&Caracteres:"
 //[MSetColorBackground]
-"&Fondo"
+"&Fondo:"
 
 // 3 characters max
 //[MSetColorForeRGB]
-"&RGB"
+"&RGB…"
 
 // 3 characters max
 //[MSetColorBackRGB]
-"R&GB"
-//[MSetColorForeTransparent]
-"&Transparente"
-//[MSetColorBackTransparent]
-"T&ransparente"
+"R&GB…"
+//[MSetColorStyleBold]
+"Negrita"
+//[MSetColorStyleItalic]
+"Cursiva"
+//[MSetColorStyleUnderline]
+"Subrayado"
+//[MSetColorStyleUnderline2]
+"Doble"
+//[MSetColorStyleOverline]
+"Línea alta"
+//[MSetColorStyleStrikeout]
+"Tachado"
+//[MSetColorStyleFaint]
+"Atenuado"
+//[MSetColorStyleBlink]
+"Intermitente"
 //[MSetColorSample]
 "Texto Texto Texto Texto Texto"
 //[MSetColorSet]

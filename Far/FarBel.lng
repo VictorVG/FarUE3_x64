@@ -1,6 +1,6 @@
 ﻿.Language=Belarusian,Belarusian (Беларуская)
 
-//Version: 3.0.5784.0 (Private) x64
+//Version: 3.0.5785.0 (Private) x64
 
 //[MYes]
 "Так"
@@ -2823,21 +2823,33 @@
 //[MSetColorTitle]
 "Колер"
 //[MSetColorForeground]
-"&Тэкст"
+"&Тэкст:"
 //[MSetColorBackground]
-"&Фон"
+"&Фон:"
 
 // 3 characters max
 //[MSetColorForeRGB]
-"&RGB"
+"&RGB…"
 
 // 3 characters max
 //[MSetColorBackRGB]
-"R&GB"
-//[MSetColorForeTransparent]
-"&Празрысты"
-//[MSetColorBackTransparent]
-"П&разрысты"
+"R&GB…"
+//[MSetColorStyleBold]
+"Тоўсты"
+//[MSetColorStyleItalic]
+"Курсіў"
+//[MSetColorStyleUnderline]
+"Падкрэслены"
+//[MSetColorStyleUnderline2]
+"Падвойнае"
+//[MSetColorStyleOverline]
+"Перакрыцце"
+//[MSetColorStyleStrikeout]
+"Закрэслены"
+//[MSetColorStyleFaint]
+"Прыцемнены"
+//[MSetColorStyleBlink]
+"Мігценне"
 //[MSetColorSample]
 "Тэкст Тэкст Тэкст Тэкст Тэкст Тэкст"
 //[MSetColorSet]

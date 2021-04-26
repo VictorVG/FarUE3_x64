@@ -1,6 +1,6 @@
 ﻿.Language=Ukrainian,Ukrainian (Українська)
 
-//Version: 3.0.5784.0 (Private) x64
+//Version: 3.0.5785.0 (Private) x64
 
 //[MYes]
 "Так"
@@ -2820,21 +2820,33 @@
 //[MSetColorTitle]
 "Колір"
 //[MSetColorForeground]
-"&Текст"
+"&Текст:"
 //[MSetColorBackground]
-"&Фон"
+"&Фон:"
 
 // 3 characters max
 //[MSetColorForeRGB]
-"&RGB"
+"&RGB…"
 
 // 3 characters max
 //[MSetColorBackRGB]
-"R&GB"
-//[MSetColorForeTransparent]
-"&Прозорий"
-//[MSetColorBackTransparent]
-"П&розорий"
+"R&GB…"
+//[MSetColorStyleBold]
+"Жирний"
+//[MSetColorStyleItalic]
+"Курсив"
+//[MSetColorStyleUnderline]
+"Підкреслений"
+//[MSetColorStyleUnderline2]
+"Подвійне"
+//[MSetColorStyleOverline]
+"Надкреслення"
+//[MSetColorStyleStrikeout]
+"Закреслений"
+//[MSetColorStyleFaint]
+"Приглушений"
+//[MSetColorStyleBlink]
+"Миготіння"
 //[MSetColorSample]
 "Текст Текст Текст Текст Текст Текст"
 //[MSetColorSet]

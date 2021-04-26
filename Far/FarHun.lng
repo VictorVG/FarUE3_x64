@@ -1,6 +1,6 @@
 ﻿.Language=Hungarian,Hungarian (Magyar)
 
-//Version: 3.0.5784.0 (Private) x64
+//Version: 3.0.5785.0 (Private) x64
 
 //[MYes]
 "Igen"
@@ -3058,21 +3058,33 @@
 //[MSetColorTitle]
 "Színek"
 //[MSetColorForeground]
-"&Előtér"
+"&Előtér:"
 //[MSetColorBackground]
-"&Háttér"
+"&Háttér:"
 
 // 3 characters max
 //[MSetColorForeRGB]
-"&RGB"
+"&RGB…"
 
 // 3 characters max
 //[MSetColorBackRGB]
-"R&GB"
-//[MSetColorForeTransparent]
-"Átlá&tszó"
-//[MSetColorBackTransparent]
-"Átlát&szó"
+"R&GB…"
+//[MSetColorStyleBold]
+"Félkövér"
+//[MSetColorStyleItalic]
+"Dőlt"
+//[MSetColorStyleUnderline]
+"Aláhúzott"
+//[MSetColorStyleUnderline2]
+"Dupla"
+//[MSetColorStyleOverline]
+"Föléhúzás"
+//[MSetColorStyleStrikeout]
+"Áthúzás"
+//[MSetColorStyleFaint]
+"Sötét"
+//[MSetColorStyleBlink]
+"Villogás"
 //[MSetColorSample]
 "Text Text Text Text Text Text Text"
 //[MSetColorSet]

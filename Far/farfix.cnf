@@ -1,14 +1,7 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<farconfig version="3.0.5741">
-	<pluginsconfig>
-		<plugin guid="D4BC5EA7-8229-4FFE-AAC1-5A4F51A0986A">
-			<hierarchicalconfig>
-				<key name="D4BC5EA7-8229-4FFE-AAC1-5A4F51A0986A" description="Polygon">
-					<key name="root">
-						<value name="plugin" type="base64" value="bG9jYWwgaWR4PXt9OyBmb3IgaT0xLDEgZG8gaWR4W2ldPXt9IGVuZApkbyBsb2NhbCB0PWlkeFsxXQogIHRbInVzZXJfbW9kdWxlcyJdID0gdHJ1ZQogIHRbIm11bHRpZGJfbW9kZSJdID0gdHJ1ZQogIHRbImNvbmZpcm1fY2xvc2UiXSA9IGZhbHNlCiAgdFsiZm9yZWlnbl9rZXlzIl0gPSB0cnVlCiAgdFsiZXh0ZW5zaW9ucyJdID0gdHJ1ZQogIHRbInByZWZpeCJdID0gInBvbHlnb24iCiAgdFsiYWRkX3RvX21lbnUiXSA9IHRydWUKZW5kCnJldHVybiBpZHhbMV0K"/>
-					</key>
-				</key>
-			</hierarchicalconfig>
-		</plugin>
-	</pluginsconfig>
-</farconfig>
+<plugin guid="D2F36B62-A470-418D-83A3-ED7A3710E5B5">
+	<hierarchicalconfig>
+		<key name="D2F36B62-A470-418D-83A3-ED7A3710E5B5" description="FarColorer">
+			<value name="TrueMod" type="qword" value="0000000000000000"/>
+		</key>
+	</hierarchicalconfig>
+</plugin>

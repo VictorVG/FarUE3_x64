@@ -1,6 +1,6 @@
 ﻿.Language=German,German (Deutsch)
 
-//Version: 3.0.5784.0 (Private) x64
+//Version: 3.0.5785.0 (Private) x64
 
 //[MYes]
 "Ja"
@@ -338,7 +338,7 @@
 //[MConfigSortingCase]
 "G&roß-/Kleinschrb."
 //[MConfigAutoSave]
-"Setup automatisch &"speichern"
+"Setup automatisch &speichern"
 
 //[MConfigTreeTitle]
 "Einstellungen des Ordnerbaumes"
@@ -2894,21 +2894,33 @@
 //[MSetColorTitle]
 "Farbe"
 //[MSetColorForeground]
-"&Vordergrund"
+"&Vordergrund:"
 //[MSetColorBackground]
-"&Hintergrund"
+"&Hintergrund:"
 
 // 3 characters max
 //[MSetColorForeRGB]
-"&RGB"
+"&RGB…"
 
 // 3 characters max
 //[MSetColorBackRGB]
-"R&GB"
-//[MSetColorForeTransparent]
-"&Transparent"
-//[MSetColorBackTransparent]
-"T&ransparent"
+"R&GB…"
+//[MSetColorStyleBold]
+"Fett"
+//[MSetColorStyleItalic]
+"Kursiv"
+//[MSetColorStyleUnderline]
+"Unterstrichen"
+//[MSetColorStyleUnderline2]
+"Doppelt"
+//[MSetColorStyleOverline]
+"Überstrichen"
+//[MSetColorStyleStrikeout]
+"Durchgestrichen"
+//[MSetColorStyleFaint]
+"Abblenden"
+//[MSetColorStyleBlink]
+"Blinkend"
 //[MSetColorSample]
 "Text Text Text Text Text Text Text"
 //[MSetColorSet]

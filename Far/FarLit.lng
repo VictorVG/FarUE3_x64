@@ -1,6 +1,6 @@
 ﻿.Language=Lithuanian,Lithuanian (Lietuvių)
 
-//Version: 3.0.5784.0 (Private) x64
+//Version: 3.0.5785.0 (Private) x64
 
 //[MYes]
 "Taip"
@@ -3307,23 +3307,33 @@
 //[MSetColorTitle]
 "Spalva"
 //[MSetColorForeground]
-"&Raidės"
+"&Raidės:"
 //[MSetColorBackground]
-"&Fonas"
+"&Fonas:"
 
 // 3 characters max
 //[MSetColorForeRGB]
-"&RGB"
+"&RGB…"
 
 // 3 characters max
 //[MSetColorBackRGB]
-"R&GB"
-// need translation:
-//[MSetColorForeTransparent]
-"&Transparent"
-// need translation:
-//[MSetColorBackTransparent]
-"T&ransparent"
+"R&GB…"
+//[MSetColorStyleBold]
+"Paryškintasis"
+//[MSetColorStyleItalic]
+"Kursyvas"
+//[MSetColorStyleUnderline]
+"Pabrauktasis"
+//[MSetColorStyleUnderline2]
+"Dvigubas"
+//[MSetColorStyleOverline]
+"Pabrauktas virš"
+//[MSetColorStyleStrikeout]
+"Perbraukimas"
+//[MSetColorStyleFaint]
+"Tamsus"
+//[MSetColorStyleBlink]
+"Mirksėjimas"
 //[MSetColorSample]
 "Tekstas Tekstas Tekstas Tekstas Te"
 //[MSetColorSet]

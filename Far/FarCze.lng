@@ -1,6 +1,6 @@
 ﻿.Language=Czech,Czech (Čeština)
 
-//Version: 3.0.5784.0 (Private) x64
+//Version: 3.0.5785.0 (Private) x64
 
 //[MYes]
 "Ano"
@@ -2830,21 +2830,33 @@
 //[MSetColorTitle]
 "Barva"
 //[MSetColorForeground]
-"&Popředí"
+"&Popředí:"
 //[MSetColorBackground]
-"Po&zadí"
+"Po&zadí:"
 
 // 3 characters max
 //[MSetColorForeRGB]
-"&RGB"
+"&RGB…"
 
 // 3 characters max
 //[MSetColorBackRGB]
-"R&GB"
-//[MSetColorForeTransparent]
-"Průhlednos&t"
-//[MSetColorBackTransparent]
-"Průhledno&st"
+"R&GB…"
+//[MSetColorStyleBold]
+"Tučné"
+//[MSetColorStyleItalic]
+"Kurzíva"
+//[MSetColorStyleUnderline]
+"Podtržené"
+//[MSetColorStyleUnderline2]
+"Dvojitě"
+//[MSetColorStyleOverline]
+"Nadtržítko"
+//[MSetColorStyleStrikeout]
+"Přeškrtnuté"
+//[MSetColorStyleFaint]
+"Tmavé"
+//[MSetColorStyleBlink]
+"Blikající"
 //[MSetColorSample]
 "Text Text Text Text Text Text Text"
 //[MSetColorSet]

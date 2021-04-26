@@ -1,6 +1,6 @@
 ﻿.Language=Slovak,Slovak (Slovenčina)
 
-//Version: 3.0.5784.0 (Private) x64
+//Version: 3.0.5785.0 (Private) x64
 
 //[MYes]
 "Áno"
@@ -2850,21 +2850,33 @@
 //[MSetColorTitle]
 "Farba"
 //[MSetColorForeground]
-"&Popredie"
+"&Popredie:"
 //[MSetColorBackground]
-"Po&zadie"
+"Po&zadie:"
 
 // 3 characters max
 //[MSetColorForeRGB]
-"&RGB"
+"&RGB…"
 
 // 3 characters max
 //[MSetColorBackRGB]
-"R&GB"
-//[MSetColorForeTransparent]
-"Priehľadnos&ť"
-//[MSetColorBackTransparent]
-"Priehľadno&sť"
+"R&GB…"
+//[MSetColorStyleBold]
+"Tučné"
+//[MSetColorStyleItalic]
+"Kurzíva"
+//[MSetColorStyleUnderline]
+"Podčiarknuté"
+//[MSetColorStyleUnderline2]
+"Dvojité"
+//[MSetColorStyleOverline]
+"Horná čiara"
+//[MSetColorStyleStrikeout]
+"Prečiarknuté"
+//[MSetColorStyleFaint]
+"Temné"
+//[MSetColorStyleBlink]
+"Blikanie"
 //[MSetColorSample]
 "Text Text Text Text Text Text Text"
 //[MSetColorSet]

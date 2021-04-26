@@ -1,6 +1,6 @@
 ﻿.Language=Russian,Russian (Русский)
 
-//Version: 3.0.5784.0 (Private) x64
+//Version: 3.0.5785.0 (Private) x64
 
 //[MYes]
 "Да"
@@ -2820,21 +2820,33 @@
 //[MSetColorTitle]
 "Цвет"
 //[MSetColorForeground]
-"&Текст"
+"&Текст:"
 //[MSetColorBackground]
-"&Фон"
+"&Фон:"
 
 // 3 characters max
 //[MSetColorForeRGB]
-"&RGB"
+"&RGB…"
 
 // 3 characters max
 //[MSetColorBackRGB]
-"R&GB"
-//[MSetColorForeTransparent]
-"&Прозрачный"
-//[MSetColorBackTransparent]
-"П&розрачный"
+"R&GB…"
+//[MSetColorStyleBold]
+"Жирный"
+//[MSetColorStyleItalic]
+"Курсив"
+//[MSetColorStyleUnderline]
+"Подчёркнутый"
+//[MSetColorStyleUnderline2]
+"Двойное"
+//[MSetColorStyleOverline]
+"Надчёркивание"
+//[MSetColorStyleStrikeout]
+"Зачёркнутый"
+//[MSetColorStyleFaint]
+"Бледный"
+//[MSetColorStyleBlink]
+"Мерцающий"
 //[MSetColorSample]
 "Текст Текст Текст Текст Текст Текст"
 //[MSetColorSet]
