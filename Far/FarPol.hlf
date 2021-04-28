@@ -46,7 +46,7 @@
 
 @Contents
 $^#File and archive manager#
-$^#3.0.5785.0 (Private) x64#
+$^#3.0.5786.0 (Private) x64#
 $^#Copyright © 1996-2000 Eugene Roshal#
 $^#Copyright © 2000-2021 Far Group#
  UWAGA: Plik pomocy w trakcie tłumaczenia
@@ -5927,25 +5927,6 @@ be used.
  This parameter can be changed via ~far:config~@FarConfig@ only.
 
 
-@System.FlagPosixSemantics
-$ #far:config System.FlagPosixSemantics#
- This Boolean parameter specifies whether inserting files into
-~view and edit history~@HistoryViews@ is case sensitive.
-
- If a file being added already exists in the history, it is not inserted
-again; instead, the existing history entry is moved to the most recent
-position.
-
- False - ^<wrap>Case insensitive comparison is used to search the
-history for duplicates.
- True  - Case sensitive comparison is used to search the history for
-duplicates.
-
- Default value: True (the search is case sensitive).
-
- This parameter can be changed via ~far:config~@FarConfig@ only.
-
-
 @System.ShowCheckingFile
 $ #far:config System.ShowCheckingFile#
  This Boolean parameter controls whether plugin’s name is displayed
@@ -6781,7 +6762,6 @@ $ #Index help file#
  ~far:config System.Executor.ComspecArguments~@System.Executor.ComspecArguments@
  ~far:config System.Executor.ExcludeCmds~@System.Executor.ExcludeCmds@
  ~far:config System.Executor.RestoreCP~@System.Executor.RestoreCP@
- ~far:config System.FlagPosixSemantics~@System.FlagPosixSemantics@
  ~far:config System.MsWheelDelta* & System.MsHWheelDelta*~@System.MsWheelDelta@
  ~far:config System.PluginMaxReadData~@System.PluginMaxReadData@
  ~far:config System.QuotedName~@System.QuotedName@
