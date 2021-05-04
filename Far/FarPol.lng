@@ -1,6 +1,6 @@
 ﻿.Language=Polish,Polish (Polski)
 
-//Version: 3.0.5787.0 (Private) x64
+//Version: 3.0.5788.0 (Private) x64
 
 //[MYes]
 "Tak"
@@ -2827,6 +2827,8 @@
 // 3 characters max
 //[MSetColorBackRGB]
 "R&GB…"
+//[MSetColorStyle]
+"Styl:"
 //[MSetColorStyleBold]
 "Pogrubienie"
 //[MSetColorStyleItalic]

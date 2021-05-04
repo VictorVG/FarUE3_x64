@@ -1,6 +1,6 @@
 ﻿.Language=Czech,Czech (Čeština)
 
-//Version: 3.0.5787.0 (Private) x64
+//Version: 3.0.5788.0 (Private) x64
 
 //[MYes]
 "Ano"
@@ -2841,6 +2841,8 @@
 // 3 characters max
 //[MSetColorBackRGB]
 "R&GB…"
+//[MSetColorStyle]
+"Styl:"
 //[MSetColorStyleBold]
 "Tučné"
 //[MSetColorStyleItalic]

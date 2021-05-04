@@ -1,6 +1,6 @@
 ﻿.Language=Russian,Russian (Русский)
 
-//Version: 3.0.5787.0 (Private) x64
+//Version: 3.0.5788.0 (Private) x64
 
 //[MYes]
 "Да"
@@ -2831,6 +2831,8 @@
 // 3 characters max
 //[MSetColorBackRGB]
 "R&GB…"
+//[MSetColorStyle]
+"Стиль:"
 //[MSetColorStyleBold]
 "Жирный"
 //[MSetColorStyleItalic]

@@ -1,6 +1,6 @@
 ﻿.Language=Slovak,Slovak (Slovenčina)
 
-//Version: 3.0.5787.0 (Private) x64
+//Version: 3.0.5788.0 (Private) x64
 
 //[MYes]
 "Áno"
@@ -2861,6 +2861,8 @@
 // 3 characters max
 //[MSetColorBackRGB]
 "R&GB…"
+//[MSetColorStyle]
+"Štýl:"
 //[MSetColorStyleBold]
 "Tučné"
 //[MSetColorStyleItalic]
