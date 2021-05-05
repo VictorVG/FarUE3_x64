@@ -7,6 +7,8 @@
 -- Keys: Ins / Del - insert / delete line in active file, F5 / F6 - copying with insertion / substitution line
 -- Keys: AltLeft / AltRight - copy line from right file to left file and vice versa
 -- Url: https://forum.ru-board.com/topic.cgi?forum=5&topic=49572&start=2080#6
+-- Notes: backup take off by default. For enable goto string 200 and change value bkp to "true".
+-- /VictorVG, 05.05.2021 08:11:18 +0300 /
 
 local ffi = require("ffi")
 
@@ -195,7 +197,8 @@ action = function()
     key="F6"
     CopyLine()
   end
-  local bkp=true
+-- Backup take off , for take on (script default) please, change value for bkp to "true": local bkp=true
+  local bkp=false
   for _,v in ipairs(BackUP) do if v==Info.FileName then bkp=false break end end
   if bkp then win.CopyFile(Info.FileName,Info.FileName.."_") table.insert(BackUP,Info.FileName) end
   editor.SaveFile(Info.EditorID)
