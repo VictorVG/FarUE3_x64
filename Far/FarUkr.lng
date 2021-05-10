@@ -1,6 +1,6 @@
 ﻿.Language=Ukrainian,Ukrainian (Українська)
 
-//Version: 3.0.5793.0 (Private) x64
+//Version: 3.0.5797.0 (Private) x64
 
 //[MYes]
 "Так"
@@ -3403,8 +3403,14 @@
 "UU&ID пункту:"
 //[MPluginPrefix]
 "&Префікс плагіна:"
-//[MExcTrappedException]
-"Виняткова ситуація"
+//[MExceptionDialogTitle]
+"Отакої"
+//[MExceptionDialogMessage1]
+"Щось пішло не так."
+//[MExceptionDialogMessage2]
+"Будь ласка, надішліть звіт про помилку розробникам:"
+//[MExceptionDialogClipboard]
+"Буфер обміну"
 //[MExcException]
 "Виняток:"
 //[MExcDetails]
@@ -3429,14 +3435,6 @@
 "Завершити Far"
 //[MExcUnload]
 "Вивантажити плагін"
-//[MExcCopy]
-"Копіювати"
-//[MExcStack]
-"Стек"
-//[MExcMinidump]
-"Мінідамп"
-//[MExcMinidumpSuccess]
-"Мінідамп збережено в"
 
 //[MNetUserName]
 "Ім'я користувача"

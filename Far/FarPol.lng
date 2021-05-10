@@ -1,6 +1,6 @@
 ﻿.Language=Polish,Polish (Polski)
 
-//Version: 3.0.5793.0 (Private) x64
+//Version: 3.0.5797.0 (Private) x64
 
 //[MYes]
 "Tak"
@@ -3399,8 +3399,14 @@
 "U&UID menu wtyczki:"
 //[MPluginPrefix]
 "&Przedrostek wtyczki:"
-//[MExcTrappedException]
-"Wystąpił wyjątek"
+//[MExceptionDialogTitle]
+"Ojej"
+//[MExceptionDialogMessage1]
+"Coś poszło źle."
+//[MExceptionDialogMessage2]
+"Proszę wysłać raport błędu do programistów:"
+//[MExceptionDialogClipboard]
+"Schowek"
 //[MExcException]
 "Wyjątek:"
 //[MExcDetails]
@@ -3425,14 +3431,6 @@
 "Zamknięcie Far"
 //[MExcUnload]
 "Wyłącz wtyczkę"
-//[MExcCopy]
-"Kopiuj"
-//[MExcStack]
-"Stos"
-//[MExcMinidump]
-"Minizrzut"
-//[MExcMinidumpSuccess]
-"Minizrzut zapisany do"
 
 //[MNetUserName]
 "Nazwa użytkownika"

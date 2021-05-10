@@ -1,6 +1,6 @@
 ﻿.Language=Hungarian,Hungarian (Magyar)
 
-//Version: 3.0.5793.0 (Private) x64
+//Version: 3.0.5797.0 (Private) x64
 
 //[MYes]
 "Igen"
@@ -3669,14 +3669,18 @@
 // need translation:
 //[MPluginPrefix]
 "Plugin &prefix:"
-//[MExcTrappedException]
-"Kivétel történt"
-// need translation:
+//[MExceptionDialogTitle]
+"Hoppá"
+//[MExceptionDialogMessage1]
+"Hiba történt."
+//[MExceptionDialogMessage2]
+"Kérjük, küldje el a hibajelentést a fejlesztőknek:"
+//[MExceptionDialogClipboard]
+"Vágólap"
 //[MExcException]
-"Exception:"
-// need translation:
+"Kivétel:"
 //[MExcDetails]
-"Details:"
+"Részletek:"
 //[MExcAddress]
 "Cím:"
 //[MExcSource]
@@ -3701,17 +3705,6 @@
 // need translation:
 //[MExcUnload]
 "Unload plugin"
-//[MExcCopy]
-"Másol"
-// need translation:
-//[MExcStack]
-"Stack"
-// need translation:
-//[MExcMinidump]
-"Minidump"
-// need translation:
-//[MExcMinidumpSuccess]
-"Minidump saved to"
 
 //[MNetUserName]
 "Felhasználói név"

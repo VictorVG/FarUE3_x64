@@ -1,6 +1,6 @@
 ﻿.Language=Czech,Czech (Čeština)
 
-//Version: 3.0.5793.0 (Private) x64
+//Version: 3.0.5797.0 (Private) x64
 
 //[MYes]
 "Ano"
@@ -3414,8 +3414,14 @@
 "UUID položky m&odulu:"
 //[MPluginPrefix]
 "Předpona mo&dulu:"
-//[MExcTrappedException]
-"Vyskytla se výjimka"
+//[MExceptionDialogTitle]
+"Jejda"
+//[MExceptionDialogMessage1]
+"Něco se nepovedlo."
+//[MExceptionDialogMessage2]
+"Zašlete zprávu o chybě vývojářům:"
+//[MExceptionDialogClipboard]
+"Schránka"
 //[MExcException]
 "Výjimka:"
 //[MExcDetails]
@@ -3442,14 +3448,6 @@
 "Ukončit Far"
 //[MExcUnload]
 "Ukončit modul"
-//[MExcCopy]
-"Kopírovat"
-//[MExcStack]
-"Stack"
-//[MExcMinidump]
-"Minidump"
-//[MExcMinidumpSuccess]
-"Výpis paměti byl uložen do"
 
 //[MNetUserName]
 "Jméno uživatele"

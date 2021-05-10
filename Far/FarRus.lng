@@ -1,6 +1,6 @@
 ﻿.Language=Russian,Russian (Русский)
 
-//Version: 3.0.5793.0 (Private) x64
+//Version: 3.0.5797.0 (Private) x64
 
 //[MYes]
 "Да"
@@ -3403,8 +3403,14 @@
 "UU&ID пункта:"
 //[MPluginPrefix]
 "&Префикс плагина:"
-//[MExcTrappedException]
-"Исключительная ситуация"
+//[MExceptionDialogTitle]
+"Ой"
+//[MExceptionDialogMessage1]
+"Что-то пошло не так."
+//[MExceptionDialogMessage2]
+"Пожалуйста, отправьте отчет об ошибке разработчикам:"
+//[MExceptionDialogClipboard]
+"Буфер обмена"
 //[MExcException]
 "Исключение:"
 //[MExcDetails]
@@ -3429,14 +3435,6 @@
 "Завершить Far"
 //[MExcUnload]
 "Выгрузить плагин"
-//[MExcCopy]
-"Копировать"
-//[MExcStack]
-"Стек"
-//[MExcMinidump]
-"Минидамп"
-//[MExcMinidumpSuccess]
-"Минидамп сохранён в"
 
 //[MNetUserName]
 "Имя пользователя"

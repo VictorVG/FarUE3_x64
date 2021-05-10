@@ -1,6 +1,6 @@
 ﻿.Language=English,English
 
-//Version: 3.0.5793.0 (Private) x64
+//Version: 3.0.5797.0 (Private) x64
 
 //[MYes]
 "Yes"
@@ -3399,8 +3399,14 @@
 "Plugin &item UUID:"
 //[MPluginPrefix]
 "Plugin &prefix:"
-//[MExcTrappedException]
-"Exception occurred"
+//[MExceptionDialogTitle]
+"Oops"
+//[MExceptionDialogMessage1]
+"Something went wrong."
+//[MExceptionDialogMessage2]
+"Please send the bug report to the developers:"
+//[MExceptionDialogClipboard]
+"Clipboard"
 //[MExcException]
 "Exception:"
 //[MExcDetails]
@@ -3425,14 +3431,6 @@
 "&Terminate Far"
 //[MExcUnload]
 "&Unload plugin"
-//[MExcCopy]
-"Copy"
-//[MExcStack]
-"&Stack"
-//[MExcMinidump]
-"&Minidump"
-//[MExcMinidumpSuccess]
-"Minidump saved to"
 
 //[MNetUserName]
 "User name"

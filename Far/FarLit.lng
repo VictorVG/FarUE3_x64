@@ -1,6 +1,6 @@
 ﻿.Language=Lithuanian,Lithuanian (Lietuvių)
 
-//Version: 3.0.5793.0 (Private) x64
+//Version: 3.0.5797.0 (Private) x64
 
 //[MYes]
 "Taip"
@@ -3961,28 +3961,26 @@
 // need translation:
 //[MPluginPrefix]
 "Plugin &prefix:"
-// need translation:
-//[MExcTrappedException]
-"Exception occurred"
-// need translation:
+//[MExceptionDialogTitle]
+"Oi"
+//[MExceptionDialogMessage1]
+"Kažkas nepavyko."
+//[MExceptionDialogMessage2]
+"Prašome siųsti klaidų ataskaitą kūrėjams:"
+//[MExceptionDialogClipboard]
+"Mainų sritis"
 //[MExcException]
-"Exception:"
-// need translation:
+"Išimtis:"
 //[MExcDetails]
-"Details:"
-// need translation:
+"Detalės:"
 //[MExcAddress]
-"Address:"
-// need translation:
+"Adresas:"
 //[MExcSource]
-"Source:"
-// need translation:
+"Šaltinis:"
 //[MExcFunction]
-"Function:"
-// need translation:
+"Funkcija:"
 //[MExcFileName]
-"File:"
-// need translation:
+"Failas:"
 //[MExcPlugin]
 "Plugin:"
 //[MExcFarVersion]
@@ -3999,18 +3997,6 @@
 // need translation:
 //[MExcUnload]
 "&Unload plugin"
-// need translation:
-//[MExcCopy]
-"Copy"
-// need translation:
-//[MExcStack]
-"&Stack"
-// need translation:
-//[MExcMinidump]
-"&Minidump"
-// need translation:
-//[MExcMinidumpSuccess]
-"Minidump saved to"
 
 // need translation:
 //[MNetUserName]

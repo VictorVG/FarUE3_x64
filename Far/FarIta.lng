@@ -1,6 +1,6 @@
 ﻿.Language=Italian,Italian (Italiano)
 
-//Version: 3.0.5793.0 (Private) x64
+//Version: 3.0.5797.0 (Private) x64
 
 //[MYes]
 "&Si"
@@ -3413,8 +3413,14 @@
 "&item UUID:"
 //[MPluginPrefix]
 "Prefi&sso:"
-//[MExcTrappedException]
-"Eccezione Interna"
+//[MExceptionDialogTitle]
+"Ops"
+//[MExceptionDialogMessage1]
+"Qualcosa non ha funzionato."
+//[MExceptionDialogMessage2]
+"Per favore, invia il rapporto del bug agli sviluppatori:"
+//[MExceptionDialogClipboard]
+"Appunti"
 //[MExcException]
 "Eccezione:"
 //[MExcDetails]
@@ -3441,15 +3447,6 @@
 "Termina Far"
 //[MExcUnload]
 "Scarica Plugin"
-//[MExcCopy]
-"Copia"
-//[MExcStack]
-"Stack"
-//[MExcMinidump]
-"Minidump"
-// need translation:
-//[MExcMinidumpSuccess]
-"Minidump saved to"
 
 //[MNetUserName]
 "Nome Utente"

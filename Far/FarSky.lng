@@ -1,6 +1,6 @@
 ﻿.Language=Slovak,Slovak (Slovenčina)
 
-//Version: 3.0.5793.0 (Private) x64
+//Version: 3.0.5797.0 (Private) x64
 
 //[MYes]
 "Áno"
@@ -3434,8 +3434,14 @@
 "UUID položky m&odulu:"
 //[MPluginPrefix]
 "Predpona mo&dulu:"
-//[MExcTrappedException]
-"Vyskytla sa výnimka"
+//[MExceptionDialogTitle]
+"Ľutujeme"
+//[MExceptionDialogMessage1]
+"Stalo sa niečo nepríjemné."
+//[MExceptionDialogMessage2]
+"Prosím, pošlite správu o chybách vývojárom:"
+//[MExceptionDialogClipboard]
+"Schránka"
 //[MExcException]
 "Výnimka:"
 //[MExcDetails]
@@ -3462,15 +3468,6 @@
 "Ukončiť Far"
 //[MExcUnload]
 "Zatvoriť modul"
-//[MExcCopy]
-"Skopírovať"
-//[MExcStack]
-"Halda"
-//[MExcMinidump]
-"Minivýpis"
-// need translation:
-//[MExcMinidumpSuccess]
-"Minidump saved to"
 
 //[MNetUserName]
 "Meno užívateľa"

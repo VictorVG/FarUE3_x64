@@ -1,6 +1,6 @@
 ﻿.Language=Spanish,Spanish (Español)
 
-//Version: 3.0.5793.0 (Private) x64
+//Version: 3.0.5797.0 (Private) x64
 
 //[MYes]
 "Si"
@@ -3419,8 +3419,14 @@
 "&Item UUID complemento:"
 //[MPluginPrefix]
 "&Prefijo de complemento:"
-//[MExcTrappedException]
-"Error de excepción"
+//[MExceptionDialogTitle]
+"Vaya"
+//[MExceptionDialogMessage1]
+"Algo salió mal."
+//[MExceptionDialogMessage2]
+"Por favor, envíe el informe de errores a los desarrolladores:"
+//[MExceptionDialogClipboard]
+"Portapapeles"
 //[MExcException]
 "Excepción:"
 //[MExcDetails]
@@ -3447,17 +3453,6 @@
 "Terminar Far"
 //[MExcUnload]
 "Descargar de memoria complemento"
-//[MExcCopy]
-"Copiar"
-// need translation:
-//[MExcStack]
-"Stack"
-// need translation:
-//[MExcMinidump]
-"Minidump"
-// need translation:
-//[MExcMinidumpSuccess]
-"Minidump saved to"
 
 //[MNetUserName]
 "Nombre de usuario"

@@ -1,6 +1,6 @@
 ﻿.Language=German,German (Deutsch)
 
-//Version: 3.0.5793.0 (Private) x64
+//Version: 3.0.5797.0 (Private) x64
 
 //[MYes]
 "Ja"
@@ -3495,13 +3495,18 @@
 "&Punkt UUID:"
 //[MPluginPrefix]
 "Plugin &Präfix:"
-//[MExcTrappedException]
-"Ausnahmefehler aufgetreten"
+//[MExceptionDialogTitle]
+"Hoppla"
+//[MExceptionDialogMessage1]
+"Da hat etwas nicht geklappt."
+//[MExceptionDialogMessage2]
+"Bitte senden Sie den Fehlerbericht an die Entwickler:"
+//[MExceptionDialogClipboard]
+"Zwischenablage"
 //[MExcException]
 "Ausnahmesituation:"
-// need translation:
 //[MExcDetails]
-"Details:"
+"Einzelheiten:"
 //[MExcAddress]
 "Adresse:"
 //[MExcSource]
@@ -3525,17 +3530,6 @@
 // need translation:
 //[MExcUnload]
 "Unload plugin"
-//[MExcCopy]
-"Kopieren"
-// need translation:
-//[MExcStack]
-"Stack"
-// need translation:
-//[MExcMinidump]
-"Minidump"
-// need translation:
-//[MExcMinidumpSuccess]
-"Minidump saved to"
 
 //[MNetUserName]
 "Benutzername"
