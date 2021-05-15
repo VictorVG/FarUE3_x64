@@ -2,7 +2,7 @@
 local nfo = Info {
   name          = "LuaManager";
   description   = "Менеджер Lua/Moon-скриптов для Fara";
-  version       = "5.1.1"; --в формате semver: http://semver.org/lang/ru/
+  version       = "5.1.2"; --в формате semver: http://semver.org/lang/ru/
   author        = "IgorZ";
   url           = "http://forum.farmanager.com/viewtopic.php?t=7936";
   id            = "180EE412-CBDE-40C7-9AE6-37FC64673CBD";
@@ -154,6 +154,7 @@ local nfo = Info {
 2020/05/15 v5.1.0 - Убрана совместимость с очень старыми версиями Far. Исправлена ошибка с редактированием нового панельного модуля в диалоге.
                     Улучшена замена фрагмента. Обрезаем лишние BOM. Рефакторинг.
 2020/05/18 v5.1.1 - Поправлено обрезание BOM.
+2021/05/11 v5.1.2 - Исправлена ошибка с MaxDescWidth и MacroMaxDescWidth. Оптимизирована сортировка элементов.
 ]];
   options       = {
     DefProfile = far.Flags.PSL_ROAMING--[[far.Flags.PSL_LOCAL--]] -- место хранения настроек по умолчанию: глобальные/локальные
@@ -191,6 +192,7 @@ local Path = debug.getinfo(function()end).source:match("^@?([^@].*\\)[^\\]*$") -
 local Areas = {[0]="Other","Shell","Viewer","Editor","Dialog","Search","Disks","MainMenu","Menu","Help","Info","QView","Tree","FindFolder",
                    "UserMenu","ShellAutoCompletion","DialogAutoCompletion","Grabber","Desktop",common="Common"}
 local AreasCount = #Areas+2 -- Areas[0] и Areas.common не считает
+local AreasRev = {} for n,v in pairs(Areas) do AreasRev[v:lower()] = n end -- для быстрого получения номера области по её имени
 local FH,GP,LP,MM = win.GetEnv("FARHOME"),win.GetEnv("FARPROFILE"),win.GetEnv("FARLOCALPROFILE"),[[\Macros\modules\]] -- профиля, путь к модулям
 local OffExt,DSB,NoKey,Noid,RBN,CNT,UP,LO = ".Switched_off","×","Ø","<no id>","≈","»","↑","↓" -- расширение отключения, разные признаки
 local FuncNames = {"Analyse","ClosePanel","Compare","DeleteFiles","GetFiles","GetFindData","GetOpenPanelInfo","MakeDirectory","Open",
@@ -200,7 +202,7 @@ local Templates = (loadfile(Path.."templates") or function() return setmetatable
   {__index=function(t,i) for _,fn in ipairs(FuncNames) do if i==fn then i = "!" break end end return i:len()==1 and "" or t end}) end)()
 local Def = { -- Настройки по умолчанию
   TableRecursion = true, -- при просмотре переменных разворачивать таблицы
-  MaxKeyWidth=0,MaxFileWidth=0,MacroMaxDescWidth=0, -- клавиши выводятся полностью; имена файлов не выводятся; описания выводятся полностью
+  MaxKeyWidth=0,MaxFileWidth=0,MacroMaxDescWidth=0--[[!!!--]], -- клавиши выводятся полностью; имена файлов не выводятся; описания выводятся полностью
   MacroSortingOrder="OCAKD",EventSortingOrder="GD",ModuleSortingOrder="TMN",MISortingOrder="A",PrefixSortingOrder="P",PanelSortingOrder="AT",
   AreaFilter="",KeyFilter="",GroupFilter="DialogEvent ViewerEvent EditorEvent EditorInput ConsoleInput ExitFAR", -- фильтры
   PathFilter='"'..GP..MM..'?.lua" "'..GP..MM..'?\\init.lua" "'..GP..MM..'?.moon" "'..GP..MM..'?\\init.moon"',
@@ -264,7 +266,7 @@ if not key then -- настроек нет?
 end
 local function L1(n) return not ForceDef and obj:Get(key or -1,n,type(Def[n])=="string" and F.FST_STRING or F.FST_QWORD) or Def[n] end
 S = { TableRecursion = L1("TableRecursion")~=0, -- считаем настройки
-  MaxKeyWidth = L1("MaxKeyWidth"),MaxFileWidth = L1("MaxFileWidth"),MaxDescWidth = L1("MacroMaxDescWidth"),
+  MaxKeyWidth = L1("MaxKeyWidth"),MaxFileWidth = L1("MaxFileWidth"),MaxDescWidth = L1("MaxDescWidth") or L1("MacroMaxDescWidth")--[[!!!--]],
   SO = {M=L1("MacroSortingOrder"),E=L1("EventSortingOrder"),O=L1("ModuleSortingOrder"),I=L1("MISortingOrder"),P=L1("PrefixSortingOrder"),
         N=L1("PanelSortingOrder")},
   Filter = {K=L1("KeyFilter"),A=L1("AreaFilter"),G=L1("GroupFilter"),P=L1("PathFilter"):gsub("%%(.-)%%",win.GetEnv),F="*"},
@@ -272,8 +274,13 @@ S = { TableRecursion = L1("TableRecursion")~=0, -- считаем настрой
           P=L1("ShowPrefixes")~=0,N=L1("ShowPanels")~=0,H=L1("ShowNonActiveMacros")~=0},
   Key = {Manager=L1("ManagerKey"),Reload=L1("ReloadKey"),InsUid=L1("InsertUidKey"),InsScript=L1("InsertScriptKey"),EditScript=L1("EditScriptKey"),
   InsMacro=L1("InsertMacroKey"),InsEvent=L1("InsertEventKey"),InsMI=L1("InsertMIKey"),InsPrefix=L1("InsertPrefixKey"),InsPanel=L1("InsertPanelKey")}}
+-- +
+-- !!! Временный костыль на переходный период. Если MaxDescWidth нет в БД, запишем его и удалим MacroMaxDescWidth. !!!
+local n,t = "MaxDescWidth",F.FST_QWORD; if obj:Get(key,n,t)~=S[n] then obj:Set(key,n,t,S[n]) obj:Delete(key,"MacroMaxDescWidth") end
+-- -
 obj:Free() -- приберёмся
 S.SavedFilter = {A=S.Filter.A,K=S.Filter.K,G=S.Filter.G,P=S.Filter.P}
+
 end
 --
 function SaveSettings() --[[сохранить настройки в БД]]
@@ -282,7 +289,7 @@ local obj = far.CreateSettings(nil,UsedProfile) -- откроем ранее п�
 local key = obj:CreateSubkey(obj:CreateSubkey(0,Author),ConfPart) -- откроем/создадим раздел
 local function S1(n,v) if v==nil then v=S[n] end; if v==nil then obj:Delete(key,n) else local w,t = v==true and 1 or v or 0,
                        type(v)=="string" and F.FST_STRING or F.FST_QWORD; if obj:Get(key,n,t)~=w then obj:Set(key,n,t,w) end end end
-S1("TableRecursion") S1("MaxKeyWidth") S1("MaxFileWidth") S1("MacroMaxDescWidth") S1("MacroSortingOrder",S.SO.M)
+S1("TableRecursion") S1("MaxKeyWidth") S1("MaxFileWidth") S1("MaxDescWidth") S1("MacroSortingOrder",S.SO.M)
 S1("EventSortingOrder",S.SO.E) S1("ModuleSortingOrder",S.SO.O) S1("MISortingOrder",S.SO.I) S1("PrefixSortingOrder",S.SO.P)
 S1("PanelSortingOrder",S.SO.N) S1("KeyFilter",S.Filter.K) S1("AreaFilter",S.Filter.A) S1("GroupFilter",S.Filter.G)
 S1("PathFilter",S.Filter.P:gsub(GP,"%%FarProfile%%"):gsub(LP,"%%FarLocalProfile%%"):gsub(FH,"%%FarHome%%"))
@@ -2002,82 +2009,67 @@ return g
 end
 --
 local function CompareMacros(a,b) -- сравнение 2 макросов по: "COMMON"?, текущая?, по областям, по клавишам, по маскам файлов, по описаниям
-local as,bs,a1,b1,f = "",""
-for c in S.SO.M:gmatch(".") do a1,b1 = "",""
-  if c:upper()=="O" then a1,b1 = not a.area:upper():cfind("COMMON"),not b.area:upper():cfind("COMMON")
-  elseif c:upper()=="C" then a1,b1 = not a.area:upper():cfind(Area.Current:upper()),not b.area:upper():cfind(Area.Current:upper())
-  elseif c:upper()=="A" then a1,b1 = ShortArea(a.area),ShortArea(b.area)
-  elseif c:upper()=="K" then a1,b1 = a.key:upper(),b.key:upper()
-  elseif c:upper()=="F" then a1,b1 = a.filemask or "",b.filemask or ""
-  elseif c:upper()=="D" then a1,b1 = a.description,b.description end
-  if far.LIsUpper(c) then a1,b1 = tostring(a1),tostring(b1) else a1,b1 = tostring(b1),tostring(a1) end
-  a1,b1 = a1=="nil" and""or a1,b1=="nil" and""or b1 f = "%-"..math.max(a1:len(),b1:len()).."s" as,bs = as..f:format(a1),bs..f:format(b1)
+local a1,b1,cUp
+for c in S.SO.M:gmatch(".") do cUp = c:upper()
+  if cUp=="O" then a1,b1 = a.area:upper():cfind("COMMON") and 1 or 2,b.area:upper():cfind("COMMON") and 1 or 2
+  elseif cUp=="C" then a1,b1 = a.area:upper():cfind(Area.Current:upper()) and 1 or 2,b.area:upper():cfind(Area.Current:upper()) and 1 or 2
+  elseif cUp=="A" then a1,b1 = ShortArea(a.area),ShortArea(b.area)
+  elseif cUp=="K" then a1,b1 = a.key:upper() or "",b.key:upper() or ""
+  elseif cUp=="F" then a1,b1 = a.filemask or "",b.filemask or ""
+  elseif cUp=="D" then a1,b1 = a.description or "",b.description or "" end
+  if far.LIsLower(c) then a1,b1 = b1,a1 end if a1~=b1 then return a1<b1 end
 end
-return(as<bs)
 end
 --
 local function CompareEvents(a,b) -- сравнение 2 обработчиков событий по: 1 - по группам; 2 - по маскам файлов; 3 - по описаниям
-local as,bs,a1,b1,f = "",""
-for c in S.SO.E:gmatch(".") do a1,b1 = "",""
-  if c:upper()=="G" then a1,b1 = ShortGroup(a.group),ShortGroup(b.group)
-  elseif c:upper()=="F" then a1,b1 = a.filemask or "",b.filemask or ""
-  elseif c:upper()=="D" then a1,b1 = a.description,b.description end
-  if far.LIsUpper(c) then a1,b1 = tostring(a1),tostring(b1) else a1,b1 = tostring(b1),tostring(a1) end
-  a1,b1 = a1=="nil" and""or a1,b1=="nil" and""or b1 f = "%-"..math.max(a1:len(),b1:len()).."s" as,bs = as..f:format(a1),bs..f:format(b1)
+local a1,b1,cUp
+for c in S.SO.E:gmatch(".") do cUp = c:upper()
+  if cUp=="G" then a1,b1 = ShortGroup(a.group),ShortGroup(b.group)
+  elseif cUp=="F" then a1,b1 = a.filemask or "",b.filemask or ""
+  elseif cUp=="D" then a1,b1 = a.description or "",b.description or "" end
+  if far.LIsLower(c) then a1,b1 = b1,a1 end if a1~=b1 then return a1<b1 end
 end
-return(as<bs)
 end
 --
 local function CompareModules(a,b) -- сравнение 2 модулей по: 1 - тип; 2 - маска поиска; 3 - имя
-local as,bs,a1,b1,f = "",""
-for c in S.SO.O:gmatch(".") do a1,b1 = "",""
-  if c:upper()=="T" then a1,b1 = a.type,b.type
-  elseif c:upper()=="M" then a1,b1 = a.mask,b.mask
-  elseif c:upper()=="N" then a1,b1 = a.name,b.name end
-  if far.LIsUpper(c) then a1,b1 = tostring(a1),tostring(b1) else a1,b1 = tostring(b1),tostring(a1) end
-  a1,b1 = a1=="nil" and""or a1,b1=="nil" and""or b1 f = "%-"..math.max(a1:len(),b1:len()).."s" as,bs = as..f:format(a1),bs..f:format(b1)
+local a1,b1,cUp
+for c in S.SO.O:gmatch(".") do cUp = c:upper()
+  if cUp=="T" then a1,b1 = a.type,b.type
+  elseif cUp=="M" then a1,b1 = a.mask,b.mask
+  elseif cUp=="N" then a1,b1 = a.name,b.name end
+  if far.LIsLower(c) then a1,b1 = b1,a1 end if a1~=b1 then return a1<b1 end
 end
-return(as<bs)
 end
 --
 local function CompareMenuItems(a,b) -- сравнение 2 пунктов меню плагинов по: использующие меню, область, "COMMON"?, текущая?, описание
-local as,bs,a1,b1,f = "",""
-for c in S.SO.I:gmatch(".") do a1,b1 = "",""
-  if c:upper()=="M" then for _,m in pairs({"plugins","disks","config"}) do a1,b1 = a1..(a.flags[m]and"1"or"2"),b1..(b.flags[m]and"1"or"2") end
-  elseif c:upper()=="O" then a1,b1 = not a.flags.common,not b.flags.common
-  elseif c:upper()=="C" then
-    local num for n,v in pairs(Areas) do if Area.Current:lower()==v:lower() then num = n end end
-    a1,b1 = not a.flags[num],not b.flags[num]
-  elseif c:upper()=="A" then
-    for _,n in pairs({1,10,11,12,5,13,2,3,4,8,7,14,6,15,16,9,17,18,0,"common"}) do a1,b1 = a1..(a.flags[n]and"1"or"2"),b1..(b.flags[n]and"1"or"2") end
-  elseif c:upper()=="D" then a1,b1 = a.description,b.description end
-  if far.LIsUpper(c) then a1,b1 = tostring(a1),tostring(b1) else a1,b1 = tostring(b1),tostring(a1) end
-  a1,b1 = a1=="nil" and""or a1,b1=="nil" and""or b1 f = "%-"..math.max(a1:len(),b1:len()).."s" as,bs = as..f:format(a1),bs..f:format(b1)
+local AN,PDC,a1,b1,cUp,num = {1,10,11,12,5,13,2,3,4,8,7,14,6,15,16,9,17,18,0,"common"},{"plugins","disks","config"}
+for c in S.SO.I:gmatch(".") do cUp = c:upper()
+  if cUp=="M" then a1,b1 = "","" for _,m in pairs(PDC) do a1,b1 = a1..(a.flags[m]and"1"or"2"),b1..(b.flags[m]and"1"or"2") end
+  elseif cUp=="O" then a1,b1 = a.flags.common and 1 or 2,b.flags.common and 1 or 2
+  elseif cUp=="C" then num = AreasRev[Area.Current:lower()] a1,b1 = a.flags[num] and 1 or 2,b.flags[num] and 1 or 2
+  elseif cUp=="A" then a1,b1 = "","" for _,n in pairs(AN) do a1,b1 = a1..(a.flags[n]and"1"or"2"),b1..(b.flags[n]and"1"or"2") end
+  elseif cUp=="D" then a1,b1 = a.description or "",b.description or "" end
+  if far.LIsLower(c) then a1,b1 = b1,a1 end if a1~=b1 then return a1<b1 end
 end
-return(as<bs)
 end
 --
-local function ComparePrefixes(a,b) -- сравнение 2 префиксов командной строки по: 1 - префикс; 2 - описание
-local as,bs,a1,b1,f = "",""
-for c in S.SO.P:gmatch(".") do a1,b1 = "",""
-  if c:upper()=="P" then a1,b1 = a.prefix,b.prefix
-  elseif c:upper()=="D" then a1,b1 = a.description,b.description end
-  if far.LIsUpper(c) then a1,b1 = tostring(a1),tostring(b1) else a1,b1 = tostring(b1),tostring(a1) end
-  a1,b1 = a1=="nil" and""or a1,b1=="nil" and""or b1 f = "%-"..math.max(a1:len(),b1:len()).."s" as,bs = as..f:format(a1),bs..f:format(b1)
+local function ComparePrefixes(a,b) -- сравнение 2 префиксов командной строки по: префикс, описание
+local a1,b1,cUp
+for c in S.SO.P:gmatch(".") do cUp = c:upper()
+  if cUp=="P" then a1,b1 = a.prefix,b.prefix
+  elseif cUp=="D" then a1,b1 = a.description or "",b.description or "" end
+  if far.LIsLower(c) then a1,b1 = b1,a1 end if a1~=b1 then return a1<b1 end
 end
-return(as<bs)
 end
 --
 local function ComparePanels(a,b) -- сравнение 2 панельных модулей по: 1 - описание
-local as,bs,a1,b1,f = "",""
-for c in S.SO.N:gmatch(".") do a1,b1 = "",""
-  if c:upper()=="D" then a1,b1 = a.Info.Description,b.Info.Description
-  elseif c:upper()=="T" then a1,b1 = a.Info.Title,b.Info.Title
-  elseif c:upper()=="A" then a1,b1 = a.Info.Author,b.Info.Author end
-  if far.LIsUpper(c) then a1,b1 = tostring(a1),tostring(b1) else a1,b1 = tostring(b1),tostring(a1) end
-  a1,b1 = a1=="nil" and""or a1,b1=="nil" and""or b1 f = "%-"..math.max(a1:len(),b1:len()).."s" as,bs = as..f:format(a1),bs..f:format(b1)
+local a1,b1,cUp
+for c in S.SO.N:gmatch(".") do cUp = c:upper()
+  if cUp=="D" then a1,b1 = a.Info.Description or "",b.Info.Description or ""
+  elseif cUp=="T" then a1,b1 = a.Info.Title or "",b.Info.Title or ""
+  elseif cUp=="A" then a1,b1 = a.Info.Author or "",b.Info.Author or "" end
+  if far.LIsLower(c) then a1,b1 = b1,a1 end if a1~=b1 then return a1<b1 end
 end
-return(as<bs)
 end
 --
 local function ProcMod(_,fullname,bp,fmask,mask,modules,off) -- обработка найденных потенциальных модулей
@@ -2175,9 +2167,8 @@ repeat -- работаем, пока не надоест
       for n,v in pairs(t) do tbl[n] = v end -- заполним
       tbl.desc2 = t.description~="" and t.description or "index="..t.index
       tbl.descr = t.description~="" and "'"..t.description.."'" or "index="..t.index
-      local function A2I(area) for i,a in pairs(Areas) do if a:upper()==area:upper() then return i end end end
-      for a in S.Filter.A:gmatch("%w+") do infilter = infilter or t.flags[A2I(a)] end -- отфильтруем по областям
-      if FMatch(t.FileName,ff)>0 and infilter and(S.Show.H or t.flags.common or t.flags[A2I(Area.Current)]) then -- отсеем по маске файла и прочему
+      for a in S.Filter.A:gmatch("%w+") do infilter = infilter or t.flags[AreasRev[a:lower()]] end -- отфильтруем по областям
+      if FMatch(t.FileName,ff)>0 and infilter and(S.Show.H or t.flags.common or t.flags[AreasRev[Area.Current:lower()]]) then -- отсеем по прочему
         menuitems[#menuitems+1] = tbl -- добавим, посчитаем максимальную длину описания
         FileW = math.max(FileW,(tbl.FileName or ""):match("[^\\]*$"):len())
         for s in (tbl.desc2.."\n"):gmatch("([^\n]*)\n") do MIDescW = math.max(MIDescW,s:len()) end
