@@ -1,7 +1,9 @@
-<plugin guid="D2F36B62-A470-418D-83A3-ED7A3710E5B5">
-	<hierarchicalconfig>
-		<key name="D2F36B62-A470-418D-83A3-ED7A3710E5B5" description="FarColorer">
-			<value name="TrueMod" type="qword" value="0000000000000000"/>
-		</key>
-	</hierarchicalconfig>
-</plugin>
+<?xml version="1.0" encoding="UTF-8"?>
+<farconfig version="3.0.5810">
+	<colors>
+		<object name="Dialog.Edit" background="FF000003" foreground="FF000007" flags="fg4bit bg4bit"/>
+		<object name="Dialog.Edit.Selected" background="FF000000" foreground="FF00000F" flags="fg4bit bg4bit"/>
+		<object name="Editor.Text" background="0000000F" foreground="00000000" flags="fg4bit bg4bit"/>
+		<object name="Editor.Text.Selected" background="FF000003" foreground="FF000000" flags="fg4bit bg4bit"/>
+	</colors>
+</farconfig>

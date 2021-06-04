@@ -1,6 +1,6 @@
 ﻿.Language=Ukrainian,Ukrainian (Українська)
 
-//Version: 3.0.5799.0 (Private) x64
+//Version: 3.0.5812.0 (Private) x64
 
 //[MYes]
 "Так"
@@ -402,9 +402,7 @@
 //[MConfigInterfaceTitle]
 "Налаштування інтерфейсу"
 //[MConfigClock]
-"&Годинник у панелях"
-//[MConfigViewerEditorClock]
-"Годинник у редакторі і програмі перегляду"
+"&Годинник"
 //[MConfigMouse]
 "Ми&ша"
 //[MConfigKeyBar]
@@ -425,6 +423,9 @@
 "Використовувати Ctrl+PgUp для вибору диска"
 //[MConfigUseVirtualTerminalForRendering]
 "Використовувати Virtual Terminal для рендерингу"
+// need translation:
+//[MConfigFullWidthAwareRendering]
+"Fullwidth-aware rendering"
 //[MConfigClearType]
 "Перемальовка з підтримкою ClearType (може бути повільною)"
 //[MConfigSetConsoleIcon]
@@ -2824,9 +2825,17 @@
 //[MSetColorBackground]
 "&Фон:"
 
+// 8 characters max
+//[MSetColorForeAARRGGBB]
+"AARRGGBB"
+
 // 3 characters max
 //[MSetColorForeRGB]
 "&RGB…"
+
+// 8 characters max
+//[MSetColorBackAARRGGBB]
+"AARRGGBB"
 
 // 3 characters max
 //[MSetColorBackRGB]

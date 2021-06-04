@@ -1,6 +1,6 @@
 ﻿.Language=Spanish,Spanish (Español)
 
-//Version: 3.0.5799.0 (Private) x64
+//Version: 3.0.5812.0 (Private) x64
 
 //[MYes]
 "Si"
@@ -402,9 +402,7 @@
 //[MConfigInterfaceTitle]
 "Configuración de interfaz"
 //[MConfigClock]
-"&Reloj en paneles"
-//[MConfigViewerEditorClock]
-"Re&loj en visor y editor"
+"&Reloj"
 //[MConfigMouse]
 "Rat&ón"
 //[MConfigKeyBar]
@@ -425,6 +423,9 @@
 "Usar Ctrl+Pg&Up para cambiar unidad"
 //[MConfigUseVirtualTerminalForRendering]
 "Usar Terminal Virtual para renderizado"
+// need translation:
+//[MConfigFullWidthAwareRendering]
+"R&enderowanie na pełnej szerokości"
 //[MConfigClearType]
 "Limpiar rediseño (puede ser lento)"
 //[MConfigSetConsoleIcon]
@@ -2839,9 +2840,17 @@
 //[MSetColorBackground]
 "&Fondo:"
 
+// 8 characters max
+//[MSetColorForeAARRGGBB]
+"AARRGGBB"
+
 // 3 characters max
 //[MSetColorForeRGB]
 "&RGB…"
+
+// 8 characters max
+//[MSetColorBackAARRGGBB]
+"AARRGGBB"
 
 // 3 characters max
 //[MSetColorBackRGB]

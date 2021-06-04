@@ -2,7 +2,7 @@
 .PluginContents=Calculator
 
 @Contents
-$^#Calculator for FAR Manager. Version 3.25.0#
+$^#Calculator for FAR Manager. Version 3.26.0#
 $^#Copyright (c) 1998-2001 Igor Russkih#.
 $^#Copyright (c) 2009-2012 uncle-vunkis#.
 $^#Copyright (c) 2020 FarPlugins Team#.
@@ -45,9 +45,6 @@ $#Wherefrom it Appears?#
 that my Brains architecture is more complexes, than the Windows 95
 architecture, the ideas of those programs was created in parallel
 threads of my own brains.
-
-  Ou, where you can get #Windows Version#?
-  Visit ~http://www.uic.nnov.ru/~~ruiv/files/calc.zip~@http://www.uic.nnov.ru/~~ruiv/files/calc.zip@
 
 @techinfo
 $^#Technical Information#
@@ -190,7 +187,7 @@ under the Star Adelaide it was created.
   #Hmmmm...#
 
 @author
-$^#Calculator for FAR Manager. Version 3.25.0
+$^#Calculator for FAR Manager. Version 3.26.0
   #Igor Russkih#.  Copyright (c) 1998-2001. All rights reserved.
   #uncle-vunkis#. Copyright (c) 2009-2012. #.
   #FarPlugins Team#. Copyright (c) 2020. #.

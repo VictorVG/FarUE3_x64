@@ -1,6 +1,6 @@
 ﻿.Language=Italian,Italian (Italiano)
 
-//Version: 3.0.5799.0 (Private) x64
+//Version: 3.0.5812.0 (Private) x64
 
 //[MYes]
 "&Si"
@@ -402,9 +402,7 @@
 //[MConfigInterfaceTitle]
 "Impostazioni ► Interfaccia"
 //[MConfigClock]
-"&Orologio Nei Pannelli"
-//[MConfigViewerEditorClock]
-"Orologio &In Editor/Visualizzatore"
+"&Orologio"
 //[MConfigMouse]
 "Mo&use"
 //[MConfigKeyBar]
@@ -425,6 +423,9 @@
 "Usa [CTRL+Pag&Su] Per Cambiare Unità"
 //[MConfigUseVirtualTerminalForRendering]
 "Usa Terminale Virtuale Per Il Rendering"
+// need translation:
+//[MConfigFullWidthAwareRendering]
+"Fullwidth-aware rendering"
 //[MConfigClearType]
 "Modalità ClearT&ype (può rallentare)"
 //[MConfigSetConsoleIcon]
@@ -2834,9 +2835,17 @@
 //[MSetColorBackground]
 "&Sfondo:"
 
+// 8 characters max
+//[MSetColorForeAARRGGBB]
+"AARRGGBB"
+
 // 3 characters max
 //[MSetColorForeRGB]
 "&RGB…"
+
+// 8 characters max
+//[MSetColorBackAARRGGBB]
+"AARRGGBB"
 
 // 3 characters max
 //[MSetColorBackRGB]

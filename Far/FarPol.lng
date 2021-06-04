@@ -1,6 +1,6 @@
 ﻿.Language=Polish,Polish (Polski)
 
-//Version: 3.0.5799.0 (Private) x64
+//Version: 3.0.5812.0 (Private) x64
 
 //[MYes]
 "Tak"
@@ -403,8 +403,6 @@
 "Ustawienia interfejsu"
 //[MConfigClock]
 "&Zegar"
-//[MConfigViewerEditorClock]
-"Zegar w &podglądzie i edytorze"
 //[MConfigMouse]
 "M&ysz"
 //[MConfigKeyBar]
@@ -425,6 +423,9 @@
 "Użyj Ctrl+Pg&Up do zmiany napędu"
 //[MConfigUseVirtualTerminalForRendering]
 "Użyj &Terminalu Wirtualnego do renderowania"
+// need translation:
+//[MConfigFullWidthAwareRendering]
+"Fullwidth-aware rendering"
 //[MConfigClearType]
 "&Rysowanie zgodne z ClearType (może być wolniejsze)"
 //[MConfigSetConsoleIcon]
@@ -2820,9 +2821,17 @@
 //[MSetColorBackground]
 "&Tło:"
 
+// 8 characters max
+//[MSetColorForeAARRGGBB]
+"AARRGGBB"
+
 // 3 characters max
 //[MSetColorForeRGB]
 "&RGB…"
+
+// 8 characters max
+//[MSetColorBackAARRGGBB]
+"AARRGGBB"
 
 // 3 characters max
 //[MSetColorBackRGB]

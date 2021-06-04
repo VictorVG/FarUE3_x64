@@ -1,6 +1,6 @@
 ﻿.Language=Czech,Czech (Čeština)
 
-//Version: 3.0.5799.0 (Private) x64
+//Version: 3.0.5812.0 (Private) x64
 
 //[MYes]
 "Ano"
@@ -402,9 +402,7 @@
 //[MConfigInterfaceTitle]
 "Nastavení rozhraní"
 //[MConfigClock]
-"&Hodiny v panelech"
-//[MConfigViewerEditorClock]
-"H&odiny v prohlížeči a editoru"
+"&Hodiny"
 //[MConfigMouse]
 "M&yš"
 //[MConfigKeyBar]
@@ -425,6 +423,9 @@
 "Použít Ctrl+Pg&Up pro změnu jednotky"
 //[MConfigUseVirtualTerminalForRendering]
 "Použít virtuální terminál pro vykreslování"
+// need translation:
+//[MConfigFullWidthAwareRendering]
+"Fullwidth-aware rendering"
 //[MConfigClearType]
 "Použít &ClearType (pomalejší)"
 //[MConfigSetConsoleIcon]
@@ -2834,9 +2835,17 @@
 //[MSetColorBackground]
 "Po&zadí:"
 
+// 8 characters max
+//[MSetColorForeAARRGGBB]
+"AARRGGBB"
+
 // 3 characters max
 //[MSetColorForeRGB]
 "&RGB…"
+
+// 8 characters max
+//[MSetColorBackAARRGGBB]
+"AARRGGBB"
 
 // 3 characters max
 //[MSetColorBackRGB]

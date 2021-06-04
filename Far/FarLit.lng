@@ -1,6 +1,6 @@
 ﻿.Language=Lithuanian,Lithuanian (Lietuvių)
 
-//Version: 3.0.5799.0 (Private) x64
+//Version: 3.0.5812.0 (Private) x64
 
 //[MYes]
 "Taip"
@@ -449,8 +449,6 @@
 "Sąsajos nuostatai"
 //[MConfigClock]
 "&Laikrodis"
-//[MConfigViewerEditorClock]
-"Laik&rodis redaktoriuje"
 //[MConfigMouse]
 "&Pelė"
 //[MConfigKeyBar]
@@ -475,6 +473,9 @@
 // need translation:
 //[MConfigUseVirtualTerminalForRendering]
 "Use &Virtual Terminal for rendering"
+// need translation:
+//[MConfigFullWidthAwareRendering]
+"Fullwidth-aware rendering"
 // need translation:
 //[MConfigClearType]
 "Cl&earType-friendly redraw (can be slow)"
@@ -3311,9 +3312,17 @@
 //[MSetColorBackground]
 "&Fonas:"
 
+// 8 characters max
+//[MSetColorForeAARRGGBB]
+"AARRGGBB"
+
 // 3 characters max
 //[MSetColorForeRGB]
 "&RGB…"
+
+// 8 characters max
+//[MSetColorBackAARRGGBB]
+"AARRGGBB"
 
 // 3 characters max
 //[MSetColorBackRGB]

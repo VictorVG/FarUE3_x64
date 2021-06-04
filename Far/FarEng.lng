@@ -1,6 +1,6 @@
 ﻿.Language=English,English
 
-//Version: 3.0.5799.0 (Private) x64
+//Version: 3.0.5812.0 (Private) x64
 
 //[MYes]
 "Yes"
@@ -402,9 +402,7 @@
 //[MConfigInterfaceTitle]
 "Interface settings"
 //[MConfigClock]
-"&Clock in panels"
-//[MConfigViewerEditorClock]
-"C&lock in viewer and editor"
+"&Clock"
 //[MConfigMouse]
 "M&ouse"
 //[MConfigKeyBar]
@@ -425,6 +423,9 @@
 "Use Ctrl+Pg&Up to change drive"
 //[MConfigUseVirtualTerminalForRendering]
 "Use &Virtual Terminal for rendering"
+// need translation:
+//[MConfigFullWidthAwareRendering]
+"Fullwidth-aware rendering"
 //[MConfigClearType]
 "Cl&earType-friendly redraw (can be slow)"
 //[MConfigSetConsoleIcon]
@@ -2820,9 +2821,17 @@
 //[MSetColorBackground]
 "&Background:"
 
+// 8 characters max
+//[MSetColorForeAARRGGBB]
+"AARRGGBB"
+
 // 3 characters max
 //[MSetColorForeRGB]
 "&RGB…"
+
+// 8 characters max
+//[MSetColorBackAARRGGBB]
+"AARRGGBB"
 
 // 3 characters max
 //[MSetColorBackRGB]

@@ -2,7 +2,7 @@
 local nfo = Info {... or _filename,
   name          = "DBEdit";
   description   = "Импорт/экспорт/редактирование данных плагинов";
-  version       = "2.1.5"; --в формате semver: http://semver.org/lang/ru/
+  version       = "2.1.7"; --в формате semver: http://semver.org/lang/ru/
   author        = "IgorZ";
   url           = "http://forum.farmanager.com/viewtopic.php?t=10120";
   id            = "51465236-592A-4C28-A047-929FCBFD8672";
@@ -62,6 +62,8 @@ history         = [[
 2018/11/06 v2.1.3 - Добавлен префикс dbshow:. Для dbexp: можно задавать имя файла. Исправлены ошибки в справке. Рефакторинг.
 2019/12/10 v2.1.4 - Доработан вызов action-функций с учётом введённых в build 717 параметров для condition/action. Рефакторинг.
 2020/04/21 v2.1.5 - Исправлена ошибка с обработкой действий в пустом подключе. Переделана обработка FST_DATA. Рефакторинг.
+2020/04/22 v2.1.6 - Исправлена ошибка с неюникодной строкой значения типа FST_DATA.
+2021/06/04 v2.1.7 - Исправлена ошибка с переключением БД между локальной и глобальной, когда переключать нечего. Добавлен перехват CtrlBreak.
 ]];
   options       = {
     tbl_format = "internal", -- чем форматировать таблицы по умолчанию
@@ -390,7 +392,7 @@ end
 end
 -- начало DATAToStrings
 local res,fun,ok,ext_fun = {},(loadstring(elem.value)) -- массив строк (результат), функция, результат получения и сама функция форматирования
-res.str,res.dump = _G.unicode.utf8.utf8valid(elem.value) and elem.value:gsub("\n","\\n"),"["..table.concat({elem.value:byte(1,-1)},",").."]"
+res.str,res.dump = _G.unicode.utf8.utf8valid(elem.value) and elem.value:gsub("\n","\\n"),"["..table.concat({string.byte(elem.value,1,-1)},",").."]"
 if O.tbl_format=="inspect" then ok,ext_fun = pcall(require,"inspect") ext_fun = ok and ext_fun end
 if O.tbl_format=="dump" then ok,ext_fun = pcall(require,"moon") ext_fun = ok and ext_fun.dump end
 if ext_fun then
@@ -465,7 +467,7 @@ repeat
   end
   res,pos = far.Menu({Title=L.Hdr:format(O.PName)..": "..(root and r2 or ""),Bottom=Bottom,SelectIndex=pos,Id=Guids.Menu,
     Flags=F.FMENU_SHOWAMPERSAND+F.FMENU_WRAPMODE},items,HotKeys) -- меню
-    local BK,item = res.BreakKey,items[pos] and items[pos].elem or {name="",type=F.FST_UNKNOWN,value="",parent=root} -- клавиша, что обрабатываем
+    local BK,item = res and res.BreakKey or "",items[pos] and items[pos].elem or {name="",type=F.FST_UNKNOWN,value="",parent=root} -- клавиша, элемент
   if BK=="RETURN" and item.type~=F.FST_SUBKEY then BK = "F4" end -- Enter на значении подменим на F4
   if BK=="ESCAPE" or BK=="BACK" then-- Esc/BS
     local n = #History if n>0 then root,pos,History[n] = History[n].r,History[n].p,nil else break end -- предыдущая позиция/выход.
@@ -493,9 +495,9 @@ repeat
   elseif BK=="C+S" then -- Выбрать БД?
       if SelPlugin() then root,History = nil,{} end -- выберем, если выбрали, то старый указатель некорректен, история тоже
   elseif BK:match("^C%+[CGL]$") then -- Переключить БД?
-    if BK:sub(3)~="G" and root:match("^[^\n]+")=="GLOBAL" then
+    if BK:sub(3)~="G" and root and root:match("^[^\n]+")=="GLOBAL" then
       History[#History+1],root,pos = {r=root,p=pos},root:gsub("^GLOBAL","LOCAL"),1
-    elseif BK:sub(3)~="L" and root:match("^[^\n]+")=="LOCAL" then
+    elseif BK:sub(3)~="L" and root and root:match("^[^\n]+")=="LOCAL" then
       History[#History+1],root,pos = {r=root,p=pos},root:gsub("^LOCAL","GLOBAL"),1
     end
   elseif BK:match("^C%+[123]$") then -- Переключить БД?

@@ -1,6 +1,6 @@
 ﻿.Language=Russian,Russian (Русский)
 
-//Version: 3.0.5799.0 (Private) x64
+//Version: 3.0.5812.0 (Private) x64
 
 //[MYes]
 "Да"
@@ -402,9 +402,7 @@
 //[MConfigInterfaceTitle]
 "Настройки интерфейса"
 //[MConfigClock]
-"&Часы в панелях"
-//[MConfigViewerEditorClock]
-"Ч&асы в редакторе и программе просмотра"
+"&Часы"
 //[MConfigMouse]
 "Мы&шь"
 //[MConfigKeyBar]
@@ -425,6 +423,8 @@
 "Использовать Ctrl+PgUp для в&ыбора диска"
 //[MConfigUseVirtualTerminalForRendering]
 "Использовать Virtual Terminal для рендеринга"
+//[MConfigFullWidthAwareRendering]
+"Fullwidth-aware rendering"
 //[MConfigClearType]
 "Перер&исовка с поддержкой ClearType (может быть медленной)"
 //[MConfigSetConsoleIcon]
@@ -2824,9 +2824,17 @@
 //[MSetColorBackground]
 "&Фон:"
 
+// 8 characters max
+//[MSetColorForeAARRGGBB]
+"AARRGGBB"
+
 // 3 characters max
 //[MSetColorForeRGB]
 "&RGB…"
+
+// 8 characters max
+//[MSetColorBackAARRGGBB]
+"AARRGGBB"
 
 // 3 characters max
 //[MSetColorBackRGB]

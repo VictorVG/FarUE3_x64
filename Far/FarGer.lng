@@ -1,6 +1,6 @@
 ﻿.Language=German,German (Deutsch)
 
-//Version: 3.0.5799.0 (Private) x64
+//Version: 3.0.5812.0 (Private) x64
 
 //[MYes]
 "Ja"
@@ -407,9 +407,7 @@
 //[MConfigInterfaceTitle]
 "Oberfläche einrichten"
 //[MConfigClock]
-"&Uhr in Panels anzeigen"
-//[MConfigViewerEditorClock]
-"U&hr in Betrachter und Editor anzeigen"
+"&Uhr"
 //[MConfigMouse]
 "M&aus aktivieren"
 //[MConfigKeyBar]
@@ -431,6 +429,9 @@
 // need translation:
 //[MConfigUseVirtualTerminalForRendering]
 "Use Virtual Terminal for rendering"
+// need translation:
+//[MConfigFullWidthAwareRendering]
+"Fullwidth-aware rendering"
 //[MConfigClearType]
 "Neu mit der ClearType zeichnen (kann langsam sein)"
 //[MConfigSetConsoleIcon]
@@ -2898,9 +2899,17 @@
 //[MSetColorBackground]
 "&Hintergrund:"
 
+// 8 characters max
+//[MSetColorForeAARRGGBB]
+"AARRGGBB"
+
 // 3 characters max
 //[MSetColorForeRGB]
 "&RGB…"
+
+// 8 characters max
+//[MSetColorBackAARRGGBB]
+"AARRGGBB"
 
 // 3 characters max
 //[MSetColorBackRGB]

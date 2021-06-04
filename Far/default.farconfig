@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<farconfig version="3.0.5741">
+<farconfig version="3.0.5810">
 	<generalconfig>
 		<setting key="Cmdline" name="AutoComplete" type="qword" value="0000000000000001"/>
 		<setting key="Cmdline" name="DelRemovesBlocks" type="qword" value="0000000000000001"/>
@@ -30,6 +30,7 @@
 		<setting key="Descriptions" name="SetHidden" type="qword" value="0000000000000001"/>
 		<setting key="Descriptions" name="StartPos" type="qword" value="0000000000000000"/>
 		<setting key="Descriptions" name="UpdateMode" type="qword" value="0000000000000001"/>
+		<setting key="Descriptions" name="ValidateConversion" type="qword" value="0000000000000001"/>
 		<setting key="Dialog" name="AutoComplete" type="qword" value="0000000000000001"/>
 		<setting key="Dialog" name="CBoxMaxHeight" type="qword" value="0000000000000008"/>
 		<setting key="Dialog" name="DelRemovesBlocks" type="qword" value="0000000000000001"/>
@@ -94,6 +95,7 @@
 		<setting key="Interface" name="DelShowTotal" type="qword" value="0000000000000000"/>
 		<setting key="Interface" name="EditorTitleFormat" type="text" value="%Lng %File"/>
 		<setting key="Interface" name="FormatNumberSeparators" type="text" value=""/>
+		<setting key="Interface" name="FullWidthAwareRendering" type="qword" value="0000000000000000"/>
 		<setting key="Interface" name="IconIndex" type="qword" value="0000000000000000"/>
 		<setting key="Interface" name="InitDriveMenuHotkeys" type="qword" value="0000000000000000"/>
 		<setting key="Interface" name="Mouse" type="qword" value="0000000000000001"/>
@@ -337,7 +339,7 @@
 		<setting key="Panel" name="LeftFocus" type="qword" value="0000000000000001"/>
 		<setting key="Panel.Left" name="CurFile" type="text" value="Windows"/>
 		<setting key="Panel.Left" name="Folder" type="text" value="C:\"/>
-		<setting key="Panel.Right" name="CurFile" type="text" value="$Recycle.Bin"/>
+		<setting key="Panel.Right" name="CurFile" type="text" value="Windows"/>
 		<setting key="Panel.Right" name="Folder" type="text" value="C:\"/>
 	</localconfig>
 	<colors>
@@ -371,7 +373,7 @@
 		<object name="Dialog.DefaultButton.Highlight.Selected" background="FF000003" foreground="FF00000E" flags="fg4bit bg4bit"/>
 		<object name="Dialog.DefaultButton.Selected" background="FF000003" foreground="FF000000" flags="fg4bit bg4bit"/>
 		<object name="Dialog.Disabled" background="FF000007" foreground="FF000008" flags="fg4bit bg4bit"/>
-		<object name="Dialog.Edit" background="FF000003" foreground="FF000000" flags="fg4bit bg4bit"/>
+		<object name="Dialog.Edit" background="FF000003" foreground="FF000007" flags="fg4bit bg4bit"/>
 		<object name="Dialog.Edit.Disabled" background="FF000003" foreground="FF000008" flags="fg4bit bg4bit"/>
 		<object name="Dialog.Edit.Selected" background="FF000000" foreground="FF00000F" flags="fg4bit bg4bit"/>
 		<object name="Dialog.Edit.Unchanged" background="FF000003" foreground="FF000007" flags="fg4bit bg4bit"/>
@@ -393,7 +395,7 @@
 		<object name="Editor.Clock" background="FF00000F" foreground="FF00000C" flags="fg4bit bg4bit"/>
 		<object name="Editor.Scrollbar" background="FF00000F" foreground="FF000007" flags="fg4bit bg4bit"/>
 		<object name="Editor.Status" background="FF00000B" foreground="FF000000" flags="fg4bit bg4bit"/>
-		<object name="Editor.Text" background="00FFFFFF" foreground="00000000" flags=""/>
+		<object name="Editor.Text" background="0000000F" foreground="00000000" flags="fg4bit bg4bit"/>
 		<object name="Editor.Text.Selected" background="FF000003" foreground="FF000000" flags="fg4bit bg4bit"/>
 		<object name="HMenu.Highlight" background="FF000003" foreground="FF00000E" flags="fg4bit bg4bit"/>
 		<object name="HMenu.Highlight.Selected" background="FF000000" foreground="FF00000E" flags="fg4bit bg4bit"/>
@@ -1298,6 +1300,11 @@
 		</hierarchicalconfig>
 	</panelmodes>
 	<pluginsconfig>
+		<plugin guid="020B85C2-DB44-45D3-9D25-939499DD7813">
+			<hierarchicalconfig>
+				<key name="020B85C2-DB44-45D3-9D25-939499DD7813" description="DlgSelect"/>
+			</hierarchicalconfig>
+		</plugin>
 		<plugin guid="0364224C-A21A-42ED-95FD-34189BA4B204">
 			<hierarchicalconfig>
 				<key name="0364224C-A21A-42ED-95FD-34189BA4B204" description="Review">
@@ -1337,7 +1344,7 @@
 					<value name="UseThumbnail" type="qword" value="0000000000000001"/>
 					<value name="UseWinSize" type="qword" value="0000000000000001"/>
 					<key name="Decoders">
-						<value name="Count" type="qword" value="0000000000000006"/>
+						<value name="Count" type="qword" value="0000000000000008"/>
 						<key name="Decoder0">
 							<value name="ActiveMask" type="text" value="JPG,JPEG"/>
 							<value name="CustomMask" type="qword" value="0000000000000000"/>
@@ -1355,7 +1362,7 @@
 							<value name="Enabled" type="qword" value="0000000000000001"/>
 							<value name="IgnoreMask" type="text" value=""/>
 							<value name="Kind" type="qword" value="0000000000000002"/>
-							<value name="Modified" type="qword" value="000000004694AB6A"/>
+							<value name="Modified" type="qword" value="00000000528BBC74"/>
 							<value name="Name" type="text" value="DXVideo.pvd"/>
 							<value name="Priority" type="qword" value="0000000000000F01"/>
 							<value name="Title" type="text" value="DXVideo"/>
@@ -1366,7 +1373,7 @@
 							<value name="Enabled" type="qword" value="0000000000000001"/>
 							<value name="IgnoreMask" type="text" value=""/>
 							<value name="Kind" type="qword" value="0000000000000002"/>
-							<value name="Modified" type="qword" value="000000004694AB69"/>
+							<value name="Modified" type="qword" value="00000000528BBC74"/>
 							<value name="Name" type="text" value="GFL.pvd"/>
 							<value name="Priority" type="qword" value="0000000000000F02"/>
 							<value name="Title" type="text" value="GFL"/>
@@ -1377,7 +1384,7 @@
 							<value name="Enabled" type="qword" value="0000000000000001"/>
 							<value name="IgnoreMask" type="text" value=""/>
 							<value name="Kind" type="qword" value="0000000000000002"/>
-							<value name="Modified" type="qword" value="000000004694AB6A"/>
+							<value name="Modified" type="qword" value="00000000528BBC74"/>
 							<value name="Name" type="text" value="WIC.pvd"/>
 							<value name="Priority" type="qword" value="0000000000000F02"/>
 							<value name="Title" type="text" value="WIC"/>
@@ -1403,6 +1410,28 @@
 							<value name="Name" type="text" value="WMF"/>
 							<value name="Priority" type="qword" value="000000007FFFFFFD"/>
 							<value name="Title" type="text" value="WMF"/>
+						</key>
+						<key name="Decoder6">
+							<value name="ActiveMask" type="text" value="svg"/>
+							<value name="CustomMask" type="qword" value="0000000000000000"/>
+							<value name="Enabled" type="qword" value="0000000000000001"/>
+							<value name="IgnoreMask" type="text" value=""/>
+							<value name="Kind" type="qword" value="0000000000000002"/>
+							<value name="Modified" type="qword" value="00000000528BBC77"/>
+							<value name="Name" type="text" value="SVG.pvd"/>
+							<value name="Priority" type="qword" value="0000000000000F02"/>
+							<value name="Title" type="text" value="SVG"/>
+						</key>
+						<key name="Decoder7">
+							<value name="ActiveMask" type="text" value="3GP,AVI,FLV,MKV,MOV,MP4,MPG,MPEG,MTS,WEBM,WMV,HEVC"/>
+							<value name="CustomMask" type="qword" value="0000000000000000"/>
+							<value name="Enabled" type="qword" value="0000000000000001"/>
+							<value name="IgnoreMask" type="text" value=""/>
+							<value name="Kind" type="qword" value="0000000000000002"/>
+							<value name="Modified" type="qword" value="00000000528BBC74"/>
+							<value name="Name" type="text" value="MFVideo.pvd"/>
+							<value name="Priority" type="qword" value="0000000000000F02"/>
+							<value name="Title" type="text" value="MFVideo"/>
 						</key>
 					</key>
 				</key>
@@ -1458,7 +1487,7 @@
 					<value name="FilesMask" type="text" value="*.*"/>
 					<value name="FullPath" type="qword" value="0000000000000002"/>
 					<value name="ScanFolders" type="qword" value="0000000000000000"/>
-					<value name="ScanMode" type="qword" value="0000000000000000"/>
+					<value name="ScanMode" type="qword" value="0000000000000001"/>
 					<value name="ScanSymlink" type="qword" value="0000000000000001"/>
 					<value name="WarnGetInfo" type="qword" value="0000000000000001"/>
 				</key>
@@ -1775,8 +1804,6 @@
 								</key>
 							</key>
 						</key>
-						<key name="LastFingerprints">
-						</key>
 						<key name="Logging">
 							<value name="LogFileAppend" type="qword" value="0000000000000001"/>
 							<value name="LogWindowLines" type="qword" value="0000000000000064"/>
@@ -1790,10 +1817,6 @@
 							<value name="PermanentLogging" type="qword" value="0000000000000000"/>
 						</key>
 						<key name="Usage"/>
-					</key>
-					<key name="Sessions">
-					</key>
-					<key name="SshHostKeys">
 					</key>
 				</key>
 			</hierarchicalconfig>
@@ -1810,8 +1833,6 @@
 							<value name="UseEnv" type="qword" value="0000000000000001"/>
 							<value name="UseGlobal" type="qword" value="0000000000000001"/>
 							<value name="UseLocal" type="qword" value="0000000000000000"/>
-						</key>
-						<key name="BookmarkManagerData">
 						</key>
 						<key name="CASArrowsDiskSwitch">
 							<value name="ExcludeDrives" type="text" value=""/>
@@ -1863,9 +1884,9 @@
 							<value name="InsertUidKey" type="text" value="RCtrlU"/>
 							<value name="KeyFilter" type="text" value=""/>
 							<value name="MISortingOrder" type="text" value="A"/>
-							<value name="MacroMaxDescWidth" type="qword" value="00000000000003E8"/>
 							<value name="MacroSortingOrder" type="text" value="OCAKD"/>
 							<value name="ManagerKey" type="text" value="AltShiftF11"/>
+							<value name="MaxDescWidth" type="qword" value="00000000000003E8"/>
 							<value name="MaxFileWidth" type="qword" value="000000000000002E"/>
 							<value name="MaxKeyWidth" type="qword" value="0000000000000044"/>
 							<value name="ModuleSortingOrder" type="text" value="TMN"/>
@@ -1961,7 +1982,6 @@
 		<plugin guid="6F332978-08B8-4919-847A-EFBB6154C99A">
 			<hierarchicalconfig>
 				<key name="6F332978-08B8-4919-847A-EFBB6154C99A" description="LuaFAR for Editor">
-					<value name="alldata" type="base64"/>
 				</key>
 			</hierarchicalconfig>
 		</plugin>
@@ -2076,7 +2096,6 @@
 		<plugin guid="8E11EA75-0303-4374-AC60-D1E38F865449">
 			<hierarchicalconfig>
 				<key name="8E11EA75-0303-4374-AC60-D1E38F865449" description="LuaFAR Search">
-					<value name="alldata" type="base64"/>
 				</key>
 			</hierarchicalconfig>
 		</plugin>
@@ -2106,8 +2125,6 @@
 					<value name="save_file_pos" type="qword" value="0000000000000001"/>
 					<value name="show_dword_seps" type="qword" value="0000000000000001"/>
 					<value name="std_cursor_size" type="qword" value="0000000000000001"/>
-					<key name="history">
-					</key>
 				</key>
 			</hierarchicalconfig>
 		</plugin>
@@ -2174,7 +2191,8 @@
 		<plugin guid="9BF0E19D-B943-4E6D-B7B0-D71E3DAF446A">
 			<hierarchicalconfig>
 				<key name="9BF0E19D-B943-4E6D-B7B0-D71E3DAF446A" description="Portable Devices">
-					<key name="storages"/>
+					<key name="storages">
+					</key>
 				</key>
 			</hierarchicalconfig>
 		</plugin>
@@ -2203,7 +2221,7 @@
 					<value name="playlist_height" type="qword" value="0000000000000008"/>
 					<value name="remove_album" type="qword" value="0000000000000001"/>
 					<value name="use_analyze" type="qword" value="0000000000000001"/>
-					<value name="volume" type="qword" value="00000000000001A4"/>
+					<value name="volume" type="qword" value="000000000000012B"/>
 					<value name="wasapi_play_url" type="qword" value="0000000000000001"/>
 					<value name="window_width" type="qword" value="0000000000000032"/>
 				</key>
@@ -2229,7 +2247,6 @@
 		<plugin guid="9F9554B3-AD82-437A-8C2B-D84192B8E2FA">
 			<hierarchicalconfig>
 				<key name="9F9554B3-AD82-437A-8C2B-D84192B8E2FA" description="Hunspell">
-					<value name="custom_dict" type="text"/>
 				</key>
 			</hierarchicalconfig>
 		</plugin>
@@ -2379,7 +2396,7 @@
 						<key name="{1D1BA1CB-3A05-4F4B-91B3-F8E71A55420E}">
 							<value name="Hidden" type="qword" value="0000000000000000"/>
 							<value name="Hotkey" type="text" value="s"/>
-							<value name="LastAccess" type="qword" value="000000005245BC0C"/>
+							<value name="LastAccess" type="qword" value="0000000052880620"/>
 							<value name="NewName" type="text" value=""/>
 						</key>
 						<key name="{2099F3F1-A147-4D0F-BB82-60E472513BC0}">
@@ -2397,7 +2414,7 @@
 						<key name="{256C8EBC-F874-4905-AA51-EFDA1BB62800}">
 							<value name="Hidden" type="qword" value="0000000000000000"/>
 							<value name="Hotkey" type="text" value=""/>
-							<value name="LastAccess" type="qword" value="0000000050DA1484"/>
+							<value name="LastAccess" type="qword" value="0000000052BF54E8"/>
 							<value name="NewName" type="text" value=""/>
 						</key>
 						<key name="{2AE19EDB-6028-4983-A552-8F270EA19270}">
@@ -2463,7 +2480,7 @@
 						<key name="{4EBBEFC8-2084-4B7F-94C0-692CE136894D}%2">
 							<value name="Hidden" type="qword" value="0000000000000000"/>
 							<value name="Hotkey" type="text" value=""/>
-							<value name="LastAccess" type="qword" value="000000004D821650"/>
+							<value name="LastAccess" type="qword" value="0000000052C28B9B"/>
 							<value name="NewName" type="text" value=""/>
 						</key>
 						<key name="{4EBBEFC8-2084-4B7F-94C0-692CE136894D}%3">
@@ -2475,7 +2492,7 @@
 						<key name="{4EBBEFC8-2084-4B7F-94C0-692CE136894D}%4">
 							<value name="Hidden" type="qword" value="0000000000000000"/>
 							<value name="Hotkey" type="text" value=""/>
-							<value name="LastAccess" type="qword" value="00000000519A2A0A"/>
+							<value name="LastAccess" type="qword" value="000000005253216D"/>
 							<value name="NewName" type="text" value=""/>
 						</key>
 						<key name="{4EBBEFC8-2084-4B7F-94C0-692CE136894D}%5">
@@ -2493,7 +2510,7 @@
 						<key name="{4EBBEFC8-2084-4B7F-94C0-692CE136894D}%7">
 							<value name="Hidden" type="qword" value="0000000000000000"/>
 							<value name="Hotkey" type="text" value=""/>
-							<value name="LastAccess" type="qword" value="00000000522824E6"/>
+							<value name="LastAccess" type="qword" value="0000000052672314"/>
 							<value name="NewName" type="text" value=""/>
 						</key>
 						<key name="{4F6BDE22-3F56-496B-B1DD-7991199D2043}">
@@ -2575,7 +2592,7 @@
 						<key name="{7DDE66C0-9C85-44DF-B592-31E615CB56D3}">
 							<value name="Hidden" type="qword" value="0000000000000000"/>
 							<value name="Hotkey" type="text" value=""/>
-							<value name="LastAccess" type="qword" value="00000000523D03A3"/>
+							<value name="LastAccess" type="qword" value="00000000528DB519"/>
 							<value name="NewName" type="text" value=""/>
 						</key>
 						<key name="{7DE7CE15-8615-4A8E-A015-DB9BD8B1E7F7}">
@@ -2599,7 +2616,7 @@
 						<key name="{894EAABB-C57F-4549-95FC-4AC6F3102A36}">
 							<value name="Hidden" type="qword" value="0000000000000000"/>
 							<value name="Hotkey" type="text" value=""/>
-							<value name="LastAccess" type="qword" value="0000000052298A0C"/>
+							<value name="LastAccess" type="qword" value="0000000052BF54F2"/>
 							<value name="NewName" type="text" value=""/>
 						</key>
 						<key name="{8A92F148-A165-41D7-BB49-9201A16DE91F}">
@@ -2640,7 +2657,7 @@
 						<key name="{9C3A61FC-F349-48E8-9B78-DAEBD821694B}">
 							<value name="Hidden" type="qword" value="0000000000000000"/>
 							<value name="Hotkey" type="text" value=""/>
-							<value name="LastAccess" type="qword" value="000000004F68AD5B"/>
+							<value name="LastAccess" type="qword" value="00000000528809C0"/>
 							<value name="NewName" type="text" value=""/>
 						</key>
 						<key name="{9D4A59D9-AD2D-478C-8F66-7D233CBB788D}">
@@ -2710,7 +2727,7 @@
 						<key name="{AE501DD6-AD57-4A26-A5DF-39ACC3A9DB99}">
 							<value name="Hidden" type="qword" value="0000000000000000"/>
 							<value name="Hotkey" type="text" value="/"/>
-							<value name="LastAccess" type="qword" value="00000000523F456F"/>
+							<value name="LastAccess" type="qword" value="0000000052B8930D"/>
 							<value name="NewName" type="text" value=""/>
 						</key>
 						<key name="{AF4DAB38-C00A-4653-900E-7A8230308010}">
@@ -2768,7 +2785,7 @@
 						<key name="{C941E865-9C29-485C-99B3-0C710940F2D8}">
 							<value name="Hidden" type="qword" value="0000000000000000"/>
 							<value name="Hotkey" type="text" value="5"/>
-							<value name="LastAccess" type="qword" value="0000000051894ADC"/>
+							<value name="LastAccess" type="qword" value="00000000525368CA"/>
 							<value name="NewName" type="text" value=""/>
 						</key>
 						<key name="{CDF48DA0-0334-4169-8453-69048DD3B51C}">
@@ -2780,13 +2797,13 @@
 						<key name="{D0704272-AEFA-40DF-9141-DFCB4C9E6125}">
 							<value name="Hidden" type="qword" value="0000000000000000"/>
 							<value name="Hotkey" type="text" value=""/>
-							<value name="LastAccess" type="qword" value="00000000516F04FB"/>
+							<value name="LastAccess" type="qword" value="00000000527736EA"/>
 							<value name="NewName" type="text" value=""/>
 						</key>
 						<key name="{D2F36B62-A470-418D-83A3-ED7A3710E5B5}">
 							<value name="Hidden" type="qword" value="0000000000000000"/>
 							<value name="Hotkey" type="text" value="c"/>
-							<value name="LastAccess" type="qword" value="000000005189777A"/>
+							<value name="LastAccess" type="qword" value="00000000529A3C62"/>
 							<value name="NewName" type="text" value=""/>
 						</key>
 						<key name="{D4BC5EA7-8229-4FFE-AAC1-5A4F51A0986A}">
@@ -2816,7 +2833,7 @@
 						<key name="{DD10A9C6-ECAC-4BFA-BB07-4A1E92744162}">
 							<value name="Hidden" type="qword" value="0000000000000000"/>
 							<value name="Hotkey" type="text" value="-"/>
-							<value name="LastAccess" type="qword" value="000000005112530B"/>
+							<value name="LastAccess" type="qword" value="0000000052B89304"/>
 							<value name="NewName" type="text" value=""/>
 						</key>
 						<key name="{DEEC52C3-AC76-4AD3-A6EF-CAFC33BD4C05}">
@@ -2863,7 +2880,7 @@
 						<key name="{E80B8002-EED3-4563-9C78-2E3C3246F8D3}">
 							<value name="Hidden" type="qword" value="0000000000000000"/>
 							<value name="Hotkey" type="text" value="2"/>
-							<value name="LastAccess" type="qword" value="0000000052266E11"/>
+							<value name="LastAccess" type="qword" value="00000000529A7D3D"/>
 							<value name="NewName" type="text" value=""/>
 						</key>
 						<key name="{EB39ECBE-B2FF-4696-95D1-EFA7D3B88679}">
@@ -2875,7 +2892,7 @@
 						<key name="{ED0C4BD8-D2F0-4B6E-A19F-B0B0137C9B0C}">
 							<value name="Hidden" type="qword" value="0000000000000000"/>
 							<value name="Hotkey" type="text" value="1"/>
-							<value name="LastAccess" type="qword" value="000000005229820A"/>
+							<value name="LastAccess" type="qword" value="00000000529A8010"/>
 							<value name="NewName" type="text" value=""/>
 						</key>
 						<key name="{F10829AE-E1DE-4A70-8266-176DF3841044}">
@@ -2893,13 +2910,13 @@
 						<key name="{F250C12A-78E2-4ABC-A784-3FDD3156E415}">
 							<value name="Hidden" type="qword" value="0000000000000000"/>
 							<value name="Hotkey" type="text" value=""/>
-							<value name="LastAccess" type="qword" value="000000004B59BE56"/>
+							<value name="LastAccess" type="qword" value="0000000052819F03"/>
 							<value name="NewName" type="text" value=""/>
 						</key>
 						<key name="{F39EFDBF-A2E3-44F5-B4DF-519548A62BF9}">
 							<value name="Hidden" type="qword" value="0000000000000000"/>
 							<value name="Hotkey" type="text" value="u"/>
-							<value name="LastAccess" type="qword" value="0000000052420E98"/>
+							<value name="LastAccess" type="qword" value="00000000526691F9"/>
 							<value name="NewName" type="text" value=""/>
 						</key>
 						<key name="{F39EFDBF-A2E3-44F5-B4DF-519548A62BFA}">
@@ -2911,7 +2928,7 @@
 						<key name="{F6E77027-05BA-4ECF-A8D3-7D57B2D80C53}">
 							<value name="Hidden" type="qword" value="0000000000000000"/>
 							<value name="Hotkey" type="text" value="2"/>
-							<value name="LastAccess" type="qword" value="0000000051989558"/>
+							<value name="LastAccess" type="qword" value="0000000052B56CDB"/>
 							<value name="NewName" type="text" value=""/>
 						</key>
 						<key name="{F9AF80C3-54AC-4924-B607-FE05A3866A88}">
@@ -3098,7 +3115,7 @@
 					<value name="PairsDraw" type="qword" value="0000000000000001"/>
 					<value name="SyntaxDraw" type="qword" value="0000000000000001"/>
 					<value name="ThreadBuildPeriod" type="qword" value="00000000000000C8"/>
-					<value name="TrueMod" type="qword" value="0000000000000001"/>
+					<value name="TrueMod" type="qword" value="0000000000000000"/>
 					<value name="UserHrcPath" type="text" value=""/>
 					<value name="UserHrdPath" type="text" value=""/>
 					<key name="HrcSettings">
@@ -3133,9 +3150,8 @@
 		<plugin guid="D4BC5EA7-8229-4FFE-AAC1-5A4F51A0986A">
 			<hierarchicalconfig>
 				<key name="D4BC5EA7-8229-4FFE-AAC1-5A4F51A0986A" description="Polygon">
-					<value name="root" type="base64"/>
-					<key name="files"/>
 					<key name="root">
+						<value name="exporter" type="base64"/>
 						<value name="plugin" type="base64"/>
 					</key>
 				</key>
@@ -3314,7 +3330,7 @@
 					<value name="codepage" type="qword" value="0000000000000000"/>
 					<value name="del_blend" type="qword" value="0000000000000001"/>
 					<value name="del_last_empty" type="qword" value="0000000000000001"/>
-					<value name="dst_codepage" type="qword" value="00000000000004E3"/>
+					<value name="dst_codepage" type="qword" value="000000000000FDE9"/>
 					<value name="dst_cp" type="qword" value="00000000000004E3"/>
 					<value name="eol_marker" type="qword" value="0000000000000000"/>
 					<value name="eoltype" type="qword" value="0000000000000000"/>
@@ -3325,9 +3341,9 @@
 					<value name="rpl_space2tab_bo" type="qword" value="0000000000000001"/>
 					<value name="rpl_space2tab_n" type="qword" value="0000000000000004"/>
 					<value name="rpl_specal_chars" type="qword" value="0000000000000000"/>
-					<value name="save_bak" type="qword" value="0000000000000001"/>
-					<value name="set_bom" type="qword" value="0000000000000000"/>
-					<value name="src_codepage" type="qword" value="00000000000004E3"/>
+					<value name="save_bak" type="qword" value="0000000000000000"/>
+					<value name="set_bom" type="qword" value="0000000000000001"/>
+					<value name="src_codepage" type="qword" value="00000000000004B0"/>
 					<value name="trim_eol_spaces" type="qword" value="0000000000000001"/>
 					<value name="trim_line" type="qword" value="0000000000000001"/>
 				</key>
@@ -3425,7 +3441,7 @@
 					<value name="DupSize" type="qword" value="0000000000000000"/>
 					<value name="Filter" type="qword" value="0000000000000001"/>
 					<value name="Ignore" type="qword" value="0000000000000000"/>
-					<value name="IgnoreMissing" type="qword" value="0000000000000000"/>
+					<value name="IgnoreMissing" type="qword" value="0000000000000002"/>
 					<value name="IgnoreTimeZone" type="qword" value="0000000000000000"/>
 					<value name="LightSync" type="qword" value="0000000000000000"/>
 					<value name="Mode" type="qword" value="0000000000000000"/>

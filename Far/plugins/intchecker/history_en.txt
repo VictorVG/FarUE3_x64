@@ -1,4 +1,7 @@
-Changes history:
+﻿Changes history:
+
+2.8.1.
+- Fix by ctapmex (Aleksey Dobrunov) for b5788+
 
 2.8.0
 - Added digital signature verification for PE files.
