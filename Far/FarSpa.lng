@@ -1,6 +1,6 @@
 ﻿.Language=Spanish,Spanish (Español)
 
-//Version: 3.0.5812.0 (Private) x64
+//Version: 3.0.5814.0 (Private) x64
 
 //[MYes]
 "Si"
@@ -423,7 +423,6 @@
 "Usar Ctrl+Pg&Up para cambiar unidad"
 //[MConfigUseVirtualTerminalForRendering]
 "Usar Terminal Virtual para renderizado"
-// need translation:
 //[MConfigFullWidthAwareRendering]
 "R&enderowanie na pełnej szerokości"
 //[MConfigClearType]
