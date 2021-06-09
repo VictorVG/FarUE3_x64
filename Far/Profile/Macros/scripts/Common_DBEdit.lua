@@ -2,7 +2,7 @@
 local nfo = Info {... or _filename,
   name          = "DBEdit";
   description   = "Импорт/экспорт/редактирование данных плагинов";
-  version       = "2.1.7"; --в формате semver: http://semver.org/lang/ru/
+  version       = "2.1.8"; --в формате semver: http://semver.org/lang/ru/
   author        = "IgorZ";
   url           = "http://forum.farmanager.com/viewtopic.php?t=10120";
   id            = "51465236-592A-4C28-A047-929FCBFD8672";
@@ -64,6 +64,7 @@ history         = [[
 2020/04/21 v2.1.5 - Исправлена ошибка с обработкой действий в пустом подключе. Переделана обработка FST_DATA. Рефакторинг.
 2020/04/22 v2.1.6 - Исправлена ошибка с неюникодной строкой значения типа FST_DATA.
 2021/06/04 v2.1.7 - Исправлена ошибка с переключением БД между локальной и глобальной, когда переключать нечего. Добавлен перехват CtrlBreak.
+2021/06/08 v2.1.8 - CtrlBreak работает как F10, MsLClick работает как Enter. Исправлен nfo.execute. Рефакторинг.
 ]];
   options       = {
     tbl_format = "internal", -- чем форматировать таблицы по умолчанию
@@ -431,7 +432,7 @@ local ShowMenu,Save,Restore,CLProc,ModProc
 -- -
 function ShowMenu(root)
 --
-local History,Bottom,pos,res = {},"Enter,Esc,F1,F2,F3,F4,F5,F10,Ins,Del,CtrlPgUp,CtrlS,CtrlC/G/L",1 -- история, подсказка, позиция, результат
+local History,Bottom,pos,res = {},"Enter,LClick,Esc,F1,F2,F3,F4,F5,F10,Break,Ins,Del,CtrlPgUp,CtrlS,CtrlC/G/L",1 --история,подсказка,позиция,результат
 local HotKeys = {{BreakKey="F1"},{BreakKey="F2"},{BreakKey="F3"},{BreakKey="F4"},{BreakKey="F5"},{BreakKey="F10"},{BreakKey="INSERT"}, -- hotkeys
   {BreakKey="NUMPAD0"},{BreakKey="DELETE"},{BreakKey="DECIMAL"},{BreakKey="C+PRIOR"},{BreakKey="C+NUMPAD9"},{BreakKey="C+S"},{BreakKey="C+C"},
   {BreakKey="C+L"},{BreakKey="C+G"},{BreakKey="C+1"},{BreakKey="C+2"},{BreakKey="C+3"},{BreakKey="BACK"},{BreakKey="ESCAPE"},{BreakKey="RETURN"}}
@@ -467,15 +468,15 @@ repeat
   end
   res,pos = far.Menu({Title=L.Hdr:format(O.PName)..": "..(root and r2 or ""),Bottom=Bottom,SelectIndex=pos,Id=Guids.Menu,
     Flags=F.FMENU_SHOWAMPERSAND+F.FMENU_WRAPMODE},items,HotKeys) -- меню
-    local BK,item = res and res.BreakKey or "",items[pos] and items[pos].elem or {name="",type=F.FST_UNKNOWN,value="",parent=root} -- клавиша, элемент
-  if BK=="RETURN" and item.type~=F.FST_SUBKEY then BK = "F4" end -- Enter на значении подменим на F4
+  local BK,item = not res and "F10" or res.BreakKey or "RETURN",items[pos] and items[pos].elem -- клавиша, элемент
+  if BK=="RETURN" and item and item.type~=F.FST_SUBKEY then BK = "F4" end -- Enter на значении подменим на F4
   if BK=="ESCAPE" or BK=="BACK" then-- Esc/BS
     local n = #History if n>0 then root,pos,History[n] = History[n].r,History[n].p,nil else break end -- предыдущая позиция/выход.
-  elseif BK=="RETURN" then -- Enter на подкюче
+  elseif BK=="RETURN" and item and item.type==F.FST_SUBKEY then -- Enter на подкюче
     root,pos,History[#History+1] = (item.parent.."\n"..item.name):gsub("^\n",""),1,{r=root,p=pos} -- зайти в подключ, запомнить текущий
   elseif BK=="F1" then -- F1 - выведем справку
     ShowHelp("Main")
-  elseif items[pos] and BK=="F2" then -- сохранить то, что под курсором?
+  elseif item and BK=="F2" then -- сохранить то, что под курсором?
     local name = APanel.Path.."\\"..O.PName.."."..item.name..".dbedit" -- имя файла по умолчанию
     name = far.InputBox(Guids.ExpFN,L.diExp,L.diGetFN,"ImpExpFileHistory",name,nil,nil,F.FIB_BUTTONS+F.FIB_EDITPATH+F.FIB_EXPANDENV) -- и настоящее
     local sres,err = SaveToFile(item,name) -- сохраним
@@ -483,9 +484,9 @@ repeat
   elseif BK=="F3" then -- загрузить из файла?
     Restore()
   elseif BK=="F4" or BK=="F5" or BK=="INSERT" or BK=="NUMPAD0" then -- редактировать/копировать/новый?
-    if root and (BK:len()>2 or items[pos]) then Edit(item,BK=="F4" and "Edit" or BK=="F5" and "Copy" or "New") end
+    if root and(BK:len()>2 or item)then Edit(item or{type=F.FST_UNKNOWN,parent=root},BK=="F4"and"Edit"or BK=="F5"and"Copy"or"New") end
   elseif BK=="DELETE" or BK=="DECIMAL" then -- удалить переменную под курсором?
-    if root and items[pos] then Remove(item) end
+    if item and root then Remove(item) end
   elseif BK=="C+PRIOR" or BK=="C+NUMPAD9" then -- перейти в корень или на выбор плагина?
     if (not root or root=="") then -- выбрать плагин?
       if SelPlugin() then root,History = nil,{} end -- выберем, если выбрали, то старый указатель некорректен, история тоже
@@ -508,7 +509,7 @@ repeat
 until false
 end -- ShowMenu
 --
-if type(nfo)=="table" then nfo.execute = ShowMenu end
+if type(nfo)=="table" then nfo.execute = function() ShowMenu() end end
 -- +
 --[==[Экспорт]==]
 -- -
