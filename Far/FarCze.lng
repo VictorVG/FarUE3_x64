@@ -1,6 +1,6 @@
 ﻿.Language=Czech,Czech (Čeština)
 
-//Version: 3.0.5816.0 (Private) x64
+//Version: 3.0.5820.0 (Private) x64
 
 //[MYes]
 "Ano"
@@ -2852,6 +2852,8 @@
 "R&GB…"
 //[MSetColorStyle]
 "Styl:"
+//[MSetColorStyleInherit]
+"Zdědí"
 //[MSetColorStyleBold]
 "Tučné"
 //[MSetColorStyleItalic]

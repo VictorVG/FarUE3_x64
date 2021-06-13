@@ -1,12 +1,10 @@
-﻿Changes history:
-
-2.8.1.
-- Fix by ctapmex (Aleksey Dobrunov) for b5788+
+Changes history:
 
 2.8.0
 - Added digital signature verification for PE files.
 - Macro-function 'gethash' now returns string 'userabort' if user aborted operation.
-- Fixed issue with calculating hash for symlink wwith macro command.
+- Fixed issue with calculating hash for symlink with macro command.
+- Fixed visual issue with hash generator dialog on newer Far versions (thanks ctapmex).
 
 2.7.3
 - Added ability to save hashes to one file for each directory.

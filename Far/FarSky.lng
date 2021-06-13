@@ -1,6 +1,6 @@
 ﻿.Language=Slovak,Slovak (Slovenčina)
 
-//Version: 3.0.5816.0 (Private) x64
+//Version: 3.0.5820.0 (Private) x64
 
 //[MYes]
 "Áno"
@@ -2872,6 +2872,8 @@
 "R&GB…"
 //[MSetColorStyle]
 "Štýl:"
+//[MSetColorStyleInherit]
+"Zdediť"
 //[MSetColorStyleBold]
 "Tučné"
 //[MSetColorStyleItalic]

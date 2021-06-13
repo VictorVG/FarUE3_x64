@@ -1,6 +1,6 @@
 ﻿.Language=Ukrainian,Ukrainian (Українська)
 
-//Version: 3.0.5816.0 (Private) x64
+//Version: 3.0.5820.0 (Private) x64
 
 //[MYes]
 "Так"
@@ -2842,6 +2842,8 @@
 "R&GB…"
 //[MSetColorStyle]
 "Cтиль:"
+//[MSetColorStyleInherit]
+"Успадковувати"
 //[MSetColorStyleBold]
 "Жирний"
 //[MSetColorStyleItalic]

@@ -1,6 +1,6 @@
 ﻿.Language=Italian,Italian (Italiano)
 
-//Version: 3.0.5816.0 (Private) x64
+//Version: 3.0.5820.0 (Private) x64
 
 //[MYes]
 "&Si"
@@ -2852,6 +2852,8 @@
 "R&GB…"
 //[MSetColorStyle]
 "Stile:"
+//[MSetColorStyleInherit]
+"Eredita"
 //[MSetColorStyleBold]
 "Grassetto"
 //[MSetColorStyleItalic]
