@@ -27,13 +27,17 @@
      них. У второго плагина надо отключить для Tar операции на CtrlPgDn. Идеи по устранению
      данного недостатка у меня есть, со временем и его устраню.
 
-     VictorVG @ VikSoft.Ru (Russia, Moscow, 1996 - 2018)
+     VictorVG @ VikSoft.Ru (Russia, Moscow, 1996 - 2021)
 
      История версий:
 
      v1.0, 19.11.2018 07:41:29 +0300 - первая публичная версия, написана "с нуля" и с
      учётом основных недостатков Shell_DeepTarball.lua.
      v1.0.1, 13.01.2019 10:09:10 +0300 - UTF-8
+     v1.0.2, 19.06.2021 12:49:10 +0300 - распаковка по Shift-F2 тарбаллов под курсором в
+     "один заход" на пассивную панель. Копирайт.
+     v1.0.3, 21.06.2021 07:47:41 +0300, добавлена распаковка выбранных трабалов в отдельные
+     каталоги, рефакторинг.
 --]]
 
 local Mask="/.+\\.(t(bz|bz2|gz|lz|rz|xz|z)|tar\\.(gz|bz2|lz|lzma|rz|xz|z))/i";
@@ -61,4 +65,49 @@ action = function() Far.DisableHistory(-1);
        while (mf.fmatch(APanel.HostFile,Msk)==1) do Keys("Home Enter") end;
         if mf.fmatch(APanel.HostFile,m1)==1 then Keys("Home Enter") end;
  end;
+}
+
+Macro{
+  area="Shell";
+  key="ShiftF2";
+  priority=60;
+  description="Unpack tarball";
+  condition=function() return not APanel.Folder end;
+  action=function()
+  Far.DisableHistory(-1);
+  local ArcID,m1,nm,var,tm = "65642111-AA69-4B84-B4B8-9249579EC4FA","/.+\\.(tbz|tbz2|tgz|tlz|trz|txz|tz)/i","","","";
+  local function fnm(fn)
+   if mf.fmatch(fn,m1)==1 then
+    nm = mf.fsplit(fn,4)
+   else
+    nm = mf.fsplit(mf.fsplit(fn,4),4)
+   end
+    return nm
+  end
+  if APanel.Selected then
+   local ic = Panel.SetPosIdx(0,0)
+    for i=1,APanel.SelCount do
+     Panel.SetPosIdx(0,i,1)
+     if mf.fmatch(APanel.Current,Mask)==1 then
+      if var == "" then
+       var = Panel.Item(0,APanel.Current,0)
+      else
+       var =var.." "..Panel.Item(0,APanel.Current,0)
+      end
+      if tm == "" then
+       tm = win.GetEnv("TEMP").."\\"..fnm(APanel.Current)..".tar"
+      else
+       tm = tm.." "..win.GetEnv("TEMP").."\\"..fnm(APanel.Current)..".tar"
+      end
+     end
+    end
+    Panel.SetPosIdx(0,ic)
+    Plugin.Command(ArcID,"x -ie:y -o:o -da:n -sd:n "..var.." "..win.GetEnv("TEMP"))
+    Plugin.Command(ArcID,"x -ie:y -o:o -da:y -sd:y "..tm.." "..PPanel.Path)
+   elseif mf.fmatch(APanel.Current,Mask)==1 then
+   local cmda = "x -ie:y -o:o -sd:n "
+   Plugin.Command(ArcID,cmda.."-da:n "..APanel.Current.." "..win.GetEnv("TEMP"))
+  Plugin.Command(ArcID,cmda.."-da:y "..win.GetEnv("TEMP").."\\"..fnm(APanel.Current)..".tar "..PPanel.Path)
+  end
+end;
 }
