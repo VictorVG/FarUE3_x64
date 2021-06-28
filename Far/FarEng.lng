@@ -1,6 +1,6 @@
 ﻿.Language=English,English
 
-//Version: 3.0.5832.0 (Private) x64
+//Version: 3.0.5837.0 (Private) x64
 
 //[MYes]
 "Yes"
@@ -2822,12 +2822,20 @@
 "&Background:"
 
 // 8 characters max
+//[MSetColorForeIndex]
+"AA     #"
+
+// 8 characters max
 //[MSetColorForeAARRGGBB]
 "AARRGGBB"
 
 // 3 characters max
 //[MSetColorForeRGB]
 "&RGB…"
+
+// 8 characters max
+//[MSetColorBackIndex]
+"AA     #"
 
 // 8 characters max
 //[MSetColorBackAARRGGBB]
@@ -3418,26 +3426,6 @@
 "Please send the bug report to the developers:"
 //[MExceptionDialogClipboard]
 "Clipboard"
-//[MExcException]
-"Exception:"
-//[MExcDetails]
-"Details:"
-//[MExcAddress]
-"Address:"
-//[MExcSource]
-"Source:"
-//[MExcFunction]
-"Function:"
-//[MExcFileName]
-"File:"
-//[MExcPlugin]
-"Plugin:"
-//[MExcFarVersion]
-"Far:"
-//[MExcOSVersion]
-"OS:"
-//[MExcKernelVersion]
-"Kernel:"
 //[MExcTerminate]
 "&Terminate Far"
 //[MExcUnload]

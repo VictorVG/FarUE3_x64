@@ -1,6 +1,6 @@
 ﻿.Language=German,German (Deutsch)
 
-//Version: 3.0.5832.0 (Private) x64
+//Version: 3.0.5837.0 (Private) x64
 
 //[MYes]
 "Ja"
@@ -2900,12 +2900,20 @@
 "&Hintergrund:"
 
 // 8 characters max
+//[MSetColorForeIndex]
+"AA     #"
+
+// 8 characters max
 //[MSetColorForeAARRGGBB]
 "AARRGGBB"
 
 // 3 characters max
 //[MSetColorForeRGB]
 "&RGB…"
+
+// 8 characters max
+//[MSetColorBackIndex]
+"AA     #"
 
 // 8 characters max
 //[MSetColorBackAARRGGBB]
@@ -3514,28 +3522,6 @@
 "Bitte senden Sie den Fehlerbericht an die Entwickler:"
 //[MExceptionDialogClipboard]
 "Zwischenablage"
-//[MExcException]
-"Ausnahmesituation:"
-//[MExcDetails]
-"Einzelheiten:"
-//[MExcAddress]
-"Adresse:"
-//[MExcSource]
-"Quelle:"
-//[MExcFunction]
-"Funktion:"
-//[MExcFileName]
-"Date:"
-//[MExcPlugin]
-"Plugin:"
-//[MExcFarVersion]
-"Far:"
-// need translation:
-//[MExcOSVersion]
-"OS:"
-// need translation:
-//[MExcKernelVersion]
-"Kernel:"
 //[MExcTerminate]
 "Far beenden"
 // need translation:

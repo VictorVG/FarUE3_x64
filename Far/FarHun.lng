@@ -1,6 +1,6 @@
 ﻿.Language=Hungarian,Hungarian (Magyar)
 
-//Version: 3.0.5832.0 (Private) x64
+//Version: 3.0.5837.0 (Private) x64
 
 //[MYes]
 "Igen"
@@ -3064,12 +3064,20 @@
 "&Háttér:"
 
 // 8 characters max
+//[MSetColorForeIndex]
+"AA     #"
+
+// 8 characters max
 //[MSetColorForeAARRGGBB]
 "AARRGGBB"
 
 // 3 characters max
 //[MSetColorForeRGB]
 "&RGB…"
+
+// 8 characters max
+//[MSetColorBackIndex]
+"AA     #"
 
 // 8 characters max
 //[MSetColorBackAARRGGBB]
@@ -3688,28 +3696,6 @@
 "Kérjük, küldje el a hibajelentést a fejlesztőknek:"
 //[MExceptionDialogClipboard]
 "Vágólap"
-//[MExcException]
-"Kivétel:"
-//[MExcDetails]
-"Részletek:"
-//[MExcAddress]
-"Cím:"
-//[MExcSource]
-"Forrás:"
-//[MExcFunction]
-"Funkció:"
-//[MExcFileName]
-"Fájl:"
-//[MExcPlugin]
-"Plugin:"
-//[MExcFarVersion]
-"Far:"
-// need translation:
-//[MExcOSVersion]
-"OS:"
-// need translation:
-//[MExcKernelVersion]
-"Kernel:"
 // need translation:
 //[MExcTerminate]
 "Terminate Far"

@@ -1,6 +1,6 @@
 ﻿.Language=Spanish,Spanish (Español)
 
-//Version: 3.0.5832.0 (Private) x64
+//Version: 3.0.5837.0 (Private) x64
 
 //[MYes]
 "Si"
@@ -2840,12 +2840,20 @@
 "&Fondo:"
 
 // 8 characters max
+//[MSetColorForeIndex]
+"AA     #"
+
+// 8 characters max
 //[MSetColorForeAARRGGBB]
 "AARRGGBB"
 
 // 3 characters max
 //[MSetColorForeRGB]
 "&RGB…"
+
+// 8 characters max
+//[MSetColorBackIndex]
+"AA     #"
 
 // 8 characters max
 //[MSetColorBackAARRGGBB]
@@ -3437,28 +3445,6 @@
 "Por favor, envíe el informe de errores a los desarrolladores:"
 //[MExceptionDialogClipboard]
 "Portapapeles"
-//[MExcException]
-"Excepción:"
-//[MExcDetails]
-"Detalles:"
-//[MExcAddress]
-"Dirección:"
-//[MExcSource]
-"Origen:"
-//[MExcFunction]
-"Función:"
-//[MExcFileName]
-"Archivo:"
-//[MExcPlugin]
-"Complemento:"
-//[MExcFarVersion]
-"Far:"
-// need translation:
-//[MExcOSVersion]
-"OS:"
-// need translation:
-//[MExcKernelVersion]
-"Kernel:"
 //[MExcTerminate]
 "Terminar Far"
 //[MExcUnload]

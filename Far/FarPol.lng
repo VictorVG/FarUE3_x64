@@ -1,6 +1,6 @@
 ﻿.Language=Polish,Polish (Polski)
 
-//Version: 3.0.5832.0 (Private) x64
+//Version: 3.0.5837.0 (Private) x64
 
 //[MYes]
 "Tak"
@@ -2822,12 +2822,20 @@
 "&Tło:"
 
 // 8 characters max
+//[MSetColorForeIndex]
+"AA     #"
+
+// 8 characters max
 //[MSetColorForeAARRGGBB]
 "AARRGGBB"
 
 // 3 characters max
 //[MSetColorForeRGB]
 "&RGB…"
+
+// 8 characters max
+//[MSetColorBackIndex]
+"AA     #"
 
 // 8 characters max
 //[MSetColorBackAARRGGBB]
@@ -3418,26 +3426,6 @@
 "Proszę wysłać raport błędu do programistów:"
 //[MExceptionDialogClipboard]
 "Schowek"
-//[MExcException]
-"Wyjątek:"
-//[MExcDetails]
-"Szczegóły:"
-//[MExcAddress]
-"Adres:"
-//[MExcSource]
-"Źródło:"
-//[MExcFunction]
-"Funkcja:"
-//[MExcFileName]
-"Plik:"
-//[MExcPlugin]
-"Wtyczka:"
-//[MExcFarVersion]
-"Far:"
-//[MExcOSVersion]
-"OS:"
-//[MExcKernelVersion]
-"Jądro:"
 //[MExcTerminate]
 "Zamknięcie Far"
 //[MExcUnload]

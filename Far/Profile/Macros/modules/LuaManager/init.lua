@@ -2,7 +2,7 @@
 local nfo = Info {
   name          = "LuaManager";
   description   = "Менеджер Lua/Moon-скриптов для Fara";
-  version       = "5.1.2"; --в формате semver: http://semver.org/lang/ru/
+  version       = "5.1.4"; --в формате semver: http://semver.org/lang/ru/
   author        = "IgorZ";
   url           = "http://forum.farmanager.com/viewtopic.php?t=7936";
   id            = "180EE412-CBDE-40C7-9AE6-37FC64673CBD";
@@ -155,6 +155,8 @@ local nfo = Info {
                     Улучшена замена фрагмента. Обрезаем лишние BOM. Рефакторинг.
 2020/05/18 v5.1.1 - Поправлено обрезание BOM.
 2021/05/11 v5.1.2 - Исправлена ошибка с MaxDescWidth и MacroMaxDescWidth. Оптимизирована сортировка элементов.
+2021/06/25 v5.1.3 - Исправлена ошибка с русскими описаниями в файлах скриптов в кодировке Windows.
+2021/06/28 v5.1.4 - Исправлена ошибка с загрузкой параметров, если БД пустая.
 ]];
   options       = {
     DefProfile = far.Flags.PSL_ROAMING--[[far.Flags.PSL_LOCAL--]] -- место хранения настроек по умолчанию: глобальные/локальные
@@ -262,7 +264,8 @@ local key = obj:OpenSubkey(obj:OpenSubkey(0,Author) or 0,ConfPart) -- есть �
 if not key then -- настроек нет?
   obj:Free() obj = far.CreateSettings(nil,UsedProfile==F.PSL_LOCAL and F.PSL_ROAMING or F.PSL_LOCAL) -- откроем другие настройки
   key = obj:OpenSubkey(obj:OpenSubkey(0,Author) or 0,ConfPart) -- есть раздел? если нет, неважно, какой открыт, всё равно брать умолчания
-  if key then UsedProfile = UsedProfile==F.PSL_LOCAL and F.PSL_ROAMING or F.PSL_LOCAL end -- из другого профиля открылись? запомним профиль
+  if key then UsedProfile = UsedProfile==F.PSL_LOCAL and F.PSL_ROAMING or F.PSL_LOCAL -- из другого профиля открылись? запомним профиль
+  else obj:Free() obj = far.CreateSettings(nil,UsedProfile) key = obj:CreateSubkey(obj:CreateSubkey(0,Author) or 0,ConfPart) end -- создадим пустой
 end
 local function L1(n) return not ForceDef and obj:Get(key or -1,n,type(Def[n])=="string" and F.FST_STRING or F.FST_QWORD) or Def[n] end
 S = { TableRecursion = L1("TableRecursion")~=0, -- считаем настройки
@@ -412,6 +415,7 @@ if item.FileName and win.GetFileAttr(item.FileName) then -- есть, откуд
   local savedy = res.sstarty
   repeat -- если Macro/Event и { на разных строках, то выходит ошибка, поэтому покрутим
     text = "\n"..Read(item.FileName):gsub(".-[\r\n]","",res.sstarty-1).."\n" -- получим весь файл, начиная с нужной строки
+    if not _G.utf8.utf8valid(text or "") then text = win.Utf16ToUtf8(win.MultiByteToWideChar(text,win.GetACP())) end
     if res.smoon then -- .moon?
       prefix,res.sbody,text = text:match("[\r\n]*([ \t]*)("..res.stype..".-[\r\n])(.*)") -- вычленим отступ, первую строку скрипта, остаток
       if res.sbody then res.sbody = res.sbody..regex.match(text,"/(.*?)^(?!"..prefix.."\\s)\\s*(?!--)(?!\n)/sm"):gsub("%s*$","") end -- весь скрипт
@@ -2123,6 +2127,7 @@ repeat -- работаем, пока не надоест
   for k=1,math.huge do -- переберём все мыслимые idы
     local me = mf.GetMacroCopy(k) -- получим макрос/обработчик событий
     if not me then break end -- кончились - закончим перебор
+    if not _G.utf8.utf8valid(me.description or "") then me.description = win.Utf16ToUtf8(win.MultiByteToWideChar(me.description,win.GetACP())) end
     me.descr = (me.description and not (me.code and me.description=="")) and "'"..me.description.."'" or "index="..me.index
     me.desc2 = (me.description and not (me.code and me.description=="")) and me.description or "index="..me.index
     local infilter = me.needsave or FMatch(me.FileName or "",ff)>0 -- отсеем по файловой маске
@@ -2165,6 +2170,7 @@ repeat -- работаем, пока не надоест
     for _,t in ipairs(GetMenuItems()) do -- переберём все
       local tbl,infilter = {},false -- копия элемента, признак прохождения фильтра
       for n,v in pairs(t) do tbl[n] = v end -- заполним
+      if not _G.utf8.utf8valid(tbl.description or "") then tbl.description = win.Utf16ToUtf8(win.MultiByteToWideChar(tbl.description,win.GetACP())) end
       tbl.desc2 = t.description~="" and t.description or "index="..t.index
       tbl.descr = t.description~="" and "'"..t.description.."'" or "index="..t.index
       for a in S.Filter.A:gmatch("%w+") do infilter = infilter or t.flags[AreasRev[a:lower()]] end -- отфильтруем по областям
@@ -2179,6 +2185,7 @@ repeat -- работаем, пока не надоест
     for p in GetPrefixes()[1]:gmatch("[^:]+") do -- переберём все
       local tbl = {} -- копия элемента
       for n,v in pairs(GetPrefixes()[p]) do tbl[n] = v end -- заполним и
+      if not _G.utf8.utf8valid(tbl.description or "") then tbl.description = win.Utf16ToUtf8(win.MultiByteToWideChar(tbl.description,win.GetACP())) end
       if FMatch(tbl.FileName,ff)>0 then -- отсеем по файловой маске
         prefixes[#prefixes+1],PrPrefW = tbl,math.max(PrPrefW,p:len()) -- добавим
         FileW = math.max(FileW,(tbl.FileName or ""):match("[^\\]*$"):len())
@@ -2191,6 +2198,8 @@ repeat -- работаем, пока не надоест
       local tbl = {Info={}} -- копия элемента
       for n,v in pairs(t.Info) do tbl.Info[n] = v end -- заполним
       for n,v in pairs(t) do if n~="Info" then tbl[n] = v end end -- заполним
+      if not _G.utf8.utf8valid(tbl.Info.Description or "") then
+        tbl.Info.Description = win.Utf16ToUtf8(win.MultiByteToWideChar(tbl.Info.Description,win.GetACP())) end
       tbl.descr = (t.Info.Title and "'"..t.Info.Title.."'") or (t.Info.Description and "'"..t.Info.Description.."'") or Noid
       if FMatch(t.FileName,ff)>0 then -- отсеем по файловой маске
         panels[#panels+1] = tbl -- добавим, посчитаем максимальную длину описания

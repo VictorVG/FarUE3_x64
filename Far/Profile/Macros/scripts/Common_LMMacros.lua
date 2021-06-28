@@ -2,7 +2,7 @@
 local nfo = Info {... or _filename,
   name          = "LuaManager macros";
   description   = "Набор макросов и пункт меню плагинов для LuaManager";
-  version       = "1.0.6"; --в формате semver: http://semver.org/lang/ru/
+  version       = "1.0.7"; --в формате semver: http://semver.org/lang/ru/
   author        = "IgorZ";
   url           = "http://forum.farmanager.com/viewtopic.php?t=7936";
   id            = "2062CE37-181E-4721-95A4-ED1019E61586";
@@ -25,7 +25,7 @@ local nfo = Info {... or _filename,
 if not nfo then return nfo end
 --
 local OK_LM,LM = pcall(require,"LuaManager") -- найдём LuaManager
-if not OK_LM then far.Message("Cannot find LuaManager module ",nfo.name,";Ok","w") return end -- не нашли - ничего не будет
+if not OK_LM then far.Message("Cannot find LuaManager module:\n"..LM,nfo.name,";Ok","w") return end -- не нашли - ничего не будет
 local FM,L,G,K = "*.lua,*.moon",LM.__MData() -- файловая маска, языковые данные, guid-ы, клавиши вызова
 -- +
 --[==[Макросы]==]

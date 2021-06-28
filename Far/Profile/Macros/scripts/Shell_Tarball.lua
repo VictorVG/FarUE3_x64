@@ -1,48 +1,68 @@
-﻿--[[ Скрипт позволяет войти в тарбалл и выйти из него из любого вложенного каталога,
-     распаковать на пассивную панель текущий или выбранные тарбаллы не открывая их.
+﻿--[[
+Скрипт позволяет войти в тарбалл и выйти из него из любого вложенного каталога,
+распаковать на пассивную панель текущий или выбранные тарбаллы не открывая их.
 
-     Тарбалл это сжатый внешним компрессором контейнер tar представляющий из себя
-     несжатый файл содержащий образ фрагмента файловой системы от точки монтирования
-     контейнера с учётом сим- и хардлинков, и прав доступа к файлам и каталогам.
-     В Windows нет встроенных инструментов для работы с UNIX файлами такими как тарбалл,
-     и в большинстве её архиваторов они отображаются как вложенные архивы, где несжатый
-     контейнер tar для упрощения так же интерпретируется как архив.
+Тарбалл это сжатый внешним компрессором контейнер tar представляющий из себя
+несжатый файл содержащий образ фрагмента файловой системы от точки монтирования
+контейнера с учётом сим- и хардлинков, и прав доступа к файлам и каталогам.
+В Windows нет встроенных инструментов для работы с UNIX файлами такими как тарбалл,
+и в большинстве её архиваторов они отображаются как вложенные архивы, где несжатый
+контейнер tar для упрощения так же интерпретируется как архив.
 
-     За операцию "войти в тарбалл" отвечает макрос "Open tarball" который обеспечивает
-     позиционирование курсора сразу на корневой каталог вложенного контейнера tar.
+За операцию "войти в тарбалл" отвечает макрос "Open tarball" который обеспечивает
+позиционирование курсора сразу на корневой каталог вложенного контейнера tar.
 
-     Обратная операция "выйти из тарбалла" реализована макросом "CdUp tarball" при
-     срабатывании которого происходит выход в каталог где находится тарблл независимо
-     от того в какой точке дерева каталогов тарбалла мы находимся.
+Обратная операция "выйти из тарбалла" реализована макросом "CdUp tarball" при
+срабатывании которого происходит выход в каталог где находится тарблл независимо
+от того в какой точке дерева каталогов тарбалла мы находимся.
 
-     За операции распаковки отвечает макрос "Unpack tarball", а собственно распаковка
-     производится плагином ArcLite.
+За операции распаковки отвечает макрос "Unpack tarball", а собственно распаковка
+производится плагином ArcLite, при этом производится распаковка только тарбаллов.
 
-     В отличии от своего аналога Shell_DeepTarball.lua (c) siberia-man данный скрипт
-     позволяет выйти в файловую панель из любого подкаталога тарбалла, в т.ч. когда имя
-     тарбалла имеет сокращённый вид типа *.tbz, *.tgz, *.tlz, *.trz, *.txz, *.tz что
-     часто встречается в UNIX системах, например в портах FreeBSD UNIX бинарные пакеджи
-     имеют имена вида *.tbz или *.txz.
+В отличии от своего аналога Shell_DeepTarball.lua (c) siberia-man данный скрипт
+позволяет выйти в файловую панель из любого подкаталога тарбалла, в т.ч. когда имя
+тарбалла имеет сокращённый вид типа *.tbz, *.tgz, *.tlz, *.trz, *.txz, *.tz что
+часто встречается в UNIX системах, например в портах FreeBSD UNIX бинарные пакеджи
+имеют имена вида *.tbz или *.txz.
 
-     ToDo:
+Особенность работы скрипта: снятое после распаковки ArcLite выделение с файлов не
+восстанавливается - так и задумано.
 
-     Для корректной работы скрипта если используются несколько архиваторных плагинов
-     (например ArcLite и MultiArc) необходимо чтобы с архивами tar работал только один из
-     них. У второго плагина надо отключить для Tar операции на CtrlPgDn. Идеи по устранению
-     данного недостатка у меня есть, со временем и его устраню.
+ToDo:
 
-     VictorVG @ VikSoft.Ru (Russia, Moscow, 1996 - 2021)
+Для корректной работы скрипта если используются несколько архиваторных плагинов
+(например ArcLite и MultiArc) необходимо чтобы с архивами tar работал только один из
+них. У второго плагина надо отключить для Tar операции на CtrlPgDn. Идеи по устранению
+данного недостатка у меня есть, со временем и его устраню.
 
-     История версий:
+VictorVG @ VikSoft.Ru (Russia, Moscow, 1996 - 2021)
 
-     v1.0, 19.11.2018 07:41:29 +0300 - первая публичная версия, написана "с нуля" и с
-     учётом основных недостатков Shell_DeepTarball.lua.
-     v1.0.1, 13.01.2019 10:09:10 +0300 - UTF-8
-     v1.0.2, 19.06.2021 12:49:10 +0300 - распаковка по Shift-F2 тарбаллов под курсором в
-     "один заход" на пассивную панель. Копирайт.
-     v1.0.3, 21.06.2021 07:47:41 +0300, добавлена распаковка выбранных трабалов в отдельные
-     каталоги на пассивную панель, рефакторинг.
-     v1.0.4, 22.06.2021 07:43:46 +0300, рефакторинг.
+История версий:
+
+v1.0, 19.11.2018 07:41:29 +0300
+
+ - первая публичная версия, написана "с нуля" и с учётом основных недостатков Shell_DeepTarball.lua.
+
+v1.0.1, 13.01.2019 10:09:10 +0300
+
+- UTF-8
+
+v1.0.2, 19.06.2021 12:49:10 +0300
+
+- распаковка по Shift-F2 тарбаллов под курсором в "один заход" на пассивную панель. Копирайт.
+
+v1.0.3, 21.06.2021 07:47:41 +0300
+
+- добавлена распаковка выбранных трабалов в отдельные каталоги на пассивную панель, рефакторинг.
+
+v1.0.4, 22.06.2021 07:43:46 +0300
+
+- рефакторинг.
+
+v1.0.5, 27.06.2021 20:11:07 +0300
+
+- макрос "Unpack tarball" переписан заново, фикс https://forum.ru-board.com/topic.cgi?forum=5&topic=50439&start=2660#15
+
 --]]
 
 local Mask="/.+\\.(t(bz|bz2|gz|lz|rz|xz|z)|tar\\.(gz|bz2|lz|lzma|rz|xz|z))/i";
@@ -77,10 +97,22 @@ Macro{
   key="ShiftF2";
   priority=60;
   description="Unpack tarball";
-  condition=function() return not APanel.Folder end;
+  condition=function()
+  local x,rs,ps = Panel.SetPosIdx(0,0),false,APanel.Selected;
+  if APanel.Selected then
+   for j=1,APanel.SelCount do
+    Panel.SetPosIdx(0,j,1)
+    rs = rs or ((mf.fmatch(APanel.Current,Mask) == 1) and (not APanel.Folder))
+    if rs then break end
+   end;
+   Panel.SetPosIdx(0,x)
+  end
+  return (ps and rs) or ((mf.fmatch(APanel.Current,Mask) == 1) and (not ps))
+  end;
   action=function()
   Far.DisableHistory(-1);
-  local ArcID,m1,nm,var,tm = "65642111-AA69-4B84-B4B8-9249579EC4FA","/.+\\.(tbz|tbz2|tgz|tlz|trz|txz|tz)/i","","","";
+  local ArcID,m1 = "65642111-AA69-4B84-B4B8-9249579EC4FA","/.+\\.(tbz|tbz2|tgz|tlz|trz|txz|tz)/i";
+  local nm,tm,var = "" ,"","";
   local function fnm(fn)
    if mf.fmatch(fn,m1)==1 then
     nm = mf.fsplit(fn,4)..".tar"
@@ -90,29 +122,38 @@ Macro{
     return nm
   end
   if APanel.Selected then
-   local ic = Panel.SetPosIdx(0,0)
-    for i=1,APanel.SelCount do
-     Panel.SetPosIdx(0,i,1)
-     if mf.fmatch(APanel.Current,Mask) == 1 then
-      if var == "" then
-       var = Panel.Item(0,APanel.Current,0)
-      else
-       var =var.." "..Panel.Item(0,APanel.Current,0)
-      end
-      if tm == "" then
-       tm = win.GetEnv("TEMP").."\\"..fnm(APanel.Current)
-      else
-       tm = tm.." "..win.GetEnv("TEMP").."\\"..fnm(APanel.Current)
-      end
+   local cur = Panel.SetPosIdx(0,0);
+   for i=1,APanel.SelCount do
+    Panel.SetPosIdx(0,i,1)
+    if (mf.fmatch(APanel.Current,Mask) == 1) and (not APanel.Folder) then
+     if var == "" then
+      var = Panel.Item(0,APanel.Current,0)
+     else
+      var =var.." "..Panel.Item(0,APanel.Current,0)
+     end
+     if tm == "" then
+      tm = win.GetEnv("TEMP").."\\"..fnm(APanel.Current)
+     else
+      tm = tm.." "..win.GetEnv("TEMP").."\\"..fnm(APanel.Current)
      end
     end
-    Panel.SetPosIdx(0,ic)
+   end
+   Panel.SetPosIdx(0,cur)
+   if var ~="" then
+    Panel.Select(0,0)
     Plugin.Command(ArcID,"x -ie:y -o:o -da:n -sd:n "..var.." "..win.GetEnv("TEMP"))
     Plugin.Command(ArcID,"x -ie:y -o:o -da:y -sd:y "..tm.." "..PPanel.Path)
-   elseif mf.fmatch(APanel.Current,Mask)==1 then
+   else
+    Keys("ShiftF2")
+   end
+  else
+  if ((mf.fmatch(APanel.Current,Mask) == 1) and (not APanel.Folder) and (not APanel.Selected)) then
    local cmda = "x -ie:y -o:o -sd:n "
    Plugin.Command(ArcID,cmda.."-da:n "..APanel.Current.." "..win.GetEnv("TEMP"))
    Plugin.Command(ArcID,cmda.."-da:y "..win.GetEnv("TEMP").."\\"..fnm(APanel.Current).." "..PPanel.Path)
+  else
+   Keys("ShiftF2")
   end
+ end
 end;
 }

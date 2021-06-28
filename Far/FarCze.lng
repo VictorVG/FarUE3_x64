@@ -1,6 +1,6 @@
 ﻿.Language=Czech,Czech (Čeština)
 
-//Version: 3.0.5832.0 (Private) x64
+//Version: 3.0.5837.0 (Private) x64
 
 //[MYes]
 "Ano"
@@ -2836,12 +2836,20 @@
 "Po&zadí:"
 
 // 8 characters max
+//[MSetColorForeIndex]
+"AA     #"
+
+// 8 characters max
 //[MSetColorForeAARRGGBB]
 "AARRGGBB"
 
 // 3 characters max
 //[MSetColorForeRGB]
 "&RGB…"
+
+// 8 characters max
+//[MSetColorBackIndex]
+"AA     #"
 
 // 8 characters max
 //[MSetColorBackAARRGGBB]
@@ -3433,28 +3441,6 @@
 "Zašlete zprávu o chybě vývojářům:"
 //[MExceptionDialogClipboard]
 "Schránka"
-//[MExcException]
-"Výjimka:"
-//[MExcDetails]
-"Detaily:"
-//[MExcAddress]
-"Adresa:"
-//[MExcSource]
-"Zdroj:"
-//[MExcFunction]
-"Funkce:"
-//[MExcFileName]
-"Soubor:"
-//[MExcPlugin]
-"Modul:"
-//[MExcFarVersion]
-"Far:"
-// need translation:
-//[MExcOSVersion]
-"OS:"
-// need translation:
-//[MExcKernelVersion]
-"Kernel:"
 //[MExcTerminate]
 "Ukončit Far"
 //[MExcUnload]

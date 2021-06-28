@@ -1,6 +1,6 @@
 ﻿.Language=Lithuanian,Lithuanian (Lietuvių)
 
-//Version: 3.0.5832.0 (Private) x64
+//Version: 3.0.5837.0 (Private) x64
 
 //[MYes]
 "Taip"
@@ -3313,12 +3313,20 @@
 "&Fonas:"
 
 // 8 characters max
+//[MSetColorForeIndex]
+"AA     #"
+
+// 8 characters max
 //[MSetColorForeAARRGGBB]
 "AARRGGBB"
 
 // 3 characters max
 //[MSetColorForeRGB]
 "&RGB…"
+
+// 8 characters max
+//[MSetColorBackIndex]
+"AA     #"
 
 // 8 characters max
 //[MSetColorBackAARRGGBB]
@@ -3980,28 +3988,6 @@
 "Prašome siųsti klaidų ataskaitą kūrėjams:"
 //[MExceptionDialogClipboard]
 "Mainų sritis"
-//[MExcException]
-"Išimtis:"
-//[MExcDetails]
-"Detalės:"
-//[MExcAddress]
-"Adresas:"
-//[MExcSource]
-"Šaltinis:"
-//[MExcFunction]
-"Funkcija:"
-//[MExcFileName]
-"Failas:"
-//[MExcPlugin]
-"Plugin:"
-//[MExcFarVersion]
-"Far:"
-// need translation:
-//[MExcOSVersion]
-"OS:"
-// need translation:
-//[MExcKernelVersion]
-"Kernel:"
 // need translation:
 //[MExcTerminate]
 "&Terminate Far"

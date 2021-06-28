@@ -1,6 +1,6 @@
 ﻿.Language=Russian,Russian (Русский)
 
-//Version: 3.0.5832.0 (Private) x64
+//Version: 3.0.5837.0 (Private) x64
 
 //[MYes]
 "Да"
@@ -2825,12 +2825,20 @@
 "&Фон:"
 
 // 8 characters max
+//[MSetColorForeIndex]
+"AA     #"
+
+// 8 characters max
 //[MSetColorForeAARRGGBB]
 "AARRGGBB"
 
 // 3 characters max
 //[MSetColorForeRGB]
 "&RGB…"
+
+// 8 characters max
+//[MSetColorBackIndex]
+"AA     #"
 
 // 8 characters max
 //[MSetColorBackAARRGGBB]
@@ -3421,26 +3429,6 @@
 "Пожалуйста, отправьте отчет об ошибке разработчикам:"
 //[MExceptionDialogClipboard]
 "Буфер обмена"
-//[MExcException]
-"Исключение:"
-//[MExcDetails]
-"Подробности:"
-//[MExcAddress]
-"Адрес:"
-//[MExcSource]
-"Источник:"
-//[MExcFunction]
-"Функция:"
-//[MExcFileName]
-"Файл:"
-//[MExcPlugin]
-"Плагин:"
-//[MExcFarVersion]
-"Far:"
-//[MExcOSVersion]
-"ОС:"
-//[MExcKernelVersion]
-"Ядро:"
 //[MExcTerminate]
 "Завершить Far"
 //[MExcUnload]

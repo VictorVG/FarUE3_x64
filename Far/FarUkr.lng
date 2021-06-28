@@ -1,6 +1,6 @@
 ﻿.Language=Ukrainian,Ukrainian (Українська)
 
-//Version: 3.0.5832.0 (Private) x64
+//Version: 3.0.5837.0 (Private) x64
 
 //[MYes]
 "Так"
@@ -2826,12 +2826,20 @@
 "&Фон:"
 
 // 8 characters max
+//[MSetColorForeIndex]
+"AA     #"
+
+// 8 characters max
 //[MSetColorForeAARRGGBB]
 "AARRGGBB"
 
 // 3 characters max
 //[MSetColorForeRGB]
 "&RGB…"
+
+// 8 characters max
+//[MSetColorBackIndex]
+"AA     #"
 
 // 8 characters max
 //[MSetColorBackAARRGGBB]
@@ -3422,26 +3430,6 @@
 "Будь ласка, надішліть звіт про помилку розробникам:"
 //[MExceptionDialogClipboard]
 "Буфер обміну"
-//[MExcException]
-"Виняток:"
-//[MExcDetails]
-"Подробиці:"
-//[MExcAddress]
-"Адреса:"
-//[MExcSource]
-"Джерело:"
-//[MExcFunction]
-"Функція:"
-//[MExcFileName]
-"Файл:"
-//[MExcPlugin]
-"Плагін:"
-//[MExcFarVersion]
-"Far:"
-//[MExcOSVersion]
-"ОС:"
-//[MExcKernelVersion]
-"Ядро:"
 //[MExcTerminate]
 "Завершити Far"
 //[MExcUnload]

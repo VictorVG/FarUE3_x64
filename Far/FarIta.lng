@@ -1,6 +1,6 @@
 ﻿.Language=Italian,Italian (Italiano)
 
-//Version: 3.0.5832.0 (Private) x64
+//Version: 3.0.5837.0 (Private) x64
 
 //[MYes]
 "&Si"
@@ -2836,12 +2836,20 @@
 "&Sfondo:"
 
 // 8 characters max
+//[MSetColorForeIndex]
+"AA     #"
+
+// 8 characters max
 //[MSetColorForeAARRGGBB]
 "AARRGGBB"
 
 // 3 characters max
 //[MSetColorForeRGB]
 "&RGB…"
+
+// 8 characters max
+//[MSetColorBackIndex]
+"AA     #"
 
 // 8 characters max
 //[MSetColorBackAARRGGBB]
@@ -3432,28 +3440,6 @@
 "Per favore, invia il rapporto del bug agli sviluppatori:"
 //[MExceptionDialogClipboard]
 "Appunti"
-//[MExcException]
-"Eccezione:"
-//[MExcDetails]
-"Dettagli:"
-//[MExcAddress]
-"Indirizzo:"
-//[MExcSource]
-"Origine:"
-//[MExcFunction]
-"Funzione:"
-//[MExcFileName]
-"File:"
-//[MExcPlugin]
-"Plugin:"
-//[MExcFarVersion]
-"Far:"
-// need translation:
-//[MExcOSVersion]
-"OS:"
-// need translation:
-//[MExcKernelVersion]
-"Kernel:"
 //[MExcTerminate]
 "Termina Far"
 //[MExcUnload]
