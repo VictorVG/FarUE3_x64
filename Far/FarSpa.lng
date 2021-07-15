@@ -1,6 +1,6 @@
 ﻿.Language=Spanish,Spanish (Español)
 
-//Version: 3.0.5837.0 (Private) x64
+//Version: 3.0.5849.0 (Private) x64
 
 //[MYes]
 "Si"
@@ -3449,6 +3449,8 @@
 "Terminar Far"
 //[MExcUnload]
 "Descargar de memoria complemento"
+//[MExcFullDump]
+"Volcado completo"
 
 //[MNetUserName]
 "Nombre de usuario"

@@ -1,6 +1,6 @@
 ﻿.Language=Hungarian,Hungarian (Magyar)
 
-//Version: 3.0.5837.0 (Private) x64
+//Version: 3.0.5849.0 (Private) x64
 
 //[MYes]
 "Igen"
@@ -3702,6 +3702,8 @@
 // need translation:
 //[MExcUnload]
 "Unload plugin"
+//[MExcFullDump]
+"Teljes memóriakép"
 
 //[MNetUserName]
 "Felhasználói név"

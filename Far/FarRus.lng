@@ -1,6 +1,6 @@
 ﻿.Language=Russian,Russian (Русский)
 
-//Version: 3.0.5837.0 (Private) x64
+//Version: 3.0.5849.0 (Private) x64
 
 //[MYes]
 "Да"
@@ -3433,6 +3433,8 @@
 "Завершить Far"
 //[MExcUnload]
 "Выгрузить плагин"
+//[MExcFullDump]
+"Полный дамп"
 
 //[MNetUserName]
 "Имя пользователя"

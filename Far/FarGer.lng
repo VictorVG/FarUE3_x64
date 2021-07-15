@@ -1,6 +1,6 @@
 ﻿.Language=German,German (Deutsch)
 
-//Version: 3.0.5837.0 (Private) x64
+//Version: 3.0.5849.0 (Private) x64
 
 //[MYes]
 "Ja"
@@ -3527,6 +3527,8 @@
 // need translation:
 //[MExcUnload]
 "Unload plugin"
+//[MExcFullDump]
+"Vollständiges Abbild"
 
 //[MNetUserName]
 "Benutzername"

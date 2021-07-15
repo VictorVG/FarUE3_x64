@@ -1,6 +1,6 @@
 ﻿.Language=Slovak,Slovak (Slovenčina)
 
-//Version: 3.0.5837.0 (Private) x64
+//Version: 3.0.5849.0 (Private) x64
 
 //[MYes]
 "Áno"
@@ -3465,6 +3465,8 @@
 "Ukončiť Far"
 //[MExcUnload]
 "Zatvoriť modul"
+//[MExcFullDump]
+"Úplný výpis"
 
 //[MNetUserName]
 "Meno užívateľa"

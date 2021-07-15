@@ -1,6 +1,6 @@
 ﻿.Language=Lithuanian,Lithuanian (Lietuvių)
 
-//Version: 3.0.5837.0 (Private) x64
+//Version: 3.0.5849.0 (Private) x64
 
 //[MYes]
 "Taip"
@@ -3994,6 +3994,8 @@
 // need translation:
 //[MExcUnload]
 "&Unload plugin"
+//[MExcFullDump]
+"Visa iškeltis"
 
 // need translation:
 //[MNetUserName]

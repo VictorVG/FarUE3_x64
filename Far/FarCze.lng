@@ -1,6 +1,6 @@
 ﻿.Language=Czech,Czech (Čeština)
 
-//Version: 3.0.5837.0 (Private) x64
+//Version: 3.0.5849.0 (Private) x64
 
 //[MYes]
 "Ano"
@@ -3445,6 +3445,8 @@
 "Ukončit Far"
 //[MExcUnload]
 "Ukončit modul"
+//[MExcFullDump]
+"Úplný výpis"
 
 //[MNetUserName]
 "Jméno uživatele"

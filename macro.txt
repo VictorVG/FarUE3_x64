@@ -86,8 +86,7 @@
   ║  S··················· │ /RCtrl(Shift|RAlt)[^\/]/                                         │ Shell_BookmarkManager.lua                  │ Менеджер закладок: сохранить текущую     ║
   ║                       │                                                                  │                                            │ папку в закладках                        ║
   ║  S··················· │ /RCtrl[^\/]/                                                     │ Shell_BookmarkManager.lua                  │ Менеджер закладок: перейти на закладку   ║
-  ║  S··················· │ AltB                                                             │ Shell_DelBak.lua                           │ Удаление резервных и временных файлов.   ║
-  ║                       │                                                                  │                                            │ © SimSU                                  ║
+  ║  S··················· │ AltB                                                             │ Shell_DelBak.lua                           │ Delete backup files                      ║
   ║  S··················· │ AltBS                                                            │ Shell_HistoryPath_and_RememberSelected.lua │ Возврат в предыдущую папку с             ║
   ║                       │                                                                  │                                            │ сохранением выделения. © SimSU           ║
   ║  S··················· │ AltBS                                                            │ Shell_HistoryPath.lua                      │ Возврат в предыдущую папку. © SimSU      ║
@@ -120,8 +119,7 @@
   ║  S··················· │ AltShiftL                                                        │ Plugin_GitShell.lua                        │ GitShell current file history            ║
   ║  S··················· │ AltShiftN                                                        │ Plugin_GitShell.lua                        │ GiShell branch tools                     ║
   ║  S··················· │ AltShiftV                                                        │ Plugin_VisRen.lua                          │ Visual Rename                            ║
-  ║  S··················· │ AltT                                                             │ Shell_DelBak.lua                           │ Удаление резервных и временных файлов.   ║
-  ║                       │                                                                  │                                            │ © SimSU                                  ║
+  ║  S··················· │ AltT                                                             │ Shell_DelBak.lua                           │ Delete temporary files                   ║
   ║  S··················· │ AltUp                                                            │ Shell_SelectingEx.lua                      │ Переход на предыдущий помеченный файл.   ║
   ║                       │                                                                  │                                            │ © SimSU                                  ║
   ║  S··················· │ BS                                                               │ Shell_BS.lua                               │ Use BS to go to upper folder             ║
@@ -528,4 +526,4 @@
   ║                                                                                                                                                                                  ║
   ╚══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
 
-  12.04.2021 18:39:37 +0300
+  15.07.2021 02:22:35 +0300
