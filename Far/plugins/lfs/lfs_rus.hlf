@@ -3,7 +3,7 @@
 .Options CtrlStartPosChar=¦
 
 @Contents
-$ #LuaFAR Search (версия 3.44.2)#
+$ #LuaFAR Search (версия 3.44.3)#
 ^#ВОЗМОЖНОСТИ#
  * Поиск и замена в редакторе.
  * Поиск и замена из панелей.

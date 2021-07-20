@@ -1,6 +1,6 @@
 ﻿.Language=Slovak,Slovak (Slovenčina)
 
-//Version: 3.0.5849.0 (Private) x64
+//Version: 3.0.5851.0 (Private) x64
 
 //[MYes]
 "Áno"
@@ -895,41 +895,25 @@
 
 //[MDeleteTitle]
 "Zmazať"
-//[MAskDeleteFolder]
-"Chcete zmazať priečinok"
-//[MAskDeleteFile]
-"Chcete zmazať súbor"
 //[MAskDelete]
-"Chcete zmazať"
-//[MAskDeleteRecycleFolder]
-"Chcete presunúť do Koša priečinok"
-//[MAskDeleteRecycleFile]
-"Chcete presunúť do Koša súbor"
+"Chcete zmazať {0}?"
 //[MAskDeleteRecycle]
-"Chcete presunúť do Koša"
+"Chcete presunúť {0} do Koša?"
 //[MDeleteWipeTitle]
 "Vymazať"
-//[MAskWipeFolder]
-"Chcete vymazať priečinok"
-//[MAskWipeFile]
-"Chcete vymazať súbor"
 //[MAskWipe]
-"Chcete vymazať"
+"Chcete vymazať {0}?"
+//[MAskDeleteFolder]
+"priečinok"
+//[MAskDeleteFile]
+"súbor"
+//[MAskDeleteObjects]
+"objekty"
 // need translation:
 //[MAskDeleteLink]
 "prepojenie na"
-//[MAskDeleteLinkFolder]
-"priečinok"
-//[MAskDeleteLinkFile]
-"súbor"
-//[MAskDeleteItems]
-"{0} polož{1}"
-//[MAskDeleteItems0]
-"ku"
-//[MAskDeleteItemsA]
-"ky"
-//[MAskDeleteItemsS]
-"iek"
+//[MAskDeleteAndMore]
+"…a ďalších {0}"
 
 //[MDeleteFolderTitle]
 "Zmazať priečinok"
@@ -1030,7 +1014,7 @@
 //[MEditCannotOpen]
 "Nemôžem otvoriť súbor"
 //[MEditReading]
-"Načítavam súbor"
+"Načítavam súbor {0}"
 //[MEditAskSave]
 "Súbor bol upravený. Uložiť?"
 //[MEditAskSaveExt]
@@ -1045,7 +1029,7 @@
 //[MEditOvr]
 "Chcete ho prepísať?"
 //[MEditSaving]
-"Ukladám súbor"
+"Ukladám súbor {0}"
 // Up to 3 characters
 //[MEditStatusLine]
 "Rdk"
@@ -1103,7 +1087,7 @@
 "&Nahradiť"
 
 //[MEditSearchingFor]
-"Vyhľadávam"
+"Vyhľadávam {0}"
 //[MEditSearchStatistics]
 "Nájdených: {0}, riadky: {1}"
 //[MEditNotFound]

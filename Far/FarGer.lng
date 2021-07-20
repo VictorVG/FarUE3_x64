@@ -1,6 +1,6 @@
 ﻿.Language=German,German (Deutsch)
 
-//Version: 3.0.5849.0 (Private) x64
+//Version: 3.0.5851.0 (Private) x64
 
 //[MYes]
 "Ja"
@@ -894,41 +894,25 @@
 
 //[MDeleteTitle]
 "Löschen"
-//[MAskDeleteFolder]
-"Wollen Sie den Ordner löschen"
-//[MAskDeleteFile]
-"Wollen Sie die Datei löschen"
 //[MAskDelete]
-"Wollen Sie folgendes Objekt löschen"
-//[MAskDeleteRecycleFolder]
-"Wollen Sie den Ordner in den Papierkorb verschieben"
-//[MAskDeleteRecycleFile]
-"Wollen Sie die Datei in den Papierkorb verschieben"
+"Wollen Sie {0} löschen?"
 //[MAskDeleteRecycle]
-"Wollen Sie das Objekt in den Papierkorb verschieben"
+"Wollen Sie {0} in den Papierkorb verschieben?"
 //[MDeleteWipeTitle]
 "Sicheres Löschen"
-//[MAskWipeFolder]
-"Wollen Sie den Ordner sicher löschen"
-//[MAskWipeFile]
-"Wollen Sie die Datei sicher löschen"
 //[MAskWipe]
-"Wollen Sie das Objekt sicher löschen"
+"Wollen Sie {0} sicher löschen?"
+//[MAskDeleteFolder]
+"den Ordner"
+//[MAskDeleteFile]
+"die Datei"
+//[MAskDeleteObjects]
+"die Objekte"
 // need translation:
 //[MAskDeleteLink]
 "ein Link auf"
-//[MAskDeleteLinkFolder]
-"Ordner"
-//[MAskDeleteLinkFile]
-"Datei"
-//[MAskDeleteItems]
-"{0} Objekt{1}"
-//[MAskDeleteItems0]
-""
-//[MAskDeleteItemsA]
-"e"
-//[MAskDeleteItemsS]
-"e"
+//[MAskDeleteAndMore]
+"…und {0} mehr"
 
 //[MDeleteFolderTitle]
 "Ordner löschen"
@@ -1029,7 +1013,7 @@
 //[MEditCannotOpen]
 "Kann Datei nicht öffnen"
 //[MEditReading]
-"Lesen der Datei"
+"Lesen der Datei {0}"
 // need translation:
 //[MEditAskSave]
 "Datei wurde verändert. Save?"
@@ -1046,7 +1030,7 @@
 //[MEditOvr]
 "Wollen Sie die Datei überschreiben?"
 //[MEditSaving]
-"Speichere die Datei"
+"Speichere die Datei {0}"
 // Up to 3 characters
 // need translation:
 //[MEditStatusLine]
@@ -1110,7 +1094,7 @@
 "E&rsetzen"
 
 //[MEditSearchingFor]
-"Suche nach"
+"Suche nach {0}"
 //[MEditSearchStatistics]
 "Vorkommen: {0}, Zeilen: {1}"
 //[MEditNotFound]

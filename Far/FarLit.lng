@@ -1,6 +1,6 @@
 ﻿.Language=Lithuanian,Lithuanian (Lietuvių)
 
-//Version: 3.0.5849.0 (Private) x64
+//Version: 3.0.5851.0 (Private) x64
 
 //[MYes]
 "Taip"
@@ -1055,45 +1055,25 @@
 
 //[MDeleteTitle]
 "Trinti"
-//[MAskDeleteFolder]
-"Ar norite ištrinti katalogą"
-//[MAskDeleteFile]
-"Ar norite ištrinti failą"
 //[MAskDelete]
-"Ar norite ištrinti"
-//[MAskDeleteRecycleFolder]
-"Ar norite perkelti į Recycle Bin katalogą"
-//[MAskDeleteRecycleFile]
-"Ar norite perkelti į Recycle Bin failą"
+"Ar norite ištrinti {0}?"
 //[MAskDeleteRecycle]
-"Ar norite perkelti į Recycle Bin"
+"Ar norite perkelti {0} į Recycle Bin?"
 //[MDeleteWipeTitle]
 "Išvalyti"
-//[MAskWipeFolder]
-"Ar norite išvalyti katalogą"
-//[MAskWipeFile]
-"Ar norite išvalyti failą"
 //[MAskWipe]
-"Ar norite išvalyti"
+"Ar norite išvalyti {0}?"
+//[MAskDeleteFolder]
+"katalogą"
+//[MAskDeleteFile]
+"failą"
+//[MAskDeleteObjects]
+"objektus"
 // need translation:
 //[MAskDeleteLink]
 "a link to"
-// need translation:
-//[MAskDeleteLinkFolder]
-"folder"
-// need translation:
-//[MAskDeleteLinkFile]
-"file"
-//[MAskDeleteItems]
-"{0} failu{1}"
-//[MAskDeleteItems0]
-""
-// need translation:
-//[MAskDeleteItemsA]
-"s"
-// need translation:
-//[MAskDeleteItemsS]
-"s"
+//[MAskDeleteAndMore]
+"…ir dar {0}"
 
 //[MDeleteFolderTitle]
 "Trinti katalogą"
@@ -1207,7 +1187,7 @@
 //[MEditCannotOpen]
 "Negaliu atidaryti failo"
 //[MEditReading]
-"Skaitau failą"
+"Skaitau failą {0}"
 //[MEditAskSave]
 "Failas buvo redaguotas. Iš&saugoti?"
 // need translation:
@@ -1224,7 +1204,7 @@
 //[MEditOvr]
 "Ar norite užrašyti ant jo?"
 //[MEditSaving]
-"Išsaugau failą"
+"Išsaugau failą {0}"
 // Up to 3 characters
 //[MEditStatusLine]
 "Elt"
@@ -1295,7 +1275,7 @@
 "Pakeisti &į"
 
 //[MEditSearchingFor]
-"Ieškau"
+"Ieškau {0}"
 // need translation:
 //[MEditSearchStatistics]
 "Occurrences: {0}, lines: {1}"

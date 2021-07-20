@@ -1,6 +1,6 @@
 ﻿.Language=Russian,Russian (Русский)
 
-//Version: 3.0.5849.0 (Private) x64
+//Version: 3.0.5851.0 (Private) x64
 
 //[MYes]
 "Да"
@@ -874,40 +874,24 @@
 
 //[MDeleteTitle]
 "Удаление"
-//[MAskDeleteFolder]
-"Вы хотите удалить папку"
-//[MAskDeleteFile]
-"Вы хотите удалить файл"
 //[MAskDelete]
-"Вы хотите удалить"
-//[MAskDeleteRecycleFolder]
-"Вы хотите переместить в Корзину папку"
-//[MAskDeleteRecycleFile]
-"Вы хотите переместить в Корзину файл"
+"Вы хотите удалить {0}?"
 //[MAskDeleteRecycle]
-"Вы хотите переместить в Корзину"
+"Вы хотите переместить {0} в Корзину?"
 //[MDeleteWipeTitle]
 "Уничтожение"
-//[MAskWipeFolder]
-"Вы хотите уничтожить папку"
-//[MAskWipeFile]
-"Вы хотите уничтожить файл"
 //[MAskWipe]
-"Вы хотите уничтожить"
+"Вы хотите уничтожить {0}?"
+//[MAskDeleteFolder]
+"папку"
+//[MAskDeleteFile]
+"файл"
+//[MAskDeleteObjects]
+"объекты"
 //[MAskDeleteLink]
 "cсылка на"
-//[MAskDeleteLinkFolder]
-"папку"
-//[MAskDeleteLinkFile]
-"файл"
-//[MAskDeleteItems]
-"{0} элемент{1}"
-//[MAskDeleteItems0]
-""
-//[MAskDeleteItemsA]
-"а"
-//[MAskDeleteItemsS]
-"ов"
+//[MAskDeleteAndMore]
+"…и ещё {0}"
 
 //[MDeleteFolderTitle]
 "Удаление папки"
@@ -1007,7 +991,7 @@
 //[MEditCannotOpen]
 "Ошибка открытия файла"
 //[MEditReading]
-"Чтение файла"
+"Чтение файла {0}"
 //[MEditAskSave]
 "Файл был изменён. Сохранить?"
 //[MEditAskSaveExt]
@@ -1022,7 +1006,7 @@
 //[MEditOvr]
 "Вы хотите перезаписать его?"
 //[MEditSaving]
-"Сохранение файла"
+"Сохранение файла {0}"
 // Up to 3 characters
 //[MEditStatusLine]
 "Стр"
@@ -1080,7 +1064,7 @@
 "&Замена"
 
 //[MEditSearchingFor]
-"Искать"
+"Искать {0}"
 //[MEditSearchStatistics]
 "Вхождений: {0}, строк: {1}"
 //[MEditNotFound]

@@ -1,6 +1,6 @@
 ﻿.Language=Italian,Italian (Italiano)
 
-//Version: 3.0.5849.0 (Private) x64
+//Version: 3.0.5851.0 (Private) x64
 
 //[MYes]
 "&Si"
@@ -877,41 +877,25 @@
 
 //[MDeleteTitle]
 "Eliminazione"
-//[MAskDeleteFolder]
-"Vuoi Eliminare La Cartella"
-//[MAskDeleteFile]
-"Vuoi Eliminare Il File"
 //[MAskDelete]
-"Vuoi Eliminare"
-//[MAskDeleteRecycleFolder]
-"Vuoi Spostare La Cartella Nel Cestino"
-//[MAskDeleteRecycleFile]
-"Vuoi Spostare Il File Nel Cestino"
+"Vuoi Eliminare {0}?"
 //[MAskDeleteRecycle]
-"Vuoi Spostare Nel Cestino"
+"Vuoi Spostare {0} Nel Cestino?"
 //[MDeleteWipeTitle]
 "Distruzione"
-//[MAskWipeFolder]
-"Vuoi Distruggere La Cartella"
-//[MAskWipeFile]
-"Vuoi Distruggere Il File"
 //[MAskWipe]
-"Vuoi Distruggere"
+"Vuoi Distruggere {0}?"
+//[MAskDeleteFolder]
+"La Cartella"
+//[MAskDeleteFile]
+"Il File"
+//[MAskDeleteObjects]
+"gli oggetti"
 // need translation:
 //[MAskDeleteLink]
 "Un Link Simbolico Ad"
-//[MAskDeleteLinkFolder]
-"Una Cartella"
-//[MAskDeleteLinkFile]
-"Un File"
-//[MAskDeleteItems]
-"{0} Oggett{1}"
-//[MAskDeleteItems0]
-""
-//[MAskDeleteItemsA]
-"o"
-//[MAskDeleteItemsS]
-"i"
+//[MAskDeleteAndMore]
+"…e altri {0}"
 
 //[MDeleteFolderTitle]
 "Cancellazione Cartella"
@@ -1012,7 +996,7 @@
 //[MEditCannotOpen]
 "Non Posso Aprire Il File"
 //[MEditReading]
-"Lettura Del File"
+"Lettura Del File {0}"
 //[MEditAskSave]
 "Documento Modificato. Lo Salvo?"
 //[MEditAskSaveExt]
@@ -1027,7 +1011,7 @@
 //[MEditOvr]
 "Vuoi Sovrascriverlo"
 //[MEditSaving]
-"Salvataggio In Corso"
+"Salvataggio In Corso {0}"
 // Up to 3 characters
 //[MEditStatusLine]
 "Lin"
@@ -1085,7 +1069,7 @@
 "&Sostituisci"
 
 //[MEditSearchingFor]
-"Ricerca Di"
+"Ricerca Di {0}"
 //[MEditSearchStatistics]
 "Occorrenze: {0}, Linee: {1}"
 //[MEditNotFound]

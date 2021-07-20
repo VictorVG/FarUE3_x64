@@ -1,6 +1,6 @@
 ﻿.Language=Hungarian,Hungarian (Magyar)
 
-//Version: 3.0.5849.0 (Private) x64
+//Version: 3.0.5851.0 (Private) x64
 
 //[MYes]
 "Igen"
@@ -973,41 +973,25 @@
 
 //[MDeleteTitle]
 "Törlés"
-//[MAskDeleteFolder]
-"Törölni akarja a mappát?"
-//[MAskDeleteFile]
-"Törölni akarja a fájlt?"
 //[MAskDelete]
-"Törölni akar"
-//[MAskDeleteRecycleFolder]
-"A Lomtárba akarja dobni a mappát?"
-//[MAskDeleteRecycleFile]
-"A Lomtárba akarja dobni a fájlt?"
+"Törölni akarja {0}?"
 //[MAskDeleteRecycle]
-"A Lomtárba akar dobni"
+"A Lomtárba akarja dobni {0}?"
 //[MDeleteWipeTitle]
 "Kisöprés"
-//[MAskWipeFolder]
-"Ki akarja söpörni a mappát?"
-//[MAskWipeFile]
-"Ki akarja söpörni a fájlt?"
 //[MAskWipe]
-"Ki akar söpörni"
+"Ki akarja söpörni {0}?"
+//[MAskDeleteFolder]
+"a mappát"
+//[MAskDeleteFile]
+"a fájlt"
+//[MAskDeleteObjects]
+"az objektumokat"
 // need translation:
 //[MAskDeleteLink]
 "link ide"
-//[MAskDeleteLinkFolder]
-"mappa"
-//[MAskDeleteLinkFile]
-"fájl"
-//[MAskDeleteItems]
-"{0} elemet{1}"
-//[MAskDeleteItems0]
-""
-//[MAskDeleteItemsA]
-""
-//[MAskDeleteItemsS]
-""
+//[MAskDeleteAndMore]
+"…és még {0}"
 
 //[MDeleteFolderTitle]
 "Mappa törlése"
@@ -1116,7 +1100,7 @@
 //[MEditCannotOpen]
 "A fájl nem nyitható meg"
 //[MEditReading]
-"Fájl olvasása"
+"Fájl olvasása {0}"
 // need translation:
 //[MEditAskSave]
 "A fájl megváltozott. Save?"
@@ -1133,7 +1117,7 @@
 //[MEditOvr]
 "Felül akarja írni?"
 //[MEditSaving]
-"Fájl mentése"
+"Fájl mentése {0}"
 // Up to 3 characters
 // need translation:
 //[MEditStatusLine]
@@ -1199,7 +1183,7 @@
 "&Csere"
 
 //[MEditSearchingFor]
-"Keresett szöveg:"
+"Keresett szöveg {0}"
 // need translation:
 //[MEditSearchStatistics]
 "Occurrences: {0}, lines: {1}"

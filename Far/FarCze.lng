@@ -1,6 +1,6 @@
 ﻿.Language=Czech,Czech (Čeština)
 
-//Version: 3.0.5849.0 (Private) x64
+//Version: 3.0.5851.0 (Private) x64
 
 //[MYes]
 "Ano"
@@ -881,41 +881,25 @@
 
 //[MDeleteTitle]
 "Smazat"
-//[MAskDeleteFolder]
-"Přejete si smazat adresář"
-//[MAskDeleteFile]
-"Přejete si smazat soubor"
 //[MAskDelete]
-"Přejete si smazat"
-//[MAskDeleteRecycleFolder]
-"Přejete si přesunout adresář do Koše"
-//[MAskDeleteRecycleFile]
-"Přejete si přesunout soubor do Koše"
+"Přejete si smazat {0}?"
 //[MAskDeleteRecycle]
-"Přejete si přesunout do Koše"
+"Přejete si přesunout {0} do Koše?"
 //[MDeleteWipeTitle]
 "Vymazat"
-//[MAskWipeFolder]
-"Přejete si vymazat adresář"
-//[MAskWipeFile]
-"Přejete si vymazat soubor"
 //[MAskWipe]
-"Přejete si vymazat"
+"Přejete si vymazat {0}?"
+//[MAskDeleteFolder]
+"adresář"
+//[MAskDeleteFile]
+"soubor"
+//[MAskDeleteObjects]
+"objekty"
 // need translation:
 //[MAskDeleteLink]
 "link na"
-//[MAskDeleteLinkFolder]
-"adresář"
-//[MAskDeleteLinkFile]
-"soubor"
-//[MAskDeleteItems]
-"{0} polož{1}"
-//[MAskDeleteItems0]
-"ku"
-//[MAskDeleteItemsA]
-"ky"
-//[MAskDeleteItemsS]
-"ek"
+//[MAskDeleteAndMore]
+"…a dalších {0}"
 
 //[MDeleteFolderTitle]
 "Smazat adresář"
@@ -1017,7 +1001,7 @@
 //[MEditCannotOpen]
 "Nelze otevřít soubor"
 //[MEditReading]
-"Načítám soubor"
+"Načítám soubor {0}"
 //[MEditAskSave]
 "Soubor byl modifikován. Uložit?"
 //[MEditAskSaveExt]
@@ -1032,7 +1016,7 @@
 //[MEditOvr]
 "Přejete si ho přepsat?"
 //[MEditSaving]
-"Ukládám soubor"
+"Ukládám soubor {0}"
 // Up to 3 characters
 //[MEditStatusLine]
 "Řdk"
@@ -1090,7 +1074,7 @@
 "&Nahradit"
 
 //[MEditSearchingFor]
-"Vyhledávám"
+"Vyhledávám {0}"
 //[MEditSearchStatistics]
 "Nalezených: {0}, řádky: {1}"
 //[MEditNotFound]

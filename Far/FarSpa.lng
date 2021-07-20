@@ -1,6 +1,6 @@
 ﻿.Language=Spanish,Spanish (Español)
 
-//Version: 3.0.5849.0 (Private) x64
+//Version: 3.0.5851.0 (Private) x64
 
 //[MYes]
 "Si"
@@ -879,41 +879,25 @@
 
 //[MDeleteTitle]
 "Borrar"
-//[MAskDeleteFolder]
-"Desea borrar el directorio"
-//[MAskDeleteFile]
-"Desea borrar el archivo"
 //[MAskDelete]
-"Desea borrar estos"
-//[MAskDeleteRecycleFolder]
-"Desea mover hacia la Papelera de Reciclaje el directorio"
-//[MAskDeleteRecycleFile]
-"Desea mover hacia la Papelera de Reciclaje el archivo"
+"¿Desea borrar {0}?"
 //[MAskDeleteRecycle]
-"Desea mover hacia la Papelera de Reciclaje"
+"¿Desea mover {0} hacia la Papelera de Reciclaje?"
 //[MDeleteWipeTitle]
 "Destruir"
-//[MAskWipeFolder]
-"Desea destruir el directorio"
-//[MAskWipeFile]
-"Desea destruir el archivo"
 //[MAskWipe]
-"Desea destruir"
+"¿Desea destruir {0}?"
+//[MAskDeleteFolder]
+"el directorio"
+//[MAskDeleteFile]
+"el archivo"
+//[MAskDeleteObjects]
+"los objetos"
 // need translation:
 //[MAskDeleteLink]
 "un enlace al"
-//[MAskDeleteLinkFolder]
-"directorio"
-//[MAskDeleteLinkFile]
-"archivo"
-//[MAskDeleteItems]
-"{0} ítem{1}:"
-//[MAskDeleteItems0]
-""
-//[MAskDeleteItemsA]
-"s"
-//[MAskDeleteItemsS]
-"s"
+//[MAskDeleteAndMore]
+"…y {0} más"
 
 //[MDeleteFolderTitle]
 "Borrar directorio"
@@ -1014,7 +998,7 @@
 //[MEditCannotOpen]
 "No se puede abrir el archivo"
 //[MEditReading]
-"Leyendo el archivo"
+"Leyendo el archivo {0}"
 //[MEditAskSave]
 "El archivo ha sido modificado. Desea guardarlo?"
 //[MEditAskSaveExt]
@@ -1029,7 +1013,7 @@
 //[MEditOvr]
 "Desea sobrescribirlo?"
 //[MEditSaving]
-"Guardando el archivo"
+"Guardando el archivo {0}"
 // Up to 3 characters
 //[MEditStatusLine]
 "Lín"
@@ -1087,7 +1071,7 @@
 "&Reemplazar"
 
 //[MEditSearchingFor]
-"Buscando por"
+"Buscando por {0}"
 //[MEditSearchStatistics]
 "Frecuencia: {0}, líneas: {1}"
 //[MEditNotFound]

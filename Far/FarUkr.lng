@@ -1,6 +1,6 @@
 ﻿.Language=Ukrainian,Ukrainian (Українська)
 
-//Version: 3.0.5849.0 (Private) x64
+//Version: 3.0.5851.0 (Private) x64
 
 //[MYes]
 "Так"
@@ -875,40 +875,24 @@
 
 //[MDeleteTitle]
 "Видалення"
-//[MAskDeleteFolder]
-"Ви бажаєте видалити папку"
-//[MAskDeleteFile]
-"Ви бажаєте видалити файл"
 //[MAskDelete]
-"Ви бажаєте видалити"
-//[MAskDeleteRecycleFolder]
-"Ви бажаєте перемістити в Кошик папку"
-//[MAskDeleteRecycleFile]
-"Ви бажаєте перемістити в Кошик файл"
+"Ви бажаєте видалити {0}?"
 //[MAskDeleteRecycle]
-"Ви бажаєте перемістити в Кошик"
+"Ви бажаєте перемістити {0} в Кошик?"
 //[MDeleteWipeTitle]
 "Знищення"
-//[MAskWipeFolder]
-"Ви бажаєте знищити папку"
-//[MAskWipeFile]
-"Ви бажаєте знищити файл"
 //[MAskWipe]
-"Ви бажаєте знищити"
+"Ви бажаєте знищити {0}?"
+//[MAskDeleteFolder]
+"папку"
+//[MAskDeleteFile]
+"файл"
+//[MAskDeleteObjects]
+"об'єкти"
 //[MAskDeleteLink]
 "посилання на"
-//[MAskDeleteLinkFolder]
-"папку"
-//[MAskDeleteLinkFile]
-"файл"
-//[MAskDeleteItems]
-"{0} елемент{1}"
-//[MAskDeleteItems0]
-""
-//[MAskDeleteItemsA]
-"и"
-//[MAskDeleteItemsS]
-"ів"
+//[MAskDeleteAndMore]
+"…і ще {0}"
 
 //[MDeleteFolderTitle]
 "Видалення папки"
@@ -1008,7 +992,7 @@
 //[MEditCannotOpen]
 "Помилка відкриття файлу"
 //[MEditReading]
-"Читання файлу"
+"Читання файлу {0}"
 //[MEditAskSave]
 "Файл було змінено. Зберегти?"
 //[MEditAskSaveExt]
@@ -1023,7 +1007,7 @@
 //[MEditOvr]
 "Ви бажаєте перезаписати його?"
 //[MEditSaving]
-"Збереження файлу"
+"Збереження файлу {0}"
 // Up to 3 characters
 //[MEditStatusLine]
 "Ряд"
@@ -1081,7 +1065,7 @@
 "&Замінити"
 
 //[MEditSearchingFor]
-"Шукати"
+"Шукати {0}"
 //[MEditSearchStatistics]
 "Входжень: {0}, рядків: {1}"
 //[MEditNotFound]

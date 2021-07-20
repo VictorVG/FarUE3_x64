@@ -1,6 +1,6 @@
 ﻿.Language=Belarusian,Belarusian (Беларуская)
 
-//Version: 3.0.5849.0 (Private) x64
+//Version: 3.0.5851.0 (Private) x64
 
 //[MYes]
 "Так"
@@ -875,40 +875,24 @@
 
 //[MDeleteTitle]
 "Выдаленне"
-//[MAskDeleteFolder]
-"Вы жадаеце выдаліць каталог"
-//[MAskDeleteFile]
-"Вы жадаеце выдаліць файл"
 //[MAskDelete]
-"Вы жадаеце выдаліць"
-//[MAskDeleteRecycleFolder]
-"Вы жадаеце перанесці каталог у Сметнік"
-//[MAskDeleteRecycleFile]
-"Вы жадаеце перанесці файл у Сметнік"
+"Вы жадаеце выдаліць {0}?"
 //[MAskDeleteRecycle]
-"Вы жадаеце перанесці у Сметнік"
+"Вы жадаеце перанесці {0} у Сметнік?"
 //[MDeleteWipeTitle]
 "Знішчэнне"
-//[MAskWipeFolder]
-"Вы жадаеце знішчыць каталог"
-//[MAskWipeFile]
-"Вы жадаеце знішчыць файл"
 //[MAskWipe]
-"Вы жадаеце знішчыць"
+"Вы жадаеце знішчыць {0}?"
+//[MAskDeleteFolder]
+"каталог"
+//[MAskDeleteFile]
+"файл"
+//[MAskDeleteObjects]
+"аб'екты"
 //[MAskDeleteLink]
 "спасылка на"
-//[MAskDeleteLinkFolder]
-"каталог"
-//[MAskDeleteLinkFile]
-"файл"
-//[MAskDeleteItems]
-"{0} элемент{1}"
-//[MAskDeleteItems0]
-""
-//[MAskDeleteItemsA]
-"а"
-//[MAskDeleteItemsS]
-"аў"
+//[MAskDeleteAndMore]
+"…і яшчэ {0}"
 
 //[MDeleteFolderTitle]
 "Выдаленне каталога"
@@ -1008,7 +992,7 @@
 //[MEditCannotOpen]
 "Немагчыма адчыніць файл"
 //[MEditReading]
-"Чытанне файла"
+"Чытанне файла {0}"
 //[MEditAskSave]
 "Файл быў зменены. Захаваць?"
 //[MEditAskSaveExt]
@@ -1023,7 +1007,7 @@
 //[MEditOvr]
 "Вы жадаеце перазапісаць яго?"
 //[MEditSaving]
-"Захаванне файла"
+"Захаванне файла {0}"
 // Up to 3 characters
 //[MEditStatusLine]
 "Стр"
@@ -1081,7 +1065,7 @@
 "&Змена"
 
 //[MEditSearchingFor]
-"Шукаць"
+"Шукаць {0}"
 //[MEditSearchStatistics]
 "Уваходжаняў: {0}, радкоў: {1}"
 //[MEditNotFound]

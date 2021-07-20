@@ -1,6 +1,6 @@
 ﻿.Language=English,English
 
-//Version: 3.0.5849.0 (Private) x64
+//Version: 3.0.5851.0 (Private) x64
 
 //[MYes]
 "Yes"
@@ -875,40 +875,24 @@
 
 //[MDeleteTitle]
 "Delete"
-//[MAskDeleteFolder]
-"Do you wish to delete the folder"
-//[MAskDeleteFile]
-"Do you wish to delete the file"
 //[MAskDelete]
-"Do you wish to delete"
-//[MAskDeleteRecycleFolder]
-"Do you wish to move to the Recycle Bin the folder"
-//[MAskDeleteRecycleFile]
-"Do you wish to move to the Recycle Bin the file"
+"Do you wish to delete {0}?"
 //[MAskDeleteRecycle]
-"Do you wish to move to the Recycle Bin"
+"Do you wish to move {0} to the Recycle Bin?"
 //[MDeleteWipeTitle]
 "Wipe"
-//[MAskWipeFolder]
-"Do you wish to wipe the folder"
-//[MAskWipeFile]
-"Do you wish to wipe the file"
 //[MAskWipe]
-"Do you wish to wipe"
+"Do you wish to wipe {0}?"
+//[MAskDeleteFolder]
+"the folder"
+//[MAskDeleteFile]
+"the file"
+//[MAskDeleteObjects]
+"the objects"
 //[MAskDeleteLink]
 "a link to"
-//[MAskDeleteLinkFolder]
-"folder"
-//[MAskDeleteLinkFile]
-"file"
-//[MAskDeleteItems]
-"{0} item{1}"
-//[MAskDeleteItems0]
-""
-//[MAskDeleteItemsA]
-"s"
-//[MAskDeleteItemsS]
-"s"
+//[MAskDeleteAndMore]
+"…and {0} more"
 
 //[MDeleteFolderTitle]
 "Delete folder"
@@ -1008,7 +992,7 @@
 //[MEditCannotOpen]
 "Cannot open the file"
 //[MEditReading]
-"Reading the file"
+"Reading the file {0}"
 //[MEditAskSave]
 "File has been modified. Save?"
 //[MEditAskSaveExt]
@@ -1023,7 +1007,7 @@
 //[MEditOvr]
 "Do you wish to overwrite it?"
 //[MEditSaving]
-"Saving the file"
+"Saving the file {0}"
 // Up to 3 characters
 //[MEditStatusLine]
 "Ln"
@@ -1081,7 +1065,7 @@
 "&Replace"
 
 //[MEditSearchingFor]
-"Searching for"
+"Searching for {0}"
 //[MEditSearchStatistics]
 "Occurrences: {0}, lines: {1}"
 //[MEditNotFound]

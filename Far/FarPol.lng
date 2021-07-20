@@ -1,6 +1,6 @@
 ﻿.Language=Polish,Polish (Polski)
 
-//Version: 3.0.5849.0 (Private) x64
+//Version: 3.0.5851.0 (Private) x64
 
 //[MYes]
 "Tak"
@@ -875,40 +875,24 @@
 
 //[MDeleteTitle]
 "Usuń"
-//[MAskDeleteFolder]
-"Czy chcesz usunąć folder"
-//[MAskDeleteFile]
-"Czy chcesz usunąć plik"
 //[MAskDelete]
-"Czy chcesz usunąć"
-//[MAskDeleteRecycleFolder]
-"Czy chcesz przenieść folder do Kosza"
-//[MAskDeleteRecycleFile]
-"Czy chcesz przenieść plik do Kosza"
+"Czy chcesz usunąć {0}?"
 //[MAskDeleteRecycle]
-"Czy chcesz przenieść do Kosza"
+"Czy chcesz przenieść {0} do Kosza?"
 //[MDeleteWipeTitle]
 "Wymaż"
-//[MAskWipeFolder]
-"Czy chcesz wymazać folder"
-//[MAskWipeFile]
-"Czy chcesz wymazać plik"
 //[MAskWipe]
-"Czy chcesz wymazać"
+"Czy chcesz wymazać {0}?"
+//[MAskDeleteFolder]
+"folder"
+//[MAskDeleteFile]
+"plik"
+//[MAskDeleteObjects]
+"obiekty"
 //[MAskDeleteLink]
 "linkiem do"
-//[MAskDeleteLinkFolder]
-"folder"
-//[MAskDeleteLinkFile]
-"plik"
-//[MAskDeleteItems]
-"{0} plik{1}"
-//[MAskDeleteItems0]
-""
-//[MAskDeleteItemsA]
-"i"
-//[MAskDeleteItemsS]
-"ów"
+//[MAskDeleteAndMore]
+"…i {0} więcej"
 
 //[MDeleteFolderTitle]
 "Usuń folder"
@@ -1008,7 +992,7 @@
 //[MEditCannotOpen]
 "Nie można otworzyć pliku"
 //[MEditReading]
-"Czytam plik"
+"Czytam plik {0}"
 //[MEditAskSave]
 "Plik został zmodyfikowany. Zapisać?"
 //[MEditAskSaveExt]
@@ -1023,7 +1007,7 @@
 //[MEditOvr]
 "Czy chcesz go nadpisać?"
 //[MEditSaving]
-"Zapisuję plik"
+"Zapisuję plik {0}"
 // Up to 3 characters
 //[MEditStatusLine]
 "Lin"
@@ -1081,7 +1065,7 @@
 "Za&mień"
 
 //[MEditSearchingFor]
-"Szukam"
+"Szukam {0}"
 //[MEditSearchStatistics]
 "Wystąpień: {0}, linii: {1}"
 //[MEditNotFound]
