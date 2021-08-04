@@ -1,6 +1,6 @@
 ﻿.Language=Russian,Russian (Русский)
 
-//Version: 3.0.5861.0 (Private) x64
+//Version: 3.0.5867.0 (Private) x64
 
 //[MYes]
 "Да"
@@ -3223,8 +3223,8 @@
 "Печатать {0} на"
 //[MPrintFilesTo]
 "Печатать {0} файлов на"
-//[MPreparingForPrinting]
-"Подготовка файлов к печати"
+//[MPrintingFile]
+"Печать {0}"
 //[MCannotEnumeratePrinters]
 "Не удалось получить список доступных принтеров"
 //[MCannotOpenPrinter]

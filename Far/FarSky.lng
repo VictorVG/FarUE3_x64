@@ -1,6 +1,6 @@
 ﻿.Language=Slovak,Slovak (Slovenčina)
 
-//Version: 3.0.5861.0 (Private) x64
+//Version: 3.0.5867.0 (Private) x64
 
 //[MYes]
 "Áno"
@@ -3254,8 +3254,8 @@
 "Vytlačiť {0} na"
 //[MPrintFilesTo]
 "Vytlačiť {0} súborov na"
-//[MPreparingForPrinting]
-"Pripravujem súbory na tlač"
+//[MPrintingFile]
+"Tlač {0}"
 // need translation:
 //[MCannotEnumeratePrinters]
 "Cannot enumerate available printers list"

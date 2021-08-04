@@ -1,6 +1,6 @@
 ﻿.Language=Polish,Polish (Polski)
 
-//Version: 3.0.5861.0 (Private) x64
+//Version: 3.0.5867.0 (Private) x64
 
 //[MYes]
 "Tak"
@@ -986,7 +986,7 @@
 //[MCurrent]
 "&Bieżący"
 //[MReload]
-"&Załaduj"
+"&Przeładuj"
 //[MNewOpen]
 "&Nowa instancja"
 //[MEditCannotOpen]
@@ -2414,7 +2414,7 @@
 //[MChangeDriveShowNetworkDrive]
 "Pokaż parametry &dysków sieciowych"
 //[MChangeDriveShowVirtualDisk]
-"Wykrywaj dyski wrtualne"
+"Wykrywaj dyski wirtualne"
 
 //[MSearchFileTitle]
 "Szukaj"
@@ -2880,7 +2880,7 @@
 //[MSetConfirmRemoveHotPlug]
 "Odłączanie urządzenia &HotPlug"
 //[MSetConfirmAllowReedit]
-"&Załaduj edytowany plik"
+"Przeładuj &edytowany plik"
 //[MSetConfirmHistoryClear]
 "&Czyszczenie historii"
 //[MSetConfirmExit]
@@ -3220,8 +3220,8 @@
 "Drukuj {0} do"
 //[MPrintFilesTo]
 "Drukuj {0} pliki(ów) do"
-//[MPreparingForPrinting]
-"Przygotowuję plik(i) do drukowania"
+//[MPrintingFile]
+"Druk {0}"
 //[MCannotEnumeratePrinters]
 "Nie można odczytać listy drukarek"
 //[MCannotOpenPrinter]

@@ -1,6 +1,6 @@
 ﻿.Language=Lithuanian,Lithuanian (Lietuvių)
 
-//Version: 3.0.5861.0 (Private) x64
+//Version: 3.0.5867.0 (Private) x64
 
 //[MYes]
 "Taip"
@@ -3746,8 +3746,8 @@
 "Spausdinti {0} su"
 //[MPrintFilesTo]
 "Spausdinti {0} failus su"
-//[MPreparingForPrinting]
-"Ruošiu failus spausdinimui"
+//[MPrintingFile]
+"Spausdinimas {0}"
 // need translation:
 //[MCannotEnumeratePrinters]
 "Cannot enumerate available printers list"

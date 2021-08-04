@@ -1,6 +1,6 @@
 ﻿.Language=Czech,Czech (Čeština)
 
-//Version: 3.0.5861.0 (Private) x64
+//Version: 3.0.5867.0 (Private) x64
 
 //[MYes]
 "Ano"
@@ -3235,8 +3235,8 @@
 "Vytisknout {0} na"
 //[MPrintFilesTo]
 "Vytisknout {0} souborů na"
-//[MPreparingForPrinting]
-"Připravuji soubory pro tisk"
+//[MPrintingFile]
+"Tisk {0}"
 //[MCannotEnumeratePrinters]
 "Nelze zjistit seznam dostupných tiskáren"
 //[MCannotOpenPrinter]

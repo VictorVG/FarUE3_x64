@@ -1,6 +1,6 @@
 ﻿.Language=Spanish,Spanish (Español)
 
-//Version: 3.0.5861.0 (Private) x64
+//Version: 3.0.5867.0 (Private) x64
 
 //[MYes]
 "Si"
@@ -3239,8 +3239,8 @@
 "Imprimir {0} a"
 //[MPrintFilesTo]
 "Imprimir {0} archivos a"
-//[MPreparingForPrinting]
-"Preparando archivos para imprimir"
+//[MPrintingFile]
+"Impresión {0}"
 //[MCannotEnumeratePrinters]
 "No se puede enumerar lista de impresoras disponibles"
 //[MCannotOpenPrinter]

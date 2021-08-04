@@ -1,6 +1,6 @@
 ﻿.Language=Hungarian,Hungarian (Magyar)
 
-//Version: 3.0.5861.0 (Private) x64
+//Version: 3.0.5867.0 (Private) x64
 
 //[MYes]
 "Igen"
@@ -3476,8 +3476,8 @@
 "{0} nyomtatása:"
 //[MPrintFilesTo]
 "{0} fájl nyomtatása:"
-//[MPreparingForPrinting]
-"Fájlok előkészítése nyomtatáshoz"
+//[MPrintingFile]
+"Nyomtatás {0}"
 //[MCannotEnumeratePrinters]
 "Az elérhető nyomtatók listája nem állítható össze"
 //[MCannotOpenPrinter]

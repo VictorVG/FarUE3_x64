@@ -1,6 +1,6 @@
 ﻿.Language=Italian,Italian (Italiano)
 
-//Version: 3.0.5861.0 (Private) x64
+//Version: 3.0.5867.0 (Private) x64
 
 //[MYes]
 "&Si"
@@ -3234,8 +3234,8 @@
 "Stampa {0} Su"
 //[MPrintFilesTo]
 "Stampa {0} Files Su"
-//[MPreparingForPrinting]
-"Preparazione Dei Files Per La Stampa"
+//[MPrintingFile]
+"Stampa {0}"
 //[MCannotEnumeratePrinters]
 "Non Riesco A Trovare Nessuna Stampante"
 //[MCannotOpenPrinter]

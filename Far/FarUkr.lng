@@ -1,6 +1,6 @@
 ﻿.Language=Ukrainian,Ukrainian (Українська)
 
-//Version: 3.0.5861.0 (Private) x64
+//Version: 3.0.5867.0 (Private) x64
 
 //[MYes]
 "Так"
@@ -3224,8 +3224,8 @@
 "Друкувати {0} на"
 //[MPrintFilesTo]
 "Друкувати {0} файлів на"
-//[MPreparingForPrinting]
-"Підготовка файлів до друку"
+//[MPrintingFile]
+"Друк {0}"
 //[MCannotEnumeratePrinters]
 "Не вдалося отримати список доступних принтерів"
 //[MCannotOpenPrinter]

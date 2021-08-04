@@ -1,6 +1,6 @@
 ﻿.Language=English,English
 
-//Version: 3.0.5861.0 (Private) x64
+//Version: 3.0.5867.0 (Private) x64
 
 //[MYes]
 "Yes"
@@ -3220,8 +3220,8 @@
 "Print {0} to"
 //[MPrintFilesTo]
 "Print {0} files to"
-//[MPreparingForPrinting]
-"Preparing files for printing"
+//[MPrintingFile]
+"Printing {0}"
 //[MCannotEnumeratePrinters]
 "Cannot enumerate available printers list"
 //[MCannotOpenPrinter]

@@ -1,6 +1,6 @@
 ﻿.Language=Belarusian,Belarusian (Беларуская)
 
-//Version: 3.0.5861.0 (Private) x64
+//Version: 3.0.5867.0 (Private) x64
 
 //[MYes]
 "Так"
@@ -3227,8 +3227,8 @@
 "Друк {0} на"
 //[MPrintFilesTo]
 "Друк {0} файлаў на"
-//[MPreparingForPrinting]
-"Падрыхтоўка файлаў да друку"
+//[MPrintingFile]
+"Друк {0}"
 //[MCannotEnumeratePrinters]
 "Немагчыма атрымаць спіс наяўных друкарак"
 //[MCannotOpenPrinter]

@@ -1,6 +1,6 @@
 ﻿.Language=German,German (Deutsch)
 
-//Version: 3.0.5861.0 (Private) x64
+//Version: 3.0.5867.0 (Private) x64
 
 //[MYes]
 "Ja"
@@ -3313,8 +3313,8 @@
 "Drucke {0} nach"
 //[MPrintFilesTo]
 "Drucke {0} Dateien mit"
-//[MPreparingForPrinting]
-"Vorbereiten der Druckaufträge"
+//[MPrintingFile]
+"Drucken {0}"
 // need translation:
 //[MCannotEnumeratePrinters]
 "Cannot enumerate available printers list"
