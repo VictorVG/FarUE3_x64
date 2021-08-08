@@ -1,6 +1,6 @@
 ﻿.Language=Polish,Polish (Polski)
 
-//Version: 3.0.5869.0 (Private) x64
+//Version: 3.0.5872.0 (Private) x64
 
 //[MYes]
 "Tak"
@@ -539,7 +539,7 @@
 //[MConfigInfoPanelShowPowerStatus]
 "Pokaż status &zasilania"
 //[MConfigInfoPanelShowCDInfo]
-"Pokaż parametry dysku &CD"
+"Pokaż parametry dysku &optycznego"
 
 //[MMenuInfoShowModeTitle]
 "Pokaż Info"
@@ -2396,25 +2396,25 @@
 //[MChangeDriveShowLabel]
 "Pokaż &etykietę dysku"
 //[MChangeDriveShowLabelUseShell]
-"Użyj nazwy z Windows"
+"Użyj &nazwy z Windows"
 //[MChangeDriveShowFileSystem]
 "Pokaż system &plików"
 //[MChangeDriveShowSize]
-"Pokaż &pojemność"
+"Pokaż po&jemność"
 //[MChangeDriveShowSizeFloat]
-"Wielkość w jednostkach dziesiętnych"
+"W&ielkość w jednostkach dziesiętnych"
 //[MChangeDriveShowRemovableDrive]
 "Pok&aż parametry dysków wyjmowalnych"
 //[MChangeDriveShowPlugins]
 "Pokaż &wtyczki"
 //[MChangeDriveSortPluginsByHotkey]
-"Sortuj wtyczki wg skrótów"
+"Sortuj wty&czki wg skrótów"
 //[MChangeDriveShowCD]
-"Pokaż parametry napędów &CD"
+"Pokaż parametry napędów &optycznych"
 //[MChangeDriveShowNetworkDrive]
 "Pokaż parametry &dysków sieciowych"
 //[MChangeDriveShowVirtualDisk]
-"Wykrywaj dyski wirtualne"
+"W&ykrywaj dyski wirtualne"
 
 //[MSearchFileTitle]
 "Szukaj"

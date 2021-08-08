@@ -3,7 +3,7 @@
 .Options CtrlStartPosChar=¦
 
 @Contents
-$ #LuaFAR Search (версия 3.44.3)#
+$ #LuaFAR Search (версия 3.45.0)#
 ^#ВОЗМОЖНОСТИ#
  * Поиск и замена в редакторе.
  * Поиск и замена из панелей.
@@ -325,6 +325,7 @@ $ #lfsearch.EditorAction#
        "bWholeWords"     : искать только целые слова
        "bExtended"       : игнорировать пробелы в рег.выражениях
        "bSearchBack"     : искать в обратном направлении
+       "bHighlight"      : подсветить все вхождения в редакторе
 
        "bRepIsFunc"      : режим функции
        "bDelEmptyLine"   : удалять пустые строки после замены
