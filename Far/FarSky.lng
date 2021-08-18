@@ -1,6 +1,6 @@
 ﻿.Language=Slovak,Slovak (Slovenčina)
 
-//Version: 3.0.5872.0 (Private) x64
+//Version: 3.0.5879.0 (Private) x64
 
 //[MYes]
 "Áno"
@@ -871,8 +871,6 @@
 "Súbor"
 //[MCopyEncryptWarn2]
 "sa nedá skopírovať ani presunúť bez straty jeho šifrovania."
-//[MCopyEncryptWarn3]
-"Môžete túto chybu ignorovať a pokračovať, alebo operáciu zrušiť."
 
 //[MCopyReadError]
 "Nemôžem čítať dáta z"

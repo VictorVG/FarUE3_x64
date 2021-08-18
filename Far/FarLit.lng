@@ -1,6 +1,6 @@
 ﻿.Language=Lithuanian,Lithuanian (Lietuvių)
 
-//Version: 3.0.5872.0 (Private) x64
+//Version: 3.0.5879.0 (Private) x64
 
 //[MYes]
 "Taip"
@@ -1029,9 +1029,6 @@
 // need translation:
 //[MCopyEncryptWarn2]
 "cannot be copied or moved without losing its encryption."
-// need translation:
-//[MCopyEncryptWarn3]
-"You can choose to ignore this error and continue, or cancel."
 
 //[MCopyReadError]
 "Negaliu nuskaityti duomenų iš"
@@ -2180,7 +2177,7 @@
 "Pasirinktinas si&mbolis pažymėti apibrėžtiems failams,"
 // need translation:
 //[MHighlightTransparentMarkChar]
-"tra&nsparent"
+"trans&parent"
 //[MHighlightColors]
 "Failo vardo spalvos (\"juoda ant juodos\" - pradinė spalva)"
 //[MHighlightFileName1]

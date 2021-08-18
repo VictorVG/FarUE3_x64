@@ -2,7 +2,7 @@
 local nfo = Info {_filename or ...,
   name          = "Bookmark manager";
   description   = "Менеджер закладок на папки для Fara";
-  version       = "3.0.5"; --http://semver.org/lang/ru/
+  version       = "3.0.6"; --http://semver.org/lang/ru/
   author        = "IgorZ";
   url           = "http://forum.farmanager.com/viewtopic.php?t=8465";
   id            = "F93842EB-FFD3-481A-8AA8-2E7DCEBDF2B1";
@@ -82,6 +82,7 @@ history         = [[
                     Доработан вызов action-функций с учётом введённых в build 717 параметров для condition/action. Рефакторинг.
 2020/04/22 v3.0.4 - Исправлена работа диалога настроек. Дополнена справка по диалогу настроек.
 2020/05/22 v3.0.5 - Исправлена работа с закладкой на файл. Дополнена справка по закладкам.
+2021/08/18 v3.0.6 - Исправлена ошибка с удалением несуществующей закладки. Рефакторинг.
 ]];
   options       = { DefProfile = far.Flags.PSL_ROAMING--[[far.Flags.PSL_LOCAL--]] } -- место хранения настроек по умолчанию: глобальные/локальные
 }
@@ -132,7 +133,7 @@ local L,S,InProcess,UsedProfile -- язык, настройки, признак 
 -- +
 --[=[вспомогательные функции]=]
 -- -
-local LoadSettings,SaveSettings,InputSeq,GoToFolder,GiveBack,BM2str,BM2tbl,NiceFolder,ReadBM,WriteBM,DelBM,ShowHelp,ErrMess
+local LoadSettings,SaveSettings,InputSeq,GoToObject,GiveBack,BM2str,BM2tbl,NiceFolder,ReadBM,WriteBM,DelBM,ShowHelp,ErrMess
 --
 function LoadSettings(ForceDef) --[[загрузить настройки из БД]]
 UsedProfile = nfo.options.DefProfile -- запомним профиль
@@ -148,7 +149,7 @@ S = { UseLocal = L1("UseLocal")~=0 and F.PSL_LOCAL,UseGlobal = L1("UseGlobal")~=
       UseEnv = L1("UseEnv")~=0,ShowEnv = L1("ShowEnv")~=0,ExtMask = L1("ExtMask")~=0,MenuForOne = L1("MenuForOne")~=0,
       SeqColor = L1("SeqColor"),SeqLine = L1("SeqLine"),GoToMessDelay = L1("GoToMessDelay"),SaveMessDelay = L1("SaveMessDelay")}
 obj:Free() -- приберёмся
-if S.UseLocal and S.UseGlobal and OneProfile then S.UseLocal = nil end
+if OneProfile then S.UseLocal = nil S.DefBMProfile = F.PSL_ROAMING end
 local FL,dummy = Far.GetConfig("Language.Main"):sub(1,3),function() return {"Cannot find language files"} end -- язык, пустая функция
 L = L and L.Lang==FL and L or (loadfile(PathName..FL..".lng") or loadfile(PathName.."Eng.lng") or dummy)(LMBuild) -- обновим, если язык другой
 
@@ -179,7 +180,7 @@ until band(Mouse.LastCtrlState,0x15)==0 -- повторяем, пока нажа
 panel.RedrawPanel(nil,1) panel.RedrawPanel(nil,0) return seq,mod
 end -- InputSeq
 --
-function GoToFolder(folder,delay,trail) --[[перейти в указанную папку]]
+function GoToObject(folder,delay,trail) --[[перейти в указанную папку]]
 local A,P,Top
 for _,v in ipairs(folder) do
   if v.Panel=="<A>" or v.Panel=="" then if (Drv.ShowPos==0)or((Drv.ShowPos==1)==APanel.Left) then A = v else P = v end -- активная панель
@@ -247,7 +248,7 @@ if delay>=0 then -- надо вывести сообщение?
   far.RestoreScreen(h) -- восстановим экран
   if key~="" then GiveBack("","",key) end -- задержка прервана нажатием клавиши? вернём клавишу обратно
 end
-end -- GoToFolder
+end -- GoToObject
 --
 function GiveBack(mod,seq,x) --[[Вернуть клавиши в Far]]
 InProcess = true -- запретим повторный вызов
@@ -282,7 +283,7 @@ for pf,nf in (folder:gsub("^[^<]","<1>%1"):gsub("^<([CcXxEe]?)>","<1%1>"):gsub("
   if not pf:find("<[12AaPpLlRr][CcXxEe]?>") then e[#e+1] = {f=pf..nf,e="P"} elseif tt.Folder=="" then e[#e+1] = {f=pf..nf,e="F"} else t[#t+1] = tt end
 end
 if #e>0 then
-  local s,sp = (L.BadBM1:format(lg==F.PSL_LOCAL and L.BMLocal or L.BMGlobal,bm)) sp = (" "):rep(s:len())
+  local s,sp = (L.BadBM1:format((OneProfile or not lg) and L.BMUndef or lg==F.PSL_LOCAL and L.BMLocal or L.BMGlobal,bm)) sp = (" "):rep(s:len())
   for i,v in ipairs(e) do s = s..(i>1 and sp or "")..L["BadBM"..v.e.."Fmt"]:format(v.f:gsub("<1>",""):gsub("<2>","<>"))..(i<#e and "\n" or "") end
   ErrMess(s,L.Hdr)
 end
@@ -295,6 +296,13 @@ end -- NiceFolder
 --
 function ReadBM(bm,lg)
 local folder,err = {}
+if not lg then -- профиль не указан явно?
+  lg = S.UseLocal and S.UseGlobal and S.DefBMProfile or S.UseLocal or S.UseGlobal -- вычислим предпочтительный
+  if lg then folder,err = ReadBM(bm,lg) else return end -- есть - прочитаем из него, иначе скажем, что нет
+  if folder or err then return folder,err end -- если закладка обнаружена, или ошибка при конвертации, то вернём, что получили
+  lg = lg==S.UseLocal and S.UseGlobal or S.UseLocal -- другой вариант расположения?
+  if lg then return ReadBM(bm,lg) else return end -- если есть, вернём его, иначе ничего
+end
 local obj = far.CreateSettings(nil,lg) -- откроем нужный профиль
 local key = obj:OpenSubkey(obj:OpenSubkey(0,Author) or 0,KeysPart) -- раздел
 if key then -- есть раздел?
@@ -313,9 +321,9 @@ end
 obj:Free() return #folder>0 and folder or nil,err
 end -- ReadBM
 --
-function WriteBM(bm,folder,dest)
-DelBM(bm,dest) -- удалим старое значение, чтобы не наложилось одно на другое
-local obj = far.CreateSettings(nil,dest) -- откроем профиль
+function WriteBM(bm,folder,lg)
+DelBM(bm,lg) -- удалим старое значение, чтобы не наложилось одно на другое
+local obj = far.CreateSettings(nil,lg) -- откроем профиль
 local key = obj:CreateSubkey(obj:CreateSubkey(0,Author),KeysPart) -- откроем/создадим раздел
 key = obj:CreateSubkey(key,bm) -- сохраним закладку
 for i,v in ipairs(folder) do -- сохраним закладку
@@ -326,11 +334,14 @@ end
 obj:Free()
 end -- WriteBM
 --
-function DelBM(bm,dest,confirm)--[=[Удалить закладку]=]
-if confirm and far.Message(L.DeleteBM:format(dest==F.PSL_LOCAL and L.BMLocal or L.BMGlobal,bm,NiceFolder(ReadBM(bm,dest))),L.Hdr,";OkCancel")~=1 then
+function DelBM(bm,lg,confirm)--[=[Удалить закладку]=]
+local folder = ReadBM(bm,lg) -- достанем значение закладки; если нет - отрапортуем и уйдём
+if not folder then ErrMess(L.BadBM:format((OneProfile or not lg) and L.BMUndef or lg==F.PSL_LOCAL and L.BMLocal or L.BMGlobal,bm),L.Hdr) return end
+if confirm and far.Message(L.DeleteBM:format((OneProfile or not lg) and L.BMUndef or lg==F.PSL_LOCAL and L.BMLocal or L.BMGlobal,
+                                             bm,NiceFolder(folder)),L.Hdr,";OkCancel")~=1 then
   return -- если нужно подтверждение, и отказались, ничего не делаем
 end
-local obj = far.CreateSettings(nil,dest) -- считаем из локального профиля
+local obj = far.CreateSettings(nil,lg) -- считаем из локального профиля
 local key = obj:OpenSubkey(obj:OpenSubkey(0,Author) or 0,KeysPart) -- раздел
 if key then -- есть раздел?
   if obj:Get(key,bm,F.FST_STRING) then obj:Delete(key,bm) -- удалим, если старый формат
@@ -355,12 +366,10 @@ local BMSave,BMGoTo,BMEdit,Config,BMMenu,QSMenu,CLProc
 -- +
 --[=[Сохранить текущую папку в указанной закладке]=]
 -- -
-function BMSave(sq,fld,dst)
-local seq,mod,folder -- папка, последовательность символов для закладки, нажатые модификаторы, очередная клавиша
-if sq then seq = sq else seq,mod = InputSeq() end -- имя задано? будем использовать его. если не задано - введём
-if fld then -- папка задана?
-  folder = fld -- будем использовать её
-else -- если не задана...
+function BMSave(bm,folder,lg)
+local mod -- папка, последовательность символов для закладки, нажатые модификаторы, очередная клавиша
+if not bm then bm,mod = InputSeq() end -- имя не - введём
+if not folder then -- папка не задана?
   local function PluginByID(id) return id~=("\000"):rep(16) and far.GetPluginInformation(far.FindPlugin(F.PFM_GUID,id)).GInfo.Title or "" end
   local t = panel.GetPanelDirectory(nil,1) -- папка на активной панели
   folder = {{Panel="<A>",Cmd="",Plugin=PluginByID(t.PluginId),File=t.File,Folder=t.Name,Param=t.Param}}
@@ -369,18 +378,17 @@ else -- если не задана...
     folder[2] = {Panel="<P>",Cmd="",Plugin=PluginByID(t.PluginId),File=t.File,Folder=t.Name,Param=t.Param}
   end
 end
-local dest = dst or (S.UseLocal and S.UseGlobal and S.DefBMProfile or S.UseLocal or S.UseGlobal) -- профиль
-local of = ReadBM(seq,dest) -- старое значение для закладки, если есть
+lg = lg or (S.UseLocal and S.UseGlobal and S.DefBMProfile or S.UseLocal or S.UseGlobal) -- профиль
+local of = ReadBM(bm,lg) -- старое значение для закладки, если есть
 if of then -- такая закладка уже есть, менять?
-  if far.Message(L.ReplaceBM:format(dest==F.PSL_LOCAL and L.BMLocal or L.BMGlobal,seq,NiceFolder(of),NiceFolder(folder)),L.SaveHdr,";YesNo")==1 then
-    of = nil -- запомним, что старой нет
-  end
+  if far.Message((L.BadBM1..L.ReplaceBM):format(OneProfile and L.BMUndef or lg==F.PSL_LOCAL and L.BMLocal or L.BMGlobal,
+    bm,NiceFolder(of),NiceFolder(folder)),L.SaveHdr,";YesNo")==1 then of = nil end -- запомним, что старой нет
 end
 if not of then -- старой нет, сохраняем
-  WriteBM(seq,folder,dest) -- сохраним закладку
+  WriteBM(bm,folder,lg) -- сохраним закладку
   if S.SaveMessDelay>=0 then
     local h = far.SaveScreen() -- сохраним экран
-    far.Message(L.SaveMess:format(seq,NiceFolder(folder)),"","") mf.waitkey(S.SaveMessDelay) -- выведем сообщение и подождём
+    far.Message(L.SaveMess:format(bm,NiceFolder(folder)),"","") mf.waitkey(S.SaveMessDelay) -- выведем сообщение и подождём
     far.RestoreScreen(h) -- восстановим экран
   end
 end
@@ -396,9 +404,9 @@ if S.UseGlobal then fg,err = ReadBM(seq,F.PSL_ROAMING) end -- глобальна
 if S.UseEnv then fe = win.GetEnv(seq) fe = fe and {{Panel="",Cmd="",Plugin="",File="",Folder=fe,Param=""}} end -- и переменная окружения
 folder = fl and fg and S.DefBMProfile==S.UseLocal and fl or fg or fl -- выберем правильный каталог
 folder = folder or fe -- если нет закладки, используем переменную окружения
-if folder then GoToFolder(folder,S.GoToMessDelay,trail) -- есть такая закладка? - перейдём
+if folder then GoToObject(folder,S.GoToMessDelay,trail) -- есть такая закладка? - перейдём
 elseif seq:match("^%d$") or (not err and not BMMenu(seq,trail)) then -- нет такой закладки и нет подходящих по шаблону
-  if pref then ErrMess(L.BadBM:format("",sq),L.Hdr) else GiveBack("RCtrl",seq) end -- выведем сообщение об ошибке или вернём клавиши обратно
+  if pref then ErrMess(L.BadBM:format(L.BMUndef,sq),L.Hdr) else GiveBack("RCtrl",seq) end -- выведем сообщение об ошибке или вернём клавиши обратно
 end
 end -- BMGoTo
 -- +
@@ -424,10 +432,14 @@ local form = { -- диалог редактирования
 --[[03]] {F.DI_EDIT,       15, 2,w+15, 2,0,0,0,0,bm},
 --[[04]] {F.DI_TEXT,        5, 3,   0, 3,0,0,0,0,L.diEdit.Folder},
 --[[05]] {F.DI_EDIT,       15, 3,w+15, 3,0,0,0,0,BM2str(folder)},
---[[06]] {F.DI_RADIOBUTTON, 5, 4,   0, 4,lg==F.PSL_LOCAL and 1 or 0,0,0,
+--[[06]] OneProfile
+     and {F.DI_TEXT,        5, 2, 0, 2,0,0,0,0,""}
+      or {F.DI_RADIOBUTTON, 5, 4,   0, 4,lg==F.PSL_LOCAL and 1 or 0,0,0,
                            (S.UseLocal and F.DIF_GROUP or F.DIF_DISABLE)+F.DIF_CENTERGROUP,L.diEdit.LocalBM},
---[[07]] {F.DI_RADIOBUTTON,27, 4,   0, 4,lg==F.PSL_LOCAL and 0 or 1,0,0,
-                           (not OneProfile and S.UseGlobal and 0 or F.DIF_DISABLE)+F.DIF_CENTERGROUP,L.diEdit.GlobalBM},
+--[[07]] OneProfile
+     and {F.DI_TEXT,        5, 2, 0, 2,0,0,0,0,""}
+      or {F.DI_RADIOBUTTON,27, 4,   0, 4,lg==F.PSL_LOCAL and 0 or 1,0,0,
+                           (S.UseGlobal and 0 or F.DIF_DISABLE)+F.DIF_CENTERGROUP,L.diEdit.GlobalBM},
 --[[08]] {F.DI_TEXT,       -1, 5,   0, 5,0,0,0,F.DIF_SEPARATOR,""},
 --[[09]] {F.DI_BUTTON,      0, 6,   0, 6,0,0,0,F.DIF_DEFAULTBUTTON+F.DIF_CENTERGROUP,L.OK},
 --[[10]] {F.DI_BUTTON,      0, 6,   0, 6,0,0,0,F.DIF_CENTERGROUP,L.Cancel},
@@ -441,8 +453,9 @@ if newbm~="" then -- если имя закладки не пустое - раб
   if #newfolder==0 then -- папка пустая?
     if of and not err then DelBM(newbm,newlg,true) end -- если закладка с новым именем уже была и не было ошибок в новой - удалим
   else -- папка не пустая
-    if (lg~=newlg or bm~=newbm) and of and far.Message(L.ReplaceBM:format(newlg==F.PSL_LOCAL and L.BMLocal or L.BMGlobal,newbm,
-      NiceFolder(of),NiceFolder(newfolder)),Hdr,";YesNo")~=1 then return
+    if (lg~=newlg or bm~=newbm) and of and far.Message((L.BadBM1..L.ReplaceBM):format(
+        OneProfile and L.BMUndef or newlg==F.PSL_LOCAL and L.BMLocal or L.BMGlobal,newbm,NiceFolder(of),NiceFolder(newfolder)),Hdr,";YesNo")~=1 then
+      return
     end -- сменили имя или размещение закладки (или новая), такая закладка есть, и мы не хотим её заменять? ничего не делаем, уйдём
     if move then DelBM(bm,lg) end -- удалим старую, если перенос, а не копирование
     WriteBM(newbm,newfolder,newlg) -- сохраним закладку
@@ -485,9 +498,15 @@ local Items = { -- диалог настройки конфигурации
      and {F.DI_TEXT,        5, 2, 0, 2,0,0,0,0,""}
       or {F.DI_CHECKBOX,    5, 2, 0, 2,S.UseLocal and 1 or 0,0,0,0,L.diConf.LocalBM},
 --[[03]] {F.DI_CHECKBOX,    5, 3, 0, 3,S.UseGlobal and 1 or 0,0,0,0,OneProfile and L.diConf.AllBM or L.diConf.GlobalBM},
---[[04]] {F.DI_TEXT,        5, 4, 0, 4,0,0,0,0,L.diConf.DefBMProfile},
---[[05]] {F.DI_RADIOBUTTON,45, 4, 0, 4,S.DefBMProfile==F.PSL_LOCAL and 1 or 0,0,0,0,L.diConf.UseLocal},
---[[06]] {F.DI_RADIOBUTTON,59, 4, 0, 4,S.DefBMProfile==F.PSL_ROAMING and 1 or 0,0,0,0,L.diConf.UseGlobal},
+--[[04]] OneProfile
+     and {F.DI_TEXT,        5, 2, 0, 2,0,0,0,0,""}
+      or {F.DI_TEXT,        5, 4, 0, 4,0,0,0,0,L.diConf.DefBMProfile},
+--[[05]] OneProfile
+     and {F.DI_TEXT,        5, 2, 0, 2,0,0,0,0,""}
+      or {F.DI_RADIOBUTTON,45, 4, 0, 4,S.DefBMProfile==F.PSL_LOCAL and 1 or 0,0,0,0,L.diConf.UseLocal},
+--[[06]] OneProfile
+     and {F.DI_TEXT,        5, 2, 0, 2,0,0,0,0,""}
+      or {F.DI_RADIOBUTTON,59, 4, 0, 4,S.DefBMProfile==F.PSL_ROAMING and 1 or 0,0,0,0,L.diConf.UseGlobal},
 --[[07]] {F.DI_CHECKBOX,    5, 5, 0, 4,S.UseEnv and 1 or 0,0,0,0,L.diConf.EnvBM},
 --[[08]] {F.DI_CHECKBOX,    9, 6, 0, 6,S.ShowEnv and 1 or 0,0,0,S.UseEnv and 0 or F.DIF_HIDDEN,L.diConf.ShowEnv},
 --[[09]] {F.DI_CHECKBOX,    5, 7, 0, 7,S.ExtMask and 1 or 0,0,0,0,L.diConf.ExtMask},
@@ -601,7 +620,7 @@ repeat -- начало главного цикла
   else -- Enter/CtrlPgDn/ShiftEnter/ShiftF4
     local cmd = (not res.BreakKey and"O")or(res.BreakKey:match("^C")and"")or(res.BreakKey=="S+RETURN"and"X")or(res.BreakKey=="S+F4"and"E")
     for _,v in ipairs(items[pos].folder) do v.Cmd = (cmd=="O")and v.Cmd or cmd end
-    GoToFolder(items[pos].folder,-1,trail) -- перейдём без задержки на показ новой папки
+    GoToObject(items[pos].folder,-1,trail) -- перейдём без задержки на показ новой папки
     break -- закончим на этом
   end
 until false -- конец главного цикла
@@ -639,25 +658,26 @@ end -- QSMenu
 -- -
 function CLProc(pref,line)
 LoadSettings()
-local p13,lg,bm,folder,trail = (pref or ""):sub(1,3),(pref or ""):sub(4),(line or ""):match("^(%S*)%s*(.*)$") -- функция, профиль, закладка, папка/и
+local p13,p4,bm,folder,trail = (pref or ""):sub(1,3),(pref or ""):sub(4),(line or ""):match("^(%S*)%s*(.*)$") -- функция,профиль,закладка,папка/и
 if pref=="bm" then bm,trail = (line or ""):match("^([^\\]*)(.-)$") end -- для перехода формат и содержание строки другие
-lg = lg=="l" and F.PSL_LOCAL or lg=="g" and F.PSL_ROAMING or S.UseLocal and S.UseGlobal and S.DefBMProfile or S.UseLocal or S.UseGlobal -- профиль
+if OneProfile then p4 = "" end -- для единого профиля нет различия на локальные и глобальные закладки/
+local lg = p4=="l" and F.PSL_LOCAL or p4=="g" and F.PSL_ROAMING or S.UseLocal and S.UseGlobal and S.DefBMProfile or S.UseLocal or S.UseGlobal--профиль
 if not lg and p13~="bm" then return end -- если профиль не задан явно, все закладки отключены, и это не переход, выйдем
 bm = bm:upper():gsub(".",ToCtrl) -- преобразуем закладку к виду, вводимому с Ctrl
 if p13=="bm" then -- переход?
   BMGoTo(bm,pref,trail) -- перейдём
 elseif p13=="bma" then -- добавление?
   if folder=="" then -- папка не указана?
-    ErrMess((L.BadBM1..L.BadBMValue):format(lg==F.PSL_LOCAL and L.BMLocal or L.BMGlobal,bm),L.Hdr) -- выведем сообщение об ошибке
+    ErrMess((L.BadBM1..L.BadBMValue):format(p4=="" and L.BMUndef or lg==F.PSL_LOCAL and L.BMLocal or L.BMGlobal,bm),L.Hdr) -- сообщим об ошибке
   else
     local tfolder = BM2tbl(folder,bm,lg) -- преобразуем в таблицу и получим список некорректных элементов
     if #tfolder>0 then BMSave(bm,tfolder,lg) -- добавим (если есть что)
-    else ErrMess((L.BadBM1..L.BadBMZFmt):format(lg==F.PSL_LOCAL and L.BMLocal or L.BMGlobal,bm),L.Hdr) end
+    else ErrMess((L.BadBM1..L.BadBMZFmt):format(p4=="" and L.BMUndef or lg==F.PSL_LOCAL and L.BMLocal or L.BMGlobal,bm),L.Hdr) end
   end
 elseif p13=="bme" then -- изменение?
-  BMEdit(bm,folder=="" and ReadBM(bm,lg) or BM2tbl(folder,bm,lg),lg,true) -- подредактируем
+  BMEdit(bm,folder=="" and ReadBM(bm,p4~="" and lg or nil) or BM2tbl(folder,bm,lg),lg,true) -- подредактируем
 elseif p13=="bmr" then -- удаление?
-  DelBM(bm,lg,true) -- удалим
+  DelBM(bm,p4~="" and lg or nil,true) -- удалим
 end
 end -- CLProc
 --------------------------------------------------------------------------------

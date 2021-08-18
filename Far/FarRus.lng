@@ -1,6 +1,6 @@
 ﻿.Language=Russian,Russian (Русский)
 
-//Version: 3.0.5872.0 (Private) x64
+//Version: 3.0.5879.0 (Private) x64
 
 //[MYes]
 "Да"
@@ -850,8 +850,6 @@
 "Файл"
 //[MCopyEncryptWarn2]
 "нельзя скопировать или переместить, не потеряв его шифрование."
-//[MCopyEncryptWarn3]
-"Можно пропустить эту ошибку или отменить операцию."
 
 //[MCopyReadError]
 "Ошибка чтения данных из"

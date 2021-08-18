@@ -1,6 +1,6 @@
 ﻿.Language=Ukrainian,Ukrainian (Українська)
 
-//Version: 3.0.5872.0 (Private) x64
+//Version: 3.0.5879.0 (Private) x64
 
 //[MYes]
 "Так"
@@ -851,8 +851,6 @@
 "Файл"
 //[MCopyEncryptWarn2]
 "не можна скопіювати чи перемістити, не втративши його шифрування."
-//[MCopyEncryptWarn3]
-"Можна пропустити цю помилку або скасувати операцію."
 
 //[MCopyReadError]
 "Помилка читання даних із"

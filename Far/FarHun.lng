@@ -1,6 +1,6 @@
 ﻿.Language=Hungarian,Hungarian (Magyar)
 
-//Version: 3.0.5872.0 (Private) x64
+//Version: 3.0.5879.0 (Private) x64
 
 //[MYes]
 "Igen"
@@ -948,8 +948,6 @@
 "A fájl"
 //[MCopyEncryptWarn2]
 "csak titkosítása elvesztésével másolható vagy mozgatható."
-//[MCopyEncryptWarn3]
-"Ennek ellenére folytathatja vagy felfüggesztheti."
 
 //[MCopyReadError]
 "Nem olvasható adat innen:"

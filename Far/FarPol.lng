@@ -1,6 +1,6 @@
 ﻿.Language=Polish,Polish (Polski)
 
-//Version: 3.0.5872.0 (Private) x64
+//Version: 3.0.5879.0 (Private) x64
 
 //[MYes]
 "Tak"
@@ -618,7 +618,7 @@
 //[MEditConfigAutoIndent]
 "Automatyczne &wcięcia"
 //[MEditConfigSavePos]
-"&Zapamiętaj pozycję kursora w pliku"
+"Zapamiętaj poz&ycję kursora w pliku"
 //[MEditConfigSaveShortPos]
 "Z&apisz zakładki"
 //[MEditCursorBeyondEnd]
@@ -638,11 +638,11 @@
 //[MEditShowWhiteSpace]
 "Pokaż b&iałe znaki"
 //[MEditConfigSelFound]
-"W&ybierz znalezione"
+"&Zaznacz znalezione"
 //[MEditConfigCursorAtEnd]
 "K&ursor na końcu bloku"
 //[MEditConfigDefaultCodePage]
-"Domyślna strona kodowa:"
+"&Domyślna strona kodowa:"
 //[MConfigEditor]
 "Edytor konfiguracji"
 
@@ -851,8 +851,6 @@
 "Plik"
 //[MCopyEncryptWarn2]
 "nie może zostać skopiowany/przeniesiony bez utraty szyfrowania"
-//[MCopyEncryptWarn3]
-"Możesz zignorować błąd i kontynuować lub anulować operację."
 
 //[MCopyReadError]
 "Nie można odczytać danych z"
@@ -2379,7 +2377,7 @@
 //[MChangeDriveDisconnectMapped]
 "Dysk jest skojarzony z:"
 //[MChangeDriveDisconnectReconnect]
-"&Podłącz ponownie przy logowaniu"
+"&Podłącz przy logowaniu"
 
 //[MChangeDriveAskDisconnect]
 "Czy chcesz mimo to odłączyć urządzenie?"

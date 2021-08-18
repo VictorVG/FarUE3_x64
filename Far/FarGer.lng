@@ -1,6 +1,6 @@
 ﻿.Language=German,German (Deutsch)
 
-//Version: 3.0.5872.0 (Private) x64
+//Version: 3.0.5879.0 (Private) x64
 
 //[MYes]
 "Ja"
@@ -870,8 +870,6 @@
 "Die Datei"
 //[MCopyEncryptWarn2]
 "kann nicht bewegt werden ohne ihre Verschlüsselung zu verlieren."
-//[MCopyEncryptWarn3]
-"Sie können dies ignorieren und fortfahren oder abbrechen."
 
 //[MCopyReadError]
 "Kann Daten nicht lesen von"
@@ -1916,7 +1914,7 @@
 //[MHighlightMarkChar]
 "Optionale Markierun&g mit Zeichen,"
 //[MHighlightTransparentMarkChar]
-"tra&nsparent"
+"trans&parent"
 //[MHighlightColors]
 "Dateinamenfarben (\"Schwarz auf Schwarz\"=Standard)"
 //[MHighlightFileName1]

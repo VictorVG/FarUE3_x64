@@ -1,6 +1,6 @@
 ﻿.Language=Spanish,Spanish (Español)
 
-//Version: 3.0.5872.0 (Private) x64
+//Version: 3.0.5879.0 (Private) x64
 
 //[MYes]
 "Si"
@@ -855,8 +855,6 @@
 "El archivo"
 //[MCopyEncryptWarn2]
 "no puede copiarse o moverse sin perder el cifrado."
-//[MCopyEncryptWarn3]
-"Usted puede ignorar este error y continuar, o cancelar."
 
 //[MCopyReadError]
 "No se puede leer datos desde"

@@ -1,6 +1,6 @@
 ﻿.Language=Czech,Czech (Čeština)
 
-//Version: 3.0.5872.0 (Private) x64
+//Version: 3.0.5879.0 (Private) x64
 
 //[MYes]
 "Ano"
@@ -857,8 +857,6 @@
 "Soubor"
 //[MCopyEncryptWarn2]
 "nemůže být zkopírován nebo přesunut bez ztráty jeho šifrování."
-//[MCopyEncryptWarn3]
-"Můžete tuto chybu ignorovat a pokračovat, nebo operaci ukončit."
 
 //[MCopyReadError]
 "Nelze číst data z"

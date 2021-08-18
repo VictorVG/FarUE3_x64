@@ -2,7 +2,7 @@
 local nfo = Info {
   name          = "LuaManager";
   description   = "Менеджер Lua/Moon-скриптов для Fara";
-  version       = "5.1.4"; --в формате semver: http://semver.org/lang/ru/
+  version       = "5.1.5"; --в формате semver: http://semver.org/lang/ru/
   author        = "IgorZ";
   url           = "http://forum.farmanager.com/viewtopic.php?t=7936";
   id            = "180EE412-CBDE-40C7-9AE6-37FC64673CBD";
@@ -157,6 +157,7 @@ local nfo = Info {
 2021/05/11 v5.1.2 - Исправлена ошибка с MaxDescWidth и MacroMaxDescWidth. Оптимизирована сортировка элементов.
 2021/06/25 v5.1.3 - Исправлена ошибка с русскими описаниями в файлах скриптов в кодировке Windows.
 2021/06/28 v5.1.4 - Исправлена ошибка с загрузкой параметров, если БД пустая.
+2021/08/16 v5.1.5 - Исправлена корректировка значения комбобокса для обхода ошибки возникшей из-за 5859.2.
 ]];
   options       = {
     DefProfile = far.Flags.PSL_ROAMING--[[far.Flags.PSL_LOCAL--]] -- место хранения настроек по умолчанию: глобальные/локальные
@@ -1119,8 +1120,7 @@ elseif Msg == F.DN_EDITCHANGE and Param1==6 then -- изменение поля 
   local s = hDlg:send(F.DM_GETTEXT,Param1)
   item.descr = (s~="") and "'"..s.."'" or item.index and "index="..item.index or "NewEvent"
 elseif Msg == F.DN_EDITCHANGE and Param1==8 then -- изменение поля группа?
-  Param2[10] = Param2[10]:match("(%w*):.*") -- обрежем комментарий
-  far.SetDlgItem(hDlg,Param1,Param2) -- запишем обрезанное
+  hDlg:send(F.DM_SETTEXT,Param1,Param2[10]:match("(%w*):.*")) -- запишем без комментария
   local EV = IsEV:find(Param2[10]) -- группа - редактора или просмотрщика?
   hDlg:send(F.DM_ENABLE,12,EV) -- для редактора и просмотрщика разрешим ввод маски файла
   if not EV then hDlg:send(F.DM_SETTEXT,12,"") end -- для остальных очистим маску файла

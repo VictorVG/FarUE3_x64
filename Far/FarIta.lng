@@ -1,6 +1,6 @@
 ﻿.Language=Italian,Italian (Italiano)
 
-//Version: 3.0.5872.0 (Private) x64
+//Version: 3.0.5879.0 (Private) x64
 
 //[MYes]
 "&Si"
@@ -853,8 +853,6 @@
 "Il File"
 //[MCopyEncryptWarn2]
 "Non Puo' Essere Copiato O Spostato Senza La Perdita Della Criptazione"
-//[MCopyEncryptWarn3]
-"Puoi Scegliere Di Ignorare Questo Errore E Continuare, O Annullare."
 
 //[MCopyReadError]
 "Non Posso Leggere Da"

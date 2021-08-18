@@ -1,6 +1,6 @@
 ﻿.Language=English,English
 
-//Version: 3.0.5872.0 (Private) x64
+//Version: 3.0.5879.0 (Private) x64
 
 //[MYes]
 "Yes"
@@ -851,8 +851,6 @@
 "The file"
 //[MCopyEncryptWarn2]
 "cannot be copied or moved without losing its encryption."
-//[MCopyEncryptWarn3]
-"You can choose to ignore this error and continue, or cancel."
 
 //[MCopyReadError]
 "Cannot read data from"
@@ -1869,7 +1867,7 @@
 //[MHighlightMarkChar]
 "Optional markin&g character,"
 //[MHighlightTransparentMarkChar]
-"tra&nsparent"
+"trans&parent"
 //[MHighlightColors]
 "File name colors (\"black on black\" - default color)"
 //[MHighlightFileName1]
@@ -2831,23 +2829,23 @@
 //[MSetColorStyle]
 "Style:"
 //[MSetColorStyleInherit]
-"Inherit"
+"&Inherit"
 //[MSetColorStyleBold]
-"Bold"
+"B&old"
 //[MSetColorStyleItalic]
-"Italic"
+"I&talic"
 //[MSetColorStyleUnderline]
-"Underline"
+"&Underline"
 //[MSetColorStyleUnderline2]
-"Double"
+"&Double"
 //[MSetColorStyleOverline]
-"Overline"
+"O&verline"
 //[MSetColorStyleStrikeout]
-"Strikeout"
+"&Strikeout"
 //[MSetColorStyleFaint]
-"Faint"
+"F&aint"
 //[MSetColorStyleBlink]
-"Blink"
+"B&link"
 //[MSetColorSample]
 "Text Text Text Text Text Text Text"
 //[MSetColorSet]
