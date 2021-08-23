@@ -46,7 +46,7 @@
 
 @Contents
 $^#Menedżer plików i archiwów#
-$^#3.0.5879.0 (Private) x64#
+$^#3.0.5883.0 (Private) x64#
 $^#Copyright © 1996-2000 Eugene Roshal#
 $^#Copyright © 2000-2021 Far Group#
  UWAGA: Plik pomocy w trakcie tłumaczenia
@@ -3709,7 +3709,8 @@ kombinacje klawiszy:
  #Ctrl+Dół#     - ^<wrap>Przenosi grupę niżej.
 
  Podświetlane grupy są sprawdzane od góry do dołu. Jeżeli program wykryje,
-że plik należy do grupy, nie sprawdza kolejnych grup dla tego pliku.
+że plik należy do grupy, nie sprawdza kolejnych grup dla tego pliku,
+unless #[x] Continue processing# is set in the group.
 
  Zobacz także: polecenia ~menu~@MenuCmd@.
 
@@ -3928,8 +3929,7 @@ non-typical text files.
 @FileAttrDlg
 $ #File attributes dialog#
  With this command it is possible to change file attributes and file time.
-Either single file or group of files can be processed. If you do not want to
-process files in subfolders, clear the "Process subfolders" option.
+Either single file or group of files can be processed.
 
  #File attributes#
 
