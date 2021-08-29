@@ -1,6 +1,6 @@
 ﻿.Language=Ukrainian,Ukrainian (Українська)
 
-//Version: 3.0.5883.0 (Private) x64
+//Version: 3.0.5884.0 (Private) x64
 
 //[MYes]
 "Так"
@@ -2693,7 +2693,7 @@
 //[MSetColorDialogSelectedListGrayed]
 "Вибраний сірий текст списку"
 //[MSetColorDialogListScrollBar]
-"Смужка прокручув."
+"Смужка прокручування"
 //[MSetColorDialogListArrows]
 "Індикатори довгих рядків"
 //[MSetColorDialogListArrowsSelected]

@@ -1,6 +1,6 @@
 ﻿.Language=Slovak,Slovak (Slovenčina)
 
-//Version: 3.0.5883.0 (Private) x64
+//Version: 3.0.5884.0 (Private) x64
 
 //[MYes]
 "Áno"
@@ -597,7 +597,7 @@
 //[MViewConfigTabSize]
 "Veľkosť &tabulátora"
 //[MViewConfigScrollbar]
-"Zobraziť posu&vník"
+"Zobrazovať posu&vník"
 //[MViewConfigArrows]
 "Zobraziť &šípky posuvníka"
 //[MViewConfigPersistentSelection]

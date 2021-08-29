@@ -1,6 +1,6 @@
 ﻿.Language=Spanish,Spanish (Español)
 
-//Version: 3.0.5883.0 (Private) x64
+//Version: 3.0.5884.0 (Private) x64
 
 //[MYes]
 "Si"
@@ -2643,7 +2643,7 @@
 //[MSetColorPanelSelectedInfo]
 "Info seleccionados"
 //[MSetColorPanelScrollbar]
-"Barra desplazamiento"
+"Barra de desplazamiento"
 //[MSetColorPanelScreensNumber]
 "Número de pantallas de fondo"
 
@@ -2707,7 +2707,7 @@
 //[MSetColorDialogSelectedListGrayed]
 "Texto seleccionado deshabilitado de lista"
 //[MSetColorDialogListScrollBar]
-"Barra desplazamiento"
+"Barra de desplazamiento"
 //[MSetColorDialogListArrows]
 "Indicadores de cadena larga"
 //[MSetColorDialogListArrowsSelected]
@@ -3447,7 +3447,7 @@
 //[MPlgRequired]
 "Requiere la versión Far {0},"
 //[MPlgRequired2]
-"La versión actual de Far es {0}."
+"la versión actual de Far es {0}."
 //[MPlgLoadPluginError]
 "Error al cargar complemento"
 

@@ -1,6 +1,6 @@
 ﻿.Language=English,English
 
-//Version: 3.0.5883.0 (Private) x64
+//Version: 3.0.5884.0 (Private) x64
 
 //[MYes]
 "Yes"
@@ -391,7 +391,7 @@
 //[MConfigShowFree]
 "Show f&ree size"
 //[MConfigShowScrollbar]
-"Show a scroll&bar"
+"Show scroll&bar"
 //[MConfigShowScreensNumber]
 "Show background screens &number"
 //[MConfigShowSortMode]

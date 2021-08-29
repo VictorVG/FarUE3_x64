@@ -1,6 +1,6 @@
 ﻿.Language=Polish,Polish (Polski)
 
-//Version: 3.0.5883.0 (Private) x64
+//Version: 3.0.5884.0 (Private) x64
 
 //[MYes]
 "Tak"
@@ -579,7 +579,7 @@
 //[MViewConfigTabSize]
 "Rozmiar &tabulatora"
 //[MViewConfigScrollbar]
-"P&okaż pasek przewijania"
+"Wyświetl suwak"
 //[MViewConfigArrows]
 "Pokaż strzał&ki przewijania"
 //[MViewConfigPersistentSelection]
@@ -634,7 +634,7 @@
 //[MEditConfigTabSize]
 "Rozmiar ta&bulatora"
 //[MEditConfigScrollbar]
-"Pokaż pasek przewi&jania"
+"Wyświetl suwak"
 //[MEditShowWhiteSpace]
 "Pokaż b&iałe znaki"
 //[MEditConfigSelFound]
@@ -2499,29 +2499,29 @@
 //[MSetAttrSparse]
 "Rzadki"
 //[MSetAttrTemporary]
-"T&ymczasowy"
+"&Tymczasowy"
 //[MSetAttrOffline]
-"Offline"
+"O&ffline"
 //[MSetAttrReparsePoint]
-"Punkt analizy"
+"Punkt &analizy"
 //[MSetAttrVirtual]
-"Wirtualny"
+"&Wirtualny"
 //[MSetAttrIntegrityStream]
-"Integralny strumień"
+"&Integralny strumień"
 //[MSetAttrNoScrubData]
-"Brak danych kontrolnych"
+"&Brak danych kontrolnych"
 //[MSetAttrPinned]
-"Przypięty"
+"&Przypięty"
 //[MSetAttrUnpinned]
-"Odpiety"
+"&Odpięty"
 //[MSetAttrRecallOnOpen]
-"Przywołaj na otwarcie"
+"Przywołaj na otwar&cie"
 //[MSetAttrRecallOnDataAccess]
-"Przywołaj na dostęp danych"
+"Przywołaj na &dostęp danych"
 //[MSetAttrStrictlySequential]
-"Czysto sekwencyjny"
+"&Sekwencyjny"
 //[MSetAttrMore]
-"Więcej"
+"Więce&j"
 //[MSetAttrSubfolders]
 "Przetwarzaj &podfoldery"
 //[MSetAttrOwner]
@@ -2533,13 +2533,13 @@
 //[MSetAttrLastAccess]
 "Czas ostatniego &dostępu:"
 //[MSetAttrChange]
-"Zmień czas:"
+"&Czas zmiany:"
 //[MSetAttrOriginal]
 "Oryginal&ny"
 //[MSetAttrCurrent]
 "&Bieżący"
 //[MSetAttrBlank]
-"Wy&czyść"
+"Wycz&yść"
 //[MSetAttrSet]
 "Usta&w"
 
@@ -2552,7 +2552,7 @@
 //[MSetAttrTimeTitle]
 "gg{0}mm{0}ss"
 //[MSetAttrSystemDialog]
-"Właściwości systemu"
+"Właściwości syste&mu"
 
 //[MSetAttrSetting]
 "Ustawiam atrybuty"
@@ -2797,9 +2797,9 @@
 "Elementy grupy"
 
 //[MSetColorTitle]
-"Kolor"
+"Ustawienie kolorów"
 //[MSetColorForeground]
-"&Kolor:"
+"Ko&lor:"
 //[MSetColorBackground]
 "&Tło:"
 
@@ -2829,23 +2829,23 @@
 //[MSetColorStyle]
 "Styl:"
 //[MSetColorStyleInherit]
-"Dziedziczyć"
+"&Dziedziczenie"
 //[MSetColorStyleBold]
-"Pogrubienie"
+"&Pogrubienie"
 //[MSetColorStyleItalic]
-"Kursywa"
+"&Kursywa"
 //[MSetColorStyleUnderline]
-"Podkreślenie"
+"Podkr&eślenie"
 //[MSetColorStyleUnderline2]
-"Podwójne"
+"Pod&wójne"
 //[MSetColorStyleOverline]
-"Nadkreślenie"
+"&Nadkreślenie"
 //[MSetColorStyleStrikeout]
-"Przekreślenie"
+"Pr&zekreślenie"
 //[MSetColorStyleFaint]
-"Przygaszone"
+"Przy&gaszenie"
 //[MSetColorStyleBlink]
-"Miganie"
+"&Miganie"
 //[MSetColorSample]
 "Tekst Tekst Tekst Tekst Tekst Tekst"
 //[MSetColorSet]

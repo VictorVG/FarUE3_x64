@@ -1,6 +1,6 @@
 ﻿.Language=Lithuanian,Lithuanian (Lietuvių)
 
-//Version: 3.0.5883.0 (Private) x64
+//Version: 3.0.5884.0 (Private) x64
 
 //[MYes]
 "Taip"
@@ -306,7 +306,7 @@
 "&Clear history"
 
 //[MConfigSystemTitle]
-"Sisteminiai nuostatai"
+"Sisteminiai nustatymai"
 //[MConfigRecycleBin]
 "&Trinti į Recycle Bin"
 //[MConfigSystemCopy]
@@ -361,7 +361,7 @@
 //[MConfigSortingCase]
 "&Case sensitive"
 //[MConfigAutoSave]
-"&Auto išsaugoti nuostatus"
+"&Automatiškai išsaugoti nustatymus"
 
 // need translation:
 //[MConfigTreeTitle]
@@ -404,7 +404,7 @@
 //[MConfigHidden]
 "Rodyti &hidden ir system failus"
 //[MConfigHighlight]
-"Par&yškinti failus"
+"S&palvinti failus"
 //[MConfigSelectFolders]
 "Žymėti &katalogus"
 // need translation:
@@ -446,7 +446,7 @@
 "Show \"&..\" in root folders"
 
 //[MConfigInterfaceTitle]
-"Sąsajos nuostatai"
+"Sąsajos nustatymai"
 //[MConfigClock]
 "&Laikrodis"
 //[MConfigMouse]
@@ -669,9 +669,8 @@
 "Vidinė peržiūros programa"
 //[MViewConfigSavePos]
 "Iš&saugoti failo poziciją"
-// need translation:
 //[MViewConfigSaveShortPos]
-"Save &bookmarks"
+"Išsaugoti nu&orodas"
 // need translation:
 //[MViewConfigSaveCodepage]
 "Save file &code page"
@@ -688,12 +687,10 @@
 "Auto&nustatyti kodavimo puslapį"
 //[MViewConfigTabSize]
 "Tab d&ydis"
-// need translation:
 //[MViewConfigScrollbar]
-"Show scro&llbar"
-// need translation:
+"Rodyti šlia&užiklį"
 //[MViewConfigArrows]
-"Show scrolling arro&ws"
+"Rodyti šliaužiklio rodykles"
 // need translation:
 //[MViewConfigPersistentSelection]
 "&Persistent selection"
@@ -758,9 +755,8 @@
 "&Warn when opening read-only files"
 //[MEditConfigTabSize]
 "Tab d&ydis"
-// need translation:
 //[MEditConfigScrollbar]
-"S&how scrollbar"
+"Rodyti šlia&užiklį"
 // need translation:
 //[MEditShowWhiteSpace]
 "Sh&ow white space"
@@ -811,9 +807,8 @@
 // need translation:
 //[MCopyAskRO]
 "Also ask on &R/O files"
-// need translation:
 //[MCopyOnlyNewerFiles]
-"Only ne&wer file(s)"
+"&Tik naujesnius failus"
 // need translation:
 //[MLinkType]
 "Link t&ype:"
@@ -1222,12 +1217,10 @@
 // need translation:
 //[MEditFileLong]
 "has the size of {0},"
-// need translation:
 //[MEditFileLong2]
-"which exceeds the configured maximum size of {0}."
-// need translation:
+"kuris viršyja sukonfigūruotą maksimalų dydį {0}."
 //[MEditROOpen]
-"Do you wish to edit it?"
+"Ar norite jį redaguoti?"
 
 // need translation:
 //[MEditCanNotEditDirectory]
@@ -1246,9 +1239,8 @@
 "Se&lection"
 //[MEditSearchCase]
 "&Didžiosios skiriasi"
-// need translation:
 //[MEditSearchWholeWords]
-"&Whole words"
+"Visi ž&odžiai"
 //[MEditSearchReverse]
 "At&virkščia paieška"
 // need translation:
@@ -1788,9 +1780,8 @@
 //Viewer: Shift
 //[MViewShiftF1]
 ""
-// need translation:
 //[MViewShiftF2]
-"WWrap"
+"Kelti"
 //[MViewShiftF3]
 ""
 // need translation:
@@ -2022,9 +2013,8 @@
 "Using code pa&ge:"
 //[MFindFileCase]
 "&Didžiosios skiriasi"
-// need translation:
 //[MFindFileWholeWords]
-"&Whole words"
+"Visi ž&odžiai"
 // need translation:
 //[MFindFileAllCodePages]
 "All standard code pages"
@@ -2152,7 +2142,7 @@
 "&Reset"
 
 //[MHighlightTitle]
-"Failų paryškinimai"
+"Failų spalvos"
 // need translation:
 //[MHighlightUpperSortGroup]
 "Upper sort group"
@@ -2163,16 +2153,14 @@
 //[MHighlightLastGroup]
 "Lowest priority highlighting group"
 //[MHighlightAskDel]
-"Ar norite ištrinti paryškinimą failams"
-// need translation:
+"Ar norite ištrinti spalvą failams"
 //[MHighlightWarning]
-"You will lose all changes"
-// need translation:
+"Bus prarasti visi pakeitimai"
 //[MHighlightAskRestore]
-"Do you wish to restore default highlighting?"
+"Ar norite grįžti į standartines spalvas?"
 
 //[MHighlightEditTitle]
-"Redaguoti failų paryškinimus"
+"Redaguoti failų spalvas"
 //[MHighlightMarkChar]
 "Pasirinktinas si&mbolis pažymėti apibrėžtiems failams,"
 // need translation:
@@ -2532,14 +2520,14 @@
 "Ho&tplug devices list"
 
 //[MMenuSystemSettings]
-"Siste&miniai nuostatai"
+"Siste&miniai nustatymai"
 //[MMenuPanelSettings]
 "La&ngų parametrai"
 // need translation:
 //[MMenuTreeSettings]
 "&Tree settings"
 //[MMenuInterface]
-"&Sąsajos nuostatai"
+"&Sąsajos nustatymai"
 //[MMenuLanguages]
 "Kal&ba"
 //[MMenuPluginsConfig]
@@ -2574,9 +2562,9 @@
 //[MMenuFolderInfoFiles]
 "&Katalogų aprašymo failai"
 //[MMenuViewer]
-"Per&žiūros nuostatai"
+"Per&žiūros nustatymai"
 //[MMenuEditor]
-"&Redaktoriaus nuostatai"
+"&Redaktoriaus nustatymai"
 // need translation:
 //[MMenuCodePages]
 "Code pages"
@@ -3097,9 +3085,8 @@
 "Normalus tekstas"
 //[MSetColorDialogHighlighted]
 "Paryškintas tekstas"
-// need translation:
 //[MSetColorDialogDisabled]
-"Disabled text"
+"Atjungtas tekstas"
 //[MSetColorDialogBox]
 "Rėmelis"
 //[MSetColorDialogBoxTitle]
@@ -3112,9 +3099,8 @@
 "Nepasikeitusio teksto įvedimas"
 //[MSetColorDialogSelectedTextInput]
 "Pažymėto teksto įvedimas"
-// need translation:
 //[MSetColorDialogEditDisabled]
-"Disabled input line"
+"Atjungta įvedimo eilutė"
 //[MSetColorDialogButtons]
 "Mygtukai"
 //[MSetColorDialogSelectedButtons]
@@ -3183,9 +3169,8 @@
 "Paryškintas tekstas"
 //[MSetColorMenuSelectedHighlighted]
 "Pažymėtas paryškintas tekstas"
-// need translation:
 //[MSetColorMenuDisabled]
-"Disabled text"
+"Atjungtas tekstas"
 // need translation:
 //[MSetColorMenuGrayed]
 "Grayed text"
@@ -3228,9 +3213,8 @@
 "Teksto įvedimas"
 //[MSetColorCommandLineSelected]
 "Pažymėto teksto įvedimas"
-// need translation:
 //[MSetColorCommandLinePrefix]
-"Prefix text"
+"Prefix tekstas"
 // need translation:
 //[MSetColorCommandLineUserScreen]
 "User screen"
@@ -3249,7 +3233,7 @@
 //[MSetColorViewerStatus]
 "Statuso juosta"
 //[MSetColorViewerArrows]
-"Ekrano postūmio rodyklės"
+"Šliaužiklio rodyklės"
 //[MSetColorViewerScrollbar]
 "Šliaužiklis"
 
@@ -3695,9 +3679,8 @@
 "Ieškoti &hex"
 //[MViewSearchCase]
 "&Didžiosios skiriasi"
-// need translation:
 //[MViewSearchWholeWords]
-"&Whole words"
+"Visi ž&odžiai"
 //[MViewSearchReverse]
 "At&virkščia paieška"
 // need translation:
@@ -3968,9 +3951,8 @@
 // need translation:
 //[MExcTerminate]
 "&Terminate Far"
-// need translation:
 //[MExcUnload]
-"&Unload plugin"
+"Iškrauti priedą"
 //[MExcFullDump]
 "Visa iškeltis"
 
@@ -3981,35 +3963,27 @@
 //[MNetUserPassword]
 "User password"
 
-// need translation:
 //[MReadFolderError]
-"Cannot read folder contents"
+"Negaliu perskaityti katalogo"
 
-// need translation:
 //[MPlgBadVers]
-"This plugin requires more recent version of Far"
-// need translation:
+"Šis priedas veikia tik su vėlesne Far versija"
 //[MPlgRequired]
-"Required Far version is {0},"
-// need translation:
+"Reikalinga Far versija - {0},"
 //[MPlgRequired2]
-"current Far version is {0}."
-// need translation:
+"naudojama Far versija - {0}."
 //[MPlgLoadPluginError]
-"Error loading plugin"
+"Priedo pakrovimo klaida"
 
 // need translation:
 //[MHelpTitle]
 "Help"
-// need translation:
 //[MHelpActivatorURL]
-"This reference starts an external application"
-// need translation:
+"Ši nuoroda paleis šorinę programą:"
 //[MHelpActivatorFormat]
-"with parameter:"
-// need translation:
+"su parametrais:"
 //[MHelpActivatorQ]
-"Do you wish to start it?"
+"Ar norite ją paleisti?"
 // need translation:
 //[MCannotOpenHelp]
 "Cannot open the file"
@@ -4288,9 +4262,8 @@
 // InfoPanel KeyBar Shift+F1-F12
 //[MInfoShiftF1]
 ""
-// need translation:
 //[MInfoShiftF2]
-"WWrap"
+"Kelti"
 //[MInfoShiftF3]
 ""
 //[MInfoShiftF4]
@@ -4334,9 +4307,8 @@
 // need translation:
 //[MInfoAltF7]
 "Find"
-// need translation:
 //[MInfoAltF8]
-"Goto"
+"Eiti"
 //[MInfoAltF9]
 "Video"
 // need translation:
@@ -4519,9 +4491,8 @@
 // QView KeyBar Shift+F1-F12
 //[MQViewShiftF1]
 ""
-// need translation:
 //[MQViewShiftF2]
-"WWrap"
+"Kelti"
 //[MQViewShiftF3]
 ""
 //[MQViewShiftF4]
@@ -4565,9 +4536,8 @@
 // need translation:
 //[MQViewAltF7]
 "Find"
-// need translation:
 //[MQViewAltF8]
-"Goto"
+"Eiti"
 //[MQViewAltF9]
 "Video"
 // need translation:
