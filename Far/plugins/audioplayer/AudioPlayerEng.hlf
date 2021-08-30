@@ -27,7 +27,7 @@ $ #AudioPlayer#
 		*.xm
 
 	The following playlist formats are supported:
-		*.m3u;*.plc;*.pls;*.aimppl;*.cue
+		*.m3u;*.plc;*.pls;*.aimppl;*.aimppl4,*.wpl,*.zpl,*.cue
 
 	Can be used to playback NetRadio channels.
 	NetRadio links can be included in playlists.
@@ -77,7 +77,9 @@ $ #Player dialog#
 	#Last track           # - Ctrl+End, Ctrl+PgDn
 	#Volume adjust        # - Up/Down or Volume bar click
 	#Played track position# - Home (start), Progress bar click, [Shift+]Left/Right or Mouse wheel (back/forward 5 [seconds]percents !settings)
-   #Show/Hide playlist   # - Ctrl_L, Index area click
+   #Show/Hide playlist   # - Ctrl+L, Index area click
+   #Dialog width         # - Ctrl+Add / Ctrl+Subtract
+   #Playlist height      # - Ctrl+Multiply / Ctrl+Divide
 
 	~Next playing track selection mode~@PlayMode@
 

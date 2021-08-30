@@ -1,3 +1,8 @@
+AudioPlayer 3.46.0 30-08-2021
+-----------------------------
+ + playlists: .aimppl4, .wpl, .zpl
+ + command line: /h -- hide player dialog, /p[N] -- play mode = 0..3 (see player dialog combobox items order)
+
 AudioPlayer 3.45.6 18-07-2021
 -----------------------------
  * BASS 2.4.16, BASSASIO 1.4.1, BASSOPUS 2.4.2
