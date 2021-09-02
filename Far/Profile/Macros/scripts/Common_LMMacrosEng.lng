@@ -1,0 +1,19 @@
+﻿-- +
+-- For version 1.1.0+
+-- -
+return {
+-- language
+  Lang = "English",
+-- descriptions
+  Uid = "Insert guid string into current .lua/.moon file",
+  Insert = "Insert script into current .lua/.moon file",
+  InsertMacro = "Insert Macro into current .lua/.moon file",
+  InsertEvent = "Insert Event into current .lua/.moon file",
+  InsertMI = "Insert plugin menu item into current .lua/.moon file",
+  InsertPrefix = "Insert command line prefix into current .lua/.moon file",
+  InsertPanel = "Insert panel module into current .lua/.moon file",
+  InsertCC = "Insert content columns into current .lua/.moon file",
+  Edit = "Edit script under cursor",
+  Macro = "Manage available lua/moon scripts",
+  Reload = "Reload all scripts",
+}

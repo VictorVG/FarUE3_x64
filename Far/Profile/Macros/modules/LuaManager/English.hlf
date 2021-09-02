@@ -302,61 +302,39 @@ Multiline descriptions printed by line.
 
 ^#2.# Show. Hide/show different script groups
 
-  #Regular#              - |Show regular macros.
-  #Keyboard#             - |Show keyboard macros.
-  #For all areas#        - |Show all macros and plugin menu items, not just those, who work in area, from where "LuaManager" script was started.
-  #Events#               - |Show event handlers.
-  #Modules#              - |Show modules.
-  #Plugins#              - |Show plugin menu items.
-  #Prefixes#             - |Show command line prefixes.
-  #Panels#               - |Show panel modules.
+  #Regular#                - |Show regular macros.
+  #Keyboard#               - |Show keyboard macros.
+  #For all areas#          - |Show all macros and plugin menu items, not just those, who work in area, from where "LuaManager" script was started.
+  #Events#                 - |Show event handlers.
+  #Modules#                - |Show modules.
+  #Plugins#                - |Show plugin menu items.
+  #Prefixes#               - |Show command line prefixes.
+  #Panels#                 - |Show panel modules.
 
 ^#3.# Sorting order. Script sorting by different parameters
 
-  #Macros#               - |Start ~macro sort order configuration dialog~@sort@.
-  #Events#               - |Start ~event handlers sort order configuration dialog~@sort@.
-  #Modules#              - |Start ~modules sort order configuration dialog~@sort@.
-  #Plugins#              - |Start ~plugin menu items sort order configuration dialog~@sort@.
-  #Prefixes#             - |Start ~command line prefixes sort order configuration dialog~@sort@.
-  #Panels#               - |Start ~Panel modules 2sort order configuration dialog~@sort@.
+  #Macros#                 - |Start ~macro sort order configuration dialog~@sort@.
+  #Events#                 - |Start ~event handlers sort order configuration dialog~@sort@.
+  #Modules#                - |Start ~modules sort order configuration dialog~@sort@.
+  #Plugins#                - |Start ~plugin menu items sort order configuration dialog~@sort@.
+  #Prefixes#               - |Start ~command line prefixes sort order configuration dialog~@sort@.
+  #Panels#                 - |Start ~Panel modules sort order configuration dialog~@sort@.
+  #Script types out order# - |Start ~scripts by types sort order dialog~@sort@.
 
 ^#4.# Filter. Script filtering by different parameters
 
-  #Filter for keys#      - |Setting macro start keys filter. Regular expression are allowed.
+  #Filter for keys#        - |Setting macro start keys filter. Regular expression are allowed.
 Special value #none# lets to select macros without keys or with pseudokeys.
-  #Change#               - |Set macro start key filter from keyboard.
-  #Filter for areas#     - |Start ~macro and plugin menu items area filter configuration menu~@filter@.
-  #Filter for groups#    - |Start ~event handlers group filter configuration menu~@filter@.
-  #Filter for paths#     - |Start ~modules search path filter configuration menu~@filter@.
+  #Change#                 - |Set macro start key filter from keyboard.
+  #Filter for areas#       - |Start ~macro and plugin menu items area filter configuration menu~@filter@.
+  #Filter for groups#      - |Start ~event handlers group filter configuration menu~@filter@.
+  #Filter for paths#       - |Start ~modules search path filter configuration menu~@filter@.
 
-^#5.# Macros start keys. Customization of "LuaManager" script macros start keys
+^#5.# Exiting from configuration dialog
 
-  #'Lua manager'#        - |Set macro Lua manager start key manually.
-  #Change#               - |Set macro Lua manager start key from keyboard.
-  #'Insert script'#      - |Set macro Insert script start key manually.
-  #Change#               - |Set macro Insert script start key from keyboard.
-  #'Insert Macro'#       - |Set macro Insert macro start key manually.
-  #Change#               - |Set macro Insert macro start key from keyboard.
-  #'Insert Event'#       - |Set macro Insert event start key manually.
-  #Change#               - |Set macro Insert event start key from keyboard.
-  #'Insert MenuItem'#    - |Set macro Insert plugin menu item start key manually.
-  #Change#               - |Set macro Insert plugin menu item start key from keyboard.
-  #'Insert CommandLine'# - |Set macro Insert command line prefix start key manually.
-  #Change#               - |Set macro Insert command line prefix start key from keyboard.
-  #'Insert PanelModule'# - |Set macro Insert panel module start key manually.
-  #Change#               - |Set macro Insert panel module start key from keyboard.
-  #'Edit script'#        - |Set macro Edit script start key manually.
-  #Change#               - |Set macro Edit script start key from keyboard.
-  #'Insert guid'#        - |Set macro Insert guid start key manually.
-  #Change#               - |Set macro Insert guid start key from keyboard.
-  #'Reload scripts'#     - |Reload all scripts.
-  #Change#               - |Set macro Insert event start key from keyboard.
-
-^#6.# Exiting from configuration dialog
-
-  #Save#                 - |Save changes in DB and close dialog.
-  #Apply until exit#     - |Apply changes and close dialog without configuration storing in DB.
-  #Cancel#               - |Discard changes and close dialog.
+  #Save#                   - |Save changes in DB and close dialog.
+  #Apply until exit#       - |Apply changes and close dialog without configuration storing in DB.
+  #Cancel#                 - |Discard changes and close dialog.
 
 @=
 
@@ -409,8 +387,7 @@ In top of the list printed used criteria in the order of the use, then not used.
 
 @list
 $^Script macros list
-  #Default key#   |  #Script#
-
+ The package contains the following macros:
   #AltShiftF11# - |~Lua manager~@main@.
   #LCtrlF11#    - |Insert Lua/Moon script into .Lua/Moon file edited.
   #RCtrlF11#    - |Insert Lua/Moon macro into .Lua/Moon file edited.
@@ -592,7 +569,7 @@ $^About
 
  Author:       #IgorZ#
 
- Version:      #5.1.5#
+ Version:      #5.2.0#
 
  Net address: ~http://forum.farmanager.com/viewtopic.php?t=7936~@http://forum.farmanager.com/viewtopic.php?t=7936@
 @=‗

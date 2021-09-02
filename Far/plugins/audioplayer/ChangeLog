@@ -1,3 +1,17 @@
+AudioPlayer 3.46.3 02-09-2021
+-----------------------------
+ * Уточнения обработки ключей в команде запуска и упоминание их в справке
+
+AudioPlayer 3.46.2 01-09-2021
+-----------------------------
+ * уточнение имени файла на котором получена ошибка
+
+AudioPlayer 3.46.1 01-09-2021
+-----------------------------
+ + playlists: .dpl
+ + command line: /tN -- set start track number in playlist
+ + special filename: "?last" -- play last played file/playlist+track
+
 AudioPlayer 3.46.0 30-08-2021
 -----------------------------
  + playlists: .aimppl4, .wpl, .zpl

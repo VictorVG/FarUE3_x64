@@ -11,7 +11,9 @@ $ #AudioPlayer#
 	[~PlugRing~@https://plugring.farmanager.com/plugin.php?pid=881@]
 
 	~Player Control~@Player@
+	~Settings~@Config@
 	~Advanced Settings~@ConfigX@
+	~Command Line~@Cmdline@
 
 	The following file formats are supported: 
 		*.aac;*.ac3;*.aif;*.aiff;*.ape;
@@ -27,7 +29,7 @@ $ #AudioPlayer#
 		*.xm
 
 	The following playlist formats are supported:
-		*.m3u;*.plc;*.pls;*.aimppl;*.aimppl4,*.wpl,*.zpl,*.cue
+		*.m3u;*.plc;*.pls;*.aimppl;*.aimppl4,*.wpl,*.zpl,*.dpl,*.cue
 
 	Can be used to playback NetRadio channels.
 	NetRadio links can be included in playlists.
@@ -85,6 +87,7 @@ $ #Player dialog#
 
 	~Settings~@Config@
 	~Advanced Settings~@ConfigX@
+	~Command Line~@Cmdline@
 	~Contents~@Contents@
 
 @PlayMode
@@ -157,6 +160,8 @@ $ #Plugin settings#
 	Note: ASIO and WASAPI output can be disabled for URL play in ~advanced settings~@ConfigX@
 
 	~Player control~@Player@
+	~Advanced Settings~@ConfigX@
+	~Command Line~@Cmdline@
 	~Contents~@Contents@
 
 @ConfigX
@@ -178,5 +183,35 @@ $ #Plugin advanced settings#
 	#Buf             # - set buffer length in samples for each ASIO driver (format: Buf Min-Max/Preferred:value)
 
 	~Settings~@Config@
+	~Player control~@Player@
+	~Command Line~@Cmdline@
+	~Contents~@Contents@
+
+@Cmdline
+$ #Command line switches#
+
+	It is possible to specify additional parametrs when AudioPlayer invoked by plugin prefix.
+	Switches pefixed by '/' symbol and should be placed before sound or playliset file name.
+
+	Command line format:
+	AudioPlayer:[/Switches1 [/Switches2 ...] ]Filename
+
+	Also for Plugin.Call:
+	Plugin.Call('9C3A61FC-F349-48E8-9B78-DAEBD821694B', '/Swicthes1', '/Switches2', 'Filename') 
+	#/a[oN]   # - use ASIO [Shif=N]
+	#/n       # - use Normal sound output
+	#/w[s][e] # - use WASAPI [Shared (default=eXclusive)] [Event-driven]
+	#/h       # - background mode play (Hide dialog)
+	#/dN      # - device number (Device=N Normal/WASAPI) or driver number (Driver=N для ASIO)
+	#/tN      # - start track in playlist (Track=N 1-based)
+	#/pN      # - play mode 0..3
+	#/p[N]    # - play mode 0..3, default = 2 - 'to the end'
+
+	There is 2 special Filenames:
+	#'?last' # - repeats last played file/playlist
+	#'?test' # - shows BASS device/driver information
+
+	~Settings~@Config@
+	~Advanced Settings~@ConfigX@
 	~Player control~@Player@
 	~Contents~@Contents@

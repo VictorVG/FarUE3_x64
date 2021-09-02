@@ -1,6 +1,6 @@
 ﻿.Language=Polish,Polish (Polski)
 
-//Version: 3.0.5885.0 (Private) x64
+//Version: 3.0.5886.0 (Private) x64
 
 //[MYes]
 "Tak"
@@ -423,9 +423,8 @@
 "Użyj Ctrl+Pg&Up do zmiany napędu"
 //[MConfigUseVirtualTerminalForRendering]
 "Użyj &Terminalu Wirtualnego do renderowania"
-// need translation:
 //[MConfigFullWidthAwareRendering]
-"Fullwidth-aware rendering"
+"R&enderowanie na pełnej szerokości"
 //[MConfigClearType]
 "&Rysowanie zgodne z ClearType (może być wolniejsze)"
 //[MConfigSetConsoleIcon]

@@ -1,19 +1,31 @@
 ﻿return {
   Macro = {
     moon = {
-      c = "(key) -> true",
-      a = "->",
+      c = [=[
+(key,data) -> --[[boolean/integer: priority/nil--]]
+--key:  string/nil
+--data: {arglist of Macro}
+]=],
+        a = [=[
+(data) ->"
+--data: {arglist of Macro}
+]=],
     },
     lua  = {
-      c = "function(key) return true end",
-      a = "function() end",
+      c = [=[
+function(key,data) return true end
+]=],
+        a = [=[
+function(data) end
+--data: {arglist of Macro}
+]=],
     },
   },
   Event = {
     moon = {
       ExitFAR = {
         c = [=[
-(bReloadMacro) -> true
+(bReloadMacro) -> --[[boolean/integer: priority/nil--]]
 --bReloadMacro: boolean (Reload macro/Unload plugin, exit Far)
 ]=],
         a = [=[
@@ -23,7 +35,7 @@
       },
       DialogEvent = {
         c = [=[
-(Event,tFarDialogEvent) -> true
+(Event,tFarDialogEvent) -> --[[boolean/integer: priority/nil--]]
 -- tFarDialogEvent:{hDlg,Msg,Param1,Param2}
 ]=],
         a = [=[
@@ -33,7 +45,7 @@
       },
       EditorEvent = {
         c = [=[
-(EditorID,Event,Param) -> true
+(EditorID,Event,Param) -> --[[boolean/integer: priority/nil--]]
 --Event: integer=(EE_CHANGE|EE_GOTFOCUS|EE_KILLFOCUS|EE_READ|EE_REDRAW|EE_SAVE|EE_CLOSE)
 --Param: if Event==EE_CHANGE then {iType,iStringNumber}
 --       elseif Event==EE_SAVE then {sFileName,sFileEOL,iCodePage}
@@ -49,7 +61,7 @@
       },
       EditorInput = {
         c = [=[
-(tInputRecord) -> true
+(tInputRecord) -> --[[boolean/integer: priority/nil--]]
 --tInputRecord = {
 --  EventType:(KEY_EVENT|MOUSE_EVENT|WINDOW_BUFFER_SIZE_EVENT|MENU_EVENT|FOCUS_EVENT),
 --  if EventType is KEY_EVENT: bKeyDown,iRepeatCount,iVirtualKeyCode,
@@ -77,7 +89,7 @@
       },
       ConsoleInput = {
         c = [=[
-(tInputRecord,Flags) -> true
+(tInputRecord,Flags) -> --[[boolean/integer: priority/nil--]]
 --tInputRecord = {
 --  EventType:(KEY_EVENT|MOUSE_EVENT|WINDOW_BUFFER_SIZE_EVENT|MENU_EVENT|FOCUS_EVENT),
 --  if EventType is KEY_EVENT: bKeyDown,iRepeatCount,iVirtualKeyCode,
@@ -107,7 +119,7 @@
       },
       ViewerEvent = {
         c = [=[
-(ViewerID,Event,Param) -> true
+(ViewerID,Event,Param) -> --[[boolean/integer: priority/nil--]]
 --ViewerID: integer
 --Event   : integer=(VE_READ|VE_GOTFOCUS|VE_KILLFOCUS|VE_CLOSE)
 --Param   : nil
@@ -123,7 +135,7 @@
     lua  = {
       ExitFAR = {
         c = [=[
-function(bReloadMacro) return true end
+function(bReloadMacro) return --[[boolean/integer: priority/nil--]] end
 --bReloadMacro: boolean (Reload macro/Unload plugin, exit Far)
 ]=],
         a = [=[
@@ -133,7 +145,7 @@ function(bReloadMacro) end
       },
       DialogEvent = {
         c = [=[
-function(Event,tFarDialogEvent) return true end
+function(Event,tFarDialogEvent) return --[[boolean/integer: priority/nil--]] end
 -- tFarDialogEvent:{hDlg,Msg,Param1,Param2}
 ]=],
         a = [=[
@@ -143,7 +155,7 @@ function(Event,tFarDialogEvent) return --[[integer--]] end
       },
       EditorEvent = {
         c = [=[
-function(EditorID,Event,Param) return true end
+function(EditorID,Event,Param) return --[[boolean/integer: priority/nil--]] end
 --Event: integer=(EE_CHANGE|EE_GOTFOCUS|EE_KILLFOCUS|EE_READ|EE_REDRAW|EE_SAVE|EE_CLOSE)
 --Param: if Event==EE_CHANGE then {iType,iStringNumber}
 --       elseif Event==EE_SAVE then {sFileName,sFileEOL,iCodePage}
@@ -159,7 +171,7 @@ function(EditorID,Event,Param) return --[[integer--]] end
       },
       EditorInput = {
         c = [=[
-function(tInputRecord) return true end
+function(tInputRecord) return --[[boolean/integer: priority/nil--]] end
 --tInputRecord = {
 --  EventType:(KEY_EVENT|MOUSE_EVENT|WINDOW_BUFFER_SIZE_EVENT|MENU_EVENT|FOCUS_EVENT),
 --  if EventType is KEY_EVENT: bKeyDown,iRepeatCount,iVirtualKeyCode,
@@ -187,7 +199,7 @@ function(tInputRecord) return true end
       },
       ConsoleInput = {
         c = [=[
-function(tInputRecord,Flags) return true end
+function(tInputRecord,Flags) return --[[boolean/integer: priority/nil--]] end
 --tInputRecord = {
 --  EventType:(KEY_EVENT|MOUSE_EVENT|WINDOW_BUFFER_SIZE_EVENT|MENU_EVENT|FOCUS_EVENT),
 --  if EventType is KEY_EVENT: bKeyDown,iRepeatCount,iVirtualKeyCode,
@@ -217,7 +229,7 @@ function(tInputRecord,Flags) return 0--[[/1/tInputRecord]] end
       },
       ViewerEvent = {
         c = [=[
-function(ViewerID,Event,Param) return true end
+function(ViewerID,Event,Param) return --[[boolean/integer: priority/nil--]] end
 --ViewerID: integer
 --Event   : integer=(VE_READ|VE_GOTFOCUS|VE_KILLFOCUS|VE_CLOSE)
 --Param   : nil
