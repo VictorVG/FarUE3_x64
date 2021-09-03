@@ -98,7 +98,7 @@ $ #Play mode#
 	#To the end    # - play all panel or playlist tracks and stop
 	#Repeat all    # - play all panel/playlist tracks cyclically
 
-	Play mode selection is possible in ~Player~@Player@ or ~Settings~@Config@
+	Play mode selection is possible in ~Player~@Player@, ~Settings~@Config@ or ~Cmdine~@Cmdline@
 
 @Config
 $ #Plugin settings#
@@ -202,10 +202,9 @@ $ #Command line switches#
 	#/n       # - use Normal sound output
 	#/w[s][e] # - use WASAPI [Shared (default=eXclusive)] [Event-driven]
 	#/h       # - background mode play (Hide dialog)
-	#/dN      # - device number (Device=N Normal/WASAPI) or driver number (Driver=N для ASIO)
+	#/dN      # - device number (Device=N Normal/WASAPI) or driver number (Driver=N ASIO)
 	#/tN      # - start track in playlist (Track=N 1-based)
-	#/pN      # - play mode 0..3
-	#/p[N]    # - play mode 0..3, default = 2 - 'to the end'
+	#/p[N]    # - ~play mode~@PlayMode@ 0..3, default = 2 - 'to the end'
 
 	There is 2 special Filenames:
 	#'?last' # - repeats last played file/playlist
