@@ -20,16 +20,17 @@ $ #AudioPlayer#
 		*.fla;*.flac;
 		*.it;
 		*.kar;
-		*.m4a;*.m4b;*.m4r;*.mac;*.mid;*.midi;*.mo3;*.mod;*.mp+;*.mp1;*.mp2;*.mp3;[*.mp4];*.mpc;*.mpp;*.mtm;
+		*.m4a;*.m4b;*.m4r;*.mac;*.mid;*.midi;*.mka;*.mod;*.mp+;*.mp1;*.mp2;*.mp3;*.mpc;*.mpp;*.mtm;
+      [*.mkv;*.mp4;]
 		*.oga;*.ogg;*.opus;
 		*.rmi;
 		*.s3m;*.spx;
 		*.umx;
-		*.wav;*.wma;*.wv;
+		*.wav;*.weba;*.webm,*.wma;*.wv;
 		*.xm
 
 	The following playlist formats are supported:
-		*.m3u;*.plc;*.pls;*.aimppl;*.aimppl4,*.wpl,*.zpl,*.dpl,*.cue
+		*.aimppl;*.aimppl4;*.cue;*.dpl;*.m3u;*.m3u8;*.plc;*.pls;*.rad;*.wpl;*.zpl
 
 	Can be used to playback NetRadio channels.
 	NetRadio links can be included in playlists.
@@ -124,7 +125,7 @@ $ #Plugin settings#
 	║ #[ ]# Double box          Actions # bb pp ff s·#                 ║
 	║ #[x]# Remove [Album]      Ignores #YOUR DONATION·#               ║
 	╟──────────────────────────────────────────────────────────────╢
-	║          #{ OK }# #[ Default ]# #[ More... ]# [ Cancel ]#           ║
+	║          #{ OK }# #[ Default ]# #[ More... ]# #[ Cancel ]#           ║
 	╚══════════════════════════════════════════════════════════════╝
 
 	Dialog above contains default settings
