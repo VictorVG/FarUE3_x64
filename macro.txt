@@ -86,7 +86,7 @@
   ║  S··················· │ /RCtrl(Shift|RAlt)[^\/]/                                         │ Shell_BookmarkManager.lua                  │ Менеджер закладок: сохранить текущую     ║
   ║                       │                                                                  │                                            │ папку в закладках                        ║
   ║  S··················· │ /RCtrl[^\/]/                                                     │ Shell_BookmarkManager.lua                  │ Менеджер закладок: перейти на закладку   ║
-  ║  S··················· │ AltB                                                             │ Shell_DelBak.lua                           │ Delete backup files                      ║
+  ║  S··················· │ AltB                                                             │ Shell_DelBak.lua                           │ Delete unused files                      ║
   ║  S··················· │ AltBS                                                            │ Shell_HistoryPath_and_RememberSelected.lua │ Возврат в предыдущую папку с             ║
   ║                       │                                                                  │                                            │ сохранением выделения. © SimSU           ║
   ║  S··················· │ AltBS                                                            │ Shell_HistoryPath.lua                      │ Возврат в предыдущую папку. © SimSU      ║
@@ -119,7 +119,7 @@
   ║  S··················· │ AltShiftL                                                        │ Plugin_GitShell.lua                        │ GitShell current file history            ║
   ║  S··················· │ AltShiftN                                                        │ Plugin_GitShell.lua                        │ GiShell branch tools                     ║
   ║  S··················· │ AltShiftV                                                        │ Plugin_VisRen.lua                          │ Visual Rename                            ║
-  ║  S··················· │ AltT                                                             │ Shell_DelBak.lua                           │ Delete temporary files                   ║
+  ║  S··················· │ AltT                                                             │ Shell_DelBak.lua                           │ Delete unused files                      ║
   ║  S··················· │ AltUp                                                            │ Shell_SelectingEx.lua                      │ Переход на предыдущий помеченный файл.   ║
   ║                       │                                                                  │                                            │ © SimSU                                  ║
   ║  S··················· │ BS                                                               │ Shell_BS.lua                               │ Use BS to go to upper folder             ║
@@ -132,6 +132,8 @@
   ║  S··················· │ CtrlAltF9                                                        │ Plugin_ConsoleControl-Macros.lua           │ Console Control: Maximize/Restore        ║
   ║                       │                                                                  │                                            │ console buffer                           ║
   ║  S··················· │ CtrlAltG                                                         │ Plugin_GitShell.lua                        │ GitShell menu                            ║
+  ║  S··················· │ CtrlAltN                                                         │ Shell_NormalRen.lua                        │ Rename All/Selected with NFC             ║
+  ║                       │                                                                  │                                            │ normalization                            ║
   ║  S··················· │ CtrlAltPgUp                                                      │ Plugin_ConsoleControl-Macros.lua           │ Console Control: Topmost On/Off          ║
   ║  S··················· │ CtrlAltR                                                         │ Shell_GitCheckout.lua                      │ Git: Check file under cursor             ║
   ║  S··················· │ CtrlBackSlash                                                    │ Shell_RememberSelected.lua                 │ Сменить папку на корневую c сохранением  ║
@@ -526,4 +528,4 @@
   ║                                                                                                                                                                                  ║
   ╚══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
 
-  15.07.2021 02:22:35 +0300
+  10.09.2021 14:04:55 +0300
