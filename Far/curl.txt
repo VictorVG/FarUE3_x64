@@ -15,7 +15,7 @@ Usage: curl [options...] <url>
      --compressed    Request compressed response
      --compressed-ssh  Enable SSH compression
  -K, --config <file>  Read config from a file
-     --connect-timeout <seconds>  Maximum time allowed for connection
+     --connect-timeout <fractional seconds>  Maximum time allowed for connection
      --connect-to <HOST1:PORT1:HOST2:PORT2>  Connect to host
  -C, --continue-at <offset>  Resumed transfer offset
  -b, --cookie <data|filename>  Send cookies from string/file
@@ -23,7 +23,7 @@ Usage: curl [options...] <url>
      --create-dirs   Create necessary local directory hierarchy
      --create-file-mode <mode>  File mode (octal) for created files
      --crlf          Convert LF to CRLF in upload
-     --crlfile <file>  Get a CRL list in PEM format from the given file
+     --crlfile <file>  Use this CRL list
      --curves <algorithm list>  (EC) TLS key exchange algorithm(s) to request
  -d, --data <data>   HTTP POST data
      --data-ascii <data>  HTTP POST ASCII data
@@ -106,7 +106,7 @@ Usage: curl [options...] <url>
  -M, --manual        Display the full manual
      --max-filesize <bytes>  Maximum file size to download
      --max-redirs <num>  Maximum number of redirects allowed
- -m, --max-time <seconds>  Maximum time allowed for the transfer
+ -m, --max-time <fractional seconds>  Maximum time allowed for the transfer
      --metalink      Process given URLs as metalink XML file
      --negotiate     Use HTTP Negotiate (SPNEGO) authentication
  -n, --netrc         Must read .netrc for user name and password
