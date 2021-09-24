@@ -623,7 +623,7 @@
 //[MEditCursorBeyondEnd]
 "&Kursor za końcem linii"
 //[MEditAutoDetectCodePage]
-"Rozpoznaj &stronę kodową"
+"Rozpozna&j stronę kodową"
 //[MEditShareWrite]
 "Z&ezwól na edycję plików otwartych do zapisu"
 //[MEditLockROFileModification]
@@ -633,7 +633,7 @@
 //[MEditConfigTabSize]
 "Rozmiar ta&bulatora"
 //[MEditConfigScrollbar]
-"Wyświetl suwak"
+"Wyświetl &suwak"
 //[MEditShowWhiteSpace]
 "Pokaż b&iałe znaki"
 //[MEditConfigSelFound]
@@ -2198,7 +2198,7 @@
 //[MMenuConfirmation]
 "P&otwierdzenia"
 //[MMenuFilePanelModes]
-"Try&by wyświetlania panelu plików"
+"Try&by wyświetlania paneli plików"
 //[MMenuFileDescriptions]
 "Opis&y plików"
 //[MMenuFolderInfoFiles]
@@ -2496,7 +2496,7 @@
 //[MSetAttrNotIndexed]
 "Nie z&indeksowany"
 //[MSetAttrSparse]
-"Rzadki"
+"&Rzadki"
 //[MSetAttrTemporary]
 "&Tymczasowy"
 //[MSetAttrOffline]
@@ -2796,7 +2796,7 @@
 "Elementy grupy"
 
 //[MSetColorTitle]
-"Ustawienie kolorów"
+"Kolory"
 //[MSetColorForeground]
 "Ko&lor:"
 //[MSetColorBackground]
@@ -3268,7 +3268,7 @@
 "Edytuj tryby wyświetlania paneli"
 
 //[MEditPanelModeName]
-"Nazwa"
+"N&azwa"
 //[MEditPanelModeTypes]
 "&Typy kolumn"
 //[MEditPanelModeWidths]
