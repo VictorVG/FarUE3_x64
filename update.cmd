@@ -11,8 +11,8 @@ if %M% geq 6 (
  )
 )
 cd /d "%~dp0Far" > nul
-if exist "Profile\plugincache.*.db" (del /f/q "Profile\plugincache.*.db" > nul)
-if exist "Profile\plugincache.*.db.-*" (del /f/q "Profile\plugincache.*.db.-*" > nul)
+if exist "Profile\plugincache.*" (del /f/q "Profile\plugincache.*" > nul)
+if exist "Profile*.db.-*" (del /f/q "Profile\*.db.-*" > nul)
 if exist wget.ini (del /f/q wget.ini > nul)
 if exist wgetrc (ren wgetrc wgetrc.sam > nul)
 if exist changelog_eng (del /f/q changelog_eng > nul)
@@ -33,6 +33,9 @@ if exist "plugins\editor\colorer\macros.md" (del /f/q "plugins\editor\colorer\ma
 if exist "plugins\editor\colorer\base\hrc\CHANGELOG" (del /f/q "plugins\editor\colorer\base\hrc\CHANGELOG" > nul)
 if exist "plugins\editor\colorer\base\hrc\common.jar" (del /f/q "plugins\editor\colorer\base\hrc\common.jar" > nul)
 if exist "plugins\editor\colorer\base\hrc\*.hrc" (del /f/q "plugins\editor\colorer\base\hrc\*.hrc" > nul)
+if exist "plugins\editor\colorer\base\hrc\*auto" (
+          move /y "plugins\editor\colorer\base\hrc\auto" "plugins\editor\colorer\base\auto"> nul
+          rd /s/q "plugins\editor\colorer\base\hrc" > nul)
 if exist "plugins\editor\colorer\base\hrd" (rd /s/q "plugins\editor\colorer\base\hrd" > nul)
 if exist "plugins\farhints" (rd /s/q "plugins\farhints" > nul)
 if exist "plugins\multiarc\Formats\targz.fmt" (del /f/q "plugins\multiarc\Formats\targz.fmt" > nul)
@@ -58,6 +61,8 @@ if exist "Profile\Macros\modules\LuaManager.lua" (del /f/q "Profile\Macros\modul
 if exist "Profile\Macros\modules\rebind.lua" (del /f/q "Profile\Macros\modules\rebind.lua" > nul)
 if exist "Profile\Macros\scripts\bindings" (del /f/q "Profile\Macros\scripts\bindings" > nul)
 if exist "Profile\Macros\scripts\Dialog_ToEditor.lua" (del /f/q "Profile\Macros\scripts\Dialog_ToEditor.lua" > nul)
+if exist "Profile\Macros\scripts\Editor_ColorerRefresh.lua" (del /f/q "Profile\Macros\scripts\Editor_ColorerRefresh.lua" > nul)
+if exist "Profile\Macros\scripts\Editor_ColorerTypeList.lua" (del /f/q "Profile\Macros\scripts\Editor_ColorerTypeList.lua" > nul)
 if exist "Profile\Macros\scripts\Editor_IntegrateMacro.lua" (del /f/q "Profile\Macros\scripts\Editor_IntegrateMacro.lua" > nul)
 if exist "Profile\Macros\scripts\Editor_LuaMacroComplit.lua" (del /f/q "Profile\Macros\scripts\Editor_LuaMacroComplit.lua" > nul)
 if exist "Profile\Macros\scripts\Editor_Print.moon" (del /f/q "Profile\Macros\scripts\Editor_Print.moon" > nul)

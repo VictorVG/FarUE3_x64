@@ -1,6 +1,6 @@
 ﻿.Language=Polish,Polish (Polski)
 
-//Version: 3.0.5904.0 (Private) x64
+//Version: 3.0.5908.0 (Private) x64
 
 //[MYes]
 "Tak"
@@ -661,7 +661,7 @@
 //[MLinkDlgTitle]
 "Dowiąż"
 //[MCopySecurity]
-"&Prawa dostępu:"
+"Prawa dostępu:"
 //[MCopySecurityDefault]
 "Do&myślne"
 //[MCopySecurityCopy]
@@ -675,7 +675,7 @@
 //[MCopyAskRO]
 "&Pytaj także o pliki tylko do odczytu"
 //[MCopyOnlyNewerFiles]
-"Tylko &nowsze pliki"
+"Tylko no&wsze pliki"
 //[MLinkType]
 "&Typ linku:"
 //[MLinkTypeJunction]
@@ -689,9 +689,9 @@
 //[MLinkTypeSymlinkDirectory]
 "Link symboliczny (do &folderu)"
 //[MCopyPreserveAllTimestamps]
-"Zachowaj wszystkie oryg. czasy"
+"Za&chowaj wszystkie oryg. czasy"
 //[MCopySymLinkContents]
-"&Kopiuj zawartość linków symbolicznych"
+"Kopiuj zawartość &linków symbolicznych"
 //[MCopyMultiActions]
 "Przetwarzaj &wszystkie cele"
 //[MCopyDlgCopy]
@@ -703,28 +703,28 @@
 //[MCopyDlgRename]
 "&Zmień nazwę"
 //[MCopyDlgLink]
-"Utwórz &link"
+"&Utwórz link"
 //[MCopyDlgTotal]
 "Razem"
 //[MCopyPrepareSecury]
 "Ustawianie praw dostępu…"
 //[MCopyUseFilter]
-"&Użyj filtra"
+"Użyj &filtra"
 //[MCopySetFilter]
 "Filt&r"
 
 //[MCopyFile]
-"Skopiuj {0} {1}:"
+"&Skopiuj {0} {1}:"
 //[MMoveFile]
-"Zmień nazwę lub przenieś {0} {1}:"
+"Zmień &nazwę lub przenieś {0} {1}:"
 //[MLinkFile]
-"Utwórz link do {0} {1}:"
+"Utwórz &link do {0} {1}:"
 //[MCopyFiles]
-"Skopiuj {0} plik{1} {2}:"
+"&Skopiuj {0} plik{1} {2}:"
 //[MMoveFiles]
-"Zmień nazwę lub przenieś {0} plik{1} {2}:"
+"Zmień &nazwę lub przenieś {0} plik{1} {2}:"
 //[MLinkFiles]
-"&Utwórz linki do {0} plik{1} {2}:"
+"Utwórz &linki do {0} plik{1} {2}:"
 //[MCMLTargetTO]
 "do"
 //[MCMLTargetIN]
@@ -817,11 +817,11 @@
 //[MCopyDest]
 "&Istniejący"
 //[MCopyOverwrite]
-"N&adpisz"
+"Nad&pisz"
 //[MCopyAppend]
 "&Dołącz"
 //[MCopyRename]
-"Zmień &nazwę"
+"&Zmień nazwę"
 //[MCopyRememberChoice]
 "&Zapamiętaj ustawienia"
 //[MCopyRenameTitle]
@@ -4341,7 +4341,7 @@
 //[MFileFilterSizeToSign]
 "&<="
 //[MFileHardLinksCount]
-"Ma &więcej niż jeden twardy link"
+"Ma &więcej niż jeden link"
 //[MFileFilterDate]
 "&Data/Czas:"
 //[MFileFilterWrited]

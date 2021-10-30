@@ -213,6 +213,16 @@
   ║  ······V············· │ CtrlF2                                                           │ DEVQ_UserMenu.lua                          │ Viewer: show local menu                  ║
   ║  ······V············· │ ShiftIns                                                         │ Viewer_ShiftInsSearch.lua                  │ Use Shift-Ins to search text from        ║
   ║                       │                                                                  │                                            │ clipboard in internal viewer             ║
+  ║  ·······E············ │ /.Alt'/                                                          │ Plugin_Colorer.lua                         │ Colorer: Find Errors                     ║
+  ║  ·······E············ │ /.Alt;/                                                          │ Plugin_Colorer.lua                         │ Colorer: List Functions                  ║
+  ║  ·······E············ │ /.AltK/                                                          │ Plugin_Colorer.lua                         │ Colorer: Select Region                   ║
+  ║  ·······E············ │ LAltL                                                            │ Plugin_Colorer.lua                         │ Colorer: List Types                      ║
+  ║  ·······E············ │ /.AltO/                                                          │ Plugin_Colorer.lua                         │ Colorer: Find Function                   ║
+  ║  ·······E············ │ /.AltP/                                                          │ Plugin_Colorer.lua                         │ Colorer: Select Pair                     ║
+  ║  ·······E············ │ /.AltR/                                                          │ Plugin_Colorer.lua                         │ Colorer: Reload Colorer                  ║
+  ║  ·······E············ │ /.Alt\[/                                                         │ Plugin_Colorer.lua                         │ Colorer: Match Pair                      ║
+  ║  ·······E············ │ /.Alt]/                                                          │ Plugin_Colorer.lua                         │ Colorer: Select Block                    ║
+  ║  ·······E············ │ /.CtrlShiftC/                                                    │ Plugin_Colorer.lua                         │ Colorer: Cross in current editor on/off  ║
   ║  ·······E············ │ Alt/                                                             │ Plugin_DelStr.lua                          │ Delete string                            ║
   ║  ·······E············ │ Alt7                                                             │ Plugin_lfsearch.lua                        │ LuaFAR Search: Toggle Highlight          ║
   ║  ·······E············ │ AltAdd                                                           │ Editor_TabSize.lua                         │ Увеличить размер табуляции. © SimSU      ║
@@ -220,12 +230,10 @@
   ║  ·······E············ │ AltCtrlF3                                                        │ Plugin_lfsearch.lua                        │ LuaFAR Search: Editor Multi-line         ║
   ║                       │                                                                  │                                            │ replace                                  ║
   ║  ·······E············ │ AltD                                                             │ Editor_InsertCurrentDateTime.lua           │ Вставить текущую дату и время            ║
-  ║  ·······E············ │ AltDel                                                           │ Editor_Trimmer.lua                         │ Удаление конечных пробелов и             ║
-  ║                       │                                                                  │                                            │ символов табуляции и пустых строк.       ║
-  ║                       │                                                                  │                                            │ © SimSU                                  ║
-  ║  ·······E············ │ AltEnd AltShiftEnd                                               │ Editor_SmartHomeEnd.lua                    │ В конец строки или за последнюю букву    ║
-  ║                       │                                                                  │                                            │ с выделением вертикального блока.        ║
-  ║                       │                                                                  │                                            │ © SimSU                                  ║
+  ║  ·······E············ │ AltDel                                                           │ Editor_Trimmer.lua                         │ Удаление конечных пробелов и символов    ║
+  ║                       │                                                                  │                                            │ табуляции и пустых строк. © SimSU        ║
+  ║  ·······E············ │ AltEnd AltShiftEnd                                               │ Editor_SmartHomeEnd.lua                    │ В конец строки или за последнюю букву с  ║
+  ║                       │                                                                  │                                            │ выделением вертикального блока. © SimSU  ║
   ║  ·······E············ │ AltF3                                                            │ Plugin_lfsearch.lua                        │ LuaFAR Search: Editor Find               ║
   ║  ·······E············ │ AltF5                                                            │ Editor_Print.lua                           │ Print text from editor                   ║
   ║  ·······E············ │ AltHome AltShiftHome                                             │ Editor_SmartHomeEnd.lua                    │ В начало строки или на первую букву с    ║
@@ -240,8 +248,8 @@
   ║                       │                                                                  │                                            │ reverse                                  ║
   ║  ·······E············ │ AltShift6                                                        │ Plugin_lfsearch.lua                        │ LuaFAR Search: Editor search word        ║
   ║  ·······E············ │ AltShiftBS                                                       │ Editor_BlockIndent.lua                     │ Indent right by space                    ║
-  ║  ·······E············ │ AltShiftF                                                        │ Plugin_LFB.lua                             │ LUA Format Block for Editor by           ║
-  ║                       │                                                                  │                                            │ Ladserg (menu)                           ║
+  ║  ·······E············ │ AltShiftF                                                        │ Plugin_LFB.lua                             │ LUA Format Block for Editor by Ladserg   ║
+  ║                       │                                                                  │                                            │ (menu)                                   ║
   ║  ·······E············ │ AltShiftF3                                                       │ Plugin_lfsearch.lua                        │ LuaFAR Search: Editor Repeat             ║
   ║  ·······E············ │ AltShiftT                                                        │ Plugin_SoftStr.lua                         │ Thin out duplicates                      ║
   ║  ·······E············ │ AltSubtract                                                      │ Editor_TabSize.lua                         │ Уменьшить размер табуляции. © SimSU      ║
@@ -255,8 +263,8 @@
   ║                       │                                                                  │                                            │ © SimSU                                  ║
   ║  ·······E············ │ CtrlAltE                                                         │ Editor_SelectingEx.lua                     │ Выделенные блоки - перейти в конец       ║
   ║                       │                                                                  │                                            │ блока. © SimSU                           ║
-  ║  ·······E············ │ CtrlAltR                                                         │ Editor_SelectingEx.lua                     │ Выделенные блоки - восстановить          ║
-  ║                       │                                                                  │                                            │ позицию блока. © SimSU                   ║
+  ║  ·······E············ │ CtrlAltR                                                         │ Editor_SelectingEx.lua                     │ Выделенные блоки - восстановить позицию  ║
+  ║                       │                                                                  │                                            │ блока. © SimSU                           ║
   ║  ·······E············ │ CtrlAltR                                                         │ Editor_Remarks.lua                         │ Настройка комментирования помеченного    ║
   ║                       │                                                                  │                                            │ блока. © SimSU                           ║
   ║  ·······E············ │ CtrlAltS                                                         │ Editor_SelectingEx.lua                     │ Выделенные блоки - сохранить позицию     ║
@@ -273,7 +281,6 @@
   ║  ·······E············ │ CtrlF2                                                           │ DEVQ_UserMenu.lua                          │ Editor: show common user menu            ║
   ║  ·······E············ │ CtrlF2                                                           │ DEVQ_UserMenu.lua                          │ Editor: show local menu                  ║
   ║  ·······E············ │ CtrlF3                                                           │ Plugin_lfsearch.lua                        │ LuaFAR Search: Editor Replace            ║
-  ║  ·······E············ │ CtrlF5                                                           │ Editor_ColorerRefresh.lua                  │ FarColorer: Refresh coloring             ║
   ║  ·······E············ │ CtrlF9                                                           │ Common_LMMacros.lua                        │ Перезагрузить все скрипты                ║
   ║  ·······E············ │ CtrlH                                                            │ Plugin_hunspell.lua                        │ Hunspell spell checker                   ║
   ║  ·······E············ │ CtrlMsLClick                                                     │ Editor_MouseSelect.lua                     │ Выделение с копированием. © SimSU        ║
@@ -307,7 +314,7 @@
   ║                       │                                                                  │                                            │ © SimSU                                  ║
   ║  ·······E············ │ F1                                                               │ Editor_LuaCheck.lua                        │ Help on .luacheckrc editing              ║
   ║  ·······E············ │ F3                                                               │ Editor_Spell.lua                           │ Spell Checker                            ║
-  ║  ·······E············ │ F5                                                               │ Editor_ColorerTypeList.lua                 │ Colorer: list types select               ║
+  ║  ·······E············ │ F5                                                               │ Plugin_Colorer.lua                         │ Colorer: List Functions                  ║
   ║  ·······E············ │ F5                                                               │ Editor_LuaCheck.lua                        │ Insert .luacheckrc template              ║
   ║  ·······E············ │ Home                                                             │ Editor_SmartHomeEnd.lua                    │ В начало строки или на первую букву.     ║
   ║                       │                                                                  │                                            │ © SimSU                                  ║
@@ -321,14 +328,14 @@
   ║  ·······E············ │ MsRClick AltMsLClick                                             │ Editor_MouseSelect.lua                     │ Выделение вертикального блока. © SimSU   ║
   ║  ·······E············ │ RAltRCtrlMultiply                                                │ Plugin_BlockEditor.lua                     │ Comment block                            ║
   ║  ·······E············ │ RAltShiftMultiply                                                │ Plugin_BlockEditor.lua                     │ Comment stream                           ║
-  ║  ·······E············ │ RCtrlAltDown                                                     │ Editor_SelectingEx.lua                     │ Выделенные блоки - переместить           ║
-  ║                       │                                                                  │                                            │ блок вниз. © SimSU                       ║
-  ║  ·······E············ │ RCtrlAltLeft                                                     │ Editor_SelectingEx.lua                     │ Выделенные блоки - переместить           ║
-  ║                       │                                                                  │                                            │ блок влево. © SimSU                      ║
-  ║  ·······E············ │ RCtrlAltRight                                                    │ Editor_SelectingEx.lua                     │ Выделенные блоки - переместить           ║
-  ║                       │                                                                  │                                            │ блок вправо. © SimSU                     ║
-  ║  ·······E············ │ RCtrlAltUp                                                       │ Editor_SelectingEx.lua                     │ Выделенные блоки - переместить           ║
-  ║                       │                                                                  │                                            │ блок вверх. © SimSU                      ║
+  ║  ·······E············ │ RCtrlAltDown                                                     │ Editor_SelectingEx.lua                     │ Выделенные блоки - переместить блок      ║
+  ║                       │                                                                  │                                            │ вниз. © SimSU                            ║
+  ║  ·······E············ │ RCtrlAltLeft                                                     │ Editor_SelectingEx.lua                     │ Выделенные блоки - переместить блок      ║
+  ║                       │                                                                  │                                            │ влево. © SimSU                           ║
+  ║  ·······E············ │ RCtrlAltRight                                                    │ Editor_SelectingEx.lua                     │ Выделенные блоки - переместить блок      ║
+  ║                       │                                                                  │                                            │ вправо. © SimSU                          ║
+  ║  ·······E············ │ RCtrlAltUp                                                       │ Editor_SelectingEx.lua                     │ Выделенные блоки - переместить блок      ║
+  ║                       │                                                                  │                                            │ вверх. © SimSU                           ║
   ║  ·······E············ │ RCtrlBackSlash                                                   │ Plugin_BlockEditor.lua                     │ Tabulate selection rightward             ║
   ║  ·······E············ │ RCtrlDown                                                        │ Editor_SelectingEx.lua                     │ Выделенные блоки - сдвинуть позицию      ║
   ║                       │                                                                  │                                            │ блока вниз. © SimSU                      ║
@@ -340,8 +347,8 @@
   ║                       │                                                                  │                                            │ .lua/.moon файл                          ║
   ║  ·······E············ │ RCtrlF11                                                         │ Common_LMMacros.lua                        │ Вставить префикс командной строки в      ║
   ║                       │                                                                  │                                            │ текущий .lua/.moon файл                  ║
-  ║  ·······E············ │ RCtrlF11                                                         │ Common_LMMacros.lua                        │ Вставить пункт меню плагинов в           ║
-  ║                       │                                                                  │                                            │ текущий .lua/.moon файл                  ║
+  ║  ·······E············ │ RCtrlF11                                                         │ Common_LMMacros.lua                        │ Вставить пункт меню плагинов в текущий   ║
+  ║                       │                                                                  │                                            │ .lua/.moon файл                          ║
   ║  ·······E············ │ RCtrlLeft                                                        │ Editor_SelectingEx.lua                     │ Выделенные блоки - сдвинуть позицию      ║
   ║                       │                                                                  │                                            │ блока влево. © SimSU                     ║
   ║  ·······E············ │ RCtrlMultiply                                                    │ Plugin_BlockEditor.lua                     │ Comment selection (auto mode)            ║
@@ -357,19 +364,18 @@
   ║                       │                                                                  │                                            │ первым делом перейти в конец блока.      ║
   ║                       │                                                                  │                                            │ © SimSU                                  ║
   ║  ·······E············ │ ShiftBS                                                          │ Editor_BlockIndent.lua                     │ Indent left by tab size                  ║
-  ║  ·······E············ │ ShiftEnd                                                         │ Editor_SmartHomeEnd.lua                    │ В конец строки или за последнюю          ║
-  ║                       │                                                                  │                                            │ букву с выделением строчного блока.      ║
-  ║                       │                                                                  │                                            │ © SimSU                                  ║
+  ║  ·······E············ │ ShiftEnd                                                         │ Editor_SmartHomeEnd.lua                    │ В конец строки или за последнюю букву    ║
+  ║                       │                                                                  │                                            │ с выделением строчного блока. © SimSU    ║
   ║  ·······E············ │ ShiftF3                                                          │ Editor_Spell.lua                           │ highlight spell errors                   ║
   ║  ·······E············ │ ShiftF5                                                          │ Plugin_EditWrap.lua                        │ Wrap/unwrap lines virtually              ║
-  ║  ·······E············ │ ShiftHome                                                        │ Editor_SmartHomeEnd.lua                    │ В начало строки или на первую букву      ║
-  ║                       │                                                                  │                                            │ с выделением строчного блока. © SimSU    ║
+  ║  ·······E············ │ ShiftHome                                                        │ Editor_SmartHomeEnd.lua                    │ В начало строки или на первую букву с    ║
+  ║                       │                                                                  │                                            │ выделением строчного блока. © SimSU      ║
   ║  ·······E············ │ ShiftMsLClick                                                    │ Editor_MouseSelect.lua                     │ Выделение с вырезанием. © SimSU          ║
   ║  ·······E············ │ ShiftSpace                                                       │ Editor_MacroComplete.lua                   │ Список завершения LuaMacro. © SimSU      ║
   ║  ·······E············ │ ShiftTab                                                         │ Editor_Remarks.lua                         │ Отмена табулирования строк выделенного   ║
   ║                       │                                                                  │                                            │ блока. © SimSU                           ║
-  ║  ·······E············ │ Tab                                                              │ Editor_Remarks.lua                         │ Табулирование строк выделенного          ║
-  ║                       │                                                                  │                                            │ блока. © SimSU                           ║
+  ║  ·······E············ │ Tab                                                              │ Editor_Remarks.lua                         │ Табулирование строк выделенного блока.   ║
+  ║                       │                                                                  │                                            │ © SimSU                                  ║
   ║  ········Dm·········· │ CtrlG                                                            │ DlgMnu_ShowGUID.lua                        │ Show dialog/menu ID                      ║
   ║  ········D··········· │ , [ AltMsWheelUp                                                 │ Plugin_Review.lua                          │ Review: Rotate -90                       ║
   ║  ········D··········· │ . ] AltMsWheelDown                                               │ Plugin_Review.lua                          │ Review: Rotate +90                       ║
@@ -419,11 +425,11 @@
   ║                                                                                                                                                                                  ║
   ║  DialogEvent  │              │ Editor_LuaCheck.lua                        │ luacheck menu handler                                                                                ║
   ║  ViewerEvent  │              │ Common_Picture.lua                         │ index=32                                                                                             ║
-  ║  EditorEvent  │              │ Editor_Spell.lua                           │ index=121                                                                                            ║
-  ║  EditorEvent  │ *.lua,*.moon │ Editor_OpenScript.lua                      │ index=84                                                                                             ║
-  ║  EditorEvent  │              │ Editor_UtfCpSet.lua                        │ index=130                                                                                            ║
+  ║  EditorEvent  │              │ Editor_Spell.lua                           │ index=119                                                                                            ║
+  ║  EditorEvent  │ *.lua,*.moon │ Editor_OpenScript.lua                      │ index=82                                                                                             ║
+  ║  EditorEvent  │              │ Editor_UtfCpSet.lua                        │ index=128                                                                                            ║
   ║  ConsoleInput │              │ Common_CtrlAltMenuDisk.lua                 │ CtrlAltMenuDisk: нажатие левой кнопки мыши на мини-панели                                            ║
-  ║  ExitFAR      │              │ Editor_Spell.lua                           │ index=122                                                                                            ║
+  ║  ExitFAR      │              │ Editor_Spell.lua                           │ index=120                                                                                            ║
   ║  ExitFAR      │              │ Common_Picture.lua                         │ index=33                                                                                             ║
   ║  ExitFAR      │              │ Common_CtrlAltMenuDisk.lua                 │ CtrlAltMenuDisk: выключить таймер                                                                    ║
   ║                                                                                                                                                                                  ║
@@ -528,4 +534,4 @@
   ║                                                                                                                                                                                  ║
   ╚══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
 
-  10.09.2021 14:04:55 +0300
+  26.10.2021 04:10:28 +0300
