@@ -1,6 +1,6 @@
 ﻿.Language=Slovak,Slovak (Slovenčina)
 
-//Version: 3.0.5908.0 (Private) x64
+//Version: 3.0.5910.0 (Private) x64
 
 //[MYes]
 "Áno"
@@ -514,9 +514,8 @@
 // need translation:
 //[MConfigInfoPanelCNDnsHostname]
 "DNS hostname"
-// need translation:
 //[MConfigInfoPanelCNDnsDomain]
-"DNS domain"
+"DNS doména"
 // need translation:
 //[MConfigInfoPanelCNDnsFullyQualified]
 "DNS fully-qualified"
@@ -539,15 +538,12 @@
 // need translation:
 //[MConfigInfoPanelUNCanonical]
 "Canonical Name"
-// need translation:
 //[MConfigInfoPanelUNUserPrincipal]
-"User Principial Name"
-// need translation:
+"Hlavné meno používateľa"
 //[MConfigInfoPanelUNServicePrincipal]
-"Service Principal"
-// need translation:
+"Riaditeľ služby"
 //[MConfigInfoPanelUNDnsDomain]
-"DNS Domain"
+"DNS doména"
 //[MConfigInfoPanelUNGivenName]
 "Meno"
 //[MConfigInfoPanelUNSurname]
@@ -708,9 +704,8 @@
 "symbolické prepoj. (&súbor)"
 //[MLinkTypeSymlinkDirectory]
 "symbolické prepoj. (prie&činok)"
-// need translation:
 //[MCopyPreserveAllTimestamps]
-"Preserve all timestamps"
+"Zachovať všetky časové pečiatky"
 //[MCopySymLinkContents]
 "Kopírovať obsah sym&bolic. prepoj."
 //[MCopyMultiActions]
@@ -907,7 +902,6 @@
 "súbor"
 //[MAskDeleteObjects]
 "objekty"
-// need translation:
 //[MAskDeleteLink]
 "prepojenie na"
 //[MAskDeleteAndMore]
@@ -2502,9 +2496,8 @@
 "Zväzok:"
 //[MSetAttrDfsTargets]
 "DFS ciele:"
-// need translation:
 //[MSetAttrAppExecLink]
-"App Alias:"
+"Alias aplikácie :"
 //[MSetAttrUnknownReparsePoint]
 "(dáta nie sú k dispozícii)"
 //[MSetAttrReadOnly]
@@ -2535,12 +2528,10 @@
 "Integrita dát"
 //[MSetAttrNoScrubData]
 "Žiadne dáta pre skener integrity dát"
-// need translation:
 //[MSetAttrPinned]
-"Pinned"
-// need translation:
+"Pripnuté"
 //[MSetAttrUnpinned]
-"Unpinned"
+"Nepripnuté"
 // need translation:
 //[MSetAttrRecallOnOpen]
 "Recall on open"
@@ -2599,9 +2590,8 @@
 "Nemôžem nastaviť čas súboru pre"
 //[MSetAttrOwnerCannotFor]
 "Nemôžem nastaviť vlastníka pre"
-// need translation:
 //[MSetAttrReparsePointCannotFor]
-"Cannot remove reparse point for"
+"Nie je možné odstrániť bod zmeny pre"
 
 //[MSetColorPanel]
 "&Panel"
@@ -4434,12 +4424,10 @@
 "Integrita dát"
 //[MFileFilterAttrNoScrubData]
 "Žiadne dáta pre skener integrity dát"
-// need translation:
 //[MFileFilterAttrPinned]
-"Pinned"
-// need translation:
+"Pripnuté"
 //[MFileFilterAttrUnpinned]
-"Unpinned"
+"Nepripnuté"
 // need translation:
 //[MFileFilterAttrRecallOnOpen]
 "Recall on open"

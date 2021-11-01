@@ -1,6 +1,6 @@
 ﻿.Language=Belarusian,Belarusian (Беларуская)
 
-//Version: 3.0.5908.0 (Private) x64
+//Version: 3.0.5910.0 (Private) x64
 
 //[MYes]
 "Так"
@@ -2478,9 +2478,8 @@
 "Дыск:"
 //[MSetAttrDfsTargets]
 "DFS мэты:"
-// need translation:
 //[MSetAttrAppExecLink]
-"App Alias:"
+"Псеўданім прыкладання :"
 //[MSetAttrUnknownReparsePoint]
 "(няма дадзеных)"
 //[MSetAttrReadOnly]
@@ -2511,12 +2510,10 @@
 "Струмень цэласнасці"
 //[MSetAttrNoScrubData]
 "Няма дадзеных ачысткі"
-// need translation:
 //[MSetAttrPinned]
-"Pinned"
-// need translation:
+"Замацаваны"
 //[MSetAttrUnpinned]
-"Unpinned"
+"Адмацаваны"
 // need translation:
 //[MSetAttrRecallOnOpen]
 "Recall on open"
@@ -2574,9 +2571,8 @@
 "Немагчыма усталяваць час файла для"
 //[MSetAttrOwnerCannotFor]
 "Немагчыма усталяваць уладальника для"
-// need translation:
 //[MSetAttrReparsePointCannotFor]
-"Cannot remove reparse point for"
+"Немагчыма выдаліць кропку паўторнага аналізу для"
 
 //[MSetColorPanel]
 "&Панэль"
@@ -4406,12 +4402,10 @@
 "Струмень цэласнасці"
 //[MFileFilterAttrNoScrubData]
 "Няма дадзеных ачысткі"
-// need translation:
 //[MFileFilterAttrPinned]
-"Pinned"
-// need translation:
+"Замацаваны"
 //[MFileFilterAttrUnpinned]
-"Unpinned"
+"Адмацаваны"
 // need translation:
 //[MFileFilterAttrRecallOnOpen]
 "Recall on open"

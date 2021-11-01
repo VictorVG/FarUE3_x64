@@ -1,6 +1,6 @@
 ﻿.Language=English,English
 
-//Version: 3.0.5908.0 (Private) x64
+//Version: 3.0.5910.0 (Private) x64
 
 //[MYes]
 "Yes"
@@ -423,7 +423,6 @@
 "Use Ctrl+Pg&Up to change drive"
 //[MConfigUseVirtualTerminalForRendering]
 "Use &Virtual Terminal for rendering"
-// need translation:
 //[MConfigFullWidthAwareRendering]
 "Fullwidth-aware rendering"
 //[MConfigClearType]
@@ -531,7 +530,7 @@
 //[MConfigInfoPanelUNServicePrincipal]
 "Service Principal"
 //[MConfigInfoPanelUNDnsDomain]
-"DNS Domain"
+"DNS domain"
 //[MConfigInfoPanelUNGivenName]
 "Given name"
 //[MConfigInfoPanelUNSurname]

@@ -1,6 +1,6 @@
 ﻿.Language=Ukrainian,Ukrainian (Українська)
 
-//Version: 3.0.5908.0 (Private) x64
+//Version: 3.0.5910.0 (Private) x64
 
 //[MYes]
 "Так"
@@ -2478,9 +2478,8 @@
 "Том:"
 //[MSetAttrDfsTargets]
 "DFS цілі:"
-// need translation:
 //[MSetAttrAppExecLink]
-"App Alias:"
+"Псевдонім програми:"
 //[MSetAttrUnknownReparsePoint]
 "(нема даних)"
 //[MSetAttrReadOnly]

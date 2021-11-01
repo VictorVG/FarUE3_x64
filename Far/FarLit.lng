@@ -1,6 +1,6 @@
 ﻿.Language=Lithuanian,Lithuanian (Lietuvių)
 
-//Version: 3.0.5908.0 (Private) x64
+//Version: 3.0.5910.0 (Private) x64
 
 //[MYes]
 "Taip"
@@ -541,9 +541,8 @@
 // need translation:
 //[MConfigCmdlineDelRemovesBlocks]
 "&Del removes blocks"
-// need translation:
 //[MConfigCmdlineAutoComplete]
-"&AutoComplete"
+"&Automatinis užbaigimas"
 //[MConfigCmdlineUsePromptFormat]
 "Nustatyti komandinės eilutės pr&ompt formatą"
 // need translation:
@@ -591,15 +590,13 @@
 // need translation:
 //[MConfigInfoPanelCNDnsHostname]
 "DNS hostname"
-// need translation:
 //[MConfigInfoPanelCNDnsDomain]
-"DNS domain"
+"DNS domenas"
 // need translation:
 //[MConfigInfoPanelCNDnsFullyQualified]
 "DNS fully-qualified"
-// need translation:
 //[MConfigInfoPanelUNTitle]
-"&User name format"
+"Vartotojo vardo formatas"
 // need translation:
 //[MConfigInfoPanelUNLogon]
 "Logon name"
@@ -618,15 +615,12 @@
 // need translation:
 //[MConfigInfoPanelUNCanonical]
 "Canonical Name"
-// need translation:
 //[MConfigInfoPanelUNUserPrincipal]
-"User Principial Name"
-// need translation:
+"Pagrindinis vartotojo vardas"
 //[MConfigInfoPanelUNServicePrincipal]
-"Service Principal"
-// need translation:
+"Paslaugos vadovas"
 //[MConfigInfoPanelUNDnsDomain]
-"DNS Domain"
+"DNS domenas"
 // need translation:
 //[MConfigInfoPanelUNGivenName]
 "Given name"
@@ -827,9 +821,8 @@
 // need translation:
 //[MLinkTypeSymlinkDirectory]
 "symbolic link (fol&der)"
-// need translation:
 //[MCopyPreserveAllTimestamps]
-"Preserve all timestamps"
+"Išsaugoti visas laiko žymas"
 // need translation:
 //[MCopySymLinkContents]
 "Cop&y contents of symbolic links"
@@ -1061,9 +1054,8 @@
 "failą"
 //[MAskDeleteObjects]
 "objektus"
-// need translation:
 //[MAskDeleteLink]
-"a link to"
+"nuoroda į"
 //[MAskDeleteAndMore]
 "…ir dar {0}"
 
@@ -2896,9 +2888,8 @@
 // need translation:
 //[MSetAttrDfsTargets]
 "DFS Targets:"
-// need translation:
 //[MSetAttrAppExecLink]
-"App Alias:"
+"Programos slapyvardis :"
 // need translation:
 //[MSetAttrUnknownReparsePoint]
 "(data not available)"
@@ -2944,12 +2935,10 @@
 // need translation:
 //[MSetAttrNoScrubData]
 "&No scrub data"
-// need translation:
 //[MSetAttrPinned]
-"&Pinned"
-// need translation:
+"Prisegta"
 //[MSetAttrUnpinned]
-"&Unpinned"
+"Atsegta"
 // need translation:
 //[MSetAttrRecallOnOpen]
 "R&ecall on open"
@@ -3018,9 +3007,8 @@
 // need translation:
 //[MSetAttrOwnerCannotFor]
 "Cannot set owner for"
-// need translation:
 //[MSetAttrReparsePointCannotFor]
-"Cannot remove reparse point for"
+"Nepavyko pašalinti atkūrimo taško"
 
 //[MSetColorPanel]
 "&Langas"
@@ -5067,12 +5055,10 @@
 // need translation:
 //[MFileFilterAttrNoScrubData]
 "No scru&b data"
-// need translation:
 //[MFileFilterAttrPinned]
-"Pi&nned"
-// need translation:
+"Prisegta"
 //[MFileFilterAttrUnpinned]
-"&Unpinned"
+"Atsegta"
 // need translation:
 //[MFileFilterAttrRecallOnOpen]
 "Recal&l on open"

@@ -1,6 +1,6 @@
 ﻿.Language=Spanish,Spanish (Español)
 
-//Version: 3.0.5908.0 (Private) x64
+//Version: 3.0.5910.0 (Private) x64
 
 //[MYes]
 "Si"
@@ -693,9 +693,8 @@
 "enlace simbólico (&archivo)"
 //[MLinkTypeSymlinkDirectory]
 "enlace simbólico (&directorio)"
-// need translation:
 //[MCopyPreserveAllTimestamps]
-"Preserve all timestamps"
+"Conservar todas las marcas de tiempo"
 //[MCopySymLinkContents]
 "Copiar contenidos de &enlaces simbólicos"
 //[MCopyMultiActions]
@@ -892,7 +891,6 @@
 "el archivo"
 //[MAskDeleteObjects]
 "los objetos"
-// need translation:
 //[MAskDeleteLink]
 "un enlace al"
 //[MAskDeleteAndMore]
@@ -2491,9 +2489,8 @@
 "Volumen:"
 //[MSetAttrDfsTargets]
 "DFS Destinos:"
-// need translation:
 //[MSetAttrAppExecLink]
-"App Alias:"
+"Alias de la aplicación:"
 //[MSetAttrUnknownReparsePoint]
 "(datos no disponibles)"
 //[MSetAttrReadOnly]
@@ -2586,9 +2583,8 @@
 "No se puede poner hora de archivo para"
 //[MSetAttrOwnerCannotFor]
 "No se puede poner como dueño para"
-// need translation:
 //[MSetAttrReparsePointCannotFor]
-"Cannot remove reparse point for"
+"No se puede eliminar el punto de análisis para"
 
 //[MSetColorPanel]
 "&Panel"

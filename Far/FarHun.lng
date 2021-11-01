@@ -1,6 +1,6 @@
 ﻿.Language=Hungarian,Hungarian (Magyar)
 
-//Version: 3.0.5908.0 (Private) x64
+//Version: 3.0.5910.0 (Private) x64
 
 //[MYes]
 "Igen"
@@ -515,9 +515,8 @@
 // need translation:
 //[MConfigCmdlineDelRemovesBlocks]
 "Del removes blocks"
-// need translation:
 //[MConfigCmdlineAutoComplete]
-"AutoComplete"
+"Automatikus kiegészítés"
 //[MConfigCmdlineUsePromptFormat]
 "Parancssori &prompt formátuma"
 // need translation:
@@ -565,15 +564,13 @@
 // need translation:
 //[MConfigInfoPanelCNDnsHostname]
 "DNS hostname"
-// need translation:
 //[MConfigInfoPanelCNDnsDomain]
-"DNS domain"
+"DNS-tartomány"
 // need translation:
 //[MConfigInfoPanelCNDnsFullyQualified]
 "DNS fully-qualified"
-// need translation:
 //[MConfigInfoPanelUNTitle]
-"&User name format"
+"Felhasználónév formátum "
 //[MConfigInfoPanelUNLogon]
 "Bejelentkezési név"
 // need translation:
@@ -591,15 +588,12 @@
 // need translation:
 //[MConfigInfoPanelUNCanonical]
 "Canonical Name"
-// need translation:
 //[MConfigInfoPanelUNUserPrincipal]
-"User Principial Name"
-// need translation:
+"Fő felhasználónév"
 //[MConfigInfoPanelUNServicePrincipal]
-"Service Principal"
-// need translation:
+"Szolgáltatási igazgató"
 //[MConfigInfoPanelUNDnsDomain]
-"DNS Domain"
+"DNS-tartomány"
 //[MConfigInfoPanelUNGivenName]
 "Utónév"
 //[MConfigInfoPanelUNSurname]
@@ -777,9 +771,8 @@
 "Szimbolikus link (&fájl)"
 //[MLinkTypeSymlinkDirectory]
 "Szimbolikus link (&mappa)"
-// need translation:
 //[MCopyPreserveAllTimestamps]
-"Preserve all timestamps"
+"Minden időbélyeg megőrzése"
 //[MCopySymLinkContents]
 "Sz&imbolikus linkek másolása"
 //[MCopyMultiActions]
@@ -985,7 +978,6 @@
 "a fájlt"
 //[MAskDeleteObjects]
 "az objektumokat"
-// need translation:
 //[MAskDeleteLink]
 "link ide"
 //[MAskDeleteAndMore]
@@ -2698,9 +2690,8 @@
 // need translation:
 //[MSetAttrDfsTargets]
 "DFS Targets:"
-// need translation:
 //[MSetAttrAppExecLink]
-"App Alias:"
+"Alkalmazás alias :"
 //[MSetAttrUnknownReparsePoint]
 "(adat nem elérhető)"
 //[MSetAttrReadOnly]
@@ -2734,12 +2725,10 @@
 // need translation:
 //[MSetAttrNoScrubData]
 "No scrub data"
-// need translation:
 //[MSetAttrPinned]
-"Pinned"
-// need translation:
+"Rögzítve"
 //[MSetAttrUnpinned]
-"Unpinned"
+"Feloldva"
 // need translation:
 //[MSetAttrRecallOnOpen]
 "Recall on open"
@@ -2805,9 +2794,8 @@
 // need translation:
 //[MSetAttrOwnerCannotFor]
 "Cannot set owner for"
-// need translation:
 //[MSetAttrReparsePointCannotFor]
-"Cannot remove reparse point for"
+"Az újraértelmezési pont nem távolítható el a következőhöz"
 
 //[MSetColorPanel]
 "&Panel"
@@ -4678,12 +4666,10 @@
 // need translation:
 //[MFileFilterAttrNoScrubData]
 "No scrub data"
-// need translation:
 //[MFileFilterAttrPinned]
-"Pinned"
-// need translation:
+"Rögzítve"
 //[MFileFilterAttrUnpinned]
-"Unpinned"
+"Feloldva"
 // need translation:
 //[MFileFilterAttrRecallOnOpen]
 "Recall on open"

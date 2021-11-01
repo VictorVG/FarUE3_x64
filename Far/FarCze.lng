@@ -1,6 +1,6 @@
 ﻿.Language=Czech,Czech (Čeština)
 
-//Version: 3.0.5908.0 (Private) x64
+//Version: 3.0.5910.0 (Private) x64
 
 //[MYes]
 "Ano"
@@ -471,9 +471,8 @@
 "&Trvalé bloky"
 //[MConfigCmdlineDelRemovesBlocks]
 "&Del vymaže bloky"
-// need translation:
 //[MConfigCmdlineAutoComplete]
-"&AutoComplete"
+"&Automatické dokončování"
 //[MConfigCmdlineUsePromptFormat]
 "Nastavit formát &příkazového řádku"
 //[MConfigCmdlineUseHomeDir]
@@ -513,9 +512,8 @@
 "DNS doména"
 //[MConfigInfoPanelCNDnsFullyQualified]
 "DNS s celým názvem"
-// need translation:
 //[MConfigInfoPanelUNTitle]
-"&User name format"
+"Formát uživatelského jména"
 //[MConfigInfoPanelUNLogon]
 "Přihlašovací jméno"
 //[MConfigInfoPanelUNFullyQualifiedDN]
@@ -528,15 +526,12 @@
 "Unikátní Id"
 //[MConfigInfoPanelUNCanonical]
 "Kanonický název"
-// need translation:
 //[MConfigInfoPanelUNUserPrincipal]
-"User Principial Name"
-// need translation:
+"Hlavní jméno uživatele"
 //[MConfigInfoPanelUNServicePrincipal]
-"Service Principal"
-// need translation:
+"Vedoucí služby"
 //[MConfigInfoPanelUNDnsDomain]
-"DNS Domain"
+"DNS doména"
 //[MConfigInfoPanelUNGivenName]
 "Křestní jméno"
 //[MConfigInfoPanelUNSurname]
@@ -694,9 +689,8 @@
 "symbolický link (&soubor)"
 //[MLinkTypeSymlinkDirectory]
 "symbolický link (&adresář)"
-// need translation:
 //[MCopyPreserveAllTimestamps]
-"Preserve all timestamps"
+"Zachovejte všechna časová razítka"
 //[MCopySymLinkContents]
 "Kopírovat obsah sym&bolických linků"
 //[MCopyMultiActions]
@@ -893,7 +887,6 @@
 "soubor"
 //[MAskDeleteObjects]
 "objekty"
-// need translation:
 //[MAskDeleteLink]
 "link na"
 //[MAskDeleteAndMore]
@@ -2490,9 +2483,8 @@
 "Svazek:"
 //[MSetAttrDfsTargets]
 "DFS cíly:"
-// need translation:
 //[MSetAttrAppExecLink]
-"App Alias:"
+"Alias aplikace:"
 //[MSetAttrUnknownReparsePoint]
 "(data nejsou k dispozici)"
 //[MSetAttrReadOnly]
@@ -2581,9 +2573,8 @@
 "Nelze nastavit čas souboru pro"
 //[MSetAttrOwnerCannotFor]
 "Nelze nastavit vlastníka pro"
-// need translation:
 //[MSetAttrReparsePointCannotFor]
-"Cannot remove reparse point for"
+"Nelze odstranit bod změny pro"
 
 //[MSetColorPanel]
 "&Panel"

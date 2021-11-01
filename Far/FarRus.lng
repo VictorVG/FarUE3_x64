@@ -1,6 +1,6 @@
 ﻿.Language=Russian,Russian (Русский)
 
-//Version: 3.0.5908.0 (Private) x64
+//Version: 3.0.5910.0 (Private) x64
 
 //[MYes]
 "Да"
@@ -423,6 +423,7 @@
 "Использовать Ctrl+PgUp для в&ыбора диска"
 //[MConfigUseVirtualTerminalForRendering]
 "Использовать Virtual Terminal для рендеринга"
+// need translation:
 //[MConfigFullWidthAwareRendering]
 "Fullwidth-aware rendering"
 //[MConfigClearType]
@@ -2477,9 +2478,8 @@
 "Том:"
 //[MSetAttrDfsTargets]
 "DFS цели:"
-// need translation:
 //[MSetAttrAppExecLink]
-"App Alias:"
+"Псевдоним приложения:"
 //[MSetAttrUnknownReparsePoint]
 "(нет данных)"
 //[MSetAttrReadOnly]

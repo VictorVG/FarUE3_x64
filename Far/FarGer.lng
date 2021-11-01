@@ -1,6 +1,6 @@
 ﻿.Language=German,German (Deutsch)
 
-//Version: 3.0.5908.0 (Private) x64
+//Version: 3.0.5910.0 (Private) x64
 
 //[MYes]
 "Ja"
@@ -515,7 +515,7 @@
 //[MConfigInfoPanelCNDnsHostname]
 "DNS Hostname"
 //[MConfigInfoPanelCNDnsDomain]
-"DNS Domain"
+"DNS-Domäne"
 //[MConfigInfoPanelCNDnsFullyQualified]
 "DNS vollqualifiziert"
 //[MConfigInfoPanelUNTitle]
@@ -536,9 +536,8 @@
 "Hauptbenutzername"
 //[MConfigInfoPanelUNServicePrincipal]
 "Dienstleister"
-// need translation:
 //[MConfigInfoPanelUNDnsDomain]
-"DNS Domain"
+"DNS-Domäne"
 //[MConfigInfoPanelUNGivenName]
 "Vorname"
 //[MConfigInfoPanelUNSurname]
@@ -703,9 +702,8 @@
 "Symbolischer Link (&Datei)"
 //[MLinkTypeSymlinkDirectory]
 "Symbolischer Link (Or&dner)"
-// need translation:
 //[MCopyPreserveAllTimestamps]
-"Preserve all timestamps"
+"Alle Zeitstempel beibehalten"
 //[MCopySymLinkContents]
 "Inhalte von s&ymbolischen Links kopieren"
 //[MCopyMultiActions]
@@ -906,7 +904,6 @@
 "die Datei"
 //[MAskDeleteObjects]
 "die Objekte"
-// need translation:
 //[MAskDeleteLink]
 "ein Link auf"
 //[MAskDeleteAndMore]
@@ -2535,9 +2532,8 @@
 "Datenträger:"
 //[MSetAttrDfsTargets]
 "DFS Ziele:"
-// need translation:
 //[MSetAttrAppExecLink]
-"App Alias:"
+"App-Alias:"
 //[MSetAttrUnknownReparsePoint]
 "(nicht verfügbar)"
 //[MSetAttrReadOnly]
@@ -2569,12 +2565,10 @@
 "Integrität"
 //[MSetAttrNoScrubData]
 "Keine Datenbereinigung"
-// need translation:
 //[MSetAttrPinned]
-"Pinned"
-// need translation:
+"Angeheftet"
 //[MSetAttrUnpinned]
-"Unpinned"
+"Gelöst"
 // need translation:
 //[MSetAttrRecallOnOpen]
 "Recall on open"
@@ -2637,9 +2631,8 @@
 "Konnte Dateidatum nicht setzen für"
 //[MSetAttrOwnerCannotFor]
 "Konnte Besitzer nicht setzen für"
-// need translation:
 //[MSetAttrReparsePointCannotFor]
-"Cannot remove reparse point for"
+"Analysepunkt kann nicht entfernt werden für"
 
 //[MSetColorPanel]
 "&Panel"
@@ -4499,12 +4492,10 @@
 "Integrität"
 //[MFileFilterAttrNoScrubData]
 "Keine Datenbereinigung"
-// need translation:
 //[MFileFilterAttrPinned]
-"Pinned"
-// need translation:
+"Angeheftet"
 //[MFileFilterAttrUnpinned]
-"Unpinned"
+"Gelöst"
 // need translation:
 //[MFileFilterAttrRecallOnOpen]
 "Recall on open"

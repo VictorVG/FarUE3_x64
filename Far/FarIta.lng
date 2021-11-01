@@ -1,6 +1,6 @@
 ﻿.Language=Italian,Italian (Italiano)
 
-//Version: 3.0.5908.0 (Private) x64
+//Version: 3.0.5910.0 (Private) x64
 
 //[MYes]
 "&Si"
@@ -690,9 +690,8 @@
 "Link Simbolico (&File)"
 //[MLinkTypeSymlinkDirectory]
 "Link Simbolico (&Cartella)"
-// need translation:
 //[MCopyPreserveAllTimestamps]
-"Preserve all timestamps"
+"Conserva tutti i timestamp"
 //[MCopySymLinkContents]
 "Copia Contenuti Dei Link &Simbolici"
 //[MCopyMultiActions]
@@ -889,9 +888,8 @@
 "Il File"
 //[MAskDeleteObjects]
 "gli oggetti"
-// need translation:
 //[MAskDeleteLink]
-"Un Link Simbolico Ad"
+"un collegamento ad"
 //[MAskDeleteAndMore]
 "…e altri {0}"
 
@@ -2484,9 +2482,8 @@
 "Volume:"
 //[MSetAttrDfsTargets]
 "Destinazioni DFS:"
-// need translation:
 //[MSetAttrAppExecLink]
-"App Alias:"
+"Alias dell'app:"
 //[MSetAttrUnknownReparsePoint]
 "(dati sconosciuti)"
 //[MSetAttrReadOnly]
@@ -2517,12 +2514,10 @@
 "Integrità Flusso"
 //[MSetAttrNoScrubData]
 "Nessun Dato Scrub"
-// need translation:
 //[MSetAttrPinned]
-"Pinned"
-// need translation:
+"Bloccato"
 //[MSetAttrUnpinned]
-"Unpinned"
+"Sbloccati"
 // need translation:
 //[MSetAttrRecallOnOpen]
 "Recall on open"
@@ -2581,9 +2576,8 @@
 "Non Posso Settare La Data/Ora Per"
 //[MSetAttrOwnerCannotFor]
 "Non Posso Settare Il Proprietario Per"
-// need translation:
 //[MSetAttrReparsePointCannotFor]
-"Cannot remove reparse point for"
+"Impossibile rimuovere il punto di analisi per"
 
 //[MSetColorPanel]
 "&Pannello"
@@ -4413,12 +4407,10 @@
 "Integrità Flusso"
 //[MFileFilterAttrNoScrubData]
 "Dati Scrub Mancanti"
-// need translation:
 //[MFileFilterAttrPinned]
-"Pinned"
-// need translation:
+"Bloccato"
 //[MFileFilterAttrUnpinned]
-"Unpinned"
+"Sbloccati"
 // need translation:
 //[MFileFilterAttrRecallOnOpen]
 "Recall on open"
