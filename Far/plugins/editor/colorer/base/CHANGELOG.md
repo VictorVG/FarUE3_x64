@@ -1,6 +1,6 @@
 # Changelog for Colorer base
 
-## [Unreleased]
+## [1.2.0.16]
 
 ### Fixed
 - [calcset] update hrc for latest file structure.

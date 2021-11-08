@@ -1,6 +1,6 @@
 ﻿.Language=Polish,Polish (Polski)
 
-//Version: 3.0.5910.0 (Private) x64
+//Version: 3.0.5913.0 (Private) x64
 
 //[MYes]
 "Tak"
@@ -671,7 +671,7 @@
 //[MCopyIfFileExist]
 "Dla już &istniejących:"
 //[MCopyAsk]
-"&Zapytaj"
+"Zapyta&j"
 //[MCopyAskRO]
 "&Pytaj także o pliki tylko do odczytu"
 //[MCopyOnlyNewerFiles]
@@ -701,7 +701,7 @@
 //[MCopyDlgCancel]
 "&Anuluj"
 //[MCopyDlgRename]
-"&Zmień nazwę"
+"Z&mień nazwę"
 //[MCopyDlgLink]
 "&Utwórz link"
 //[MCopyDlgTotal]
@@ -763,9 +763,9 @@
 //[MCopyRetry]
 "&Ponów"
 //[MCopySkip]
-"&Omiń"
+"P&omiń"
 //[MCopySkipAll]
-"Omiń w&szystkie"
+"Pomiń w&szystkie"
 //[MCopyCancel]
 "&Anuluj"
 //[MCopyDecrypt]
@@ -817,13 +817,13 @@
 //[MCopyDest]
 "&Istniejący"
 //[MCopyOverwrite]
-"Nad&pisz"
+"&Zastąp"
 //[MCopyAppend]
 "&Dołącz"
 //[MCopyRename]
-"&Zmień nazwę"
+"Z&mień nazwę"
 //[MCopyRememberChoice]
-"&Zapamiętaj ustawienia"
+"Za&pamiętaj wybór"
 //[MCopyRenameTitle]
 "Zmień nazwę"
 //[MCopyRenameText]
