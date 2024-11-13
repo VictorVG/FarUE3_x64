@@ -1,6 +1,6 @@
 # Changelog for Colorer base
 
-## [1.2.0.16]
+## [1.2.0.25]
 
 ### Fixed
 - [calcset] update hrc for latest file structure.
@@ -11,9 +11,13 @@
 - Use new xsd schema for catalog.xml.
 - Common.jar rename to common.zip
 - reformat proto.hrc and included files; changed namespace.
+- Tweak visual.hrd xml CData markup
+- remove obsolete from visual-rgb.hrd
+- [groovy] add .gradle as groovy
 
 ### Added
 - New package type of base - all packed. Hrc and hrd files in one archive. Directory 'auto' not in archive.
+- [regex] support named capture groups and backreferences, like `(?<name>bar) \k<name>` and `(?'name'bar) \k'name'`
 
 ## [1.2.0] - 2021-09-12
 

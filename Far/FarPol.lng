@@ -1,6 +1,6 @@
 ﻿.Language=Polish,Polish (Polski)
 
-//Version: 3.0.5913.0 (Private) x64
+//Version: 3.0.5955.0 (Private) x64
 
 //[MYes]
 "Tak"
@@ -530,7 +530,7 @@
 //[MConfigInfoPanelUNServicePrincipal]
 "Główna usługa"
 //[MConfigInfoPanelUNDnsDomain]
-"Domena z DNS"
+"Domena DNS"
 //[MConfigInfoPanelUNGivenName]
 "Imię"
 //[MConfigInfoPanelUNSurname]
@@ -671,7 +671,7 @@
 //[MCopyIfFileExist]
 "Dla już &istniejących:"
 //[MCopyAsk]
-"Zapyta&j"
+"&Zapytaj"
 //[MCopyAskRO]
 "&Pytaj także o pliki tylko do odczytu"
 //[MCopyOnlyNewerFiles]
@@ -701,7 +701,7 @@
 //[MCopyDlgCancel]
 "&Anuluj"
 //[MCopyDlgRename]
-"Z&mień nazwę"
+"&Zmień nazwę"
 //[MCopyDlgLink]
 "&Utwórz link"
 //[MCopyDlgTotal]
@@ -2470,7 +2470,7 @@
 //[MSetAttrHardLinks]
 "linków trwałych"
 //[MSetAttrJunction]
-"Powiązanie:"
+"Dowiązanie:"
 //[MSetAttrSymlink]
 "Link:"
 //[MSetAttrVolMount]
@@ -2744,7 +2744,7 @@
 //[MSetColorCommandLineSelected]
 "Zaznaczony wpisany tekst"
 //[MSetColorCommandLinePrefix]
-"Tekst prefiksu"
+"Tekst przedrostka"
 //[MSetColorCommandLineUserScreen]
 "Ekran użytkownika"
 
@@ -3346,13 +3346,13 @@
 //[MMacroSettingsTitle]
 "Ustawienia makra dla '{0}'"
 //[MMacroSettingsSequence]
-"Sekwencja:"
+"&Sekwencja:"
 //[MMacroSettingsDescription]
-"Opis:"
+"&Opis:"
 //[MMacroSettingsEnableOutput]
 "&Wyłącz zapis na ekran podczas wykonywania makra"
 //[MMacroSettingsRunAfterStart]
-"Wykonaj po &starcie Far"
+"Wykonaj po starcie &Far"
 //[MMacroSettingsActivePanel]
 "Panel &aktywny"
 //[MMacroSettingsPassivePanel]
@@ -3360,9 +3360,9 @@
 //[MMacroSettingsPluginPanel]
 "Panel wtyczek"
 //[MMacroSettingsFolders]
-"Wykonaj dla &folderów"
+"Wykonaj dla folderów"
 //[MMacroSettingsSelectionPresent]
-"Zaznaczenie &obecne"
+"Zaznaczenie obecne"
 //[MMacroSettingsCommandLine]
 "Pusta &linia poleceń"
 //[MMacroSettingsSelectionBlockPresent]
